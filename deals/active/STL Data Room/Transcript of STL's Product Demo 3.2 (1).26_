@@ -1,0 +1,1458 @@
+WEBVTT
+
+1
+00:00:00.200 --> 00:00:01.170
+New World Angels - Bahar: Go ahead.
+
+2
+00:00:04.840 --> 00:00:07.449
+Summit Tech Lab: Yes, CP, this is my COO, CFO.
+
+3
+00:00:08.520 --> 00:00:22.129
+CP: Hi, I'm CP, I'm also based in Irvine, and I have experience in investment banking, started my career in investment banking, and for the last 25 plus years, I've been working with startups, had done two of my own startups with our co-founders.
+
+4
+00:00:22.130 --> 00:00:30.770
+CP: And since 2019, our last startup got bought out by a Bay Area company. I've been advising several companies, and recently joined
+
+5
+00:00:30.770 --> 00:00:33.830
+CP: STL as the COO, last summer.
+
+6
+00:00:35.250 --> 00:00:39.690
+Summit Tech Lab: And then I also have our VP of Sales, David Snyder.
+
+7
+00:00:39.890 --> 00:00:40.840
+Summit Tech Lab: David?
+
+8
+00:00:41.450 --> 00:00:47.610
+David Snyder: Hi, I'm David Snyder. I just joined STL. I'm actually out here on the East Coast in the state of New Hampshire.
+
+9
+00:00:47.720 --> 00:00:51.680
+David Snyder: Have about a 30-year career working in tech startups.
+
+10
+00:00:51.820 --> 00:00:54.700
+David Snyder: Driving sales and go-to-market strategies.
+
+11
+00:00:56.150 --> 00:01:07.530
+Summit Tech Lab: Thank you, David. And I also have here, Bharti Jha. She is Chief of Software Engineering, basically advising the complete technical team. So, Bharti?
+
+12
+00:01:11.020 --> 00:01:21.239
+Bharati Jha (STL): Hi, everyone. This is Bharti, I'm Chief of Software Engineer at STL. I have been with STL for the past 5 years.
+
+13
+00:01:21.330 --> 00:01:38.520
+Bharati Jha (STL): I hold master's degree in computer science, and have more than 20 years of hands-on experience in building and managing software solutions across various industries, like UNESS, LAN International, PIMCO,
+
+14
+00:01:38.660 --> 00:01:48.780
+Bharati Jha (STL): In SDL, I lead, software development initiatives, focusing on architectural design, team mentorship.
+
+15
+00:01:49.020 --> 00:01:54.000
+Bharati Jha (STL): Aligning our technology solutions with business objectives.
+
+16
+00:01:54.250 --> 00:01:57.690
+Bharati Jha (STL): Thanks for spending your time today.
+
+17
+00:01:58.540 --> 00:01:59.750
+Summit Tech Lab: Thank you, Bhati.
+
+18
+00:01:59.860 --> 00:02:06.299
+Summit Tech Lab: And here I have my, technical team. We will start with Taha.
+
+19
+00:02:07.510 --> 00:02:14.289
+Summit Tech Lab: Hi, everyone. I'm Taha. I have a PhD in computer science from UC Irvine.
+
+20
+00:02:14.400 --> 00:02:18.850
+Summit Tech Lab: My specialization is in large-scale multi-projector displays.
+
+21
+00:02:18.970 --> 00:02:30.830
+Summit Tech Lab: I've been with STL since, 2020, in a part-time capacity, during my PhD, and since 2024, I've been with the company, full-time.
+
+22
+00:02:31.590 --> 00:02:48.829
+Summit Tech Lab: Shreyes? Hi, my name is Shreyes. I graduated from Master's in Computer Science and Electrical Engineering from University of Southern California, and since then, I've been working with STL for about 3 years. Here, I work as a computer vision engineer.
+
+23
+00:02:49.500 --> 00:03:02.779
+Summit Tech Lab: Sasha will be doing the demos, so… Hello, everyone. My name is Sasha, I'm a product engineer here at STL. I graduated from UCI with a Bachelor's of Science in Computer Science and Engineering.
+
+24
+00:03:02.830 --> 00:03:17.170
+Summit Tech Lab: Back in 2019, and had been interning and working part-time for a DT even as an undergraduate student. So I've been in this domain and working with STL, for the last 8 years or so.
+
+25
+00:03:17.850 --> 00:03:27.859
+Summit Tech Lab: Thank you, and Abhishek. Hello, everyone. My name is Abhishek. I've been with the company for now 3 years. I'm working here as a computer vision engineer.
+
+26
+00:03:28.050 --> 00:03:33.830
+Summit Tech Lab: Prior to this, I, graduated with a master's in robotics from University of Maryland.
+
+27
+00:03:33.980 --> 00:03:38.060
+Summit Tech Lab: And, I was also interning with the company during my master's.
+
+28
+00:03:38.650 --> 00:04:02.390
+Summit Tech Lab: So, this is the full tech team. We also have another part-time member, who is not here today. He handles our device design, like projector camera designs, maintaining our computer architectures, and so on. So, that's the team, and because we will take some time for the demos, the agenda is Sasha will take you through all the demos, hopefully by 1245.
+
+29
+00:04:02.740 --> 00:04:15.880
+Summit Tech Lab: We will be able to get it done. If there are very deep questions, I would ask you to hold it till after the demo, but smaller questions, of course, feel free to ask him, and then hopefully we will have around 15 minutes.
+
+30
+00:04:16.300 --> 00:04:20.640
+Summit Tech Lab: To have a deeper discussion on any questions that you have.
+
+31
+00:04:20.920 --> 00:04:27.690
+Summit Tech Lab: Mostly, especially if there's a technology business kind of question, that is something, can be done after the demo.
+
+32
+00:04:27.900 --> 00:04:31.539
+Summit Tech Lab: So, without further ado, I will hand you over to Sasha.
+
+33
+00:04:31.960 --> 00:04:41.649
+Summit Tech Lab: Okay, I will also ask, you can type any questions into the Zoom chat as well, that way there's a log that we can get back to if we don't have time during the demo.
+
+34
+00:04:41.890 --> 00:04:42.220
+New World Angels - Bahar: Sounds.
+
+35
+00:04:42.220 --> 00:04:47.420
+Summit Tech Lab: Yeah, I will be actually answering those questions also in the chat.
+
+36
+00:04:48.440 --> 00:05:00.270
+Summit Tech Lab: Okay, we'll be switching to the STL facility camera at this time, so if the host can please spotlight or focus that one for everyone, I'll switch over to that camera. Thank you.
+
+37
+00:05:20.630 --> 00:05:25.950
+STL Facility Camera: Okay, can everybody hear me and see the large cylinder display in front of me?
+
+38
+00:05:26.190 --> 00:05:28.630
+New World Angels - Bahar: Yes, we can hear you, and we can see your screen.
+
+39
+00:05:28.980 --> 00:05:32.760
+STL Facility Camera: Okay, perfect, I can hear you guys as well. So, we'll get started.
+
+40
+00:05:33.010 --> 00:05:48.990
+STL Facility Camera: So what we're looking at right now is a large 25 foot wide by 7 foot tall, display made out of plywood and 2x4s with just some projection paint on it, so that it throws… bounces back the light, better.
+
+41
+00:05:49.060 --> 00:06:04.900
+STL Facility Camera: This is currently a warped system, so it already looks like one seamless display, but it is actually four projectors, just here off to the left side of the camera. There's two on top, and then there's two down below.
+
+42
+00:06:05.050 --> 00:06:10.369
+STL Facility Camera: And right now, all four projectors are creating this one seamless display.
+
+43
+00:06:10.540 --> 00:06:25.349
+STL Facility Camera: They are two different models. All of them, in this case, are Panasonic, just one's a newer generation, one's an older generation. But we try to be as hardware agnostic as possible. You can only… not only mix
+
+44
+00:06:25.350 --> 00:06:40.620
+STL Facility Camera: models, you can even mix brands, so if you have an Epson projector, a Barco projector, a Panasonic projector, they should all be able to work together. And even, technology, of the bulb, so LCD versus DLP,
+
+45
+00:06:40.620 --> 00:06:54.890
+STL Facility Camera: And throw. So, long throw with ultra-short throw, basically any combination, we try to support. Though for the stability of the system, it is always recommended to, keep less,
+
+46
+00:06:54.900 --> 00:06:57.070
+STL Facility Camera: Number of hardware changes.
+
+47
+00:06:57.190 --> 00:07:12.139
+STL Facility Camera: In this case, we are focused on automating of this kind of mapping, and so we use cameras. So I'll take us around here. There's one camera on the tripod down here, there's one over here, and then there's one all the way in the back.
+
+48
+00:07:12.450 --> 00:07:14.970
+STL Facility Camera: So this system has 3 cameras.
+
+49
+00:07:15.220 --> 00:07:17.719
+STL Facility Camera: That help us calibrate this system.
+
+50
+00:07:17.820 --> 00:07:34.089
+STL Facility Camera: And so, for the positioning of the projectors, the top two are tiled, so they're just side by side with a little bit of overlap in the middle, and that lets us get more surface area coverage and increased resolution.
+
+51
+00:07:34.180 --> 00:07:45.509
+STL Facility Camera: And then the top and bottom projectors, they're what's known as stacked, so they're directly on top of each other, so every pixel has a perfect, like, partner and mate.
+
+52
+00:07:45.510 --> 00:07:55.389
+STL Facility Camera: And to achieve a calibration at, you know, every single pixel, your calibration ideally should be subpixel accuracy, which ours is.
+
+53
+00:07:55.420 --> 00:08:13.580
+STL Facility Camera: I'll actually go and block the top, left projector, and you'll see that, top right, sorry, that the right side of the display will dim, but the content won't disappear because there is a projector, mate at every location, so you'll see me block it.
+
+54
+00:08:21.170 --> 00:08:27.320
+STL Facility Camera: You can see as you're locking, that there's just a small ever so slight reduction of wetness.
+
+55
+00:08:28.480 --> 00:08:31.250
+STL Facility Camera: But the content does not go away.
+
+56
+00:08:32.220 --> 00:08:40.570
+STL Facility Camera: Now, one key feature of our software is that positioning of these devices is not precise.
+
+57
+00:08:40.700 --> 00:08:55.219
+STL Facility Camera: You just need to place your projectors so that they throw on screen, so that your cameras view the screen, and the software will figure out the rest. So here I'm gonna bring us up to some static text, and I'm actually going to move the projectors
+
+58
+00:08:55.220 --> 00:09:07.940
+STL Facility Camera: And you're gonna see what happens over time in this kind of system, when things vibrate, things shake, cleaning staff knock things around. A system won't stay calibrated forever, and this is what it'll look like.
+
+59
+00:09:17.890 --> 00:09:31.179
+STL Facility Camera: So, after I move the projectors, you can see now all the text has started coming apart. There's duplication all over the place, everything's very blurry, and it can be very hard to use the display when it becomes like this.
+
+60
+00:09:32.480 --> 00:09:47.459
+STL Facility Camera: Now, at this time, we'll want to do a recalibration, and traditionally, you will need a trained engineer to come in and now correct, for this, but in our case, we'll show you our camera-based calibration.
+
+61
+00:09:47.530 --> 00:09:53.210
+STL Facility Camera: I'm gonna direct us over to this other machine here on its own monitor.
+
+62
+00:09:53.350 --> 00:09:56.529
+STL Facility Camera: And this machine has our UI.
+
+63
+00:09:56.870 --> 00:10:10.970
+STL Facility Camera: And this is so that a user doesn't have to interact with the display once it becomes, like, blurry and hard to use. So in this case, I'm just gonna go up to the top left and click Connect.
+
+64
+00:10:12.990 --> 00:10:16.660
+STL Facility Camera: And you'll notice on the display behind.
+
+65
+00:10:16.890 --> 00:10:20.560
+STL Facility Camera: as that system connects to our UI,
+
+66
+00:10:20.890 --> 00:10:30.600
+STL Facility Camera: it'll unwarp the projectors completely and reset them to factory settings. And we'll actually show you what that fully unwarped state looks like.
+
+67
+00:10:40.170 --> 00:10:49.620
+STL Facility Camera: So here you can see now the projectors have come back, and they're factory settings. So now there's a bunch of spillover all across the walls.
+
+68
+00:10:49.760 --> 00:10:51.730
+STL Facility Camera: On all sides of the display.
+
+69
+00:10:52.090 --> 00:10:59.029
+STL Facility Camera: The overlap in the middle that I had mentioned is now a little more visible, because there's no more blending happening.
+
+70
+00:10:59.160 --> 00:11:14.150
+STL Facility Camera: And then the content now on all other regions of the display, it's not slightly blurry anymore, it's completely collaged. The projectors have no idea that they're sharing space with other projector pixels, the system is completely chaotic.
+
+71
+00:11:14.150 --> 00:11:21.890
+STL Facility Camera: And this is what it would look like if you just connected 4 projectors to one PC, without any software calibration.
+
+72
+00:11:22.640 --> 00:11:30.509
+STL Facility Camera: Now I'll take us back to our UI, and all we're gonna click in the UI is the green button at the very top, the play button.
+
+73
+00:11:30.710 --> 00:11:34.670
+STL Facility Camera: And you'll see the display behind will just start to calibrate.
+
+74
+00:11:35.530 --> 00:11:43.590
+STL Facility Camera: And that'll move us back to where we can watch the whole calibration, and we can discuss some of the details of our calibration as it happens.
+
+75
+00:11:46.070 --> 00:11:50.920
+STL Facility Camera: So, during calibration, our system's gonna try to do several things.
+
+76
+00:11:51.230 --> 00:12:09.259
+STL Facility Camera: The very first thing is it's gonna figure out what exposure to use for the cameras to be able to see our patterns. So note, in this case, we didn't have to turn off the lights, we didn't have to dim them or control them in any way. We're just going to correct for the amount of light in the room.
+
+77
+00:12:10.140 --> 00:12:18.750
+STL Facility Camera: After that, the system will figure out what is the best surface or display that it can return to us.
+
+78
+00:12:18.750 --> 00:12:34.739
+STL Facility Camera: So here we're actually using fisheye lenses, which some competitors will avoid because of their very high FOV and distortion. And in this case, because we're using fisheyes, they can actually see all of the spillover projection on the walls behind the display.
+
+79
+00:12:35.000 --> 00:12:43.759
+STL Facility Camera: And so technically, our software, Artemis, can create a, like, skinny display just up there at the wall.
+
+80
+00:12:43.760 --> 00:12:58.429
+STL Facility Camera: But that won't be as nice or large of a display as the obvious cylindrical display in the middle. So that's how the software will determine, through different computer vision and AI-assisted heuristics.
+
+81
+00:12:58.430 --> 00:13:14.449
+STL Facility Camera: of what is most likely the screen, and where should we keep the projection within. And that's how you saw in the warped state, there was no spillover in that system, even though our screen has no markers or anything to indicate, hey, stay within this region.
+
+82
+00:13:14.720 --> 00:13:26.269
+STL Facility Camera: And then lastly, the thing… the… another big differentiator between competitors and us, our software will create a digital twin.
+
+83
+00:13:26.380 --> 00:13:29.419
+STL Facility Camera: or a 3D model of your surface.
+
+84
+00:13:29.480 --> 00:13:46.500
+STL Facility Camera: Many competitors will actually need that as an input, rather than, like, our software giving it as an output. So they will require their customers to bring in a LiDAR scanner and get the whole surface scanned, and then provide that scan to their software.
+
+85
+00:13:46.740 --> 00:13:54.380
+STL Facility Camera: Our, software will instead figure it all out during this calibration process.
+
+86
+00:13:54.460 --> 00:14:08.300
+STL Facility Camera: And it will create a model that the user can then use in any 3D rendering application, like Unreal, Unity, Blender, whatever they may need it for. And we'll actually show you that model once the software finishes running.
+
+87
+00:14:09.200 --> 00:14:22.660
+STL Facility Camera: The cameras in this case are completely, normal, like, RGB cameras. They're not proprietary to STL in a way. In fact, none of the hardware is. It's all, like, consumer off the shelf.
+
+88
+00:14:22.820 --> 00:14:31.479
+STL Facility Camera: And so, the Windows PC as well, driving all of this is also just completely standard consumer off the shelf.
+
+89
+00:14:31.980 --> 00:14:40.120
+STL Facility Camera: In this case, the Windows PC does have a GPU, just so that it can render four projectors' worth of pixels.
+
+90
+00:14:40.150 --> 00:14:50.159
+STL Facility Camera: By default, a PC without a GPU will not be able to handle that many displays, but our software itself, which is just doing the capture of the images and then the processing.
+
+91
+00:14:50.160 --> 00:15:01.499
+STL Facility Camera: It doesn't necessarily need a GPU. If there's one available, it'll run faster, but it can run off of just, like, a laptop, a CPU-only device, if necessary.
+
+92
+00:15:03.100 --> 00:15:12.679
+STL Facility Camera: You can see right now it has finished doing the acquisition of all the patterns, and now it's just doing some processing, which is why there's some text, popping up on the top left.
+
+93
+00:15:23.660 --> 00:15:43.089
+STL Facility Camera: Looks like the processing just finished, so it should load the new mapping onto the graphics cards, shortly. We'll see the projectors will start flickering right now, and then once they come back, that same desktop we saw earlier that was very collaged will now instead,
+
+94
+00:15:43.120 --> 00:15:46.390
+STL Facility Camera: Be nice and seamless for the new positions.
+
+95
+00:15:46.400 --> 00:16:06.260
+STL Facility Camera: When I moved the devices, I had only moved the two projectors of the system. You could have moved all four of them. You could move the cameras. If it's feasible, you could move the whole screen. Again, the positioning is not fixed or precise in any way. There's no relationships between devices that have to be preserved.
+
+96
+00:16:08.620 --> 00:16:24.630
+STL Facility Camera: Okay, and here you can see the display came back, nice and registered, calibrated for the new positions. I'm just gonna direct us over to the UI for one moment, so we can see how long it took, and we can see that model as well.
+
+97
+00:16:24.680 --> 00:16:32.810
+STL Facility Camera: So, it says it took about 4 minutes and 9 seconds to calibrate, for those new positions. I'm just gonna click OK here.
+
+98
+00:16:33.000 --> 00:16:39.230
+STL Facility Camera: And then I'll bring up the model that was reconstructed during that calibration.
+
+99
+00:16:55.240 --> 00:16:56.110
+STL Facility Camera: Okay.
+
+100
+00:16:56.390 --> 00:17:09.800
+STL Facility Camera: Here is that, reconstruction that was made during those 4 minutes of calibration. You can see it's a nice, cylindrical display, that our cameras were able to detect.
+
+101
+00:17:13.280 --> 00:17:25.419
+STL Facility Camera: Now, let me bring up that same text we had earlier, just to really show that everything is exactly, calibrated as before, even though the positions have changed.
+
+102
+00:17:27.200 --> 00:17:29.870
+STL Facility Camera: Here you go. It's the same YouTube,
+
+103
+00:17:30.020 --> 00:17:33.479
+STL Facility Camera: Chrome tab that we had open earlier.
+
+104
+00:17:34.870 --> 00:17:39.940
+STL Facility Camera: And now, one thing we'll show here is a form of interaction.
+
+105
+00:17:40.850 --> 00:17:45.770
+STL Facility Camera: So let me launch that for us, and I'll explain what we're showing.
+
+106
+00:17:54.770 --> 00:18:06.650
+STL Facility Camera: Okay, so by default, projectors themselves are not interactive devices. They just, throw light, and they have no cameras or any way of telling that
+
+107
+00:18:06.650 --> 00:18:23.469
+STL Facility Camera: somebody's trying to do something with their display. So in this case, because we have cameras calibrated with the projectors and the screen themselves, I have a laser pointer here in my hand, and as I laser in the middle, you'll see if I move right, the whole display will move right. If I go left.
+
+108
+00:18:23.810 --> 00:18:38.430
+STL Facility Camera: up, down, so as I move this display, it will respond to the laser pointer. And I can double-click to zoom in, and I can triple-click to zoom out, and this is just acting as a mouse.
+
+109
+00:18:38.430 --> 00:18:52.730
+STL Facility Camera: So, it can work on any application. In this case, I just have Google Maps open in Chrome, but any Windows application that accepts mouse input can now be interacted with a laser pointer through our calibration.
+
+110
+00:18:54.670 --> 00:18:59.960
+STL Facility Camera: Now, I'll move us on to a new surface. It's just over here.
+
+111
+00:19:00.070 --> 00:19:02.909
+STL Facility Camera: This is a dome display.
+
+112
+00:19:03.170 --> 00:19:08.370
+STL Facility Camera: It's currently being projected by 4 projectors just along the rim.
+
+113
+00:19:08.590 --> 00:19:15.070
+STL Facility Camera: And then there is 4 cameras. There's 2 down here, as well as 2 on the other side.
+
+114
+00:19:15.290 --> 00:19:33.289
+STL Facility Camera: The cameras here are using wide-angle lenses, so again, we try to support all lens types. And rather than being USB, like in the previous demo, here they are IP cameras, so you can do many meters of distance as opposed to USB connections.
+
+115
+00:19:33.440 --> 00:19:48.959
+STL Facility Camera: Currently, we're looking inside the dome, up at Earth with some satellite visualizations around it. This was our most recent SBIR, with the U.S. Space Force. We just finished it last year. It was a Phase 2.
+
+116
+00:19:48.970 --> 00:19:57.300
+STL Facility Camera: And we're now working with KBR, our partner who provided us this data, into making that a Phase 3, going forward.
+
+117
+00:19:57.400 --> 00:20:08.039
+STL Facility Camera: Space has a lot of black, so let me actually bring up content that fills the dome a little more. That way we can see the calibration across the whole dome.
+
+118
+00:20:08.160 --> 00:20:22.069
+STL Facility Camera: So this was part of a Space Force project. This is a SBIR with KBR, where we had integrated KBR's Space Visualization System, Iron Stallion.
+
+119
+00:20:22.280 --> 00:20:24.300
+STL Facility Camera: And this was…
+
+120
+00:20:24.410 --> 00:20:39.710
+STL Facility Camera: to be used for training the space guardians. Though you are seeing a 10-feet size dome, we have a blueprint for extending its design to 60 feet diameter dome as well.
+
+121
+00:20:39.790 --> 00:20:48.719
+STL Facility Camera: Yeah, that way it becomes the ceiling of a space command and control center, essentially a large planetarium on top of everyone with relevant space data.
+
+122
+00:20:48.870 --> 00:21:00.849
+STL Facility Camera: One thing here is this dome is actually being created by a vacuum, but the screen is attached with Velcro, and Velcro does not create a perfect seal.
+
+123
+00:21:00.850 --> 00:21:10.150
+STL Facility Camera: So this, sphere actually deforms throughout the day, about every 6 to 8 hours. So if it ever starts getting fuzzy while we're using it.
+
+124
+00:21:10.150 --> 00:21:16.909
+STL Facility Camera: We just go click run on our UI, and this is back to a nice, sharp display in 6 or 7 minutes.
+
+125
+00:21:18.360 --> 00:21:37.019
+STL Facility Camera: Now, I'll take us to the largest display that we're going to demo today. Before we step inside, we'll look a bit at the hardware in the back, because this is a rear-projected system, so once you're on the user side, you don't get to see any of the hardware.
+
+126
+00:21:37.260 --> 00:21:49.490
+STL Facility Camera: So this is actually the one which we developed for the military, because military doesn't have power to carry heavy and fragile panels, and therefore did not have a large display.
+
+127
+00:21:49.520 --> 00:21:57.569
+STL Facility Camera: So Sasha will explain how the design has been done so that the defense can put together very rapidly this whole system.
+
+128
+00:21:58.280 --> 00:22:11.970
+STL Facility Camera: Yes, so let me move a little more over here, and you can see, for one quarter of the system, there's 4 projectors up on top, and then there is 4 more on the ground. There's 2 here, and there's 2 more behind the PC.
+
+129
+00:22:12.070 --> 00:22:27.009
+STL Facility Camera: And here you can see the screen is actually bowed vertically as well, so it was intended to be a cylinder, but because we used a stretch fabric screen, which was very machine washable and packable.
+
+130
+00:22:27.010 --> 00:22:41.630
+STL Facility Camera: It didn't have enough tension to stay as a perfect cylinder, but since our software reconstructs the 3D geometry of the screen and corrects for it, we didn't need to make it a perfect cylinder, we just went with the shape.
+
+131
+00:22:41.880 --> 00:22:50.599
+STL Facility Camera: The projectors here live in their cases, and the top projector case will just mate with the bottom one, and it's ready to ship.
+
+132
+00:22:50.600 --> 00:23:02.629
+STL Facility Camera: So one quarter of this display fits on a pallet, and two airmen can set it up in 30 minutes from pallet to nice, calibrated display in 30 minutes, with no tools.
+
+133
+00:23:02.820 --> 00:23:06.400
+STL Facility Camera: And you can see here, this is obviously the calibrated display.
+
+134
+00:23:06.460 --> 00:23:25.499
+STL Facility Camera: We used very inexpensive ultra-short throw projectors here. Ultra short lets us get a very close footprint to the projectors, but the ultra-short projectors do have a lot of distortion, so sometimes they are not recommended for setups. Again, we handle high distortion, so we have no issues with them.
+
+135
+00:23:25.630 --> 00:23:31.129
+STL Facility Camera: And this whole system that we're now going to go into
+
+136
+00:23:31.310 --> 00:23:38.829
+STL Facility Camera: is 32 projectors, because there's 4 copies of that initial quarter that we designed for the Air Force.
+
+137
+00:23:38.930 --> 00:23:55.160
+STL Facility Camera: So 32 projectors, 16 cameras, all rear projections, so you can get as close to the display as you want without creating a shadow. It gives you 320 degrees of this large, immersive, space.
+
+138
+00:23:55.440 --> 00:24:01.550
+STL Facility Camera: And it calibrates in about 20 minutes with, again, just a single push of a button.
+
+139
+00:24:07.400 --> 00:24:17.499
+STL Facility Camera: And here we'll show you the before and after, because as I mentioned, ultra-short throw projectors have a lot of distortion, so we'll, demo that for you.
+
+140
+00:24:20.850 --> 00:24:26.739
+STL Facility Camera: One thing to note, because we're viewing this through a camera.
+
+141
+00:24:26.790 --> 00:24:43.340
+STL Facility Camera: The camera may show color variation and shift as we move around. So right now, I'm seeing, like, purpling, yellowing, greening across the display. That is not visible to the human eye. To me, this looks like a white display.
+
+142
+00:24:43.410 --> 00:24:52.469
+STL Facility Camera: So that's just one thing to note. We do tune for the human eye, and so in some cases, the display doesn't look the same to the camera as it does to us.
+
+143
+00:24:52.690 --> 00:25:07.339
+STL Facility Camera: And that's why we invite anyone to come to our facility and experience this in person. All of our demos and technology is much more visually impressive to, being here, as opposed to viewing remotely.
+
+144
+00:25:07.480 --> 00:25:13.529
+STL Facility Camera: But anyways, this is the warped display right now, and then this is the unwarped display.
+
+145
+00:25:13.590 --> 00:25:28.580
+STL Facility Camera: So you can see there's a lot of overlap here, a lot of curved lines and distortions. These projectors are even throwing all the way up on the ceiling because they have such high distortion.
+
+146
+00:25:28.670 --> 00:25:32.580
+STL Facility Camera: And in the middle, over roughly here.
+
+147
+00:25:32.710 --> 00:25:49.350
+STL Facility Camera: all 8 projectors of that quarter are overlapping, yet when I switch to our calibrated system, all of that goes away, and you can no longer tell where one projector begins, where another ends, and how they're all overlapped.
+
+148
+00:25:49.550 --> 00:26:03.170
+STL Facility Camera: So, one thing that we're showing here also is an advanced form of blending. Let me go back to the unwarped state, and I'll note that here, the bottom half of the display is actually brighter than the top half.
+
+149
+00:26:03.200 --> 00:26:09.619
+STL Facility Camera: And that's because we had to move the top projectors back so that they don't cast a shadow for the bottom projectors.
+
+150
+00:26:09.740 --> 00:26:17.369
+STL Facility Camera: Moving them back means they're farther from the screen, so they're dimmer at the screen. And that's why the top half is dimmer.
+
+151
+00:26:17.820 --> 00:26:29.669
+STL Facility Camera: With traditional blending, there's an assumption that brightness is uniform at the screen, so it's not able to correct for that variation. So here you can see this is a traditional blend.
+
+152
+00:26:29.760 --> 00:26:37.999
+STL Facility Camera: Where the bottom half is still brighter than the top half, because it's assuming that brightness is uniform. It can't correct for it.
+
+153
+00:26:38.180 --> 00:26:53.050
+STL Facility Camera: In our blending, we actually sample the brightness at the surface, and so we're able to correct for this, and let me switch back to ours, and you'll see it becomes more imperceptible, and a smoother display.
+
+154
+00:26:55.490 --> 00:27:02.479
+STL Facility Camera: Now, all the surfaces we've shown so far, the three, Have been smooth surfaces.
+
+155
+00:27:02.820 --> 00:27:16.430
+STL Facility Camera: The next, demo focuses on an added complication of harsh edges, within a display. So, this is a mock room setup.
+
+156
+00:27:16.690 --> 00:27:19.600
+STL Facility Camera: Let me take us off the tripod.
+
+157
+00:27:19.750 --> 00:27:23.980
+STL Facility Camera: To show you this,
+
+158
+00:27:25.050 --> 00:27:29.590
+STL Facility Camera: whole setup. So here we have 3 walls of a room.
+
+159
+00:27:29.800 --> 00:27:32.639
+STL Facility Camera: As well as the ceiling.
+
+160
+00:27:32.880 --> 00:27:47.159
+STL Facility Camera: This is all being done with 4 projectors just down here. 3 of them are ultra-short throw, and then one of them is short throw. So, as mentioned, we are mixing throws for projectors here.
+
+161
+00:27:47.360 --> 00:27:54.530
+STL Facility Camera: But you could see it gives you a seamless display, even across those harsh
+
+162
+00:27:54.800 --> 00:27:59.950
+STL Facility Camera: You know, roughly 90 degree, angles in the room.
+
+163
+00:28:00.090 --> 00:28:17.320
+STL Facility Camera: Now, one thing you might be able to note here is that as I look at the edge between a wall and a ceiling, the building's sort of very harshly, like, angle, differently, and that's because this is a view-dependent rendering, so you need to be in the sweet spot for it to look correct.
+
+164
+00:28:17.410 --> 00:28:29.610
+STL Facility Camera: And I'll try to get our camera to that sweet spot without causing too many shadows, but you can see as soon as I start getting more aligned with the sweet spot, the buildings just look like they go straight up.
+
+165
+00:28:30.200 --> 00:28:34.030
+STL Facility Camera: There's no, weird angle across that edge.
+
+166
+00:28:38.330 --> 00:28:57.760
+STL Facility Camera: Another thing I want to mention here is these kind of immersive rooms are getting very popular now, especially for conference rooms to make them multipurpose. Also, we are talking to Panasonic with another project. We are involved with DARPA.
+
+167
+00:28:57.800 --> 00:29:07.189
+STL Facility Camera: Where they want to create immersive rooms for their, kind of, command and control and management and simulation experiences.
+
+168
+00:29:08.250 --> 00:29:19.780
+STL Facility Camera: So here we'll show you the before as well, because, for this kind of setup, traditionally, each projector is set up so that it only throws on one wall.
+
+169
+00:29:19.810 --> 00:29:39.289
+STL Facility Camera: And any spillover is completely avoided and removed. It makes it very hard for engineers to calibrate the system in the traditional, non-camera automated fashion. But you can see here, we have very large regions of spillover across all of these walls.
+
+170
+00:29:39.370 --> 00:29:41.159
+STL Facility Camera: All the edges.
+
+171
+00:29:41.310 --> 00:29:57.470
+STL Facility Camera: Again, we've arbitrarily placed the devices down, so with simple plopping them down, this is the overlaps we had, but our software is able to completely correct for that. So here's the warped display again, where all of a sudden…
+
+172
+00:29:57.540 --> 00:30:14.870
+STL Facility Camera: you cannot tell that there's a bunch of spillover that normally is completely avoided. So, there was a setup similar to this in Infocomm last year, and it took them 3 days to set this system up precisely without any spillover.
+
+173
+00:30:14.870 --> 00:30:25.340
+STL Facility Camera: It can be very hard, especially if your walls aren't straight and your corners aren't exactly 90 degrees. But our software calibrates this in about 5 minutes.
+
+174
+00:30:27.890 --> 00:30:32.349
+STL Facility Camera: Now, we'll move on to an even more complex object.
+
+175
+00:30:33.130 --> 00:30:41.930
+STL Facility Camera: This is a real football that, we took and just spray-painted white so that it catches the projection light better.
+
+176
+00:30:42.100 --> 00:30:46.339
+STL Facility Camera: It is illuminated by 6 mini projectors.
+
+177
+00:30:46.660 --> 00:31:01.109
+STL Facility Camera: and captured by 8 Logitech webcams. So very inexpensive cameras, and low resolution can be used here. And this gives you a complete 360-degree display.
+
+178
+00:31:01.590 --> 00:31:06.719
+STL Facility Camera: Apologies for the brightness in the camera, this is a very bright display, so…
+
+179
+00:31:06.830 --> 00:31:11.069
+STL Facility Camera: My camera's autofocus and exposure struggle a little.
+
+180
+00:31:11.580 --> 00:31:14.869
+STL Facility Camera: But you can see here that it's the whole football.
+
+181
+00:31:15.790 --> 00:31:33.289
+STL Facility Camera: One thing we'll show here is another form of interaction which utilizes that 3D model and reconstruction that we had mentioned and shown on the cylinder display. So over here, we'll actually use a laptop to
+
+182
+00:31:33.600 --> 00:31:36.890
+STL Facility Camera: touchscreen interact with this surface?
+
+183
+00:31:37.130 --> 00:31:49.979
+STL Facility Camera: So, that, football will send over its model, and you'll see here as my colleague interacts with that football on the display, the football in person will also
+
+184
+00:31:49.980 --> 00:31:58.420
+STL Facility Camera: mimic those changes. So he put on a texture, now he's translating it. You can see the island is moving on that football.
+
+185
+00:31:58.580 --> 00:32:07.979
+STL Facility Camera: And that's just a pre-applied texture, but if he wants to animate it uniquely, he'll actually write STL on the football, and as he writes.
+
+186
+00:32:08.220 --> 00:32:10.600
+STL Facility Camera: You could see it as appearing on the football.
+
+187
+00:32:16.030 --> 00:32:32.620
+STL Facility Camera: And, many objects can fit in this volume. We've done football, vase, water bottles, toy drills, toy cars, basically just replacing the object in the middle. We click play, and it's calibrated in about three and a half minutes on this setup.
+
+188
+00:32:34.670 --> 00:32:47.390
+STL Facility Camera: All of the software we've shown so far has been, the product. It's Artemis, it's one codebase that can do all of these different shapes and do all of these calibrations.
+
+189
+00:32:47.530 --> 00:33:03.600
+STL Facility Camera: This next one, and a more practical application of it, are our next generation software. This is a teaser for what's to come and what we're hoping to launch this year. The calibration we showed on the cylinder.
+
+190
+00:33:03.710 --> 00:33:16.479
+STL Facility Camera: It still takes minutes, and even though that's better than hours and days, which it takes engineers, this demo focuses on real time.
+
+191
+00:33:16.480 --> 00:33:30.849
+STL Facility Camera: So, every frame of content. So here, right now, you can see we have 3 projectors. They're currently unwarped, which is why you can see the overlap regions, and the spillover outside of the display.
+
+192
+00:33:31.420 --> 00:33:36.369
+STL Facility Camera: We have 3 cameras here, but here they are depth cameras.
+
+193
+00:33:36.590 --> 00:33:49.600
+STL Facility Camera: And we have two fans. There's a fan down there, and then there's a fan over here on the table. And these fans are creating random, unpredictable motion on the display.
+
+194
+00:33:49.630 --> 00:34:02.070
+STL Facility Camera: And we'll start the calibration, and you'll see that the spillover will, come in, and the overlaps will start disappearing, and all of a sudden, you have one seamless display.
+
+195
+00:34:02.110 --> 00:34:17.620
+STL Facility Camera: correcting for random movements of the surface with no markers. So the motivation for this was, again, from defense, so they told that, why do we need to, carry all those big frames and,
+
+196
+00:34:17.659 --> 00:34:31.369
+STL Facility Camera: suitcases, can you just project on the tents? They have… our tents usually have white walls, and they are surround, so if you can project on tents, we can create this command and center on the… command control center on the tent.
+
+197
+00:34:31.370 --> 00:34:42.999
+STL Facility Camera: But tents move with wind and HVAC and other people moving around, and that's why this was our… one of our SBIRs for creating, dynamic, calibration.
+
+198
+00:34:44.580 --> 00:35:00.240
+STL Facility Camera: And now a, different application of this, is, that we'll demo is focused on medical, and surgical, side. So here we have a cleft lip model.
+
+199
+00:35:00.380 --> 00:35:16.380
+STL Facility Camera: Projected by a projector and camera up here, and then a software that lets you annotate on that model, and so here we'll try to capture both of them, but as my colleague, once again, animates on it.
+
+200
+00:35:16.540 --> 00:35:32.429
+STL Facility Camera: the model itself will also update. So he's drawing some markings on the right side, and they appear just here on the right side. Can you do one under the lip, on the bottom side? Because it's easier for them to see.
+
+201
+00:35:38.140 --> 00:35:40.560
+STL Facility Camera: Yeah, so there he marked the bottom of the lip.
+
+202
+00:35:40.850 --> 00:35:56.049
+STL Facility Camera: And so, imagine that, a trained surgeon in a different country, receives this model from a country that is less well-off and not as trained to do these surgeries.
+
+203
+00:35:56.050 --> 00:36:15.080
+STL Facility Camera: That trained surgeon can then mark on the application where the incisions should go to correct this kind of surgery, and then the actual practicing surgeon at the poor country, less trained, can then operate based on professional input.
+
+204
+00:36:15.100 --> 00:36:20.900
+STL Facility Camera: And here, you can notice the same technology as the tent, where if we move the model.
+
+205
+00:36:21.160 --> 00:36:38.960
+STL Facility Camera: the markings will follow the model as well. So during operation, it is likely that the model will have to be moved around and turned, and so this, real-time rendering is necessary in these kinds of applications.
+
+206
+00:36:39.140 --> 00:36:55.070
+STL Facility Camera: It doesn't just, limit to the medical side. You could imagine this as an engine, and some mechanic is marking certain valves, or a circuit board, and, you know, an engineer is marking specific cables to
+
+207
+00:36:55.070 --> 00:37:06.840
+STL Facility Camera: replace, that are damaged, or to cut in different cases. So there's a lot of applications for this, interactive and visualized piece of software.
+
+208
+00:37:08.200 --> 00:37:23.369
+STL Facility Camera: That concludes the demos that we have for everyone today. I will switch back to the meeting table, and we can discuss any questions that haven't been answered yet. Thank you all for your time.
+
+209
+00:37:28.240 --> 00:37:40.400
+New World Angels - Bahar: Alright, thank you so much. I see some conversations happening in the group chat, but, does our team have any additional questions? If you can have your hands raised, I'll go one by one. Okay, Alex, go ahead.
+
+210
+00:37:40.850 --> 00:37:52.060
+Alex Shender: Alright, so we covered, multiple projectors for redundancy and brightness. Are there any other benefits for having the multiple projectors, going on that same spot?
+
+211
+00:37:53.300 --> 00:38:04.850
+Summit Tech Lab: Those are the two most important ones, yeah. I don't… those are… because the brightness is not, the… the graph of cost per brightness is not…
+
+212
+00:38:04.850 --> 00:38:05.710
+Alex Shender: covered it.
+
+213
+00:38:05.710 --> 00:38:08.570
+Summit Tech Lab: Yeah, so that… those are the two most important ones.
+
+214
+00:38:08.570 --> 00:38:20.800
+Alex Shender: And so, when you're doing this, do you tell the buyer how many projectors to use, and do you recommend what type of projectors they use, whether they're the ultra short throw, the short throw, or is that…
+
+215
+00:38:21.760 --> 00:38:30.640
+Summit Tech Lab: So, depends. If we are selling to, for example, integrators, they often do the design, and then they come with the projector design.
+
+216
+00:38:30.710 --> 00:38:44.719
+Summit Tech Lab: But if you are, for example, when we sold to some direct customers, like Regent Craft, who did a simulator from us, we did the entire projector design, camera design, everything. We have a… we can do that too.
+
+217
+00:38:45.410 --> 00:38:54.799
+Alex Shender: Okay, and a number of cameras, it seemed like it was a minimum of 2, 3, is there some formula for it, or…
+
+218
+00:38:55.060 --> 00:39:13.200
+Summit Tech Lab: So the camera, as we mentioned, because we are recovering the 3D geometry, every point on the surface has to be seen by two cameras, at least. So, it depends on where you're placing the camera. For example, if you have a very big display and the cameras are far and have a high resolution, you can just use two cameras.
+
+219
+00:39:13.200 --> 00:39:15.869
+Summit Tech Lab: If your room doesn't have that much of depth.
+
+220
+00:39:15.870 --> 00:39:30.229
+Summit Tech Lab: And you have to be closer, you can use more cameras. If you are using fisheye cameras, you will need less of them than narrow field of view cameras. So as part of our implementation fee, we kind of design the camera placement for the customer.
+
+221
+00:39:30.460 --> 00:39:37.629
+Summit Tech Lab: So that they know roughly where to place the cameras. Nothing is precise, we don't need anything to be precisely placed.
+
+222
+00:39:37.990 --> 00:39:49.160
+Alex Shender: And I saw you were using 8K projectors, there's, so no limitations on refresh rate, camera projectors, 4K projectors. What about 3D?
+
+223
+00:39:50.410 --> 00:40:01.139
+Summit Tech Lab: So there is… as long as the rendering solution, so, can run that refresh, we don't… our calibration doesn't have any issue.
+
+224
+00:40:01.270 --> 00:40:05.010
+Summit Tech Lab: When you say 3D, what do you mean?
+
+225
+00:40:05.650 --> 00:40:08.539
+Alex Shender: Think about planetariums where they're showing 3D shows.
+
+226
+00:40:08.540 --> 00:40:08.980
+Summit Tech Lab: Oh.
+
+227
+00:40:08.980 --> 00:40:13.989
+Alex Shender: Putting, the, glasses on, can you handle that?
+
+228
+00:40:17.120 --> 00:40:25.619
+Summit Tech Lab: Yeah, so, we are not the rendering company, like, so usually for that kind of application, there's some kind of content.
+
+229
+00:40:25.670 --> 00:40:39.739
+Summit Tech Lab: So, as long as that content can consume our Warp and blend files, we output a standard known as MPCDI, which is getting more and more accepted by the projection community.
+
+230
+00:40:39.740 --> 00:40:47.049
+Summit Tech Lab: If they can consume that mapping, which a lot of media servers like Seven Sense, Pixar, Disguise can.
+
+231
+00:40:47.050 --> 00:40:54.310
+Summit Tech Lab: Then they can render any content, be it 3D or not, through that renderer.
+
+232
+00:40:54.610 --> 00:41:10.269
+Alex Shender: Gotcha. And last question, and I saw this a little bit with your demo with the map, where you're zooming in and out, and left and right. So, there's a museum down here that has a similar system with multiple projectors, and they give the kids a pretend flashlight.
+
+233
+00:41:10.290 --> 00:41:20.810
+Alex Shender: And that flashlight… multiple kids are using this device, and you can see the flashlight on the screen highlighting different spots. Can your system handle something like that?
+
+234
+00:41:21.500 --> 00:41:27.300
+Summit Tech Lab: Yeah, so that sounds to me like it's just IR, most likely, and there should be no reason we can't handle that.
+
+235
+00:41:28.180 --> 00:41:29.100
+Alex Shender: Thank you.
+
+236
+00:41:29.610 --> 00:41:31.460
+New World Angels - Bahar: Thank you, Alex. Ron?
+
+237
+00:41:34.940 --> 00:41:48.220
+Ron Tarro: Oh, sorry about that. As I was looking at this, the… what was going through my mind was the idea of 360-degree projection, devices, for lack of a better word. And I'm sort of carving the world up into use cases, meaning
+
+238
+00:41:48.310 --> 00:42:06.139
+Ron Tarro: What kind of use cases could a single device handle here versus, in effect, a more sophisticated environment here? How do you help us think about, you know, when does this work, and when is it too much sophistication for a task? Just kind of give us a sense there of when you start plugging this kind of capability in.
+
+239
+00:42:06.580 --> 00:42:20.269
+Summit Tech Lab: Yeah, so that's a very good question. There are places where it will come to play, but single projector, the biggest limitation of single projector, for example, sometimes planetariums use a single projector with a fisheye lens.
+
+240
+00:42:20.490 --> 00:42:30.830
+Summit Tech Lab: is the pixel size becomes extremely big, so you would not get the kind of resolution that you are getting from a single… suppose that dome
+
+241
+00:42:30.830 --> 00:42:46.270
+Summit Tech Lab: with a single projector, you will not get the kind of resolution you are getting, right? Simpler systems are probably, like, a flat surface with a couple of projectors, right? There, people may say that, you know, well, I will do it manually, I don't really need to take this sophisticated
+
+242
+00:42:46.270 --> 00:42:53.610
+Summit Tech Lab: software, but those are kind of the simpler systems. There, also, more and more people want automation, because
+
+243
+00:42:53.650 --> 00:42:59.200
+Summit Tech Lab: The biggest pain point of the customer is, in most of this situation.
+
+244
+00:42:59.220 --> 00:43:12.039
+Summit Tech Lab: if anything moves, actually, there is a liability that customers cannot go up there and touch the projectors, okay, if something happens that will not be covered. So.
+
+245
+00:43:12.040 --> 00:43:16.189
+Summit Tech Lab: These customers have to send people to go out there.
+
+246
+00:43:16.190 --> 00:43:33.419
+Summit Tech Lab: and correct these things. So therefore, they, even in simpler situations, so we did a project in Chicago for a corporate lobby, it was just two projectors, but they went for an automated solution, and it's a scheduled calibration every week that happens on the weekend.
+
+247
+00:43:33.720 --> 00:43:35.459
+Summit Tech Lab: Does that make sense, Ron?
+
+248
+00:43:40.560 --> 00:43:42.989
+New World Angels - Bahar: Alright, thank you, Ron. David?
+
+249
+00:43:48.750 --> 00:43:57.449
+David Litos: Yeah, Mike goes back to the implementation cost that you spoke of in the last presentation. You talked about $1,000 per projector.
+
+250
+00:43:57.710 --> 00:44:12.099
+David Litos: I didn't know that there were cameras involved. Is that… is that an added fee for… are the cameras required? It sounds like yes, but is there an adder to that, or how do you determine how many cameras you need?
+
+251
+00:44:13.310 --> 00:44:31.560
+Summit Tech Lab: So the cameras are not part of the implementation fee. Usually, once the customer gives us the idea of the setup, the surface, the design, if they have of the projector, we provide them a design for the cameras. We have a software which helps us design that.
+
+252
+00:44:31.980 --> 00:44:32.830
+Summit Tech Lab: and…
+
+253
+00:44:33.230 --> 00:44:42.919
+Summit Tech Lab: That is covered in part of the implementation fee, and on top of that, we also help them with the initial setup, because we have to make sure that
+
+254
+00:44:43.070 --> 00:44:48.540
+Summit Tech Lab: they're able to place the cameras properly and get everything running. CP, do you want to add to that?
+
+255
+00:44:49.000 --> 00:44:57.309
+CP: My point is that the implementation fee is independent of the number of cameras that will be used in the system, so it's just purely dependent on the number of projectors.
+
+256
+00:44:57.310 --> 00:45:02.059
+David Litos: So the customer will have to buy the cameras that they need in order to set it up? Okay. Yes, yes.
+
+257
+00:45:02.060 --> 00:45:04.779
+Summit Tech Lab: Yeah, the cameras is what is making that automated.
+
+258
+00:45:06.150 --> 00:45:08.140
+New World Angels - Bahar: Thank you, David. Rick?
+
+259
+00:45:09.380 --> 00:45:20.549
+Rick: Yeah, cool demo. I assume your use cases are mostly geared towards interior applications, where the ambient light is more controlled.
+
+260
+00:45:20.720 --> 00:45:29.219
+Rick: Or do you see this as applicable being outdoors as well? I know that depends on the projectors you're selecting, but realistically.
+
+261
+00:45:29.320 --> 00:45:32.749
+Rick: It looks like most of the applications would be interior settings.
+
+262
+00:45:34.110 --> 00:45:49.410
+Summit Tech Lab: So, of course, we cannot put it up in a beating sunlight, but we are currently in discussion with a company, we have already done the proposal for them, who want to project on pillars in subway stations in Europe.
+
+263
+00:45:49.960 --> 00:46:08.409
+Summit Tech Lab: So, sub-based stations are, of course, not, like, full sunlight is not there, and with the right kind of projector, that is somewhere you can save a lot of cost of using… by using projectors instead of panels, because you will not get the very high resolution, which the projectors will give at that price point from the panels.
+
+264
+00:46:09.120 --> 00:46:20.509
+Rick: Okay, can you handle fluctuating light conditions? Obviously, you showed the different surfaces, but if you're in a room and there's a door that opens up periodically when someone comes in.
+
+265
+00:46:20.630 --> 00:46:25.200
+Rick: Can you balance the displays to compensate for that?
+
+266
+00:46:26.030 --> 00:46:38.719
+Summit Tech Lab: That's a great question. So, currently, during that, like, 4 minutes of calibration that we showed on the cylinder, that version of the software does ask for uniform lighting throughout those 4 minutes.
+
+267
+00:46:38.750 --> 00:46:48.030
+Summit Tech Lab: But for the real-time one, because it's calibrating real-time, it should be able to, in the future, handle even, varied ambient conditions.
+
+268
+00:46:48.200 --> 00:46:49.779
+Rick: Okay, cool. Alright.
+
+269
+00:46:49.910 --> 00:46:57.740
+Rick: My last question about your operations model. Do you currently have, or do you envision your own help desk?
+
+270
+00:46:58.060 --> 00:47:03.590
+Rick: For support, or would you rely on the integrators for, kind of.
+
+271
+00:47:03.730 --> 00:47:09.390
+Rick: Tier 1, Tier 2 support, it only comes to you with Tier 3 issues.
+
+272
+00:47:10.030 --> 00:47:10.860
+Summit Tech Lab: CP?
+
+273
+00:47:10.860 --> 00:47:27.689
+CP: Yeah, so we are working with Panasonic on this model, and what we have established now is that Tier 1 will be handled by our partners, and that's the model that we are going to follow. Right now, Tier 2 and Tier 3 are coming to us. Hopefully, in the future, we can also outsource the Tier
+
+274
+00:47:27.690 --> 00:47:32.579
+CP: 2, to them, and just can handle the higher-level technical issues, Tier 3.
+
+275
+00:47:33.550 --> 00:47:35.079
+Rick: Okay, thank you.
+
+276
+00:47:35.080 --> 00:47:37.219
+New World Angels - Bahar: Thank you, Rick. Kevin?
+
+277
+00:47:37.900 --> 00:47:42.060
+Kevin Li: Yeah, maybe just to follow up on… on that last question, so from a…
+
+278
+00:47:42.390 --> 00:47:54.290
+Kevin Li: I guess from a scalability perspective, because you guys showed lots of different variants and variations, do you foresee this essentially being somewhat bespoke to each deployment?
+
+279
+00:47:54.410 --> 00:48:03.639
+Kevin Li: Or are you going to, you know, only cater to 3 to, you know, the equivalent of 3 to 5 SKUs, or how do you see this playing out longer term?
+
+280
+00:48:04.730 --> 00:48:15.629
+Summit Tech Lab: So the… all the… all the demonstrations we showed you, except the dynamic surface, is running the same software. So there is no customization in it.
+
+281
+00:48:15.770 --> 00:48:23.150
+Summit Tech Lab: Whatever little is required, we kind of covered that in the implementation fee, and then it gets done.
+
+282
+00:48:23.400 --> 00:48:25.720
+Summit Tech Lab: Cp, do you want to add to that?
+
+283
+00:48:25.720 --> 00:48:48.780
+CP: Yeah, actually, that's a good question. So, initially, so, for example, right now, we are implementing, and we might have already told you about this, that we have a contract with NPIAB for about $1.1 million. They'll implement 144 projectors over two years' time frame. So, we did the first implementation, and then after that, it'll be all cookie-cutter implementation. So.
+
+284
+00:48:48.780 --> 00:49:05.179
+CP: The scalability, yes, initially when we implement some of the first projects, and what we are seeing, that once we implement that, then the customer just does that similar thing, replicate that. So, yeah, we believe that scalability will come over a period of time, for sure.
+
+285
+00:49:06.590 --> 00:49:26.180
+Kevin Li: Gotcha. And then, on the technical side, it seems like dynamic, you know, sort of real-time dynamic calibration is just a more robust solution. I assume it sounds like all you need are depth cameras and, I assume a GPU on site. Is there… is there any reason that that doesn't become your
+
+286
+00:49:26.330 --> 00:49:28.559
+Kevin Li: De facto standard for everything.
+
+287
+00:49:29.060 --> 00:49:29.670
+Summit Tech Lab: Nope.
+
+288
+00:49:29.930 --> 00:49:42.110
+Summit Tech Lab: Very good question, Kevin. I will tell you that the dynamic one is a MVP right now. The issues that we have to work through is the cameras have RGB and D,
+
+289
+00:49:42.110 --> 00:50:00.249
+Summit Tech Lab: But how good that depth is what is important, right? So, for example, second thing also is these depth cameras have limited range compared to the RGB cameras, right? So, we have to work a little more to see how much scalability we can achieve with the RGBD cameras.
+
+290
+00:50:00.290 --> 00:50:03.459
+Summit Tech Lab: Then we can answer that question better.
+
+291
+00:50:03.690 --> 00:50:22.920
+Summit Tech Lab: There is a chance as hardware improves, every year, and those cameras become higher resolution, longer range, that, like you said, it does become our de facto, and every system, even if it's static, can support dynamic changes, and it'll just be a feature everywhere.
+
+292
+00:50:24.180 --> 00:50:31.559
+Kevin Li: Gotcha, okay. And then last question for me, on the interaction side of things, is that purely optical, using no depth?
+
+293
+00:50:31.680 --> 00:50:40.880
+Kevin Li: Can you talk a little bit more about how you do the sensing for most of your interactive use cases? Is it, like, are you using occlusion? What…
+
+294
+00:50:41.580 --> 00:50:49.380
+Summit Tech Lab: Yeah, so, in this… in the interactions we showed you today, they were purely optical. There was no depth,
+
+295
+00:50:49.490 --> 00:50:58.969
+Summit Tech Lab: like, data being collected at the interaction moment. For the cylinder you saw, right, where I was interacting with a laser.
+
+296
+00:50:58.970 --> 00:51:06.430
+Summit Tech Lab: That is already a calibrated system after those 4 minutes, so we do have depth information for that system.
+
+297
+00:51:06.430 --> 00:51:20.019
+Summit Tech Lab: And since that's not a dynamic system, it'll stay the same, and we can just keep using that information. But I must say one thing in this direction. We had a SBIR submitted, which we never…
+
+298
+00:51:20.040 --> 00:51:29.039
+Summit Tech Lab: which was kind of in limbo because the program got suspended, right? There was interest from defense
+
+299
+00:51:29.070 --> 00:51:35.149
+Summit Tech Lab: On really using gesture-based interaction to interact with these big displays.
+
+300
+00:51:35.150 --> 00:51:49.369
+Summit Tech Lab: And we had submitted the SBIR for that. We have a way… we have charted out a way to go forward to create those kind of systems where users' movement, their head and everything can be tracked from cameras.
+
+301
+00:51:49.450 --> 00:52:00.039
+Summit Tech Lab: So that's a future potential. We would like to integrate those kind of interaction also, with this kind of systems, but we haven't got the funding for that yet.
+
+302
+00:52:00.920 --> 00:52:01.970
+Kevin Li: Excellent, thank you.
+
+303
+00:52:02.770 --> 00:52:04.509
+New World Angels - Bahar: Thank you, Kevin. Pat?
+
+304
+00:52:05.530 --> 00:52:16.459
+Pat Loftus: I'd like to take us back, to the mention, that you made regarding, basically the 3D renderings, the digital twin applications, the 3D…
+
+305
+00:52:16.460 --> 00:52:31.069
+Pat Loftus: And then, loading things onto the graphics cards. Could you speak to, a bit more about the technology associated with that, and how you see that part, or that use case playing out?
+
+306
+00:52:32.830 --> 00:52:47.809
+Summit Tech Lab: Sure, yeah, so, I had mentioned, our software, after it finishes calibrating, it loads our Warp and blend files onto the GPU, so we just hand it off, in this case, to the NVIDIA GPUs on these systems.
+
+307
+00:52:47.810 --> 00:53:01.470
+Summit Tech Lab: And then they handle the real-time, like, warp and blend of every frame of content. That's why the desktop can show up warped and blended, Chrome, YouTube, everything looks corrected.
+
+308
+00:53:01.490 --> 00:53:13.369
+Summit Tech Lab: In some cases, like the simulators we've deployed for RegentCraft, they had their own Unreal application, so it's their own piece of rendering.
+
+309
+00:53:13.370 --> 00:53:25.119
+Summit Tech Lab: And so they wanted that specifically to be corrected, not Windows as a whole. And so for them, we, used MPCDI, that standard that I had mentioned.
+
+310
+00:53:25.120 --> 00:53:34.760
+Summit Tech Lab: That Unreal supports, and so they load our system's Warp and blend into their application, and then it looks correct for their pilot's viewpoint.
+
+311
+00:53:34.760 --> 00:53:48.619
+Summit Tech Lab: So let, just to clarify on that, our system comes in, you take some pictures, you do your calibration, which can even happen on a machine without any GPUs, in a laptop, and then you generate some files.
+
+312
+00:53:48.630 --> 00:53:52.329
+Summit Tech Lab: And these files are handed over to a renderer.
+
+313
+00:53:52.390 --> 00:54:06.790
+Summit Tech Lab: which then can render any content, right? May it be a video, may it be a desktop, may it be any other 3D content, using those warp and blend files, and then they will appear corrected on the display surface.
+
+314
+00:54:08.000 --> 00:54:17.880
+Pat Loftus: And… and who is… where is the data ownership and rights transfer between what you do and what your individual clients do?
+
+315
+00:54:19.490 --> 00:54:37.330
+Summit Tech Lab: So, our, Warp and blend, because we only capture images of our patterns, we never see what the person… what the customer's trying to visualize after, right? We just hand off our Warp and blend files. We don't touch anyone's data.
+
+316
+00:54:37.350 --> 00:54:39.720
+Summit Tech Lab: So they…
+
+317
+00:54:39.720 --> 00:54:58.319
+Summit Tech Lab: just take our mapping, apply it either through NVIDIA like we do here, or through their own renderer, and those files, they're just, like, a PNG and, like, there's certain formats. They can't touch any of your data, so I don't think there's any data ownership
+
+318
+00:54:58.340 --> 00:55:02.020
+Summit Tech Lab: Issues between us and the content.
+
+319
+00:55:04.110 --> 00:55:10.199
+New World Angels - Bahar: Thank you, Pat. Alright, we have Jamie and David next, so we'll keep it short because we're getting close to the hour. Jamie?
+
+320
+00:55:10.730 --> 00:55:20.219
+Jamie Allison: Yes, I want to say, first of all, really impressive demonstration, so great job. It's always great to see a product in action, something as wowing as what you've shown.
+
+321
+00:55:20.220 --> 00:55:37.300
+Jamie Allison: It's… helped me understand something, is that… what I understand your compelling value proposition is around rendering around these complex, curved surfaces, or in this case, I saw this, you know, literally a 90-degree wall arrangement, and then on the medical,
+
+322
+00:55:37.300 --> 00:55:39.450
+Jamie Allison: application.
+
+323
+00:55:39.500 --> 00:55:54.039
+Jamie Allison: And I've been to Planetarium, been to a museums, been to theme parks, I understand what you're trying to do with the military as well, but help us, at least help me understand, where do you see the most fertile initial business application, right?
+
+324
+00:55:54.040 --> 00:56:03.269
+Jamie Allison: That is going to kind of drive and helps you, give you the runway to kind of scale up and just give us some texture around that landscape. Thank you.
+
+325
+00:56:04.240 --> 00:56:17.989
+Summit Tech Lab: So, two… two directions, Jamie. The first one is location-based entertainment. That's theme parks, theatrical lighting, and museums. People are trying to do more and more complex stuff. Today, people are…
+
+326
+00:56:18.120 --> 00:56:30.460
+Summit Tech Lab: using so much resources for that, that will be dramatically cut down with our solutions. And the second one is defense, in the expeditionary situation displays. These are our first two target areas.
+
+327
+00:56:30.770 --> 00:56:32.499
+Summit Tech Lab: CP, do you want to add to that?
+
+328
+00:56:33.900 --> 00:56:45.350
+CP: No, you have, hit up on the right thing, and we are seeing that through our partners, like Panasonic. They are taking us… we are right now working, with them, for a company, for…
+
+329
+00:56:45.350 --> 00:56:55.010
+CP: Actually, PBS Studios, where they have two rooms. One has 28 projectors, the other one has 18 projectors, immersive experiences.
+
+330
+00:56:56.230 --> 00:57:00.010
+Summit Tech Lab: So, these immersive experiences are going to be more.
+
+331
+00:57:00.420 --> 00:57:04.290
+Summit Tech Lab: More and more, and that's where they need our software.
+
+332
+00:57:05.180 --> 00:57:06.010
+Jamie Allison: Thank you.
+
+333
+00:57:06.360 --> 00:57:08.300
+New World Angels - Bahar: Thank you, Jamie. David?
+
+334
+00:57:10.340 --> 00:57:11.110
+New World Angels - Bahar: You're on mute.
+
+335
+00:57:11.110 --> 00:57:11.790
+CP: Mute.
+
+336
+00:57:16.130 --> 00:57:32.110
+David Litos: Sorry, that's kind of where I was going with that, is that immersive experience, like, I was thinking, like, the training and the gaming. Do you see your technology complementary to, like, 3D glass-based IR, VR headsets and your technology? Can you maybe talk to that a little bit?
+
+337
+00:57:32.330 --> 00:57:48.750
+Summit Tech Lab: Yes, absolutely. So, you know, I have been a student in UNC Chapel Hill when the headsets were getting… this kind of first headsets were getting built there. So 2015, VR headsets, people thought they are answered to everything they ever wanted.
+
+338
+00:57:48.790 --> 00:58:07.499
+Summit Tech Lab: now the pendulum and shift in another way. They are great for their experiences, but, you know, there are limitations. We are already seeing, for example, we are now pursuing a market sector with an integrator, which is in golf simulation, because people use
+
+339
+00:58:07.500 --> 00:58:19.210
+Summit Tech Lab: kind of a surround display for golf simulation, and that's usually made of a fabric, and therefore there are problems there. So the headsets, the biggest problem with the headsets is people don't like them.
+
+340
+00:58:20.030 --> 00:58:24.599
+Summit Tech Lab: They cannot be worn for a long time, they isolate them, they are not just…
+
+341
+00:58:24.970 --> 00:58:37.819
+Summit Tech Lab: a nice way to meet with other people and socialize with the headsets on. So there is, in every domain, even in military, we are seeing that the shift is happening, and we are kind of riding that shift right now.
+
+342
+00:58:39.310 --> 00:58:39.990
+David Litos: Thank you.
+
+343
+00:58:41.140 --> 00:58:48.679
+Summit Tech Lab: You already know, for example, like, you know, the HoloLens has been discontinued, and, you know, all of those things, you can see that shift happen.
+
+344
+00:58:49.260 --> 00:58:50.460
+Summit Tech Lab: Sorry, Bahar.
+
+345
+00:58:50.660 --> 00:58:54.260
+New World Angels - Bahar: No, no, all good. We have one last question from Carlos.
+
+346
+00:58:54.810 --> 00:58:59.569
+Carlos Blanco: Hi, on the go-to-market, what's the margin profile with a partner?
+
+347
+00:59:03.080 --> 00:59:04.489
+Summit Tech Lab: CP, you're muted.
+
+348
+00:59:08.310 --> 00:59:12.080
+CP: Our gross margin with the partners are around 75%.
+
+349
+00:59:13.550 --> 00:59:19.229
+Carlos Blanco: and is… So, assuming a 25% margin for them, is that…
+
+350
+00:59:19.480 --> 00:59:23.679
+Carlos Blanco: Two questions. It's 25% on the product.
+
+351
+00:59:24.440 --> 00:59:25.930
+CP: Overall.
+
+352
+00:59:25.930 --> 00:59:50.829
+CP: Because on the product, on the product, just on the license thing, there is really… I mean, it's… everything, from the top line is flowing to the bottom line. So, we do have to pay 2.5% royalty, for the, for, to UCI, but other than that, on the license, that's pure, gross margin. Our 25% is getting… our estimate is for.
+
+353
+00:59:50.830 --> 01:00:05.589
+CP: the gross margin on the implementation fee will be lower. I think there was a question about that. And then we have assumed, based on our past experiences, what is the Tier 2 and Tier 3 support costs? So that's where the 25% is going.
+
+354
+01:00:05.840 --> 01:00:24.320
+CP: But when you said, the 25… the margins for the, our partners, that's different, because we are booking the revenues as to what we are getting, into us. Basically, Panasonic is marking up and selling to their end customers.
+
+355
+01:00:25.300 --> 01:00:29.249
+Carlos Blanco: Okay, so let's say you're… let's say your software costs a dollar.
+
+356
+01:00:29.250 --> 01:00:30.120
+CP: Right?
+
+357
+01:00:30.240 --> 01:00:35.860
+Carlos Blanco: the… the… you sell it to Panasonic for a dollar, so there is no discount, and they mark it up and sell it.
+
+358
+01:00:35.860 --> 01:00:38.559
+CP: They mark it up. Correct. Yes, yes.
+
+359
+01:00:40.820 --> 01:00:41.630
+New World Angels - Bahar: Okay.
+
+360
+01:00:42.100 --> 01:00:43.630
+New World Angels - Bahar: Any other questions?
+
+361
+01:00:44.480 --> 01:00:46.010
+New World Angels - Bahar: I think we're good for now.
+
+362
+01:00:46.130 --> 01:01:03.189
+Summit Tech Lab: STL team, thank you so much for your time. This was a wonderful demo. The New World team is just gonna hold back for a bit after, and we're gonna discuss what we saw, and I will get back to you, Aditi, shortly with next steps. Thank you so much. Thank you so much. Thank you so much, everyone, for your time.
+
+363
+01:01:03.190 --> 01:01:04.469
+New World Angels - Bahar: Appreciate it. Take care.
+
+364
+01:01:09.920 --> 01:01:10.880
+New World Angels - Bahar: All right.
+

@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NWAi Investment Intelligence — AI Pipeline Reference</title>
+  <style>
+    :root {
+      --navy: #0d1f3c;
+      --navy-mid: #163360;
+      --ice: #c8dff5;
+      --ice-light: #eaf3fc;
+      --gold: #e8a020;
+      --green: #375623;
+      --green-light: #d9ead3;
+      --amber: #FFC000;
+      --amber-light: #fff3cc;
+      --red: #C00000;
+      --red-light: #fde8e8;
+      --text: #1a1a2e;
+      --subtle: #5a6a82;
+      --border: #d0dce8;
+      --white: #ffffff;
+      --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font);
+      background: #f0f4f9;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+      color: white;
+      padding: 40px 48px 36px;
+      border-bottom: 4px solid var(--gold);
+    }
+    .header-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .header h1 {
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+    .header h1 span { color: var(--gold); }
+    .header p {
+      margin-top: 8px;
+      font-size: 14px;
+      color: var(--ice);
+      max-width: 600px;
+    }
+    .badge {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 6px;
+      padding: 6px 14px;
+      font-size: 12px;
+      color: var(--ice);
+      white-space: nowrap;
+      margin-top: 4px;
+    }
+
+    /* ── Layout ── */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 36px 24px 60px;
+    }
+
+    /* ── Section headers ── */
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 44px 0 18px;
+    }
+    .section-label .num {
+      background: var(--navy);
+      color: white;
+      border-radius: 50%;
+      width: 30px; height: 30px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; font-weight: 700;
+      flex-shrink: 0;
+    }
+    .section-label h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+    .section-label p {
+      font-size: 13px;
+      color: var(--subtle);
+      margin-top: 1px;
+    }
+
+    /* ── Pipeline Flow ── */
+    .pipeline {
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+      overflow-x: auto;
+      padding-bottom: 8px;
+    }
+    .stage {
+      flex: 1;
+      min-width: 120px;
+      background: white;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 12px 14px;
+      text-align: center;
+      position: relative;
+      transition: box-shadow 0.2s;
+    }
+    .stage:hover { box-shadow: 0 4px 18px rgba(13,31,60,0.12); }
+    .pipeline-arrow {
+      display: flex;
+      align-items: center;
+      padding: 0 4px;
+      color: var(--subtle);
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .stage-icon { font-size: 24px; margin-bottom: 6px; }
+    .stage-name { font-size: 12px; font-weight: 700; color: var(--navy); }
+    .stage-cmd {
+      display: inline-block;
+      margin-top: 6px;
+      font-size: 10px;
+      font-family: 'Courier New', monospace;
+      background: var(--ice-light);
+      color: var(--navy-mid);
+      border: 1px solid var(--ice);
+      border-radius: 4px;
+      padding: 2px 6px;
+    }
+    .stage-desc { font-size: 11px; color: var(--subtle); margin-top: 5px; line-height: 1.4; }
+
+    /* Stage accent colors */
+    .stage-inbox  { border-top: 3px solid #6c8ebf; }
+    .stage-screen { border-top: 3px solid #9e7fb8; }
+    .stage-scout  { border-top: 3px solid #5fa87e; }
+    .stage-dilig  { border-top: 3px solid #d4813a; }
+    .stage-ddrep  { border-top: 3px solid #3a7fc1; }
+    .stage-dec    { border-top: 3px solid #4d9e6a; }
+    .stage-memo   { border-top: 3px solid var(--gold); }
+
+    /* ── Cards grid ── */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 16px;
+    }
+    .card {
+      background: white;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 20px;
+      transition: box-shadow 0.2s;
+    }
+    .card:hover { box-shadow: 0 4px 18px rgba(13,31,60,0.1); }
+    .card-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .card-icon {
+      width: 38px; height: 38px;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .card-title { font-size: 14px; font-weight: 700; color: var(--navy); }
+    .card-sub   { font-size: 12px; color: var(--subtle); margin-top: 1px; }
+    .card p     { font-size: 13px; color: #3a3a4f; line-height: 1.55; }
+
+    .card-tag {
+      display: inline-block;
+      font-size: 10px;
+      font-family: 'Courier New', monospace;
+      background: var(--ice-light);
+      color: var(--navy-mid);
+      border: 1px solid var(--ice);
+      border-radius: 4px;
+      padding: 2px 7px;
+      margin-top: 10px;
+    }
+
+    /* colour variants for card icons */
+    .ci-navy    { background: var(--ice-light); }
+    .ci-green   { background: #e6f4ea; }
+    .ci-amber   { background: var(--amber-light); }
+    .ci-red     { background: var(--red-light); }
+    .ci-purple  { background: #f0eaf8; }
+    .ci-teal    { background: #e3f5f5; }
+
+    /* ── Agents section ── */
+    .agent-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 16px;
+    }
+    .agent-card {
+      background: white;
+      border: 1.5px solid var(--border);
+      border-left: 4px solid var(--navy-mid);
+      border-radius: 10px;
+      padding: 18px 20px;
+      transition: box-shadow 0.2s;
+    }
+    .agent-card:hover { box-shadow: 0 4px 18px rgba(13,31,60,0.1); }
+    .agent-card h3 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .agent-card .trigger { font-size: 11px; color: var(--subtle); margin-bottom: 8px; font-style: italic; }
+    .agent-card p { font-size: 13px; color: #3a3a4f; line-height: 1.5; }
+    .agent-card .returns {
+      margin-top: 10px;
+      font-size: 11.5px;
+      background: var(--ice-light);
+      border-radius: 6px;
+      padding: 7px 10px;
+      color: var(--navy-mid);
+    }
+    .agent-card .returns strong { font-weight: 700; }
+
+    /* ── Framework table ── */
+    .fw-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1.5px solid var(--border);
+    }
+    .fw-table th {
+      background: var(--navy);
+      color: white;
+      padding: 11px 16px;
+      text-align: left;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+    .fw-table td {
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .fw-table tr:last-child td { border-bottom: none; }
+    .fw-table tr:nth-child(even) td { background: #f8fafc; }
+    .fw-table td:first-child { font-family: 'Courier New', monospace; font-size: 12px; color: var(--navy-mid); font-weight: 600; }
+    .fw-table td:last-child { color: var(--subtle); font-size: 12px; }
+
+    /* ── Scoring legend ── */
+    .score-grid {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 2px;
+    }
+    .score-pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 8px;
+      padding: 10px 16px;
+      font-size: 13px;
+      flex: 1;
+      min-width: 160px;
+      border: 1.5px solid var(--border);
+    }
+    .score-dot {
+      width: 18px; height: 18px;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+    .dot-green { background: #375623; }
+    .dot-amber { background: #FFC000; }
+    .dot-red   { background: #C00000; }
+
+    /* ── Two-lens box ── */
+    .lens-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 600px) { .lens-box { grid-template-columns: 1fr; } }
+    .lens {
+      background: var(--navy);
+      color: white;
+      border-radius: 10px;
+      padding: 22px;
+    }
+    .lens h3 { font-size: 14px; font-weight: 700; margin-bottom: 8px; color: var(--gold); }
+    .lens p   { font-size: 13px; color: var(--ice); line-height: 1.55; }
+
+    /* ── Criteria grid ── */
+    .criteria-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 12px;
+    }
+    .criterion {
+      background: white;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 16px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .criterion .c-icon { font-size: 18px; flex-shrink: 0; margin-top: 2px; }
+    .criterion h4 { font-size: 13px; font-weight: 700; color: var(--navy); }
+    .criterion p  { font-size: 12px; color: var(--subtle); margin-top: 3px; line-height: 1.4; }
+
+    /* ── Output chain ── */
+    .output-chain {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .output-row {
+      background: white;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      padding: 13px 18px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .output-row .cmd {
+      font-family: 'Courier New', monospace;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--navy-mid);
+      min-width: 120px;
+      flex-shrink: 0;
+    }
+    .output-row .arrow { color: var(--subtle); font-size: 16px; flex-shrink: 0; }
+    .output-row .file {
+      font-size: 12px;
+      color: #3a3a4f;
+      flex: 1;
+    }
+    .output-row .file em {
+      font-style: normal;
+      font-family: 'Courier New', monospace;
+      font-size: 11px;
+      color: var(--subtle);
+      display: block;
+      margin-top: 2px;
+    }
+    .out-docx  { border-left: 4px solid #2b6cb0; }
+    .out-pptx  { border-left: 4px solid #c05621; }
+    .out-chat  { border-left: 4px solid #5fa87e; }
+    .out-crm   { border-left: 4px solid var(--gold); }
+
+    /* ── Groups layer ── */
+    .groups-framing {
+      background: white;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 22px 24px;
+      margin-bottom: 20px;
+    }
+    .groups-framing .headline {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .groups-framing .subline {
+      font-size: 13px;
+      color: #3a3a4f;
+      line-height: 1.6;
+      max-width: 820px;
+    }
+    .groups-framing .subline strong { color: var(--navy); }
+
+    .groups-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .group-card {
+      border-radius: 10px;
+      padding: 16px;
+      border: 1.5px solid var(--border);
+      text-align: center;
+      transition: box-shadow 0.2s;
+    }
+    .group-card:hover { box-shadow: 0 4px 14px rgba(13,31,60,0.1); }
+    .group-card .g-icon { font-size: 26px; margin-bottom: 8px; }
+    .group-card .g-name { font-size: 13px; font-weight: 700; color: var(--navy); }
+    .group-card .g-status {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 20px;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+    }
+    .group-card .g-note { font-size: 11px; color: var(--subtle); margin-top: 6px; line-height: 1.4; }
+
+    .group-live {
+      background: var(--ice-light);
+      border-color: var(--navy-mid);
+    }
+    .group-live .g-status { background: var(--navy); color: white; }
+
+    .group-planned {
+      background: #f8fafc;
+      border-color: var(--border);
+      opacity: 0.75;
+    }
+    .group-planned .g-status { background: #e2e8f0; color: var(--subtle); }
+
+    .rails-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 20px;
+    }
+    @media (max-width: 620px) { .rails-split { grid-template-columns: 1fr; } }
+    .rails-col {
+      border-radius: 10px;
+      padding: 18px 20px;
+    }
+    .rails-shared { background: var(--ice-light); border: 1.5px solid var(--ice); }
+    .rails-specific { background: #fdf6e8; border: 1.5px solid #f0d080; }
+    .rails-col h3 {
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .rails-shared h3 { color: var(--navy-mid); }
+    .rails-specific h3 { color: #7a4f0a; }
+    .rails-col ul { list-style: none; padding: 0; }
+    .rails-col ul li {
+      font-size: 13px;
+      color: #3a3a4f;
+      padding: 5px 0;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .rails-col ul li:last-child { border-bottom: none; }
+    .rails-col ul li .li-dot { flex-shrink: 0; margin-top: 2px; }
+
+    /* ── Footer ── */
+    .footer {
+      text-align: center;
+      padding: 28px;
+      font-size: 12px;
+      color: var(--subtle);
+      border-top: 1px solid var(--border);
+      margin-top: 20px;
+    }
+
+    /* ══════════════════════════════════════════
+       PRINT STYLES — PDF rendering via WeasyPrint
+       ══════════════════════════════════════════ */
+    @page {
+      size: A4 portrait;
+      margin: 12mm 14mm 14mm 14mm;
+    }
+
+    @media print {
+      /* Reset background color for print */
+      body { background: white; font-size: 8.5pt; line-height: 1.45; }
+
+      /* Shrink header */
+      .header { padding: 14px 20px 12px; border-bottom: 3px solid var(--gold); }
+      .header h1 { font-size: 15pt; }
+      .header p  { font-size: 7.5pt; margin-top: 4px; }
+      .badge     { font-size: 7pt; padding: 3px 8px; }
+
+      /* Tight container */
+      .container { padding: 0; }
+
+      /* Section labels */
+      .section-label { margin: 10px 0 8px; }
+      .section-label .num { width: 22px; height: 22px; font-size: 10pt; }
+      .section-label h2  { font-size: 11pt; }
+      .section-label p   { font-size: 7.5pt; }
+
+      /* Page breaks — each section starts on a new page */
+      .page-break { page-break-before: always; }
+      /* Prevent breaks inside key blocks */
+      .card, .agent-card, .criterion, .output-row,
+      .group-card, .lens, .score-pill { page-break-inside: avoid; }
+
+      /* ── Groups section ── */
+      .groups-framing { padding: 12px 14px; margin-bottom: 10px; }
+      .groups-framing .headline { font-size: 10pt; }
+      .groups-framing .subline  { font-size: 7.5pt; line-height: 1.45; }
+      .groups-grid {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 6px;
+        margin-top: 10px;
+      }
+      .group-card { padding: 8px 6px; border-radius: 6px; }
+      .group-card .g-icon   { font-size: 16pt; margin-bottom: 4px; }
+      .group-card .g-name   { font-size: 7.5pt; }
+      .group-card .g-status { font-size: 6.5pt; padding: 2px 5px; margin-top: 4px; }
+      .group-card .g-note   { font-size: 6.5pt; margin-top: 4px; }
+      .rails-split { grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
+      .rails-col   { padding: 10px 12px; }
+      .rails-col h3 { font-size: 8pt; margin-bottom: 6px; }
+      .rails-col ul li { font-size: 7.5pt; padding: 3px 0; gap: 5px; }
+
+      /* ── Pipeline flow ── */
+      .pipeline { gap: 0; flex-wrap: nowrap; }
+      .stage {
+        min-width: 0;
+        padding: 8px 5px 7px;
+        border-radius: 6px;
+      }
+      .stage-icon { font-size: 14pt; margin-bottom: 3px; }
+      .stage-name { font-size: 7pt; }
+      .stage-cmd  { font-size: 6.5pt; padding: 1px 4px; margin-top: 3px; }
+      .stage-desc { font-size: 6pt; margin-top: 3px; }
+      .pipeline-arrow { font-size: 12pt; padding: 0 2px; }
+
+      /* ── Command cards ── */
+      .card-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+      .card { padding: 10px 11px; border-radius: 7px; }
+      .card-head { gap: 7px; margin-bottom: 7px; }
+      .card-icon { width: 28px; height: 28px; font-size: 13pt; border-radius: 6px; }
+      .card-title { font-size: 8pt; }
+      .card-sub   { font-size: 6.5pt; }
+      .card p     { font-size: 7pt; line-height: 1.4; }
+      .card-tag   { font-size: 6.5pt; padding: 1px 5px; margin-top: 6px; }
+
+      /* ── Agents ── */
+      .agent-row { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+      .agent-card { padding: 10px 12px; }
+      .agent-card h3 { font-size: 8.5pt; margin-bottom: 4px; }
+      .agent-card .trigger { font-size: 6.5pt; margin-bottom: 5px; }
+      .agent-card p { font-size: 7pt; }
+      .agent-card .returns { font-size: 7pt; padding: 5px 7px; margin-top: 7px; }
+
+      /* ── Framework table ── */
+      .fw-table { font-size: 7pt; }
+      .fw-table th { padding: 7px 10px; font-size: 7pt; }
+      .fw-table td { padding: 6px 10px; }
+
+      /* ── Lenses ── */
+      .lens-box { grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 10px; }
+      .lens { padding: 12px 14px; border-radius: 7px; }
+      .lens h3 { font-size: 8.5pt; margin-bottom: 5px; }
+      .lens p  { font-size: 7pt; }
+
+      /* ── Score pills ── */
+      .score-grid { gap: 7px; margin-top: 8px; }
+      .score-pill { padding: 7px 10px; min-width: 120px; border-radius: 6px; }
+      .score-dot  { width: 14px; height: 14px; }
+
+      /* ── Criteria grid ── */
+      .criteria-grid { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+      .criterion { padding: 9px 11px; border-radius: 6px; gap: 8px; }
+      .criterion .c-icon { font-size: 13pt; }
+      .criterion h4 { font-size: 7.5pt; }
+      .criterion p  { font-size: 6.5pt; }
+
+      /* ── Output chain ── */
+      .output-chain { gap: 6px; }
+      .output-row  { padding: 8px 12px; gap: 10px; border-radius: 6px; }
+      .output-row .cmd  { font-size: 8pt; min-width: 90px; }
+      .output-row .arrow { font-size: 11pt; }
+      .output-row .file { font-size: 7pt; }
+      .output-row .file em { font-size: 6.5pt; }
+
+      /* ── Footer ── */
+      .footer { padding: 10px; font-size: 7pt; margin-top: 8px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════ HEADER -->
+<div class="header">
+  <div class="header-top">
+    <div>
+      <h1>NWAi Investment Intelligence — <span>AI Deal Pipeline</span></h1>
+      <p>A visual reference for how Claude and the <code style="background:rgba(255,255,255,0.1);padding:1px 6px;border-radius:4px;font-size:12px;">nwai-tech-pipeline</code> plugin move a deal from raw pitch to IC-ready memo — and how the same platform scales across all six NWAi investment groups.</p>
+    </div>
+    <div class="badge">v0.10.0 &nbsp;·&nbsp; March 2026 &nbsp;·&nbsp; TechGroup</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════ BODY -->
+<div class="container">
+
+  <!-- ⓪ The Bigger Picture -->
+  <div class="section-label">
+    <div class="num" style="background:var(--gold);color:var(--navy);">↑</div>
+    <div>
+      <h2>The Bigger Picture — Six Groups, One Platform</h2>
+      <p>TechGroup is the first live instantiation. The architecture is designed to scale across all six NWAi investment groups.</p>
+    </div>
+  </div>
+
+  <div class="groups-framing">
+    <div class="headline">Shared rails. Group-specific playbooks.</div>
+    <div class="subline">
+      Think of this platform like a <strong>franchise model</strong>: the kitchen equipment and workflow are identical in every location —
+      the same pipeline stages, the same AI agents, the same Dealum CRM, the same output formats.
+      What changes per group is the <strong>investment playbook</strong>: the screening gates that define what a qualified deal looks like,
+      the scoring rubrics calibrated to that domain's risk profile, and the SME pool who bring the right domain expertise.
+      You're not rebuilding the factory for MedicalGroup or SpaceGroup — you're swapping out the playbook and plugging in the domain experts.
+    </div>
+
+    <div class="groups-grid">
+      <div class="group-card group-live">
+        <div class="g-icon">💻</div>
+        <div class="g-name">TechGroup</div>
+        <div class="g-status">✓ Live</div>
+        <div class="g-note">Full pipeline active. 5 themes. Dealum tag: "Tech".</div>
+      </div>
+      <div class="group-card group-planned">
+        <div class="g-icon">🩺</div>
+        <div class="g-name">MedicalGroup</div>
+        <div class="g-status">Planned</div>
+        <div class="g-note">Needs: gates doc, SME table, thesis rubric, Dealum tag.</div>
+      </div>
+      <div class="group-card group-planned">
+        <div class="g-icon">🚀</div>
+        <div class="g-name">SpaceGroup</div>
+        <div class="g-status">Planned</div>
+        <div class="g-note">Needs: gates doc, SME table, thesis rubric, Dealum tag.</div>
+      </div>
+      <div class="group-card group-planned">
+        <div class="g-icon">🛍️</div>
+        <div class="g-name">ConsumerGroup</div>
+        <div class="g-status">Planned</div>
+        <div class="g-note">Needs: gates doc, SME table, thesis rubric, Dealum tag.</div>
+      </div>
+      <div class="group-card group-planned">
+        <div class="g-icon">🏭</div>
+        <div class="g-name">IndustrialGroup</div>
+        <div class="g-status">Planned</div>
+        <div class="g-note">Needs: gates doc, SME table, thesis rubric, Dealum tag.</div>
+      </div>
+      <div class="group-card group-planned">
+        <div class="g-icon">💳</div>
+        <div class="g-name">FintechGroup</div>
+        <div class="g-status">Planned</div>
+        <div class="g-note">Needs: gates doc, SME table, thesis rubric, Dealum tag.</div>
+      </div>
+    </div>
+
+    <div class="rails-split">
+      <div class="rails-col rails-shared">
+        <h3>🔵 Shared across every group — built once</h3>
+        <ul>
+          <li><span class="li-dot">🔗</span> Dealum CRM integration (MCP server)</li>
+          <li><span class="li-dot">🤖</span> Claude orchestration layer + session context</li>
+          <li><span class="li-dot">📊</span> AI agents: pipeline-monitor, company-researcher, competitive-intelligence</li>
+          <li><span class="li-dot">🔄</span> Pipeline stages: Inbox → Screen → Scout → Diligence → DD Report → Decision → Memo</li>
+          <li><span class="li-dot">📄</span> Output formats: Triage Report, Scout Report, DD Kickoff Package, DD Investment Report, Exec Memo</li>
+          <li><span class="li-dot">⚙️</span> Slash commands: /screen /scout /diligence /dd-report /decision /memo</li>
+        </ul>
+      </div>
+      <div class="rails-col rails-specific">
+        <h3>🟡 Group-specific — the playbook per group</h3>
+        <ul>
+          <li><span class="li-dot">🏷️</span> Dealum tag filter (e.g., "Tech", "Medical", "Space")</li>
+          <li><span class="li-dot">🚧</span> Screening gates &amp; flags — what constitutes a qualified deal in this domain</li>
+          <li><span class="li-dot">📐</span> Scoring rubrics — moat &amp; risk dimensions calibrated to domain risk profile</li>
+          <li><span class="li-dot">🗺️</span> Investment themes — domain sub-categories for deal mapping</li>
+          <li><span class="li-dot">👥</span> SME pool &amp; lead assignment table — the domain experts who validate deals</li>
+          <li><span class="li-dot">📋</span> Investment thesis — the codified investability logic unique to each group</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ① Pipeline Stages -->
+  <div class="section-label page-break">
+    <div class="num">1</div>
+    <div>
+      <h2>The Pipeline — Seven Stages</h2>
+      <p>Every Tech-tagged deal in Dealum moves left to right. Claude tracks the current stage and calibrates analysis depth accordingly.</p>
+    </div>
+  </div>
+
+  <div class="pipeline">
+    <div class="stage stage-inbox">
+      <div class="stage-icon">📥</div>
+      <div class="stage-name">Inbox</div>
+      <div class="stage-cmd">/screen</div>
+      <div class="stage-desc">New pitch received. AutoKill gates applied.</div>
+    </div>
+    <div class="pipeline-arrow">›</div>
+    <div class="stage stage-screen">
+      <div class="stage-icon">🔍</div>
+      <div class="stage-name">Screening</div>
+      <div class="stage-cmd">/screen</div>
+      <div class="stage-desc">3 hard gates + Opportunity / Readiness scoring.</div>
+    </div>
+    <div class="pipeline-arrow">›</div>
+    <div class="stage stage-scout">
+      <div class="stage-icon">🤝</div>
+      <div class="stage-name">Scout / Intro Call</div>
+      <div class="stage-cmd">/scout</div>
+      <div class="stage-desc">Scout Q assessment. Theme + SME mapping.</div>
+    </div>
+    <div class="pipeline-arrow">›</div>
+    <div class="stage stage-dilig">
+      <div class="stage-icon">🔬</div>
+      <div class="stage-name">Diligence</div>
+      <div class="stage-cmd">/diligence</div>
+      <div class="stage-desc">Research agents + 17-folder DD Kickoff Package.</div>
+    </div>
+    <div class="pipeline-arrow">›</div>
+    <div class="stage stage-ddrep">
+      <div class="stage-icon">📋</div>
+      <div class="stage-name">DD Report</div>
+      <div class="stage-cmd">/dd-report</div>
+      <div class="stage-desc">11 scored sections (1–5). IC-ready briefing document.</div>
+    </div>
+    <div class="pipeline-arrow">›</div>
+    <div class="stage stage-dec">
+      <div class="stage-icon">✅</div>
+      <div class="stage-name">Decision</div>
+      <div class="stage-cmd">/decision</div>
+      <div class="stage-desc">IC verdict recorded. Invest / Watch / Pass.</div>
+    </div>
+    <div class="pipeline-arrow">›</div>
+    <div class="stage stage-memo">
+      <div class="stage-icon">📝</div>
+      <div class="stage-name">Memo</div>
+      <div class="stage-cmd">/memo</div>
+      <div class="stage-desc">4-slide PPTX for IC presentation or archival.</div>
+    </div>
+  </div>
+
+
+  <!-- ② Commands -->
+  <div class="section-label">
+    <div class="num">2</div>
+    <div>
+      <h2>Commands — What to Type</h2>
+      <p>Type these in the Cowork chat window. Claude follows the corresponding workflow and updates Dealum automatically.</p>
+    </div>
+  </div>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-head">
+        <div class="card-icon ci-teal">🔄</div>
+        <div>
+          <div class="card-title">/sync-pipeline</div>
+          <div class="card-sub">Also runs automatically at session start</div>
+        </div>
+      </div>
+      <p>Pulls the latest Tech-tagged deals from Dealum and displays a live pipeline dashboard — deal count by stage, stalled deals, and suggested next actions.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <div class="card-icon ci-purple">🔍</div>
+        <div>
+          <div class="card-title">/screen [company]</div>
+          <div class="card-sub">Stage: Inbox → Screening</div>
+        </div>
+      </div>
+      <p>Runs the TechGroup triage screener: 3 hard pass/fail gates, then Opportunity scoring (/25) and Readiness scoring (/20). Returns a verdict (Advance / Watch / Kill) with a Triage Report saved to the <code>deals/</code> folder.</p>
+      <div class="card-tag">Output: [Company] - Triage Report.docx</div>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <div class="card-icon ci-green">🤝</div>
+        <div>
+          <div class="card-title">/scout [company]</div>
+          <div class="card-sub">Stage: Screening → Scout/IntroCall</div>
+        </div>
+      </div>
+      <p>Runs the Scout Q assessment (Phase 1 viability + Phase 2 depth questions). Maps the deal to a TechGroup theme. Outputs a one-sentence verdict, the single biggest risk, and 3–5 targeted diligence questions for the intro call.</p>
+      <div class="card-tag">Output: [Company] - Scout Assessment Report.docx</div>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <div class="card-icon ci-amber">🔬</div>
+        <div>
+          <div class="card-title">/diligence [company]</div>
+          <div class="card-sub">Stage: Scout → Diligence</div>
+        </div>
+      </div>
+      <p>Launches two research agents in parallel (company-researcher + competitive-intelligence), applies scoring rubrics (moat + risk), and generates the DD Kickoff Package with 17-folder assignments for the DD team.</p>
+      <div class="card-tag">Output: [Company] - DD Kickoff Package.docx</div>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <div class="card-icon ci-navy">📋</div>
+        <div>
+          <div class="card-title">/dd-report [company]</div>
+          <div class="card-sub">Stage: Diligence → DD Report</div>
+        </div>
+      </div>
+      <p>Run after the DD team completes the 17-folder work. Synthesizes all prior findings into 11 scored sections (1–5 scale, RAG-colored). This is the primary IC briefing document — a structured Word report, not a free-form memo.</p>
+      <div class="card-tag">Output: [Company]-NWAi-DD-Report.docx</div>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <div class="card-icon ci-green">✅</div>
+        <div>
+          <div class="card-title">/decision [company] [invest|pass|watch]</div>
+          <div class="card-sub">Stage: DD Report → Decision</div>
+        </div>
+      </div>
+      <p>Records the IC decision (Invest / Pass / Watch) directly into Dealum and applies the appropriate tags. No document output — this is purely a pipeline and CRM action.</p>
+      <div class="card-tag">Output: Dealum updated</div>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <div class="card-icon ci-amber">📝</div>
+        <div>
+          <div class="card-title">/memo [company]</div>
+          <div class="card-sub">Stage: Decision → Memo (archival)</div>
+        </div>
+      </div>
+      <p>Generates a 4-slide PPTX Executive Summary in NWAi branding (navy/ice-blue). Primarily for archival use or external IC presentations. The DD Report is the working IC briefing; the memo is the polished final artifact.</p>
+      <div class="card-tag">Output: [Company]-NWAi-Exec-Summary.pptx</div>
+    </div>
+  </div>
+
+
+  <!-- ③ Agents -->
+  <div class="section-label page-break">
+    <div class="num">3</div>
+    <div>
+      <h2>AI Agents — Claude's Research Team</h2>
+      <p>Agents are autonomous subprocesses Claude launches to do legwork. They run in parallel, report back with a structured briefing, and feed their findings into the relevant command output.</p>
+    </div>
+  </div>
+
+  <div class="agent-row">
+    <div class="agent-card">
+      <h3>📊 pipeline-monitor</h3>
+      <div class="trigger">Triggered by: session start, /sync-pipeline, "what's in the pipeline?"</div>
+      <p>Connects to Dealum, pulls all Tech-tagged deals, groups them by pipeline stage, and surfaces stalled deals with suggested next actions.</p>
+      <div class="returns"><strong>Returns:</strong> Live pipeline dashboard — deal counts per stage, attention items, recommended next command.</div>
+    </div>
+
+    <div class="agent-card">
+      <h3>🕵️ company-researcher</h3>
+      <div class="trigger">Triggered by: /diligence, or explicit request</div>
+      <p>Web research on the founding team (LinkedIn, Crunchbase, news coverage), funding history, traction signals, and any public red flags on the company or founders.</p>
+      <div class="returns"><strong>Returns:</strong> Structured founder + company briefing, IC-ready, incorporated into the DD Kickoff Package.</div>
+    </div>
+
+    <div class="agent-card">
+      <h3>🗺️ competitive-intelligence</h3>
+      <div class="trigger">Triggered by: /diligence, or explicit request</div>
+      <p>Maps direct competitors and incumbent threats, validates market sizing data, assesses timing signals, and evaluates the company's moat positioning relative to the competitive landscape.</p>
+      <div class="returns"><strong>Returns:</strong> Competitive landscape briefing with market size data — feeds directly into moat and market scoring.</div>
+    </div>
+  </div>
+
+
+  <!-- ④ Investment Framework -->
+  <div class="section-label">
+    <div class="num">4</div>
+    <div>
+      <h2>Investment Framework — The Playbook</h2>
+      <p>Seven reference documents Claude loads when running analysis. These encode NWAi's proprietary criteria so the same standards are applied consistently, regardless of how compelling a pitch sounds.</p>
+    </div>
+  </div>
+
+  <table class="fw-table">
+    <thead>
+      <tr>
+        <th>Reference File</th>
+        <th>What It Contains</th>
+        <th>Used At</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>gates-and-flags-techgroup.md</td>
+        <td>TechGroup triage screener: 3 hard gates (instant Kill if failed) + Opportunity scoring /25 + Readiness scoring /20 + decision thresholds</td>
+        <td>Screen</td>
+      </tr>
+      <tr>
+        <td>scout-questions.md</td>
+        <td>Phase 1 viability questions (rapid structural assessment) + Phase 2 depth questions (venture potential + moat)</td>
+        <td>Scout</td>
+      </tr>
+      <tr>
+        <td>diligence-scoring-rubrics.md</td>
+        <td>General Moat score (0–6), AI Moat score (0–10), Risk score (1–10, where 1=lowest), Bear/Base/Bull financial model</td>
+        <td>Diligence</td>
+      </tr>
+      <tr>
+        <td>dd-checklist.md</td>
+        <td>17-folder due diligence framework with team assignment slots and gate-critical folder designations</td>
+        <td>Diligence</td>
+      </tr>
+      <tr>
+        <td>ai-moats-framework.md</td>
+        <td>Three moat types for evaluating AI company defensibility — used to assess whether a product has durable competitive advantage</td>
+        <td>Scout + DD Report + Memo</td>
+      </tr>
+      <tr>
+        <td>dd-report-format-reference.md</td>
+        <td>Exact layout spec for the DD Report: 11 sections, 2-column table format, RAG score colors, content rules</td>
+        <td>DD Report</td>
+      </tr>
+      <tr>
+        <td>memo-format-reference.md</td>
+        <td>4-slide PPTX structure, NWAi branding spec, ++/-- notation, "What is the Bet?" framing</td>
+        <td>Memo</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <!-- ④a Two Lenses -->
+  <div style="margin-top: 24px;">
+    <p style="font-size: 13px; color: var(--subtle); margin-bottom: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">Two analytical lenses — always active, at every stage</p>
+    <div class="lens-box">
+      <div class="lens">
+        <h3>⚡ Structural Discontinuity</h3>
+        <p>Is this Big Idea riding a genuine, irreversible market shift — or incremental improvement dressed up as disruption? A real discontinuity changes the rules of the game. An incremental product just plays the existing game a little better.</p>
+      </div>
+      <div class="lens">
+        <h3>🔒 Memory Lock-in</h3>
+        <p>Does the product get smarter, stickier, or more embedded the more it's used? Proprietary data flywheels, deep workflow integration, and switching costs driven by accumulated context are the hallmarks of a durable AI moat.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ④b DD Report Scoring -->
+  <div style="margin-top: 24px;">
+    <p style="font-size: 13px; color: var(--subtle); margin-bottom: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">DD Report scoring — 11 sections, 1–5 scale, RAG colored</p>
+    <div class="score-grid">
+      <div class="score-pill">
+        <div class="score-dot dot-green"></div>
+        <div>
+          <div style="font-size:13px; font-weight:700;">Score 4–5 &nbsp;→ Green</div>
+          <div style="font-size:11px; color:var(--subtle);">Strong signal, advance confidently</div>
+        </div>
+      </div>
+      <div class="score-pill">
+        <div class="score-dot dot-amber"></div>
+        <div>
+          <div style="font-size:13px; font-weight:700;">Score 3 &nbsp;→ Amber</div>
+          <div style="font-size:11px; color:var(--subtle);">Conditional — specific concerns to resolve</div>
+        </div>
+      </div>
+      <div class="score-pill">
+        <div class="score-dot dot-red"></div>
+        <div>
+          <div style="font-size:13px; font-weight:700;">Score 1–2 &nbsp;→ Red</div>
+          <div style="font-size:11px; color:var(--subtle);">Serious concern — likely Kill condition</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ⑤ Non-Negotiable Criteria -->
+  <div class="section-label page-break">
+    <div class="num">5</div>
+    <div>
+      <h2>Non-Negotiable Investment Criteria</h2>
+      <p>Any deal that fails any of these is a Pass. No exceptions — regardless of how compelling the pitch or team appears.</p>
+    </div>
+  </div>
+
+  <div class="criteria-grid">
+    <div class="criterion">
+      <div class="c-icon">📄</div>
+      <div>
+        <h4>Structure</h4>
+        <p>Equity required. Priced round preferred (Seed–Series A). No SAFEs. Convertible debt acceptable. C-Corp only.</p>
+      </div>
+    </div>
+    <div class="criterion">
+      <div class="c-icon">🇺🇸</div>
+      <div>
+        <h4>Geography</h4>
+        <p>US-based HQ and IP. Executive team must be US-based. No foreign-owned entities.</p>
+      </div>
+    </div>
+    <div class="criterion">
+      <div class="c-icon">💰</div>
+      <div>
+        <h4>Traction</h4>
+        <p>Real revenue or signed paying customers. Research projects and demo labs do not qualify.</p>
+      </div>
+    </div>
+    <div class="criterion">
+      <div class="c-icon">🚀</div>
+      <div>
+        <h4>Stage</h4>
+        <p>MVP complete with at least one successful beta completed. TRL 5+ (GAO scale).</p>
+      </div>
+    </div>
+    <div class="criterion">
+      <div class="c-icon">🤝</div>
+      <div>
+        <h4>Syndication</h4>
+        <p>Credible lead investor required. Cap table must be clean — no structural red flags.</p>
+      </div>
+    </div>
+    <div class="criterion">
+      <div class="c-icon">📈</div>
+      <div>
+        <h4>Return Potential</h4>
+        <p>10× in 5 years minimum. TAM must support a 20×–100× return path.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ⑥ Output Chain -->
+  <div class="section-label">
+    <div class="num">6</div>
+    <div>
+      <h2>What Gets Saved — The Output Chain</h2>
+      <p>Each command saves its output to the <code style="font-size:12px; background:#e8f0f8; padding:1px 6px; border-radius:4px;">deals/</code> folder. Downstream commands load the most recent prior-stage file automatically — so context carries forward without manual copy-paste.</p>
+    </div>
+  </div>
+
+  <div class="output-chain">
+    <div class="output-row out-docx">
+      <div class="cmd">/screen</div>
+      <div class="arrow">→</div>
+      <div class="file">Triage Report (Word doc) — gates verdict, opportunity/readiness scores, live pitch questions<em>[Company] - Triage Report YYYY-MM-DD.docx</em></div>
+    </div>
+    <div class="output-row out-docx">
+      <div class="cmd">/scout</div>
+      <div class="arrow">→</div>
+      <div class="file">Scout Assessment Report (Word doc) — one-sentence verdict, biggest risk, 3–5 diligence questions, theme mapping<em>[Company] - Scout Assessment Report YYYY-MM-DD.docx</em></div>
+    </div>
+    <div class="output-row out-docx">
+      <div class="cmd">/diligence</div>
+      <div class="arrow">→</div>
+      <div class="file">DD Kickoff Package (Word doc) — scored rubrics, 17-folder assignments, agent research briefings<em>[Company] - DD Kickoff Package YYYY-MM-DD.docx</em></div>
+    </div>
+    <div class="output-row out-docx">
+      <div class="cmd">/dd-report</div>
+      <div class="arrow">→</div>
+      <div class="file">DD Investment Report (Word doc) — 11 scored sections, RAG table layout, IC-ready<em>[Company]-NWAi-DD-Report-YYYY-MM-DD.docx</em></div>
+    </div>
+    <div class="output-row out-crm">
+      <div class="cmd">/decision</div>
+      <div class="arrow">→</div>
+      <div class="file">Dealum updated — pipeline step advanced, decision tag applied (Invest / Pass / Watch)<em>No file output — CRM action only</em></div>
+    </div>
+    <div class="output-row out-pptx">
+      <div class="cmd">/memo</div>
+      <div class="arrow">→</div>
+      <div class="file">Executive Summary (4-slide PPTX) — NWAi branding, IC presentation format<em>[Company]-NWAi-Exec-Summary-YYYY-MM-DD.pptx</em></div>
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<div class="footer">
+  NWAi Investment Intelligence &nbsp;·&nbsp; TechGroup &nbsp;·&nbsp; March 2026 &nbsp;·&nbsp; Jamie, Co-Chair
+</div>
+
+</body>
+</html>
