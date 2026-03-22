@@ -181,7 +181,7 @@ When mapping a deal to a theme, identify the correct theme from the table below.
 The `nwai-investment-framework` skill contains all reference material. When doing analysis,
 always reference the relevant framework:
 
-- **Gates & Flags**: AutoKill criteria for Screening (`references/gates-and-flags.md`)
+- **Gates & Flags**: TechGroup triage screener — 3 hard gates + Opportunity/Readiness scoring (`references/gates-and-flags-techgroup.md`); legacy 6-gate AutoKill retained at `references/gates-and-flags.md` (other verticals/reference only)
 - **Scout Questions**: Phase 1 + Phase 2 assessment framework (`references/scout-questions.md`)
 - **Diligence Rubrics**: Moat 0–6/0–10, Risk 1–10, Bear/Base/Bull financial model (`references/diligence-scoring-rubrics.md`)
 - **DD Checklist**: 17-folder due diligence framework (`references/dd-checklist.md`)
@@ -200,7 +200,7 @@ always reference the relevant framework:
 | DD | Due Diligence |
 | SME | Subject Matter Expert (domain expert member, not Small/Medium Enterprise) |
 | TRL | Technology Readiness Level (1–9, GAO scale; NWAi minimum is 5) |
-| AutoKill | NWAi's 6 Pass/Fail gate criteria applied at Screening |
+| AutoKill | NWAi TechGroup 3-layer triage framework applied at Screening: 3 hard pass/fail gates + Opportunity scoring (5 dimensions, 0–25) + Readiness scoring (4 dimensions, 0–20). ADVANCE ≥ 18/25 Opportunity. Legacy 6-gate AutoKill retained for other verticals. |
 | TAM / SAM / SOM | Total / Serviceable / Obtainable Addressable Market |
 | KOL | Key Opinion Leader (used for advisor quality assessment) |
 | Tech-tagged | Application in Dealum with the "Tech" tag — TechGroup scope |
@@ -231,6 +231,36 @@ always reference the relevant framework:
 
 **When in doubt about a deal that doesn't cleanly fit criteria:**
 Recommend "Watch" with a specific re-evaluation trigger, rather than forcing a Pass or advancing prematurely.
+
+---
+
+## DD Report — Canonical Format (BINDING — overrides plugin format reference)
+
+**FORMAT SOURCE: `STL-NWAi-DD-Report-2026-03-19.docx` is the reference master.**
+**The format has been generated incorrectly multiple times. Follow the spec below exactly — do not freestyle the structure.**
+
+### MANDATORY: Use the docx skill — follow the spec below exactly
+
+Every `/dd-report` run MUST use the `docx` skill to generate the output and adhere strictly to the format spec below. Do not invent an alternative table structure or layout.
+
+### Format (extracted from STL reference — do not deviate)
+
+The entire report is table-driven. In order:
+1. **Green box** (BG: E8F5E9, bold) — recommendation verdict + conditions — FIRST on page 1
+2. **"Scoring: 1 (lowest) to 5 (highest)"** — plain paragraph
+3. **Company description table** — 4-col; merged header row (navy); merged description row; alternating F4F4F4/FFFFFF detail rows
+4. **12 scored section tables** — each is exactly 2 rows × 2 cols:
+   - Row 0: navy header (1F3864, white text) | "Score" label
+   - Row 1: content cell (dark navy or white per section) | score digit in color-coded cell
+5. **Recommendation table** — full-width, navy header, checkboxes + rationale + conditions
+6. **DD Team Votes table**
+7. **Appendix A** — outstanding diligence items with priority color-coding (red/yellow/gray/white)
+
+**Score colors:** 4–5 → BG 375623 (dark green, white text) | 3 → BG FFC000 (amber, black text) | 1–2 → BG C00000 (dark red, white text)
+
+**Section content cell backgrounds:**
+- White (no fill): Sections 1, 4, 5, 6, 7 (market-facing / external analysis)
+- Navy (1F3864, white text): Sections 2, 3, 8, 9, 10, 11, 12 (technical / internal / financial)
 
 ---
 
