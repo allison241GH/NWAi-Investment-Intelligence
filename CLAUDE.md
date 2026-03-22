@@ -237,11 +237,17 @@ Recommend "Watch" with a specific re-evaluation trigger, rather than forcing a P
 ## DD Report — Canonical Format (BINDING — overrides plugin format reference)
 
 **FORMAT SOURCE: `STL-NWAi-DD-Report-2026-03-19.docx` is the reference master.**
-**The format has been generated incorrectly multiple times. Follow the spec below exactly — do not freestyle the structure.**
+**The format has been generated incorrectly multiple times. Always use the template script.**
 
-### MANDATORY: Use the docx skill — follow the spec below exactly
+### MANDATORY: Use the canonical generator script — never freestyle
 
-Every `/dd-report` run MUST use the `docx` skill to generate the output and adhere strictly to the format spec below. Do not invent an alternative table structure or layout.
+The generator lives at: `scripts/dd-report-generator.js`
+
+Every `/dd-report` run MUST:
+1. Read `scripts/dd-report-generator.js` first to understand the data shape
+2. Write a company-specific content file that calls `generateDDReport(data, filename)`
+3. Run it with `node` to produce the document
+4. Never write a custom generation script that re-invents the table structure or format
 
 ### Format (extracted from STL reference — do not deviate)
 
