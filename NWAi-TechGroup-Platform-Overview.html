@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NWAi Investment Intelligence Platform — Team Overview</title>
+  <style>
+    :root {
+      --navy: #0d1f3c;
+      --navy-mid: #163360;
+      --ice: #c8dff5;
+      --ice-light: #eaf3fc;
+      --gold: #e8a020;
+      --green: #375623;
+      --green-light: #e8f5e9;
+      --amber: #FFC000;
+      --red: #C00000;
+      --subtle: #5a6a82;
+      --border: #d0dce8;
+      --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font);
+      background: #f0f4f9;
+      color: #1a1a2e;
+      line-height: 1.5;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+      color: white;
+      padding: 28px 48px 24px;
+      border-bottom: 4px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .header h1 { font-size: 22px; font-weight: 700; letter-spacing: -0.4px; }
+    .header h1 span { color: var(--gold); }
+    .header-sub { font-size: 12.5px; color: var(--ice); margin-top: 4px; }
+    .header-badge {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 6px;
+      padding: 6px 14px;
+      font-size: 11.5px;
+      color: var(--ice);
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 32px 24px 56px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    /* ── Section labels ── */
+    .sec-label {
+      font-size: 10.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--subtle);
+      margin-bottom: 14px;
+    }
+
+    /* ════════════════════════════════
+       SECTION 1 — THE STACK
+    ════════════════════════════════ */
+    .stack-wrap {
+      background: white;
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    /* Shared Rails layer */
+    .rails-layer {
+      background: var(--navy);
+      padding: 22px 28px;
+    }
+    .rails-layer .layer-label {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: rgba(200,223,245,0.7);
+      margin-bottom: 14px;
+    }
+    .rails-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .chip {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 13px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .chip-rail {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(200,223,245,0.3);
+      color: #eaf3fc;
+    }
+    .chip-rail .ci { font-size: 13px; }
+
+    /* Divider arrow */
+    .stack-bridge {
+      background: #f0f4f9;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 8px 28px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .stack-bridge .bridge-label {
+      font-size: 10.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--subtle);
+    }
+    .stack-bridge .bridge-arrow {
+      color: var(--gold);
+      font-size: 16px;
+    }
+
+    /* Group layer */
+    .groups-layer {
+      padding: 20px 28px;
+      background: white;
+    }
+    .groups-layer .layer-label {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--subtle);
+      margin-bottom: 14px;
+    }
+    .groups-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .group-pill {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 16px;
+      border-radius: 10px;
+      font-size: 12.5px;
+      font-weight: 700;
+      border: 1.5px solid var(--border);
+      transition: box-shadow 0.15s;
+    }
+    .group-pill:hover { box-shadow: 0 3px 12px rgba(13,31,60,0.1); }
+    .gp-live {
+      background: var(--ice-light);
+      border-color: var(--navy-mid);
+      color: var(--navy);
+    }
+    .gp-planned {
+      background: #f8fafc;
+      color: var(--subtle);
+      opacity: 0.72;
+    }
+    .gp-live .g-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: #34c759;
+      flex-shrink: 0;
+    }
+    .gp-planned .g-dot {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: #c5ced8;
+      flex-shrink: 0;
+    }
+    .playbook-inputs {
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+    .pi-tag {
+      font-size: 11px;
+      color: #7a4f0a;
+      background: #fdf6e8;
+      border: 1px solid #f0d080;
+      border-radius: 5px;
+      padding: 3px 9px;
+      font-weight: 600;
+    }
+
+    /* ════════════════════════════════
+       SECTION 2 — PIPELINE
+    ════════════════════════════════ */
+    .pipeline-wrap {
+      background: white;
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 24px 28px;
+    }
+    .pipeline-flow {
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+      overflow-x: auto;
+    }
+    .p-stage {
+      flex: 1;
+      min-width: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 14px 8px 12px;
+      border-radius: 10px;
+      border: 1.5px solid var(--border);
+      background: white;
+      transition: box-shadow 0.15s;
+      position: relative;
+    }
+    .p-stage:hover { box-shadow: 0 4px 14px rgba(13,31,60,0.1); }
+    .p-icon { font-size: 22px; margin-bottom: 6px; }
+    .p-name { font-size: 11px; font-weight: 700; color: var(--navy); }
+    .p-cmd {
+      margin-top: 5px;
+      font-size: 9.5px;
+      font-family: 'Courier New', monospace;
+      background: var(--ice-light);
+      color: var(--navy-mid);
+      border: 1px solid var(--ice);
+      border-radius: 3px;
+      padding: 2px 5px;
+    }
+    .p-arrow {
+      display: flex;
+      align-items: center;
+      padding: 0 5px;
+      font-size: 16px;
+      color: var(--subtle);
+      flex-shrink: 0;
+    }
+    /* accent tops */
+    .ps-1 { border-top: 3px solid #6c8ebf; }
+    .ps-2 { border-top: 3px solid #9e7fb8; }
+    .ps-3 { border-top: 3px solid #5fa87e; }
+    .ps-4 { border-top: 3px solid #d4813a; }
+    .ps-5 { border-top: 3px solid #3a7fc1; }
+    .ps-6 { border-top: 3px solid #4d9e6a; }
+    .ps-7 { border-top: 3px solid var(--gold); }
+
+    /* ════════════════════════════════
+       SECTION 3 — AGENTS + SKILLS
+    ════════════════════════════════ */
+    .agents-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 12px;
+    }
+    .agent-card {
+      background: white;
+      border: 1.5px solid var(--border);
+      border-left: 4px solid var(--navy-mid);
+      border-radius: 10px;
+      padding: 16px 18px;
+    }
+    .agent-card.skill-card { border-left-color: var(--gold); }
+    .ac-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 7px;
+    }
+    .ac-icon {
+      font-size: 18px;
+      width: 32px; height: 32px;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 7px;
+      flex-shrink: 0;
+    }
+    .aci-blue { background: var(--ice-light); }
+    .aci-gold { background: #fdf6e8; }
+    .ac-title { font-size: 12.5px; font-weight: 700; color: var(--navy); }
+    .ac-type { font-size: 10px; color: var(--subtle); margin-top: 1px; }
+    .ac-desc { font-size: 11.5px; color: #3a3a4f; line-height: 1.45; }
+
+    /* ════════════════════════════════
+       SECTION 4 — INVESTMENT PLAYBOOK
+    ════════════════════════════════ */
+    .playbook-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 640px) { .playbook-wrap { grid-template-columns: 1fr; } }
+
+    .fw-block {
+      background: white;
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .fw-head {
+      background: var(--navy);
+      color: white;
+      padding: 12px 18px;
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .fw-body {
+      padding: 14px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    .fw-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      font-size: 12px;
+      color: #3a3a4f;
+      padding-bottom: 7px;
+      border-bottom: 1px solid #f0f4f9;
+    }
+    .fw-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .fw-item .fi-icon { font-size: 13px; flex-shrink: 0; margin-top: 1px; }
+    .fw-item strong { color: var(--navy); font-size: 11.5px; display: block; margin-bottom: 1px; }
+
+    /* Two lenses */
+    .lens-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 0;
+    }
+    @media (max-width: 640px) { .lens-row { grid-template-columns: 1fr; } }
+    .lens {
+      background: var(--navy);
+      color: white;
+      border-radius: 10px;
+      padding: 18px;
+    }
+    .lens h3 { font-size: 12.5px; font-weight: 700; color: var(--gold); margin-bottom: 6px; }
+    .lens p { font-size: 11.5px; color: var(--ice); line-height: 1.5; }
+
+    /* ════════════════════════════════
+       SECTION 5 — INVESTING CRITERIA
+    ════════════════════════════════ */
+    .criteria-header {
+      background: white;
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 22px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .criteria-header .ch-icon { font-size: 22px; }
+    .criteria-header h3 { font-size: 13.5px; font-weight: 700; color: var(--navy); }
+    .criteria-header p { font-size: 12px; color: var(--subtle); margin-top: 2px; }
+    .criteria-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    @media (max-width: 640px) { .criteria-grid { grid-template-columns: repeat(2, 1fr); } }
+    .crit {
+      background: white;
+      border: 1.5px solid var(--border);
+      border-radius: 9px;
+      padding: 13px 15px;
+    }
+    .crit-head {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 5px;
+    }
+    .crit-icon { font-size: 16px; }
+    .crit-name { font-size: 12px; font-weight: 700; color: var(--navy); }
+    .crit-val { font-size: 11px; color: #3a3a4f; line-height: 1.4; }
+    .crit-tag {
+      display: inline-block;
+      margin-top: 7px;
+      font-size: 9.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      padding: 2px 7px;
+      border-radius: 4px;
+      background: #fff3cc;
+      color: #7a5000;
+      border: 1px solid #f0d080;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      text-align: center;
+      font-size: 11px;
+      color: var(--subtle);
+      padding: 20px;
+      border-top: 1px solid var(--border);
+      margin-top: 8px;
+    }
+
+    /* ── Print ── */
+    @page { size: A4 landscape; margin: 10mm 12mm; }
+    @media print {
+      body { background: white; font-size: 8pt; }
+      .header { padding: 12px 24px; }
+      .header h1 { font-size: 14pt; }
+      .header-sub { font-size: 7.5pt; }
+      .container { padding: 0; gap: 14px; }
+      .sec-label { font-size: 7pt; margin-bottom: 7px; }
+      /* Stack */
+      .rails-layer { padding: 12px 16px; }
+      .groups-layer { padding: 12px 16px; }
+      .stack-bridge { padding: 5px 16px; }
+      .chip { font-size: 8pt; padding: 4px 8px; }
+      .group-pill { font-size: 8pt; padding: 5px 10px; }
+      .pi-tag { font-size: 7pt; }
+      /* Pipeline */
+      .pipeline-wrap { padding: 14px 16px; }
+      .p-icon { font-size: 14pt; }
+      .p-name { font-size: 7pt; }
+      .p-cmd { font-size: 6.5pt; }
+      .p-arrow { font-size: 10pt; }
+      /* Agents */
+      .agents-grid { grid-template-columns: repeat(3, 1fr); gap: 7px; }
+      .agent-card { padding: 9px 11px; }
+      .ac-title { font-size: 8pt; }
+      .ac-desc { font-size: 7pt; }
+      /* Playbook */
+      .playbook-wrap { gap: 8px; }
+      .fw-head { padding: 7px 12px; font-size: 8pt; }
+      .fw-body { padding: 9px 12px; gap: 5px; }
+      .fw-item { font-size: 7.5pt; }
+      .lens { padding: 10px 12px; }
+      .lens h3 { font-size: 8pt; }
+      .lens p { font-size: 7pt; }
+      /* Criteria */
+      .criteria-grid { grid-template-columns: repeat(3, 1fr); gap: 7px; }
+      .crit { padding: 8px 10px; }
+      .crit-name { font-size: 8pt; }
+      .crit-val { font-size: 7pt; }
+      .criteria-header { padding: 9px 14px; margin-bottom: 7px; }
+      .criteria-header h3 { font-size: 9pt; }
+      .criteria-header p { font-size: 7pt; }
+      .footer { padding: 8px; font-size: 7pt; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div>
+    <h1>NWAi Investment Intelligence — <span>Platform Overview</span></h1>
+    <div class="header-sub">Shared platform rails. Group-specific playbooks. One consistent deal process.</div>
+  </div>
+  <div class="header-badge">v0.10.0 &nbsp;·&nbsp; March 2026 &nbsp;·&nbsp; TechGroup Co-Chair</div>
+</div>
+
+<div class="container">
+
+  <!-- ══ 1. THE STACK ══ -->
+  <div>
+    <div class="sec-label">① The Platform Architecture</div>
+    <div class="stack-wrap">
+
+      <!-- Shared Rails (bottom) -->
+      <div class="rails-layer">
+        <div class="layer-label">🔵 Shared Rails — built once, runs every group</div>
+        <div class="rails-chips">
+          <div class="chip chip-rail"><span class="ci">🔗</span> Dealum CRM (MCP)</div>
+          <div class="chip chip-rail"><span class="ci">🤖</span> Claude AI Orchestration</div>
+          <div class="chip chip-rail"><span class="ci">📊</span> 3 AI Agents</div>
+          <div class="chip chip-rail"><span class="ci">🔄</span> 7-Stage Deal Pipeline</div>
+          <div class="chip chip-rail"><span class="ci">⚙️</span> 7 Slash Commands</div>
+          <div class="chip chip-rail"><span class="ci">📄</span> 5 Output Formats</div>
+          <div class="chip chip-rail"><span class="ci">💾</span> GitHub Sync</div>
+          <div class="chip chip-rail"><span class="ci">🖥️</span> Claude CoWork Desktop App</div>
+        </div>
+      </div>
+
+      <!-- Bridge -->
+      <div class="stack-bridge">
+        <span class="bridge-arrow">⬆</span>
+        <span class="bridge-label">Platform layer below &nbsp;·&nbsp; Group playbook layer above — each group plugs its own playbook in</span>
+      </div>
+
+      <!-- Group Playbooks (top) -->
+      <div class="groups-layer">
+        <div class="layer-label">🟡 Group-Specific Playbooks — unique per investment group</div>
+        <div class="groups-row">
+          <div class="group-pill gp-live"><span class="g-dot"></span>💻 TechGroup</div>
+          <div class="group-pill gp-planned"><span class="g-dot"></span>🩺 MedicalGroup</div>
+          <div class="group-pill gp-planned"><span class="g-dot"></span>🚀 SpaceGroup</div>
+          <div class="group-pill gp-planned"><span class="g-dot"></span>🛍️ ConsumerGroup</div>
+          <div class="group-pill gp-planned"><span class="g-dot"></span>🏭 IndustrialGroup</div>
+          <div class="group-pill gp-planned"><span class="g-dot"></span>💳 FintechGroup</div>
+        </div>
+        <div class="playbook-inputs">
+          <span style="font-size:11px; color:var(--subtle); font-weight:600; margin-right:2px;">Each group defines →</span>
+          <span class="pi-tag">Dealum Tag Filter</span>
+          <span class="pi-tag">Screening Gates &amp; Flags</span>
+          <span class="pi-tag">Scoring Rubrics</span>
+          <span class="pi-tag">Investment Themes</span>
+          <span class="pi-tag">SME Pool &amp; Lead Table</span>
+          <span class="pi-tag">Investment Thesis</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ 2. PIPELINE ══ -->
+  <div>
+    <div class="sec-label">② The 7-Stage Deal Pipeline — every deal moves left to right</div>
+    <div class="pipeline-wrap">
+      <div class="pipeline-flow">
+        <div class="p-stage ps-1">
+          <div class="p-icon">📥</div>
+          <div class="p-name">Inbox</div>
+          <div class="p-cmd">/screen</div>
+        </div>
+        <div class="p-arrow">›</div>
+        <div class="p-stage ps-2">
+          <div class="p-icon">🔍</div>
+          <div class="p-name">Screening</div>
+          <div class="p-cmd">/screen</div>
+        </div>
+        <div class="p-arrow">›</div>
+        <div class="p-stage ps-3">
+          <div class="p-icon">🤝</div>
+          <div class="p-name">Scout / Intro Call</div>
+          <div class="p-cmd">/scout</div>
+        </div>
+        <div class="p-arrow">›</div>
+        <div class="p-stage ps-4">
+          <div class="p-icon">🔬</div>
+          <div class="p-name">Diligence</div>
+          <div class="p-cmd">/diligence</div>
+        </div>
+        <div class="p-arrow">›</div>
+        <div class="p-stage ps-5">
+          <div class="p-icon">📋</div>
+          <div class="p-name">DD Report</div>
+          <div class="p-cmd">/dd-report</div>
+        </div>
+        <div class="p-arrow">›</div>
+        <div class="p-stage ps-6">
+          <div class="p-icon">✅</div>
+          <div class="p-name">Decision</div>
+          <div class="p-cmd">/decision</div>
+        </div>
+        <div class="p-arrow">›</div>
+        <div class="p-stage ps-7">
+          <div class="p-icon">📝</div>
+          <div class="p-name">Memo</div>
+          <div class="p-cmd">/memo</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ 3. AGENTS + SKILLS ══ -->
+  <div>
+    <div class="sec-label">③ AI Agents &amp; Skills — Claude's autonomous research team</div>
+    <div class="agents-grid">
+      <div class="agent-card">
+        <div class="ac-head">
+          <div class="ac-icon aci-blue">📊</div>
+          <div>
+            <div class="ac-title">pipeline-monitor</div>
+            <div class="ac-type">Agent · auto-runs on session start</div>
+          </div>
+        </div>
+        <div class="ac-desc">Pulls all Tech-tagged deals from Dealum, groups by stage, surfaces stalled items and suggested next actions.</div>
+      </div>
+      <div class="agent-card">
+        <div class="ac-head">
+          <div class="ac-icon aci-blue">🕵️</div>
+          <div>
+            <div class="ac-title">company-researcher</div>
+            <div class="ac-type">Agent · triggered by /diligence</div>
+          </div>
+        </div>
+        <div class="ac-desc">Web research on founders, funding history, traction signals, and public red flags. Returns an IC-ready briefing.</div>
+      </div>
+      <div class="agent-card">
+        <div class="ac-head">
+          <div class="ac-icon aci-blue">🗺️</div>
+          <div>
+            <div class="ac-title">competitive-intelligence</div>
+            <div class="ac-type">Agent · triggered by /diligence</div>
+          </div>
+        </div>
+        <div class="ac-desc">Maps competitors &amp; incumbents, validates market sizing, assesses moat positioning relative to the landscape.</div>
+      </div>
+      <div class="agent-card skill-card">
+        <div class="ac-head">
+          <div class="ac-icon aci-gold">📐</div>
+          <div>
+            <div class="ac-title">nwai-investment-framework</div>
+            <div class="ac-type">Skill · 7 reference docs loaded on demand</div>
+          </div>
+        </div>
+        <div class="ac-desc">Loads NWAi's proprietary frameworks: gates, scout questions, diligence rubrics, DD checklist, AI moats, report &amp; memo formats.</div>
+      </div>
+      <div class="agent-card skill-card">
+        <div class="ac-head">
+          <div class="ac-icon aci-gold">📄</div>
+          <div>
+            <div class="ac-title">Document Skills</div>
+            <div class="ac-type">Skills · docx · pptx · pdf · xlsx</div>
+          </div>
+        </div>
+        <div class="ac-desc">Generate polished Word reports, 4-slide PPTX memos, and PDFs with correct NWAi formatting from structured data.</div>
+      </div>
+      <div class="agent-card skill-card">
+        <div class="ac-head">
+          <div class="ac-icon aci-gold">🔄</div>
+          <div>
+            <div class="ac-title">github-sync</div>
+            <div class="ac-type">Skill · auto-triggers after file changes</div>
+          </div>
+        </div>
+        <div class="ac-desc">Commits and pushes every generated report, memo, and config change to GitHub — automatic version control on every output.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ 4. TECHGROUP PLAYBOOK ══ -->
+  <div>
+    <div class="sec-label">④ TechGroup Investment Playbook — the group-specific layer currently live</div>
+    <div class="playbook-wrap">
+
+      <!-- Left: Framework docs -->
+      <div class="fw-block">
+        <div class="fw-head">📚 Framework Reference Docs</div>
+        <div class="fw-body">
+          <div class="fw-item">
+            <div class="fi-icon">🚧</div>
+            <div>
+              <strong>Gates &amp; Flags</strong>
+              3 hard pass/fail gates · Opportunity score /25 · Readiness score /20
+            </div>
+          </div>
+          <div class="fw-item">
+            <div class="fi-icon">🤝</div>
+            <div>
+              <strong>Scout Questions</strong>
+              Phase 1 viability · Phase 2 venture potential &amp; moat depth
+            </div>
+          </div>
+          <div class="fw-item">
+            <div class="fi-icon">📐</div>
+            <div>
+              <strong>Diligence Scoring Rubrics</strong>
+              General Moat 0–6 · AI Moat 0–10 · Risk 1–10 · Bear/Base/Bull model
+            </div>
+          </div>
+          <div class="fw-item">
+            <div class="fi-icon">📂</div>
+            <div>
+              <strong>17-Folder DD Checklist</strong>
+              Team assignment slots · gate-critical folder designations
+            </div>
+          </div>
+          <div class="fw-item">
+            <div class="fi-icon">🔒</div>
+            <div>
+              <strong>AI Moats Framework</strong>
+              3 moat types for evaluating AI company defensibility
+            </div>
+          </div>
+          <div class="fw-item">
+            <div class="fi-icon">📋</div>
+            <div>
+              <strong>DD Report Format</strong>
+              11 scored sections · 1–5 RAG scale · IC-ready table structure
+            </div>
+          </div>
+          <div class="fw-item">
+            <div class="fi-icon">📝</div>
+            <div>
+              <strong>Memo Format</strong>
+              4-slide PPTX · NWAi branding · "What is the Bet?" framing
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Two lenses + themes -->
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        <div class="fw-block">
+          <div class="fw-head">🗺️ Investment Themes (5)</div>
+          <div class="fw-body">
+            <div class="fw-item">
+              <div class="fi-icon">1️⃣</div>
+              <div>Infrastructure &amp; Foundational Stack</div>
+            </div>
+            <div class="fw-item">
+              <div class="fi-icon">2️⃣</div>
+              <div>SW-Enabled HW, Physical AI &amp; Robotics</div>
+            </div>
+            <div class="fw-item">
+              <div class="fi-icon">3️⃣</div>
+              <div>WorkTech &amp; Vertical Enterprise OS</div>
+            </div>
+            <div class="fw-item">
+              <div class="fi-icon">4️⃣</div>
+              <div>Data Sovereignty, Security, Trust</div>
+            </div>
+            <div class="fw-item">
+              <div class="fi-icon">5️⃣</div>
+              <div>FinTech (incl. Real Estate)</div>
+            </div>
+          </div>
+        </div>
+        <div class="lens-row">
+          <div class="lens">
+            <h3>⚡ Structural Discontinuity</h3>
+            <p>Is this a genuine, irreversible market shift — or incremental improvement dressed as disruption?</p>
+          </div>
+          <div class="lens">
+            <h3>🔒 Memory Lock-in</h3>
+            <p>Does the product get smarter and stickier the more it's used? Data flywheels &amp; switching costs.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══ 5. INVESTING CRITERIA ══ -->
+  <div>
+    <div class="sec-label">⑤ Non-Negotiable Investing Criteria — each group defines its own equivalent set</div>
+    <div class="criteria-header">
+      <div class="ch-icon">⛔</div>
+      <div>
+        <h3>TechGroup — Hard Pass criteria. Any single failure = Kill.</h3>
+        <p>These are NWAi TechGroup's current criteria. Each group contributes its domain-equivalent version when its playbook is built.</p>
+      </div>
+    </div>
+    <div class="criteria-grid">
+      <div class="crit">
+        <div class="crit-head"><span class="crit-icon">📄</span><span class="crit-name">Deal Structure</span></div>
+        <div class="crit-val">Equity. Priced round (Seed–Series A). No SAFEs. Convertible debt OK. C-Corp only.</div>
+        <div class="crit-tag">Group-specific</div>
+      </div>
+      <div class="crit">
+        <div class="crit-head"><span class="crit-icon">🇺🇸</span><span class="crit-name">Geography</span></div>
+        <div class="crit-val">US-based HQ &amp; IP. Executive team US-based. No foreign-owned entities.</div>
+        <div class="crit-tag">Likely shared</div>
+      </div>
+      <div class="crit">
+        <div class="crit-head"><span class="crit-icon">💰</span><span class="crit-name">Traction</span></div>
+        <div class="crit-val">Real revenue or signed paying customers. No research projects or demo labs.</div>
+        <div class="crit-tag">Group-specific</div>
+      </div>
+      <div class="crit">
+        <div class="crit-head"><span class="crit-icon">🚀</span><span class="crit-name">Stage / TRL</span></div>
+        <div class="crit-val">MVP complete. At least one successful beta. TRL 5+ (GAO scale).</div>
+        <div class="crit-tag">Group-specific</div>
+      </div>
+      <div class="crit">
+        <div class="crit-head"><span class="crit-icon">🤝</span><span class="crit-name">Syndication</span></div>
+        <div class="crit-val">Credible lead investor. Clean cap table — no structural red flags.</div>
+        <div class="crit-tag">Likely shared</div>
+      </div>
+      <div class="crit">
+        <div class="crit-head"><span class="crit-icon">📈</span><span class="crit-name">Return Potential</span></div>
+        <div class="crit-val">10× in 5 years minimum. TAM must support a 20×–100× return path.</div>
+        <div class="crit-tag">Likely shared</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<div class="footer">
+  NWAi Investment Intelligence &nbsp;·&nbsp; Platform Overview &nbsp;·&nbsp; March 2026 &nbsp;·&nbsp; For team distribution
+</div>
+
+</body>
+</html>
