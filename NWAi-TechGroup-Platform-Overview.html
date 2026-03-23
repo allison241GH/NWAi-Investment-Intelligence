@@ -428,7 +428,8 @@
       .header h1 { font-size: 13pt; }
       .header-sub { font-size: 7pt; margin-top: 2px; }
       .header-badge { font-size: 7pt; padding: 4px 10px; }
-      .container { padding: 0; gap: 6px; }
+      .container { padding: 0; gap: 6px; page-break-before: avoid; }
+      .container > div:first-child { page-break-before: avoid; }
       .sec-label { font-size: 6.5pt; margin: 0 0 4px 0; }
 
       /* Stack */
