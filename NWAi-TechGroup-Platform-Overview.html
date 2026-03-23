@@ -431,19 +431,21 @@
       .container { padding: 0; gap: 6px; }
       .sec-label { font-size: 6.5pt; margin: 0 0 4px 0; }
 
-      /* Stack — rails + groups side by side */
-      .stack-wrap { display: flex; flex-direction: row; }
-      .rails-layer { flex: 1; padding: 8px 12px; border-right: 1px solid rgba(255,255,255,0.15); }
-      .rails-layer .layer-label { font-size: 6pt; margin-bottom: 6px; }
-      .stack-bridge { display: none; }
-      .groups-layer { flex: 1; padding: 8px 12px; }
-      .groups-layer .layer-label { font-size: 6pt; margin-bottom: 6px; }
+      /* Stack */
+      .stack-wrap { overflow: visible; border-radius: 6px; }
+      .rails-layer { padding: 7px 12px; }
+      .rails-layer .layer-label { font-size: 6pt; margin-bottom: 5px; }
+      .stack-bridge { padding: 3px 12px; }
+      .stack-bridge .bridge-label { font-size: 6pt; }
+      .stack-bridge .bridge-arrow { font-size: 11pt; }
+      .groups-layer { padding: 7px 12px; }
+      .groups-layer .layer-label { font-size: 6pt; margin-bottom: 5px; }
       .chip { font-size: 6.5pt; padding: 2px 6px; gap: 4px; }
       .rails-chips { gap: 4px; }
       .group-pill { font-size: 6.5pt; padding: 3px 8px; gap: 4px; }
       .groups-row { gap: 5px; }
       .pi-tag { font-size: 5.5pt; padding: 1px 5px; }
-      .playbook-inputs { gap: 4px; margin-top: 6px; }
+      .playbook-inputs { gap: 4px; margin-top: 5px; }
 
       /* Pipeline */
       .pipeline-wrap { padding: 10px 14px; }
