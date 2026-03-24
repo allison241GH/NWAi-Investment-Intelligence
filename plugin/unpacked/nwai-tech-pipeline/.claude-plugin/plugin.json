@@ -1,0 +1,10 @@
+{
+  "name": "nwai-tech-pipeline",
+  "version": "2.6.0",
+  "description": "NWAi TechGroup deal pipeline — Dealum intake to investment memo",
+  "author": {
+    "name": "New World Angels",
+    "homepage": "https://www.newworldangels.com"
+  },
+  "keywords": ["angel-investing", "deal-flow", "nwa", "techgroup", "dealum"]
+}
