@@ -12,7 +12,8 @@
       "Bash(chmod:*)",
       "Bash(file:*)",
       "Bash(unzip -l nwai-tech-pipeline.plugin)",
-      "Bash(unzip -p nwai-tech-pipeline.plugin unpacked/nwai-tech-pipeline/.claude-plugin/plugin.json)"
+      "Bash(unzip -p nwai-tech-pipeline.plugin unpacked/nwai-tech-pipeline/.claude-plugin/plugin.json)",
+      "Bash(unzip -l nwai-tech-pipeline-backup-20260319-210821.plugin)"
     ]
   }
 }
