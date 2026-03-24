@@ -1,10 +1,22 @@
 {
+  "manifest_version": "0.1",
   "name": "nwai-tech-pipeline",
   "version": "2.8.0",
   "description": "NWAi TechGroup deal pipeline — Dealum intake to investment memo",
   "author": {
     "name": "New World Angels",
-    "homepage": "https://www.newworldangels.com"
+    "url": "https://www.newworldangels.com"
   },
-  "keywords": ["angel-investing", "deal-flow", "nwa", "techgroup", "dealum"]
+  "server": {
+    "type": "python",
+    "entry_point": "servers/dealum_server.py",
+    "mcp_config": {
+      "command": "python3",
+      "args": ["${__dirname}/servers/dealum_server.py"],
+      "env": {
+        "DEALUM_TOKEN": "${DEALUM_TOKEN}",
+        "DEALUM_ROOM_ID": "${DEALUM_ROOM_ID}"
+      }
+    }
+  }
 }
