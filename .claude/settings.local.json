@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh auth status:*)",
+      "Bash(brew:*)",
+      "Bash(git --version:*)",
+      "Bash(gh auth login:*)",
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nInitial commit: NWAi TechGroup Investment Intelligence Pipeline\n\n- CLAUDE.md project configuration\n- Pipeline architecture documentation\n- Reference materials \\(HTML/PDF\\)\n- Plugin structure and deals folder\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(gh repo create:*)",
+      "Bash(chmod:*)"
+    ]
+  }
+}
