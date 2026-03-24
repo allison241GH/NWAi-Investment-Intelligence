@@ -216,6 +216,8 @@ always reference the relevant framework:
 
 ## Behavior Guidelines
 
+**Memory hygiene:** If during a session you discover something new about how this workspace, plugin, or pipeline is structured — or if Jamie makes a framework or process decision that isn't already captured — flag it and ask whether it should be added to `CLAUDE.md`. Don't suggest it for one-off answers or deal-specific context. Surface it, let Jamie decide.
+
 **Do:**
 - Lead with the deal verdict or action item before the supporting analysis
 - Always identify the correct TechGroup theme when mapping a deal. Show Lead and SMEs as "TBD — Pending Dealum API" until member-to-domain mapping is available via the Dealum API
@@ -279,30 +281,23 @@ The entire report is table-driven. In order:
 Key files in this workspace:
 - `CLAUDE.md` — this file (persistent context)
 - `nwai-techgroup-pipeline-architecture.md` — living architecture reference; must be kept current after every plugin change
-- `plugin/current/nwai-tech-pipeline.plugin` — packaged plugin file (for distribution/reinstall)
-- `plugin/unpacked/nwai-tech-pipeline/` — **editable plugin source** (commands, skills, agents, references) — edit here
+- `plugin/current/nwai-tech-pipeline.plugin` — the latest installable plugin file
+- `plugin/archive/` — previous versioned plugin files (rollback if needed)
 - Deal outputs (memos, DD packages, screening reports) will be saved here as they're generated
 
 ---
 
-## Plugin Architecture — Where Things Live
+## Plugin Architecture — How It Works
 
-There are three locations involved in the plugin. Know which one to touch.
+The plugin lives in two places. Jamie does not need to edit files directly.
 
-**1. `plugin/unpacked/nwai-tech-pipeline/` (in this workspace)**
-The source of truth. Edit commands, skills, agents, and reference docs here. Version-controlled via GitHub.
+**`plugin/current/nwai-tech-pipeline.plugin`** — the installable package. When reinstalled through the Cowork UI, Cowork automatically unpacks it into `.local-plugins/` (a hidden folder in this workspace), which is what Claude reads during sessions. The Mac system path (`~/Library/Application Support/Claude/Claude Extensions/...`) is also refreshed automatically on reinstall — no manual interaction needed.
 
-**2. `.local-plugins/` (hidden folder in this workspace)**
-Cowork's installed/cached copy — the live version Claude runs during sessions. Populated automatically when the plugin is installed through the Cowork interface. Do NOT edit directly; it gets overwritten on reinstall.
-
-**3. `~/Library/Application Support/Claude/Claude Extensions/local.unpacked.new-world-angels.nwai-tech-pipeline/` (Mac system path)**
-Where the Claude desktop app stores the installed extension system-wide. Also gets refreshed on reinstall.
-
-**Plugin update workflow:**
-1. Edit files in `plugin/unpacked/nwai-tech-pipeline/`
+**Plugin update workflow** (handled by Claude, not Jamie):
+1. Update the relevant files inside the `.local-plugins/` live copy during a session
 2. Repackage into a new `.plugin` file in `plugin/current/`
-3. Reinstall through Cowork to refresh `.local-plugins/` and the Mac system path
-4. Commit and push via `github-sync`
+3. Commit and push via `github-sync`
+4. Jamie reinstalls through Cowork UI to sync the new version
 
 ---
 
