@@ -17,5 +17,8 @@
       "Read(//private/tmp/plugin-repack/unpacked/nwai-tech-pipeline/**)",
       "Bash(zip -r \"/Users/jamie/Desktop/Claude CoWork NWAi Investment Intelligence/plugin/current/nwai-tech-pipeline-flat.plugin\" .)"
     ]
+  },
+  "env": {
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1"
   }
 }
