@@ -111,10 +111,10 @@ This skill is the **brain trust** — NWAi's proprietary investment knowledge en
 
 | File | Contents | Used At |
 |------|----------|---------|
-| `gates-and-flags-techgroup.md` | TechGroup triage screener: 3 hard gates + 5 Opportunity dimensions (0–5, /25) + 4 Readiness dimensions (0–5, /20) + decision logic + output format | Screen (TechGroup) |
+| `gates-and-flags-techgroup.md` | TechGroup triage screener: 3 hard gates + 5 Opportunity dimensions (0–5, /25) + 4 Readiness dimensions (0–5, /20) + decision logic + forward-mapping notes to Scout dimensions | Screen (TechGroup) |
 | `gates-and-flags.md` | Original 6-gate AutoKill framework (retained for reference; Medical/Space verticals use separate screener docs) | Screen (legacy) |
-| `scout-questions.md` | Phase 1 viability questions + Phase 2 depth questions | Scout |
-| `diligence-scoring-rubrics.md` | Moat score (0–6 / 0–10), Risk score (1–10), Bear/Base/Bull financial model | Diligence |
+| `scout-questions.md` | Phase 1 viability (Q1–Q3, scored 0–5 with Triage delta) + 3 strategic dimensions (Q4 Ecosystem Role, Q5 Adjacent Displacement Risk, Q6 Macro Tailwind) + Phase 2 execution (scored 0–5) + Scout Conviction Score (/17) + 2-page output format | Scout |
+| `diligence-scoring-rubrics.md` | Moat score (0–6 / 0–10), Risk score (1–10, now includes Adjacent Displacement Risk sub-dimension in Competitive Risk), Bear/Base/Bull financial model | Diligence |
 | `dd-checklist.md` | 17-folder due diligence framework with team assignment slots | Diligence |
 | `ai-moats-framework.md` | Three moat types for evaluating AI company defensibility | Scout + DD Report + Memo |
 | `dd-report-format-reference.md` | 11-section scored report structure, 1–5 scale mapping, exact Synergist visual layout (2-column table, 9432/1080 DXA, RAG hex colors), 5 Sharp & Succinct content rules, format drift incident log | DD Report |
