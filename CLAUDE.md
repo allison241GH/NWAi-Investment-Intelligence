@@ -277,11 +277,33 @@ The entire report is table-driven. In order:
 ## Workspace Files
 
 Key files in this workspace:
-- `nwai-tech-pipeline.plugin` — the installed plugin (do not modify directly)
 - `CLAUDE.md` — this file (persistent context)
 - `nwai-techgroup-pipeline-architecture.md` — living architecture reference; must be kept current after every plugin change
+- `plugin/current/nwai-tech-pipeline.plugin` — packaged plugin file (for distribution/reinstall)
+- `plugin/unpacked/nwai-tech-pipeline/` — **editable plugin source** (commands, skills, agents, references) — edit here
 - Deal outputs (memos, DD packages, screening reports) will be saved here as they're generated
 
 ---
 
-*Last updated: March 2026 (v2.8 / architecture v0.12.0) | NWAi Investment Intelligence & AI | Jamie, TechGroup Co-Chair*
+## Plugin Architecture — Where Things Live
+
+There are three locations involved in the plugin. Know which one to touch.
+
+**1. `plugin/unpacked/nwai-tech-pipeline/` (in this workspace)**
+The source of truth. Edit commands, skills, agents, and reference docs here. Version-controlled via GitHub.
+
+**2. `.local-plugins/` (hidden folder in this workspace)**
+Cowork's installed/cached copy — the live version Claude runs during sessions. Populated automatically when the plugin is installed through the Cowork interface. Do NOT edit directly; it gets overwritten on reinstall.
+
+**3. `~/Library/Application Support/Claude/Claude Extensions/local.unpacked.new-world-angels.nwai-tech-pipeline/` (Mac system path)**
+Where the Claude desktop app stores the installed extension system-wide. Also gets refreshed on reinstall.
+
+**Plugin update workflow:**
+1. Edit files in `plugin/unpacked/nwai-tech-pipeline/`
+2. Repackage into a new `.plugin` file in `plugin/current/`
+3. Reinstall through Cowork to refresh `.local-plugins/` and the Mac system path
+4. Commit and push via `github-sync`
+
+---
+
+*Last updated: March 2026 (v2.9 / architecture v0.12.0) | NWAi Investment Intelligence & AI | Jamie, TechGroup Co-Chair*
