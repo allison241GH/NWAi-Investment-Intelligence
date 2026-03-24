@@ -171,8 +171,12 @@ When mapping a deal to a theme, identify the correct theme from the table below.
 
 **Agents available (launched automatically or on request):**
 - `pipeline-monitor` — live Dealum pipeline snapshot
-- `company-researcher` — founder backgrounds, funding, traction
-- `competitive-intelligence` — competitor mapping, market sizing, moat inputs
+- `company-researcher` — founder backgrounds, funding, traction, commercial validation (Scout + Diligence)
+- `market-analyst` — structural discontinuity test, TAM/SAM/SOM validation, market timing (Scout + Diligence)
+- `competitive-intelligence` — competitor mapping, incumbents, positioning, moat inputs (Scout + Diligence)
+- `technical-diligence` — thin wrapper test, TRL assessment, IP/patents, AI moat signals (Scout light + Diligence full)
+- `financial-analyst` — unit economics, projections, cap table, 10x return path (Diligence only — requires financial files)
+- `risk-assessor` — regulatory risk, exit landscape, execution + market risk signals (Scout light + Diligence full)
 
 ---
 
@@ -280,4 +284,4 @@ Key files in this workspace:
 
 ---
 
-*Last updated: March 2026 | NWAi Investment Intelligence & AI | Jamie, TechGroup Co-Chair*
+*Last updated: March 2026 (v2.8 / architecture v0.12.0) | NWAi Investment Intelligence & AI | Jamie, TechGroup Co-Chair*
