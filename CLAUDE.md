@@ -291,14 +291,32 @@ Key files in this workspace:
 
 The plugin lives in two places. Jamie does not need to edit files directly.
 
-**`plugin/current/nwai-tech-pipeline.plugin`** — the installable package. When reinstalled through the Cowork UI, Cowork automatically unpacks it into `.local-plugins/` (a hidden folder in this workspace), which is what Claude reads during sessions. The Mac system path (`~/Library/Application Support/Claude/Claude Extensions/...`) is also refreshed automatically on reinstall — no manual interaction needed.
+**`.claude/`** — the live runtime folder (hidden, in workspace root). This is what Claude reads during every session. Contains all agents, commands, skills, and servers. Changes made here take effect immediately in the current session.
+
+**`plugin/current/nwai-tech-pipeline.plugin`** — the installable package (v2.9.0). This is the packaged version for installation and org sharing. Always matches `.claude/` — they are kept in sync.
 
 **Plugin update workflow** (handled by Claude, not Jamie):
-1. Update the relevant files inside the `.local-plugins/` live copy during a session
-2. Repackage into a new `.plugin` file in `plugin/current/`
-3. Commit and push via `github-sync`
-4. Jamie reinstalls through Cowork UI to sync the new version
+1. Update the relevant files in `.claude/` during a session (live immediately)
+2. Repackage into a new `.plugin` file in `plugin/current/` and rebuild the `.zip`
+3. Update `nwai-techgroup-pipeline-architecture.md` and bump version
+4. Commit and push to GitHub (Claude does this directly — auth is configured)
+5. Jamie reinstalls via Settings → Desktop app → Extensions: Remove current → drag in new `.plugin`
+
+**Jamie does NOT need to use Terminal for GitHub pushes.** Auth is configured via PAT stored in git credentials. Claude can commit and push directly from within any Cowork session. Just say "commit and push" when ready to save a version.
 
 ---
 
-*Last updated: March 2026 (v2.9 / architecture v0.12.0) | NWAi Investment Intelligence & AI | Jamie, TechGroup Co-Chair*
+## GitHub Sync — Setup & Workflow
+
+**Repository:** `https://github.com/allison241GH/NWAi-Investment-Intelligence`
+**Branch:** `main`
+**Auth:** GitHub PAT stored in `~/.git-credentials` (configured March 2026) — pushes work directly from Cowork sessions, no Terminal needed.
+**Workspace path on Mac:** `/Users/jamie/Desktop/Claude CoWork NWAi Investment Intelligence`
+
+**When to commit:** At the end of any session where pipeline files were meaningfully changed. Tell Claude: *"commit and push"* or *"save this version."* Claude will stage the right files, write a descriptive commit message, and push.
+
+**What gets committed:** `.claude/` (all pipeline files), `plugin/current/` (plugin + zip), `nwai-techgroup-pipeline-architecture.md`, `CLAUDE.md`. Never commit: `settings.local.json`, `zi7wWRPB`, temp lock files.
+
+---
+
+*Last updated: March 2026 (v2.9 / architecture v0.13.0) | NWAi Investment Intelligence & AI | Jamie, TechGroup Co-Chair*
