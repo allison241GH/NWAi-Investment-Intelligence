@@ -1,0 +1,15 @@
+{
+  "name": "nwai-local",
+  "description": "NWAi TechGroup local plugin marketplace",
+  "owner": {
+    "name": "New World Angels"
+  },
+  "plugins": [
+    {
+      "name": "nwai-tech-pipeline",
+      "source": "./nwai-tech-pipeline",
+      "version": "2.9.0",
+      "description": "NWAi TechGroup deal pipeline — Dealum intake to investment memo"
+    }
+  ]
+}

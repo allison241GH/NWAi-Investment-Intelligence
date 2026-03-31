@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "nwai-dealum": {
+      "command": "python3",
+      "args": [".claude/servers/dealum_server.py"],
+      "env": {
+        "DEALUM_TOKEN": "${DEALUM_TOKEN}",
+        "DEALUM_ROOM_ID": "${DEALUM_ROOM_ID}"
+      }
+    }
+  }
+}
