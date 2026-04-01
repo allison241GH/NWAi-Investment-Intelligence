@@ -1,3 +1,8 @@
 .DS_Store
 .tmp.driveupload/
 *.tmp
+
+# Local-only files — never commit
+.claude/settings.local.json
+plugin/current/zi7wWRPB
+~$*
