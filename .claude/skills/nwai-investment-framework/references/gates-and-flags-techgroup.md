@@ -217,6 +217,22 @@ but visible.
 **Low Wrapper Risk**: Proprietary model, unique training data, deep workflow integration,
 or non-AI moat that is genuinely defensible. AI is an enabler, not the entire product.
 
+### Replicability Speed Flag *(applies at Scout and Diligence)*
+
+When the AI Moats Framework Replicability Speed Matrix is completed (Scout Phase 2 or
+Diligence), apply these flag triggers:
+
+- ⚠️ **Yellow Flag** — any threat actor row shows replication possible in < 6 months.
+  Text: "Replicability risk: [threat actor] could replicate core functionality within
+  [timeframe]. Validate moat depth before advancing."
+- ⚠️ **Strong Yellow Flag** — the LLM provider row (OpenAI, Anthropic) shows replication
+  possible in < 12 months. Text: "Feature-not-company risk: core capability could become
+  a native LLM platform feature. Requires explicit moat justification to advance."
+
+These flags compound with the AI Wrapper Assessment. A deal flagged as High Wrapper Risk
+AND with a Replicability Speed Flag is a strong signal for DECLINE unless the moat thesis
+is independently validated by an SME.
+
 ---
 
 ## Decision Logic

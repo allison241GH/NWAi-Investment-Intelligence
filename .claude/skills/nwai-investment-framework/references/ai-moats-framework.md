@@ -102,7 +102,23 @@ When writing the Technology & Moat section of an investment memo:
 2. **Assess** maturity: Is the moat already built, or in development?
 3. **Project** how the moat strengthens over time (flywheel dynamics)
 4. **Stress test**: What would it take for a well-funded competitor to replicate this in 12 months?
-5. **Score**: STRONG / DEVELOPING / WEAK / NONE with 2–3 sentence rationale
+5. **Replicability Speed Matrix** — required output for every moat assessment:
+
+   | Threat Actor | Could Replicate In | Barrier |
+   |---|---|---|
+   | Open-source community (e.g., PyRIT fork) | ___ days/months | ___ |
+   | Funded startup competitor | ___ months | ___ |
+   | Big Tech platform (MSFT, Google, AWS) | ___ months | ___ |
+   | LLM provider (OpenAI, Anthropic) as native feature | ___ months | ___ |
+
+   **Flag triggers:**
+   - ⚠️ **Yellow Flag** if any row < 6 months — "Replicability risk: [threat actor] could replicate
+     core functionality within [timeframe]. Validate moat depth before advancing."
+   - ⚠️ **Strong Yellow Flag** if the LLM provider row < 12 months — "Feature-not-company risk:
+     core capability could become a native LLM platform feature. Requires explicit moat
+     justification to advance."
+
+6. **Score**: STRONG / DEVELOPING / WEAK / NONE with 2–3 sentence rationale
 
 ## The Resonating Takeaway (for memos)
 

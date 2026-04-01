@@ -47,6 +47,37 @@ dressed as disruption?
 | 1 | Late entrant to a mature category; no clear timing thesis |
 | 0 | No category awareness; incremental product with no timing logic |
 
+### Q1b: Demand Signal Test *(new — not scored at Triage)*
+
+Score on: Is this a demand-pull market (buyers actively seeking solutions) or technology-push
+(vendor creating a category buyers haven't asked for)? Demand-pull markets have regulatory
+mandates, active RFPs, enterprise budget allocation, and public buyer statements. Technology-push
+markets rely on vendor evangelism to create awareness. This dimension is the market-side
+complement to Q1's structural discontinuity test.
+
+Required outputs before scoring:
+- **Demand type:** DEMAND-PULL / TECHNOLOGY-PUSH / MIXED
+- **Evidence:** [2–3 specific signals: regulatory mandates, buyer public statements, RFP/procurement activity, analyst category creation, budget allocation surveys]
+- **Strongest signal:** [one sentence — what is the single strongest evidence of buyer demand?]
+
+| Score | Criteria |
+|-------|---------|
+| 5 | Hard regulatory deadlines driving procurement; active RFPs and contract awards; enterprise budget lines created; CISOs/CTOs publicly citing need; analyst firms tracking as distinct category |
+| 4 | Strong regulatory tailwind with clear deadlines; enterprise buyers aware and budgeting; analyst coverage emerging; some RFP/procurement signals |
+| 3 | Regulatory interest but no hard deadlines yet; buyer awareness growing but budgets not yet allocated; market is forming but not yet pulling |
+| 2 | Vendor-driven awareness; no regulatory mandate; buyers acknowledge the problem conceptually but are not actively procuring; speculative category |
+| 1 | Pure technology push — vendors are creating awareness; buyers are not asking for this; no procurement activity |
+| 0 | No evidence of buyer demand from any source |
+
+⚠️ Score ≤ 2 triggers a Yellow Flag: "Demand signal weak — technology-push risk. Validate
+with direct buyer interviews before advancing to Diligence."
+
+→ **Agent support:** The `market-analyst` agent should include demand-signal research in its
+output: public CISO/CTO statements, procurement activity (SAM.gov for federal deals), analyst
+category reports, and enterprise budget allocation surveys for the relevant market.
+
+---
+
 ### Q2: Market Opportunity
 *Triage overlap: Market Opportunity (D2) — show delta*
 
@@ -213,18 +244,18 @@ Calculate after completing all Phase 1, Strategic, and Phase 2 dimensions.
 
 | Dimension Group | Dimensions | Max Raw | Weight | Weighted Max |
 |---|---|---|---|---|
-| Phase 1 (Q1 + Q2 + Q3 mapped) | 3 dims | 15 pts | 40% | 6.0 |
+| Phase 1 (Q1 + Q1b + Q2 + Q3 mapped) | 4 dims | 20 pts | 40% | 8.0 |
 | Strategic (Q4 + Q5 + Q6) | 3 dims | 15 pts | 20% | 3.0 |
 | Phase 2 (Team + Tech + Traction + GTM) | 4 dims | 20 pts | 40% | 8.0 |
-| **Total** | | | **100%** | **17.0** |
+| **Total** | | | **100%** | **19.0** |
 
 *Moat rating maps to composite: STRONG=5, DEVELOPING=3, WEAK=1, NONE=0. Exit not included.*
 
 | Score | Signal |
 |---|---|
-| 14-17 | High conviction — advance with confidence |
-| 10-13 | Moderate conviction — advance with specific watch items named |
-| 7-9 | Low conviction — Watch only if specific catalyst is imminent; name the trigger |
+| 16-19 | High conviction — advance with confidence |
+| 11-15 | Moderate conviction — advance with specific watch items named |
+| 7-10 | Low conviction — Watch only if specific catalyst is imminent; name the trigger |
 | < 7 | Insufficient conviction — Decline |
 
 ---
@@ -273,7 +304,7 @@ Lead and SMEs: Output as "TBD — Pending Dealum API" for both.
 **Analyst Verdict Block** (structured fields — no paragraphs):
 ```
 Recommendation:           ADVANCE TO DILIGENCE / WATCH / DECLINE
-Scout Conviction Score:   [X / 17]
+Scout Conviction Score:   [X / 19]
 Verdict:                  [one sentence — blunt, IC-ready]
 What You Have to Believe: [one sentence — the core thesis assumption]
 Where's the Bet:          [one sentence — the specific inflection point being backed]
@@ -285,6 +316,7 @@ Greed:                    [one phrase — upside case if thesis holds]
 ```
 | Dimension                       | Triage  | Scout   | Delta      |
 | Category & Market Discontinuity | D1: X/5 | X/5     | ↑ / → / ↓ |
+| Demand Signal Test              | —       | X/5     | NEW        |
 | Market Opportunity              | D2: X/5 | X/5     |            |
 | Moat                            | D4: X/5 | S/D/W/N |            |
 | Ecosystem Role                  | —       | X/5     | NEW        |
@@ -309,6 +341,11 @@ Greed:                    [one phrase — upside case if thesis holds]
 - [bullet]
 - [bullet]
 - [bullet]
+
+*Demand Signal Test*
+- Demand type: DEMAND-PULL / TECHNOLOGY-PUSH / MIXED
+- Evidence: [2-3 signals]
+- Strongest signal: [one sentence]
 
 *Market Opportunity*
 - TAM | SAM | 5yr capture: [numbers]
