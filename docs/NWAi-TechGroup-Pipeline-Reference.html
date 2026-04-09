@@ -602,7 +602,7 @@
       <h1>NWAi Investment Intelligence — <span>AI Deal Pipeline</span></h1>
       <p>A visual reference for how Claude and the <code style="background:rgba(255,255,255,0.1);padding:1px 6px;border-radius:4px;font-size:12px;">nwai-tech-pipeline</code> plugin move a deal from raw pitch to IC-ready memo — and how the same platform scales across all six NWAi investment groups.</p>
     </div>
-    <div class="badge">v0.10.0 &nbsp;·&nbsp; March 2026 &nbsp;·&nbsp; TechGroup</div>
+    <div class="badge">v0.16.0 &nbsp;·&nbsp; April 2026 &nbsp;·&nbsp; TechGroup</div>
   </div>
 </div>
 
@@ -672,10 +672,10 @@
         <ul>
           <li><span class="li-dot">🔗</span> Dealum CRM integration (MCP server)</li>
           <li><span class="li-dot">🤖</span> Claude orchestration layer + session context</li>
-          <li><span class="li-dot">📊</span> AI agents: pipeline-monitor, company-researcher, competitive-intelligence</li>
+          <li><span class="li-dot">📊</span> AI agents: pipeline-monitor, company-researcher, market-analyst, competitive-intelligence, technical-diligence, financial-analyst, risk-assessor</li>
           <li><span class="li-dot">🔄</span> Pipeline stages: Inbox → Screen → Scout → Diligence → DD Report → Decision → Memo</li>
-          <li><span class="li-dot">📄</span> Output formats: Triage Report, Scout Report, DD Kickoff Package, DD Investment Report, Exec Memo</li>
-          <li><span class="li-dot">⚙️</span> Slash commands: /screen /scout /diligence /dd-report /decision /memo</li>
+          <li><span class="li-dot">📄</span> Output formats: Triage Report, Scout Report, DD Kickoff Package, Post-Meeting Reconciliation, DD Investment Report, Exec Memo</li>
+          <li><span class="li-dot">⚙️</span> Slash commands: /sync-pipeline /screen /scout /diligence /post-meeting /dd-report /decision /memo</li>
         </ul>
       </div>
       <div class="rails-col rails-specific">
@@ -806,8 +806,20 @@
           <div class="card-sub">Stage: Scout → Diligence</div>
         </div>
       </div>
-      <p>Launches two research agents in parallel (company-researcher + competitive-intelligence), applies scoring rubrics (moat + risk), and generates the DD Kickoff Package with 17-folder assignments for the DD team.</p>
+      <p>Launches 5–6 research agents in parallel (company-researcher, market-analyst, competitive-intelligence, technical-diligence, risk-assessor, + financial-analyst if files confirmed). Generates DD Kickoff Package with Layer 2 Hypothesis Confirmation Plan, scored rubrics, and 17-folder assignments.</p>
       <div class="card-tag">Output: [Company] - DD Kickoff Package.docx</div>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <div class="card-icon ci-red">🎯</div>
+        <div>
+          <div class="card-title">/post-meeting [company] [type]</div>
+          <div class="card-sub">Stage: During Diligence · type = product|gtm|financials</div>
+        </div>
+      </div>
+      <p>Processes diligence meeting transcripts through the analyst lens (declarations, structural contradictions, moat signals, team signals, thesis stress points), then reconciles the Diligence Action Tracker. Produces a dual-output document: Analyst POV + Key Insights + Resolved/Open tracker.</p>
+      <div class="card-tag">Output: [Company]-[Type]-Meeting-Reconciliation.docx</div>
     </div>
 
     <div class="card">
@@ -867,16 +879,44 @@
 
     <div class="agent-card">
       <h3>🕵️ company-researcher</h3>
-      <div class="trigger">Triggered by: /diligence, or explicit request</div>
-      <p>Web research on the founding team (LinkedIn, Crunchbase, news coverage), funding history, traction signals, and any public red flags on the company or founders.</p>
-      <div class="returns"><strong>Returns:</strong> Structured founder + company briefing, IC-ready, incorporated into the DD Kickoff Package.</div>
+      <div class="trigger">Triggered by: /scout (full) + /diligence (full)</div>
+      <p>Web research on the founding team, funding history, traction signals, commercial validation (contract structure, named customers, sales motion), and public red flags.</p>
+      <div class="returns"><strong>Returns:</strong> Structured founder + company + commercial briefing → feeds Team Validation + Commercial Validation (Layer 2).</div>
+    </div>
+
+    <div class="agent-card">
+      <h3>📈 market-analyst</h3>
+      <div class="trigger">Triggered by: /scout (full) + /diligence (full)</div>
+      <p>Structural discontinuity test, independent TAM/SAM/SOM validation, market timing scoring, industry dynamics, and customer behavior signals.</p>
+      <div class="returns"><strong>Returns:</strong> Market Analysis Briefing → feeds Market Validation (Layer 2).</div>
     </div>
 
     <div class="agent-card">
       <h3>🗺️ competitive-intelligence</h3>
-      <div class="trigger">Triggered by: /diligence, or explicit request</div>
-      <p>Maps direct competitors and incumbent threats, validates market sizing data, assesses timing signals, and evaluates the company's moat positioning relative to the competitive landscape.</p>
-      <div class="returns"><strong>Returns:</strong> Competitive landscape briefing with market size data — feeds directly into moat and market scoring.</div>
+      <div class="trigger">Triggered by: /scout (full) + /diligence (full)</div>
+      <p>Maps direct competitors and incumbent threats, alternative solutions, strategic incumbents, positioning analysis, and moat input data.</p>
+      <div class="returns"><strong>Returns:</strong> Competitive Intelligence Briefing → feeds Competitive Validation (Layer 2).</div>
+    </div>
+
+    <div class="agent-card">
+      <h3>🔧 technical-diligence</h3>
+      <div class="trigger">Triggered by: /scout (light — thin wrapper + TRL) + /diligence (full)</div>
+      <p>Thin wrapper detection (3 tests), TRL assessment, IP/patent research, technical architecture signals, AI moat input data, technical team depth.</p>
+      <div class="returns"><strong>Returns:</strong> Technical Diligence Briefing → feeds Technical Validation (Layer 2).</div>
+    </div>
+
+    <div class="agent-card">
+      <h3>💵 financial-analyst</h3>
+      <div class="trigger">Triggered by: /diligence only (requires financial files in deal room)</div>
+      <p>Reads financial files, models unit economics, validates projections (Bear/Base/Bull), assesses cap table, calculates 10x return path.</p>
+      <div class="returns"><strong>Returns:</strong> Financial Analyst Briefing → feeds Financial Validation (Layer 2).</div>
+    </div>
+
+    <div class="agent-card">
+      <h3>⚠️ risk-assessor</h3>
+      <div class="trigger">Triggered by: /scout (light — top kill risks) + /diligence (full)</div>
+      <p>Regulatory risk research, exit landscape + acquirer dynamics, execution risk signals, market and financial risk signals from public sources.</p>
+      <div class="returns"><strong>Returns:</strong> Risk Assessment Briefing → feeds cross-cutting risk overlay across all Layer 2 groups.</div>
     </div>
   </div>
 
@@ -886,7 +926,7 @@
     <div class="num">4</div>
     <div>
       <h2>Investment Framework — The Playbook</h2>
-      <p>Seven reference documents Claude loads when running analysis. These encode NWAi's proprietary criteria so the same standards are applied consistently, regardless of how compelling a pitch sounds.</p>
+      <p>Nine reference documents Claude loads when running analysis. These encode NWAi's proprietary criteria so the same standards are applied consistently, regardless of how compelling a pitch sounds.</p>
     </div>
   </div>
 
@@ -901,12 +941,17 @@
     <tbody>
       <tr>
         <td>gates-and-flags-techgroup.md</td>
-        <td>TechGroup triage screener: 3 hard gates (instant Kill if failed) + Opportunity scoring /25 + Readiness scoring /20 + decision thresholds</td>
+        <td>TechGroup triage screener: 3 hard gates (instant Kill if failed) + Opportunity scoring /25 + Readiness scoring /20 + Replicability Speed Flag + decision thresholds</td>
         <td>Screen</td>
       </tr>
       <tr>
+        <td>gates-and-flags.md</td>
+        <td>Original 6-gate AutoKill framework (retained for reference; Medical/Space verticals use separate screener docs)</td>
+        <td>Screen (legacy)</td>
+      </tr>
+      <tr>
         <td>scout-questions.md</td>
-        <td>Phase 1 viability questions (rapid structural assessment) + Phase 2 depth questions (venture potential + moat)</td>
+        <td>Phase 1 viability (Q1 Category &amp; Market Discontinuity + Q1b Demand Signal Test + Q2 + Q3) + 3 strategic dimensions (Q4–Q6) + Phase 2 execution + Scout Conviction Score (/19)</td>
         <td>Scout</td>
       </tr>
       <tr>
@@ -921,7 +966,7 @@
       </tr>
       <tr>
         <td>ai-moats-framework.md</td>
-        <td>Three moat types for evaluating AI company defensibility — used to assess whether a product has durable competitive advantage</td>
+        <td>Three moat types for AI defensibility + Replicability Speed Matrix (4-row threat actor table with Yellow Flag triggers)</td>
         <td>Scout + DD Report + Memo</td>
       </tr>
       <tr>
@@ -933,6 +978,11 @@
         <td>memo-format-reference.md</td>
         <td>4-slide PPTX structure, NWAi branding spec, ++/-- notation, "What is the Bet?" framing</td>
         <td>Memo</td>
+      </tr>
+      <tr>
+        <td>diligence-analysis-framework.md</td>
+        <td>Analyst lens behavioral standard for post-meeting analysis: dual role (analyst POV primary / tracker secondary), declaration taxonomy, meeting-type playbooks, progressive POV architecture</td>
+        <td>Diligence (post-meeting)</td>
       </tr>
     </tbody>
   </table>
@@ -1063,6 +1113,11 @@
       <div class="file">DD Kickoff Package (Word doc) — scored rubrics, 17-folder assignments, agent research briefings<em>[Company] - DD Kickoff Package YYYY-MM-DD.docx</em></div>
     </div>
     <div class="output-row out-docx">
+      <div class="cmd">/post-meeting</div>
+      <div class="arrow">→</div>
+      <div class="file">Post-Meeting Reconciliation (Word doc) — Analyst POV + Key Insights table + Resolved/Open tracker<em>[Company]-[Type]-Meeting-Reconciliation-YYYY-MM-DD.docx</em></div>
+    </div>
+    <div class="output-row out-docx">
       <div class="cmd">/dd-report</div>
       <div class="arrow">→</div>
       <div class="file">DD Investment Report (Word doc) — 11 scored sections, RAG table layout, IC-ready<em>[Company]-NWAi-DD-Report-YYYY-MM-DD.docx</em></div>
@@ -1082,7 +1137,7 @@
 </div><!-- /container -->
 
 <div class="footer">
-  NWAi Investment Intelligence &nbsp;·&nbsp; TechGroup &nbsp;·&nbsp; March 2026 &nbsp;·&nbsp; Jamie, Co-Chair
+  NWAi Investment Intelligence &nbsp;·&nbsp; TechGroup &nbsp;·&nbsp; April 2026 &nbsp;·&nbsp; Jamie, Co-Chair
 </div>
 
 </body>
