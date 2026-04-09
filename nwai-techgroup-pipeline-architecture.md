@@ -1,5 +1,5 @@
 # NWAi TechGroup Deal Pipeline — Architecture Overview
-*v0.14.0 | April 2026 | New World Angels Investment Intelligence*
+*v0.16.0 | April 2026 | New World Angels Investment Intelligence*
 
 ---
 
@@ -22,7 +22,7 @@ Think of the pipeline like a **factory floor with six stations**. Raw material (
      │                  │                 │
      ▼                  ▼                 ▼
   Commands           Agents            Skill
-  (7 commands)    (7 subagents)    (7 reference docs)
+  (8 commands)    (7 subagents)    (8 reference docs)
 ```
 
 ---
@@ -62,7 +62,7 @@ Claude reads the step field to know what depth of analysis is appropriate (see O
 
 ---
 
-## Layer 3 — Commands (The Seven Workflows)
+## Layer 3 — Commands (The Eight Workflows)
 
 Each command is a markdown file in `commands/` that defines a structured workflow Claude follows when you type the slash command.
 
@@ -72,6 +72,7 @@ Each command is a markdown file in `commands/` that defines a structured workflo
 | `/screen [company]` | `commands/screen.md` | `gates-and-flags-techgroup.md` → 3 hard gates + opportunity/readiness scoring | NWA Triage Report in chat + Triage Report .docx saved to deals/ |
 | `/scout [company]` | `commands/scout.md` | `nwai-investment-framework` skill → Scout Q assessment + theme map | Scout Assessment report in chat + Scout Assessment .docx saved to workspace |
 | `/diligence [company]` | `commands/diligence.md` | Pre-flight gate (Scout required + financial files confirmed) → 5–6 agent team → Layer 2 Hypothesis Confirmation Plan (AI-derived) + scored rubrics + 17-folder checklist | DD Kickoff Package .docx saved to deals/ |
+| `/post-meeting [company] [product\|gtm\|financials]` | `commands/post-meeting.md` | Loads transcript(s) + all prior context → applies analyst lens → produces dual-output document | Post-Meeting Reconciliation .docx (Analyst POV + Key Insights + Resolved/Open tracker) saved to deals/ |
 | `/dd-report [company]` | `commands/dd-report.md` | `nwai-investment-framework` skill → scored synthesis of completed diligence | DD Investment Report .docx (11 scored sections, 2-column RAG table layout, IC-ready) saved to deals/ |
 | `/decision [company] [verdict]` | `commands/decision.md` | `update_application` → Dealum updated with decision + tags | Decision recorded in Dealum |
 | `/memo [company]` | `commands/memo.md` | `nwai-investment-framework` skill → Executive Summary deck | 4-slide PPTX saved to deals/ |
@@ -127,7 +128,7 @@ Agents are **autonomous subprocesses** Claude can launch to do research in paral
 
 **Location:** `skills/nwai-investment-framework/`
 
-This skill is the **brain trust** — NWAi's proprietary investment knowledge encoded as reference documents that Claude loads during analysis. Seven reference files:
+This skill is the **brain trust** — NWAi's proprietary investment knowledge encoded as reference documents that Claude loads during analysis. Nine reference files:
 
 | File | Contents | Used At |
 |------|----------|---------|
@@ -139,6 +140,7 @@ This skill is the **brain trust** — NWAi's proprietary investment knowledge en
 | `ai-moats-framework.md` | Three moat types for evaluating AI company defensibility + Replicability Speed Matrix (4-row threat actor table with Yellow Flag triggers) | Scout + DD Report + Memo |
 | `dd-report-format-reference.md` | 11-section scored report structure, 1–5 scale mapping, exact STL visual layout (2-column table, 9432/1080 DXA, RAG hex colors), 5 Sharp & Succinct content rules, format drift incident log | DD Report |
 | `memo-format-reference.md` | 4-slide PPTX structure, NWAi branding, ++/-- notation, "What is the Bet?" format | Memo |
+| `diligence-analysis-framework.md` ★ NEW | Analyst lens behavioral standard for the 3 diligence deep-dive meetings. Defines the dual role (analyst POV primary / tracker secondary), declaration taxonomy, meeting-type playbooks (Product / GTM / Financials), progressive POV architecture, and post-meeting document output structure. | Diligence (post-meeting) |
 
 **The analogy:** If commands are work orders and agents are junior analysts, the skill is the NWAi investment playbook sitting on every analyst's desk — the same criteria applied consistently, every time, regardless of how exciting the pitch sounds.
 
@@ -260,9 +262,10 @@ nwai-tech-pipeline/
 │   ├── screen.md            ← /screen workflow
 │   ├── scout.md             ← /scout workflow
 │   ├── diligence.md         ← /diligence workflow (kickoff + 17-folder working doc)
-│   ├── dd-report.md         ← /dd-report workflow (scored synthesis, IC-ready)  ★ NEW
+│   ├── post-meeting.md      ← /post-meeting workflow (analyst lens + tracker reconciliation)  ★ NEW
+│   ├── dd-report.md         ← /dd-report workflow (scored synthesis, IC-ready)
 │   ├── decision.md          ← /decision workflow
-│   └── memo.md              ← /memo workflow (4-slide PPTX for members call)  ★ UPDATED
+│   └── memo.md              ← /memo workflow (4-slide PPTX for members call)
 ├── agents/
 │   ├── pipeline-monitor.md         ← Live Dealum pipeline snapshot agent
 │   ├── company-researcher.md       ← Founder, traction + commercial validation agent
@@ -275,20 +278,22 @@ nwai-tech-pipeline/
     └── nwai-investment-framework/
         ├── SKILL.md         ← Skill entry point
         └── references/
-            ├── gates-and-flags.md
+            ├── gates-and-flags-techgroup.md   ← TechGroup 3-layer triage screener
+            ├── gates-and-flags.md             ← Legacy 6-gate AutoKill (other verticals)
             ├── scout-questions.md
             ├── diligence-scoring-rubrics.md
             ├── dd-checklist.md
             ├── ai-moats-framework.md
-            ├── dd-report-format-reference.md  ★ NEW
-            └── memo-format-reference.md       ★ NEW
+            ├── dd-report-format-reference.md
+            ├── memo-format-reference.md
+            └── diligence-analysis-framework.md ← Analyst lens standard for post-meeting  ★ NEW
 
 Workspace root (your folder):
 ├── CLAUDE.md                ← Persistent session context (the "brain")
 ├── nwai-techgroup-pipeline-architecture.md ← This file
 ├── plugin/
 │   ├── current/
-│   │   ├── nwai-tech-pipeline.plugin  ← Latest installable plugin (v2.9.0)
+│   │   ├── nwai-tech-pipeline.plugin  ← Latest installable plugin (v2.11.0)
 │   │   └── nwai-tech-pipeline.zip     ← Org upload package (matches current plugin)
 │   └── archive/             ← Prior versioned plugin files (rollback if needed)
 ├── scripts/
@@ -325,6 +330,8 @@ Workspace root (your folder):
 | v0.10.0 | Mar 2026 | Overhauled `/dd-report` command and `dd-report-format-reference.md` (plugin v2.7.0): (1) Corrected DD Report visual layout to exact STL spec — every scored section is a 2-column table (content col 9432 DXA, score col 1080 DXA), not paragraph + callout box; (2) Added RAG score cell colors extracted from STL source XML (Green `375623`/White for 4–5, Amber `FFC000`/Dark for 3, Red `C00000`/White for 1–2) at 24pt bold; (3) Set exact page layout (margins 864 DXA, content width 10512 DXA, header/footer offset 708 DXA); (4) Added section numbering requirement (1. through 11.); (5) Corrected document structure order: Recommendation banner → Company header → Sections 1–11 → Recommendation table → DD Team Votes → Appendix A; (6) Added 5 Sharp & Succinct content rules to dd-report.md Step 4 (Once and Down, Section Mandates Exclusive, Tables Absorb Facts, Risk Synthesizes not Repeats, No Closing Restatements); (7) Added format drift incident log to dd-report-format-reference.md; (8) Added mini-table specifications per section; (9) Designated `STL-NWAi-DD-Report-2026-03-19.docx` as canonical visual reference (supersedes prior Synergist reference) |
 | v0.11.0 | Mar 2026 | Scout framework enrichment based on Ron Tarro framework review session 2026-03-22 (plugin v2.7): (1) Full rewrite of `scout-questions.md` — renamed Q1 to Category & Market Discontinuity (new category creator vs. optimizer; lifecycle horizon; structural shift test; 0–5 with Triage delta); Q3 Moat Assessment now produces a distilled 4-column table verdict (Primary Moat \| Strength \| Primary Threat \| Verdict) instead of moat-type enumeration by number; three new strategic dimensions added at Scout (Q4: Ecosystem Role — platform creator vs. follower, 0–5; Q5: Adjacent Displacement Risk — core use case + functional equivalents + emerging displacement, 0–5 inverted; Q6: Macro Tailwind — 4-dimension 10-year horizon table, 0–5); Phase 2 Team assessment now requires explicit Product team fit (✓/Partial/Gap) and Market team fit (✓/Partial/Gap); Analyst Verdict Block expanded to include "What You Have to Believe" (core thesis assumption) + "Where's the Bet" (specific inflection point) + "Greed" (upside case paired with Fear); Scout Conviction Score composite (/17) added (Phase 1: 40% / Strategic: 20% / Phase 2: 40%; conviction thresholds 14–17=High, 10–13=Moderate, 7–9=Low, <7=Decline); 2-page output format enforced (Page 1: scorecard tables only — Triage Carry-Forward + Product & Market Positioning + Moat Assessment + Macro Trends + Analyst Verdict Block + Score Summary with ↑/→/↓ Triage deltas; Page 2: Adjacent Tech bullets + Phase 1 bullet clusters + Phase 2 execution table + Flags + Diligence Questions); (2) `gates-and-flags-techgroup.md` — added Scout forward-mapping notes to Dimension 1 (Structural Discontinuity → Q1 Category & Market Discontinuity) and Dimension 4 (Defensibility → Q3 Moat + Q4 Ecosystem Role + Q5 Adjacent Displacement Risk); (3) `diligence-scoring-rubrics.md` — added Adjacent Displacement Risk as explicit sub-dimension of Competitive Risk (carry forward Q5 score from Scout); (4) `scout.md` command — fully updated to match new 8-step framework, fixed hardcoded old session path for docx skill (now dynamic find), Word doc output updated to 2-page design with 14 sections, output path updated to `deals/active/` subfolder |
 | v0.12.0 | Mar 2026 | Diligence Layer 2 — Hypothesis Confirmation Plan (plugin v2.8): (1) No Scout → No Diligence hard gate added to `/diligence` command — halts if Scout Assessment Report not found in workspace; post-Dealum-API: stage tag check to be added as second verification; (2) Pre-flight confirmation prompt added — requires user CONFIRM before launching agent team; reminds user to verify financial files in deal room; (3) Agent team expanded from 2 to 6: company-researcher (enhanced with commercial validation), market-analyst (new — discontinuity test + TAM/SAM + timing), competitive-intelligence (refocused to pure competitive), technical-diligence (new — thin wrapper + TRL + IP + AI moat), financial-analyst (new — reads deal room financial files, models unit economics + 10x path), risk-assessor (new — regulatory, exit landscape, execution + market risk); (4) Agent deployment by stage: company-researcher + market-analyst + competitive-intelligence + technical-diligence (light) at Scout; all 6 at Diligence; financial-analyst conditional on financial files; (5) DD Kickoff Package restructured from 5 parts (A–E) to 6 parts (A–F): Part B is new Layer 2 Hypothesis Confirmation Plan (AI-derived conclusions, not human-filled); Part C is Scored Assessment (formerly B); Part D is Layer 1 17-folder checklist (formerly C, renamed); Part E and F carry forward former D and E; (6) Layer 2 output format enforced: each of 6 validation groups = hypothesis (from Scout) + 2–3 sentence AI conclusion + 🟢/🟡/🔴 signal + biggest uncertainty; strict 4–5 line maximum per group, 1-page total; (7) `dd-checklist.md` updated with Layer 2 architecture overview and Layer 2 → DD Report score mapping table; (8) `diligence-scoring-rubrics.md` updated with Layer 2 rubric mapping table (each rubric mapped to its primary + secondary Layer 2 group); (9) Scout command updated to launch 4 research agents (company-researcher, market-analyst, competitive-intelligence, technical-diligence light) before Phase 1 scoring |
+| v0.16.0 | Apr 2026 | Architecture file corrections — gap closure after recent plugin updates: (1) Fixed Layer 3 heading from "Seven Workflows" to "Eight Workflows" (post-meeting was the 8th); (2) Fixed Layer 5 reference count from "Seven" to "Nine"; (3) Added `post-meeting.md` to file structure commands/ listing (was in Layer 3 table but missing from tree); (4) Added `gates-and-flags-techgroup.md` to file structure references/ listing (was in Layer 5 table but missing from tree); (5) Added `diligence-analysis-framework.md` to file structure references/ listing (same gap); (6) Added retroactive v0.15.0 changelog entry |
+| v0.15.0 | Apr 2026 | Added `/post-meeting` command and `diligence-analysis-framework.md` reference (plugin v2.9.x): (1) `commands/post-meeting.md` — new command for processing diligence meeting transcripts; applies analyst lens (declarations, structural contradictions, moat signals, team signals, thesis stress points) before reconciling Diligence Action Tracker; produces dual-output document (Analyst POV + Key Insights + Resolved/Open tracker); triggered via `/post-meeting [company] [product\|gtm\|financials]`; (2) `references/diligence-analysis-framework.md` — new reference doc defining the full behavioral standard for post-meeting analysis; analyst POV leads every output; tracker reconciliation is the record, not the deliverable; progressive POV architecture — each meeting updates the running thesis; (3) Layer 3 commands table updated to include `/post-meeting` row; Layer 5 reference table updated to include `diligence-analysis-framework.md` row; file structure tree not yet updated (corrected in v0.16.0) |
 | v0.14.0 | Apr 2026 | Framework enrichment from Synergist diligence meeting feedback (A1 + A2): (1) `scout-questions.md` — added Q1b Demand Signal Test as new Phase 1 dimension (demand-pull vs. technology-push assessment; required outputs: demand type, evidence, strongest signal; 0–5 scoring rubric; ⚠️ Yellow Flag at score ≤ 2; agent support note for market-analyst); Phase 1 now 4 dimensions (Q1 + Q1b + Q2 + Q3); Scout Conviction Score recalculated — Phase 1 weighted max increased from 6.0 to 8.0, total composite now /19 (was /17); conviction thresholds updated (16–19=High, 11–15=Moderate, 7–10=Low, <7=Decline); Score Summary table and Page 2 rationale updated to include Q1b row; (2) `ai-moats-framework.md` — added Replicability Speed Matrix (4-row threat actor table: open-source community, funded startup, Big Tech platform, LLM provider) with required "Could Replicate In" and "Barrier" columns; added dual flag triggers (⚠️ Yellow Flag if any row < 6 months, ⚠️ Strong Yellow Flag if LLM provider row < 12 months); renumbered scoring step to 6; (3) `gates-and-flags-techgroup.md` — added Replicability Speed Flag sub-section under AI Wrapper Assessment (applies at Scout + Diligence); two flag triggers matching ai-moats-framework; compounding rule: High Wrapper Risk + Replicability Speed Flag = strong DECLINE signal unless SME-validated |
 | v0.13.0 | Mar 2026 | Architecture file housekeeping (plugin v2.9.0): (1) Updated workspace root file structure — plugin now versioned as `nwai-tech-pipeline.plugin` v2.9.0 (no version suffix in filename); added `plugin/current/` and `plugin/archive/` directories; added `nwai-tech-pipeline.zip` (org upload package); (2) Added `scripts/` directory to file structure — `scripts/dd-report-generator.js` is the mandatory canonical DD Report generator (all `/dd-report` runs must use this script); (3) Updated canonical DD report reference throughout from `Synergist-DD-Investment-Report-2026-03-11.docx` to `STL-NWAi-DD-Report-2026-03-19.docx` (CLAUDE.md binding reference); (4) Fixed changelog ordering — v0.11.0 was logged after v0.12.0 due to retroactive addition; order corrected |
 

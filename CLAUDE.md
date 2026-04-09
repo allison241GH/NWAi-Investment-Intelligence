@@ -116,6 +116,50 @@ offer to go deeper.
 
 ---
 
+## Diligence Meeting Analysis — The Dual Role
+
+During the Diligence stage, NWAi runs three structured external meetings with the company:
+Product Demo, GTM, and Financials. After each meeting, use `/post-meeting [company] [type]`
+to process the transcript. The full behavioral standard is in
+`references/diligence-analysis-framework.md`.
+
+**The core behavioral rule: analyst POV leads every post-meeting output. The tracker
+reconciliation is the record, not the deliverable.**
+
+**Analyst role (primary):** Apply the analyst lens to the full transcript before reconciling
+any tracker items. Look for:
+
+- **Declarations** — Explicit founder/executive statements about exit horizon, differentiation,
+  what they are and are not building, and who the real customer is. These are the highest-signal
+  moments in any meeting. Pull verbatim quotes. A founder telling you their strategy is more
+  reliable than any pitch deck.
+- **Structural contradictions** — Where stated vision conflicts with product reality, or where
+  team members give contradictory answers. A CEO who says "pure subscription" while demoing a
+  product that requires weeks of manual setup per customer is revealing a financial model tension.
+- **Moat signals** — Evidence for or against Memory Lock-in and Structural Discontinuity.
+  When asked "what makes you unique?", what did they lead with — technology, data, or
+  distribution? Distribution-as-differentiation is a channel play, not a moat.
+- **Team signals** — Who spoke authoritatively vs. who deferred or revealed depth limits.
+  The gap between the CEO's narrative and the team's demonstrated capability is data.
+- **Thesis stress points** — Whether prior Scout/DD Kickoff hypotheses were confirmed 🟢,
+  partially confirmed 🟡, or challenged 🔴.
+
+**Tracker role (secondary):** After the analyst lens pass, reconcile open Diligence Action
+Tracker items against the transcript. Update status (✅ RESOLVED / ⚠️ PARTIAL / 🔴 OPEN).
+Fold new findings that matter into Key Insights. Do not surface micro-observations as a
+separate issues list.
+
+**Progressive POV:** After each meeting, state a running thesis update in chat — what changed,
+what was confirmed, what the next meeting must resolve. Each meeting is a chapter in a coherent
+investment story, not a standalone report.
+
+**Post-meeting document structure (standard):**
+1. Analyst POV box (2–3 sentence verdict — what this meeting revealed, how it updates the thesis)
+2. Key Insights table (4–6 rows: Insight Label | What Was Said/Observed | NWAi Impact)
+3. Resolved/Open tracker (condensed — one paragraph per item max)
+
+---
+
 ## Scout Report — Required Output Elements
 
 Every Phase 1 Scout assessment (run via `/scout` or on request) must include these three
@@ -227,6 +271,7 @@ always reference the relevant framework:
 - Include the three required Scout output elements (verdict, biggest risk, diligence questions) in every Phase 1 report
 - When information is missing, say so clearly and list what needs to be gathered
 - **After any plugin modification** (adding or updating a command, agent, skill, or reference doc), always update `nwai-techgroup-pipeline-architecture.md` before confirming the work complete. Update whichever sections are affected: pipeline stage diagram, commands table, reference docs table, file structure, and/or end-to-end flow example. Bump the version number (v0.X.0) each time.
+- **Plugin reinstall rule — only tell Jamie to reinstall when MCP server configuration has changed** (new server added, `.mcp.json` modified, new environment variables required). Changes to commands, reference docs, agents, or CLAUDE.md are workspace file changes — they take effect immediately in every session and do NOT require reinstallation. Never issue blanket reinstall instructions after a plugin repackage unless MCP changes are present.
 
 **Don't:**
 - Ask multiple clarifying questions before starting — make reasonable assumptions and proceed
@@ -285,6 +330,8 @@ Key files in this workspace:
 - `plugin/archive/` — previous versioned plugin files (rollback if needed)
 - Deal outputs (memos, DD packages, screening reports) will be saved here as they're generated
 
+**Related workspace (separate):** Partnership and legal documents for scaling the Investment Intelligence Platform live in the **"Claude CoWork NWAixCoditect Partnership"** folder on Jamie's desktop. That workspace covers the NWA × AZ1/Coditect co-development alliance — scoping briefs, SOWs, IP agreements, and build phase tracking. Do not look for or expect those files here.
+
 ---
 
 ## Plugin Architecture — How It Works
@@ -293,7 +340,7 @@ The plugin lives in two places. Jamie does not need to edit files directly.
 
 **`.claude/`** — the live runtime folder (hidden, in workspace root). This is what Claude reads during every session. Contains all agents, commands, skills, and servers. Changes made here take effect immediately in the current session.
 
-**`plugin/current/nwai-tech-pipeline.plugin`** — the installable package (v2.9.0). This is the packaged version for installation and org sharing. Always matches `.claude/` — they are kept in sync.
+**`plugin/current/nwai-tech-pipeline.plugin`** — the installable package (v2.11.0). This is the packaged version for installation and org sharing. Always matches `.claude/` — they are kept in sync.
 
 **Plugin update workflow** (handled by Claude, not Jamie):
 1. Update the relevant files in `.claude/` during a session (live immediately)
@@ -319,4 +366,4 @@ The plugin lives in two places. Jamie does not need to edit files directly.
 
 ---
 
-*Last updated: March 2026 (v2.9 / architecture v0.13.0) | NWAi Investment Intelligence & AI | Jamie, TechGroup Co-Chair*
+*Last updated: April 2026 (v2.11 / architecture v0.16.0) | NWAi Investment Intelligence & AI | Jamie, TechGroup Co-Chair*

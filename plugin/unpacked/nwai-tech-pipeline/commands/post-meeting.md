@@ -1,0 +1,139 @@
+---
+description: Process a diligence meeting transcript with analyst POV — surfaces Key Insights and reconciles open tracker items
+allowed-tools: Read, Write, Bash, WebSearch
+argument-hint: [company-name] [product|gtm|financials]
+---
+
+Process a completed NWAi TechGroup diligence meeting. Arguments: $ARGUMENTS
+
+Parse $ARGUMENTS as: first token = company name, last token = meeting type (product / gtm / financials).
+
+**The role here is analyst, not librarian.** The primary output is a POV — Key Insights that surface what this meeting revealed about investability. The tracker reconciliation is secondary. Never lead with a checklist.
+
+---
+
+## Step 1: Load All Context
+
+Load the following from the workspace deals folder:
+
+```bash
+WORKSPACE=$(dirname "$(find /sessions -name "CLAUDE.md" -path "*/Claude CoWork*" 2>/dev/null | head -1)")
+ls "${WORKSPACE}/deals/active/" 2>/dev/null
+```
+
+Load (most recent of each):
+- **Diligence Action Tracker** — `[Company]-Diligence-Action-Tracker-*.docx` — the open items for this company
+- **DD Kickoff Package** — `[Company] - DD Kickoff Package*.docx` — prior scored assessment and hypotheses
+- **Scout Assessment Report** — `[Company] - Scout Assessment Report*.docx` — original thesis baseline
+- **Prior post-meeting reconciliation docs** (if any) — carry forward prior Key Insights to build progressive POV
+
+Also load the diligence analysis framework:
+`.claude/skills/nwai-investment-framework/references/diligence-analysis-framework.md`
+
+---
+
+## Step 2: Load the Transcript(s)
+
+Check the workspace uploads and data room for meeting transcripts:
+
+```bash
+ls "${WORKSPACE}/deals/active/$(echo $ARGUMENTS | awk '{print $1}') Data Room/" 2>/dev/null
+ls /sessions/*/mnt/uploads/*.txt 2>/dev/null
+```
+
+If transcripts are not found in either location, ask the user to upload or specify the path. Do not proceed without transcript content.
+
+---
+
+## Step 3: Apply the Analyst Lens
+
+Before reconciling any tracker items, read the full transcript through the analyst lens. Apply the framework from `diligence-analysis-framework.md` for the specific meeting type.
+
+**The analyst lens — what to look for:**
+
+**Declarations** — Explicit statements by founders/executives about strategy, exit orientation, differentiation, what they are and are not building. These are the highest-signal moments. A founder telling you their strategy is more reliable than any pitch deck. Capture verbatim quotes where possible.
+
+**Structural contradictions** — Cases where what was said conflicts with what was demonstrated, or where the stated vision conflicts with the product reality. A CEO who says "pure SaaS subscription" but demos a product requiring weeks of manual setup per customer is telling you something important — about the unit economics, the scaling model, and self-awareness.
+
+**Moat signals** — Evidence for or against Memory Lock-in and proprietary defensibility. Does the product get stickier through use? Is the differentiation technology, data, or distribution? When asked "what makes you unique?", what did they lead with?
+
+**Team signals** — Who spoke authoritatively vs. who deferred, admitted gaps, or revealed depth limits. A technical delivery lead who can't answer basic architecture questions about their own platform is a signal. Note the gap between the CEO's narrative and the team's demonstrated knowledge.
+
+**Thesis stress points** — Moments where a prior hypothesis (from Scout or DD Kickoff) was confirmed, challenged, or complicated. Note signal direction: 🟢 confirmed / 🟡 partial / 🔴 challenged.
+
+**Do not start reconciling tracker items until the analyst lens pass is complete.**
+
+---
+
+## Step 4: Draft Key Insights
+
+Identify 4–6 Key Insights — the findings that most materially affect the investment thesis. Quality over quantity. An insight rises to this level if it changes, confirms, or complicates the answer to: *Would NWAi invest in this company?*
+
+Each insight must have:
+- **What Was Said / Observed** — the evidence, including verbatim quotes where available
+- **Analyst Interpretation** — what this reveals about the company's strategy, moat, team, or model
+- **NWAi Impact** — what it means for investability, which investment criteria it bears on, and what it demands from subsequent meetings
+
+Insights are ordered by materiality, not by when they appeared in the meeting.
+
+---
+
+## Step 5: Reconcile Tracker Items
+
+After the analyst lens pass, reconcile open items from the Diligence Action Tracker for the relevant track.
+
+Status values:
+- ✅ RESOLVED — question fully answered with evidence from the transcript
+- ⚠️ PARTIAL — partially answered; specific gap identified
+- 🔴 OPEN — not addressed; still requires follow-up
+
+For each item, write the finding in one concise paragraph — what the transcript revealed, and what remains unresolved. Do not expand items that are cleanly resolved into lengthy analysis; save depth for the Key Insights section.
+
+Note any new issues that directly bear on a Key Insight — fold them into the relevant insight rather than listing them separately.
+
+---
+
+## Step 6: Form the Meeting POV
+
+Before generating the document, synthesize a 2–3 sentence analyst verdict for the POV box:
+
+- What is the single most important thing this meeting revealed about the company?
+- How does it update the investment thesis formed at Scout / DD Kickoff?
+- What is the single most important question the next meeting must answer?
+
+This POV carries forward into the next meeting's context. It is the thread that connects the three deep dives into a coherent, progressive investment assessment.
+
+---
+
+## Step 7: Generate the Post-Meeting Document
+
+Read the docx skill:
+```bash
+find /sessions -name "SKILL.md" -path "*/skills/docx/SKILL.md" 2>/dev/null | head -1
+```
+
+Generate a `.docx` file using the standard dual-output structure (see `diligence-analysis-framework.md` for exact layout):
+
+**Section 1 — Analyst POV** (dark navy box): Meeting type + date + 2–3 sentence verdict.
+
+**Section 2 — Key Insights** (table, 3 columns): Insight label | What Was Said/Observed | NWAi Impact. 4–6 rows. No New Issues section — fold relevant new findings into Key Insights.
+
+**Section 3 — Resolved/Open Tracker** (table, 4 columns): # | Question | Finding | Status. Condensed — one paragraph per item maximum.
+
+Save to:
+```
+${WORKSPACE}/deals/active/[Company]-[MeetingType]-Meeting-Reconciliation-[YYYY-MM-DD].docx
+```
+
+Provide a link to the file and a 3-sentence verbal summary of the top insight and what it means for the next meeting.
+
+---
+
+## Step 8: Update Running Investment Thesis
+
+After generating the document, state in chat (not in the document):
+
+> **Running thesis update after [Meeting Type] meeting:**
+> [2 sentences: what changed, what was confirmed, what the next meeting must resolve]
+
+This keeps the progressive POV visible and prevents each meeting from being processed in isolation.
