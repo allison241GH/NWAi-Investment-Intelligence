@@ -209,6 +209,7 @@ When mapping a deal to a theme, identify the correct theme from the table below.
 | `/screen [company]` | Run AutoKill gates on a new deal |
 | `/scout [company]` | Run Scout Q assessment + map to TechGroup theme |
 | `/diligence [company]` | Launch research agents + apply scoring rubrics + generate DD kickoff package |
+| `/post-meeting [company] [type]` | Reconcile Product Demo / GTM / Financials meeting transcript — updates Diligence Action Tracker and surfaces Key Insights |
 | `/dd-report [company]` | Generate scored DD Investment Report (11 sections, 1–5 scale) — IC briefing document after 17-folder work completes |
 | `/decision [company] [invest\|pass\|watch]` | Record IC decision, update Dealum |
 | `/memo [company]` | Generate full NWAi Investment Memo (archival / external IC presentation) |
@@ -229,10 +230,11 @@ When mapping a deal to a theme, identify the correct theme from the table below.
 The `nwai-investment-framework` skill contains all reference material. When doing analysis,
 always reference the relevant framework:
 
-- **Gates & Flags**: TechGroup triage screener — 3 hard gates + Opportunity/Readiness scoring (`references/gates-and-flags-techgroup.md`); legacy 6-gate AutoKill retained at `references/gates-and-flags.md` (other verticals/reference only)
+- **Gates & Flags**: TechGroup triage screener — 3 hard gates + Opportunity/Readiness scoring; legacy 6-gate AutoKill retained for other verticals/reference only (`references/gates-and-flags-techgroup.md`, `references/gates-and-flags.md`)
 - **Scout Questions**: Phase 1 + Phase 2 assessment framework (`references/scout-questions.md`)
 - **Diligence Rubrics**: Moat 0–6/0–10, Risk 1–10, Bear/Base/Bull financial model (`references/diligence-scoring-rubrics.md`)
 - **DD Checklist**: 17-folder due diligence framework (`references/dd-checklist.md`)
+- **Diligence Meeting Analysis**: Analyst-POV-first framework for post-meeting reconciliation — Declarations, Structural Contradictions, Moat/Team signals, Thesis Stress Points (`references/diligence-analysis-framework.md`)
 - **AI Moats Framework**: Three moat types for evaluating AI company defensibility (`references/ai-moats-framework.md`)
 - **DD Report Format**: 11-section scored report structure, 1–5 scale mapping, DD team vote table (`references/dd-report-format-reference.md`)
 - **Memo Format**: Investment Memo structure for archival/external IC presentation (`references/memo-format-reference.md`)
@@ -306,7 +308,7 @@ The entire report is table-driven. In order:
 1. **Green box** (BG: E8F5E9, bold) — recommendation verdict + conditions — FIRST on page 1
 2. **"Scoring: 1 (lowest) to 5 (highest)"** — plain paragraph
 3. **Company description table** — 4-col; merged header row (navy); merged description row; alternating F4F4F4/FFFFFF detail rows
-4. **12 scored section tables** — each is exactly 2 rows × 2 cols:
+4. **11 scored section tables** — each is exactly 2 rows × 2 cols:
    - Row 0: navy header (1F3864, white text) | "Score" label
    - Row 1: content cell (dark navy or white per section) | score digit in color-coded cell
 5. **Recommendation table** — full-width, navy header, checkboxes + rationale + conditions
@@ -317,7 +319,7 @@ The entire report is table-driven. In order:
 
 **Section content cell backgrounds:**
 - White (no fill): Sections 1, 4, 5, 6, 7 (market-facing / external analysis)
-- Navy (1F3864, white text): Sections 2, 3, 8, 9, 10, 11, 12 (technical / internal / financial)
+- Navy (1F3864, white text): Sections 2, 3, 8, 9, 10, 11 (technical / internal / financial)
 
 ---
 
