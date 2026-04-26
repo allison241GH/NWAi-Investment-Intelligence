@@ -8,6 +8,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import dealsData from "@/data/deals.json";
 import { Deal, PIPELINE_STAGES, PipelineStage } from "@/types";
+import { STAGE_STYLES, stageAnchorId, stageFromSlug } from "@/lib/stage-style";
 
 const deals = dealsData as Deal[];
 
@@ -43,6 +44,10 @@ function MemberEngagement({ deal }: { deal: Deal }) {
       </div>
     );
   }
+  // Bar fill takes the stage palette color; the three segments use opacity
+  // to distinguish responded / outreach-sent / matched. Track stays neutral
+  // (bg-muted, theme-aware) per Change 4.
+  const fill = STAGE_STYLES[deal.stage].fill;
   return (
     <div className="space-y-1.5">
       <div className="flex items-center justify-between text-xs">
@@ -53,17 +58,17 @@ function MemberEngagement({ deal }: { deal: Deal }) {
       </div>
       <div className="flex h-1.5 overflow-hidden rounded-full bg-muted">
         <div
-          className="bg-foreground"
+          className={fill}
           style={{ width: `${(responded / pool_size) * 100}%` }}
           aria-label="Members responded"
         />
         <div
-          className="bg-foreground/40"
+          className={`${fill} opacity-60`}
           style={{ width: `${((engaged - responded) / pool_size) * 100}%` }}
           aria-label="Members engaged but not responded"
         />
         <div
-          className="bg-foreground/15"
+          className={`${fill} opacity-25`}
           style={{ width: `${((matched - engaged) / pool_size) * 100}%` }}
           aria-label="Members matched but not yet engaged"
         />
@@ -84,14 +89,21 @@ function DealCard({ deal }: { deal: Deal }) {
       <Card className="hover:border-foreground/40 transition-colors">
         <CardHeader className="pb-3">
           <div className="flex items-start justify-between gap-2">
-            <CardTitle className="text-base leading-tight">
-              {deal.company_name}
-            </CardTitle>
-            <Badge variant="outline" className="text-[10px] uppercase">
-              {deal.group.replace("Group", "")}
-            </Badge>
+            <div className="min-w-0 flex-1">
+              <CardTitle className="text-base leading-tight">
+                {deal.company_name}
+              </CardTitle>
+              <div className="text-[10px] uppercase tracking-wider text-muted-foreground mt-0.5">
+                {deal.group.replace("Group", " Group")}
+              </div>
+            </div>
+            <span
+              className={`shrink-0 inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-semibold ${STAGE_STYLES[deal.stage].badge}`}
+            >
+              {deal.stage}
+            </span>
           </div>
-          <p className="text-xs text-muted-foreground line-clamp-2 mt-1">
+          <p className="text-xs text-muted-foreground line-clamp-2 mt-2">
             {deal.one_liner}
           </p>
         </CardHeader>
@@ -123,7 +135,14 @@ function DealCard({ deal }: { deal: Deal }) {
 function StageColumn({ stage }: { stage: PipelineStage }) {
   const stageDeals = dealsByStage(stage);
   return (
-    <div className="flex flex-col gap-3 min-w-[280px] w-[280px]">
+    <div
+      id={stageAnchorId(stage)}
+      className="flex flex-col gap-3 min-w-[240px] w-[240px] scroll-mt-24"
+    >
+      <div
+        className={`h-1.5 rounded-full ${STAGE_STYLES[stage].bar}`}
+        aria-hidden
+      />
       <div className="flex items-center justify-between px-1">
         <h2 className="text-sm font-semibold">{stage}</h2>
         <Badge variant="secondary" className="text-xs tabular-nums">
@@ -143,7 +162,17 @@ function StageColumn({ stage }: { stage: PipelineStage }) {
   );
 }
 
-export default function PipelinePage() {
+export default function PipelinePage({
+  searchParams,
+}: {
+  searchParams: { stage?: string };
+}) {
+  // ?stage=<slug> → render that single column. Invalid or absent → all 7.
+  const filterStage = stageFromSlug(searchParams.stage);
+  const stagesToRender: PipelineStage[] = filterStage
+    ? [filterStage]
+    : PIPELINE_STAGES;
+
   return (
     <main className="min-h-screen p-6 md:p-10">
       <header className="mb-8">
@@ -151,21 +180,42 @@ export default function PipelinePage() {
           NWAi TechGroup · Track 1 + Track 2
         </div>
         <h1 className="text-2xl md:text-3xl font-semibold tracking-tight">
-          Pipeline Dashboard
+          {filterStage ? `Pipeline · ${filterStage}` : "Pipeline Dashboard"}
         </h1>
         <p className="text-sm text-muted-foreground mt-2 max-w-2xl">
-          Live pipeline mirrors the production{" "}
-          <code className="text-xs bg-muted px-1 py-0.5 rounded">
-            nwai-tech-pipeline
-          </code>{" "}
-          plugin. Each card shows the deal&apos;s stage, recent activity, and
-          (new) the Track 2 member engagement overlay.
+          {filterStage ? (
+            <>
+              Filtered to <span className="font-medium">{filterStage}</span>.
+              Use the Full Pipeline pill above to return to all 7 stages.
+            </>
+          ) : (
+            <>
+              Live pipeline mirrors the production{" "}
+              <code className="text-xs bg-muted px-1 py-0.5 rounded">
+                nwai-tech-pipeline
+              </code>{" "}
+              plugin. Each card shows the deal&apos;s stage, recent activity,
+              and (new) the Track 2 member engagement overlay.
+            </>
+          )}
         </p>
       </header>
 
-      <div className="overflow-x-auto pb-4 -mx-6 px-6 md:-mx-10 md:px-10">
-        <div className="flex gap-5 items-start">
-          {PIPELINE_STAGES.map((stage) => (
+      {/*
+        Kanban region. Layout rule per Session 2 #3:
+        - Each column 240px fixed; gutters 12px (gap-3) — bottom of the
+          12–16 range to make 1760px viewport actually fit per spec.
+        - Inner content width = 7×240 + 6×12 = 1752px.
+        - Negative-margin trick (-mx-6 md:-mx-10) extends the scroll container
+          to the viewport edges; minimal px-1 inner padding gives ~4px clearance
+          before column edges. At 1760px: viewport(1760) − padding(8) = 1752 = kanban.
+          mx-auto centers any extra space at wider viewports; columns don't stretch.
+        - At narrower viewports the kanban region itself horizontal-scrolls,
+          while page content (header + sticky nav above) stays full-width pinned.
+      */}
+      <div className="overflow-x-auto pb-4 -mx-6 px-1 md:-mx-10 md:px-1">
+        <div className="flex gap-3 items-start w-fit mx-auto">
+          {stagesToRender.map((stage) => (
             <StageColumn key={stage} stage={stage} />
           ))}
         </div>

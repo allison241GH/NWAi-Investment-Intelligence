@@ -9,6 +9,7 @@
     "hq_location": "San Francisco, CA",
     "stage_round": "Series A",
     "raise_amount_usd": 8000000,
+    "founders": ["Lucas Chen (CEO)", "Sara Donmez (Head of Evals)"],
     "recent_activity": {
       "label": "GTM meeting completed; financials meeting scheduled",
       "at": "2026-04-22T16:30:00Z"
@@ -93,6 +94,33 @@
         "input-003",
         "input-004"
       ]
+    },
+    "triage_assessment": {
+      "hard_gates": [
+        { "name": "Structure", "passed": true, "rationale": "Priced equity Series A; clean cap; lead investor in negotiation." },
+        { "name": "Geography", "passed": true, "rationale": "Delaware C-Corp; HQ San Francisco, CA; founders US-based." },
+        { "name": "Stage", "passed": true, "rationale": "Production deployments with two F500 design partners; recognized revenue under design-partner contracts." }
+      ],
+      "opportunity": [
+        { "name": "Market Size & Timing", "score": 5, "rationale": "Eval and observability are emerging as critical infrastructure layers for production LLM applications; growing fast as enterprises move from prototypes to deployment." },
+        { "name": "Moat / Defensibility", "score": 4, "rationale": "Proprietary evaluation dataset plus human-in-the-loop labeling pipeline gives genuine Memory Lock-in; not a thin wrapper on vendor primitives." },
+        { "name": "Founder / Team", "score": 4, "rationale": "Lucas Chen led pre-deployment eval at OpenAI; Sara Donmez ran evals at Anthropic. Technical bench is excellent; GTM bench is the open question." },
+        { "name": "Traction", "score": 4, "rationale": "Two F500 design partners on paid pre-deployment gating; LOI from a third. Pipeline is real; concentration risk in top 3 customers." },
+        { "name": "Strategic Fit", "score": 5, "rationale": "Theme 1 (Infrastructure & Foundational Stack) bullseye fit; strong NWA member overlap on AI infra and ML evaluation expertise." }
+      ],
+      "readiness": [
+        { "name": "Round Structure", "score": 4, "rationale": "Priced Series A; lead identified, terms in final negotiation; cap clean." },
+        { "name": "Financial Health", "score": 4, "rationale": "16 months runway; design-partner revenue covering ~30% of burn; unit economics modeled credibly." },
+        { "name": "Documentation", "score": 4, "rationale": "Technical and customer data rooms complete; financial model thorough." },
+        { "name": "Communication", "score": 4, "rationale": "Founder responsiveness strong; transparent on competitive positioning and team gaps." }
+      ],
+      "verdict": "ADVANCE",
+      "red_flags": [],
+      "yellow_flags": [
+        "Thin-wrapper risk on top of model-provider eval primitives if proprietary dataset moat proves shallower than claimed — needs continued pressure-testing through Diligence.",
+        "GTM bench is the binding constraint; senior enterprise CRO not yet hired."
+      ],
+      "generated_at": "2026-04-08T18:00:00Z"
     }
   },
   {
@@ -105,6 +133,7 @@
     "hq_location": "Cambridge, MA",
     "stage_round": "Seed",
     "raise_amount_usd": 5000000,
+    "founders": ["Dr. Mia Halsey (CEO)", "Dr. Vincent Park (Chief Scientific Officer)"],
     "recent_activity": {
       "label": "Triage Report generated; matching members for intro call",
       "at": "2026-04-25T14:00:00Z"
@@ -116,14 +145,9 @@
       "pool_size": 9
     },
     "scout_assessment_summary": {
-      "verdict": "Conditional pass — strong clinical team, but FDA pathway and reimbursement model need pressure-testing before Scout call.",
-      "biggest_risk": "Reimbursement coding strategy is the binding constraint, not assay performance.",
-      "diligence_questions": [
-        "What is the realistic CPT coding pathway and payer mix in year 1?",
-        "Is the regulatory path 510(k) or De Novo, and what is the predicate?",
-        "How does the unit economics survive Medicare reimbursement at the median rate?",
-        "Who is the named clinical lead and what is their track record with prior 510(k) clearances?"
-      ]
+      "verdict": "",
+      "biggest_risk": "",
+      "diligence_questions": []
     },
     "dd_artifacts": [
       {
@@ -146,6 +170,33 @@
       "new_risks": [],
       "new_opportunities": [],
       "synthesized_from_member_input_ids": []
+    },
+    "triage_assessment": {
+      "hard_gates": [
+        { "name": "Structure", "passed": true, "rationale": "Priced equity Seed round; clean cap structure; no SAFE." },
+        { "name": "Geography", "passed": true, "rationale": "Delaware C-Corp; HQ Cambridge, MA; founders US-based." },
+        { "name": "Stage", "passed": true, "rationale": "MVP complete; pilot validation underway with two Boston-area community hospitals." }
+      ],
+      "opportunity": [
+        { "name": "Market Size & Timing", "score": 4, "rationale": "POC molecular dx is a $10B+ TAM; reimbursement tailwind for community-health settings under 2025 CMS rule changes." },
+        { "name": "Moat / Defensibility", "score": 3, "rationale": "Assay chemistry shows promise but IP not yet filed; clinical evidence is the developing moat." },
+        { "name": "Founder / Team", "score": 5, "rationale": "Dr. Halsey ran molecular diagnostics at Quanterix; Dr. Park is a published clinical scientist with a prior 510(k) clearance." },
+        { "name": "Traction", "score": 3, "rationale": "Two LOIs with community hospital systems; revenue not yet recognized." },
+        { "name": "Strategic Fit", "score": 4, "rationale": "Aligned to MedicalGroup diagnostics thesis; SMEs available across NWA's medical roster." }
+      ],
+      "readiness": [
+        { "name": "Round Structure", "score": 4, "rationale": "Priced Seed; lead identified; clean cap." },
+        { "name": "Financial Health", "score": 3, "rationale": "12 months runway pre-raise; burn appropriate for stage." },
+        { "name": "Documentation", "score": 3, "rationale": "Data room complete on technical and clinical; financial model basic." },
+        { "name": "Communication", "score": 3, "rationale": "Founder responsiveness adequate; reimbursement narrative needs sharpening." }
+      ],
+      "verdict": "ADVANCE",
+      "red_flags": [],
+      "yellow_flags": [
+        "Reimbursement coding strategy is the binding constraint, not assay performance — needs pressure-testing before Scout call.",
+        "FDA pathway predicate not yet finalized; chosen 510(k) versus De Novo affects timeline materially."
+      ],
+      "generated_at": "2026-04-25T14:00:00Z"
     }
   },
   {
@@ -158,6 +209,7 @@
     "hq_location": "Brooklyn, NY",
     "stage_round": "Series A",
     "raise_amount_usd": 6000000,
+    "founders": ["Lea Aronson (CEO/Founder)"],
     "recent_activity": {
       "label": "DD Report draft circulated to IC; vote scheduled",
       "at": "2026-04-24T22:00:00Z"
@@ -239,6 +291,574 @@
         "input-007",
         "input-008"
       ]
+    },
+    "triage_assessment": {
+      "hard_gates": [
+        { "name": "Structure", "passed": true, "rationale": "Priced equity Series A; clean cap; previously raised priced Seed." },
+        { "name": "Geography", "passed": true, "rationale": "Delaware C-Corp; HQ Brooklyn, NY; founder US-based." },
+        { "name": "Stage", "passed": true, "rationale": "Recognized DTC revenue across multiple cohorts; sustainable kitchen essentials shipped to thousands of customers." }
+      ],
+      "opportunity": [
+        { "name": "Market Size & Timing", "score": 4, "rationale": "Sustainable consumer goods is a real and growing category; refill subscription model is the right wedge into a price-sensitive home goods market." },
+        { "name": "Moat / Defensibility", "score": 3, "rationale": "Brand and proprietary supplier relationships are real; not yet defensible against a fast follower with private label manufacturing." },
+        { "name": "Founder / Team", "score": 5, "rationale": "Lea Aronson has built three prior DTC brands; founder track record is the strongest asset." },
+        { "name": "Traction", "score": 4, "rationale": "Cohort 1 LTV/CAC of 4.2x is strong; cohorts 2–3 trending toward category averages without founder concierge." },
+        { "name": "Strategic Fit", "score": 4, "rationale": "Aligned to ConsumerGroup DTC thesis; SMEs available across NWA's consumer roster." }
+      ],
+      "readiness": [
+        { "name": "Round Structure", "score": 4, "rationale": "Priced Series A; lead committed; cap clean." },
+        { "name": "Financial Health", "score": 3, "rationale": "12 months runway; concierge cost not in current model — adds material burn at scale." },
+        { "name": "Documentation", "score": 4, "rationale": "Cohort data and supply chain materials complete; financial model needs concierge addback." },
+        { "name": "Communication", "score": 4, "rationale": "Founder responsive; transparent on cohort durability question." }
+      ],
+      "verdict": "ADVANCE",
+      "red_flags": [],
+      "yellow_flags": [
+        "Cohort durability past founder-led concierge service is the binding question — needs cohort 4 data before Series B.",
+        "Refill subscription LTV may not survive at scale once concierge is removed or productized."
+      ],
+      "generated_at": "2026-03-20T15:00:00Z"
+    }
+  },
+  {
+    "id": "deal-004",
+    "company_name": "Mosaic Stack",
+    "sector": "AI Infrastructure",
+    "group": "TechGroup",
+    "stage": "Inbox",
+    "one_liner": "Synthetic and curated training data infrastructure for enterprise model fine-tuning.",
+    "hq_location": "San Francisco, CA",
+    "stage_round": "Series A",
+    "raise_amount_usd": 7000000,
+    "founders": ["Adit Kumar (CEO)", "Bea Calderon (CTO)"],
+    "recent_activity": {
+      "label": "Pitch deck received via Dealum; awaiting AutoKill screening",
+      "at": "2026-04-25T17:00:00Z"
+    },
+    "member_engagement": {
+      "matched": 0,
+      "engaged": 0,
+      "responded": 0,
+      "pool_size": 14
+    },
+    "scout_assessment_summary": {
+      "verdict": "",
+      "biggest_risk": "",
+      "diligence_questions": []
+    },
+    "dd_artifacts": [],
+    "matched_member_ids": [],
+    "synthesis_preview": {
+      "consensus": "",
+      "dissent": "",
+      "new_risks": [],
+      "new_opportunities": [],
+      "synthesized_from_member_input_ids": []
+    }
+  },
+  {
+    "id": "deal-005",
+    "company_name": "Bellwood Robotics",
+    "sector": "Industrial Tech",
+    "group": "IndustrialGroup",
+    "stage": "Inbox",
+    "one_liner": "Fleet-managed warehouse pick-and-pack robots with vision-guided grasping.",
+    "hq_location": "Pittsburgh, PA",
+    "stage_round": "Seed",
+    "raise_amount_usd": 4000000,
+    "founders": ["Marcus Halloran (CEO)", "Yuki Endo (CTO)"],
+    "recent_activity": {
+      "label": "Application submitted via Dealum",
+      "at": "2026-04-24T12:30:00Z"
+    },
+    "member_engagement": {
+      "matched": 0,
+      "engaged": 0,
+      "responded": 0,
+      "pool_size": 3
+    },
+    "scout_assessment_summary": {
+      "verdict": "",
+      "biggest_risk": "",
+      "diligence_questions": []
+    },
+    "dd_artifacts": [],
+    "matched_member_ids": [],
+    "synthesis_preview": {
+      "consensus": "",
+      "dissent": "",
+      "new_risks": [],
+      "new_opportunities": [],
+      "synthesized_from_member_input_ids": []
+    }
+  },
+  {
+    "id": "deal-006",
+    "company_name": "OrbitFleet",
+    "sector": "Aerospace",
+    "group": "SpaceGroup",
+    "stage": "Inbox",
+    "one_liner": "Constellation operations software for small-satellite operators — collision avoidance, scheduling, and ground-station orchestration.",
+    "hq_location": "Denver, CO",
+    "stage_round": "Seed",
+    "raise_amount_usd": 5000000,
+    "founders": ["Ramon Castelo (CEO)", "Nadia Jepsen (Head of Operations)"],
+    "recent_activity": {
+      "label": "Inbound from member referral (Yuki Sato)",
+      "at": "2026-04-23T19:00:00Z"
+    },
+    "member_engagement": {
+      "matched": 0,
+      "engaged": 0,
+      "responded": 0,
+      "pool_size": 3
+    },
+    "scout_assessment_summary": {
+      "verdict": "",
+      "biggest_risk": "",
+      "diligence_questions": []
+    },
+    "dd_artifacts": [],
+    "matched_member_ids": [],
+    "synthesis_preview": {
+      "consensus": "",
+      "dissent": "",
+      "new_risks": [],
+      "new_opportunities": [],
+      "synthesized_from_member_input_ids": []
+    }
+  },
+  {
+    "id": "deal-007",
+    "company_name": "Tellur Health",
+    "sector": "Medical Device",
+    "group": "MedicalGroup",
+    "stage": "Inbox",
+    "one_liner": "Continuous glucose monitor and insights platform purpose-built for type 2 diabetes.",
+    "hq_location": "San Diego, CA",
+    "stage_round": "Series A",
+    "raise_amount_usd": 9000000,
+    "founders": ["Dr. Sandra Okello (CEO)", "Tomas Reisman (CTO)"],
+    "recent_activity": {
+      "label": "Pitch deck received; group assignment pending",
+      "at": "2026-04-22T15:00:00Z"
+    },
+    "member_engagement": {
+      "matched": 0,
+      "engaged": 0,
+      "responded": 0,
+      "pool_size": 9
+    },
+    "scout_assessment_summary": {
+      "verdict": "",
+      "biggest_risk": "",
+      "diligence_questions": []
+    },
+    "dd_artifacts": [],
+    "matched_member_ids": [],
+    "synthesis_preview": {
+      "consensus": "",
+      "dissent": "",
+      "new_risks": [],
+      "new_opportunities": [],
+      "synthesized_from_member_input_ids": []
+    }
+  },
+  {
+    "id": "deal-008",
+    "company_name": "Lattice Labs",
+    "sector": "AI Infrastructure",
+    "group": "TechGroup",
+    "stage": "Screening",
+    "one_liner": "Inference acceleration runtime for edge AI deployment on commodity hardware.",
+    "hq_location": "Austin, TX",
+    "stage_round": "Seed",
+    "raise_amount_usd": 4000000,
+    "founders": ["Priya Mehrotra (CEO)", "Dan Cole (CTO)"],
+    "recent_activity": {
+      "label": "Triage scoring complete — Opportunity 17/25; WATCH verdict pending Scout call",
+      "at": "2026-04-25T11:00:00Z"
+    },
+    "member_engagement": {
+      "matched": 4,
+      "engaged": 0,
+      "responded": 0,
+      "pool_size": 14
+    },
+    "scout_assessment_summary": {
+      "verdict": "",
+      "biggest_risk": "",
+      "diligence_questions": []
+    },
+    "dd_artifacts": [
+      {
+        "id": "art-012",
+        "name": "Lattice Labs — Triage Report",
+        "artifact_type": "Triage Report",
+        "generated_at": "2026-04-25T11:00:00Z",
+        "summary": "All 3 gates passed. Opportunity 17/25, Readiness 13/20. WATCH verdict — moat pressure-test needed before Scout."
+      }
+    ],
+    "matched_member_ids": ["member-002", "member-004", "member-007", "member-006"],
+    "synthesis_preview": {
+      "consensus": "",
+      "dissent": "",
+      "new_risks": [],
+      "new_opportunities": [],
+      "synthesized_from_member_input_ids": []
+    },
+    "triage_assessment": {
+      "hard_gates": [
+        { "name": "Structure", "passed": true, "rationale": "Priced equity Seed; clean cap; no SAFE." },
+        { "name": "Geography", "passed": true, "rationale": "Delaware C-Corp; HQ Austin, TX; founders US-based." },
+        { "name": "Stage", "passed": true, "rationale": "MVP shipped; closed alpha with three enterprise design partners." }
+      ],
+      "opportunity": [
+        { "name": "Market Size & Timing", "score": 4, "rationale": "Edge AI inference is a real and growing market; commodity-hardware deployment unlocks long-tail demand." },
+        { "name": "Moat / Defensibility", "score": 3, "rationale": "Acceleration runtime is technically credible but layered on top of vendor inference SDKs; thin-wrapper risk needs explicit moat justification." },
+        { "name": "Founder / Team", "score": 4, "rationale": "Priya brings data-infra leadership credentials; Dan led ML platform engineering at a Series B devtools company." },
+        { "name": "Traction", "score": 2, "rationale": "Closed alpha only; no paying customers yet; revenue model not validated." },
+        { "name": "Strategic Fit", "score": 4, "rationale": "Aligned to Theme 1 (Infrastructure & Foundational Stack); strong NWA member overlap on edge and ML platform expertise." }
+      ],
+      "readiness": [
+        { "name": "Round Structure", "score": 3, "rationale": "Priced Seed; lead under negotiation but not signed; cap clean." },
+        { "name": "Financial Health", "score": 3, "rationale": "12 months runway pre-raise; appropriate burn for stage." },
+        { "name": "Documentation", "score": 3, "rationale": "Technical data room solid; financial model basic." },
+        { "name": "Communication", "score": 4, "rationale": "Founders responsive; transparent about competitive positioning." }
+      ],
+      "verdict": "WATCH",
+      "red_flags": [],
+      "yellow_flags": [
+        "Thin-wrapper risk on top of vendor inference SDKs (CUDA, ONNX Runtime, OpenVINO) — explicit moat justification required to advance to Scout.",
+        "Hardware-vendor dependence not yet pressure-tested; what happens if NVIDIA or Intel ship competing first-party runtime?"
+      ],
+      "generated_at": "2026-04-25T11:00:00Z"
+    }
+  },
+  {
+    "id": "deal-009",
+    "company_name": "Carbon Cellar",
+    "sector": "DTC Consumer",
+    "group": "ConsumerGroup",
+    "stage": "Scout",
+    "one_liner": "Direct-to-consumer wine subscription with carbon-negative cellaring and provenance tracking.",
+    "hq_location": "Napa Valley, CA",
+    "stage_round": "Seed",
+    "raise_amount_usd": 3000000,
+    "founders": ["Eliza Brunner (CEO)", "Marcus Tian (Head of Product)"],
+    "recent_activity": {
+      "label": "Scout call scheduled for 2026-04-29; SME mapping complete",
+      "at": "2026-04-21T14:00:00Z"
+    },
+    "member_engagement": {
+      "matched": 3,
+      "engaged": 0,
+      "responded": 0,
+      "pool_size": 10
+    },
+    "scout_assessment_summary": {
+      "verdict": "Conditional pass — brand and supply story are real, but unit economics on the carbon-negative cellaring claim need pressure-testing before commitment.",
+      "biggest_risk": "Carbon offsets that anchor the marketing story may not survive certification scrutiny at scale, collapsing brand differentiation to a generic premium wine club.",
+      "diligence_questions": [
+        "What is the realistic incremental cost of carbon-negative cellaring per case at scale, and how is it amortized in current pricing?",
+        "Which third-party certification standards apply, and which has the company committed to versus self-attested?",
+        "What is the cohort 1 retention curve, and how does it bend in cohorts 2 and 3 once early-adopter pricing rolls off?",
+        "How defensible is the supplier network against a Direct-to-Trade competitor with a parallel certification?"
+      ]
+    },
+    "dd_artifacts": [
+      {
+        "id": "art-013",
+        "name": "Carbon Cellar — Triage Report",
+        "artifact_type": "Triage Report",
+        "generated_at": "2026-04-15T10:00:00Z",
+        "summary": "All three gates passed. Opportunity 18/25, Readiness 14/20."
+      },
+      {
+        "id": "art-014",
+        "name": "Carbon Cellar — Scout Assessment",
+        "artifact_type": "Scout Assessment",
+        "generated_at": "2026-04-21T14:00:00Z",
+        "summary": "Mapped to Consumer Theme. Conditional pass; carbon claim is the binding question."
+      }
+    ],
+    "matched_member_ids": ["member-017", "member-019", "member-021"],
+    "synthesis_preview": {
+      "consensus": "",
+      "dissent": "",
+      "new_risks": [],
+      "new_opportunities": [],
+      "synthesized_from_member_input_ids": []
+    },
+    "triage_assessment": {
+      "hard_gates": [
+        { "name": "Structure", "passed": true, "rationale": "Priced equity Seed; clean cap; no SAFE." },
+        { "name": "Geography", "passed": true, "rationale": "Delaware C-Corp; HQ Napa Valley, CA; founders US-based." },
+        { "name": "Stage", "passed": true, "rationale": "Recognized DTC revenue; subscription program live with paying customers across multiple cohorts." }
+      ],
+      "opportunity": [
+        { "name": "Market Size & Timing", "score": 4, "rationale": "DTC wine subscription is a real category; carbon-negative cellaring is a credible premium positioning if the certification story holds." },
+        { "name": "Moat / Defensibility", "score": 3, "rationale": "Brand and certified supplier network are real; not yet defensible against a competitor with parallel certification." },
+        { "name": "Founder / Team", "score": 4, "rationale": "Eliza Brunner brings DTC operating credibility from prior consumer brands; Marcus Tian led product at a Series B subscription company." },
+        { "name": "Traction", "score": 3, "rationale": "Cohort 1 retention strong; later cohorts not yet validated; revenue ramp early." },
+        { "name": "Strategic Fit", "score": 4, "rationale": "Aligned to ConsumerGroup DTC and sustainability theses; SMEs available in retail and supply chain." }
+      ],
+      "readiness": [
+        { "name": "Round Structure", "score": 3, "rationale": "Priced Seed; lead in negotiation; cap clean." },
+        { "name": "Financial Health", "score": 3, "rationale": "9 months runway pre-raise; appropriate burn for stage; carbon offset costs not yet stress-tested at scale." },
+        { "name": "Documentation", "score": 3, "rationale": "Cohort and supply chain materials adequate; certification documentation in progress." },
+        { "name": "Communication", "score": 4, "rationale": "Founders responsive; transparent on certification and cohort durability questions." }
+      ],
+      "verdict": "ADVANCE",
+      "red_flags": [],
+      "yellow_flags": [
+        "Carbon-negative cellaring claim depends on third-party certification that is in progress, not finalized; brand differentiation collapses if certification is denied or contested.",
+        "Cohort 2 retention not yet at the threshold needed to underwrite the unit economics at scale."
+      ],
+      "generated_at": "2026-04-15T10:00:00Z"
+    }
+  },
+  {
+    "id": "deal-010",
+    "company_name": "Helmsman AI",
+    "sector": "AI Infrastructure",
+    "group": "TechGroup",
+    "stage": "Decision",
+    "one_liner": "Workflow orchestration platform for legal teams — contract review, matter tracking, and matter-specific knowledge.",
+    "hq_location": "New York, NY",
+    "stage_round": "Series A",
+    "raise_amount_usd": 10000000,
+    "founders": ["Rachel Whitfield (CEO)", "Akira Tanaka (CTO)"],
+    "recent_activity": {
+      "label": "IC voted INVEST 2026-04-22 — conditional on senior CRO hire pre-close",
+      "at": "2026-04-22T20:00:00Z"
+    },
+    "member_engagement": {
+      "matched": 5,
+      "engaged": 5,
+      "responded": 5,
+      "pool_size": 14
+    },
+    "scout_assessment_summary": {
+      "verdict": "Strong invest — vertical workflow depth in legal is the moat, and the founding team has the right operator credibility.",
+      "biggest_risk": "Switching cost narrative depends on workflow integration depth that takes 90+ days; if churn shows in first cohort, the moat thesis collapses.",
+      "diligence_questions": [
+        "What is the realistic 12-month retention curve for cohort 1 customers?",
+        "What is the named CRO hire timeline, and what happens to GTM if that hire slips by 60 days?",
+        "Which 2–3 enterprise customers have committed to renewal terms?",
+        "What is the realistic ACV ramp from year 1 to year 3 by customer segment?"
+      ]
+    },
+    "dd_artifacts": [
+      {
+        "id": "art-015",
+        "name": "Helmsman AI — Triage Report",
+        "artifact_type": "Triage Report",
+        "generated_at": "2026-03-05T10:00:00Z",
+        "summary": "All gates passed. Opportunity 22/25, Readiness 17/20."
+      },
+      {
+        "id": "art-016",
+        "name": "Helmsman AI — Scout Assessment",
+        "artifact_type": "Scout Assessment",
+        "generated_at": "2026-03-08T14:00:00Z",
+        "summary": "Mapped to Theme 3 (WorkTech & Vertical Enterprise OS). Real Memory Lock-in candidate."
+      },
+      {
+        "id": "art-017",
+        "name": "Helmsman AI — DD Kickoff Package",
+        "artifact_type": "DD Kickoff Package",
+        "generated_at": "2026-03-15T09:00:00Z",
+        "summary": "17-folder DD assigned. Moat 7/10, Tech 6/10, Risk 4/10."
+      },
+      {
+        "id": "art-018",
+        "name": "Helmsman AI — GTM Meeting Reconciliation",
+        "artifact_type": "Post-Meeting Reconciliation",
+        "generated_at": "2026-04-02T18:00:00Z",
+        "summary": "Two enterprise design partners; one signed LOI for production deployment."
+      },
+      {
+        "id": "art-019",
+        "name": "Helmsman AI — DD Investment Report",
+        "artifact_type": "DD Investment Report",
+        "generated_at": "2026-04-18T16:00:00Z",
+        "summary": "Recommendation: INVEST conditional on CRO hire pre-close."
+      }
+    ],
+    "matched_member_ids": ["member-005", "member-009", "member-010", "member-008", "member-003"],
+    "synthesis_preview": {
+      "consensus": "Workflow integration depth is the real moat; legal vertical specificity is defensible. Members converge on supporting the round at the proposed valuation, conditional on the CRO hire.",
+      "dissent": "Priya argues the data infrastructure is undersized for the claimed customer trajectory and will need a meaningful re-architecture by Series B.",
+      "new_risks": [
+        "Several incumbent legal-tech competitors are reportedly building competing workflow modules.",
+        "Reference checks surfaced one prior co-founder departure that warrants follow-up before close."
+      ],
+      "new_opportunities": [
+        "Lena flagged a partner-bank introduction that could open a fintech-legal lateral expansion in 12 months.",
+        "Henrik offered to help structure usage-based pricing to extend ACV ramp."
+      ],
+      "synthesized_from_member_input_ids": ["input-009", "input-010", "input-011", "input-012", "input-013"]
+    },
+    "triage_assessment": {
+      "hard_gates": [
+        { "name": "Structure", "passed": true, "rationale": "Priced equity Series A; clean cap; previously raised priced Seed and Series A." },
+        { "name": "Geography", "passed": true, "rationale": "Delaware C-Corp; HQ New York, NY; founders US-based." },
+        { "name": "Stage", "passed": true, "rationale": "Two enterprise design partners in production; recognized revenue at AmLaw 200 firms." }
+      ],
+      "opportunity": [
+        { "name": "Market Size & Timing", "score": 5, "rationale": "Legal vertical workflow is a $20B+ TAM with clear AI tailwind; corporate legal teams are actively buying AI-native workflow tools." },
+        { "name": "Moat / Defensibility", "score": 5, "rationale": "Workflow integration depth creates real Memory Lock-in — 90+ days to deploy means switching costs compound. Matter-specific knowledge graph is proprietary and accruing." },
+        { "name": "Founder / Team", "score": 5, "rationale": "Rachel Whitfield led product at a top legal-tech incumbent; Akira Tanaka was principal engineer at a Series B vertical SaaS company. Operator credibility is unusually high." },
+        { "name": "Traction", "score": 4, "rationale": "Two enterprise design partners with paid contracts; signed LOI from a third for production deployment. ACV ramp is real but not yet proven at Series B scale." },
+        { "name": "Strategic Fit", "score": 5, "rationale": "Theme 3 (WorkTech & Vertical Enterprise OS) bullseye fit; strong NWA member overlap on enterprise GTM and vertical SaaS." }
+      ],
+      "readiness": [
+        { "name": "Round Structure", "score": 5, "rationale": "Priced Series A; lead committed and term sheet executed; cap clean." },
+        { "name": "Financial Health", "score": 4, "rationale": "18 months runway post-close; design-partner revenue covering ~25% of burn; CAC payback 14 months at current ACV." },
+        { "name": "Documentation", "score": 4, "rationale": "Customer references complete; financial model thorough; technical architecture documented." },
+        { "name": "Communication", "score": 4, "rationale": "Founders responsive; transparent on team gaps and competitive landscape." }
+      ],
+      "verdict": "ADVANCE",
+      "red_flags": [],
+      "yellow_flags": [
+        "Switching cost narrative depends on workflow integration depth that takes 90+ days; if churn shows in first cohort, the moat thesis collapses.",
+        "Senior enterprise CRO not yet hired; named pipeline but no signed offer at time of triage."
+      ],
+      "generated_at": "2026-03-05T10:00:00Z"
+    },
+    "decision": {
+      "verdict": "invest",
+      "rationale": "Vertical workflow depth in legal is the moat; founding team has the right operator credibility. Memory Lock-in confirmed in DD. CRO hire is the binding pre-close condition.",
+      "decided_at": "2026-04-22T20:00:00Z",
+      "conditions": [
+        "Senior enterprise CRO hire confirmed and onboarded pre-close",
+        "Confirmed renewal terms with at least two of the three named design partners",
+        "Reference follow-up on prior co-founder departure"
+      ]
+    }
+  },
+  {
+    "id": "deal-011",
+    "company_name": "Resonant Health",
+    "sector": "Medical Device",
+    "group": "MedicalGroup",
+    "stage": "Memo",
+    "one_liner": "AI-powered cardiac echocardiography reading platform for community hospitals and outpatient clinics.",
+    "hq_location": "Boston, MA",
+    "stage_round": "Series A",
+    "raise_amount_usd": 12000000,
+    "founders": ["Dr. Anika Reddy (CEO)", "Dr. Tomás Vidal (Chief Medical Officer)"],
+    "recent_activity": {
+      "label": "Memo finalized 2026-04-10; closing scheduled 2026-05-15",
+      "at": "2026-04-10T15:00:00Z"
+    },
+    "member_engagement": {
+      "matched": 6,
+      "engaged": 6,
+      "responded": 5,
+      "pool_size": 9
+    },
+    "scout_assessment_summary": {
+      "verdict": "Invest — strongest community-hospital cardiac AI deal we have seen this cycle. Real clinical evidence, credible reimbursement strategy, board-grade founding team.",
+      "biggest_risk": "Reimbursement coding strategy depends on a CPT category that was finalized only recently; coverage decisions across the major payers are still in motion.",
+      "diligence_questions": [
+        "What is the realistic timeline for Medicare and the top 5 commercial payers to finalize coverage decisions?",
+        "What is the contingency operational plan if reimbursement comes in below the modeled rate?",
+        "How defensible is the training dataset against a fast follower with comparable clinical access?",
+        "What is the current FDA clearance status for the second-line module?"
+      ]
+    },
+    "dd_artifacts": [
+      {
+        "id": "art-020",
+        "name": "Resonant Health — Triage Report",
+        "artifact_type": "Triage Report",
+        "generated_at": "2026-02-08T10:00:00Z",
+        "summary": "All gates passed. Opportunity 23/25, Readiness 18/20."
+      },
+      {
+        "id": "art-021",
+        "name": "Resonant Health — Scout Assessment",
+        "artifact_type": "Scout Assessment",
+        "generated_at": "2026-02-12T14:00:00Z",
+        "summary": "Mapped to MedicalGroup Cardiology Theme. Strongest Q1 deal."
+      },
+      {
+        "id": "art-022",
+        "name": "Resonant Health — DD Kickoff Package",
+        "artifact_type": "DD Kickoff Package",
+        "generated_at": "2026-02-22T09:00:00Z",
+        "summary": "17-folder DD assigned. Moat 8/10, Tech 7/10, Risk 3/10."
+      },
+      {
+        "id": "art-023",
+        "name": "Resonant Health — Financials Meeting Reconciliation",
+        "artifact_type": "Post-Meeting Reconciliation",
+        "generated_at": "2026-03-18T17:00:00Z",
+        "summary": "Reimbursement model stress-tested; downside case still supports 5x return."
+      },
+      {
+        "id": "art-024",
+        "name": "Resonant Health — DD Investment Report",
+        "artifact_type": "DD Investment Report",
+        "generated_at": "2026-04-01T16:00:00Z",
+        "summary": "Recommendation: INVEST. IC vote unanimous."
+      },
+      {
+        "id": "art-025",
+        "name": "Resonant Health — Investment Memo",
+        "artifact_type": "Investment Memo",
+        "generated_at": "2026-04-10T15:00:00Z",
+        "summary": "Final memo distributed to IC; closing scheduled 2026-05-15."
+      }
+    ],
+    "matched_member_ids": ["member-011", "member-012", "member-013", "member-014", "member-015", "member-016"],
+    "synthesis_preview": {
+      "consensus": "Strongest medical device deal of the cycle. Clinical evidence holds; reimbursement risk is real but bounded. Members converge on full-check support.",
+      "dissent": "James flagged the underlying training dataset is community-hospital biased and may not generalize cleanly to academic medical centers — not a Q1 risk but a Year 2 ceiling consideration.",
+      "new_risks": [
+        "Coverage decisions across top commercial payers may take 6–12 months longer than modeled.",
+        "One competing point-of-care AI platform is reportedly raising at higher valuation with similar clinical claims."
+      ],
+      "new_opportunities": [
+        "Dr. Kane has direct relationships at three target community hospitals that could shorten initial deployment timeline.",
+        "Aisha flagged a payer partnership pathway that could shortcut coverage decisions in two states."
+      ],
+      "synthesized_from_member_input_ids": ["input-014", "input-015", "input-016", "input-017", "input-018"]
+    },
+    "triage_assessment": {
+      "hard_gates": [
+        { "name": "Structure", "passed": true, "rationale": "Priced equity Series A; clean cap; previously raised priced Seed." },
+        { "name": "Geography", "passed": true, "rationale": "Delaware C-Corp; HQ Boston, MA; founders US-based." },
+        { "name": "Stage", "passed": true, "rationale": "First-line module FDA-cleared; commercial pilots with three named community hospital systems." }
+      ],
+      "opportunity": [
+        { "name": "Market Size & Timing", "score": 5, "rationale": "Cardiac AI in community hospitals is a large underpenetrated market with strong reimbursement tailwind under recent CMS rule changes; community-hospital tier is the right entry point." },
+        { "name": "Moat / Defensibility", "score": 5, "rationale": "Clinical evidence + proprietary training dataset + FDA clearance create real defensibility; second-line module pipeline extends the moat." },
+        { "name": "Founder / Team", "score": 5, "rationale": "Dr. Anika Reddy is a board-grade cardiology AI researcher; Dr. Tomás Vidal is the right Chief Medical Officer for community-hospital deployment. Strongest founding team this cycle." },
+        { "name": "Traction", "score": 4, "rationale": "Commercial pilots with named hospital systems; FDA clearance secured for first-line module; recognized revenue not yet at full scale." },
+        { "name": "Strategic Fit", "score": 5, "rationale": "MedicalGroup cardiology thesis bullseye fit; rich SME pool across NWA's medical roster." }
+      ],
+      "readiness": [
+        { "name": "Round Structure", "score": 5, "rationale": "Priced Series A; lead committed at $48M pre-money; cap clean; oversubscription managed." },
+        { "name": "Financial Health", "score": 5, "rationale": "24 months runway post-close; conservative burn; reimbursement model stress-tested in financials meeting." },
+        { "name": "Documentation", "score": 5, "rationale": "Clinical evidence package complete; FDA submissions documented; financial model with downside scenarios." },
+        { "name": "Communication", "score": 4, "rationale": "Founders responsive; transparent on reimbursement risk and second-line module timeline." }
+      ],
+      "verdict": "ADVANCE",
+      "red_flags": [],
+      "yellow_flags": [
+        "Reimbursement coding strategy depends on a CPT category that was finalized only recently; coverage decisions across the major payers are still in motion.",
+        "Training dataset is community-hospital biased and may not generalize cleanly to academic medical centers — a Year 2 ceiling consideration, not a Q1 risk."
+      ],
+      "generated_at": "2026-02-08T10:00:00Z"
+    },
+    "memo": {
+      "finalized_at": "2026-04-10T15:00:00Z",
+      "summary": "INVEST — $250K NWAi check at $48M pre-money. Conditions: confirmed coverage decisions for at least two of top 5 commercial payers within 12 months; FDA clearance for second-line module on track; quarterly clinical evidence updates to NWAi members.",
+      "distributed_to_ic_at": "2026-04-10T17:00:00Z",
+      "closing_scheduled_at": "2026-05-15T00:00:00Z"
     }
   }
 ]

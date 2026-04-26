@@ -270,5 +270,296 @@
     ],
     "status": "outreach_sent",
     "generated_at": "2026-04-12T10:00:00Z"
+  },
+  {
+    "id": "match-016",
+    "deal_id": "deal-009",
+    "member_id": "member-017",
+    "rank": 1,
+    "score": 92,
+    "rationale": "Sarah's brand-led DTC operating experience is the right voice on whether Carbon Cellar's premium positioning is durable past the early-adopter cohort.",
+    "expertise_signals": [
+      { "label": "Operator at Allbirds, Glossier, Warby Parker", "weight": 0.92, "category": "operator" }
+    ],
+    "suggested_dd_questions": [
+      { "folder_id": "5", "folder_name": "Competition", "question": "How defensible is the supplier and certification story against a fast follower with parallel certification?" }
+    ],
+    "status": "matched",
+    "generated_at": "2026-04-21T14:00:00Z"
+  },
+  {
+    "id": "match-017",
+    "deal_id": "deal-009",
+    "member_id": "member-019",
+    "rank": 2,
+    "score": 88,
+    "rationale": "Mei's retail and wholesale relationships are the right read on whether Carbon Cellar can credibly add a wholesale leg to defend the moat.",
+    "expertise_signals": [
+      { "label": "VP Retail Partnerships at DTC food brand", "weight": 0.88, "category": "operator" }
+    ],
+    "suggested_dd_questions": [
+      { "folder_id": "8", "folder_name": "Sales / GTM", "question": "What is the realistic wholesale margin and slotting structure if Carbon Cellar pursues a Whole Foods or Erewhon program?" }
+    ],
+    "status": "matched",
+    "generated_at": "2026-04-21T14:00:00Z"
+  },
+  {
+    "id": "match-018",
+    "deal_id": "deal-009",
+    "member_id": "member-021",
+    "rank": 3,
+    "score": 86,
+    "rationale": "Ingrid is the right voice on whether the carbon-negative claim survives certification scrutiny — and what the realistic incremental cost is at scale.",
+    "expertise_signals": [
+      { "label": "Sustainable supply chain operator at Patagonia and Allbirds", "weight": 0.92, "category": "operator" }
+    ],
+    "suggested_dd_questions": [
+      { "folder_id": "15", "folder_name": "ESG", "question": "What third-party certification standards apply to the carbon-negative cellaring claim, and which has the company committed to versus self-attested?" }
+    ],
+    "status": "matched",
+    "generated_at": "2026-04-21T14:00:00Z"
+  },
+  {
+    "id": "match-019",
+    "deal_id": "deal-010",
+    "member_id": "member-009",
+    "rank": 1,
+    "score": 95,
+    "rationale": "Kemi is the strongest GTM read on Helmsman's vertical-enterprise positioning. Her Series A go-to-market track record at Salesforce and Workday is directly comparable.",
+    "expertise_signals": [
+      { "label": "Operating partner at growth-stage fund", "weight": 0.92, "category": "investor" },
+      { "label": "Series A enterprise GTM specialty", "weight": 0.95, "category": "domain" }
+    ],
+    "suggested_dd_questions": [
+      { "folder_id": "2", "folder_name": "Team", "question": "What is the realistic CRO hire timeline, and what is the contingency if it slips by 60 days?" }
+    ],
+    "status": "responded",
+    "generated_at": "2026-03-15T10:00:00Z"
+  },
+  {
+    "id": "match-020",
+    "deal_id": "deal-010",
+    "member_id": "member-005",
+    "rank": 2,
+    "score": 91,
+    "rationale": "Lena's fintech-infrastructure background is the right adjacent voice — her partner-bank experience surfaces a credible lateral expansion play for Helmsman.",
+    "expertise_signals": [
+      { "label": "Director of Product at fintech infrastructure company", "weight": 0.88, "category": "operator" }
+    ],
+    "suggested_dd_questions": [
+      { "folder_id": "4", "folder_name": "Market", "question": "Is there a credible 12–18 month expansion path into adjacent verticals, and what is the team's view?" }
+    ],
+    "status": "responded",
+    "generated_at": "2026-03-15T10:00:00Z"
+  },
+  {
+    "id": "match-021",
+    "deal_id": "deal-010",
+    "member_id": "member-010",
+    "rank": 3,
+    "score": 89,
+    "rationale": "Henrik's pricing-strategy depth is the right voice on Helmsman's seat-based versus usage-based pricing call. Datadog ARR-ramp comparable applies.",
+    "expertise_signals": [
+      { "label": "VP Product at Datadog through Series B–IPO", "weight": 0.93, "category": "operator" }
+    ],
+    "suggested_dd_questions": [
+      { "folder_id": "6", "folder_name": "Financials", "question": "What is the ACV ramp comparable, and how does pricing model affect Series B valuation underwriting?" }
+    ],
+    "status": "responded",
+    "generated_at": "2026-03-15T10:00:00Z"
+  },
+  {
+    "id": "match-022",
+    "deal_id": "deal-010",
+    "member_id": "member-008",
+    "rank": 4,
+    "score": 84,
+    "rationale": "Jordan brings the developer-experience read on whether Helmsman's integration depth is a genuine moat or replicable surface integration.",
+    "expertise_signals": [
+      { "label": "Head of Developer Experience at devtools companies", "weight": 0.85, "category": "operator" }
+    ],
+    "suggested_dd_questions": [
+      { "folder_id": "3", "folder_name": "Product / Technology", "question": "Is the workflow integration depth genuinely 90+ days of sticky deployment, or shallower than claimed?" }
+    ],
+    "status": "responded",
+    "generated_at": "2026-03-15T10:00:00Z"
+  },
+  {
+    "id": "match-023",
+    "deal_id": "deal-010",
+    "member_id": "member-003",
+    "rank": 5,
+    "score": 80,
+    "rationale": "Priya provides the data-infrastructure pressure-test. She flagged that the underlying data layer needs re-architecture by Series B.",
+    "expertise_signals": [
+      { "label": "CTO at enterprise data platform startup", "weight": 0.88, "category": "operator" }
+    ],
+    "suggested_dd_questions": [
+      { "folder_id": "3", "folder_name": "Product / Technology", "question": "What is the realistic re-architecture timeline for the data layer, and what is the cost?" }
+    ],
+    "status": "responded",
+    "generated_at": "2026-03-15T10:00:00Z"
+  },
+  {
+    "id": "match-024",
+    "deal_id": "deal-011",
+    "member_id": "member-011",
+    "rank": 1,
+    "score": 96,
+    "rationale": "Elena is the strongest molecular and clinical diagnostics expert in NWA. Her three 510(k) clearances directly inform her read on Resonant's clinical evidence and FDA pathway.",
+    "expertise_signals": [
+      { "label": "VP Diagnostics at Quanterix; 3 prior 510(k) submissions", "weight": 0.96, "category": "operator" }
+    ],
+    "suggested_dd_questions": [
+      { "folder_id": "3", "folder_name": "Product / Technology", "question": "What is the FDA clearance status for the second-line module, and what is the realistic timeline?" }
+    ],
+    "status": "responded",
+    "generated_at": "2026-02-25T10:00:00Z"
+  },
+  {
+    "id": "match-025",
+    "deal_id": "deal-011",
+    "member_id": "member-013",
+    "rank": 2,
+    "score": 93,
+    "rationale": "Aisha's payer-integration background is the binding read on coverage decisions and reimbursement risk — the central question for this deal.",
+    "expertise_signals": [
+      { "label": "VP Strategy with payer integration experience", "weight": 0.92, "category": "operator" }
+    ],
+    "suggested_dd_questions": [
+      { "folder_id": "8", "folder_name": "Sales / GTM", "question": "What is the realistic timeline for coverage decisions across the top 5 commercial payers?" }
+    ],
+    "status": "responded",
+    "generated_at": "2026-02-25T10:00:00Z"
+  },
+  {
+    "id": "match-026",
+    "deal_id": "deal-011",
+    "member_id": "member-012",
+    "rank": 3,
+    "score": 89,
+    "rationale": "Robert's surgeon perspective gives a procurement-side read on hospital adoption blockers and OR formulary realities for cardiac AI.",
+    "expertise_signals": [
+      { "label": "Practicing surgeon at Brigham and Women's", "weight": 0.92, "category": "operator" }
+    ],
+    "suggested_dd_questions": [
+      { "folder_id": "9", "folder_name": "Operations", "question": "Which 3 community hospitals are most realistic as initial deployment partners, and what does procurement actually require?" }
+    ],
+    "status": "responded",
+    "generated_at": "2026-02-25T10:00:00Z"
+  },
+  {
+    "id": "match-027",
+    "deal_id": "deal-011",
+    "member_id": "member-016",
+    "rank": 4,
+    "score": 86,
+    "rationale": "Kofi brings the institutional life-sciences-investing lens on IP defensibility, exit comparable set, and acquirer landscape for cardiac AI.",
+    "expertise_signals": [
+      { "label": "Partner at life sciences fund", "weight": 0.90, "category": "investor" }
+    ],
+    "suggested_dd_questions": [
+      { "folder_id": "17", "folder_name": "Exit Strategy", "question": "Who realistically buys this in 5 years, and at what comparable revenue multiple?" }
+    ],
+    "status": "responded",
+    "generated_at": "2026-02-25T10:00:00Z"
+  },
+  {
+    "id": "match-028",
+    "deal_id": "deal-011",
+    "member_id": "member-014",
+    "rank": 5,
+    "score": 80,
+    "rationale": "James's NIH translational-research background is the right voice on whether the underlying clinical evidence holds beyond the community-hospital training set.",
+    "expertise_signals": [
+      { "label": "NIH translational-research background", "weight": 0.85, "category": "domain" }
+    ],
+    "suggested_dd_questions": [
+      { "folder_id": "3", "folder_name": "Product / Technology", "question": "How does the model generalize from community-hospital training data to academic medical center populations?" }
+    ],
+    "status": "responded",
+    "generated_at": "2026-02-25T10:00:00Z"
+  },
+  {
+    "id": "match-029",
+    "deal_id": "deal-011",
+    "member_id": "member-015",
+    "rank": 6,
+    "score": 75,
+    "rationale": "Naomi's medical device operations and quality-systems background is useful on manufacturing readiness for the second-line module rollout.",
+    "expertise_signals": [
+      { "label": "Ex-COO at Series C medical device company", "weight": 0.85, "category": "operator" }
+    ],
+    "suggested_dd_questions": [
+      { "folder_id": "9", "folder_name": "Operations", "question": "Is the team ready operationally for second-line FDA clearance and rollout?" }
+    ],
+    "status": "outreach_sent",
+    "generated_at": "2026-02-25T10:00:00Z"
+  },
+  {
+    "id": "match-030",
+    "deal_id": "deal-008",
+    "member_id": "member-002",
+    "rank": 1,
+    "score": 93,
+    "rationale": "Daniel is the strongest edge-deployment voice in NWA. His Cloudflare and AWS experience is directly applicable to whether Lattice's commodity-hardware story holds at scale.",
+    "expertise_signals": [
+      { "label": "Built and scaled Cloudflare's edge network", "weight": 0.95, "category": "operator" },
+      { "label": "Sector match: Edge / cloud infrastructure", "weight": 0.90, "category": "domain" }
+    ],
+    "suggested_dd_questions": [
+      { "folder_id": "3", "folder_name": "Product / Technology", "question": "What is the realistic latency and cost-per-inference advantage versus stock CUDA or ONNX Runtime on the same hardware?" },
+      { "folder_id": "5", "folder_name": "Competition", "question": "What happens to the moat if NVIDIA ships first-party commodity-runtime tooling in the next 12 months?" }
+    ],
+    "status": "matched",
+    "generated_at": "2026-04-25T11:00:00Z"
+  },
+  {
+    "id": "match-031",
+    "deal_id": "deal-008",
+    "member_id": "member-004",
+    "rank": 2,
+    "score": 89,
+    "rationale": "Marcus's MLflow and ML deployment experience at Databricks is the right voice on whether Lattice's runtime is genuinely a platform play or a tooling layer that gets absorbed.",
+    "expertise_signals": [
+      { "label": "Built MLflow deployment subsystem at Databricks", "weight": 0.90, "category": "operator" }
+    ],
+    "suggested_dd_questions": [
+      { "folder_id": "3", "folder_name": "Product / Technology", "question": "How is the runtime architected to retain integration depth with model providers' first-party orchestration?" }
+    ],
+    "status": "matched",
+    "generated_at": "2026-04-25T11:00:00Z"
+  },
+  {
+    "id": "match-032",
+    "deal_id": "deal-008",
+    "member_id": "member-007",
+    "rank": 3,
+    "score": 84,
+    "rationale": "Rachel's DeepMind ML research perspective is the right pressure-test on whether the inference acceleration claims hold versus published 2023–2024 work.",
+    "expertise_signals": [
+      { "label": "Research scientist at Google DeepMind", "weight": 0.88, "category": "domain" }
+    ],
+    "suggested_dd_questions": [
+      { "folder_id": "3", "folder_name": "Product / Technology", "question": "What is genuinely novel about the acceleration approach versus published quantization and kernel-fusion techniques?" }
+    ],
+    "status": "matched",
+    "generated_at": "2026-04-25T11:00:00Z"
+  },
+  {
+    "id": "match-033",
+    "deal_id": "deal-008",
+    "member_id": "member-006",
+    "rank": 4,
+    "score": 78,
+    "rationale": "Theo brings the latency-sensitive distributed systems read. Useful as a secondary voice on real-time inference performance at scale.",
+    "expertise_signals": [
+      { "label": "Senior engineer at Twilio video and Twitter real-time", "weight": 0.85, "category": "operator" }
+    ],
+    "suggested_dd_questions": [
+      { "folder_id": "3", "folder_name": "Product / Technology", "question": "What is the real-world tail-latency profile under bursty production load?" }
+    ],
+    "status": "matched",
+    "generated_at": "2026-04-25T11:00:00Z"
   }
 ]

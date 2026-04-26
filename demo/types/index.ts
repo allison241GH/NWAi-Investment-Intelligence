@@ -74,6 +74,51 @@ export interface Deal {
   // MemberIntelligenceSection.content shape so Phase 2 can swap a real
   // synthesis in without changing this contract.
   synthesis_preview: SynthesisPreview;
+  founders?: string[];
+  decision?: DecisionRecord;
+  memo?: MemoRecord;
+  triage_assessment?: TriageAssessment;
+}
+
+// TechGroup live triage-with-scoring framework. Per CLAUDE.md and the
+// production nwai-tech-pipeline plugin: 3 hard gates + Opportunity (5×0–5)
+// + Readiness (4×0–5). ADVANCE ≥ 18/25 Opportunity. Same shape applied to
+// Screening-stage cards regardless of group (forward-state framework for
+// Phase 2 multi-group rollout).
+export interface TriageAssessment {
+  hard_gates: TriageGate[]; // exactly 3: Structure, Geography, Stage
+  opportunity: ScoredDimension[]; // exactly 5 dimensions, each 0–5
+  readiness: ScoredDimension[]; // exactly 4 dimensions, each 0–5
+  verdict: "ADVANCE" | "WATCH" | "KILL";
+  red_flags: string[]; // ❌ — rendered as Red
+  yellow_flags: string[]; // ⚠️ — rendered as Yellow
+  generated_at: string; // ISO
+}
+
+export interface TriageGate {
+  name: "Structure" | "Geography" | "Stage";
+  passed: boolean;
+  rationale: string; // one line
+}
+
+export interface ScoredDimension {
+  name: string;
+  score: 0 | 1 | 2 | 3 | 4 | 5;
+  rationale: string; // 1–2 sentences
+}
+
+export interface DecisionRecord {
+  verdict: "invest" | "pass" | "watch";
+  rationale: string;
+  decided_at: string; // ISO
+  conditions?: string[];
+}
+
+export interface MemoRecord {
+  finalized_at: string; // ISO
+  summary: string;
+  distributed_to_ic_at?: string; // ISO
+  closing_scheduled_at?: string; // ISO
 }
 
 export interface SynthesisPreview {

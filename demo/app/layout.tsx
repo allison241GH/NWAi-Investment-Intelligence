@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Suspense } from "react";
 import "./globals.css";
+import { StageNav } from "@/components/StageNav";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,6 +30,16 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Suspense
+          fallback={
+            <div
+              aria-hidden
+              className="sticky top-0 z-40 h-12 bg-background/95 border-b"
+            />
+          }
+        >
+          <StageNav />
+        </Suspense>
         {children}
         <div
           aria-label="Demo watermark"
