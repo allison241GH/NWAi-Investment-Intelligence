@@ -1,0 +1,102 @@
+[
+  {
+    "id": "signal-001",
+    "source_type": "accelerator",
+    "source_name": "Y Combinator W26",
+    "signal_label": "Three eval-infra startups in current batch",
+    "summary": "YC W26 has admitted three companies positioning around LLM evaluation and observability. Two appear to overlap with Veridian Models' positioning; one is differentiated on agent-specific evaluation.",
+    "relevance_themes": ["Infrastructure & Foundational Stack"],
+    "surfaced_at": "2026-04-22T09:00:00Z",
+    "candidate_company": "Forge Eval"
+  },
+  {
+    "id": "signal-002",
+    "source_type": "university",
+    "source_name": "Stanford CRFM Spinout Watch",
+    "signal_label": "Two faculty-led foundation model spinouts in stealth",
+    "summary": "Two CRFM-affiliated faculty are reportedly raising for stealth companies. Both target enterprise applications of small specialized models. Stage: pre-seed, target raise $4–6M each.",
+    "relevance_themes": ["Infrastructure & Foundational Stack", "WorkTech & Vertical Enterprise OS"],
+    "surfaced_at": "2026-04-21T18:00:00Z"
+  },
+  {
+    "id": "signal-003",
+    "source_type": "operator_network",
+    "source_name": "Ex-Anthropic operators",
+    "signal_label": "Wave of senior departures forming new companies",
+    "summary": "At least four senior operators have left Anthropic in the past 90 days. Two are explicitly raising for new infrastructure companies; one is reportedly going into MedicalGroup-relevant clinical AI.",
+    "relevance_themes": ["Infrastructure & Foundational Stack", "Data Sovereignty, Security, Trust"],
+    "surfaced_at": "2026-04-19T14:00:00Z"
+  },
+  {
+    "id": "signal-004",
+    "source_type": "incubator",
+    "source_name": "MIT Sandbox",
+    "signal_label": "Two diagnostics startups completing pre-clinical validation",
+    "summary": "Two MIT Sandbox-funded diagnostics companies are wrapping pre-clinical validation in Q2. Both target POC molecular dx in primary care settings — adjacent to Aperion's positioning but with different assay chemistry.",
+    "relevance_themes": ["Medical Device"],
+    "surfaced_at": "2026-04-18T11:00:00Z"
+  },
+  {
+    "id": "signal-005",
+    "source_type": "market_signal",
+    "source_name": "PitchBook Q1 2026",
+    "signal_label": "AI infra valuations softening at Series A",
+    "summary": "Q1 2026 data shows AI infrastructure Series A valuations down 22% from Q3 2025 peak. Median round size now $7.2M (down from $9.1M). Veridian's $8M raise is in the upper quartile but no longer aspirational.",
+    "relevance_themes": ["Infrastructure & Foundational Stack"],
+    "surfaced_at": "2026-04-16T08:00:00Z"
+  },
+  {
+    "id": "signal-006",
+    "source_type": "thematic_report",
+    "source_name": "NWA TechGroup — Internal",
+    "signal_label": "Theme heatmap: Infrastructure & Foundational Stack",
+    "summary": "Internal thematic report: 11 deals reviewed in Theme 1 over 12 months. Three advanced past Scout. Recurring kill reason is thin-wrapper risk; recurring approval signal is proprietary data-flywheel evidence.",
+    "relevance_themes": ["Infrastructure & Foundational Stack"],
+    "surfaced_at": "2026-04-12T16:00:00Z"
+  },
+  {
+    "id": "signal-007",
+    "source_type": "operator_network",
+    "source_name": "Ex-DTC operators",
+    "signal_label": "Concentration of ex-Allbirds/Glossier operators starting sustainable goods brands",
+    "summary": "Six ex-Allbirds, Glossier, and Warby Parker operators have started DTC consumer companies in the past 18 months. Three are in sustainable home goods — direct adjacency to Hearthen.",
+    "relevance_themes": ["DTC Consumer"],
+    "surfaced_at": "2026-04-10T10:00:00Z"
+  },
+  {
+    "id": "signal-008",
+    "source_type": "accelerator",
+    "source_name": "Techstars Boston Spring 2026",
+    "signal_label": "Three medical device companies in current cohort",
+    "summary": "Techstars Boston is running three medical device companies in its Spring 2026 cohort. One is in surgical robotics, two in diagnostics. Demo Day is May 14.",
+    "relevance_themes": ["Medical Device"],
+    "surfaced_at": "2026-04-08T13:00:00Z"
+  },
+  {
+    "id": "signal-009",
+    "source_type": "university",
+    "source_name": "Carnegie Mellon Robotics Institute",
+    "signal_label": "Spinout pipeline in industrial robotics",
+    "summary": "CMU Robotics Institute reports four faculty-led spinouts in stealth in industrial automation and physical AI. Two have committed Series A leads; two are still raising seed.",
+    "relevance_themes": ["SW Enabled HW, Physical AI & Robotics"],
+    "surfaced_at": "2026-04-05T15:00:00Z"
+  },
+  {
+    "id": "signal-010",
+    "source_type": "market_signal",
+    "source_name": "Crunchbase Q1 2026",
+    "signal_label": "Sustainable consumer goods Series A activity up 30% YoY",
+    "summary": "Series A funding in sustainable consumer goods up 30% YoY in Q1 2026. Most activity in food & beverage; home goods (Hearthen's segment) up 18%. Median Series A check size $5.4M.",
+    "relevance_themes": ["DTC Consumer"],
+    "surfaced_at": "2026-04-02T09:00:00Z"
+  },
+  {
+    "id": "signal-011",
+    "source_type": "thematic_report",
+    "source_name": "Gartner — Synthesis",
+    "signal_label": "Eval and observability layer consolidation forecast",
+    "summary": "Gartner forecasts that 60% of standalone eval and observability vendors will be acquired or consolidated by 2028. Implication for Veridian: window to grow into independent platform is roughly 24 months.",
+    "relevance_themes": ["Infrastructure & Foundational Stack"],
+    "surfaced_at": "2026-03-28T14:00:00Z"
+  }
+]

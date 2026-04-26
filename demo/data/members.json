@@ -1,0 +1,484 @@
+[
+  {
+    "id": "member-001",
+    "name": "Maya Chen",
+    "email": "maya.chen@example.com",
+    "linkedin_url": "https://linkedin.com/in/example-maya-chen",
+    "group": "TechGroup",
+    "location": "San Francisco, CA",
+    "expertise_tags": ["LLM evaluation", "ML research", "AI safety"],
+    "prior_employers": ["OpenAI", "Anthropic", "Stanford NLP"],
+    "current_role": "Independent ML researcher and angel investor",
+    "sectors_of_interest": ["AI Infrastructure", "Developer Tools"],
+    "stage_preference": ["Pre-Seed", "Seed", "Series A"],
+    "check_size_range": { "min_usd": 25000, "max_usd": 100000 },
+    "past_investments": [
+      { "company": "Cohere", "sector": "AI Infrastructure", "year": 2021, "stage_at_entry": "Series A", "outcome": "Active", "is_portfolio_company": true },
+      { "company": "Hugging Face", "sector": "AI Infrastructure", "year": 2020, "stage_at_entry": "Seed", "outcome": "Active", "is_portfolio_company": true },
+      { "company": "Anthropic", "sector": "AI Infrastructure", "year": 2021, "stage_at_entry": "Series A", "outcome": "Active" }
+    ],
+    "expertise_profile": "Twelve years in ML research with a focus on language model evaluation and alignment. Led pre-deployment eval at OpenAI (2021–2023) and Anthropic (2023–2025). Strong opinions on what makes evaluation infrastructure defensible — particularly proprietary task distributions and human-in-the-loop labeling pipelines.",
+    "participation": { "deals_matched": 14, "deals_contributed": 11, "response_rate": 0.85, "last_contribution_at": "2026-04-21T19:00:00Z" }
+  },
+  {
+    "id": "member-002",
+    "name": "Daniel Park",
+    "email": "daniel.park@example.com",
+    "linkedin_url": "https://linkedin.com/in/example-daniel-park",
+    "group": "TechGroup",
+    "location": "Seattle, WA",
+    "expertise_tags": ["Cloud infrastructure", "Edge computing", "Networking"],
+    "prior_employers": ["Cloudflare", "AWS", "Riverbed"],
+    "current_role": "VP Engineering at a Series C cloud security company",
+    "sectors_of_interest": ["AI Infrastructure", "Cybersecurity"],
+    "stage_preference": ["Seed", "Series A"],
+    "check_size_range": { "min_usd": 50000, "max_usd": 150000 },
+    "past_investments": [
+      { "company": "Tailscale", "sector": "Networking", "year": 2021, "stage_at_entry": "Series A", "outcome": "Active", "is_portfolio_company": true },
+      { "company": "Fly.io", "sector": "Cloud Infrastructure", "year": 2022, "stage_at_entry": "Series A", "outcome": "Active" }
+    ],
+    "expertise_profile": "Eighteen years in cloud and networking infrastructure. Built and scaled Cloudflare's edge network from 50 to 200+ POPs. Deep expertise on infrastructure economics, latency-sensitive deployments, and the realistic ceiling for developer-tools businesses.",
+    "participation": { "deals_matched": 9, "deals_contributed": 8, "response_rate": 0.92, "last_contribution_at": "2026-04-19T14:00:00Z" }
+  },
+  {
+    "id": "member-003",
+    "name": "Priya Anand",
+    "email": "priya.anand@example.com",
+    "linkedin_url": "https://linkedin.com/in/example-priya-anand",
+    "group": "TechGroup",
+    "location": "Palo Alto, CA",
+    "expertise_tags": ["Data infrastructure", "Analytics", "Enterprise SaaS"],
+    "prior_employers": ["Snowflake", "Looker", "Oracle"],
+    "current_role": "CTO at an enterprise data platform startup",
+    "sectors_of_interest": ["Data Infrastructure", "AI Infrastructure", "Enterprise SaaS"],
+    "stage_preference": ["Series A", "Series B+"],
+    "check_size_range": { "min_usd": 100000, "max_usd": 250000 },
+    "past_investments": [
+      { "company": "Snowflake", "sector": "Data Infrastructure", "year": 2018, "stage_at_entry": "Series D", "outcome": "IPO" },
+      { "company": "Hex", "sector": "Analytics", "year": 2022, "stage_at_entry": "Series A", "outcome": "Active" },
+      { "company": "Mode Analytics", "sector": "Analytics", "year": 2019, "stage_at_entry": "Series B", "outcome": "Acquired" }
+    ],
+    "expertise_profile": "Twenty-plus years building data platforms. Early engineer at Snowflake; led enterprise data team at Looker through Google acquisition. Sees data infrastructure as the next decade's critical layer for AI applications.",
+    "participation": { "deals_matched": 7, "deals_contributed": 6, "response_rate": 0.86, "last_contribution_at": "2026-03-30T11:00:00Z" }
+  },
+  {
+    "id": "member-004",
+    "name": "Marcus Holloway",
+    "email": "marcus.holloway@example.com",
+    "linkedin_url": "https://linkedin.com/in/example-marcus-holloway",
+    "group": "TechGroup",
+    "location": "Austin, TX",
+    "expertise_tags": ["MLOps", "ML platform", "Model deployment"],
+    "prior_employers": ["Databricks", "Microsoft", "MLflow"],
+    "current_role": "Founder of an MLOps consultancy; previously Principal Engineer at Databricks",
+    "sectors_of_interest": ["AI Infrastructure", "Developer Tools"],
+    "stage_preference": ["Seed", "Series A"],
+    "check_size_range": { "min_usd": 50000, "max_usd": 150000 },
+    "past_investments": [
+      { "company": "Weights & Biases", "sector": "AI Infrastructure", "year": 2020, "stage_at_entry": "Series A", "outcome": "Active", "is_portfolio_company": true },
+      { "company": "Modal", "sector": "AI Infrastructure", "year": 2022, "stage_at_entry": "Seed", "outcome": "Active" }
+    ],
+    "expertise_profile": "Built MLflow's deployment subsystem at Databricks. Knows the seams between training pipelines, model serving, and observability. Will reliably break down whether a 'platform' is actually a platform or three loosely-connected products.",
+    "participation": { "deals_matched": 11, "deals_contributed": 9, "response_rate": 0.82, "last_contribution_at": "2026-04-20T15:00:00Z" }
+  },
+  {
+    "id": "member-005",
+    "name": "Lena Voss",
+    "email": "lena.voss@example.com",
+    "linkedin_url": "https://linkedin.com/in/example-lena-voss",
+    "group": "TechGroup",
+    "location": "New York, NY",
+    "expertise_tags": ["Fintech infrastructure", "Payments", "API platforms"],
+    "prior_employers": ["Stripe", "Plaid", "Goldman Sachs"],
+    "current_role": "Director of Product at a Series C fintech infrastructure company",
+    "sectors_of_interest": ["Fintech", "AI Infrastructure"],
+    "stage_preference": ["Seed", "Series A"],
+    "check_size_range": { "min_usd": 50000, "max_usd": 100000 },
+    "past_investments": [
+      { "company": "Mercury", "sector": "Fintech", "year": 2020, "stage_at_entry": "Series A", "outcome": "Active", "is_portfolio_company": true },
+      { "company": "Pilot", "sector": "Fintech", "year": 2019, "stage_at_entry": "Series A", "outcome": "Active" }
+    ],
+    "expertise_profile": "Eight years in fintech infrastructure. Knows what it takes to onboard banking partners and survive compliance reviews. Sharpest read on payments unit economics and regulatory exposure on the TechGroup roster.",
+    "participation": { "deals_matched": 6, "deals_contributed": 5, "response_rate": 0.83, "last_contribution_at": "2026-04-12T17:00:00Z" }
+  },
+  {
+    "id": "member-006",
+    "name": "Theo Nakamura",
+    "email": "theo.nakamura@example.com",
+    "linkedin_url": "https://linkedin.com/in/example-theo-nakamura",
+    "group": "TechGroup",
+    "location": "San Francisco, CA",
+    "expertise_tags": ["Communications infrastructure", "Real-time systems", "Distributed systems"],
+    "prior_employers": ["Twilio", "Twitter", "Zoom"],
+    "current_role": "Independent advisor and angel investor",
+    "sectors_of_interest": ["Developer Tools", "Communications"],
+    "stage_preference": ["Pre-Seed", "Seed"],
+    "check_size_range": { "min_usd": 25000, "max_usd": 75000 },
+    "past_investments": [
+      { "company": "Daily.co", "sector": "Communications", "year": 2021, "stage_at_entry": "Seed", "outcome": "Active" }
+    ],
+    "expertise_profile": "Fifteen years building messaging and real-time infrastructure. Senior engineer on Twilio's video stack; led one of Twitter's late real-time pipelines. Will pressure-test latency and reliability claims hard.",
+    "participation": { "deals_matched": 5, "deals_contributed": 4, "response_rate": 0.80, "last_contribution_at": "2026-03-15T10:00:00Z" }
+  },
+  {
+    "id": "member-007",
+    "name": "Rachel Adler",
+    "email": "rachel.adler@example.com",
+    "linkedin_url": "https://linkedin.com/in/example-rachel-adler",
+    "group": "TechGroup",
+    "location": "Seattle, WA",
+    "expertise_tags": ["ML research", "Reinforcement learning", "Foundation models"],
+    "prior_employers": ["Google DeepMind", "Allen Institute for AI"],
+    "current_role": "Research scientist; angel investor in AI infra deals",
+    "sectors_of_interest": ["AI Infrastructure", "AI Research"],
+    "stage_preference": ["Pre-Seed", "Seed"],
+    "check_size_range": { "min_usd": 25000, "max_usd": 75000 },
+    "past_investments": [
+      { "company": "Adept", "sector": "AI Infrastructure", "year": 2022, "stage_at_entry": "Series A", "outcome": "Active" },
+      { "company": "Inflection AI", "sector": "AI Infrastructure", "year": 2022, "stage_at_entry": "Series B", "outcome": "Acquired" }
+    ],
+    "expertise_profile": "ML research scientist with publications in top conferences. Deep technical read on whether a team's 'novel approach' is genuinely novel or repackaged 2022 work. Tends to be skeptical and usually right.",
+    "participation": { "deals_matched": 8, "deals_contributed": 6, "response_rate": 0.75, "last_contribution_at": "2026-04-18T22:00:00Z" }
+  },
+  {
+    "id": "member-008",
+    "name": "Jordan Wright",
+    "email": "jordan.wright@example.com",
+    "linkedin_url": "https://linkedin.com/in/example-jordan-wright",
+    "group": "TechGroup",
+    "location": "Brooklyn, NY",
+    "expertise_tags": ["Developer tools", "Open source go-to-market", "Vertical SaaS"],
+    "prior_employers": ["GitHub", "Vercel", "Heroku"],
+    "current_role": "Head of Developer Experience at a Series B devtools company",
+    "sectors_of_interest": ["Developer Tools", "AI Infrastructure"],
+    "stage_preference": ["Seed", "Series A"],
+    "check_size_range": { "min_usd": 50000, "max_usd": 100000 },
+    "past_investments": [
+      { "company": "Linear", "sector": "Developer Tools", "year": 2021, "stage_at_entry": "Series A", "outcome": "Active" },
+      { "company": "Supabase", "sector": "Developer Tools", "year": 2021, "stage_at_entry": "Seed", "outcome": "Active", "is_portfolio_company": true }
+    ],
+    "expertise_profile": "Eight years in developer experience and open-source go-to-market. Knows what it takes to convert a hobbyist GitHub star into a paid enterprise contract — and what is performative versus real for OSS-led companies.",
+    "participation": { "deals_matched": 9, "deals_contributed": 8, "response_rate": 0.89, "last_contribution_at": "2026-04-21T13:00:00Z" }
+  },
+  {
+    "id": "member-009",
+    "name": "Kemi Adeyemi",
+    "email": "kemi.adeyemi@example.com",
+    "linkedin_url": "https://linkedin.com/in/example-kemi-adeyemi",
+    "group": "TechGroup",
+    "location": "Atlanta, GA",
+    "expertise_tags": ["Vertical SaaS", "Enterprise sales", "Operator-investor"],
+    "prior_employers": ["Sequoia Capital", "Salesforce", "Workday"],
+    "current_role": "Operating partner at a growth-stage fund",
+    "sectors_of_interest": ["Vertical SaaS", "AI Infrastructure", "Workflow Automation"],
+    "stage_preference": ["Series A", "Series B+"],
+    "check_size_range": { "min_usd": 100000, "max_usd": 250000 },
+    "past_investments": [
+      { "company": "Brex", "sector": "Fintech", "year": 2019, "stage_at_entry": "Series B", "outcome": "Active" },
+      { "company": "Notion", "sector": "Productivity", "year": 2020, "stage_at_entry": "Series B", "outcome": "Active" },
+      { "company": "Ramp", "sector": "Fintech", "year": 2021, "stage_at_entry": "Series B", "outcome": "Active" }
+    ],
+    "expertise_profile": "Twelve years across institutional VC and operator roles. Sharpest read on Series A go-to-market readiness and what 'enterprise pilot' actually means in practice. Refuses to invest in anything without a named CRO or named CRO hiring plan.",
+    "participation": { "deals_matched": 12, "deals_contributed": 10, "response_rate": 0.83, "last_contribution_at": "2026-04-15T09:00:00Z" }
+  },
+  {
+    "id": "member-010",
+    "name": "Henrik Larsson",
+    "email": "henrik.larsson@example.com",
+    "linkedin_url": "https://linkedin.com/in/example-henrik-larsson",
+    "group": "TechGroup",
+    "location": "San Francisco, CA",
+    "expertise_tags": ["Observability", "Enterprise infrastructure", "Pricing strategy"],
+    "prior_employers": ["Datadog", "Splunk", "New Relic"],
+    "current_role": "Independent consultant; ex-VP Product at Datadog",
+    "sectors_of_interest": ["AI Infrastructure", "Observability", "DevTools"],
+    "stage_preference": ["Series A", "Series B+"],
+    "check_size_range": { "min_usd": 75000, "max_usd": 200000 },
+    "past_investments": [
+      { "company": "Datadog", "sector": "Observability", "year": 2014, "stage_at_entry": "Series B", "outcome": "IPO" },
+      { "company": "Honeycomb", "sector": "Observability", "year": 2018, "stage_at_entry": "Series A", "outcome": "Active" }
+    ],
+    "expertise_profile": "Sixteen years across observability vendors. Deepest pricing-strategy intuition on the TechGroup roster — knows the ARR ramp curve for usage-based and seat-based models cold. Identifies binding hire constraints fast.",
+    "participation": { "deals_matched": 13, "deals_contributed": 11, "response_rate": 0.85, "last_contribution_at": "2026-04-22T18:00:00Z" }
+  },
+  {
+    "id": "member-011",
+    "name": "Dr. Elena Vasquez",
+    "email": "elena.vasquez@example.com",
+    "linkedin_url": "https://linkedin.com/in/example-elena-vasquez",
+    "group": "MedicalGroup",
+    "location": "Boston, MA",
+    "expertise_tags": ["Molecular diagnostics", "Assay development", "FDA 510(k)"],
+    "prior_employers": ["Genentech", "Quanterix", "Massachusetts General Hospital"],
+    "current_role": "VP of Diagnostics at a Series C dx company",
+    "sectors_of_interest": ["Medical Device", "Diagnostics"],
+    "stage_preference": ["Seed", "Series A"],
+    "check_size_range": { "min_usd": 50000, "max_usd": 100000 },
+    "past_investments": [
+      { "company": "Quanterix", "sector": "Diagnostics", "year": 2017, "stage_at_entry": "Series C", "outcome": "IPO" }
+    ],
+    "expertise_profile": "Twenty years in clinical diagnostics. Led three 510(k) submissions and one De Novo. Will pressure-test assay sensitivity and specificity claims against the relevant CLIA/CAP standards in detail.",
+    "participation": { "deals_matched": 6, "deals_contributed": 5, "response_rate": 0.83, "last_contribution_at": "2026-04-08T14:00:00Z" }
+  },
+  {
+    "id": "member-012",
+    "name": "Dr. Robert Kane",
+    "email": "robert.kane@example.com",
+    "linkedin_url": "https://linkedin.com/in/example-robert-kane",
+    "group": "MedicalGroup",
+    "location": "Boston, MA",
+    "expertise_tags": ["Surgical robotics", "Clinical trials", "Hospital procurement"],
+    "prior_employers": ["Roche Diagnostics", "Brigham and Women's Hospital"],
+    "current_role": "Practicing surgeon and angel investor",
+    "sectors_of_interest": ["Medical Device", "Surgical Tech"],
+    "stage_preference": ["Seed", "Series A"],
+    "check_size_range": { "min_usd": 50000, "max_usd": 150000 },
+    "past_investments": [
+      { "company": "Vicarious Surgical", "sector": "Medical Device", "year": 2021, "stage_at_entry": "Series C", "outcome": "Active" }
+    ],
+    "expertise_profile": "Practicing surgeon with deep procurement-side perspective on what it takes to get a new device on the OR formulary. Will identify hospital-side adoption blockers that founders consistently underestimate.",
+    "participation": { "deals_matched": 5, "deals_contributed": 4, "response_rate": 0.80, "last_contribution_at": "2026-03-22T16:00:00Z" }
+  },
+  {
+    "id": "member-013",
+    "name": "Aisha Patel",
+    "email": "aisha.patel@example.com",
+    "linkedin_url": "https://linkedin.com/in/example-aisha-patel",
+    "group": "MedicalGroup",
+    "location": "Research Triangle, NC",
+    "expertise_tags": ["Health IT", "Payer integration", "Reimbursement"],
+    "prior_employers": ["McKesson", "Veeva Systems", "Optum"],
+    "current_role": "VP Strategy at a health IT company",
+    "sectors_of_interest": ["Medical Device", "Digital Health", "Healthcare SaaS"],
+    "stage_preference": ["Seed", "Series A"],
+    "check_size_range": { "min_usd": 25000, "max_usd": 100000 },
+    "past_investments": [
+      { "company": "Komodo Health", "sector": "Digital Health", "year": 2020, "stage_at_entry": "Series C", "outcome": "Active" }
+    ],
+    "expertise_profile": "Twelve years in health IT and reimbursement strategy. Knows the realistic timelines for CPT coding, payer contracting, and how reimbursement risk kills medical device businesses that look great on assay performance.",
+    "participation": { "deals_matched": 7, "deals_contributed": 6, "response_rate": 0.86, "last_contribution_at": "2026-04-05T11:00:00Z" }
+  },
+  {
+    "id": "member-014",
+    "name": "Dr. James Liu",
+    "email": "james.liu@example.com",
+    "linkedin_url": "https://linkedin.com/in/example-james-liu",
+    "group": "MedicalGroup",
+    "location": "Bethesda, MD",
+    "expertise_tags": ["Translational research", "NIH funding", "Diagnostics"],
+    "prior_employers": ["NIH", "Johns Hopkins"],
+    "current_role": "Translational researcher; angel investor in diagnostics",
+    "sectors_of_interest": ["Medical Device", "Diagnostics", "Therapeutics"],
+    "stage_preference": ["Pre-Seed", "Seed"],
+    "check_size_range": { "min_usd": 25000, "max_usd": 50000 },
+    "past_investments": [],
+    "expertise_profile": "Seventeen years at NIH funding and reviewing translational diagnostic programs. Will identify whether a diagnostic claim has the underlying biology to support it or is statistical theater on a small sample.",
+    "participation": { "deals_matched": 4, "deals_contributed": 3, "response_rate": 0.75, "last_contribution_at": "2026-02-19T13:00:00Z" }
+  },
+  {
+    "id": "member-015",
+    "name": "Naomi Brennan",
+    "email": "naomi.brennan@example.com",
+    "linkedin_url": "https://linkedin.com/in/example-naomi-brennan",
+    "group": "MedicalGroup",
+    "location": "Irvine, CA",
+    "expertise_tags": ["Medical device operations", "Manufacturing", "Quality systems"],
+    "prior_employers": ["Edwards Lifesciences", "Boston Scientific"],
+    "current_role": "Independent operator; ex-COO at a Series C medical device company",
+    "sectors_of_interest": ["Medical Device"],
+    "stage_preference": ["Series A", "Series B+"],
+    "check_size_range": { "min_usd": 50000, "max_usd": 100000 },
+    "past_investments": [],
+    "expertise_profile": "Twenty-two years scaling medical device operations. Knows ISO 13485, design control, and what it takes to scale manufacturing past 10,000 units/year. Will surface unit economics issues no one else catches.",
+    "participation": { "deals_matched": 5, "deals_contributed": 4, "response_rate": 0.80, "last_contribution_at": "2026-03-30T10:00:00Z" }
+  },
+  {
+    "id": "member-016",
+    "name": "Dr. Kofi Owusu",
+    "email": "kofi.owusu@example.com",
+    "linkedin_url": "https://linkedin.com/in/example-kofi-owusu",
+    "group": "MedicalGroup",
+    "location": "Cambridge, MA",
+    "expertise_tags": ["Biotech investing", "Therapeutics", "Drug development"],
+    "prior_employers": ["Pfizer", "Vertex Pharmaceuticals", "MPM Capital"],
+    "current_role": "Partner at a life sciences fund",
+    "sectors_of_interest": ["Therapeutics", "Diagnostics", "Medical Device"],
+    "stage_preference": ["Seed", "Series A"],
+    "check_size_range": { "min_usd": 100000, "max_usd": 250000 },
+    "past_investments": [
+      { "company": "Moderna", "sector": "Therapeutics", "year": 2019, "stage_at_entry": "Series F", "outcome": "IPO" },
+      { "company": "Recursion", "sector": "Therapeutics", "year": 2020, "stage_at_entry": "Series C", "outcome": "IPO" }
+    ],
+    "expertise_profile": "Fifteen years across pharma R&D and life sciences investing. Will read the regulatory pathway, IP defensibility, and exit comparable set with rigor.",
+    "participation": { "deals_matched": 6, "deals_contributed": 5, "response_rate": 0.83, "last_contribution_at": "2026-04-10T15:00:00Z" }
+  },
+  {
+    "id": "member-017",
+    "name": "Sarah Greenfeld",
+    "email": "sarah.greenfeld@example.com",
+    "linkedin_url": "https://linkedin.com/in/example-sarah-greenfeld",
+    "group": "ConsumerGroup",
+    "location": "New York, NY",
+    "expertise_tags": ["DTC operations", "Brand", "Subscription commerce"],
+    "prior_employers": ["Allbirds", "Glossier", "Warby Parker"],
+    "current_role": "Founder/CEO of a DTC beauty brand",
+    "sectors_of_interest": ["DTC Consumer", "Subscription"],
+    "stage_preference": ["Pre-Seed", "Seed"],
+    "check_size_range": { "min_usd": 25000, "max_usd": 75000 },
+    "past_investments": [
+      { "company": "Olipop", "sector": "DTC Consumer", "year": 2021, "stage_at_entry": "Series A", "outcome": "Active" }
+    ],
+    "expertise_profile": "Ten years scaling DTC brands across apparel, beauty, and CPG. Knows what cohort durability actually looks like at scale and which 'brand moats' survive a fast follower with private label manufacturing.",
+    "participation": { "deals_matched": 8, "deals_contributed": 7, "response_rate": 0.88, "last_contribution_at": "2026-04-22T14:00:00Z" }
+  },
+  {
+    "id": "member-018",
+    "name": "Nathan Becker",
+    "email": "nathan.becker@example.com",
+    "linkedin_url": "https://linkedin.com/in/example-nathan-becker",
+    "group": "ConsumerGroup",
+    "location": "Brooklyn, NY",
+    "expertise_tags": ["DTC unit economics", "Subscription metrics", "Performance marketing"],
+    "prior_employers": ["Warby Parker", "Casper", "Harry's"],
+    "current_role": "Independent operator; ex-COO at a DTC company",
+    "sectors_of_interest": ["DTC Consumer", "Subscription"],
+    "stage_preference": ["Seed", "Series A"],
+    "check_size_range": { "min_usd": 50000, "max_usd": 100000 },
+    "past_investments": [
+      { "company": "Italic", "sector": "DTC Consumer", "year": 2020, "stage_at_entry": "Series A", "outcome": "Active" }
+    ],
+    "expertise_profile": "Twelve years across DTC operations. Has run the spreadsheet that says 'this LTV/CAC breaks at scale' and watched it play out three times. Tends to be the most skeptical voice on consumer cohort data — and is usually right.",
+    "participation": { "deals_matched": 9, "deals_contributed": 8, "response_rate": 0.89, "last_contribution_at": "2026-04-22T19:00:00Z" }
+  },
+  {
+    "id": "member-019",
+    "name": "Mei Tanaka",
+    "email": "mei.tanaka@example.com",
+    "linkedin_url": "https://linkedin.com/in/example-mei-tanaka",
+    "group": "ConsumerGroup",
+    "location": "San Francisco, CA",
+    "expertise_tags": ["Retail distribution", "Wholesale", "Brand partnerships"],
+    "prior_employers": ["Sephora", "Sweetgreen", "Whole Foods"],
+    "current_role": "VP Retail Partnerships at a DTC food brand",
+    "sectors_of_interest": ["DTC Consumer", "Food & Beverage"],
+    "stage_preference": ["Seed", "Series A"],
+    "check_size_range": { "min_usd": 25000, "max_usd": 75000 },
+    "past_investments": [
+      { "company": "Olipop", "sector": "DTC Consumer", "year": 2022, "stage_at_entry": "Series B", "outcome": "Active" }
+    ],
+    "expertise_profile": "Eleven years building retail distribution partnerships. Has the relationships to surface whether a brand is realistic for Whole Foods, Erewhon, Sephora, etc., and what the realistic margin and slotting fees look like.",
+    "participation": { "deals_matched": 6, "deals_contributed": 5, "response_rate": 0.83, "last_contribution_at": "2026-04-21T15:00:00Z" }
+  },
+  {
+    "id": "member-020",
+    "name": "Carlos Vega",
+    "email": "carlos.vega@example.com",
+    "linkedin_url": "https://linkedin.com/in/example-carlos-vega",
+    "group": "ConsumerGroup",
+    "location": "Austin, TX",
+    "expertise_tags": ["CPG marketing", "Brand strategy", "Performance media"],
+    "prior_employers": ["Procter & Gamble", "Hims & Hers", "Pepsico"],
+    "current_role": "CMO at a Series B consumer health brand",
+    "sectors_of_interest": ["DTC Consumer", "Consumer Health"],
+    "stage_preference": ["Seed", "Series A"],
+    "check_size_range": { "min_usd": 50000, "max_usd": 100000 },
+    "past_investments": [
+      { "company": "Magic Spoon", "sector": "DTC Consumer", "year": 2021, "stage_at_entry": "Series B", "outcome": "Active" }
+    ],
+    "expertise_profile": "Eighteen years across CPG marketing at scale and DTC operating roles. Will identify where performance media efficiency breaks at scale and what brand investment is necessary to defend it.",
+    "participation": { "deals_matched": 7, "deals_contributed": 6, "response_rate": 0.86, "last_contribution_at": "2026-04-20T16:00:00Z" }
+  },
+  {
+    "id": "member-021",
+    "name": "Ingrid Holm",
+    "email": "ingrid.holm@example.com",
+    "linkedin_url": "https://linkedin.com/in/example-ingrid-holm",
+    "group": "ConsumerGroup",
+    "location": "Portland, OR",
+    "expertise_tags": ["Sustainability", "Supply chain", "Materials sourcing"],
+    "prior_employers": ["Patagonia", "Allbirds"],
+    "current_role": "Independent advisor on sustainable supply chains",
+    "sectors_of_interest": ["DTC Consumer", "Sustainable Goods"],
+    "stage_preference": ["Pre-Seed", "Seed"],
+    "check_size_range": { "min_usd": 25000, "max_usd": 50000 },
+    "past_investments": [],
+    "expertise_profile": "Fourteen years building sustainable supply chains in apparel and consumer goods. Knows where 'sustainable' claims survive certification scrutiny and where they collapse on first audit.",
+    "participation": { "deals_matched": 4, "deals_contributed": 4, "response_rate": 1.00, "last_contribution_at": "2026-04-19T13:00:00Z" }
+  },
+  {
+    "id": "member-022",
+    "name": "Devon Wells",
+    "email": "devon.wells@example.com",
+    "linkedin_url": "https://linkedin.com/in/example-devon-wells",
+    "group": "ConsumerGroup",
+    "location": "Toronto, ON",
+    "expertise_tags": ["DTC infrastructure", "E-commerce platforms", "Marketplaces"],
+    "prior_employers": ["Shopify", "Etsy", "Ebay"],
+    "current_role": "Director of Product at Shopify",
+    "sectors_of_interest": ["DTC Consumer", "E-commerce Infrastructure"],
+    "stage_preference": ["Seed", "Series A"],
+    "check_size_range": { "min_usd": 25000, "max_usd": 75000 },
+    "past_investments": [
+      { "company": "Faire", "sector": "Marketplace", "year": 2021, "stage_at_entry": "Series E", "outcome": "Active" }
+    ],
+    "expertise_profile": "Nine years across e-commerce platforms. Knows what tooling and operational maturity actually exists in the DTC stack and which 'platform' moats are real versus repackaged Shopify Plus.",
+    "participation": { "deals_matched": 5, "deals_contributed": 4, "response_rate": 0.80, "last_contribution_at": "2026-04-15T17:00:00Z" }
+  },
+  {
+    "id": "member-023",
+    "name": "Yuki Sato",
+    "email": "yuki.sato@example.com",
+    "linkedin_url": "https://linkedin.com/in/example-yuki-sato",
+    "group": "SpaceGroup",
+    "location": "Los Angeles, CA",
+    "expertise_tags": ["Aerospace systems", "Satellite operations", "Earth observation"],
+    "prior_employers": ["SpaceX", "Planet Labs"],
+    "current_role": "Senior Systems Engineer at a Series C aerospace startup",
+    "sectors_of_interest": ["Aerospace", "Earth Observation"],
+    "stage_preference": ["Seed", "Series A"],
+    "check_size_range": { "min_usd": 25000, "max_usd": 75000 },
+    "past_investments": [
+      { "company": "Capella Space", "sector": "Aerospace", "year": 2020, "stage_at_entry": "Series B", "outcome": "Active" }
+    ],
+    "expertise_profile": "Ten years across launch and satellite operations. Sharp read on technical milestones and unit economics for hardware-heavy aerospace companies.",
+    "participation": { "deals_matched": 3, "deals_contributed": 3, "response_rate": 1.00, "last_contribution_at": "2026-04-08T20:00:00Z" }
+  },
+  {
+    "id": "member-024",
+    "name": "Benjamin Reyes",
+    "email": "benjamin.reyes@example.com",
+    "linkedin_url": "https://linkedin.com/in/example-benjamin-reyes",
+    "group": "IndustrialGroup",
+    "location": "Chicago, IL",
+    "expertise_tags": ["Industrial automation", "Robotics", "Manufacturing tech"],
+    "prior_employers": ["GE", "Caterpillar", "Honeywell"],
+    "current_role": "Director of Engineering at an industrial robotics startup",
+    "sectors_of_interest": ["Industrial Tech", "Robotics", "Physical AI"],
+    "stage_preference": ["Seed", "Series A"],
+    "check_size_range": { "min_usd": 50000, "max_usd": 100000 },
+    "past_investments": [
+      { "company": "Bright Machines", "sector": "Industrial Tech", "year": 2021, "stage_at_entry": "Series C", "outcome": "Active" }
+    ],
+    "expertise_profile": "Twenty years across industrial automation and robotics at scale. Knows the realistic deployment timelines and economics for hardware-software systems sold to factory floors.",
+    "participation": { "deals_matched": 4, "deals_contributed": 3, "response_rate": 0.75, "last_contribution_at": "2026-03-25T15:00:00Z" }
+  },
+  {
+    "id": "member-025",
+    "name": "Soraya Khan",
+    "email": "soraya.khan@example.com",
+    "linkedin_url": "https://linkedin.com/in/example-soraya-khan",
+    "group": "FintechGroup",
+    "location": "New York, NY",
+    "expertise_tags": ["Payments", "Compliance", "Banking infrastructure"],
+    "prior_employers": ["Block", "Goldman Sachs", "JPMorgan Chase"],
+    "current_role": "Head of Compliance at a Series C payments company",
+    "sectors_of_interest": ["Fintech", "Payments", "Real Estate Tech"],
+    "stage_preference": ["Seed", "Series A"],
+    "check_size_range": { "min_usd": 50000, "max_usd": 150000 },
+    "past_investments": [
+      { "company": "Modern Treasury", "sector": "Fintech", "year": 2021, "stage_at_entry": "Series B", "outcome": "Active" }
+    ],
+    "expertise_profile": "Fifteen years across payments and banking compliance. Will identify where a fintech founder is underestimating BSA/AML, state money transmitter licenses, and partner-bank dependencies.",
+    "participation": { "deals_matched": 5, "deals_contributed": 4, "response_rate": 0.80, "last_contribution_at": "2026-04-10T11:00:00Z" }
+  }
+]

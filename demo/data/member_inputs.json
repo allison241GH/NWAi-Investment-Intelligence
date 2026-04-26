@@ -1,0 +1,237 @@
+[
+  {
+    "id": "input-001",
+    "match_id": "match-001",
+    "member_id": "member-001",
+    "deal_id": "deal-001",
+    "raw_text": "Quick read after spending 90 minutes with their docs and a 30-minute call with their head of evals. The dataset moat is real — about 60% of their evaluation traffic uses bespoke task distributions that you cannot easily reproduce from MMLU, HELM, or the standard public benchmarks. The labeling pipeline they built around those tasks is what would take a competitor 18+ months to replicate, not the tasks themselves.\n\nThe thin-wrapper risk I flagged in Scout is meaningfully reduced. They are not just calling Anthropic eval primitives. The proprietary piece is the human-in-the-loop labeling layer and the way they sequence evaluations for production gating versus offline analysis.\n\nWhere I am still cautious: the eval workflow could shift to model providers' first-party tooling within 18 months. OpenAI and Anthropic have both signaled they want this layer. Veridian's defense is that enterprises do not want to give their evaluation data to model providers — but that defense is contingent on enterprise procurement teams continuing to care, which I would not bet the franchise on.\n\nAlso: their head of evals is excellent, but I do not see anyone on the GTM bench who has carried a number into the F500. That is the binding constraint on the next 18 months, not the technology.",
+    "extracted": {
+      "themes": [
+        "Dataset moat is genuine, not repackaged public benchmarks",
+        "Human-in-the-loop labeling pipeline is the real defensibility",
+        "Memory Lock-in confirmed via dataset workflow"
+      ],
+      "concerns": [
+        "Eval workflows may shift to model providers' first-party tooling within 18 months",
+        "GTM bench is the binding constraint, not technology"
+      ],
+      "recommendations": [
+        "Make the senior enterprise CRO hire a closing condition",
+        "Press the team on contingency plans if OpenAI or Anthropic ship competing first-party eval"
+      ],
+      "open_questions": [
+        "What is the contractual right to retain customer evaluation data if enterprise procurement teams change posture?"
+      ],
+      "folder_evidence": [
+        { "folder_id": "3", "folder_name": "Product / Technology", "finding": "~60% of evaluation traffic uses bespoke task distributions; HITL labeling layer is the real moat" },
+        { "folder_id": "13", "folder_name": "Risks", "finding": "First-party tooling from model providers is the structural risk in 18-month horizon" },
+        { "folder_id": "2", "folder_name": "Team", "finding": "No senior enterprise CRO; this is the binding hire" }
+      ]
+    },
+    "scored_signal": 4,
+    "captured_at": "2026-04-19T22:30:00Z"
+  },
+  {
+    "id": "input-002",
+    "match_id": "match-002",
+    "member_id": "member-010",
+    "deal_id": "deal-001",
+    "raw_text": "Spent two hours with their financial model and an hour with the team. Comparing this to the Datadog ramp at equivalent stage: ARR-by-stage looks roughly comparable, but the customer concentration is more skewed. Top 3 customers are 58% of ARR. That is workable for a Series A but is the single thing I would push them to address by Series B.\n\nThe usage-based pricing model is the right call for an eval workflow. CAC payback of 14 months is plausible at current ACV but I expect that to compress to 18–22 months once they exhaust the warm pipeline of design partners. The pricing-power story holds in my view as long as Memory Lock-in is real, which Maya's read confirms.\n\nThe team needs a senior enterprise CRO. They claim they are interviewing — I would not close without seeing the slate. Marcus or Maya may have refs.\n\nOverall: this is the strongest infra deal I have seen this year. I am in for $150K if the round comes together.",
+    "extracted": {
+      "themes": [
+        "ARR ramp comparable to Datadog at equivalent stage",
+        "Usage-based pricing is the right model for eval workflows",
+        "Strong conviction overall — willing to lead from NWA's side"
+      ],
+      "concerns": [
+        "Customer concentration: top 3 = 58% of ARR",
+        "CAC payback likely to compress to 18–22 months at scale"
+      ],
+      "recommendations": [
+        "Make CRO hire a closing condition",
+        "Set Series B trigger on customer-concentration metric"
+      ],
+      "open_questions": [
+        "What is the realistic ACV trajectory once design-partner discounts roll off?"
+      ],
+      "folder_evidence": [
+        { "folder_id": "6", "folder_name": "Financials", "finding": "ARR ramp comparable to Datadog at equivalent stage; customer concentration top-3 = 58%" },
+        { "folder_id": "8", "folder_name": "Sales / GTM", "finding": "CAC payback 14mo today, projected 18–22mo at scale" },
+        { "folder_id": "2", "folder_name": "Team", "finding": "CRO hire is the binding constraint; condition close on slate" }
+      ]
+    },
+    "scored_signal": 5,
+    "captured_at": "2026-04-20T16:00:00Z"
+  },
+  {
+    "id": "input-003",
+    "match_id": "match-003",
+    "member_id": "member-004",
+    "deal_id": "deal-001",
+    "raw_text": "Spent the call mostly probing the platform versus product question. My read is that this is genuinely a single platform with three integrated extensions, not three loose products. Their internal data model is unified — the same evaluation traces flow into pre-deployment gating, post-hoc analysis, and the dataset curation layer. That is the right architecture and not what most competitors have.\n\nWhere I am skeptical: the F500 design partners. Of the four named, two are pre-deployment gating with paid contracts at $250K ACV. Two are post-hoc analysis under design-partner discounts that look closer to $40K ACV. The 'pipeline-as-moat' narrative is real but more nuanced than the slide suggests.\n\nI would also push them on the evaluator-OSS go-to-market question. They have an OSS layer but it is not being treated as a serious developer funnel. Either invest there or stop claiming it as a moat.\n\nOn the team: technical bench is excellent. I agree with Maya that the GTM bench is the limiting factor.",
+    "extracted": {
+      "themes": [
+        "Genuinely a single platform with integrated extensions",
+        "Architectural unity is real and not common among competitors"
+      ],
+      "concerns": [
+        "F500 design partner mix is more nuanced than slide suggests",
+        "OSS layer is not being treated as a serious developer funnel"
+      ],
+      "recommendations": [
+        "Either invest in OSS-led GTM or stop claiming it as a moat",
+        "Disclose the design-partner ACV split clearly to the IC"
+      ],
+      "open_questions": [
+        "What is the realistic conversion rate from design partner to enterprise contract?"
+      ],
+      "folder_evidence": [
+        { "folder_id": "3", "folder_name": "Product / Technology", "finding": "Single unified platform; data model integrates pre-deployment, post-hoc, and dataset curation" },
+        { "folder_id": "7", "folder_name": "Customers / Revenue", "finding": "F500 design partners split 2 paid pre-deployment ($250K ACV) / 2 discounted post-hoc ($40K ACV)" }
+      ]
+    },
+    "scored_signal": 4,
+    "captured_at": "2026-04-20T20:00:00Z"
+  },
+  {
+    "id": "input-004",
+    "match_id": "match-004",
+    "member_id": "member-007",
+    "deal_id": "deal-001",
+    "raw_text": "Brief response from me — I read the technical materials and skimmed the whitepaper. The eval methodology is solid but not novel; most of what they describe is well-published 2023–2024 work. The novel piece is in their human-in-the-loop labeling pipeline, which they are not patenting.\n\nThis is fine. Most companies in this space do not have technical novelty as the moat — the moat is operational. But the IC should not be sold on technical novelty as a reason to invest. If they are pitching that, push back.\n\nI do not have strong conviction either way. Defer to Maya and Henrik on whether the operational moat is durable.",
+    "extracted": {
+      "themes": [
+        "Technical methodology is solid but not novel",
+        "Operational moat (HITL labeling) is the real defensibility"
+      ],
+      "concerns": [
+        "Should not be sold to IC on technical novelty"
+      ],
+      "recommendations": [
+        "If team is pitching technical novelty as moat, push back"
+      ],
+      "open_questions": [],
+      "folder_evidence": [
+        { "folder_id": "3", "folder_name": "Product / Technology", "finding": "Eval methodology not technically novel; most is 2023–2024 published work" },
+        { "folder_id": "10", "folder_name": "IP / Legal", "finding": "HITL pipeline is novel but unpatented" }
+      ]
+    },
+    "scored_signal": 3,
+    "captured_at": "2026-04-21T11:00:00Z"
+  },
+  {
+    "id": "input-005",
+    "match_id": "match-011",
+    "member_id": "member-017",
+    "deal_id": "deal-003",
+    "raw_text": "Three observations after spending an hour with the cohort data and 45 minutes with the founder.\n\nFirst, the brand is real. The product quality is genuinely above the category, and the founder has built three brands that I would invest in regardless of category. That is meaningful and not the question.\n\nSecond, the cohort durability question is sharper than the IC slide presents. Cohort 1 LTV looks excellent, but cohort 1 includes founder-personalized concierge support that does not scale. Cohorts 2 and 3 are bending toward category averages. The founder is aware of this and is investing in productizing the concierge experience using AI agents — which I think is the right move and the right team to execute it.\n\nThird, I would not pass on this deal. I would do a smaller check, set a concrete cohort 4 milestone, and re-evaluate at Series B. Wholesale into Erewhon and Whole Foods is on the table — I have warm intros to both buying teams and offered to make them.\n\nWhat I would condition: founder commits to a concrete productized concierge timeline tied to cohort 4 metrics.",
+    "extracted": {
+      "themes": [
+        "Brand is real; product quality above category",
+        "Founder track record is strong",
+        "Productized concierge via AI agents is the right move"
+      ],
+      "concerns": [
+        "Cohort 1 LTV is inflated by non-scaling founder concierge",
+        "Cohorts 2 and 3 are bending toward category averages"
+      ],
+      "recommendations": [
+        "Smaller check, set cohort 4 milestone, re-evaluate at Series B",
+        "Condition close on concrete productized-concierge timeline"
+      ],
+      "open_questions": [
+        "What is the realistic timeline for productizing concierge via AI agents?"
+      ],
+      "folder_evidence": [
+        { "folder_id": "7", "folder_name": "Customers / Revenue", "finding": "Cohort 1 LTV inflated by concierge; cohorts 2/3 bending to category average" },
+        { "folder_id": "2", "folder_name": "Team", "finding": "Founder track record strong across three prior DTC brands" },
+        { "folder_id": "8", "folder_name": "Sales / GTM", "finding": "Wholesale via Erewhon and Whole Foods is on the table; warm intros offered" }
+      ]
+    },
+    "scored_signal": 4,
+    "captured_at": "2026-04-18T15:00:00Z"
+  },
+  {
+    "id": "input-006",
+    "match_id": "match-012",
+    "member_id": "member-018",
+    "deal_id": "deal-003",
+    "raw_text": "I have run the cohort math twice. The most charitable reading is that cohort 4 LTV/CAC at scale lands at 1.8x, not the 4.2x that cohort 1 implies. That is below the threshold I would want to underwrite a Series A round at this valuation.\n\nThe productized-concierge story Sarah is bullish on is, in my experience, harder than it looks. We tried this at Casper and it took 18 months and three iterations to get something that did not degrade conversion meaningfully. The founder will run into the same wall.\n\nMy recommendation is to pass at this valuation, or take a much smaller check (say $250K instead of $1M) and set a cohort 4 trigger before increasing exposure. I am willing to be wrong here — the brand is good. But the unit economics at scale do not support the round at the price they are asking.\n\nAlso: a fast follower with private label manufacturing can ship comparable refills within 6 months at half the COGS. I would press them hard on what their answer is to that.",
+    "extracted": {
+      "themes": [
+        "Productized concierge is harder than founder estimates"
+      ],
+      "concerns": [
+        "Cohort 4 LTV/CAC at scale lands at 1.8x, not 4.2x",
+        "Private label fast follower threat is real and underestimated",
+        "Round valuation is too high for the unit economics"
+      ],
+      "recommendations": [
+        "Pass at this valuation, or much smaller check with cohort 4 trigger"
+      ],
+      "open_questions": [
+        "What is the company's defense against a private label fast follower at half the COGS?"
+      ],
+      "folder_evidence": [
+        { "folder_id": "6", "folder_name": "Financials", "finding": "Cohort 4 LTV/CAC at scale modeled at 1.8x" },
+        { "folder_id": "5", "folder_name": "Competition", "finding": "Private label fast follower can ship comparable refills in 6mo at 50% COGS" },
+        { "folder_id": "11", "folder_name": "Cap Table", "finding": "Valuation appears stretched relative to underwritable unit economics" }
+      ]
+    },
+    "scored_signal": 2,
+    "captured_at": "2026-04-19T10:00:00Z"
+  },
+  {
+    "id": "input-007",
+    "match_id": "match-013",
+    "member_id": "member-020",
+    "deal_id": "deal-003",
+    "raw_text": "Quick read. Brand investment is currently around 18% of revenue, which is below where I would want it for a brand-led DTC story. To defend margins at $50M ARR they would need to be at 25–30% on brand and that is not in the model.\n\nThat said, there is a credible B2B refill program for hospitality. I have a contact running purchasing for a regional hospitality group who would test this. If the company wants to add a B2B leg to the strategy, I can make the intro.\n\nMy overall read: I am closer to Sarah's view than Nathan's. Smaller check, conditions, and add B2B as a hedge.",
+    "extracted": {
+      "themes": [
+        "B2B refill program for hospitality is a credible hedge"
+      ],
+      "concerns": [
+        "Brand investment is currently 18% of revenue; needs to be 25–30% at scale"
+      ],
+      "recommendations": [
+        "Add B2B hospitality test partner as a strategic hedge"
+      ],
+      "open_questions": [],
+      "folder_evidence": [
+        { "folder_id": "8", "folder_name": "Sales / GTM", "finding": "Brand investment 18% of revenue; needs 25–30% at scale to defend margin" },
+        { "folder_id": "7", "folder_name": "Customers / Revenue", "finding": "Credible B2B hospitality test partner available; warm intro offered" }
+      ]
+    },
+    "scored_signal": 3,
+    "captured_at": "2026-04-19T17:00:00Z"
+  },
+  {
+    "id": "input-008",
+    "match_id": "match-014",
+    "member_id": "member-021",
+    "deal_id": "deal-003",
+    "raw_text": "Spent an hour with the supply chain materials. The 'sustainable' claim is real on the primary product but is supported by a single supplier in Portugal — that is a single-point-of-failure risk that I would address before scaling. The COGS difference between current sourcing and a fully-certified diversified sustainable supply chain is roughly 12%. That is meaningful for the unit economics but addressable over 12–18 months.\n\nThe certification roadmap is credible. They are pursuing B Corp and Cradle to Cradle. I would condition the round on B Corp completion within 18 months.\n\nOverall: I am supportive of a smaller check with conditions. The brand is real, the supply chain is fixable, and the founder is the right person to fix it.",
+    "extracted": {
+      "themes": [
+        "Sustainable claim is real but supply chain is fragile",
+        "Founder is the right person to fix it"
+      ],
+      "concerns": [
+        "Single supplier in Portugal is a single-point-of-failure risk",
+        "Diversified sustainable sourcing adds ~12% to COGS"
+      ],
+      "recommendations": [
+        "Condition close on B Corp certification within 18 months",
+        "Diversify primary supplier within 12 months"
+      ],
+      "open_questions": [],
+      "folder_evidence": [
+        { "folder_id": "9", "folder_name": "Operations", "finding": "Single Portuguese supplier is SPOF; diversification adds ~12% COGS" },
+        { "folder_id": "15", "folder_name": "ESG", "finding": "B Corp and Cradle to Cradle certification roadmap credible" }
+      ]
+    },
+    "scored_signal": 3,
+    "captured_at": "2026-04-19T13:00:00Z"
+  }
+]

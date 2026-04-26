@@ -1,0 +1,274 @@
+[
+  {
+    "id": "match-001",
+    "deal_id": "deal-001",
+    "member_id": "member-001",
+    "rank": 1,
+    "score": 94,
+    "rationale": "Maya is the single best-matched member in NWA for evaluation infrastructure. Her direct work on pre-deployment eval at OpenAI and Anthropic gives her unmatched read on whether Veridian's dataset moat is genuine or repackaged public benchmarks. She has also invested in three direct-comparable companies.",
+    "expertise_signals": [
+      { "label": "Led pre-deployment eval at OpenAI 2021–2023", "weight": 0.95, "category": "operator" },
+      { "label": "Led pre-deployment eval at Anthropic 2023–2025", "weight": 0.92, "category": "operator" },
+      { "label": "Active investor in Cohere, Hugging Face, Anthropic", "weight": 0.85, "category": "investor" },
+      { "label": "Sector match: AI Infrastructure", "weight": 0.90, "category": "domain" }
+    ],
+    "suggested_dd_questions": [
+      { "folder_id": "3", "folder_name": "Product / Technology", "question": "What percentage of evaluation traffic is unique versus reproducible from public benchmarks like MMLU, HELM, or BIG-bench?" },
+      { "folder_id": "10", "folder_name": "IP / Legal", "question": "What contractual rights does Veridian retain over evaluation data submitted by enterprise customers?" },
+      { "folder_id": "13", "folder_name": "Risks", "question": "How quickly does Veridian's eval quality degrade if the proprietary dataset is frozen for 6 months?" }
+    ],
+    "status": "responded",
+    "generated_at": "2026-04-15T10:00:00Z"
+  },
+  {
+    "id": "match-002",
+    "deal_id": "deal-001",
+    "member_id": "member-010",
+    "rank": 2,
+    "score": 91,
+    "rationale": "Henrik is the right voice on enterprise observability pricing and the realistic ARR ramp. His Datadog experience at the Series B–IPO transition is directly comparable to Veridian's claimed trajectory. He is unusually rigorous on identifying binding-hire constraints.",
+    "expertise_signals": [
+      { "label": "VP Product at Datadog through Series B–IPO", "weight": 0.93, "category": "operator" },
+      { "label": "Pricing-strategy specialty for usage-based SaaS", "weight": 0.88, "category": "domain" },
+      { "label": "Active investor in Datadog and Honeycomb", "weight": 0.80, "category": "investor" },
+      { "label": "Geographic match: SF Bay", "weight": 0.40, "category": "geography" }
+    ],
+    "suggested_dd_questions": [
+      { "folder_id": "6", "folder_name": "Financials", "question": "What is the current usage-based versus seat-based revenue split, and how does the ARR ramp curve compare to Datadog at equivalent stage?" },
+      { "folder_id": "2", "folder_name": "Team", "question": "Is there a named or pipelined enterprise CRO, and what is the realistic timeline to close that hire?" },
+      { "folder_id": "8", "folder_name": "Sales / GTM", "question": "What is the realistic CAC payback period at current pricing, and how does it survive a 30% pricing cut from competitive pressure?" }
+    ],
+    "status": "responded",
+    "generated_at": "2026-04-15T10:00:00Z"
+  },
+  {
+    "id": "match-003",
+    "deal_id": "deal-001",
+    "member_id": "member-004",
+    "rank": 3,
+    "score": 88,
+    "rationale": "Marcus has built and shipped MLOps infrastructure used by Fortune 100 customers. He will identify whether Veridian's 'platform' is genuinely a platform or three loosely-connected products. His Databricks tenure gives him direct comparable on enterprise-AI go-to-market.",
+    "expertise_signals": [
+      { "label": "Principal Engineer at Databricks; built MLflow deployment subsystem", "weight": 0.90, "category": "operator" },
+      { "label": "Active investor in Weights & Biases", "weight": 0.82, "category": "investor" },
+      { "label": "Sector match: AI Infrastructure", "weight": 0.88, "category": "domain" }
+    ],
+    "suggested_dd_questions": [
+      { "folder_id": "3", "folder_name": "Product / Technology", "question": "Is the eval system a single-product-with-extensions or three loosely-connected products that customers must integrate themselves?" },
+      { "folder_id": "7", "folder_name": "Customers / Revenue", "question": "Of the named F500 design partners, which are pre-deployment gating versus post-hoc analysis, and which are paying versus design-partner-discounted?" }
+    ],
+    "status": "responded",
+    "generated_at": "2026-04-15T10:00:00Z"
+  },
+  {
+    "id": "match-004",
+    "deal_id": "deal-001",
+    "member_id": "member-007",
+    "rank": 4,
+    "score": 84,
+    "rationale": "Rachel will provide the ML-research read on whether the technical claims around eval methodology are genuinely novel or repackaged 2022 work. She tends to be skeptical and is usually right on technical defensibility.",
+    "expertise_signals": [
+      { "label": "Research scientist at Google DeepMind", "weight": 0.88, "category": "domain" },
+      { "label": "Sector match: AI Infrastructure", "weight": 0.85, "category": "domain" },
+      { "label": "Active investor in Adept and Inflection AI", "weight": 0.70, "category": "investor" }
+    ],
+    "suggested_dd_questions": [
+      { "folder_id": "3", "folder_name": "Product / Technology", "question": "What is genuinely novel about the eval methodology versus published 2022–2023 work, and what is the team's published technical track record?" },
+      { "folder_id": "10", "folder_name": "IP / Legal", "question": "Is the technical approach patentable, and is there a filed application?" }
+    ],
+    "status": "responded",
+    "generated_at": "2026-04-15T10:00:00Z"
+  },
+  {
+    "id": "match-005",
+    "deal_id": "deal-001",
+    "member_id": "member-008",
+    "rank": 5,
+    "score": 76,
+    "rationale": "Jordan has the right read on developer-led adoption versus enterprise-led. Veridian's pricing model implies a developer entry point; Jordan will surface whether that entry point is a real funnel or vanity metrics.",
+    "expertise_signals": [
+      { "label": "Head of Developer Experience at Vercel and devtools-stage company", "weight": 0.85, "category": "operator" },
+      { "label": "Specialty in OSS-led go-to-market conversion", "weight": 0.80, "category": "domain" }
+    ],
+    "suggested_dd_questions": [
+      { "folder_id": "8", "folder_name": "Sales / GTM", "question": "What is the realistic conversion rate from free-tier developer signup to paid enterprise contract, and what is the median time-to-conversion?" }
+    ],
+    "status": "outreach_sent",
+    "generated_at": "2026-04-15T10:00:00Z"
+  },
+  {
+    "id": "match-006",
+    "deal_id": "deal-001",
+    "member_id": "member-002",
+    "rank": 6,
+    "score": 68,
+    "rationale": "Daniel provides the infrastructure-economics view. Useful as a secondary voice on whether Veridian's claimed margins survive realistic compute and storage growth.",
+    "expertise_signals": [
+      { "label": "VP Engineering, Series C cloud security", "weight": 0.78, "category": "operator" },
+      { "label": "Sector adjacency: Cloud infrastructure", "weight": 0.70, "category": "domain" }
+    ],
+    "suggested_dd_questions": [
+      { "folder_id": "6", "folder_name": "Financials", "question": "What is the realistic gross margin trajectory as customer volumes grow 10x, and at what point do compute costs become the binding constraint?" }
+    ],
+    "status": "matched",
+    "generated_at": "2026-04-15T10:00:00Z"
+  },
+  {
+    "id": "match-007",
+    "deal_id": "deal-002",
+    "member_id": "member-011",
+    "rank": 1,
+    "score": 96,
+    "rationale": "Elena is the deepest molecular diagnostics expert in NWA. Her three 510(k) clearances and direct Quanterix experience make her the right voice on whether Aperion's regulatory pathway is realistic and whether the assay sensitivity claims survive scrutiny.",
+    "expertise_signals": [
+      { "label": "VP Diagnostics at Quanterix; 3 prior 510(k) submissions", "weight": 0.96, "category": "operator" },
+      { "label": "Sector match: Molecular diagnostics", "weight": 0.95, "category": "domain" },
+      { "label": "Geographic match: Boston", "weight": 0.55, "category": "geography" }
+    ],
+    "suggested_dd_questions": [
+      { "folder_id": "3", "folder_name": "Product / Technology", "question": "What is the predicate device for the proposed 510(k), and how does Aperion's assay sensitivity compare to the predicate at the relevant cutoff?" },
+      { "folder_id": "13", "folder_name": "Risks", "question": "What is the realistic FDA timeline given the chosen pathway, and what is the contingency if FDA requests additional clinical validation?" }
+    ],
+    "status": "matched",
+    "generated_at": "2026-04-25T15:00:00Z"
+  },
+  {
+    "id": "match-008",
+    "deal_id": "deal-002",
+    "member_id": "member-013",
+    "rank": 2,
+    "score": 92,
+    "rationale": "Aisha is the right voice on the binding constraint: reimbursement. Her McKesson and Optum experience gives her direct read on the realistic CPT coding pathway and payer mix, which is where this deal lives or dies.",
+    "expertise_signals": [
+      { "label": "VP Strategy with payer integration experience", "weight": 0.92, "category": "operator" },
+      { "label": "Specialty in reimbursement and CPT coding", "weight": 0.95, "category": "domain" }
+    ],
+    "suggested_dd_questions": [
+      { "folder_id": "8", "folder_name": "Sales / GTM", "question": "What is the realistic CPT coding pathway and payer mix in year 1, and what is the median time-to-coverage for comparable POC molecular assays?" },
+      { "folder_id": "6", "folder_name": "Financials", "question": "How does unit economics survive at the Medicare median reimbursement rate, with no commercial uplift?" }
+    ],
+    "status": "matched",
+    "generated_at": "2026-04-25T15:00:00Z"
+  },
+  {
+    "id": "match-009",
+    "deal_id": "deal-002",
+    "member_id": "member-016",
+    "rank": 3,
+    "score": 85,
+    "rationale": "Kofi brings the institutional life-sciences-investing lens. He will pressure-test the IP, exit comparable set, and the realistic acquirer landscape for a POC molecular dx asset.",
+    "expertise_signals": [
+      { "label": "Partner at life sciences fund", "weight": 0.90, "category": "investor" },
+      { "label": "Pharma R&D background at Pfizer and Vertex", "weight": 0.80, "category": "domain" }
+    ],
+    "suggested_dd_questions": [
+      { "folder_id": "10", "folder_name": "IP / Legal", "question": "What is the IP protection on the assay chemistry, and is there freedom to operate against existing molecular dx patent estates?" },
+      { "folder_id": "17", "folder_name": "Exit Strategy", "question": "Who realistically buys this in 5 years given the POC dx M&A landscape, and at what comparable revenue multiple?" }
+    ],
+    "status": "matched",
+    "generated_at": "2026-04-25T15:00:00Z"
+  },
+  {
+    "id": "match-010",
+    "deal_id": "deal-002",
+    "member_id": "member-014",
+    "rank": 4,
+    "score": 79,
+    "rationale": "James brings the translational-biology read. Useful as a secondary voice on whether the underlying assay biology supports the clinical claims or is statistical theater on a small sample.",
+    "expertise_signals": [
+      { "label": "NIH translational-research background", "weight": 0.85, "category": "domain" }
+    ],
+    "suggested_dd_questions": [
+      { "folder_id": "3", "folder_name": "Product / Technology", "question": "What is the analytical validation evidence — sensitivity, specificity, dynamic range — at the relevant cutoffs?" }
+    ],
+    "status": "matched",
+    "generated_at": "2026-04-25T15:00:00Z"
+  },
+  {
+    "id": "match-011",
+    "deal_id": "deal-003",
+    "member_id": "member-017",
+    "rank": 1,
+    "score": 95,
+    "rationale": "Sarah is the strongest operating match for Hearthen. Her Allbirds, Glossier, and Warby Parker tenure gives her direct read on cohort durability past founder-led concierge service. She has invested in a direct comparable (Olipop).",
+    "expertise_signals": [
+      { "label": "Operator at Allbirds, Glossier, Warby Parker", "weight": 0.94, "category": "operator" },
+      { "label": "Active CEO of a DTC beauty brand", "weight": 0.88, "category": "operator" },
+      { "label": "Active investor in Olipop", "weight": 0.78, "category": "investor" }
+    ],
+    "suggested_dd_questions": [
+      { "folder_id": "7", "folder_name": "Customers / Revenue", "question": "What is repeat purchase rate by cohort, and how does it bend after concierge support is removed?" },
+      { "folder_id": "5", "folder_name": "Competition", "question": "How defensible is the proprietary supply chain versus a fast follower with private label manufacturing — give us a 6-month and 18-month threat scenario?" }
+    ],
+    "status": "responded",
+    "generated_at": "2026-04-12T10:00:00Z"
+  },
+  {
+    "id": "match-012",
+    "deal_id": "deal-003",
+    "member_id": "member-018",
+    "rank": 2,
+    "score": 92,
+    "rationale": "Nathan is the right skeptic on cohort durability. He has built the spreadsheet that says 'this LTV/CAC breaks at scale' and watched it play out. His Casper and Warby Parker tenure are direct comparables for subscription-anchored DTC.",
+    "expertise_signals": [
+      { "label": "Operator at Warby Parker, Casper, Harry's", "weight": 0.92, "category": "operator" },
+      { "label": "Specialty in DTC unit economics", "weight": 0.95, "category": "domain" }
+    ],
+    "suggested_dd_questions": [
+      { "folder_id": "6", "folder_name": "Financials", "question": "What is the realistic blended CAC at scale once influencer channels saturate, and how does cohort 4 LTV/CAC compare to cohorts 1–3?" },
+      { "folder_id": "9", "folder_name": "Operations", "question": "What is the cost-to-serve including concierge, and what does unit economics look like with concierge fully removed or productized?" }
+    ],
+    "status": "responded",
+    "generated_at": "2026-04-12T10:00:00Z"
+  },
+  {
+    "id": "match-013",
+    "deal_id": "deal-003",
+    "member_id": "member-020",
+    "rank": 3,
+    "score": 87,
+    "rationale": "Carlos brings the CPG marketing scale-up perspective. His P&G and Hims tenure are directly relevant to the question of whether Hearthen's brand investment is sufficient for the channels they need to win at scale.",
+    "expertise_signals": [
+      { "label": "CMO at Series B consumer health brand", "weight": 0.88, "category": "operator" },
+      { "label": "P&G and PepsiCo CPG-marketing background", "weight": 0.82, "category": "domain" }
+    ],
+    "suggested_dd_questions": [
+      { "folder_id": "8", "folder_name": "Sales / GTM", "question": "What is the realistic brand-investment-to-revenue ratio Hearthen needs to defend its margins at $50M ARR?" }
+    ],
+    "status": "responded",
+    "generated_at": "2026-04-12T10:00:00Z"
+  },
+  {
+    "id": "match-014",
+    "deal_id": "deal-003",
+    "member_id": "member-021",
+    "rank": 4,
+    "score": 81,
+    "rationale": "Ingrid is the right voice on whether Hearthen's sustainability claims survive certification scrutiny — and on the realistic supply chain economics for a sustainable consumer goods brand at scale.",
+    "expertise_signals": [
+      { "label": "Patagonia and Allbirds sustainability operator", "weight": 0.92, "category": "operator" },
+      { "label": "Specialty in sustainable supply chains", "weight": 0.90, "category": "domain" }
+    ],
+    "suggested_dd_questions": [
+      { "folder_id": "9", "folder_name": "Operations", "question": "What is the realistic supplier diversification for the refill program, and what is the cost difference between current sourcing and a fully-certified sustainable supply chain?" }
+    ],
+    "status": "responded",
+    "generated_at": "2026-04-12T10:00:00Z"
+  },
+  {
+    "id": "match-015",
+    "deal_id": "deal-003",
+    "member_id": "member-022",
+    "rank": 5,
+    "score": 73,
+    "rationale": "Devon brings the e-commerce platform read — useful as a secondary voice on whether Hearthen's tech stack and operational maturity are real or repackaged Shopify Plus.",
+    "expertise_signals": [
+      { "label": "Director of Product at Shopify", "weight": 0.85, "category": "operator" }
+    ],
+    "suggested_dd_questions": [
+      { "folder_id": "3", "folder_name": "Product / Technology", "question": "What is the actual technical differentiation in the subscription-management stack versus stock Shopify or ReCharge?" }
+    ],
+    "status": "outreach_sent",
+    "generated_at": "2026-04-12T10:00:00Z"
+  }
+]
