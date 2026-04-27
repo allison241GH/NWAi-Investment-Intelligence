@@ -80,15 +80,15 @@ export interface Deal {
   triage_assessment?: TriageAssessment;
 }
 
-// TechGroup live triage-with-scoring framework. Per CLAUDE.md and the
-// production nwai-tech-pipeline plugin: 3 hard gates + Opportunity (5×0–5)
-// + Readiness (4×0–5). ADVANCE ≥ 18/25 Opportunity. Same shape applied to
-// Screening-stage cards regardless of group (forward-state framework for
-// Phase 2 multi-group rollout).
+// NWAi Universal Triage Framework v2.0 (April 2026). Per CLAUDE.md and the
+// canonical reference at .claude/skills/nwai-investment-framework/references/
+// gates-and-flags.md: 3 hard gates + Opportunity (6×0–5 = 30) + Readiness
+// (5×0–5 = 25). ADVANCE ≥ 20/30 Opportunity. Same shape applied across all
+// NWAi groups (Universal Triage, supersedes legacy 6-gate AutoKill).
 export interface TriageAssessment {
   hard_gates: TriageGate[]; // exactly 3: Structure, Geography, Stage
-  opportunity: ScoredDimension[]; // exactly 5 dimensions, each 0–5
-  readiness: ScoredDimension[]; // exactly 4 dimensions, each 0–5
+  opportunity: ScoredDimension[]; // exactly 6 dimensions, each 0–5
+  readiness: ScoredDimension[]; // exactly 5 dimensions, each 0–5
   verdict: "ADVANCE" | "WATCH" | "KILL";
   red_flags: string[]; // ❌ — rendered as Red
   yellow_flags: string[]; // ⚠️ — rendered as Yellow
@@ -239,6 +239,52 @@ export interface FolderEvidence {
   folder_id: string;
   folder_name: string;
   finding: string;
+}
+
+// ---------------------------------------------------------------------------
+// PortfolioCompany — Track 2 unified-portfolio entity. Distinct from Deal:
+// pipeline = active applications; portfolio = closed/invested companies that
+// at least one NWA member backed. Aggregates member investments + board seats
+// + the "who-knows-whom-at-the-company" warm-contact map for the drill-in.
+// ---------------------------------------------------------------------------
+
+export type PortfolioStage = "Seed" | "Series A" | "Series B" | "Series C+";
+
+export interface PortfolioCompany {
+  id: string;
+  company_name: string;
+  sector: Sector;
+  group: NWAGroup;
+  stage_at_close: PortfolioStage;
+  round_size_usd: number;
+  close_date: string; // ISO
+  description: string; // one-liner
+  status: "Active" | "Acquired" | "IPO" | "Wound Down";
+  lead_member_ids: string[]; // 1–2 NWA members
+  member_investments: PortfolioMemberInvestment[];
+  board: PortfolioBoardSeat[];
+  primary_contact: PortfolioContact;
+  warm_contacts: PortfolioContact[]; // who-knows-whom — NWA members or alumni
+}
+
+export interface PortfolioMemberInvestment {
+  member_id: string;
+  check_size_usd: number;
+  board_role?: "Director" | "Observer" | "Advisor";
+}
+
+export interface PortfolioBoardSeat {
+  name: string;
+  role: "Director" | "Observer" | "Chair";
+  affiliation: string; // e.g. "NWAi · TechGroup", "Sequoia Capital"
+  member_id?: string; // populated if the seat is held by an NWA member
+}
+
+export interface PortfolioContact {
+  name: string;
+  role: string; // e.g. "CEO", "VP Engineering"
+  email_stub?: string;
+  member_id?: string; // populated if this contact is also an NWA member
 }
 
 // ---------------------------------------------------------------------------

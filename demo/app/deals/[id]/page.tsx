@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
   Card,
@@ -29,7 +30,7 @@ function TriageBlock({ triage }: { triage: TriageAssessment }) {
           <div>
             <CardTitle className="text-base">Triage Assessment</CardTitle>
             <CardDescription className="text-xs">
-              TechGroup live triage-with-scoring framework — runs at Screening.
+              NWAi Universal Triage Framework v2.0 — runs at Screening.
             </CardDescription>
           </div>
           <span
@@ -75,7 +76,7 @@ function TriageBlock({ triage }: { triage: TriageAssessment }) {
               Opportunity
             </div>
             <div className="text-xs tabular-nums font-medium">
-              {oppTotal} / 25 {oppTotal >= 18 && "· ADVANCE threshold met"}
+              {oppTotal} / 30 {oppTotal >= 20 && "· ADVANCE threshold met"}
             </div>
           </div>
           <ul className="space-y-2">
@@ -101,7 +102,7 @@ function TriageBlock({ triage }: { triage: TriageAssessment }) {
               Readiness
             </div>
             <div className="text-xs tabular-nums font-medium">
-              {readyTotal} / 20
+              {readyTotal} / 25
             </div>
           </div>
           <ul className="space-y-2">
@@ -187,7 +188,7 @@ function TriageBlockEmpty({ stage }: { stage: PipelineStage }) {
       <CardHeader>
         <CardTitle className="text-base">Triage Assessment</CardTitle>
         <CardDescription className="text-xs">
-          TechGroup live triage-with-scoring framework — runs at Screening.
+          NWAi Universal Triage Framework v2.0 — runs at Screening.
         </CardDescription>
       </CardHeader>
       <CardContent>
@@ -483,13 +484,25 @@ export default function DealDetailPage({
 
           <Card>
             <CardHeader>
-              <CardTitle className="text-base">Matched Members</CardTitle>
-              <CardDescription className="text-xs">
-                {deal.member_engagement.matched} matched ·{" "}
-                {deal.member_engagement.engaged} outreach sent ·{" "}
-                {deal.member_engagement.responded} responded · pool of{" "}
-                {deal.member_engagement.pool_size}
-              </CardDescription>
+              <div className="flex items-start justify-between gap-3 flex-wrap">
+                <div>
+                  <CardTitle className="text-base">Matched Members</CardTitle>
+                  <CardDescription className="text-xs">
+                    {deal.member_engagement.matched} matched ·{" "}
+                    {deal.member_engagement.engaged} outreach sent ·{" "}
+                    {deal.member_engagement.responded} responded · pool of{" "}
+                    {deal.member_engagement.pool_size}
+                  </CardDescription>
+                </div>
+                {matches.some((m) => m.deal_id === deal.id) && (
+                  <Link
+                    href={`/deals/${deal.id}/matching`}
+                    className="text-xs text-foreground underline-offset-2 hover:underline shrink-0"
+                  >
+                    Matching rationale →
+                  </Link>
+                )}
+              </div>
             </CardHeader>
             <CardContent className="px-6 pb-4">
               {matchedMembers.length === 0 ? (

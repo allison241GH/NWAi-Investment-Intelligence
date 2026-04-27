@@ -1,0 +1,274 @@
+[
+  {
+    "id": "pf-001",
+    "company_name": "Cohere Atlas",
+    "sector": "AI Infrastructure",
+    "group": "TechGroup",
+    "stage_at_close": "Series B",
+    "round_size_usd": 25000000,
+    "close_date": "2024-09-12T00:00:00Z",
+    "description": "Enterprise model deployment platform with private fine-tuning and managed eval workflows.",
+    "status": "Active",
+    "lead_member_ids": ["member-001"],
+    "member_investments": [
+      { "member_id": "member-001", "check_size_usd": 100000, "board_role": "Observer" },
+      { "member_id": "member-004", "check_size_usd": 75000 },
+      { "member_id": "member-007", "check_size_usd": 50000 },
+      { "member_id": "member-002", "check_size_usd": 50000 }
+    ],
+    "board": [
+      { "name": "Maya Chen", "role": "Observer", "affiliation": "NWAi · TechGroup", "member_id": "member-001" },
+      { "name": "Devra Kim", "role": "Director", "affiliation": "Sequoia Capital" },
+      { "name": "Alan Wu", "role": "Chair", "affiliation": "Cohere (CEO)" }
+    ],
+    "primary_contact": { "name": "Alan Wu", "role": "CEO & Co-Founder", "email_stub": "alan@cohereatlas.example" },
+    "warm_contacts": [
+      { "name": "Maya Chen", "role": "Observer (NWAi)", "member_id": "member-001" },
+      { "name": "Marcus Holloway", "role": "Investor (NWAi)", "member_id": "member-004" }
+    ]
+  },
+  {
+    "id": "pf-002",
+    "company_name": "Tailscale",
+    "sector": "Networking",
+    "group": "TechGroup",
+    "stage_at_close": "Series A",
+    "round_size_usd": 12000000,
+    "close_date": "2022-03-04T00:00:00Z",
+    "description": "Zero-config WireGuard mesh VPN for engineering teams and small-business security.",
+    "status": "Active",
+    "lead_member_ids": ["member-002"],
+    "member_investments": [
+      { "member_id": "member-002", "check_size_usd": 150000, "board_role": "Director" },
+      { "member_id": "member-006", "check_size_usd": 75000 },
+      { "member_id": "member-008", "check_size_usd": 50000 }
+    ],
+    "board": [
+      { "name": "Daniel Park", "role": "Director", "affiliation": "NWAi · TechGroup", "member_id": "member-002" },
+      { "name": "Vanessa Adler", "role": "Director", "affiliation": "Accel" },
+      { "name": "Avery Pennington", "role": "Chair", "affiliation": "Tailscale (CEO)" }
+    ],
+    "primary_contact": { "name": "Avery Pennington", "role": "CEO", "email_stub": "avery@tailscale.example" },
+    "warm_contacts": [
+      { "name": "Daniel Park", "role": "Director (NWAi)", "member_id": "member-002" },
+      { "name": "Theo Nakamura", "role": "Investor (NWAi) — has direct line to CTO", "member_id": "member-006" }
+    ]
+  },
+  {
+    "id": "pf-003",
+    "company_name": "Hex Analytics",
+    "sector": "Analytics",
+    "group": "TechGroup",
+    "stage_at_close": "Series A",
+    "round_size_usd": 8000000,
+    "close_date": "2023-06-21T00:00:00Z",
+    "description": "Collaborative notebook and dashboarding workflow for data teams shipping production analytics.",
+    "status": "Active",
+    "lead_member_ids": ["member-003"],
+    "member_investments": [
+      { "member_id": "member-003", "check_size_usd": 200000, "board_role": "Director" },
+      { "member_id": "member-007", "check_size_usd": 100000 },
+      { "member_id": "member-005", "check_size_usd": 75000 }
+    ],
+    "board": [
+      { "name": "Priya Anand", "role": "Director", "affiliation": "NWAi · TechGroup", "member_id": "member-003" },
+      { "name": "Tomás Levitt", "role": "Director", "affiliation": "Greylock" },
+      { "name": "Iris Chao", "role": "Chair", "affiliation": "Hex (CEO)" }
+    ],
+    "primary_contact": { "name": "Iris Chao", "role": "CEO & Co-Founder", "email_stub": "iris@hex.example" },
+    "warm_contacts": [
+      { "name": "Priya Anand", "role": "Director (NWAi)", "member_id": "member-003" },
+      { "name": "Rachel Adler", "role": "Investor (NWAi) — knows VP of Eng from Looker", "member_id": "member-007" }
+    ]
+  },
+  {
+    "id": "pf-004",
+    "company_name": "Weights & Biases",
+    "sector": "AI Infrastructure",
+    "group": "TechGroup",
+    "stage_at_close": "Series A",
+    "round_size_usd": 9500000,
+    "close_date": "2022-11-08T00:00:00Z",
+    "description": "MLOps platform for experiment tracking, model registry, and production monitoring.",
+    "status": "Active",
+    "lead_member_ids": ["member-004"],
+    "member_investments": [
+      { "member_id": "member-004", "check_size_usd": 150000, "board_role": "Director" },
+      { "member_id": "member-001", "check_size_usd": 75000 },
+      { "member_id": "member-010", "check_size_usd": 100000 }
+    ],
+    "board": [
+      { "name": "Marcus Holloway", "role": "Director", "affiliation": "NWAi · TechGroup", "member_id": "member-004" },
+      { "name": "Lavanya Iyer", "role": "Director", "affiliation": "Insight Partners" },
+      { "name": "Hugo Rasmussen", "role": "Chair", "affiliation": "Weights & Biases (CEO)" }
+    ],
+    "primary_contact": { "name": "Hugo Rasmussen", "role": "CEO & Co-Founder", "email_stub": "hugo@wandb.example" },
+    "warm_contacts": [
+      { "name": "Marcus Holloway", "role": "Director (NWAi)", "member_id": "member-004" },
+      { "name": "Henrik Larsson", "role": "Investor (NWAi) — co-led with Marcus", "member_id": "member-010" }
+    ]
+  },
+  {
+    "id": "pf-005",
+    "company_name": "Mercury",
+    "sector": "Fintech",
+    "group": "FintechGroup",
+    "stage_at_close": "Series A",
+    "round_size_usd": 10000000,
+    "close_date": "2021-08-15T00:00:00Z",
+    "description": "Banking platform purpose-built for technology startups — unified spend management and treasury.",
+    "status": "Active",
+    "lead_member_ids": ["member-005", "member-025"],
+    "member_investments": [
+      { "member_id": "member-005", "check_size_usd": 100000, "board_role": "Observer" },
+      { "member_id": "member-025", "check_size_usd": 200000, "board_role": "Director" },
+      { "member_id": "member-008", "check_size_usd": 50000 }
+    ],
+    "board": [
+      { "name": "Soraya Khan", "role": "Director", "affiliation": "NWAi · FintechGroup", "member_id": "member-025" },
+      { "name": "Lena Voss", "role": "Observer", "affiliation": "NWAi · TechGroup", "member_id": "member-005" },
+      { "name": "Felix Strand", "role": "Chair", "affiliation": "Mercury (CEO)" }
+    ],
+    "primary_contact": { "name": "Felix Strand", "role": "CEO & Co-Founder", "email_stub": "felix@mercury.example" },
+    "warm_contacts": [
+      { "name": "Soraya Khan", "role": "Director (NWAi)", "member_id": "member-025" },
+      { "name": "Lena Voss", "role": "Observer (NWAi) — ex-Stripe colleague of CEO", "member_id": "member-005" }
+    ]
+  },
+  {
+    "id": "pf-006",
+    "company_name": "Cardura Health",
+    "sector": "Medical Device",
+    "group": "MedicalGroup",
+    "stage_at_close": "Seed",
+    "round_size_usd": 4500000,
+    "close_date": "2024-01-22T00:00:00Z",
+    "description": "Wearable cardiac telemetry platform for outpatient post-discharge monitoring.",
+    "status": "Active",
+    "lead_member_ids": ["member-011"],
+    "member_investments": [
+      { "member_id": "member-011", "check_size_usd": 150000, "board_role": "Director" },
+      { "member_id": "member-014", "check_size_usd": 75000 },
+      { "member_id": "member-012", "check_size_usd": 50000, "board_role": "Advisor" }
+    ],
+    "board": [
+      { "name": "Dr. Elena Vasquez", "role": "Director", "affiliation": "NWAi · MedicalGroup", "member_id": "member-011" },
+      { "name": "Dr. Tomás Vidal", "role": "Director", "affiliation": "Polaris Partners" },
+      { "name": "Dr. Idina Mohr", "role": "Chair", "affiliation": "Cardura Health (CEO)" }
+    ],
+    "primary_contact": { "name": "Dr. Idina Mohr", "role": "CEO & Co-Founder", "email_stub": "idina@cardura.example" },
+    "warm_contacts": [
+      { "name": "Dr. Elena Vasquez", "role": "Director (NWAi)", "member_id": "member-011" },
+      { "name": "Dr. Robert Kane", "role": "Advisor (NWAi) — direct line to CMO", "member_id": "member-012" }
+    ]
+  },
+  {
+    "id": "pf-007",
+    "company_name": "NeuroPath Labs",
+    "sector": "Medical Device",
+    "group": "MedicalGroup",
+    "stage_at_close": "Series A",
+    "round_size_usd": 14000000,
+    "close_date": "2023-04-30T00:00:00Z",
+    "description": "Neurological imaging analysis suite for community-hospital radiology — FDA-cleared.",
+    "status": "Active",
+    "lead_member_ids": ["member-013", "member-014"],
+    "member_investments": [
+      { "member_id": "member-013", "check_size_usd": 100000, "board_role": "Director" },
+      { "member_id": "member-014", "check_size_usd": 100000, "board_role": "Observer" },
+      { "member_id": "member-016", "check_size_usd": 75000 },
+      { "member_id": "member-011", "check_size_usd": 50000 }
+    ],
+    "board": [
+      { "name": "Aisha Patel", "role": "Director", "affiliation": "NWAi · MedicalGroup", "member_id": "member-013" },
+      { "name": "Dr. James Liu", "role": "Observer", "affiliation": "NWAi · MedicalGroup", "member_id": "member-014" },
+      { "name": "Dr. Reuben Ozaki", "role": "Director", "affiliation": "Section 32" },
+      { "name": "Dr. Ada Welles", "role": "Chair", "affiliation": "NeuroPath Labs (CEO)" }
+    ],
+    "primary_contact": { "name": "Dr. Ada Welles", "role": "CEO & Co-Founder", "email_stub": "ada@neuropath.example" },
+    "warm_contacts": [
+      { "name": "Aisha Patel", "role": "Director (NWAi)", "member_id": "member-013" },
+      { "name": "Dr. James Liu", "role": "Observer (NWAi) — co-authored prior papers with CEO", "member_id": "member-014" }
+    ]
+  },
+  {
+    "id": "pf-008",
+    "company_name": "ReefBloom",
+    "sector": "DTC Consumer",
+    "group": "ConsumerGroup",
+    "stage_at_close": "Seed",
+    "round_size_usd": 3500000,
+    "close_date": "2024-06-10T00:00:00Z",
+    "description": "Reef-safe sunscreen and skincare brand with refill subscription and DTC + wholesale model.",
+    "status": "Active",
+    "lead_member_ids": ["member-017"],
+    "member_investments": [
+      { "member_id": "member-017", "check_size_usd": 100000, "board_role": "Director" },
+      { "member_id": "member-019", "check_size_usd": 50000 },
+      { "member_id": "member-021", "check_size_usd": 50000 },
+      { "member_id": "member-022", "check_size_usd": 25000 }
+    ],
+    "board": [
+      { "name": "Sarah Greenfeld", "role": "Director", "affiliation": "NWAi · ConsumerGroup", "member_id": "member-017" },
+      { "name": "Connor Aldridge", "role": "Director", "affiliation": "Forerunner Ventures" },
+      { "name": "Talia Rios", "role": "Chair", "affiliation": "ReefBloom (CEO)" }
+    ],
+    "primary_contact": { "name": "Talia Rios", "role": "CEO & Founder", "email_stub": "talia@reefbloom.example" },
+    "warm_contacts": [
+      { "name": "Sarah Greenfeld", "role": "Director (NWAi)", "member_id": "member-017" },
+      { "name": "Mei Tanaka", "role": "Investor (NWAi) — Erewhon buyer relationship", "member_id": "member-019" }
+    ]
+  },
+  {
+    "id": "pf-009",
+    "company_name": "Heliogen Orbital",
+    "sector": "Aerospace",
+    "group": "SpaceGroup",
+    "stage_at_close": "Series A",
+    "round_size_usd": 16000000,
+    "close_date": "2024-02-18T00:00:00Z",
+    "description": "On-orbit servicing and refueling spacecraft for LEO commercial constellations.",
+    "status": "Active",
+    "lead_member_ids": ["member-023"],
+    "member_investments": [
+      { "member_id": "member-023", "check_size_usd": 200000, "board_role": "Director" },
+      { "member_id": "member-002", "check_size_usd": 50000 }
+    ],
+    "board": [
+      { "name": "Yuki Sato", "role": "Director", "affiliation": "NWAi · SpaceGroup", "member_id": "member-023" },
+      { "name": "Calvin Brody", "role": "Director", "affiliation": "Lux Capital" },
+      { "name": "Dr. Sela Ngata", "role": "Chair", "affiliation": "Heliogen Orbital (CEO)" }
+    ],
+    "primary_contact": { "name": "Dr. Sela Ngata", "role": "CEO & Co-Founder", "email_stub": "sela@heliogen-orbital.example" },
+    "warm_contacts": [
+      { "name": "Yuki Sato", "role": "Director (NWAi)", "member_id": "member-023" }
+    ]
+  },
+  {
+    "id": "pf-010",
+    "company_name": "Forge Logistics",
+    "sector": "Industrial Tech",
+    "group": "IndustrialGroup",
+    "stage_at_close": "Series A",
+    "round_size_usd": 11000000,
+    "close_date": "2023-10-04T00:00:00Z",
+    "description": "Mid-market freight orchestration platform — load-board automation, broker workflow, and TMS integration.",
+    "status": "Active",
+    "lead_member_ids": ["member-024"],
+    "member_investments": [
+      { "member_id": "member-024", "check_size_usd": 150000, "board_role": "Director" },
+      { "member_id": "member-003", "check_size_usd": 75000 },
+      { "member_id": "member-020", "check_size_usd": 50000 }
+    ],
+    "board": [
+      { "name": "Benjamin Reyes", "role": "Director", "affiliation": "NWAi · IndustrialGroup", "member_id": "member-024" },
+      { "name": "Hattie Walls", "role": "Director", "affiliation": "8VC" },
+      { "name": "Marcus Aiello", "role": "Chair", "affiliation": "Forge Logistics (CEO)" }
+    ],
+    "primary_contact": { "name": "Marcus Aiello", "role": "CEO & Co-Founder", "email_stub": "marcus@forge-logistics.example" },
+    "warm_contacts": [
+      { "name": "Benjamin Reyes", "role": "Director (NWAi)", "member_id": "member-024" },
+      { "name": "Carlos Vega", "role": "Investor (NWAi) — knows VP Sales from Convoy", "member_id": "member-020" }
+    ]
+  }
+]

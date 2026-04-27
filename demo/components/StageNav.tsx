@@ -11,6 +11,7 @@ import {
   stageFromSlug,
   totalDealCount,
 } from "@/lib/stage-style";
+import { isPipelineSection } from "@/components/SectionNav";
 
 const deals = dealsData as Deal[];
 
@@ -28,6 +29,10 @@ function dealStageFromPath(pathname: string): PipelineStage | null {
 export function StageNav() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
+
+  // Only render inside the Pipeline section. Members / Portfolio / Ecosystem /
+  // Orchestrator have no stage axis, so the 7-stage strip would be noise.
+  if (!isPipelineSection(pathname)) return null;
 
   // Active stage = whichever pill should be at full saturation.
   // - On /deals/[id]: the deal's stage
@@ -48,7 +53,7 @@ export function StageNav() {
   return (
     <nav
       aria-label="Pipeline stages"
-      className="sticky top-0 z-40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 border-b"
+      className="bg-background border-t"
     >
       <div className="px-6 md:px-10 py-2.5">
         <ul className="flex items-center gap-2 overflow-x-auto">

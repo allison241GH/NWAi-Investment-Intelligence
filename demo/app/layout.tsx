@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import { Suspense } from "react";
 import "./globals.css";
 import { StageNav } from "@/components/StageNav";
+import { SectionNav } from "@/components/SectionNav";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -34,11 +35,20 @@ export default function RootLayout({
           fallback={
             <div
               aria-hidden
-              className="sticky top-0 z-40 h-12 bg-background/95 border-b"
+              className="sticky top-0 z-40 h-24 bg-background/95 border-b"
             />
           }
         >
-          <StageNav />
+          {/*
+            Unified sticky nav stack. Section nav (5 master sections) sits on
+            top; the 7-stage StageNav renders only inside the Pipeline section
+            (it returns null elsewhere) so the strip collapses cleanly to a
+            single row on /members, /portfolio, /ecosystem, /orchestrator.
+          */}
+          <div className="sticky top-0 z-40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 border-b">
+            <SectionNav />
+            <StageNav />
+          </div>
         </Suspense>
         {children}
         <div
