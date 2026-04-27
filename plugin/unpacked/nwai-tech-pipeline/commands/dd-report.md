@@ -73,7 +73,7 @@ Section score mappings:
 - S5 (GTM Strategy): Market Risk — adoption barriers and channel (1–10 inverted)
 - S6 (Team): Execution Risk (1–10 inverted)
 - S7 (Technology & IP): TRL level + IP defensibility (qualitative 1–5)
-- S8 (Deal Structure): AutoKill gate results + cap table cleanliness
+- S8 (Deal Structure): Hard gate results + cap table cleanliness
 - S9 (Financials): Financial Risk (1–10 inverted) + Bear/Base/Bull model
 - S10 (Risk — inverted): Risk Score average across all 5 categories
 - S11 (Exit Strategy): Exit viability + Base/Bull case 10x support

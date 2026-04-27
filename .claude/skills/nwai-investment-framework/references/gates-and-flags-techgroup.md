@@ -1,6 +1,24 @@
-# NWAi TechGroup — Screener Framework v2.0
+# NWAi TechGroup — Screener Framework v2.0 (TechGroup Extension)
 
-## Design Principles
+> **This document is the TechGroup-specific extension to the NWAi Universal Triage Framework.**
+> The universal framework (3 hard gates, NWA Filter, Readiness scoring, Research Protocol, Decision Logic, Output Format) lives in `gates-and-flags.md` and applies to all NWAi verticals.
+>
+> This file contains **only TechGroup-specific content** that overrides or extends the universal framework:
+> - TechGroup-calibrated design principles (Dealum funnel context)
+> - **Track Determination** (Track A vs Track B — TechGroup-only bifurcation)
+> - **Track A — Software / AI / Cloud** (6-dimension Opportunity rubric)
+> - **Track B — Hardware / Robotics / Physical Tech** (6-dimension Opportunity rubric)
+> - **AI Wrapper Assessment** (Track A only)
+> - **Replicability Speed Flag** (also applies at Scout and Diligence)
+> - TechGroup Live Pitch Questions guidance
+>
+> When screening a Tech-tagged deal, apply the universal hard gates and NWA Filter from `gates-and-flags.md` first, then determine Track and apply the appropriate 6-dimension Opportunity rubric below. Readiness scoring, decision logic, and output format are inherited from the universal framework.
+>
+> Medical and Space verticals retain separate hard-gate screener frameworks; ConsumerGroup, IndustrialGroup, and FintechGroup default to the universal framework without track bifurcation.
+
+---
+
+## Design Principles (TechGroup Calibration)
 
 This screener is calibrated for the Dealum inbound funnel, which historically produces
 zero funded deals (3 years, ~3,000 pitches). Its purpose is **not** to find investments —
@@ -14,88 +32,22 @@ Two calibration facts drive all threshold decisions:
 
 ---
 
-## Layer 1 — Hard Gates (Binary, Immediate Kill)
+## Track Determination
 
-Apply all three gates first. A single FAIL = DECLINE. Do not proceed to scoring.
-
-These are the only criteria that are:
-(a) determinable from pitch deck materials alone, and
-(b) truly non-negotiable regardless of opportunity strength.
-
-| Gate | MET if... | FAIL if... |
-|------|-----------|------------|
-| **1. Foreign Entity / IP Structure** | Company appears investable from a US legal standpoint — C-Corp or convertible structure, IP owned by the US entity | Entity structure or IP ownership clearly prevents US investment (foreign HQ, foreign IP entity, VIE structure) |
-| **2. Market Size Threshold** | Opportunity plausibly supports venture-scale outcomes ($500M+ TAM) | Market clearly too small to support 10x return in 5 years — not a matter of founder framing, but structural ceiling |
-| **3. Commercialization Path** | Credible path to paying customers exists — MVP, beta, LOI, or clear near-term route to revenue | Purely academic, pre-concept, or no credible path to market. Research projects and demo labs with no product roadmap. |
-
-**Gating rule:** Mark FAIL only when there is clear evidence the criterion is not met.
-If pitch materials are silent on a criterion, mark MET with a note — do not fail on missing information alone.
-Missing information becomes a Yellow Flag, not a gate kill.
-
-**What is NOT a hard gate (moved to Readiness scoring):**
-- SAFE deal structure — scored in Readiness, flagged for founder conversation at IntroCall
-- No lead investor — scored in Readiness, not a kill at screen
-- Product stage / MVP — scored in Readiness
-- Traction / revenue — scored in Opportunity
-
----
-
-## The NWA Filter — Scoring Rigor Principles
-
-These four tests govern how scores are applied across all dimensions. They are mandatory — not optional overlays.
-Apply them before and during scoring. They produce hard scoring caps and required disclosures in the output.
-
-### 1. Cynical Default
-Do not take deck claims at face value. If a claim cannot be verified via web research or direct product evidence, the maximum score for that dimension is **3/5**. A score of 4 or 5 requires affirmative supporting evidence — not just the absence of contradiction.
-
-### 2. The Goliath Test
-For every software or AI deal, explicitly ask: **"Could NVIDIA, Microsoft, AWS, Salesforce, or a major domain incumbent kill this with a feature update in the next 12–18 months?"** This test is mandatory when scoring Defensibility. If the answer is plausibly yes and no structural counter-argument exists, Defensibility **cannot exceed 3/5**. Document the Goliath Test result in the scoring rationale.
-
-### 3. The LLM Ingestion Test
-For every AI or software deal, explicitly ask: **"Could a customized GPT-4o or Claude agent with access to relevant public data replicate 80% of this product's core function?"** If the answer is yes, the AI Wrapper Risk is HIGH and the Defensibility score **cannot exceed 2/5**. This test drives the AI Wrapper Assessment classification and is mechanically linked to the Defensibility cap.
-
-### 4. Revenue Quality Audit
-Do not treat ARR as a neutral signal. Categorize revenue as:
-- **Sticky Revenue** — automated, API-driven, self-serve SaaS with low-touch retention
-- **Stagnant Revenue** — high-touch, consulting-adjacent, services-embedded, or inertia-based (customers stay because switching is painful, not because the product is essential)
-
-Stagnant Revenue caps the Traction Signal score at **2/5**. If revenue quality is unclear, apply Cynical Default (max 3/5). State the revenue classification explicitly in the Traction scoring rationale.
-
----
-
-## Layer 2 — Opportunity Score
-
-**Total Possible: 30 | Threshold to Advance: ≥ 20**
-WATCH range: 14–19 | DECLINE: < 14 (or any Hard Gate FAIL)
-
-Score each dimension using pitch deck materials plus the Research Protocol searches.
-Use the full 0–5 scale. Avoid clustering around 3–4. Apply NWA Filter caps before assigning any score ≥ 4.
-
-| Score | Definition |
-|-------|-----------|
-| 5 | Exceptional — clear, evidence-backed signal. Affirmative evidence required. |
-| 4 | Strong — credible signal with minor gaps. Must survive NWA Filter. |
-| 3 | Acceptable — present but not differentiated. Maximum for unverified claims. |
-| 2 | Weak — thin signal, speculative, or NWA Filter cap applied. |
-| 1 | Very Weak — almost absent |
-| 0 | Absent — no evidence whatsoever, or explicitly absent |
-
----
-
-### Track Determination
-
-Assign the deal to one track before scoring. Use the primary revenue and product model — not the presence of software components alone.
+Assign every Tech-tagged deal to one track before scoring Opportunity. Use the primary revenue and product model — not the presence of software components alone.
 
 - **Track A — Software / AI / Cloud**: Primary value delivery is software, data, algorithms, or AI inference. Revenue model is SaaS, API, licensing, or marketplace. Examples: enterprise SaaS, AI workflow tools, data platforms, fintech software, vertical AI.
 - **Track B — Hardware / Robotics / Physical Tech**: Physical product is a primary deliverable. Revenue includes hardware unit sales, manufacturing, or embedded systems. Examples: robotics, semiconductors/chips, physical AI devices, industrial automation, defense hardware.
 
 Mixed plays (e.g., software-enabled hardware) should default to Track B if a physical product is necessary for the product to function.
 
+Once Track is determined, apply the corresponding 6-dimension Opportunity rubric below. Each rubric scores out of 30 points; the universal Decision Logic (ADVANCE ≥ 20/30, WATCH 14–19, DECLINE < 14) applies unchanged.
+
 ---
 
-### Track A — Software / AI / Cloud (6 Dimensions × 5 = 30 pts)
+## Track A — Software / AI / Cloud (6 Dimensions × 5 = 30 pts)
 
-#### Dimension 1 — Structural Discontinuity
+### Dimension 1 — Structural Discontinuity
 *Is this riding a genuine, irreversible market shift? Why is now the right moment?*
 
 Score on: clarity of the "why now" argument; evidence of a real structural shift (regulatory, technological, behavioral) vs. incremental improvement dressed as disruption; whether the timing argument would have been equally valid 3–5 years ago.
@@ -108,7 +60,7 @@ Score on: clarity of the "why now" argument; evidence of a real structural shift
 
 → **Scout mapping:** Expands to Category & Market Discontinuity (Q1) at Scout stage.
 
-#### Dimension 2 — Market Opportunity ⚠️ SUB-FLOOR: score ≤ 2 = DECLINE regardless of total
+### Dimension 2 — Market Opportunity ⚠️ SUB-FLOOR: score ≤ 2 = DECLINE regardless of total
 *Does the TAM credibly support venture-scale outcomes? Is the market growing?*
 
 Score on: TAM size and credibility (validated against web research, not founder claim alone); market growth trajectory; whether the SAM is large enough to support a 10x return; whether the market is expanding or contracting. Apply Cynical Default — founder TAM claims require third-party corroboration to score ≥ 4.
@@ -120,7 +72,7 @@ Score on: TAM size and credibility (validated against web research, not founder 
 - 1: Market too small or clearly contracting.
 - 0: No market sizing provided and web research finds no venture-scale market.
 
-#### Dimension 3 — Founder Advantage
+### Dimension 3 — Founder Advantage
 *Does this founding team have an earned right to win in this domain?*
 
 Score on: domain expertise depth (years in industry, relevant technical credentials); prior startup experience and exits; execution signals (product already built, team assembled, early customers signed); talent magnetism (quality of co-founders and advisors). Validate with web research (LinkedIn, Crunchbase). Apply Cynical Default — claims not verifiable online cap at 3/5.
@@ -132,12 +84,12 @@ Score on: domain expertise depth (years in industry, relevant technical credenti
 - 1: Founder background disconnected from problem.
 - 0: No founder information available.
 
-#### Dimension 4 — Defensibility Signal
+### Dimension 4 — Defensibility Signal
 *Can we see early seeds of a real moat, even at this stage?*
 
 Score on: any evidence of proprietary data, IP, network effects, or workflow lock-in; thin wrapper risk assessment; Goliath Test result; LLM Ingestion Test result; whether the moat strengthens with usage (Memory Lock-in signal).
 
-**Mandatory NWA Filter applications for this dimension:**
+**Mandatory NWA Filter applications for this dimension** (filters defined in universal `gates-and-flags.md`):
 - **LLM Ingestion Test**: Run before scoring. If YES (80% replicable by GPT-4o/Claude), score is capped at **2/5**. Note result in rationale.
 - **Thin Wrapper Cap**: If core product is primarily API orchestration on top of OpenAI/Anthropic/etc. with no proprietary data layer, score is capped at **2/5**. Non-negotiable.
 - **Inertia Penalty**: If retention appears driven by switching cost friction rather than product indispensability, score is capped at **3/5**.
@@ -152,10 +104,10 @@ Scores of 4 or 5 require explicit counter-argument in the rationale explaining w
 - 1: No moat signal. Feature, not a product.
 - 0: Explicitly describes using only public APIs/models with no proprietary layer.
 
-#### Dimension 5 — Traction Signal
+### Dimension 5 — Traction Signal
 *Is there evidence of real customer pull, not just founder push? What is the quality of the revenue?*
 
-Score on: paying customers (weight heavily), signed LOIs, active beta users with retention data, revenue figures, named design partners. Apply **Revenue Quality Audit** before scoring: classify revenue as Sticky or Stagnant. Cold outreach pipelines do not count.
+Score on: paying customers (weight heavily), signed LOIs, active beta users with retention data, revenue figures, named design partners. Apply **Revenue Quality Audit** (defined in universal `gates-and-flags.md`) before scoring: classify revenue as Sticky or Stagnant. Cold outreach pipelines do not count.
 
 **Mandatory NWA Filter application:**
 - **Stagnant Revenue Cap**: High-touch, consulting-adjacent, services-embedded, or inertia-based revenue caps this dimension at **2/5**.
@@ -171,7 +123,7 @@ State the Revenue Quality classification (Sticky / Stagnant / Fragile / Unknown)
 - 1: No traction evidence beyond founder assertion.
 - 0: Pre-product with no market contact.
 
-#### Dimension 6 — Venture Economics
+### Dimension 6 — Venture Economics
 *Is there a credible path to a $100M ARR business that can return 10x for NWAi?*
 
 Score on: clarity of the unit economics model (CAC, LTV, payback period); path from current stage to $100M ARR given market size and growth rate; exit multiple logic (who are the likely acquirers, what have comparable exits looked like); whether the company is in a "Red Ocean" (crowded market with margin compression) or a defensible position. Penalize high-CAC, low-margin plays.
@@ -185,17 +137,17 @@ Score on: clarity of the unit economics model (CAC, LTV, payback period); path f
 
 ---
 
-### Track B — Hardware / Robotics / Physical Tech (6 Dimensions × 5 = 30 pts)
+## Track B — Hardware / Robotics / Physical Tech (6 Dimensions × 5 = 30 pts)
 
-#### Dimension 1 — Structural Discontinuity
+### Dimension 1 — Structural Discontinuity
 *Is this riding a genuine, irreversible shift in what's physically possible or economically viable?*
 
 Same scoring rubric as Track A Dimension 1. Apply Cynical Default. Hardware discontinuities often tie to component cost curves (compute, sensors, actuators), regulatory shifts, or supply chain structural changes.
 
-#### Dimension 2 — Market Opportunity ⚠️ SUB-FLOOR: score ≤ 2 = DECLINE regardless of total
+### Dimension 2 — Market Opportunity ⚠️ SUB-FLOOR: score ≤ 2 = DECLINE regardless of total
 Same scoring rubric as Track A Dimension 2. Apply Cynical Default and web-corroborate TAM claims.
 
-#### Dimension 3 — Founder Advantage (Hardware-Specific)
+### Dimension 3 — Founder Advantage (Hardware-Specific)
 *Does this team have the ops, manufacturing, and supply chain expertise to build physical products at scale?*
 
 Score on: hardware-specific domain expertise (manufacturing, supply chain, embedded systems, regulatory); prior experience shipping physical products; ops and production leadership on the team; evidence the team has navigated the "last mile" of hardware (from prototype to production-grade reliability).
@@ -209,7 +161,7 @@ Score on: hardware-specific domain expertise (manufacturing, supply chain, embed
 - 1: No hardware operational experience on the team.
 - 0: No team information available.
 
-#### Dimension 4 — Technical Maturity / TRL
+### Dimension 4 — Technical Maturity / TRL
 *Where is this technology on the readiness scale, and is it close enough to production to be investable?*
 
 Score against the GAO Technology Readiness Level (TRL) scale (1–9). NWAi minimum investable threshold is TRL 5 (technology validated in relevant environment).
@@ -223,7 +175,7 @@ Score against the GAO Technology Readiness Level (TRL) scale (1–9). NWAi minim
 - 1: TRL 1–2. Basic research stage. Not investable at NWAi's stage.
 - 0: TRL unclear or no technical evidence provided.
 
-#### Dimension 5 — Unit Economics (Hardware)
+### Dimension 5 — Unit Economics (Hardware)
 *Is there a credible path to gross margins that support a venture-scale outcome?*
 
 Score on: current or projected gross margins; bill of materials (BOM) vs. ASP relationship; volume pricing trajectory; whether the company has a path to 50%+ gross margins at scale; comparison to hardware/software margin blend if applicable (software layer can support margin structure).
@@ -237,7 +189,7 @@ Score on: current or projected gross margins; bill of materials (BOM) vs. ASP re
 - 1: No unit economics provided. No margin discussion.
 - 0: Explicitly low-margin business model with no path to improvement.
 
-#### Dimension 6 — Defensibility (Hardware)
+### Dimension 6 — Defensibility (Hardware)
 *Is there a real moat beyond the physical product?*
 
 Score on: proprietary IP or patents; manufacturing process advantages; supply chain lock-in; network effects from installed base; software layer stickiness on top of hardware; regulatory certifications as barrier to entry. Apply **Goliath Test** — can a large hardware incumbent (e.g., a Tier 1 supplier, defense prime, or hyperscaler with hardware ambitions) replicate this with a development program?
@@ -277,140 +229,9 @@ These flags compound with the AI Wrapper Assessment. A deal flagged as HIGH Wrap
 
 ---
 
-## Layer 3 — Readiness Score (0–5 per dimension, 25 points total)
+## Live Pitch Questions (TechGroup ADVANCE Deals)
 
-Readiness scores inform the Scout briefing and flag specific friction items for the IntroCall conversation. Readiness does not independently produce a DECLINE — but a low Readiness score on an otherwise advancing deal **downgrades the verdict from ADVANCE to WATCH**.
-
-**Readiness Downgrade Rule:** If Opportunity Score ≥ 20/30 (ADVANCE) but Readiness Score < 15/25, the verdict is automatically downgraded to **WATCH** with specific re-engagement milestones named for each friction dimension scoring ≤ 2.
-
-**Scoring principle for unknowns:** If pitch materials are silent on a Readiness dimension, score **2** (not 0). Reserve 0 for explicit evidence of absence. Silent decks are a Readiness friction note, not a structural kill.
-
-**Exception — Strong Readiness on WATCH:** Readiness score ≥ 18/25 on a WATCH deal → note "Readiness is strong; prioritize re-engagement when opportunity matures."
-
-### Dimension 1 — Deal Structure
-*What is the current proposed deal structure?*
-
-- 5: Priced equity round (Seed or Series A). Clean cap table.
-- 4: Convertible note with reasonable terms.
-- 3: Convertible note with unusual terms (high cap, aggressive discount).
-- 2: SAFE proposed. ⚠️ Flag: "Structure conversation required at IntroCall. NWAi requires equity or convertible debt. If founder insists on SAFE after discussion at IntroCall, treat as deal-breaker at that stage — not at Screen."
-- 1: SAFE with explicit indication of no flexibility.
-- 0: Explicitly incompatible structure (e.g., token-based, revenue share only, no equity component).
-
-### Dimension 2 — Product Maturity
-*Where is the product in its development lifecycle?*
-
-- 5: Revenue-generating product with retention metrics.
-- 4: Paying beta customers. MVP validated.
-- 3: MVP live, active beta users, no revenue yet.
-- 2: Prototype only. No user validation. Or: no product information disclosed.
-- 1: Design/concept stage. No working product.
-- 0: Idea only. No product evidence.
-
-### Dimension 3 — Syndication Readiness
-*Is there a credible lead investor or co-investor in the round?*
-
-- 5: Lead investor committed with term sheet or strong indication.
-- 4: Named credible lead in conversation. Round forming.
-- 3: Angel investors committed but no institutional lead identified.
-- 2: No lead identified. Round not formed. Or: no syndication information disclosed. ⚠️ Flag: "No lead identified — NWAi rarely leads. Verify at IntroCall."
-- 1: No co-investors and founder appears unaware of syndication norms.
-- 0: Explicitly seeking NWAi to lead with no other investors engaged.
-
-### Dimension 4 — Traction Velocity
-*Is the company growing, and is growth accelerating or stagnating?*
-
-Score on: month-over-month or quarter-over-quarter growth rate in revenue or active users; growth trajectory (accelerating, linear, plateauing); whether growth appears driven by product pull or founder-led sales effort. Apply Revenue Quality Audit — Stagnant Revenue growth signals do not score above 2.
-
-- 5: MoM growth rate ≥ 15% sustained over 3+ months. Accelerating. Sticky Revenue growth confirmed.
-- 4: Consistent positive growth trend. Growth rate credible. Revenue quality appears Sticky.
-- 3: Early-stage growth with limited data. Trajectory positive but unverified. Or: meaningful growth but quality unclear.
-- 2: Flat or declining signals, OR growth present but Stagnant Revenue classification applies, OR no growth data disclosed.
-- 1: Explicit plateau or contraction.
-- 0: No traction or pre-revenue with no growth signals.
-
-### Dimension 5 — Founder Accessibility
-*Is this founder reachable, US-based, and ready for an engagement process?*
-
-- 5: US-based, responsive, professional pitch submission with complete materials.
-- 4: US-based, submission complete, minor gaps in materials.
-- 3: US-based but submission materials thin. Some follow-up required.
-- 2: Location unclear or international founder with US entity. Or: submission very incomplete. Verify geography.
-- 1: Submission materials very incomplete. Likely not ready for process.
-- 0: No contact information or clearly unreachable.
-
----
-
-## Research Protocol
-
-Deploy WebSearch on exactly **three dimensions** before scoring. Do not exceed this at Screen stage — save full research for Scout and Diligence agents.
-
-**Search 1 — Market Opportunity Validation**
-Search: `"[company sector/industry] market size [current year]"`
-Goal: Find 1–2 third-party market sizing references (Gartner, IDC, CB Insights, industry reports). Compare against founder TAM claim. If founder TAM is > 3× bottoms-up estimate, note the discrepancy and apply Cynical Default to Market Opportunity score. Flag the gap in the output.
-
-**Search 2 — Founder Advantage Validation**
-Search: `"[founder name] LinkedIn"` and `"[company name] Crunchbase"`
-Goal: Verify domain background, prior companies, exits, and any notable advisors or investors. Discrepancies between deck claims and web findings trigger Cynical Default on the Founder Advantage score.
-
-**Search 3 — Incumbent / Competitive Landscape**
-Search: `"[company sector] market leaders"` or `"[company name] competitors"` or `"[company sector] [known hyperscaler] [product area]"`
-Goal: Identify the dominant incumbents in the space and assess whether any hyperscaler (NVIDIA, Microsoft, AWS, Salesforce, Google, Apple) is building in this direction. This search directly enables the **Goliath Test** for Defensibility scoring. If a major incumbent has an announced roadmap item that overlaps with this company's core function, flag it explicitly. Takes 2–3 minutes. Required for any score of 4–5 on Defensibility.
-
-**All other research (patent searches, regulatory landscape, customer references, technical stack depth) is Scout and Diligence-stage work.** Do not deploy company-researcher or competitive-intelligence agents at Screen stage.
-
----
-
-## Decision Logic
-
-### ADVANCE TO SCOUT
-- All 3 Hard Gates: MET
-- Opportunity Score: **≥ 20 / 30**
-- Market Opportunity dimension: **≥ 3** (sub-floor enforced)
-- No individual Opportunity dimension = 0
-- Readiness Score: **≥ 15 / 25**
-- Output includes 3–5 Live Pitch Questions
-
-### WATCH — Active
-- All 3 Hard Gates: MET
-- Opportunity Score: **14–19 / 30**, OR
-- Opportunity Score ≥ 20 / 30 **but Readiness < 15 / 25** (Readiness Downgrade Rule)
-- Market Opportunity dimension: ≥ 3
-- Output must name specific, measurable milestone(s) for re-engagement for each dimension scoring ≤ 2
-- Examples: "Re-engage when ARR reaches $250K", "Re-engage when Series A lead commits", "Re-engage when priced equity round is structured"
-- WATCH is rare and intentional — not a soft decline
-
-### DECLINE
-- Any Hard Gate: FAIL, OR
-- Opportunity Score: **< 14 / 30**, OR
-- Market Opportunity score: **≤ 2**, OR
-- Any individual Opportunity dimension = 0
-- Output names the primary kill reason in one sentence
-
----
-
-## Output Format
-
-See screen.md command for the full structured output template.
-The screener produces:
-1. A structured in-chat Triage Report (tables, scores, flags, recommendation)
-2. A Word document saved to `deals/` folder
-
-The in-chat report uses the NWA Triage Report format:
-- Signal Summary at top (scores + verdict + track)
-- Company Snapshot table
-- Hard Gates table
-- NWA Filter Results (Goliath Test, LLM Ingestion Test outcomes — Track A only)
-- Opportunity Score table (6 dimensions, Track A or Track B)
-- Readiness Score table (5 dimensions)
-- Risk Flags (Red + Yellow)
-- Recommendation block — for ADVANCE deals, includes 3–5 Live Pitch Questions
-
----
-
-## Live Pitch Questions (ADVANCE Deals Only)
-
-When a deal advances, generate 3–5 questions specifically for the founder's Live Pitch
+When a Tech-tagged deal advances, generate 3–5 questions specifically for the founder's Live Pitch
 at the bi-weekly TechGroup meeting. These are not generic — they must be derived from
 the specific gaps, risks, and uncertainties identified during screening.
 
@@ -422,16 +243,18 @@ Question design rules:
 
 Categories to draw from:
 - Unvalidated market claims (if Market score required Cynical Default)
-- Goliath Test concerns (if incumbent threat identified in Search 3)
+- Goliath Test concerns (if incumbent threat identified in research)
 - Moat/defensibility gaps (if thin wrapper risk flagged or Defensibility ≤ 3)
 - Founder domain questions (if Founder Advantage score was 3 or below)
 - Structure friction (if SAFE or no lead — founder needs to address in the room)
 - Traction questions (if Revenue Quality = Stagnant, Fragile, or Unknown)
 - Venture Economics questions (if $100M ARR path was unclear)
+- Track B specifics: TRL evidence, BOM/margin path, Hardware Last Mile signals
 - Exit/acquirer questions (always useful at Scout stage)
 
 ---
 
-*NWAi TechGroup Screener Framework | v2.0 | April 2026*
-*Replaces v1.0 (March 2026). Key changes: NWA Filter added; Opportunity expanded to 6 dimensions / 30 pts with Track A/B bifurcation; Readiness expanded to 5 dimensions / 25 pts with Traction Velocity; Readiness Downgrade Rule added; Research Protocol expanded to 3 mandatory searches.*
+*NWAi TechGroup Screener Framework — TechGroup Extension | v2.0 | April 2026*
+*Universal hard gates, NWA Filter, Readiness scoring, Research Protocol, Decision Logic, and Output Format are inherited from `gates-and-flags.md`.*
+*Replaces v1.0 (March 2026). Key TechGroup-specific additions: Track A/B bifurcation; AI Wrapper Assessment; Replicability Speed Flag; Hardware Last Mile Standard; TRL Hard Cap.*
 *Medical and Space verticals retain separate hard-gate screener frameworks.*

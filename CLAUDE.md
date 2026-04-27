@@ -58,8 +58,8 @@ Inbox → Screening → Scout/IntroCall → Diligence → DD Report → Decision
 ```
 
 **Stage definitions:**
-- **Inbox**: New pitch received. Needs group assignment and AutoKill screening.
-- **Screening**: AutoKill gates applied (6 pass/fail criteria + Red/Yellow flags). Verdict: Pass / Conditional Pass / Fail.
+- **Inbox**: New pitch received. Needs group assignment and triage screening.
+- **Screening**: NWAi Universal Triage Framework applied — 3 hard gates + NWA Filter + Opportunity scoring (6 dimensions × 0–5 = 30) + Readiness scoring (5 dimensions × 0–5 = 25). Verdict: ADVANCE / WATCH / DECLINE. TechGroup deals additionally apply Track A (Software/AI/Cloud) or Track B (Hardware/Robotics) Opportunity rubric.
 - **Scout/IntroCall**: Scout Q assessment run (Phase 1 + Phase 2). Mapped to TechGroup theme. SMEs identified.
 - **Diligence**: Research agents launched. 17-folder DD checklist assigned to team. Scoring rubrics applied.
 - **DD Report**: Scored synthesis document generated after 17-folder work is complete. 11 scored sections (1–5 scale). Primary input to Decision. IC-ready briefing document.
@@ -107,9 +107,7 @@ or under-deliver at late stages.
 | **DD Report** | Structured. 11 scored sections (1–5). Brief narrative per section. Recommendation checkboxes. DD team vote table. Replaces the long-form Investment Memo as the primary IC briefing document. |
 | **Decision / Memo** | Decision: brief verdict + rationale recorded in Dealum. Memo: full Investment Memo for archival or external IC presentation only. |
 
-**On failed AutoKill gates:** A gate failure produces a clean Kill verdict. Do not continue
-to full Scout analysis by default. If calibration or a second opinion is needed, Jamie or
-the deal lead can explicitly request the full Scout report on a killed deal.
+**On failed Hard Gates:** A hard gate failure (or Market Opportunity sub-floor ≤ 2) produces a clean DECLINE verdict. Do not continue to full Scout analysis by default. If calibration or a second opinion is needed, Jamie or the deal lead can explicitly request the full Scout report on a declined deal.
 
 For ad hoc questions outside a pipeline command, default to concise — lead with the answer,
 offer to go deeper.
@@ -206,7 +204,7 @@ When mapping a deal to a theme, identify the correct theme from the table below.
 | Command | When to use |
 |---------|-------------|
 | `/sync-pipeline` | Pull latest from Dealum and show pipeline dashboard |
-| `/screen [company]` | Run AutoKill gates on a new deal |
+| `/screen [company]` | Run Universal Triage Framework on a new deal (3 hard gates + NWA Filter + Opportunity + Readiness scoring) |
 | `/scout [company]` | Run Scout Q assessment + map to TechGroup theme |
 | `/diligence [company]` | Launch research agents + apply scoring rubrics + generate DD kickoff package |
 | `/post-meeting [company] [type]` | Reconcile Product Demo / GTM / Financials meeting transcript — updates Diligence Action Tracker and surfaces Key Insights |
@@ -230,7 +228,9 @@ When mapping a deal to a theme, identify the correct theme from the table below.
 The `nwai-investment-framework` skill contains all reference material. When doing analysis,
 always reference the relevant framework:
 
-- **Gates & Flags**: TechGroup triage screener — 3 hard gates + Opportunity/Readiness scoring; legacy 6-gate AutoKill retained for other verticals/reference only (`references/gates-and-flags-techgroup.md`, `references/gates-and-flags.md`)
+- **Gates & Flags (Universal)**: NWAi Universal Triage Framework — 3 hard gates + NWA Filter + Opportunity (6 dimensions × 0–5 = 30) + Readiness (5 dimensions × 0–5 = 25). Applies to all NWAi verticals (`references/gates-and-flags.md`)
+- **Gates & Flags (TechGroup Extension)**: Track A (Software/AI/Cloud) and Track B (Hardware/Robotics) 6-dimension Opportunity rubrics, AI Wrapper Assessment, Replicability Speed Flag, Hardware Last Mile Standard, TRL Hard Cap (`references/gates-and-flags-techgroup.md`)
+- **Legacy 6-gate AutoKill**: Archived for reference only — replaced by Universal Triage Framework (`references/_archive/gates-and-flags-6gate-legacy.md`)
 - **Scout Questions**: Phase 1 + Phase 2 assessment framework (`references/scout-questions.md`)
 - **Diligence Rubrics**: Moat 0–6/0–10, Risk 1–10, Bear/Base/Bull financial model (`references/diligence-scoring-rubrics.md`)
 - **DD Checklist**: 17-folder due diligence framework (`references/dd-checklist.md`)
@@ -250,7 +250,8 @@ always reference the relevant framework:
 | DD | Due Diligence |
 | SME | Subject Matter Expert (domain expert member, not Small/Medium Enterprise) |
 | TRL | Technology Readiness Level (1–9, GAO scale; NWAi minimum is 5) |
-| AutoKill | NWAi TechGroup 3-layer triage framework applied at Screening: 3 hard pass/fail gates + Opportunity scoring (5 dimensions, 0–25) + Readiness scoring (4 dimensions, 0–20). ADVANCE ≥ 18/25 Opportunity. Legacy 6-gate AutoKill retained for other verticals. |
+| Universal Triage Framework | NWAi 3-layer triage framework applied at Screening across all verticals: 3 hard gates + NWA Filter (Cynical Default, Goliath Test, LLM Ingestion Test, Revenue Quality Audit) + Opportunity scoring (6 dimensions × 0–5 = 30) + Readiness scoring (5 dimensions × 0–5 = 25). ADVANCE ≥ 20/30, WATCH 14–19, DECLINE < 14 (or any hard gate FAIL or Market Opportunity ≤ 2). TechGroup adds Track A/B bifurcation. |
+| AutoKill (legacy) | Pre-v2.0 TechGroup 6-gate pass/fail screener. Replaced by Universal Triage Framework in April 2026. Archived at `references/_archive/gates-and-flags-6gate-legacy.md` for reference only. |
 | TAM / SAM / SOM | Total / Serviceable / Obtainable Addressable Market |
 | KOL | Key Opinion Leader (used for advisor quality assessment) |
 | Tech-tagged | Application in Dealum with the "Tech" tag — TechGroup scope |

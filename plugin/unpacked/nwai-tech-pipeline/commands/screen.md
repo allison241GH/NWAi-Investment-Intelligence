@@ -12,10 +12,17 @@ Run the NWAi TechGroup triage screener on a deal. Arguments: $ARGUMENTS
 
 ## Step 1: Load Screener Framework
 
-Load the TechGroup screener reference from:
-`${CLAUDE_PLUGIN_ROOT}/skills/nwai-investment-framework/references/gates-and-flags-techgroup.md`
+Load **both** screener references — universal first, then TechGroup extension:
 
-Read the full framework before proceeding. All scoring rubrics, NWA Filter tests, thresholds, decision logic, and output format rules are defined there.
+1. **Universal framework** (applies to all NWAi verticals):
+   `${CLAUDE_PLUGIN_ROOT}/skills/nwai-investment-framework/references/gates-and-flags.md`
+   Defines: 3 hard gates, the NWA Filter (Cynical Default, Goliath Test, LLM Ingestion Test, Revenue Quality Audit), the 0–5 scoring scale, Readiness scoring (5 dimensions × 0–5 = 25), the Readiness Downgrade Rule, the 3-search Research Protocol, Decision Logic (ADVANCE ≥ 20/30, WATCH 14–19, DECLINE < 14 or any hard gate FAIL or Market Opportunity ≤ 2), and the universal output format.
+
+2. **TechGroup extension**:
+   `${CLAUDE_PLUGIN_ROOT}/skills/nwai-investment-framework/references/gates-and-flags-techgroup.md`
+   Defines TechGroup-specific overrides: Track Determination (A vs B), Track A Software/AI/Cloud 6-dimension Opportunity rubric, Track B Hardware/Robotics 6-dimension Opportunity rubric, AI Wrapper Assessment, Replicability Speed Flag, Hardware Last Mile Standard, TRL Hard Cap, TechGroup Live Pitch Questions guidance.
+
+Read both fully before proceeding. The universal hard gates, NWA Filter, and Readiness scoring apply to every Tech-tagged deal; the TechGroup file is the source for which 6-dimension Opportunity rubric to apply once Track is determined in Step 3.
 
 ---
 

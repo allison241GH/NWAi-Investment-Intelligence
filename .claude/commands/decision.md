@@ -43,7 +43,7 @@ Ask for:
 **If PASS:**
 Ask for:
 - Primary reason for passing (select the most applicable):
-  - Failed AutoKill gate (specify which)
+  - Failed Hard Gate (specify which)
   - Team/founder concerns
   - Market too small
   - No moat / defensibility concerns
