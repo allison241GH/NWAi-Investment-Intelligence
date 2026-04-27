@@ -6,3 +6,6 @@
 .claude/settings.local.json
 plugin/current/zi7wWRPB
 ~$*
+
+# Deal artifacts — local file organization only, not version-controlled
+deals/

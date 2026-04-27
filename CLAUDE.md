@@ -360,7 +360,7 @@ The plugin lives in two places. Jamie does not need to edit files directly.
 **Repository:** `https://github.com/allison241GH/NWAi-Investment-Intelligence`
 **Branch:** `main`
 **Auth:** GitHub PAT stored in `~/.git-credentials` (configured March 2026) — pushes work directly from Cowork sessions, no Terminal needed.
-**Workspace path on Mac:** `/Users/jamie/Desktop/Claude CoWork NWAi Investment Intelligence`
+**Workspace path on Mac:** `/Users/jamie/ClaudeCodeProjects/nwa-intelligence`
 
 **When to commit:** At the end of any session where pipeline files were meaningfully changed. Tell Claude: *"commit and push"* or *"save this version."* Claude will stage the right files, write a descriptive commit message, and push.
 
