@@ -337,6 +337,16 @@ Key files in this workspace:
 
 ---
 
+## Working in Cowork — Which Folder to Select
+
+**For all deal work, select `/Users/jamie/ClaudeCodeProjects/nwa-intelligence/` as the project folder in Cowork.** This is the canonical code checkout — the only location with a live `.claude/` runtime, the canonical `CLAUDE.md` (this file), the plugin source, and the `deals/` output folder. Selecting this folder is what makes the slash commands (`/sync-pipeline`, `/screen`, `/scout`, `/diligence`, `/post-meeting`, `/dd-report`, `/decision`, `/memo`) and the Dealum MCP integration available in chat.
+
+**Do not select the Desktop folder `/Users/jamie/Desktop/Claude CoWork NWAi Investment Intelligence/` for deal work.** Despite its name, that folder is a planning archive from the demo / plugin build phase. It contains markdown design docs (`Session-Backlog.md`, `Setup.md`, `Scoping.md`, build-session briefs, the Desktop-Checkout-Reconciliation-Report) but no `.claude/` runtime. Selecting it as a project root would not enable the pipeline commands and would silently miss every framework update made to the canonical folder.
+
+**Cowork vs. Claude Code.** Cowork mode is the right interface for everyday deal work — applying the framework, generating Triage / Scout / DD reports, processing meeting transcripts, recording decisions. Claude Code (Terminal) is for rare plugin maintenance — adding a command, modifying a reference doc, refactoring an agent — and is typically initiated by saying "let's update [X]" inside a Cowork session, not by switching tools. Either way, the project root is always the canonical folder above.
+
+---
+
 ## Plugin Architecture — How It Works
 
 The plugin lives in two places. Jamie does not need to edit files directly.
