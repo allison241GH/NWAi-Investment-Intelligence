@@ -69,7 +69,7 @@ Each command is a markdown file in `commands/` that defines a structured workflo
 | Command | File | What It Triggers | Output |
 |---------|------|-----------------|--------|
 | `/sync-pipeline` | `commands/sync-pipeline.md` | `pipeline-monitor` agent → Dealum snapshot | Pipeline dashboard in chat |
-| `/screen [company]` | `commands/screen.md` | `gates-and-flags-techgroup.md` → 3 hard gates + opportunity/readiness scoring | NWA Triage Report in chat + Triage Report .docx saved to deals/ |
+| `/screen [company]` | `commands/screen.md` | `gates-and-flags.md` (universal: 3 hard gates + NWA Filter + Opportunity 6×0–5/30 + Readiness 5×0–5/25 + Decision Logic) + `gates-and-flags-techgroup.md` (TechGroup Track A/B Opportunity rubrics) | NWA Triage Report in chat + Triage Report .docx saved to deals/ |
 | `/scout [company]` | `commands/scout.md` | `nwai-investment-framework` skill → Scout Q assessment + theme map | Scout Assessment report in chat + Scout Assessment .docx saved to workspace |
 | `/diligence [company]` | `commands/diligence.md` | Pre-flight gate (Scout required + financial files confirmed) → 5–6 agent team → Layer 2 Hypothesis Confirmation Plan (AI-derived) + scored rubrics + 17-folder checklist | DD Kickoff Package .docx saved to deals/ |
 | `/post-meeting [company] [product\|gtm\|financials]` | `commands/post-meeting.md` | Loads transcript(s) + all prior context → applies analyst lens → produces dual-output document | Post-Meeting Reconciliation .docx (Analyst POV + Key Insights + Resolved/Open tracker) saved to deals/ |
@@ -132,8 +132,9 @@ This skill is the **brain trust** — NWAi's proprietary investment knowledge en
 
 | File | Contents | Used At |
 |------|----------|---------|
-| `gates-and-flags-techgroup.md` | TechGroup triage screener: 3 hard gates + 5 Opportunity dimensions (0–5, /25) + 4 Readiness dimensions (0–5, /20) + decision logic + forward-mapping notes to Scout dimensions | Screen (TechGroup) |
-| `gates-and-flags.md` | Original 6-gate AutoKill framework (retained for reference; Medical/Space verticals use separate screener docs) | Screen (legacy) |
+| `gates-and-flags.md` | **NWAi Universal Triage Framework v2.0** (all verticals): 3 hard gates + NWA Filter (Cynical Default, Goliath Test, LLM Ingestion Test, Revenue Quality Audit) + Opportunity 6×0–5 (/30) + Readiness 5×0–5 (/25) + Readiness Downgrade Rule + 3-search Research Protocol + Decision Logic (ADVANCE ≥ 20/30, WATCH 14–19, DECLINE < 14) | Screen (universal) |
+| `gates-and-flags-techgroup.md` | **TechGroup extension** to the universal framework: Track Determination (A/B), Track A Software/AI/Cloud 6-dimension Opportunity rubric, Track B Hardware/Robotics 6-dimension Opportunity rubric, AI Wrapper Assessment, Replicability Speed Flag, Hardware Last Mile Standard, TRL Hard Cap, TechGroup Live Pitch Questions; cross-references universal gates-and-flags.md | Screen (TechGroup) |
+| `_archive/gates-and-flags-6gate-legacy.md` | Pre-v2.0 legacy 6-gate pass/fail AutoKill framework. Archived for historical reference only — superseded by Universal Triage Framework in April 2026 | Reference only |
 | `scout-questions.md` | Phase 1 viability (Q1 + Q1b Demand Signal Test + Q2 + Q3, scored 0–5 with Triage delta) + 3 strategic dimensions (Q4 Ecosystem Role, Q5 Adjacent Displacement Risk, Q6 Macro Tailwind) + Phase 2 execution (scored 0–5) + Scout Conviction Score (/19) + 2-page output format | Scout |
 | `diligence-scoring-rubrics.md` | Moat score (0–6 / 0–10), Risk score (1–10, includes Adjacent Displacement Risk sub-dimension), Bear/Base/Bull financial model; Layer 2 rubric-to-validation-group mapping table | Diligence |
 | `dd-checklist.md` | Layer 2 Hypothesis Confirmation architecture + Layer 1 17-folder data completeness checklist; includes Layer 2 → DD Report section score mapping | Diligence |
@@ -278,15 +279,17 @@ nwai-tech-pipeline/
     └── nwai-investment-framework/
         ├── SKILL.md         ← Skill entry point
         └── references/
-            ├── gates-and-flags-techgroup.md   ← TechGroup 3-layer triage screener
-            ├── gates-and-flags.md             ← Legacy 6-gate AutoKill (other verticals)
+            ├── gates-and-flags.md             ← NWAi Universal Triage Framework v2.0 (all verticals)
+            ├── gates-and-flags-techgroup.md   ← TechGroup extension: Track A/B + AI Wrapper + Replicability
             ├── scout-questions.md
             ├── diligence-scoring-rubrics.md
             ├── dd-checklist.md
             ├── ai-moats-framework.md
             ├── dd-report-format-reference.md
             ├── memo-format-reference.md
-            └── diligence-analysis-framework.md ← Analyst lens standard for post-meeting  ★ NEW
+            ├── diligence-analysis-framework.md ← Analyst lens standard for post-meeting
+            └── _archive/
+                └── gates-and-flags-6gate-legacy.md  ← Pre-v2.0 legacy AutoKill (reference only)
 
 Workspace root (your folder):
 ├── CLAUDE.md                ← Persistent session context (the "brain")
