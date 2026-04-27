@@ -1,5 +1,5 @@
 # NWAi TechGroup Deal Pipeline — Architecture Overview
-*v0.18.0 | April 2026 | New World Angels Investment Intelligence*
+*v0.19.0 | April 2026 | New World Angels Investment Intelligence*
 
 ---
 
@@ -315,12 +315,44 @@ Workspace root (your folder):
 
 ---
 
+## Companion Artifact — NWAi Investment Intelligence Demo
+
+**Location:** `demo/` (sibling to plugin source, same repo)
+**Stack:** Next.js 14 App Router, Tailwind v4, shadcn/ui (base-nova), JSON seed data
+**Purpose:** Information architecture and UX preview for the full NWAi Investment Intelligence Platform — the wider vision the plugin is one slice of.
+
+The demo is a static, no-backend Next.js app that lets Jamie and TechGroup preview how the eventual platform will surface deal, member, and ecosystem intelligence in a unified workspace. It is **not** part of the plugin and ships independently. Slash commands, Dealum MCP, agents, and the framework skill all live in the plugin; the demo only mirrors their *outputs* against hand-seeded JSON so the IA, taxonomies, and cross-link surface area can be reviewed today without Dealum or any runtime LLM call.
+
+### Top-level sections (as of Session 3, April 2026)
+
+| Section | Route | What it shows |
+|---------|-------|---------------|
+| Pipeline | `/pipeline`, `/deals/[id]` | The 7-stage deal pipeline with stage cards reflecting Universal Triage v2.0 (Opportunity 6×0–5/30, Readiness 5×0–5/25, ADVANCE ≥ 20/30) |
+| Members | `/members`, `/members/[id]` | Member directory with FL-city geography facet + collapsible filters (NWAi Group → Region → Expertise → Sector of Interest → Past Investment); member profiles with expertise, sectors, past investments, matched deals, contributed inputs |
+| Matching | `/deals/[id]/matching` | Per-deal Matching Rationale — member scores, status, response excerpts |
+| Portfolio | `/portfolio` | NWAi portfolio companies grid (10 seeded across all 6 NWAi groups) + slide-over drill-in (member investors, NWA + external board seats, primary contact, warm contacts) |
+| Ecosystem | `/ecosystem` | Phase 4 placeholder feed for incubator/accelerator, university spinout, operator-network, and thematic-report sourcing — banner explicitly defers real signals to the future `ecosystem-scout` agent suite |
+| Orchestrator | `/orchestrator` | Admin overlay — matching jobs, outreach queue, synthesis queue with progress bars and a 6-metric KPI strip |
+
+A thin top-level **SectionNav** (Pipeline · Members · Portfolio · Ecosystem · Orchestrator) sits above the Pipeline-specific 7-stage StageNav; StageNav only renders inside the Pipeline section.
+
+### Deployment
+
+Local dev: `cd demo && npm run dev`. Public preview is via Vercel (free tier, **Root Directory = `demo/`**, auto-deploy from `main`). Demo carries no PII and no API keys — fictional members, fictional deals, all data is hand-seeded JSON in `demo/data/`.
+
+### Relationship to plugin
+
+The demo and the plugin share the same repo but are independently versioned. Plugin changes have their own changelog (this file) and `.plugin` packaging; the demo evolves through its own session-numbered build phases (Sessions 1–N). When the plugin gains new commands or surfaces, the demo's IA can choose to reflect them or not — the two are decoupled by design. The architecture file (this document) tracks plugin state; demo state is tracked in commit history under `demo/`.
+
+---
+
 ---
 
 ## Change Log
 
 | Version | Date | Change |
 |---------|------|--------|
+| v0.19.0 | Apr 2026 | **Companion demo artifact added to architecture file** (no plugin change). New "Companion Artifact — NWAi Investment Intelligence Demo" section documenting the Next.js / Tailwind v4 / shadcn IA preview at `demo/`: Session 3 surfaces (Pipeline, Members + collapsible-filter directory, Member Profile, Matching Rationale, Portfolio + slide-over drill-in, Ecosystem Phase 4 placeholder, Orchestrator), top-level SectionNav above the 7-stage StageNav, FL-city geography facet, Universal Triage v2.0 reflected on Pipeline stage cards. Captures deployment pattern (Vercel, Root Directory = `demo/`, auto-deploy from `main`) and the demo-vs-plugin decoupling: plugin tracked in this changelog, demo tracked through commits under `demo/`. Plugin source itself unchanged in this update. |
 | v0.1.0 | Feb 2026 | Initial plugin architecture — 5 pipeline stages, 6 commands, 5 reference docs |
 | v0.2.0 | Mar 2026 | Added `/dd-report` command + `dd-report-format-reference.md` + `memo-format-reference.md`; updated pipeline to 7 stages including DD Report between Diligence and Decision |
 | v0.3.0 | Mar 2026 | Finalized DD Report stage in all layers (CLAUDE.md, SKILL.md, plugin.json v0.2.0); fixed dynamic path resolution in dd-report.md command; updated Output Depth table; DD Report now the primary IC briefing document, Memo repositioned as archival/external presentation |
