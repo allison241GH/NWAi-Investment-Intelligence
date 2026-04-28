@@ -378,6 +378,25 @@ The plugin lives in two places. Jamie does not need to edit files directly.
 
 ---
 
+## Dealum Integration Status — Deferred
+
+**Dealum API access is not yet approved and is deferred indefinitely.** The plugin and pipeline operate **filesystem-first** — all deal artifacts (data rooms, reports, transcripts) live under `deals/active/<Company>/` and are read directly from disk by Claude during pipeline commands. There is no live CRM connection.
+
+**What this means in practice:**
+- The `dealum_server.py` MCP server is **not registered** in `.mcp.json` (workspace) or in the plugin's bundled `.mcp.json` as of plugin v2.12.0 (April 28, 2026). Cowork will not attempt to launch it on plugin enable, so no "Server disconnected" errors.
+- The `/sync-pipeline` command and `pipeline-monitor` agent are kept in the plugin but should be expected to operate on the local filesystem (scanning `deals/active/`) rather than calling Dealum. If invoked, they should produce a pipeline snapshot from on-disk deal folders, not from a CRM.
+- All Dealum-tagging/step-update guidance in this CLAUDE.md and in command files (e.g., "update Dealum step and tags after every significant pipeline action") is **aspirational** until API access is approved. For now, the canonical state of a deal is reflected in the contents of its folder under `deals/active/`.
+- The `dealum_server.py` script itself remains in `.claude/servers/` and bundled in the plugin (dormant). It is preserved verbatim so restoration is trivial when the API is approved.
+
+**To restore Dealum integration when the API is approved:**
+1. Install Python 3.10+ on Mac and `pip3 install mcp --break-system-packages`.
+2. Add the `nwai-dealum` server block back to both `.mcp.json` files (workspace root + bundled in the plugin). The exact block is preserved in git history at any commit prior to v2.12.0; copy it forward verbatim.
+3. Set `DEALUM_TOKEN` and `DEALUM_ROOM_ID` in the shell environment Cowork launches in (or in Cowork's per-extension env config if available).
+4. Repackage the plugin and reinstall in Cowork.
+5. Update this section to "Dealum Integration Status — Active."
+
+---
+
 ## GitHub Sync — Setup & Workflow
 
 **Repository:** `https://github.com/allison241GH/NWAi-Investment-Intelligence`
@@ -391,4 +410,4 @@ The plugin lives in two places. Jamie does not need to edit files directly.
 
 ---
 
-*Last updated: April 28, 2026 (v2.12 / architecture v0.20.0 — workspace consolidation) | NWAi Investment Intelligence & AI | Jamie, TechGroup Co-Chair*
+*Last updated: April 28, 2026 (v2.12 / architecture v0.21.0 — Dealum integration deferred, plugin v2.12.0) | NWAi Investment Intelligence & AI | Jamie, TechGroup Co-Chair*

@@ -1,5 +1,5 @@
 # NWAi TechGroup Deal Pipeline — Architecture Overview
-*v0.20.0 | April 2026 | New World Angels Investment Intelligence*
+*v0.21.0 | April 2026 | New World Angels Investment Intelligence*
 
 ---
 
@@ -27,26 +27,21 @@ Think of the pipeline like a **factory floor with six stations**. Raw material (
 
 ---
 
-## Layer 1 — The Data Source: Dealum via MCP
+## Layer 1 — The Data Source: Local Filesystem (Dealum deferred)
 
-**File:** `servers/dealum_server.py`
-**Config:** `.mcp.json`
+**As of plugin v2.12.0 (April 28, 2026): Dealum API integration is deferred.** The pipeline operates filesystem-first against `deals/active/<Company>/` folders. The Dealum MCP server is preserved in the plugin (dormant) for trivial restoration when the API is approved. See CLAUDE.md → "Dealum Integration Status — Deferred" for the full status and restoration procedure.
 
-Dealum is NWAi's CRM. The plugin wraps the Dealum Integration API in a **Python stdio MCP server** — meaning Claude can call Dealum like any other tool, without any browser or manual lookup.
+**Active state:**
 
-The server exposes **5 tools**:
+**Source of truth:** `deals/active/<Company>/Data Room/` and `deals/active/<Company>/Reports/` — Claude reads these directly when running pipeline commands. Stage progression is reflected in the contents of `Reports/` (Triage Report → Scout Assessment → DD Kickoff Package → DD Report → Memo) rather than in a CRM step field.
 
-| Tool | What It Does |
-|------|-------------|
-| `list_applications` | Fetch all deals; filter by tag (e.g., "Tech") |
-| `get_application` | Full detail on one deal by its Dealum ID |
-| `update_application` | Move a deal to a new pipeline step; add/remove tags |
-| `list_members` | Fetch TechGroup members (used for SME assignment) |
-| `create_application` | Add a new company to Dealum from scratch |
+**Pipeline-monitor / `/sync-pipeline`:** Should produce a snapshot from filesystem inspection (count/list deals by stage based on which Reports exist). The Dealum-calling implementation is preserved but dormant.
 
-**Auth:** Two environment variables — `DEALUM_TOKEN` and `DEALUM_ROOM_ID` — injected at startup via `.mcp.json`. If either is missing, every tool call fails gracefully with a clear error.
+**Deferred state (when Dealum API is approved):**
 
-**The analogy:** Dealum is the filing cabinet. The MCP server gives Claude a key so it can pull folders and put them back without you having to open the cabinet yourself.
+The plugin still contains `servers/dealum_server.py` (8 KB Python script) that wraps the Dealum Integration API and would expose 5 tools — `list_applications`, `get_application`, `update_application`, `list_members`, `create_application`. To restore: re-add the `nwai-dealum` MCP server block to both `.mcp.json` files, install Python 3.10+ and the `mcp` package on Mac, and set `DEALUM_TOKEN` / `DEALUM_ROOM_ID`. The exact MCP server block is preserved in git history at any commit prior to v2.12.0.
+
+**The analogy:** Today, the deal folders themselves are the filing cabinet — Claude reads the actual files. When Dealum integration activates, the cabinet gets a CRM index on top, and the MCP server becomes the key.
 
 ---
 
@@ -384,6 +379,7 @@ The demo and the plugin share the same repo but are independently versioned. Plu
 
 | Version | Date | Change |
 |---------|------|--------|
+| v0.21.0 | Apr 28, 2026 | **Dealum integration deferred — plugin v2.12.0 repackaged without MCP server registration.** The `nwai-tech-pipeline` plugin had been declaring a Dealum MCP server (`nwai-dealum` in `.mcp.json`) that requires Python 3.10+ and the `mcp` package, plus `DEALUM_TOKEN` / `DEALUM_ROOM_ID` env vars. None of these prerequisites were in place locally, causing Cowork to show "MCP nwai-tech-pipeline: Server disconnected" on plugin enable, which obscured the fact that all 8 slash commands were otherwise functional. Decision: rather than upgrade Mac Python and install dependencies for an integration that's not yet API-approved, remove the MCP server registration so the plugin enables cleanly and the pipeline operates filesystem-first (which is how all actual deal work has been done to date). Changes: (1) Plugin repackaged from v2.11.0 to v2.12.0 — bundled `.mcp.json` updated to `{"mcpServers": {}}` with a `_comment` field documenting restoration procedure; bundled `.claude-plugin/plugin.json` description softened to reflect filesystem-first operation; v2.11.0 archived to `plugin/archive/nwai-tech-pipeline-v2.11.0.plugin`. (2) Workspace `.mcp.json` updated to match (empty mcpServers + restoration comment). (3) `CLAUDE.md` — new "Dealum Integration Status — Deferred" section added between Plugin Architecture and GitHub Sync; states current filesystem-first reality, lists 4 implications (no MCP server, /sync-pipeline operates on filesystem, Dealum-tagging guidance is aspirational, dealum_server.py is preserved dormant), and provides 5-step restoration procedure for when the API is eventually approved. (4) Architecture file Layer 1 rewritten from "The Data Source: Dealum via MCP" to "The Data Source: Local Filesystem (Dealum deferred)" with parallel "Active state" / "Deferred state" framing. (5) The `dealum_server.py` script itself is preserved verbatim in `.claude/servers/` and in the bundled plugin so restoration is mechanical. After this change, plugin enables cleanly in Cowork with no MCP server error, all 8 commands and 7 agents register normally. `/sync-pipeline` and `pipeline-monitor` should be reframed as filesystem-readers in a follow-up if they're actually used; today they're dormant. |
 | v0.20.0 | Apr 28, 2026 | **Workspace consolidation — Desktop → canonical merge** (no plugin code change). (1) Surgical gitignore enforcement: `git rm --cached -r deals/` removed 43 previously-tracked deal files (term sheets, cap tables, financials, contracts, transcripts) from git tracking; deal files remain on local disk; `.gitignore` now correctly enforces deals-stay-local intent going forward. Note: files remain in git history; full history rewrite intentionally not performed. (2) Strategic platform-vision docs migrated from prior Desktop workspace `~/Desktop/Claude CoWork NWAi Investment Intelligence/docs/` into new `docs/strategy/` subfolder (10 files: GUT v0.1, GUT html/pdf, Strategic Reframe, Huddle Brief, Member Social Intelligence Layer, RaiseLink comparison, Managed Agents Architecture, cowork-vs-enterprise-platform, Jamie & Ron GUT chat). (3) Plugin build-session briefs migrated from Desktop `Claude Code/` into new `docs/build-history/` subfolder (6 files: Scoping, Setup, Session-Backlog, Session-2/3 Briefs, Desktop-Checkout-Reconciliation-Report). (4) Captain Compliance deal — entire `Data Room/` + `Reports/` migrated from Desktop into `deals/active/Captain Compliance/`. (5) Synergist Technology — Desktop's newer artifacts (Apr 14 GTM Diligence, updated Action Tracker, GTM call transcript, additional license agreements and contracts) merged with canonical's existing Synergist content into nested `deals/active/Synergist Technology/{Data Room,Reports}/`. (6) STL reorganized from flat layout to nested `deals/active/Summit Technology Laboratory/{Data Room,Reports}/`. (7) Redundant pre-consolidation flat-layout files moved to `deals/_quarantine_pre_consolidation_2026-04-28/` for manual cleanup. (8) `CLAUDE.md` updated: "Working in Cowork — Which Folder to Select" rewrites the misleading "Desktop is a planning archive" framing into the true consolidation story; "Workspace Files" section expanded with full canonical layout including new `docs/strategy/` and `docs/build-history/` subfolders; explicit `deals/` is local-only note added; "GitHub Sync" section softened to acknowledge Cowork sandbox push limitations and Mac Terminal fallback. (9) Architecture file structure section updated to reflect new layout. (10) Migration plan archived at `notes/folder-consolidation-plan-2026-04-28.md`. After this commit, Cowork should only ever target `/Users/jamie/ClaudeCodeProjects/nwa-intelligence/`; the Desktop folder will be archived. |
 | v0.19.0 | Apr 2026 | **Companion demo artifact added to architecture file** (no plugin change). New "Companion Artifact — NWAi Investment Intelligence Demo" section documenting the Next.js / Tailwind v4 / shadcn IA preview at `demo/`: Session 3 surfaces (Pipeline, Members + collapsible-filter directory, Member Profile, Matching Rationale, Portfolio + slide-over drill-in, Ecosystem Phase 4 placeholder, Orchestrator), top-level SectionNav above the 7-stage StageNav, FL-city geography facet, Universal Triage v2.0 reflected on Pipeline stage cards. Captures deployment pattern (Vercel, Root Directory = `demo/`, auto-deploy from `main`) and the demo-vs-plugin decoupling: plugin tracked in this changelog, demo tracked through commits under `demo/`. Plugin source itself unchanged in this update. |
 | v0.1.0 | Feb 2026 | Initial plugin architecture — 5 pipeline stages, 6 commands, 5 reference docs |

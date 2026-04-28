@@ -1,12 +1,4 @@
 {
-  "mcpServers": {
-    "nwai-dealum": {
-      "command": "python3",
-      "args": [".claude/servers/dealum_server.py"],
-      "env": {
-        "DEALUM_TOKEN": "${DEALUM_TOKEN}",
-        "DEALUM_ROOM_ID": "${DEALUM_ROOM_ID}"
-      }
-    }
-  }
+  "_comment": "Dealum MCP server intentionally removed — API access pending. To restore: add nwai-dealum block under mcpServers (see git history for prior content), install Python 3.10+ and 'pip3 install mcp --break-system-packages', set DEALUM_TOKEN and DEALUM_ROOM_ID env vars.",
+  "mcpServers": {}
 }
