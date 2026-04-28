@@ -1,5 +1,5 @@
 # NWAi TechGroup Deal Pipeline — Architecture Overview
-*v0.19.0 | April 2026 | New World Angels Investment Intelligence*
+*v0.20.0 | April 2026 | New World Angels Investment Intelligence*
 
 ---
 
@@ -291,9 +291,11 @@ nwai-tech-pipeline/
             └── _archive/
                 └── gates-and-flags-6gate-legacy.md  ← Pre-v2.0 legacy AutoKill (reference only)
 
-Workspace root (your folder):
+Workspace root (canonical: /Users/jamie/ClaudeCodeProjects/nwa-intelligence):
 ├── CLAUDE.md                ← Persistent session context (the "brain")
 ├── nwai-techgroup-pipeline-architecture.md ← This file
+├── pipeline-decisions-log.md  ← Running framework decision log
+├── .claude/                 ← Pipeline runtime (mirror of plugin source — installed locally)
 ├── plugin/
 │   ├── current/
 │   │   ├── nwai-tech-pipeline.plugin  ← Latest installable plugin (v2.11.0)
@@ -301,16 +303,46 @@ Workspace root (your folder):
 │   └── archive/             ← Prior versioned plugin files (rollback if needed)
 ├── scripts/
 │   └── dd-report-generator.js  ← Canonical DD Report generator (MANDATORY — use for all /dd-report runs)
-└── deals/                   ← All deal outputs saved here (auto-created on first run)
-    ├── [Company] - Triage Report [date].docx         ← Screen output; loaded by Scout
-    ├── [Company] - Scout Assessment Report [date].docx ← Scout output; loaded by Diligence + DD Report
-    ├── [Company] - DD Kickoff Package [date].docx    ← Diligence output; loaded by DD Report + Memo
-    ├── [Company]-NWAi-DD-Report-[date].docx          ← DD Report output; primary input to Memo
-    └── [Company]-NWAi-Exec-Summary-[date].pptx       ← Final Memo (IC presentation)
+├── docs/                    ← Reference docs (committed to git)
+│   ├── NWAi-TechGroup-Pipeline-Reference.{html,pdf}
+│   ├── NWAi-TechGroup-Platform-Overview.{html,pdf}
+│   ├── strategy/            ← Platform vision and strategic positioning (migrated from Desktop Apr 2026)
+│   │   ├── NWAi-Grand-Unifying-Theory-v0.1.md
+│   │   ├── NWA-AI-Investment-Intelligence-GUT.{html,pdf}
+│   │   ├── NWAi-Strategic-Reframe-Reference.md
+│   │   ├── NWAi-Huddle-Brief-2026-04-22.md
+│   │   ├── Member_Social_Intelligence_Layer_V1_Features.md
+│   │   ├── RaiseLink-NWAi-Brief-Comparison-2026-04.md
+│   │   ├── NWAi-TechGroup-Managed-Agents-Architecture-v1.0.docx
+│   │   ├── cowork-vs-enterprise-platform.md
+│   │   └── Jamie & Ron_ The Grand Unifying Theory chat.md
+│   └── build-history/       ← Plugin build session briefs (migrated from Desktop Apr 2026)
+│       ├── Scoping.md
+│       ├── Setup.md
+│       ├── Session-Backlog.md
+│       ├── Session-2-Brief.md
+│       ├── Session-3-Brief.md
+│       └── Desktop-Checkout-Reconciliation-Report.md
+├── notes/                   ← Process notes and design memos (committed)
+├── demo/                    ← Next.js companion demo artifact (committed; see Companion Artifact section)
+└── deals/                   ← Local-only (gitignored — deal data never pushed to GitHub)
+    ├── active/
+    │   ├── Captain Compliance/
+    │   │   ├── Data Room/
+    │   │   └── Reports/
+    │   ├── Summit Technology Laboratory/  (STL)
+    │   │   ├── Data Room/
+    │   │   └── Reports/
+    │   └── Synergist Technology/
+    │       ├── Data Room/
+    │       └── Reports/
+    ├── archive/             ← Closed deals
+    └── _quarantine_pre_consolidation_2026-04-28/  ← Pre-consolidation duplicates pending manual cleanup
 
-    Note: Each command loads the most recent version of prior stage files (by YYYY-MM-DD in
-    filename). Multiple versions of the same stage are retained; only the latest is loaded.
-    For a clean re-run of any stage, start a new session (prior session context won't bleed in).
+    Reports/ contains: Triage Report, Scout Assessment, DD Kickoff Package,
+    DD Report, post-meeting reconciliations, Action Trackers, Investment Memo (.pptx).
+    Each command loads the most recent prior-stage file by YYYY-MM-DD; multiple versions retained,
+    only latest is loaded.
 ```
 
 ---
@@ -352,6 +384,7 @@ The demo and the plugin share the same repo but are independently versioned. Plu
 
 | Version | Date | Change |
 |---------|------|--------|
+| v0.20.0 | Apr 28, 2026 | **Workspace consolidation — Desktop → canonical merge** (no plugin code change). (1) Surgical gitignore enforcement: `git rm --cached -r deals/` removed 43 previously-tracked deal files (term sheets, cap tables, financials, contracts, transcripts) from git tracking; deal files remain on local disk; `.gitignore` now correctly enforces deals-stay-local intent going forward. Note: files remain in git history; full history rewrite intentionally not performed. (2) Strategic platform-vision docs migrated from prior Desktop workspace `~/Desktop/Claude CoWork NWAi Investment Intelligence/docs/` into new `docs/strategy/` subfolder (10 files: GUT v0.1, GUT html/pdf, Strategic Reframe, Huddle Brief, Member Social Intelligence Layer, RaiseLink comparison, Managed Agents Architecture, cowork-vs-enterprise-platform, Jamie & Ron GUT chat). (3) Plugin build-session briefs migrated from Desktop `Claude Code/` into new `docs/build-history/` subfolder (6 files: Scoping, Setup, Session-Backlog, Session-2/3 Briefs, Desktop-Checkout-Reconciliation-Report). (4) Captain Compliance deal — entire `Data Room/` + `Reports/` migrated from Desktop into `deals/active/Captain Compliance/`. (5) Synergist Technology — Desktop's newer artifacts (Apr 14 GTM Diligence, updated Action Tracker, GTM call transcript, additional license agreements and contracts) merged with canonical's existing Synergist content into nested `deals/active/Synergist Technology/{Data Room,Reports}/`. (6) STL reorganized from flat layout to nested `deals/active/Summit Technology Laboratory/{Data Room,Reports}/`. (7) Redundant pre-consolidation flat-layout files moved to `deals/_quarantine_pre_consolidation_2026-04-28/` for manual cleanup. (8) `CLAUDE.md` updated: "Working in Cowork — Which Folder to Select" rewrites the misleading "Desktop is a planning archive" framing into the true consolidation story; "Workspace Files" section expanded with full canonical layout including new `docs/strategy/` and `docs/build-history/` subfolders; explicit `deals/` is local-only note added; "GitHub Sync" section softened to acknowledge Cowork sandbox push limitations and Mac Terminal fallback. (9) Architecture file structure section updated to reflect new layout. (10) Migration plan archived at `notes/folder-consolidation-plan-2026-04-28.md`. After this commit, Cowork should only ever target `/Users/jamie/ClaudeCodeProjects/nwa-intelligence/`; the Desktop folder will be archived. |
 | v0.19.0 | Apr 2026 | **Companion demo artifact added to architecture file** (no plugin change). New "Companion Artifact — NWAi Investment Intelligence Demo" section documenting the Next.js / Tailwind v4 / shadcn IA preview at `demo/`: Session 3 surfaces (Pipeline, Members + collapsible-filter directory, Member Profile, Matching Rationale, Portfolio + slide-over drill-in, Ecosystem Phase 4 placeholder, Orchestrator), top-level SectionNav above the 7-stage StageNav, FL-city geography facet, Universal Triage v2.0 reflected on Pipeline stage cards. Captures deployment pattern (Vercel, Root Directory = `demo/`, auto-deploy from `main`) and the demo-vs-plugin decoupling: plugin tracked in this changelog, demo tracked through commits under `demo/`. Plugin source itself unchanged in this update. |
 | v0.1.0 | Feb 2026 | Initial plugin architecture — 5 pipeline stages, 6 commands, 5 reference docs |
 | v0.2.0 | Mar 2026 | Added `/dd-report` command + `dd-report-format-reference.md` + `memo-format-reference.md`; updated pipeline to 7 stages including DD Report between Diligence and Decision |

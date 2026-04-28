@@ -326,12 +326,24 @@ The entire report is table-driven. In order:
 
 ## Workspace Files
 
-Key files in this workspace:
+Key files and folders in this workspace:
 - `CLAUDE.md` — this file (persistent context)
 - `nwai-techgroup-pipeline-architecture.md` — living architecture reference; must be kept current after every plugin change
+- `pipeline-decisions-log.md` — running log of framework decisions
+- `.claude/` — pipeline runtime (agents, commands, skills, servers, Dealum MCP)
 - `plugin/current/nwai-tech-pipeline.plugin` — the latest installable plugin file
 - `plugin/archive/` — previous versioned plugin files (rollback if needed)
-- Deal outputs (memos, DD packages, screening reports) will be saved here as they're generated
+- `deals/active/<Company Name>/Data Room/` and `/Reports/` — current deals (nested per-company structure)
+- `deals/archive/` — closed deals
+- `deals/_quarantine_pre_consolidation_2026-04-28/` — pre-consolidation duplicates pending manual cleanup; safe to delete from Mac Terminal
+- `docs/` — reference architecture and pipeline docs (Pipeline Reference, Platform Overview)
+- `docs/strategy/` — platform vision and strategic positioning material (GUT, Strategic Reframe, Member Intelligence Layer, Huddle Brief, etc.)
+- `docs/build-history/` — plugin build session briefs and scoping (reference only)
+- `notes/` — process notes and design memos
+- `scripts/dd-report-generator.js` — canonical DD Report generator (binding format)
+- `demo/` — Next.js companion demo artifact
+
+**Deal artifacts are local-only.** The `deals/` folder is `.gitignore`-excluded — deal data (data rooms, reports, financials, transcripts) lives only on disk and is never version-controlled or pushed to GitHub.
 
 **Related workspace (separate):** Partnership and legal documents for scaling the Investment Intelligence Platform live in the **"Claude CoWork NWAixCoditect Partnership"** folder on Jamie's desktop. That workspace covers the NWA × AZ1/Coditect co-development alliance — scoping briefs, SOWs, IP agreements, and build phase tracking. Do not look for or expect those files here.
 
@@ -339,11 +351,11 @@ Key files in this workspace:
 
 ## Working in Cowork — Which Folder to Select
 
-**For all deal work, select `/Users/jamie/ClaudeCodeProjects/nwa-intelligence/` as the project folder in Cowork.** This is the canonical code checkout — the only location with a live `.claude/` runtime, the canonical `CLAUDE.md` (this file), the plugin source, and the `deals/` output folder. Selecting this folder is what makes the slash commands (`/sync-pipeline`, `/screen`, `/scout`, `/diligence`, `/post-meeting`, `/dd-report`, `/decision`, `/memo`) and the Dealum MCP integration available in chat.
+**One folder, one source of truth.** All NWAi Investment Intelligence work — running deals through the pipeline AND evolving the framework, strategic positioning, and platform vision — happens in `/Users/jamie/ClaudeCodeProjects/nwa-intelligence/`. This is the canonical and only project folder for Cowork. Selecting this folder is what makes the slash commands (`/sync-pipeline`, `/screen`, `/scout`, `/diligence`, `/post-meeting`, `/dd-report`, `/decision`, `/memo`) and the Dealum MCP integration available in chat.
 
-**Do not select the Desktop folder `/Users/jamie/Desktop/Claude CoWork NWAi Investment Intelligence/` for deal work.** Despite its name, that folder is a planning archive from the demo / plugin build phase. It contains markdown design docs (`Session-Backlog.md`, `Setup.md`, `Scoping.md`, build-session briefs, the Desktop-Checkout-Reconciliation-Report) but no `.claude/` runtime. Selecting it as a project root would not enable the pipeline commands and would silently miss every framework update made to the canonical folder.
+**Folder consolidation — April 2026.** Prior to April 28, 2026 a separate workspace existed at `/Users/jamie/Desktop/Claude CoWork NWAi Investment Intelligence/` that served as the original studio for plugin design and strategic positioning material. On April 28, 2026 that workspace was consolidated into the canonical folder: strategic docs migrated to `docs/strategy/`, build-session briefs to `docs/build-history/`, the Captain Compliance deal and updated Synergist artifacts merged into `deals/active/`. The Desktop folder has been archived. Do not select it as a Cowork project root.
 
-**Cowork vs. Claude Code.** Cowork mode is the right interface for everyday deal work — applying the framework, generating Triage / Scout / DD reports, processing meeting transcripts, recording decisions. Claude Code (Terminal) is for rare plugin maintenance — adding a command, modifying a reference doc, refactoring an agent — and is typically initiated by saying "let's update [X]" inside a Cowork session, not by switching tools. Either way, the project root is always the canonical folder above.
+**Cowork vs. Claude Code.** Cowork mode is the right interface for everyday deal work — applying the framework, generating Triage / Scout / DD reports, processing meeting transcripts, recording decisions, evolving strategic docs. Claude Code (Terminal) is for rare plugin maintenance — adding a command, modifying a reference doc, refactoring an agent — and is typically initiated by saying "let's update [X]" inside a Cowork session, not by switching tools. Either way, the project root is always the canonical folder above.
 
 ---
 
@@ -370,13 +382,13 @@ The plugin lives in two places. Jamie does not need to edit files directly.
 
 **Repository:** `https://github.com/allison241GH/NWAi-Investment-Intelligence`
 **Branch:** `main`
-**Auth:** GitHub PAT stored in `~/.git-credentials` (configured March 2026) — pushes work directly from Cowork sessions, no Terminal needed.
+**Auth:** GitHub PAT stored in `~/.git-credentials` (configured March 2026). Note: Cowork's sandboxed shell does **not** have access to host-side credentials, so `git commit` works from Cowork but `git push` may fail with `could not read Username for 'https://github.com'`. When that happens, run `cd ~/ClaudeCodeProjects/nwa-intelligence && git push origin main` from Mac Terminal — credentials work there.
 **Workspace path on Mac:** `/Users/jamie/ClaudeCodeProjects/nwa-intelligence`
 
-**When to commit:** At the end of any session where pipeline files were meaningfully changed. Tell Claude: *"commit and push"* or *"save this version."* Claude will stage the right files, write a descriptive commit message, and push.
+**When to commit:** At the end of any session where pipeline files were meaningfully changed. Tell Claude: *"commit and push"* or *"save this version."* Claude will stage the right files, write a descriptive commit message, and commit. If push fails, Claude will tell you to push from Terminal.
 
-**What gets committed:** `.claude/` (all pipeline files), `plugin/current/` (plugin + zip), `nwai-techgroup-pipeline-architecture.md`, `CLAUDE.md`. Never commit: `settings.local.json`, `zi7wWRPB`, temp lock files.
+**What gets committed:** `.claude/` (all pipeline files), `plugin/current/` (plugin + zip), `nwai-techgroup-pipeline-architecture.md`, `CLAUDE.md`, `docs/`, `notes/`, `scripts/`, `pipeline-decisions-log.md`. **Never commit:** `deals/` (gitignored — deal data stays local), `settings.local.json`, `zi7wWRPB`, temp lock files.
 
 ---
 
-*Last updated: April 2026 (v2.11 / architecture v0.16.0) | NWAi Investment Intelligence & AI | Jamie, TechGroup Co-Chair*
+*Last updated: April 28, 2026 (v2.12 / architecture v0.20.0 — workspace consolidation) | NWAi Investment Intelligence & AI | Jamie, TechGroup Co-Chair*

@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NWA AgenticAI Investment Intelligence Platform — GUT</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { font-family: 'Helvetica Neue', Arial, system-ui, sans-serif; background: #eef1f5; color: #111827; -webkit-font-smoothing: antialiased; }
+  .page { width: 1100px; margin: 20px auto; background: white; box-shadow: 0 6px 24px rgba(0,0,0,0.08); border-radius: 4px; overflow: hidden; }
+
+  /* ---------- Header ---------- */
+  .header { background: linear-gradient(180deg, #0a1a3e 0%, #0f2552 100%); color: white; padding: 22px 40px 18px; border-bottom: 3px solid #d4a017; }
+  .header h1 { font-size: 30px; font-weight: 800; letter-spacing: 1px; }
+  .header h1 .gold { color: #d4a017; }
+  .header .subtitle { font-size: 11.5px; color: #cbd5e1; letter-spacing: 3px; margin-top: 8px; font-weight: 700; text-transform: uppercase; }
+
+  /* ---------- Top stat band ---------- */
+  .top-stats { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 14px; padding: 18px 40px; background: #f9fafb; border-bottom: 1px solid #e5e7eb; }
+  .stat-box { background: white; border: 1px solid #e5e7eb; border-radius: 10px; padding: 14px 16px; display: flex; align-items: center; gap: 14px; }
+  .stat-box .icon-circle { flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: #eef2ff; color: #0a1a3e; }
+  .stat-box .icon-circle svg { width: 20px; height: 20px; }
+  .stat-box .label { font-size: 10.5px; font-weight: 800; color: #6b7280; text-transform: uppercase; letter-spacing: 1.5px; }
+  .stat-box .content { font-size: 11.5px; color: #1f2937; line-height: 1.45; margin-top: 2px; }
+  .shift-box { font-size: 12.5px; line-height: 1.5; }
+  .shift-box .from { color: #6b7280; font-weight: 600; }
+  .shift-box .to { color: #15803d; font-weight: 800; }
+  .shift-box .arrow { color: #0a1a3e; font-weight: 900; margin: 0 6px; }
+
+  /* ---------- Tracks header ---------- */
+  .tracks-header { text-align: center; padding: 22px 40px 10px; font-size: 14px; font-weight: 800; color: #0a1a3e; letter-spacing: 3.5px; position: relative; }
+  .tracks-header-line { display: flex; align-items: center; justify-content: center; gap: 16px; }
+  .tracks-header-line .rule { height: 1.5px; background: #0a1a3e; flex: 1; max-width: 180px; }
+
+  /* ---------- Three tracks ---------- */
+  .tracks { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; padding: 8px 40px 22px; }
+  .track { border-radius: 12px; overflow: hidden; border: 1.5px solid; background: white; display: flex; flex-direction: column; }
+  .track.t1 { border-color: #1e3a8a; }
+  .track.t2 { border-color: #15803d; }
+  .track.t3 { border-color: #6d28d9; }
+
+  .track-head { padding: 16px 14px 14px; text-align: center; }
+  .track.t1 .track-head { background: linear-gradient(180deg, #eef4ff 0%, #ffffff 100%); }
+  .track.t2 .track-head { background: linear-gradient(180deg, #eefaf1 0%, #ffffff 100%); }
+  .track.t3 .track-head { background: linear-gradient(180deg, #f4effc 0%, #ffffff 100%); }
+
+  .track-num { width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: 800; font-size: 17px; margin: 0 auto 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.15); }
+  .track.t1 .track-num { background: #1e3a8a; }
+  .track.t2 .track-num { background: #15803d; }
+  .track.t3 .track-num { background: #6d28d9; }
+  .track-title { font-size: 13.5px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; }
+  .track.t1 .track-title { color: #1e3a8a; }
+  .track.t2 .track-title { color: #15803d; }
+  .track.t3 .track-title { color: #6d28d9; }
+  .track-question { font-size: 11.5px; color: #374151; margin-top: 4px; font-style: italic; }
+
+  .section-label { padding: 7px 14px; font-size: 10px; font-weight: 800; letter-spacing: 1.8px; text-transform: uppercase; border-top: 1px solid #e5e7eb; border-bottom: 1px solid #e5e7eb; }
+  .track.t1 .section-label { background: #f4f7fb; color: #1e3a8a; }
+  .track.t2 .section-label { background: #f2f9f4; color: #15803d; }
+  .track.t3 .section-label { background: #f5f2fa; color: #6d28d9; }
+
+  .item-list { padding: 10px 14px; min-height: 158px; }
+  .item { display: flex; align-items: center; gap: 10px; padding: 5px 0; font-size: 11.5px; color: #374151; line-height: 1.3; }
+  .item .icon { flex-shrink: 0; width: 16px; height: 16px; }
+  .track.t1 .item .icon { color: #1e3a8a; }
+  .track.t2 .item .icon { color: #15803d; }
+  .track.t3 .item .icon { color: #6d28d9; }
+  .item-new { color: #0a1a3e; font-weight: 600; }
+  .tag-sunset { background: #fef3c7; color: #b45309; border: 1px solid #fbbf24; padding: 1px 5px; border-radius: 3px; font-size: 9px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; margin-left: 6px; white-space: nowrap; }
+
+  /* ---------- Build Sequence section ---------- */
+  .build-items { padding: 10px 14px 12px; font-size: 11px; color: #374151; line-height: 1.45; min-height: 88px; display: flex; flex-direction: column; gap: 8px; }
+  .phase-line { padding: 8px 10px; border-radius: 6px; font-size: 11px; line-height: 1.35; border-left: 3px solid; }
+  .phase-line .phase-label { font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; font-size: 10px; display: block; margin-bottom: 2px; }
+  .phase-line .phase-text { color: #1f2937; font-weight: 600; }
+  .t1 .phase-line { background: #f4f7fb; border-color: #1e3a8a; }
+  .t1 .phase-line .phase-label { color: #1e3a8a; }
+  .t2 .phase-line { background: #f2f9f4; border-color: #15803d; }
+  .t2 .phase-line .phase-label { color: #15803d; }
+  .t3 .phase-line { background: #f5f2fa; border-color: #6d28d9; }
+  .t3 .phase-line .phase-label { color: #6d28d9; }
+
+  /* ---------- Moat box (Track 2) ---------- */
+  .moat { margin: 10px 14px 14px; padding: 13px 12px; background: linear-gradient(180deg, #15803d 0%, #14532d 100%); color: white; border-radius: 10px; text-align: center; box-shadow: 0 3px 10px rgba(21, 128, 61, 0.25); }
+  .moat-label { font-size: 10.5px; font-weight: 800; letter-spacing: 2.5px; margin-bottom: 5px; color: #86efac; }
+  .moat-name { font-size: 12.5px; font-weight: 800; line-height: 1.35; }
+  .moat-name .moat-tag { font-weight: 600; font-style: italic; opacity: 0.95; }
+
+  /* ---------- AI Amplification band ---------- */
+  .ai-band { margin: 6px 40px 8px; padding: 18px 22px; background: linear-gradient(90deg, #e8f0ff 0%, #eafbef 50%, #f1e8fc 100%); border-radius: 12px; border: 1px solid #e5e7eb; }
+  .ai-band-title { text-align: center; font-size: 13px; font-weight: 800; letter-spacing: 2.2px; color: #0a1a3e; text-transform: uppercase; margin-bottom: 14px; }
+  .ai-band-title .em { color: #d4a017; }
+  .ai-cols { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; }
+  .ai-col { background: white; border-radius: 10px; padding: 13px 14px; display: flex; gap: 12px; border: 1px solid #e5e7eb; }
+  .ai-col .icon-wrap { flex-shrink: 0; width: 34px; height: 34px; border-radius: 8px; background: #0a1a3e; color: white; display: flex; align-items: center; justify-content: center; }
+  .ai-col .icon-wrap svg { width: 20px; height: 20px; }
+  .ai-col .title { font-size: 11.5px; font-weight: 800; color: #0a1a3e; text-transform: uppercase; letter-spacing: 1px; }
+  .ai-col .desc { font-size: 11px; color: #374151; line-height: 1.45; margin-top: 3px; }
+
+  /* ---------- Strategic shift ---------- */
+  .shift-block { margin: 14px 40px 18px; }
+  .shift-title { text-align: center; font-size: 12.5px; font-weight: 800; letter-spacing: 2.5px; color: #0a1a3e; text-transform: uppercase; margin-bottom: 12px; }
+  .shift-inner { display: grid; grid-template-columns: 1fr auto 1fr; gap: 24px; align-items: stretch; padding: 18px 28px; border: 1px solid #e5e7eb; border-radius: 12px; background: #fafafa; max-width: 780px; margin: 0 auto; }
+  .shift-col-label { font-size: 10.5px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; text-align: center; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1.5px solid; }
+  .shift-col-label.today { color: #b45309; border-color: #fbbf24; }
+  .shift-col-label.future { color: #15803d; border-color: #34d399; }
+  .shift-row { padding: 6px 0; font-size: 12px; font-weight: 700; text-align: center; }
+  .shift-row.today { color: #78350f; }
+  .shift-row.future { color: #065f46; }
+  .shift-arrows { display: flex; flex-direction: column; align-items: center; justify-content: center; padding-top: 22px; gap: 16px; }
+  .shift-arrow { color: #0a1a3e; font-size: 14px; font-weight: 900; }
+
+  /* ---------- Footer ---------- */
+  .footer { background: linear-gradient(180deg, #0f2552 0%, #0a1a3e 100%); color: white; padding: 20px 40px; border-top: 3px solid #d4a017; text-align: center; }
+  .footer .label { font-size: 10.5px; font-weight: 800; letter-spacing: 2.5px; color: #d4a017; text-transform: uppercase; margin-bottom: 8px; display: flex; align-items: center; justify-content: center; gap: 8px; }
+  .footer .label svg { width: 15px; height: 15px; }
+  .footer .text { font-size: 13px; line-height: 1.6; color: #f1f5f9; font-weight: 600; }
+  .footer .text .sep { color: #d4a017; margin: 0 12px; font-weight: 800; }
+
+  @page { size: letter portrait; margin: 0; }
+  @media print {
+    html, body { background: white; }
+    .page { margin: 0; box-shadow: none; border-radius: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ========== HEADER ========== -->
+  <div class="header">
+    <h1><span class="gold">NWA</span> AgenticAI INVESTMENT INTELLIGENCE PLATFORM</h1>
+    <div class="subtitle">Orchestrating Intelligence &middot; Amplifying Expertise &middot; Accelerating Conviction</div>
+  </div>
+
+  <!-- ========== TOP STAT BAND ========== -->
+  <div class="top-stats">
+    <div class="stat-box">
+      <div class="shift-box">
+        <span class="from">We are shifting FROM managing dealflow</span>
+        <span class="arrow">&rarr;</span>
+        <span class="to">TO orchestrating investment intelligence.</span>
+      </div>
+    </div>
+    <div class="stat-box">
+      <div class="icon-circle">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+      </div>
+      <div>
+        <div class="label">Our Goal</div>
+        <div class="content">Identify the deals that matter &mdash; faster and with higher conviction.</div>
+      </div>
+    </div>
+    <div class="stat-box">
+      <div class="icon-circle">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3l-4 6 10 12L22 9l-4-6H6z"/><path d="M2 9h20"/><path d="M12 3l4 6-4 12-4-12 4-6z"/></svg>
+      </div>
+      <div>
+        <div class="label">Our Edge</div>
+        <div class="content">Leverage member expertise and network to create proprietary advantage.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== TRACKS HEADER ========== -->
+  <div class="tracks-header">
+    <div class="tracks-header-line">
+      <div class="rule"></div>
+      <span>THE THREE INTELLIGENCE TRACKS</span>
+      <div class="rule"></div>
+    </div>
+  </div>
+
+  <!-- ========== THREE TRACKS ========== -->
+  <div class="tracks">
+
+    <!-- -------- TRACK 1 -------- -->
+    <div class="track t1">
+      <div class="track-head">
+        <div class="track-num">1</div>
+        <div class="track-title">Dealflow Intelligence</div>
+        <div class="track-question">Where deals come from?</div>
+      </div>
+      <div class="section-label">Sources</div>
+      <div class="item-list">
+        <div class="item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Dealum (passive inflow) <span class="tag-sunset">sunset by YE</span></div>
+        <div class="item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Member referrals</div>
+        <div class="item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 17l-5-5 5-5M13 7l5 5-5 5"/></svg>Cross-syndication</div>
+        <div class="item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>Direct founder outreach</div>
+      </div>
+      <div class="section-label">Function</div>
+      <div class="item-list">
+        <div class="item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>Intake &amp; ingestion</div>
+        <div class="item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>Classification (verticals)</div>
+        <div class="item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Initial signal extraction</div>
+        <div class="item item-new"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>AI-powered Screening / Scout / Diligence</div>
+        <div class="item item-new"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M6 8h12M3 21h18"/><path d="M5 8l-3 8h6l-3-8zM19 8l-3 8h6l-3-8z"/></svg>Syndication posture &mdash; lead or follow</div>
+      </div>
+      <div class="build-section">
+        <div class="section-label">Build Sequence</div>
+        <div class="build-items">
+          <div class="phase-line">
+            <span class="phase-label">Phase 1 &mdash; Integrate</span>
+            <span class="phase-text">Integrate with Dealum API (sunset by YE)</span>
+          </div>
+          <div class="phase-line">
+            <span class="phase-label">Phase 2 &mdash; Beyond Dealum</span>
+            <span class="phase-text">Build intake &amp; dealflow management</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- -------- TRACK 2 -------- -->
+    <div class="track t2">
+      <div class="track-head">
+        <div class="track-num">2</div>
+        <div class="track-title">Social / Member Intelligence</div>
+        <div class="track-question">Engaging our Members / SMEs</div>
+      </div>
+      <div class="section-label">Components</div>
+      <div class="item-list">
+        <div class="item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Member expertise &amp; domain knowledge</div>
+        <div class="item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>Past investments &amp; track record</div>
+        <div class="item"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Conviction signals</div>
+        <div class="item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="4"/><circle cx="17" cy="8" r="3"/><path d="M2 21v-2a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v2M22 21v-2a3 3 0 0 0-2-2.8"/></svg>Participation patterns</div>
+        <div class="item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Reputation &amp; trust</div>
+      </div>
+      <div class="section-label">Function</div>
+      <div class="item-list">
+        <div class="item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>Pre-diligence filtering</div>
+        <div class="item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><circle cx="5" cy="5" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><line x1="7" y1="7" x2="10" y2="10"/><line x1="17" y1="7" x2="14" y2="10"/><line x1="7" y1="17" x2="10" y2="14"/><line x1="17" y1="17" x2="14" y2="14"/></svg>Deal-to-member matching</div>
+        <div class="item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2"/><path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49m11.31-2.82a10 10 0 0 1 0 14.14m-14.14 0a10 10 0 0 1 0-14.14"/></svg>Signal amplification</div>
+        <div class="item item-new"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h10"/></svg>DD team assembly &amp; conviction building</div>
+      </div>
+      <div class="build-section">
+        <div class="section-label">Build Sequence</div>
+        <div class="build-items">
+          <div class="phase-line">
+            <span class="phase-label">Phase 1 &mdash; Build</span>
+            <span class="phase-text">Member / expertise graph &middot; structured collaboration &middot; conviction &amp; participation signals &middot; memory system</span>
+          </div>
+        </div>
+        <div class="moat">
+          <div class="moat-label">OUR MOAT</div>
+          <div class="moat-name">A Compounding Network of Expertise &amp; Judgement <span class="moat-tag">&mdash; no one can copy.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- -------- TRACK 3 -------- -->
+    <div class="track t3">
+      <div class="track-head">
+        <div class="track-num">3</div>
+        <div class="track-title">Ecosystem Intelligence</div>
+        <div class="track-question">Where will future deals come from?</div>
+      </div>
+      <div class="section-label">Sources</div>
+      <div class="item-list">
+        <div class="item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="1"/><path d="M9 22V12h6v10"/><line x1="8" y1="6" x2="9" y2="6"/><line x1="11" y1="6" x2="12" y2="6"/><line x1="14" y1="6" x2="15" y2="6"/><line x1="8" y1="9" x2="9" y2="9"/><line x1="11" y1="9" x2="12" y2="9"/><line x1="14" y1="9" x2="15" y2="9"/></svg>Incubators &amp; accelerators</div>
+        <div class="item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 3 3 6 3s6-2 6-3v-5"/></svg>Universities &amp; research</div>
+        <div class="item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>Founder &amp; operator networks</div>
+        <div class="item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>Market trends &amp; signals</div>
+      </div>
+      <div class="section-label">Function</div>
+      <div class="item-list">
+        <div class="item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M12 8V4"/><circle cx="12" cy="3" r="1"/><circle cx="8.5" cy="13.5" r="1"/><circle cx="15.5" cy="13.5" r="1"/><path d="M9 17h6"/></svg>Proactive sourcing (agents)</div>
+        <div class="item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="15" r="4"/><circle cx="18" cy="15" r="4"/><path d="M10 15h4"/><path d="M6 11V7h4M18 11V7h-4M10 7l2-3 2 3"/></svg>Pattern detection</div>
+        <div class="item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/></svg>Thematic insights &amp; reports</div>
+        <div class="item"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>Pipeline creation before Dealum</div>
+      </div>
+      <div class="build-section">
+        <div class="section-label">Build Sequence</div>
+        <div class="build-items">
+          <div class="phase-line">
+            <span class="phase-label">Phase 3 &mdash; Build &amp; Expand</span>
+            <span class="phase-text">Proactive sourcing engine &middot; thematic reports &middot; agent scanning incubators</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ========== AI AMPLIFICATION BAND ========== -->
+  <div class="ai-band">
+    <div class="ai-band-title">AI &mdash; <span class="em">Intelligence Amplification Layer</span> (Across All Tracks)</div>
+    <div class="ai-cols">
+      <div class="ai-col">
+        <div class="icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2a2.5 2.5 0 0 1 2.5 2.5v15a2.5 2.5 0 0 1-4.96.44A2.5 2.5 0 0 1 3.5 15a2.5 2.5 0 0 1-1.1-4.54A2.5 2.5 0 0 1 3.5 6a2.5 2.5 0 0 1 3.04-3A2.5 2.5 0 0 1 9.5 2z"/><path d="M14.5 2a2.5 2.5 0 0 0-2.5 2.5v15a2.5 2.5 0 0 0 4.96.44A2.5 2.5 0 0 0 20.5 15a2.5 2.5 0 0 0 1.1-4.54A2.5 2.5 0 0 0 20.5 6a2.5 2.5 0 0 0-3.04-3A2.5 2.5 0 0 0 14.5 2z"/></svg>
+        </div>
+        <div>
+          <div class="title">Decision Support</div>
+          <div class="desc">Structure information, reduce noise, surface what matters.</div>
+        </div>
+      </div>
+      <div class="ai-col">
+        <div class="icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.5c1 .8 2 2 2 3.5h4c0-1.5 1-2.7 2-3.5A7 7 0 0 0 12 2z"/></svg>
+        </div>
+        <div>
+          <div class="title">Judgment Amplification</div>
+          <div class="desc">Enhance human expertise &mdash; not replace it.</div>
+        </div>
+      </div>
+      <div class="ai-col">
+        <div class="icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="6" y1="18" x2="6" y2="10"/><line x1="10" y1="18" x2="10" y2="6"/><line x1="14" y1="18" x2="14" y2="12"/><circle cx="18.5" cy="8.5" r="3"/><line x1="20.5" y1="10.5" x2="22" y2="12"/></svg>
+        </div>
+        <div>
+          <div class="title">Pattern Surfacing</div>
+          <div class="desc">Find connections and insights humans would miss.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== STRATEGIC SHIFT ========== -->
+  <div class="shift-block">
+    <div class="shift-title">Strategic Shift</div>
+    <div class="shift-inner">
+      <div>
+        <div class="shift-col-label today">Today &mdash; Dealflow-Centric</div>
+        <div class="shift-row today">Volume-driven</div>
+        <div class="shift-row today">Mostly passive intake</div>
+        <div class="shift-row today">Screening-heavy</div>
+        <div class="shift-row today">Managing dealflow</div>
+      </div>
+      <div class="shift-arrows">
+        <div class="shift-arrow">&rarr;</div>
+        <div class="shift-arrow">&rarr;</div>
+        <div class="shift-arrow">&rarr;</div>
+        <div class="shift-arrow">&rarr;</div>
+      </div>
+      <div>
+        <div class="shift-col-label future">Future &mdash; Intelligence-Centric</div>
+        <div class="shift-row future">Signal-driven</div>
+        <div class="shift-row future">Member expertise / network-powered</div>
+        <div class="shift-row future">Conviction-led</div>
+        <div class="shift-row future">Orchestrating intelligence</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== FOOTER ========== -->
+  <div class="footer">
+    <div class="label">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+      Our North Star
+    </div>
+    <div class="text">Make NWA the most trusted network for high-conviction investing<span class="sep">|</span>Make NWA a high-value source of capital to founders</div>
+  </div>
+
+</div>
+</body>
+</html>
