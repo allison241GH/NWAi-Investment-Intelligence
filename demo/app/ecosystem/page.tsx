@@ -16,6 +16,8 @@ interface SectionConfig {
   title: string;
   description: string;
   sourceTypes: EcosystemSignal["source_type"][];
+  bar: string;
+  badge: string;
 }
 
 const SECTIONS: SectionConfig[] = [
@@ -25,6 +27,8 @@ const SECTIONS: SectionConfig[] = [
     description:
       "Y Combinator, Techstars, MIT Sandbox, and similar programs. Surfaced when a batch contains companies that map to NWAi TechGroup themes.",
     sourceTypes: ["incubator", "accelerator"],
+    bar: "bg-sky-500",
+    badge: "bg-sky-500/15 text-sky-700 border-sky-500/30",
   },
   {
     key: "university",
@@ -32,6 +36,8 @@ const SECTIONS: SectionConfig[] = [
     description:
       "Faculty-led companies graduating out of Stanford CRFM, CMU Robotics Institute, and other research labs whose IP fits TechGroup's themes.",
     sourceTypes: ["university"],
+    bar: "bg-violet-500",
+    badge: "bg-violet-500/15 text-violet-700 border-violet-500/30",
   },
   {
     key: "operator",
@@ -39,6 +45,8 @@ const SECTIONS: SectionConfig[] = [
     description:
       "Senior operator departures from frontier labs and category-leading consumer brands — the leading indicator for next-cycle founding teams.",
     sourceTypes: ["operator_network"],
+    bar: "bg-teal-500",
+    badge: "bg-teal-500/15 text-teal-700 border-teal-500/30",
   },
   {
     key: "thematic",
@@ -46,6 +54,8 @@ const SECTIONS: SectionConfig[] = [
     description:
       "Quantitative signals from PitchBook, Crunchbase, and Gartner — plus NWAi's own internal heatmaps — for theme prioritization and macro framing.",
     sourceTypes: ["market_signal", "thematic_report"],
+    bar: "bg-indigo-500",
+    badge: "bg-indigo-500/15 text-indigo-700 border-indigo-500/30",
   },
 ];
 
@@ -116,12 +126,16 @@ function Section({ config }: { config: SectionConfig }) {
   );
   return (
     <Card>
+      <div className={`-mt-4 h-1 ${config.bar}`} />
       <CardContent className="p-5 md:p-6">
         <div className="flex items-start justify-between gap-3 mb-1">
           <h2 className="text-base md:text-lg font-semibold tracking-tight">
             {config.title}
           </h2>
-          <Badge variant="secondary" className="shrink-0 text-xs tabular-nums">
+          <Badge
+            variant="outline"
+            className={`shrink-0 text-xs tabular-nums ${config.badge}`}
+          >
             {sectionSignals.length}
           </Badge>
         </div>
@@ -133,7 +147,7 @@ function Section({ config }: { config: SectionConfig }) {
             No signals seeded for this section yet.
           </div>
         ) : (
-          <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+          <div className="flex flex-col gap-3">
             {sectionSignals.map((s) => (
               <SignalCard key={s.id} signal={s} />
             ))}
@@ -186,7 +200,7 @@ export default function EcosystemPage() {
       </div>
 
       {/* Sections */}
-      <div className="grid gap-4">
+      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4 items-start">
         {SECTIONS.map((config) => (
           <Section key={config.key} config={config} />
         ))}
