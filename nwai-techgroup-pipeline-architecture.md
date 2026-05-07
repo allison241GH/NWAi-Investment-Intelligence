@@ -1,5 +1,5 @@
 # NWAi TechGroup Deal Pipeline — Architecture Overview
-*v0.21.0 | April 2026 | New World Angels Investment Intelligence*
+*v0.22.0 | May 2026 | New World Angels Investment Intelligence*
 
 ---
 
@@ -105,17 +105,27 @@ Agents are **autonomous subprocesses** Claude can launch to do research in paral
 - **Does:** Thin wrapper detection (3 tests), TRL assessment, IP/patent research, technical architecture signals, AI moat input data, technical team depth
 - **Returns:** Technical Diligence Briefing → feeds Technical Validation (Layer 2)
 
-### `financial-analyst` ★ NEW
-- **Trigger:** `/diligence` only (requires financial files in workspace deal room)
-- **Does:** Reads financial files, models unit economics, validates projections (Bear/Base/Bull), assesses cap table, calculates 10x return path
-- **Returns:** Financial Analyst Briefing → feeds Financial Validation (Layer 2)
-
 ### `risk-assessor` ★ NEW
 - **Trigger:** `/scout` (light — top kill risks) + `/diligence` (full)
 - **Does:** Regulatory risk research, exit landscape + acquirer dynamics, execution risk signals, market and financial risk signals from public sources
 - **Returns:** Risk Assessment Briefing → feeds cross-cutting risk overlay across all Layer 2 groups
 
-**The analogy:** Agents are like junior analysts you dispatch to do legwork. At Scout, four agents do targeted research to build the assessment evidence base. At Diligence, all six run in parallel — including the financial analyst who works directly from the company's deal room files. They report back with structured briefings; Claude synthesizes them into Layer 2 conclusions.
+### `pricing-analyst` ★ NEW (v2.13.0)
+- **Trigger:** `/diligence` Stage 2A (parallel)
+- **Does:** Pricing maturity assessment (PROVEN / EARLY SIGNALS / DISCOVERY / UNKNOWN — most early-stage companies are still in pricing discovery per Ron Tarro), unit economics (CAC, LTV, payback), channel economics with margin compression forecast (e.g., CDW 8x markup vs direct 2.5x — Synergist case), value proposition validation with quantified pricing-to-value ratio, pricing pressure forecast (commoditization risk)
+- **Returns:** Pricing Analyst Briefing → feeds Forecasting Analyst revenue model + Venture Analyst valuation; feeds DD Report S5 (GTM)
+
+### `forecasting-analyst` ★ NEW (v2.13.0 — replaces legacy `financial-analyst`)
+- **Trigger:** `/diligence` Stage 2B (sequential, after pricing-analyst)
+- **Does:** Builds independent 5-year financial forecast using the McMurry method (per Sam Guren: proprietary forecast first, then comparison to company's submitted numbers — never start from the company's spreadsheet). Enforces the "no AI slop" rule (per Jamie Allison: critical lens, independent research, accountable analyst POV with mandatory *because* clauses on every Bear/Base/Bull scenario). Produces P&L + cash flow + balance sheet (per Sam: "you got to have it"); 5-year capital plan with round timing/sizing; Founder Financial Literacy Assessment (does the entrepreneur understand their own business?)
+- **Returns:** Forecasting Analyst Briefing → feeds Venture Analyst; feeds DD Report S9 (Financials); feeds Memo Slide 3 pro forma
+
+### `venture-analyst` ★ NEW (v2.13.0)
+- **Trigger:** `/diligence` Stage 2B (sequential, after forecasting-analyst — final layer)
+- **Does:** Final synthesis of financial diligence. Produces defensible valuation today (3 methods reconciled: revenue multiple, forward multiple, discounted future value at 35% per Sam Guren); projected exit valuation Y3 + Y5 across Low/Base/High scenarios; capital + dilution modeling; IRR / multiple; 35% IRR hurdle test; NWA 10x-in-5-years criterion check; deal structure recommendation (priced equity / convertible with cap with "industry of 8" reference / participating preferred / re-priced terms / decline). Solves the Randy "$9M-claimed-vs-$3M-analysis" problem with documented methodology.
+- **Returns:** Venture Analyst Briefing → feeds DD Report S8 (Deal Structure), S9 (Financials), S11 (Exit); feeds /decision command; feeds Memo Slide 4 Returns and Deal Terms
+
+**The analogy:** Agents are like junior analysts you dispatch to do legwork. At Scout, four agents do targeted research to build the assessment evidence base. At Diligence, six agents run in parallel as Stage 2A (the five standard agents plus pricing-analyst). Then Stage 2B runs the financial diligence chain sequentially: forecasting-analyst → venture-analyst, because each consumes the upstream output. They report back with structured briefings; Claude synthesizes them into Layer 2 conclusions.
 
 ---
 
@@ -196,9 +206,12 @@ Claude:
   1. Fetches from Dealum
   1b. ★ Loads Scout Assessment Report (required) + Triage Report (if present); Scout
       thesis is the analytical backbone for Layer 2 hypothesis generation
-  2. Launches 5–6 agents in parallel: company-researcher, market-analyst,
-     competitive-intelligence, technical-diligence, risk-assessor (+ financial-analyst
-     if financial files confirmed)
+  2. Stage 2A — launches 6 agents in parallel: company-researcher (PMTF + verification),
+     market-analyst, competitive-intelligence, technical-diligence, risk-assessor,
+     pricing-analyst
+  2b. Stage 2B — sequential financial diligence chain: forecasting-analyst (independent
+     5-yr forecast via McMurry method) → venture-analyst (valuation, hurdle test,
+     deal structure recommendation)
   3. Loads diligence-scoring-rubrics.md + dd-checklist.md; applies Moat, Risk, Financial,
      and Market sizing rubrics using all agent briefings
   4. Assembles DD Kickoff Package (6 parts):
@@ -264,12 +277,14 @@ nwai-tech-pipeline/
 │   └── memo.md              ← /memo workflow (4-slide PPTX for members call)
 ├── agents/
 │   ├── pipeline-monitor.md         ← Live Dealum pipeline snapshot agent
-│   ├── company-researcher.md       ← Founder, traction + commercial validation agent
+│   ├── company-researcher.md       ← Team-first PMTF + verification + commitment agent (v2.13.0 refresh)
 │   ├── competitive-intelligence.md ← Competitor mapping + moat input agent
-│   ├── market-analyst.md           ← Discontinuity test + TAM/SAM + timing agent  ★ NEW
-│   ├── technical-diligence.md      ← Thin wrapper + TRL + IP + AI moat agent       ★ NEW
-│   ├── financial-analyst.md        ← Unit economics + projections + cap table agent ★ NEW
-│   └── risk-assessor.md            ← Regulatory + exit + execution risk agent       ★ NEW
+│   ├── market-analyst.md           ← Discontinuity test + TAM/SAM + timing agent
+│   ├── technical-diligence.md      ← Thin wrapper + TRL + IP + AI moat agent
+│   ├── risk-assessor.md            ← Regulatory + exit + execution risk agent
+│   ├── pricing-analyst.md          ← Pricing maturity + unit economics + channel pressure agent ★ NEW v2.13.0
+│   ├── forecasting-analyst.md      ← Independent 5-yr forecast (McMurry method) agent ★ NEW v2.13.0 (replaces financial-analyst)
+│   └── venture-analyst.md          ← Valuation + hurdle test + deal structure agent ★ NEW v2.13.0
 └── skills/
     └── nwai-investment-framework/
         ├── SKILL.md         ← Skill entry point
@@ -379,6 +394,7 @@ The demo and the plugin share the same repo but are independently versioned. Plu
 
 | Version | Date | Change |
 |---------|------|--------|
+| v0.22.0 | May 7, 2026 | **Round 2 architectural evolution — plugin v2.13.0.** Following the May 6, 2026 working session with Sam Guren (NWA), Ron Tarro (NWA TechGroup), and Jamie Allison, two architectural changes shipped together. **Phase A — Company Researcher refocus:** `company-researcher` agent rewritten with team-first mandate. New sections: Founder Claim Verification Protocol (LinkedIn + Perplexity cross-reference of every specific exit/ARR/role claim, with ✅ VERIFIED / ⚠️ PARTIAL / 🔴 UNVERIFIED / ❌ CONTRADICTED states), Team-Level PMTF Synthesis (skills coverage across domain depth / engineering / market access, with explicit gap detection per Ron Tarro), Team Commitment Depth (full-time vs advisor ratio with "stuck" advisor flagging per Sam Guren), advisor capital commitment check. `references/scout-questions.md` Team scoring expanded to consume PMTF + commitment + verification sub-assessments. `references/diligence-scoring-rubrics.md` Execution Risk now includes explicit numeric criteria for team commitment ratio, PMTF score, and founder claim verification. **Phase B — Financial agent team:** Legacy `financial-analyst` retired and replaced by three specialized agents that work as a system. (1) `pricing-analyst` (NEW) — pricing maturity assessment, unit economics, channel economics with margin compression forecast (e.g., CDW 8x markup vs direct 2.5x), value proposition validation with pricing-to-value ratio, pricing pressure forecast (commoditization risk). (2) `forecasting-analyst` (renamed from `financial-analyst`, full rewrite) — applies the McMurry method (per Sam Guren: build proprietary forecast first, then compare to company's submitted numbers); enforces the "no AI slop" rule (per Jamie Allison: critical lens, independent research, accountable analyst POV with mandatory *because* clauses); produces 5-year P&L + cash flow + balance sheet with Bear/Base/Bull scenarios; capital plan with round timing/sizing; founder financial literacy assessment. (3) `venture-analyst` (NEW) — final synthesis layer; consumes pricing + forecasting + competitive + risk + team outputs to produce defensible valuation today (3 methods reconciled), projected exit Y3+Y5, capital + dilution modeling, IRR / multiple, 35% hurdle rate test (per Sam Guren), NWA 10x-in-5-years criterion check, deal structure recommendation (priced equity / convertible with cap with "industry of 8" reference / participating preferred / re-priced terms / decline). Solves the Randy "$9M-claimed-vs-$3M-analysis" problem with documented methodology. **/diligence command** restructured into Stage 2A (6 agents in parallel: 5 standard + pricing-analyst) and Stage 2B (sequential financial diligence chain: forecasting-analyst → venture-analyst). **/dd-report** Section score mappings updated: S5 (GTM) consumes pricing-to-value ratio + channel pressure forecast; S6 (Team) consumes PMTF score + Team Commitment Depth + verification status; S8 (Deal Structure) consumes venture-analyst structure recommendation; S9 (Financials) consumes forecasting-analyst Bear/Base/Bull + pricing-analyst unit economics + venture-analyst capital plan; S11 (Exit) consumes venture-analyst exit valuation + 35% hurdle test + 10x criterion + risk-assessor acquirer landscape. **/decision** INVEST/PASS reasons expanded with hurdle test results and PMTF/verification flags; Decision Summary captures venture-analyst structural recommendation. **/memo** Pro forma now sourced from forecasting-analyst's proprietary forecast (NOT company's spreadsheet); Slide 4 Returns and Deal Terms reference venture-analyst outputs; Slide 4 Strengths/Risks reference Phase A Team Commitment + verification status. **Bear/Base/Bull rubric** updated with mandatory *because* clauses and time-varying ARPU (channel pressure modeling). **CLAUDE.md** agent roster updated to 8 agents (3 new financial + Phase A company-researcher refresh). Companion reference doc shipped at `docs/build-history/Plugin-v2.13-Financial-Agent-Team.md`. Round 2 review with Sam/Ron does NOT gate the v2.13.0 ship; iterative refinement is post-ship. |
 | v0.21.0 | Apr 28, 2026 | **Dealum integration deferred — plugin v2.12.0 repackaged without MCP server registration.** The `nwai-tech-pipeline` plugin had been declaring a Dealum MCP server (`nwai-dealum` in `.mcp.json`) that requires Python 3.10+ and the `mcp` package, plus `DEALUM_TOKEN` / `DEALUM_ROOM_ID` env vars. None of these prerequisites were in place locally, causing Cowork to show "MCP nwai-tech-pipeline: Server disconnected" on plugin enable, which obscured the fact that all 8 slash commands were otherwise functional. Decision: rather than upgrade Mac Python and install dependencies for an integration that's not yet API-approved, remove the MCP server registration so the plugin enables cleanly and the pipeline operates filesystem-first (which is how all actual deal work has been done to date). Changes: (1) Plugin repackaged from v2.11.0 to v2.12.0 — bundled `.mcp.json` updated to `{"mcpServers": {}}` with a `_comment` field documenting restoration procedure; bundled `.claude-plugin/plugin.json` description softened to reflect filesystem-first operation; v2.11.0 archived to `plugin/archive/nwai-tech-pipeline-v2.11.0.plugin`. (2) Workspace `.mcp.json` updated to match (empty mcpServers + restoration comment). (3) `CLAUDE.md` — new "Dealum Integration Status — Deferred" section added between Plugin Architecture and GitHub Sync; states current filesystem-first reality, lists 4 implications (no MCP server, /sync-pipeline operates on filesystem, Dealum-tagging guidance is aspirational, dealum_server.py is preserved dormant), and provides 5-step restoration procedure for when the API is eventually approved. (4) Architecture file Layer 1 rewritten from "The Data Source: Dealum via MCP" to "The Data Source: Local Filesystem (Dealum deferred)" with parallel "Active state" / "Deferred state" framing. (5) The `dealum_server.py` script itself is preserved verbatim in `.claude/servers/` and in the bundled plugin so restoration is mechanical. After this change, plugin enables cleanly in Cowork with no MCP server error, all 8 commands and 7 agents register normally. `/sync-pipeline` and `pipeline-monitor` should be reframed as filesystem-readers in a follow-up if they're actually used; today they're dormant. |
 | v0.20.0 | Apr 28, 2026 | **Workspace consolidation — Desktop → canonical merge** (no plugin code change). (1) Surgical gitignore enforcement: `git rm --cached -r deals/` removed 43 previously-tracked deal files (term sheets, cap tables, financials, contracts, transcripts) from git tracking; deal files remain on local disk; `.gitignore` now correctly enforces deals-stay-local intent going forward. Note: files remain in git history; full history rewrite intentionally not performed. (2) Strategic platform-vision docs migrated from prior Desktop workspace `~/Desktop/Claude CoWork NWAi Investment Intelligence/docs/` into new `docs/strategy/` subfolder (10 files: GUT v0.1, GUT html/pdf, Strategic Reframe, Huddle Brief, Member Social Intelligence Layer, RaiseLink comparison, Managed Agents Architecture, cowork-vs-enterprise-platform, Jamie & Ron GUT chat). (3) Plugin build-session briefs migrated from Desktop `Claude Code/` into new `docs/build-history/` subfolder (6 files: Scoping, Setup, Session-Backlog, Session-2/3 Briefs, Desktop-Checkout-Reconciliation-Report). (4) Captain Compliance deal — entire `Data Room/` + `Reports/` migrated from Desktop into `deals/active/Captain Compliance/`. (5) Synergist Technology — Desktop's newer artifacts (Apr 14 GTM Diligence, updated Action Tracker, GTM call transcript, additional license agreements and contracts) merged with canonical's existing Synergist content into nested `deals/active/Synergist Technology/{Data Room,Reports}/`. (6) STL reorganized from flat layout to nested `deals/active/Summit Technology Laboratory/{Data Room,Reports}/`. (7) Redundant pre-consolidation flat-layout files moved to `deals/_quarantine_pre_consolidation_2026-04-28/` for manual cleanup. (8) `CLAUDE.md` updated: "Working in Cowork — Which Folder to Select" rewrites the misleading "Desktop is a planning archive" framing into the true consolidation story; "Workspace Files" section expanded with full canonical layout including new `docs/strategy/` and `docs/build-history/` subfolders; explicit `deals/` is local-only note added; "GitHub Sync" section softened to acknowledge Cowork sandbox push limitations and Mac Terminal fallback. (9) Architecture file structure section updated to reflect new layout. (10) Migration plan archived at `notes/folder-consolidation-plan-2026-04-28.md`. After this commit, Cowork should only ever target `/Users/jamie/ClaudeCodeProjects/nwa-intelligence/`; the Desktop folder will be archived. |
 | v0.19.0 | Apr 2026 | **Companion demo artifact added to architecture file** (no plugin change). New "Companion Artifact — NWAi Investment Intelligence Demo" section documenting the Next.js / Tailwind v4 / shadcn IA preview at `demo/`: Session 3 surfaces (Pipeline, Members + collapsible-filter directory, Member Profile, Matching Rationale, Portfolio + slide-over drill-in, Ecosystem Phase 4 placeholder, Orchestrator), top-level SectionNav above the 7-stage StageNav, FL-city geography facet, Universal Triage v2.0 reflected on Pipeline stage cards. Captures deployment pattern (Vercel, Root Directory = `demo/`, auto-deploy from `main`) and the demo-vs-plugin decoupling: plugin tracked in this changelog, demo tracked through commits under `demo/`. Plugin source itself unchanged in this update. |

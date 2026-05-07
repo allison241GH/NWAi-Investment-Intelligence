@@ -85,30 +85,141 @@ Load (most recent version of each, sorted by YYYY-MM-DD in filename):
 
 ---
 
-## Phase 2: Launch Research Agents in Parallel
+## Phase 1c: Load Optional Post-Meeting Analyst Layer
 
-Inform the user: "Launching diligence agent team — 5 agents running in parallel. This typically takes 5–8 minutes. I'll synthesize findings and generate the DD Kickoff Package when all complete."
+This phase is **conditional**. New deals (just out of Scout, no diligence meetings yet) will have no post-meeting reports — that's the standard case and the agents proceed normally. For deals where post-meeting work has already happened (a re-run, a deal coming off Watch, a framework upgrade tested against a historical deal), the post-meeting analyst layer represents the most current NWAi POV on the deal and **must be incorporated** by the agents. The agents should not regress to the Scout-stage view if more current analyst conclusions exist.
 
-Use the Task tool to launch **all agents simultaneously**:
+```bash
+WORKSPACE=$(dirname "$(find /sessions -name "CLAUDE.md" -path "*/Claude CoWork*" 2>/dev/null | head -1)")
+REPORTS_DIR="${WORKSPACE}/deals/active/[Company Name]/Reports/"
+ls "${REPORTS_DIR}" 2>/dev/null
+```
+
+Glob `Reports/` for files matching any of these patterns (use the most recent dated version of each):
+
+1. `*Action-Tracker*.docx` — latest only (this is the running record of resolved vs. open diligence items)
+2. `*-Diligence-*.docx` — post-meeting reports (e.g., `[Company]-GTM-Diligence-*.docx`, `[Company]-Financials-Diligence-*.docx`) — exclude the DD Kickoff Package
+3. `*-Reconciliation-*.docx` — post-meeting reconciliations (e.g., `[Company]-Product-Demo-Reconciliation-*.docx`)
+4. `*Market-Intel*.docx`, `*Risk-Briefing*.docx`, `*-Briefing*.docx` — any post-Scout enrichment briefings (exclude the Scout Assessment Report itself)
+
+**Decision logic:**
+
+**IF any post-meeting reports are found:**
+
+Display:
+> 📋 **Post-meeting analyst layer detected** — incorporating into agent context
+>
+> Files loaded:
+> - [list each file with date]
+>
+> Agents will be instructed to treat the post-meeting analyst POV as canonical where it conflicts with the Scout-stage view or the pitch deck. Do not regress to prior conclusions that the post-meeting work has resolved or challenged.
+
+Build a **Post-Meeting Layer Manifest** to pass to the agents in Phase 2:
+
+```
+POST-MEETING ANALYST LAYER (canonical NWAi POV — incorporate before forming conclusions):
+- [Path to Action Tracker]: contains the running record of resolved (✅), partial (⚠️), and open (🔴) diligence items.
+- [Path to GTM Diligence]: post-meeting analyst POV from GTM/Sales Strategy diligence call.
+- [Path to Product Demo Reconciliation]: post-meeting analyst POV from Product Demo diligence call.
+- [Path to Financials Diligence]: post-meeting analyst POV from Financials diligence call.
+- [Path to Market Intel Briefing]: post-Scout market enrichment.
+- [Path to any other briefings]: [purpose].
+
+Mandate to the agents: Where these reports have resolved or evolved the analyst view since Scout, your conclusions must reflect the more current position. If a Scout-stage hypothesis has been challenged or invalidated by post-meeting work, do not restate the Scout conclusion as if it still stands.
+```
+
+**IF no post-meeting reports are found:**
+
+Display:
+> 📋 **No post-meeting analyst layer present — running fresh diligence**
+>
+> This is the standard case for deals just out of Scout. Agents will work from the Scout Assessment Report and Data Room files only.
+
+Set the Post-Meeting Layer Manifest to `"NONE — fresh diligence, no post-meeting analyst layer to incorporate."`
+
+---
+
+## Phase 2: Launch Research Agents
+
+The agent team runs in two stages:
+- **Stage 2A (parallel)** — 6 agents run simultaneously: 5 standard research agents plus pricing-analyst
+- **Stage 2B (sequential)** — the financial diligence chain (forecasting-analyst → venture-analyst) runs after Stage 2A completes, because each agent consumes upstream output
+
+Inform the user: "Launching diligence agent team — Stage 2A: 6 agents running in parallel. This typically takes 5–8 minutes. After 2A completes, I'll run the financial diligence sequence (forecasting → venture analyst), then synthesize findings into the DD Kickoff Package."
+
+### Stage 2A: Parallel agents
+
+Use the Task tool to launch **all six agents simultaneously**:
+
+**Each agent prompt MUST include the Post-Meeting Layer Manifest from Phase 1c.** Append this block to every agent prompt below (substitute the actual manifest content built in Phase 1c). Agents must read the listed files BEFORE forming conclusions.
+
+```
+[POST_MEETING_LAYER_MANIFEST]
+```
+
+---
 
 **Agent 1 — company-researcher:**
-"Research [Company Name] for NWAi diligence. Website: [URL]. Known founders: [names]. Include commercial validation signals (contract structure, named customers, sales motion). Return the full Company Research Briefing."
+"Research the founding team and company background of [Company Name] for NWAi diligence with a Product Market Team Fit (PMTF) lens. Website: [URL]. Known founders: [names]. Apply the Founder Claim Verification Protocol to every specific exit/ARR/role claim (LinkedIn + Perplexity cross-reference). Assess Team Commitment Depth (full-time vs advisor ratio, flag 'stuck' advisors). Map Team-Level PMTF (skills coverage across domain depth, engineering, market access; detect market-access gaps). Include supporting context on funding, traction, commercial validation, and public red flags. Return the full Company Research Briefing including the People Verification Brief, Team Quality + PMTF Assessment, and Team Commitment Depth sections.
+
+If a Post-Meeting Layer Manifest is provided, read the Product Demo Reconciliation and GTM Diligence reports first — these contain analyst observations on team behavior in live diligence calls (who answered authoritatively, who deferred, who revealed depth limits). Incorporate those observations into the Team Quality + PMTF Assessment. Read the latest Action Tracker for any team-related items marked ✅ RESOLVED or 🔴 OPEN. Do not regress to Scout-stage team conclusions if post-meeting evidence has updated them.
+
+[POST_MEETING_LAYER_MANIFEST]"
 
 **Agent 2 — market-analyst:**
-"Validate the market for [Company Name] for NWAi diligence. They operate in [sector/description]. Website: [URL]. Test for structural discontinuity, validate TAM/SAM independently, and score market timing. Return the full Market Analysis Briefing."
+"Validate the market for [Company Name] for NWAi diligence. They operate in [sector/description]. Website: [URL]. Test for structural discontinuity, validate TAM/SAM independently, and score market timing. Return the full Market Analysis Briefing.
+
+If a Post-Meeting Layer Manifest is provided, read the Market Intel Briefing first — this represents the most current NWAi market view on this deal and supersedes the Scout-stage market analysis where they conflict. Read the latest Action Tracker for market-related items.
+
+[POST_MEETING_LAYER_MANIFEST]"
 
 **Agent 3 — competitive-intelligence:**
-"Research the competitive landscape for [Company Name] for NWAi diligence. They operate in [sector/description]. Website: [URL]. Map direct competitors, strategic incumbents, positioning, and moat inputs. Return the full Competitive Intelligence Briefing."
+"Research the competitive landscape for [Company Name] for NWAi diligence. They operate in [sector/description]. Website: [URL]. Map direct competitors, strategic incumbents, positioning, and moat inputs. Identify comp set with reported revenue/ARR and recent valuations for use by forecasting-analyst and venture-analyst. Return the full Competitive Intelligence Briefing.
+
+If a Post-Meeting Layer Manifest is provided, read all post-meeting reports for competitive observations surfaced in live diligence calls (founder claims about competitors, customer references, win/loss anecdotes). Read the latest Action Tracker for competitive items.
+
+[POST_MEETING_LAYER_MANIFEST]"
 
 **Agent 4 — technical-diligence:**
-"Run technical diligence on [Company Name] for NWAi. Website: [URL]. Run all three thin wrapper tests, assess TRL, search for patents and IP, evaluate AI moat signals. Return the full Technical Diligence Briefing."
+"Run technical diligence on [Company Name] for NWAi. Website: [URL]. Run all three thin wrapper tests, assess TRL, search for patents and IP, evaluate AI moat signals. Return the full Technical Diligence Briefing.
+
+If a Post-Meeting Layer Manifest is provided, read the Product Demo Reconciliation first — this is the most direct analyst observation of the technology in action and supersedes inferred technical assessment from pitch materials. Read the latest Action Tracker for technical items.
+
+[POST_MEETING_LAYER_MANIFEST]"
 
 **Agent 5 — risk-assessor:**
-"Assess cross-domain risks for [Company Name] for NWAi diligence. They operate in [sector/description]. Website: [URL]. Research regulatory requirements, exit landscape and acquirer dynamics, execution risk signals, and market risk factors. Return the full Risk Assessment Briefing."
+"Assess cross-domain risks for [Company Name] for NWAi diligence. They operate in [sector/description]. Website: [URL]. Research regulatory requirements, exit landscape and acquirer dynamics, execution risk signals, and market risk factors. Specifically identify the natural exit pathway (strategic / hyperscaler / IPO / mixed) and exit multiple range — this feeds the venture-analyst valuation. Return the full Risk Assessment Briefing.
 
-**Agent 6 — financial-analyst (conditional):**
-Launch only if financial files were confirmed at Pre-Flight:
-"Analyze the financial files for [Company Name] in the NWAi deal room. Workspace path: [WORKSPACE]. Deal room folder: [WORKSPACE]/deals/active/[Company Name] Data Room/. Model unit economics, validate projections using Bear/Base/Bull framework, assess cap table, and calculate the 10x return path. Return the full Financial Analyst Briefing."
+If a Post-Meeting Layer Manifest is provided, read the latest Action Tracker first — the resolved/partial/open status of every diligence item is the canonical source of truth for which risks have been mitigated and which remain. Read all post-meeting reports for risk-relevant observations (regulatory complications, customer concentration, key-person signals).
+
+[POST_MEETING_LAYER_MANIFEST]"
+
+**Agent 6 — pricing-analyst:**
+"Assess pricing strategy and unit economics for [Company Name] for NWAi diligence. Website: [URL]. Workspace path: [WORKSPACE]. Deal room folder: [WORKSPACE]/deals/active/[Company Name]/Data Room/. Score Pricing Maturity (PROVEN / EARLY SIGNALS / DISCOVERY / UNKNOWN), validate value proposition with quantified pricing-to-value ratio, model Channel Economics (margin pressure forecast across 5 years), derive Unit Economics, and produce the Pricing Pressure Forecast. Output the Feed Forward to Forecasting Analyst section explicitly. Return the full Pricing Analyst Briefing.
+
+If a Post-Meeting Layer Manifest is provided, read the GTM Diligence report and Financials Diligence report (if present) FIRST — these contain the most current analyst POV on actual pricing dynamics, channel economics (e.g., distributor margin reality vs. published terms), and customer willingness-to-pay observed in live calls. The GTM transcript or reconciliation is more authoritative than the marketing battlecard or sell-sheet for understanding channel margin pressure. Read the latest Action Tracker for pricing items.
+
+[POST_MEETING_LAYER_MANIFEST]"
+
+Wait for all six agents to complete before proceeding to Stage 2B.
+
+### Stage 2B: Financial diligence sequence (sequential)
+
+Launch only if pricing-analyst output is available (always true). Financial files are preferred but not required — the McMurry method does not depend on the company's spreadsheet.
+
+**Agent 7 — forecasting-analyst:**
+"Build an independent five-year financial forecast for [Company Name] for NWAi diligence using the McMurry method (proprietary forecast first, then comparison to company's submitted numbers). Workspace path: [WORKSPACE]. Deal room folder: [WORKSPACE]/deals/active/[Company Name]/Data Room/. Use the Pricing Analyst Briefing output as foundation for revenue assumptions (do NOT re-derive pricing). Use the Competitive Intelligence comp set as anchor for benchmarks. Apply the 'no AI slop' rule — produce specific *because* clauses for each Bear/Base/Bull scenario. Forecast P&L, cash flow, and balance sheet (where applicable). Output capital plan with round timing and sizing across 5 years. Compare to company's submitted numbers and produce the Founder Financial Literacy Assessment. Return the full Forecasting Analyst Briefing.
+
+If a Post-Meeting Layer Manifest is provided, read the Financials Diligence report and GTM Diligence report (if present) FIRST — these contain analyst observations from live diligence calls about the company's actual financial trajectory, capital needs, and assumptions. The latest Action Tracker shows which financial assumptions have been ✅ resolved (validated or invalidated) vs. 🔴 still open. Where post-meeting work has updated a financial assumption since Scout, your forecast must reflect the current view, not the Scout-stage view.
+
+[POST_MEETING_LAYER_MANIFEST]"
+
+**Agent 8 — venture-analyst:**
+"Synthesize the financial diligence into a valuation conclusion for [Company Name] for NWAi diligence. Inputs: Pricing Analyst Briefing, Forecasting Analyst Briefing, Competitive Intelligence Briefing, Risk Assessor Briefing, Company Researcher Briefing. Deal terms: [pre-money valuation, raise size, NWA check size]. Produce: defensible valuation today (3 methods reconciled), projected exit valuation (Y3 + Y5 across Low/Base/High), capital and dilution model, IRR / multiple / 35% hurdle rate test (Sam Guren), NWA 10x-in-5-years test. Recommend deal structure (priced equity / convertible with cap / participating preferred / re-priced terms / decline). Output Headline Takeaway. Return the full Venture Analyst Briefing.
+
+If a Post-Meeting Layer Manifest is provided, read the latest Action Tracker FIRST — every diligence item with an ✅ RESOLVED status represents a risk that has been mitigated and should weight your valuation upward; every 🔴 OPEN item is a risk that remains and should weight your valuation downward or be flagged as a condition on the deal structure recommendation. Read all post-meeting reports for any analyst observations that change the exit pathway, comp set anchoring, or hurdle rate test. Your final NWA action recommendation (ADVANCE / WATCH / DECLINE) must reflect the most current understanding of the deal, not the Scout-stage understanding.
+
+[POST_MEETING_LAYER_MANIFEST]"
 
 Wait for all agents to complete before proceeding.
 
@@ -117,7 +228,7 @@ Wait for all agents to complete before proceeding.
 ## Phase 3: Apply NWAi Scoring Rubrics
 
 Load the scoring rubrics from:
-`${CLAUDE_PLUGIN_ROOT}/skills/nwai-investment-framework/references/diligence-scoring-rubrics.md`
+`.claude/skills/nwai-investment-framework/references/diligence-scoring-rubrics.md`
 
 Apply all four rubrics using the agent briefings plus prior Screening and Scout findings:
 
@@ -130,17 +241,22 @@ Apply all four rubrics using the agent briefings plus prior Screening and Scout 
 - Show working for each point awarded or withheld
 
 **3B — Risk Scoring (1–10 per category, where 1 = lowest risk and 10 = highest risk)**
-- Execution Risk: team depth, key-person dependency (from company-researcher + risk-assessor)
+- Execution Risk: team depth, key-person dependency, Team Commitment Depth ratio, PMTF score, founder claim verification status (from company-researcher + risk-assessor)
 - Market Risk: adoption barriers, incumbent response, timing (from market-analyst + competitive-intelligence)
-- Financial Risk: runway, burn, unit economics (from company-researcher + financial-analyst)
+- Financial Risk: runway, burn, unit economics, capital plan adequacy (from forecasting-analyst + pricing-analyst)
 - Technical Risk: TRL rating, regulatory path (from technical-diligence + risk-assessor)
-- Competitive Risk: moat score, market crowding, Big Tech overlap (from competitive-intelligence + risk-assessor)
+- Competitive Risk: moat score, market crowding, Big Tech overlap, pricing pressure forecast (from competitive-intelligence + pricing-analyst + risk-assessor)
 - Flag any score ≥ 8 as critical; flag as deal-breaker if 2+ scores are 9+, or any is 10
 
 **3C — Financial Model Inputs**
-Use financial-analyst briefing as primary source. If financial-analyst did not run (no files), extract from company-researcher: revenue/ARR, runway, pricing model, any disclosed unit economics.
-Outline Bear/Base/Bull revenue projection using rubric benchmarks.
-List any missing inputs the team must request from the founder.
+Use the financial diligence sequence (pricing-analyst → forecasting-analyst → venture-analyst) as primary sources:
+- **Pricing Analyst Briefing** for unit economics, channel pressure forecast, pricing-to-value ratio
+- **Forecasting Analyst Briefing** for proprietary 5-year forecast (Bear/Base/Bull with *because* clauses), capital plan, founder financial literacy assessment
+- **Venture Analyst Briefing** for valuation conclusion, IRR, 10x-in-5-years test, deal structure recommendation
+
+If financial files were not provided, the McMurry method still produces a defensible forecast from comps + pricing analysis. Confidence level is reduced but not zero. Note this in the DD Report.
+
+List any missing inputs the team must request from the founder, with explicit reference to which agent flagged the gap.
 
 **3D — Market Size Validation**
 Use market-analyst briefing as primary source. Compare founder TAM against market-analyst independent estimates and bottoms-up SAM.
@@ -209,16 +325,18 @@ Biggest uncertainty: [1 sentence — the biggest competitive unknown.]
 ---
 
 **FINANCIAL VALIDATION**                                             [🟢 / 🟡 / 🔴]
-[If financial-analyst ran successfully:]
 Hypothesis: [1 sentence — derived from Scout financial context (ARR, stage, round). State what the Scout thesis implies about the path to a 10x return.]
-Conclusion: [2–3 sentences — synthesized from financial-analyst briefing. What do the unit economics, projection validation, and 10x return path analysis confirm or challenge?]
+Conclusion: [3–4 sentences — synthesized from the three-agent financial diligence sequence:
+- **Pricing Analyst** — pricing maturity, unit economics health, pricing pressure forecast
+- **Forecasting Analyst** — independent 5-year forecast (Bear/Base/Bull), capital plan, founder financial literacy assessment
+- **Venture Analyst** — defensible valuation, IRR, 10x-in-5-years test, deal structure recommendation
+What do these conclude about pricing defensibility, capital adequacy, and the path to a 10x return at the asked-for terms?]
 Biggest uncertainty: [1 sentence — the key financial unknown.]
 
-[If financial files were not available:]
-🔴 **INCOMPLETE — Financial files not provided.**
-Financial Analyst Agent did not run. Financial Validation conclusions cannot be generated.
-This section must be completed before the DD Report can be scored.
-Required files: financial model/projections, historical P&L, cap table.
+[If financial files were not provided:]
+⚠️ **PARTIAL — Financial files not provided. Forecast generated independently via the McMurry method.**
+The forecasting-analyst built the forecast from comps and pricing analysis without the company's spreadsheet. Confidence is reduced but the conclusion is still defensible. Note this in the DD Report Section 7.
+Recommended action: Request financial files (model/projections, historical P&L, cap table) for the next diligence cycle to validate the comp-based forecast.
 
 ---
 
@@ -257,7 +375,7 @@ FINANCE: Revenue [current] | Runway [X mo] | Unit econ [status]
 
 **Part D — Layer 1: 17-Folder DD Assignment Table  [Hub — single source of truth]**
 Load the checklist from:
-`${CLAUDE_PLUGIN_ROOT}/skills/nwai-investment-framework/references/dd-checklist.md`
+`.claude/skills/nwai-investment-framework/references/dd-checklist.md`
 
 Part D is the data completeness hub of the DD Kickoff Package. All gate-critical risks and key questions are expressed here — not duplicated in Parts A, E, or F.
 

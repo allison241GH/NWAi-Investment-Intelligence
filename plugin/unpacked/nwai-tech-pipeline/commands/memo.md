@@ -9,10 +9,10 @@ Generate a 4-slide NWAi Executive Summary PPTX deck for a Tech deal. Arguments: 
 ## Step 1: Load Format Reference and Frameworks
 
 Read the memo format specification before doing anything else:
-`${CLAUDE_PLUGIN_ROOT}/skills/nwai-investment-framework/references/memo-format-reference.md`
+`.claude/skills/nwai-investment-framework/references/memo-format-reference.md`
 
 Also read the AI Moats Framework for use in Technology/IP and Analysis sections:
-`${CLAUDE_PLUGIN_ROOT}/skills/nwai-investment-framework/references/ai-moats-framework.md`
+`.claude/skills/nwai-investment-framework/references/ai-moats-framework.md`
 
 ## Step 2: Gather All Available Deal Information
 
@@ -43,7 +43,15 @@ For each file found: note version count and which date is being loaded. If none 
 - DD team vote table
 - Gate verdicts, flags, theme assignment, one-sentence Scout verdict
 - Capital structure, deal terms, proposed NWAi check size
-- Financial model inputs (revenue, runway, pro forma projections, use of funds)
+- **From the financial diligence sequence (pricing-analyst, forecasting-analyst, venture-analyst):**
+  - Pro forma table — use **Forecasting Analyst Briefing** Bear/Base/Bull (NOT the company's submitted projections; the agent's proprietary forecast is the canonical NWAi number)
+  - Unit economics + pricing-to-value ratio — from **Pricing Analyst Briefing**
+  - Defensible valuation today + projected exit (Y3, Y5) — from **Venture Analyst Briefing**
+  - 35% IRR hurdle test result + 10x-in-5-years post-dilution test result — from **Venture Analyst Briefing**
+  - Deal structure recommendation (priced equity / convertible with cap / participating preferred) — from **Venture Analyst Briefing**
+  - Capital plan with round timing (Series A trigger, Series B trigger) — from **Forecasting Analyst Briefing**
+  - Founder financial literacy assessment — from **Forecasting Analyst Briefing**
+- **From company-researcher (Phase A):** PMTF score, Team Commitment Depth ratio, founder claim verification status — feeds Slide 4 Strengths/Risks
 - Moat classification and AI wrapper assessment
 - Key risks (used verbatim in Slide 4 Risks section)
 
@@ -75,10 +83,18 @@ Framework here), Management Team, Market & Competition.
 Economic model narrative (business model, exit scenario, gross margin), itemized use of funds
 with dollar amounts, pro forma table (Revenue + EBITDA across 5 years).
 
+**Source the pro forma from the Forecasting Analyst's proprietary Bear/Base/Bull forecast — not the company's submitted projections.** The agent's *because* clauses for each scenario are the NWAi narrative for the model. Surface gross margin trajectory if channel pressure was modeled (e.g., compression at scale). Use of funds should reconcile to the Forecasting Analyst's capital plan.
+
 **Slide 4 — Analysis & Recommendation**
 Analysis narrative (blunt thesis statement), Strengths using ++/-- notation (4–6 bullets),
 Risks using --/- notation (3–5 bullets), Recommendation verdict with dollar amount and
 2–4 sentence rationale, "What is the Bet?" single-sentence thesis statement.
+
+**Returns and Deal Terms guidance:** The Recommendation verdict should reference the Venture Analyst's outputs explicitly:
+- Recommended deal structure (priced equity / convertible with cap / participating preferred)
+- 35% IRR hurdle test result and 10x-in-5-years post-dilution test result
+- If the founder's ask is above the defensible valuation, surface the gap and the structural recommendation that closes it
+- "What is the Bet?" should be one falsifiable thesis — not a hedge. The Venture Analyst's Investment Thesis output is the canonical phrasing.
 
 ## Step 4: Generate the PPTX Using pptxgenjs
 

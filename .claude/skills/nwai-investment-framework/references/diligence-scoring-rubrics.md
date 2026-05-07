@@ -99,6 +99,16 @@ Score each category 1–10 where **10 = highest risk**. Apply at Diligence stage
 - Team size vs. scope (understaffed for what they're trying to do?)
 - Key-person dependency (single founder / single technical expert?)
 - Operational complexity (manufacturing, regulatory, multi-sided marketplace?)
+- **Team commitment depth** (from `company-researcher` Team Commitment Depth output):
+  - Full-time ratio: ≥80% = +0 risk; 60-79% = +1 risk; 40-59% = +2 risk; <40% = +3 risk (typically forces score ≥ 8)
+  - "Stuck" advisors (passive logos with no engagement): +1 risk per identified instance
+- **Product Market Team Fit (PMTF)** (from `company-researcher` Team-Level PMTF Synthesis):
+  - STRONG = +0 risk; MODERATE with one fillable gap = +1 risk; WEAK with multiple gaps = +3 risk
+  - Market-access gap explicitly identified (e.g., "engineer who built widget but team has no buyer relationships") = +2 risk on top
+- **Founder claim verification** (from `company-researcher` People Verification Brief):
+  - All specific claims VERIFIED = +0 risk
+  - Any UNVERIFIED specific claims = +1 risk per claim (cap +2)
+  - Any ❌ CONTRADICTED claim = +3 risk and immediate flag for IC; treat as deal-stopper unless founder has a documented explanation
 
 **2. Market Risk**
 - Adoption barriers (requires significant behavior change?)
@@ -151,20 +161,28 @@ Deal-Breakers: [flag if 2+ scores are 9+, or any score is 10]
 
 ## 3. Financial Model — Bear / Base / Bull Framework
 
+**Source:** As of plugin v2.13.0, the Bear/Base/Bull forecast is produced by the **forecasting-analyst** agent using the McMurry method (proprietary forecast built from comps and pricing-analyst inputs, NOT from the company's submitted spreadsheet). The /diligence command consumes the forecasting-analyst's output directly. This rubric describes the framework the agent applies.
+
+### Mandate: Analyst POV with *Because* Clauses
+
+Each scenario must have an explicit *because* clause. A range of growth rates without a *because* is AI slop, not analysis. The forecasting-analyst is required to articulate what has to be true for each scenario to play out.
+
 ### Revenue Projection (Years 1–5)
 
-Build three scenarios. Use these growth rate benchmarks as anchors:
+Build three scenarios. Use these growth rate benchmarks as starting anchors, then adjust based on comps and pricing-analyst output:
 
-| Scenario | Growth Rate | Assumptions |
-|----------|-------------|-------------|
-| **Bear** | 20–40% YoY | Slow adoption, higher churn, market headwinds, bottom 25th percentile benchmarks |
-| **Base** | 50–100% YoY | Steady adoption, normal churn, neutral market, median benchmarks |
-| **Bull** | 100–200% YoY | Fast adoption, low churn, strong tailwinds, top 25th percentile benchmarks |
+| Scenario | Growth Rate | Assumptions | *Because* Clause Required |
+|----------|-------------|-------------|----------------------------|
+| **Bear (Low)** | 20–40% YoY | Slow adoption, higher churn, market headwinds, bottom 25th percentile benchmarks | What has to fail for this scenario to play out (specific and falsifiable) |
+| **Base (Medium)** | 50–100% YoY | Steady adoption, normal churn, neutral market, median benchmarks | What has to be true for this scenario at comp-set median |
+| **Bull (High)** | 100–200% YoY | Fast adoption, low churn, strong tailwinds, top 25th percentile benchmarks | What has to be true beyond comp-set median (specific and falsifiable) |
 
 **Revenue formula:**
 ```
-Revenue(t) = Customers(t) × ARPU × (1 - Churn Rate)
+Revenue(t) = Customers(t) × ARPU(t) × (1 - Churn Rate(t))
 ```
+
+**Note:** ARPU(t) is time-varying because the pricing-analyst forecasts margin compression where channel pressure exists. Do not assume ARPU holds flat across the 5-year forecast.
 
 ### Unit Economics Benchmarks
 
@@ -197,6 +215,8 @@ recent comparable exits in the relevant TechGroup theme sector.
 
 **NWAi return target check:** Does the Base Case exit valuation support a 10x return
 on NWAi's entry valuation within 5 years? If not, document the gap explicitly for IC.
+
+**As of plugin v2.13.0:** The 10x-in-5-years test and the 35% IRR hurdle test (Sam Guren's discipline) are produced by the **venture-analyst** agent, which synthesizes the forecasting-analyst's exit projections with comp-based exit multiples and dilution modeling. The venture-analyst's recommended deal structure (priced equity / convertible with cap / participating preferred / re-priced terms / decline) is the canonical input to the /decision command.
 
 ---
 
@@ -244,9 +264,19 @@ All four → synthesized into Risk Score
 All five → inform the Financial Model exit scenarios
 ```
 
-The `/diligence` command and `/memo` command both reference this file. The full agent team
-(company-researcher, market-analyst, competitive-intelligence, technical-diligence,
-financial-analyst, risk-assessor) gathers the raw data that these rubrics are applied to.
+The `/diligence` command and `/memo` command both reference this file. As of plugin v2.13.0, the full agent team is:
+
+**Stage 2A (parallel):**
+- `company-researcher` — team-first PMTF analysis, founder claim verification, team commitment depth
+- `market-analyst` — structural discontinuity, TAM/SAM/SOM, market timing
+- `competitive-intelligence` — competitor mapping, comp set construction (feeds forecasting + venture analysts)
+- `technical-diligence` — thin wrapper test, TRL assessment, IP/patents
+- `risk-assessor` — regulatory pathways, exit landscape (feeds venture-analyst), execution risk
+- `pricing-analyst` — pricing maturity, unit economics, channel pressure, pricing pressure forecast
+
+**Stage 2B (sequential — financial diligence chain):**
+- `forecasting-analyst` — independent 5-year forecast (proprietary, McMurry method), capital plan, founder financial literacy
+- `venture-analyst` — defensible valuation, IRR / 35% hurdle / 10x test, deal structure recommendation
 
 ---
 

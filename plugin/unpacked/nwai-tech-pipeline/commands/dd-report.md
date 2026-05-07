@@ -15,13 +15,13 @@ to the `/decision` command.
 Read all three before writing a single line of document content:
 
 ```
-${CLAUDE_PLUGIN_ROOT}/skills/nwai-investment-framework/references/dd-report-format-reference.md
-${CLAUDE_PLUGIN_ROOT}/skills/nwai-investment-framework/references/diligence-scoring-rubrics.md
+.claude/skills/nwai-investment-framework/references/dd-report-format-reference.md
+.claude/skills/nwai-investment-framework/references/diligence-scoring-rubrics.md
 ```
 
 If the company is AI-enabled, also read:
 ```
-${CLAUDE_PLUGIN_ROOT}/skills/nwai-investment-framework/references/ai-moats-framework.md
+.claude/skills/nwai-investment-framework/references/ai-moats-framework.md
 ```
 
 **Also read the Synergist canonical reference if available in the workspace:**
@@ -57,7 +57,11 @@ pandoc "[file].docx" -t plain 2>/dev/null
 **Compile from each loaded file:**
 - Triage Report: gate verdicts, red/yellow flags, deal structure concerns, opportunity and readiness scores
 - Scout Assessment: theme assignment, Phase 1/2 findings, one-sentence verdict, single biggest risk
-- DD Kickoff Package: Moat Tier 1 + Tier 2 scores, Risk scores per category, market sizing + timing score, financial model inputs (revenue, runway, unit economics), 17-folder findings, open questions and responses
+- DD Kickoff Package: Moat Tier 1 + Tier 2 scores, Risk scores per category, market sizing + timing score, 17-folder findings, open questions and responses
+- **Financial diligence outputs (from the three-agent sequence):**
+  - **Pricing Analyst Briefing** — pricing maturity, unit economics, channel pressure forecast, pricing-to-value ratio
+  - **Forecasting Analyst Briefing** — proprietary 5-year forecast (Bear/Base/Bull with *because* clauses), capital plan with round timing, founder financial literacy assessment
+  - **Venture Analyst Briefing** — defensible valuation today, projected exit (Y3 + Y5), IRR, 35% hurdle test, NWA 10x-in-5-years test, deal structure recommendation
 
 Mark any unconfirmed field as `[TO BE CONFIRMED]`. Never fabricate scores.
 
@@ -70,13 +74,13 @@ Section score mappings:
 - S2 (Solution/Product): Moat Tier 1 (0–6 → 1–5)
 - S3 (AI/Software Moat): Moat Tier 2 (0–10 → 1–5) — AI companies only; omit otherwise
 - S4 (Competition & Moat): Competitive Risk (1–10 inverted)
-- S5 (GTM Strategy): Market Risk — adoption barriers and channel (1–10 inverted)
-- S6 (Team): Execution Risk (1–10 inverted)
+- S5 (GTM Strategy): Market Risk + Pricing Analyst pricing-to-value ratio + channel pressure forecast (1–10 inverted)
+- S6 (Team): Execution Risk including PMTF score, Team Commitment Depth ratio, founder claim verification status (1–10 inverted)
 - S7 (Technology & IP): TRL level + IP defensibility (qualitative 1–5)
-- S8 (Deal Structure): Hard gate results + cap table cleanliness
-- S9 (Financials): Financial Risk (1–10 inverted) + Bear/Base/Bull model
+- S8 (Deal Structure): Hard gate results + cap table cleanliness + Venture Analyst deal structure recommendation
+- S9 (Financials): Financial Risk + Forecasting Analyst Bear/Base/Bull model + Pricing Analyst unit economics + Venture Analyst capital plan (1–10 inverted)
 - S10 (Risk — inverted): Risk Score average across all 5 categories
-- S11 (Exit Strategy): Exit viability + Base/Bull case 10x support
+- S11 (Exit Strategy): Venture Analyst exit valuation + 35% hurdle test + 10x-in-5-years criterion + Risk Assessor acquirer landscape
 
 ## Step 4: Apply the Sharp & Succinct Content Rules
 

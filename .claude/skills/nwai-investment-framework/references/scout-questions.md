@@ -172,23 +172,32 @@ Required: one line per dimension (Customer / Technology / Regulatory / Economic)
 
 Each item = one line in the output. No paragraph explanations.
 
-### Team (Score 0-5)
+### Team — Product Market Team Fit (PMTF) (Score 0-5)
 *Triage overlap: Founder Advantage (D3) — show delta*
 
 One line: domain credibility rating (STRONG / ADEQUATE / WEAK) + key strength + key gap.
-Two required sub-assessments:
+
+**Five required sub-assessments** (sourced from `company-researcher` agent output):
+
 - **Product team fit:** Does the team deeply know the product landscape? (✓ / Partial / Gap)
 - **Market team fit:** Does the team have the market relationships to execute GTM? (✓ / Partial / Gap)
+- **PMTF synthesis:** Team-level Product Market Team Fit score from company-researcher (STRONG / MODERATE / WEAK) — captures skills coverage across domain depth, engineering/build, and market access; includes any market-access gap flags.
+- **Team commitment depth:** Full-time ratio from company-researcher (e.g., "6 of 8 listed = full-time, 75%"). Flag if <60% full-time. Flag advisors who appear "stuck" (passive logos with no engagement signals).
+- **Founder claim verification:** Status from company-researcher's People Verification Brief. Flag if any UNVERIFIED or CONTRADICTED specific claims (e.g., exit returns, ARR, prior roles).
 
-Flag immediately if founders are part-time or IP is not cleanly assigned to the company.
+Flag immediately if:
+- Founders are part-time or IP is not cleanly assigned to the company
+- Any founder claim is **❌ CONTRADICTED** by public sources (treat as red flag for the diligence call)
+- Team commitment ratio is **<40% full-time** (red flag)
+- Market-access gap is identified (e.g., "engineer who built the widget but no team member has met a buyer")
 
 | Score | Criteria |
 |-------|---------|
-| 5 | Domain expert with prior exit; strong product team fit AND market team fit; compelling team assembled |
-| 4 | Strong domain background; execution evidence; strong on one of product/market team fit |
-| 3 | Relevant background; generalist execution; partial product or market team fit |
-| 2 | Thin domain connection; first-time founder; gaps in both product and market team fit |
-| 1 | Background disconnected from problem; no product or market team fit |
+| 5 | Domain expert with prior exit (verified); STRONG team-level PMTF; full-time commitment ≥80%; strong product AND market team fit; all founder claims verified |
+| 4 | Strong domain background; execution evidence verified; STRONG or MODERATE PMTF with no critical gaps; commitment ≥60% full-time |
+| 3 | Relevant background; MODERATE PMTF with one fillable gap; commitment ≥60% full-time; minor unverified claims |
+| 2 | Thin domain connection or first-time founder; WEAK PMTF (skills gap); commitment <60% full-time OR multiple unverified founder claims |
+| 1 | Background disconnected from problem; WEAK PMTF with multiple gaps; commitment <40% full-time; or any contradicted founder claim |
 | 0 | No founder information available |
 
 ### Technology (Score 0-5)
@@ -357,8 +366,9 @@ Greed:                    [one phrase — upside case if thesis holds]
 **Phase 2 Execution** (table — one line per item, score shown):
 ```
 | Dimension          | Score | Assessment                                                    |
-| Team               | X/5   | ADEQUATE→STRONG | [strength] | Product team fit: ✓/gap |
-|                    |       | Market team fit: ✓/gap | Gap: [gap]                      |
+| Team — PMTF        | X/5   | PMTF: STRONG/MOD/WEAK | Product fit: ✓/gap | Market fit: ✓/gap |
+|                    |       | Commitment: X% full-time | Verification: [N verified / N unverified] |
+|                    |       | Strength: [phrase] | Gap: [phrase]                                     |
 | Technology         | X/5   | TRL X | [thin wrapper or deep IP] | Replication: [time]    |
 | Traction           | X/5   | [revenue/pipeline] | [named customer] | [retention signal] |
 | GTM / Path to $10M | X/5   | [motion] | [key milestone] | [CAC/LTV if known]          |

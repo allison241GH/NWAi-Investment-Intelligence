@@ -27,9 +27,14 @@ correct company before proceeding.
 Before recording, confirm the following with the user:
 
 **If INVEST:**
-Ask for:
+Ask for (carry forward from Venture Analyst Briefing where available):
 - Recommended investment amount (check size)
 - Round details (stage, total round size, lead investor)
+- **Entry valuation (pre-money)** — and whether it matches the venture-analyst's defensible range
+- **Deal structure** — priced equity / convertible with cap / participating preferred (per venture-analyst recommendation)
+- **NWA criteria check at this entry valuation:**
+  - 35% IRR hurdle test (Base Case): ✅ Clears / ⚠️ Stretch / ❌ Fails
+  - 10x in 5 years post-dilution test (Base Case): ✅ Clears / ⚠️ Stretch / ❌ Fails
 - Any conditions or contingencies (e.g., closing documents, reference checks)
 - NWAi board seat or observer rights agreed?
 - Target close date
@@ -44,10 +49,12 @@ Ask for:
 Ask for:
 - Primary reason for passing (select the most applicable):
   - Failed Hard Gate (specify which)
-  - Team/founder concerns
+  - Team/founder concerns (PMTF gap / Team Commitment / Founder claim contradicted)
   - Market too small
   - No moat / defensibility concerns
-  - Valuation too high
+  - Valuation too high (failed 35% hurdle rate per venture-analyst)
+  - Returns insufficient (failed 10x-in-5-years test per venture-analyst)
+  - Pricing risk (commoditization / channel pressure per pricing-analyst)
   - Timing (too early/too late)
   - Other (specify)
 
@@ -81,9 +88,16 @@ Decision Date: [today]
 Decision: INVEST / WATCH / PASS
 Decision Maker: [user name if known]
 
-[INVEST details: amount, round, conditions, close date]
+[INVEST details:
+  Amount, round, lead investor, close date
+  Entry valuation (pre-money) and venture-analyst's defensible range
+  Deal structure: priced equity / convertible with cap / participating preferred
+  35% IRR hurdle test result (Base): ✅ / ⚠️ / ❌
+  10x-in-5-years test result (Base, post-dilution): ✅ / ⚠️ / ❌
+  Conditions, board/observer rights]
+
 [WATCH details: milestone trigger, revisit date]
-[PASS details: reason]
+[PASS details: reason — including which test failed if hurdle/criterion-driven]
 
 Next Step: [Run /memo to generate investment memo | Monitor for milestone | No further action]
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
