@@ -314,13 +314,19 @@ Workspace root (canonical: /Users/jamie/ClaudeCodeProjects/nwa-intelligence):
 ├── scripts/
 │   └── dd-report-generator.js  ← Canonical DD Report generator (MANDATORY — use for all /dd-report runs)
 ├── docs/                    ← Reference docs (committed to git)
-│   ├── NWAi-TechGroup-Pipeline-Reference.{html,pdf}
-│   ├── NWAi-TechGroup-Platform-Overview.{html,pdf}
+│   ├── reference/           ← Plugin / platform reference documentation
+│   │   ├── NWAi-TechGroup-Pipeline-Reference.{html,pdf}
+│   │   ├── NWAi-TechGroup-Platform-Overview.{html,pdf}
+│   │   └── agent-team-reference.md
+│   ├── group-intake/        ← Per-group playbook intake questionnaires (May 2026)
+│   │   ├── NWAi-Group-Playbook-Intake-Template.md
+│   │   └── NWAi-Group-Playbook-Intake-TechGroup-Reference.md
 │   ├── strategy/            ← Platform vision and strategic positioning (migrated from Desktop Apr 2026)
 │   │   ├── NWAi-Grand-Unifying-Theory-v0.1.md
 │   │   ├── NWA-AI-Investment-Intelligence-GUT.{html,pdf}
 │   │   ├── NWAi-Strategic-Reframe-Reference.md
 │   │   ├── NWAi-Huddle-Brief-2026-04-22.md
+│   │   ├── NWAi-Spring-Member-Meeting-AI-Update.pptx
 │   │   ├── Member_Social_Intelligence_Layer_V1_Features.md
 │   │   ├── RaiseLink-NWAi-Brief-Comparison-2026-04.md
 │   │   ├── NWAi-TechGroup-Managed-Agents-Architecture-v1.0.docx

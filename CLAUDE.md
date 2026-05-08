@@ -340,8 +340,9 @@ Key files and folders in this workspace:
 - `deals/active/<Company Name>/Data Room/` and `/Reports/` — current deals (nested per-company structure)
 - `deals/archive/` — closed deals
 - `deals/_quarantine_pre_consolidation_2026-04-28/` — pre-consolidation duplicates pending manual cleanup; safe to delete from Mac Terminal
-- `docs/` — reference architecture and pipeline docs (Pipeline Reference, Platform Overview)
-- `docs/strategy/` — platform vision and strategic positioning material (GUT, Strategic Reframe, Member Intelligence Layer, Huddle Brief, etc.)
+- `docs/reference/` — plugin/platform reference docs (Pipeline Reference, Platform Overview, Agent Team Reference)
+- `docs/group-intake/` — per-group playbook intake questionnaires (TechGroup reference + blank template for the other 5 groups)
+- `docs/strategy/` — platform vision and strategic positioning material (GUT, Strategic Reframe, Member Intelligence Layer, Huddle Brief, Spring Member Meeting AI Update, etc.)
 - `docs/build-history/` — plugin build session briefs and scoping (reference only)
 - `notes/` — process notes and design memos
 - `scripts/dd-report-generator.js` — canonical DD Report generator (binding format)
