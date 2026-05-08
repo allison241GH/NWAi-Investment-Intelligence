@@ -475,7 +475,7 @@
     <h1>NWAi Investment Intelligence — <span>Platform Overview</span></h1>
     <div class="header-sub">Shared platform rails. Group-specific playbooks. One consistent deal process.</div>
   </div>
-  <div class="header-badge">v0.16.0 &nbsp;·&nbsp; April 2026 &nbsp;·&nbsp; TechGroup Co-Chair</div>
+  <div class="header-badge">v0.22.0 &nbsp;·&nbsp; May 2026 &nbsp;·&nbsp; TechGroup Co-Chair</div>
 </div>
 
 <div class="container">
@@ -491,7 +491,7 @@
         <div class="rails-chips">
           <div class="chip chip-rail"><span class="ci">🔗</span> Dealum CRM (MCP)</div>
           <div class="chip chip-rail"><span class="ci">🤖</span> Claude AI Orchestration</div>
-          <div class="chip chip-rail"><span class="ci">📊</span> 7 AI Agents</div>
+          <div class="chip chip-rail"><span class="ci">📊</span> 8 AI Agents</div>
           <div class="chip chip-rail"><span class="ci">🔄</span> 7-Stage Deal Pipeline</div>
           <div class="chip chip-rail"><span class="ci">⚙️</span> 8 Slash Commands</div>
           <div class="chip chip-rail"><span class="ci">📄</span> 5 Output Formats</div>
@@ -598,11 +598,11 @@
         <div class="ac-head">
           <div class="ac-icon aci-blue">🕵️</div>
           <div>
-            <div class="ac-title">company-researcher</div>
-            <div class="ac-type">Agent · /scout + /diligence</div>
+            <div class="ac-title">company-researcher  <span style="font-size:9px;background:#e8a020;color:#0d1f3c;padding:2px 6px;border-radius:3px;font-weight:700;letter-spacing:0.3px;">PMTF · v2.13</span></div>
+            <div class="ac-type">Agent · /scout + /diligence (Stage 2A)</div>
           </div>
         </div>
-        <div class="ac-desc">Web research on founders, funding history, traction signals, commercial validation, and public red flags.</div>
+        <div class="ac-desc">Team-first PMTF analysis. Founder Claim Verification (LinkedIn + Perplexity, ✅/⚠️/🔴/❌ states). Team-Level skills coverage (domain / engineering / market access). Commitment Depth (full-time vs advisor ratio, "stuck" advisor flagging). Plus funding, traction, commercial validation, public red flags.</div>
       </div>
       <div class="agent-card">
         <div class="ac-head">
@@ -636,23 +636,43 @@
       </div>
       <div class="agent-card">
         <div class="ac-head">
-          <div class="ac-icon aci-blue">💵</div>
-          <div>
-            <div class="ac-title">financial-analyst</div>
-            <div class="ac-type">Agent · /diligence only (requires financial files)</div>
-          </div>
-        </div>
-        <div class="ac-desc">Unit economics, projections (Bear/Base/Bull), cap table analysis, 10x return path modeling from deal room files.</div>
-      </div>
-      <div class="agent-card">
-        <div class="ac-head">
           <div class="ac-icon aci-blue">⚠️</div>
           <div>
             <div class="ac-title">risk-assessor</div>
-            <div class="ac-type">Agent · /scout (light) + /diligence (full)</div>
+            <div class="ac-type">Agent · /scout (light) + /diligence (Stage 2A)</div>
           </div>
         </div>
         <div class="ac-desc">Regulatory risk, exit landscape &amp; acquirer dynamics, execution risk signals, market and financial risk overlay.</div>
+      </div>
+      <div class="agent-card" style="border-left: 3px solid #e8a020;">
+        <div class="ac-head">
+          <div class="ac-icon aci-blue">💲</div>
+          <div>
+            <div class="ac-title">pricing-analyst  <span style="font-size:9px;background:#e8a020;color:#0d1f3c;padding:2px 6px;border-radius:3px;font-weight:700;letter-spacing:0.3px;">NEW · v2.13</span></div>
+            <div class="ac-type">Agent · /diligence (Stage 2A parallel)</div>
+          </div>
+        </div>
+        <div class="ac-desc">Pricing Maturity score, value-prop ratio, Channel Economics 5-yr margin compression model (distributor markup vs direct price; gap compresses over time as channel partner gains volume leverage), unit economics (CAC/LTV/payback), Pricing Pressure Forecast.</div>
+      </div>
+      <div class="agent-card" style="border-left: 3px solid #e8a020;">
+        <div class="ac-head">
+          <div class="ac-icon aci-blue">📊</div>
+          <div>
+            <div class="ac-title">forecasting-analyst  <span style="font-size:9px;background:#e8a020;color:#0d1f3c;padding:2px 6px;border-radius:3px;font-weight:700;letter-spacing:0.3px;">NEW · v2.13</span></div>
+            <div class="ac-type">Agent · /diligence (Stage 2B sequential)</div>
+          </div>
+        </div>
+        <div class="ac-desc">Independent 5-yr forecast via the McMurry method: build proprietary first, then compare to company's submitted numbers. "No AI slop" rule — every Bear/Base/Bull line carries a mandatory <em>because</em> clause. Plus Founder Financial Literacy Assessment.</div>
+      </div>
+      <div class="agent-card" style="border-left: 3px solid #e8a020;">
+        <div class="ac-head">
+          <div class="ac-icon aci-blue">💼</div>
+          <div>
+            <div class="ac-title">venture-analyst  <span style="font-size:9px;background:#e8a020;color:#0d1f3c;padding:2px 6px;border-radius:3px;font-weight:700;letter-spacing:0.3px;">NEW · v2.13</span></div>
+            <div class="ac-type">Agent · /diligence (Stage 2B sequential)</div>
+          </div>
+        </div>
+        <div class="ac-desc">Final synthesis. 3-method valuation reconciled. Exit Y3+Y5 (Bear/Base/Bull). Capital + dilution. 35% IRR hurdle test. NWA 10x-in-5-years criterion check. Deal structure recommendation: priced equity / convertible / participating preferred / re-priced / decline.</div>
       </div>
       <div class="agent-card skill-card">
         <div class="ac-head">
@@ -699,8 +719,8 @@
           <div class="fw-item">
             <div class="fi-icon">🚧</div>
             <div>
-              <strong>Gates &amp; Flags</strong>
-              3 hard pass/fail gates · Opportunity score /25 · Readiness score /20
+              <strong>Universal Triage Framework v2.0</strong>
+              3 hard gates · NWA Filter (Cynical Default · Goliath · LLM Ingestion · Revenue Quality) · Opportunity 6×/30 · Readiness 5×/25 · TechGroup Track A/B extension
             </div>
           </div>
           <div class="fw-item">
@@ -714,7 +734,7 @@
             <div class="fi-icon">📐</div>
             <div>
               <strong>Diligence Scoring Rubrics</strong>
-              General Moat 0–6 · AI Moat 0–10 · Risk 1–10 · Bear/Base/Bull model
+              General Moat 0–6 · AI Moat 0–10 · Risk 1–10 with team-commitment + PMTF + verification numerics · Bear/Base/Bull with mandatory <em>because</em> clauses + time-varying ARPU
             </div>
           </div>
           <div class="fw-item">
@@ -844,7 +864,7 @@
 </div><!-- /container -->
 
 <div class="footer">
-  NWAi Investment Intelligence &nbsp;·&nbsp; Platform Overview &nbsp;·&nbsp; April 2026 &nbsp;·&nbsp; For team distribution
+  NWAi Investment Intelligence &nbsp;·&nbsp; Platform Overview &nbsp;·&nbsp; v0.22.0 / Plugin v2.13.0 &nbsp;·&nbsp; May 2026 &nbsp;·&nbsp; For team distribution
 </div>
 
 </body>

@@ -221,9 +221,9 @@ When mapping a deal to a theme, identify the correct theme from the table below.
 - `risk-assessor` — regulatory risk, exit landscape, execution + market risk signals (Scout light + Diligence full)
 - `pricing-analyst` — pricing maturity (PROVEN/EARLY/DISCOVERY/UNKNOWN), unit economics (CAC/LTV/payback), channel pressure forecast (margin compression modeling), value proposition validation, competitive pricing comparison (Stage 2A — parallel)
 - `forecasting-analyst` — **independent 5-year financial forecast** built using the McMurry method (proprietary, NOT a render of the company's submitted spreadsheet); Bear/Base/Bull with mandatory *because* clauses (the "no AI slop" rule); P&L + cash flow + balance sheet; capital plan with round timing; founder financial literacy assessment (Stage 2B — sequential, after pricing-analyst)
-- `venture-analyst` — final synthesis layer; defensible valuation (3 methods reconciled), projected exit Y3+Y5, capital + dilution modeling, IRR/multiple, 35% hurdle test (Sam Guren), NWA 10x-in-5-years criterion check, deal structure recommendation (priced equity / convertible with cap / participating preferred / re-priced terms / decline) (Stage 2B — sequential, after forecasting-analyst)
+- `venture-analyst` — final synthesis layer; defensible valuation (3 methods reconciled), projected exit Y3+Y5, capital + dilution modeling, IRR/multiple, 35% IRR hurdle test, NWA 10x-in-5-years criterion check, deal structure recommendation (priced equity / convertible with cap / participating preferred / re-priced terms / decline) (Stage 2B — sequential, after forecasting-analyst)
 
-**Note:** The legacy `financial-analyst` was retired in plugin v2.13.0 and replaced by the three-agent financial diligence team (`pricing-analyst` → `forecasting-analyst` → `venture-analyst`). The new agents work as a system: pricing-analyst feeds forecasting-analyst, which feeds venture-analyst. The McMurry method (Sam Guren) means forecasts are built from comps and pricing analysis independently, not by rendering the company's submitted financials.
+**Note:** The legacy `financial-analyst` was retired in plugin v2.13.0 and replaced by the three-agent financial diligence team (`pricing-analyst` → `forecasting-analyst` → `venture-analyst`). The new agents work as a system: pricing-analyst feeds forecasting-analyst, which feeds venture-analyst. The McMurry method means forecasts are built from comps and pricing analysis independently, not by rendering the company's submitted financials.
 
 ---
 
@@ -371,7 +371,7 @@ The plugin lives in two places. Jamie does not need to edit files directly.
 
 **`.claude/`** — the live runtime folder (hidden, in workspace root). This is what Claude reads during every session. Contains all agents, commands, skills, and servers. Changes made here take effect immediately in the current session.
 
-**`plugin/current/nwai-tech-pipeline.plugin`** — the installable package (v2.11.0). This is the packaged version for installation and org sharing. Always matches `.claude/` — they are kept in sync.
+**`plugin/current/nwai-tech-pipeline.plugin`** — the installable package (v2.13.1). This is the packaged version for installation and org sharing. Always matches `.claude/` — they are kept in sync.
 
 **Plugin update workflow** (handled by Claude, not Jamie):
 1. Update the relevant files in `.claude/` during a session (live immediately)
@@ -416,4 +416,4 @@ The plugin lives in two places. Jamie does not need to edit files directly.
 
 ---
 
-*Last updated: April 28, 2026 (v2.12 / architecture v0.21.0 — Dealum integration deferred, plugin v2.12.0) | NWAi Investment Intelligence & AI | Jamie, TechGroup Co-Chair*
+*Last updated: May 7, 2026 (v2.13.1 / architecture v0.23.0 — agent sanitization + forward-facing doc refresh; plugin v2.13.1) | NWAi Investment Intelligence & AI | Jamie, TechGroup Co-Chair*

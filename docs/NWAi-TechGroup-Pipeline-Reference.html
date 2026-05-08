@@ -602,7 +602,7 @@
       <h1>NWAi Investment Intelligence — <span>AI Deal Pipeline</span></h1>
       <p>A visual reference for how Claude and the <code style="background:rgba(255,255,255,0.1);padding:1px 6px;border-radius:4px;font-size:12px;">nwai-tech-pipeline</code> plugin move a deal from raw pitch to IC-ready memo — and how the same platform scales across all six NWAi investment groups.</p>
     </div>
-    <div class="badge">v0.16.0 &nbsp;·&nbsp; April 2026 &nbsp;·&nbsp; TechGroup</div>
+    <div class="badge">v0.22.0 &nbsp;·&nbsp; May 2026 &nbsp;·&nbsp; TechGroup</div>
   </div>
 </div>
 
@@ -672,7 +672,7 @@
         <ul>
           <li><span class="li-dot">🔗</span> Dealum CRM integration (MCP server)</li>
           <li><span class="li-dot">🤖</span> Claude orchestration layer + session context</li>
-          <li><span class="li-dot">📊</span> AI agents: pipeline-monitor, company-researcher, market-analyst, competitive-intelligence, technical-diligence, financial-analyst, risk-assessor</li>
+          <li><span class="li-dot">📊</span> 8 AI agents: pipeline-monitor, company-researcher (PMTF), market-analyst, competitive-intelligence, technical-diligence, risk-assessor, plus the 3-agent financial diligence team — pricing-analyst → forecasting-analyst → venture-analyst</li>
           <li><span class="li-dot">🔄</span> Pipeline stages: Inbox → Screen → Scout → Diligence → DD Report → Decision → Memo</li>
           <li><span class="li-dot">📄</span> Output formats: Triage Report, Scout Report, DD Kickoff Package, Post-Meeting Reconciliation, DD Investment Report, Exec Memo</li>
           <li><span class="li-dot">⚙️</span> Slash commands: /sync-pipeline /screen /scout /diligence /post-meeting /dd-report /decision /memo</li>
@@ -706,14 +706,14 @@
       <div class="stage-icon">📥</div>
       <div class="stage-name">Inbox</div>
       <div class="stage-cmd">/screen</div>
-      <div class="stage-desc">New pitch received. AutoKill gates applied.</div>
+      <div class="stage-desc">New pitch received. Universal Triage v2.0 entry.</div>
     </div>
     <div class="pipeline-arrow">›</div>
     <div class="stage stage-screen">
       <div class="stage-icon">🔍</div>
       <div class="stage-name">Screening</div>
       <div class="stage-cmd">/screen</div>
-      <div class="stage-desc">3 hard gates + Opportunity / Readiness scoring.</div>
+      <div class="stage-desc">3 hard gates + NWA Filter + Opportunity (/30) &amp; Readiness (/25). ADVANCE ≥ 20/30.</div>
     </div>
     <div class="pipeline-arrow">›</div>
     <div class="stage stage-scout">
@@ -782,7 +782,7 @@
           <div class="card-sub">Stage: Inbox → Screening</div>
         </div>
       </div>
-      <p>Runs the TechGroup triage screener: 3 hard pass/fail gates, then Opportunity scoring (/25) and Readiness scoring (/20). Returns a verdict (Advance / Watch / Kill) with a Triage Report saved to the <code>deals/</code> folder.</p>
+      <p>Runs NWAi's Universal Triage Framework v2.0: 3 hard pass/fail gates, then the NWA Filter (Cynical Default, Goliath Test, LLM Ingestion Test, Revenue Quality Audit), then Opportunity scoring (6 dimensions × 0–5 = /30) and Readiness scoring (5 dimensions × 0–5 = /25). Returns a verdict (ADVANCE ≥ 20/30, WATCH 14–19, DECLINE &lt; 14 or any hard-gate FAIL) with a Triage Report saved to the <code>deals/</code> folder. TechGroup adds a Track A (Software/AI/Cloud) vs Track B (Hardware/Robotics) bifurcation on the Opportunity rubric.</p>
       <div class="card-tag">Output: [Company] - Triage Report.docx</div>
     </div>
 
@@ -806,7 +806,7 @@
           <div class="card-sub">Stage: Scout → Diligence</div>
         </div>
       </div>
-      <p>Launches 5–6 research agents in parallel (company-researcher, market-analyst, competitive-intelligence, technical-diligence, risk-assessor, + financial-analyst if files confirmed). Generates DD Kickoff Package with Layer 2 Hypothesis Confirmation Plan, scored rubrics, and 17-folder assignments.</p>
+      <p>Two-stage agent pipeline. <strong>Stage 2A</strong> (parallel, ~5–8 min): company-researcher (PMTF), market-analyst, competitive-intelligence, technical-diligence, risk-assessor, pricing-analyst. <strong>Stage 2B</strong> (sequential): forecasting-analyst (independent McMurry-method 5-yr forecast with mandatory <em>because</em> clauses) → venture-analyst (3-method valuation, 35% hurdle test, 10x-in-5-years criterion check, deal structure recommendation). Generates DD Kickoff Package with Layer 2 Hypothesis Confirmation Plan, scored rubrics, and 17-folder assignments.</p>
       <div class="card-tag">Output: [Company] - DD Kickoff Package.docx</div>
     </div>
 
@@ -865,7 +865,7 @@
     <div class="num">3</div>
     <div>
       <h2>AI Agents — Claude's Research Team</h2>
-      <p>Agents are autonomous subprocesses Claude launches to do legwork. They run in parallel, report back with a structured briefing, and feed their findings into the relevant command output.</p>
+      <p>Eight specialized agents. The Stage 2A parallel set runs first (~5–8 min); the Stage 2B financial diligence chain runs sequentially because each downstream agent consumes upstream output. Each agent reports back with a structured briefing that feeds the relevant command output.</p>
     </div>
   </div>
 
@@ -878,10 +878,10 @@
     </div>
 
     <div class="agent-card">
-      <h3>🕵️ company-researcher</h3>
-      <div class="trigger">Triggered by: /scout (full) + /diligence (full)</div>
-      <p>Web research on the founding team, funding history, traction signals, commercial validation (contract structure, named customers, sales motion), and public red flags.</p>
-      <div class="returns"><strong>Returns:</strong> Structured founder + company + commercial briefing → feeds Team Validation + Commercial Validation (Layer 2).</div>
+      <h3>🕵️ company-researcher  <span style="font-size:11px;background:var(--gold);color:var(--navy);padding:2px 8px;border-radius:4px;font-weight:700;letter-spacing:0.3px;">PMTF refresh · v2.13</span></h3>
+      <div class="trigger">Triggered by: /scout (full) + /diligence (Stage 2A parallel)</div>
+      <p>Team-first mandate. <strong>Founder Claim Verification Protocol</strong> (LinkedIn + Perplexity cross-reference of every specific exit/ARR/role claim → ✅ VERIFIED / ⚠️ PARTIAL / 🔴 UNVERIFIED / ❌ CONTRADICTED). <strong>Team-Level PMTF</strong> (skills coverage across domain depth / engineering / market access; explicit gap detection). <strong>Team Commitment Depth</strong> (full-time vs advisor ratio, "stuck" advisor flagging). Plus supporting context: funding, traction, commercial validation, public red flags.</p>
+      <div class="returns"><strong>Returns:</strong> People Verification Brief + Team Quality + PMTF Assessment + Commitment Depth + commercial briefing → feeds Team Validation + Commercial Validation (Layer 2).</div>
     </div>
 
     <div class="agent-card">
@@ -906,17 +906,39 @@
     </div>
 
     <div class="agent-card">
-      <h3>💵 financial-analyst</h3>
-      <div class="trigger">Triggered by: /diligence only (requires financial files in deal room)</div>
-      <p>Reads financial files, models unit economics, validates projections (Bear/Base/Bull), assesses cap table, calculates 10x return path.</p>
-      <div class="returns"><strong>Returns:</strong> Financial Analyst Briefing → feeds Financial Validation (Layer 2).</div>
+      <h3>⚠️ risk-assessor</h3>
+      <div class="trigger">Triggered by: /scout (light — top kill risks) + /diligence (Stage 2A parallel)</div>
+      <p>Regulatory risk research, exit landscape + acquirer dynamics, execution risk signals, market and financial risk signals from public sources.</p>
+      <div class="returns"><strong>Returns:</strong> Risk Assessment Briefing → feeds cross-cutting risk overlay across all Layer 2 groups.</div>
+    </div>
+  </div>
+
+  <!-- Financial diligence team divider -->
+  <div style="margin: 28px 0 14px; padding: 14px 18px; background: linear-gradient(135deg, var(--ice-light) 0%, #f8fbff 100%); border-left: 4px solid var(--gold); border-radius: 4px;">
+    <div style="font-size: 11px; font-weight: 700; color: var(--navy); letter-spacing: 0.7px; text-transform: uppercase; margin-bottom: 4px;">Stage 2B — 3-Agent Financial Diligence Team  <span style="background:var(--gold);color:var(--navy);padding:2px 8px;border-radius:4px;font-weight:700;letter-spacing:0.3px;font-size:10px;">NEW v2.13</span></div>
+    <div style="font-size: 13px; color: var(--text);">Sequential chain: <strong>pricing-analyst</strong> → <strong>forecasting-analyst</strong> → <strong>venture-analyst</strong>. Replaces the legacy <code style="background:#fff;padding:1px 5px;border-radius:3px;font-size:11px;">financial-analyst</code> agent. Built on the McMurry method and the "no AI slop" rule: build the proprietary forecast first, then compare to the company's submitted numbers — never just render the founder's deck.</div>
+  </div>
+
+  <div class="agent-row">
+    <div class="agent-card">
+      <h3>💲 pricing-analyst  <span style="font-size:11px;background:var(--gold);color:var(--navy);padding:2px 8px;border-radius:4px;font-weight:700;letter-spacing:0.3px;">NEW · v2.13</span></h3>
+      <div class="trigger">Triggered by: /diligence (Stage 2A parallel)</div>
+      <p>Pricing Maturity score (PROVEN / EARLY SIGNALS / DISCOVERY / UNKNOWN). Value-proposition validation with quantified pricing-to-value ratio. <strong>Channel Economics</strong> 5-year margin compression model (third-party distributors typically command a meaningful markup multiple of the direct price; this gap compresses over time as the channel partner gains volume leverage). Unit economics (CAC / LTV / payback). Pricing Pressure Forecast (commoditization risk).</p>
+      <div class="returns"><strong>Returns:</strong> Pricing Analyst Briefing with explicit "Feed Forward to Forecasting Analyst" section → feeds Financial Validation (Layer 2) + DD Report S5 (GTM).</div>
     </div>
 
     <div class="agent-card">
-      <h3>⚠️ risk-assessor</h3>
-      <div class="trigger">Triggered by: /scout (light — top kill risks) + /diligence (full)</div>
-      <p>Regulatory risk research, exit landscape + acquirer dynamics, execution risk signals, market and financial risk signals from public sources.</p>
-      <div class="returns"><strong>Returns:</strong> Risk Assessment Briefing → feeds cross-cutting risk overlay across all Layer 2 groups.</div>
+      <h3>📊 forecasting-analyst  <span style="font-size:11px;background:var(--gold);color:var(--navy);padding:2px 8px;border-radius:4px;font-weight:700;letter-spacing:0.3px;">NEW · v2.13</span></h3>
+      <div class="trigger">Triggered by: /diligence (Stage 2B sequential — after pricing-analyst)</div>
+      <p>Independent 5-year financial forecast using the <strong>McMurry method</strong>: build the proprietary forecast from comps + pricing analysis, THEN compare to the company's submitted numbers. Enforces the "no AI slop" rule — every Bear/Base/Bull line carries a mandatory <em>because</em> clause. Outputs P&amp;L, cash flow, balance sheet, capital plan with round timing/sizing, and a <strong>Founder Financial Literacy Assessment</strong>.</p>
+      <div class="returns"><strong>Returns:</strong> Independent forecast with comparison delta to company's submitted model → feeds Financial Validation (Layer 2) + DD Report S9 (Financials).</div>
+    </div>
+
+    <div class="agent-card">
+      <h3>💼 venture-analyst  <span style="font-size:11px;background:var(--gold);color:var(--navy);padding:2px 8px;border-radius:4px;font-weight:700;letter-spacing:0.3px;">NEW · v2.13</span></h3>
+      <div class="trigger">Triggered by: /diligence (Stage 2B sequential — after forecasting-analyst)</div>
+      <p>Final synthesis layer. Defensible valuation today (3 methods reconciled). Projected exit Y3 + Y5 (Bear/Base/Bull). Capital + dilution model. <strong>IRR / multiple / 35% IRR hurdle test</strong>. NWA <strong>10x-in-5-years criterion</strong> check (pass/fail with math). Deal structure recommendation: priced equity / convertible with cap / participating preferred / re-priced terms / decline. Closes the founder-claimed-vs-defensible-analysis gap with documented methodology.</p>
+      <div class="returns"><strong>Returns:</strong> Valuation conclusion + structural recommendation → feeds DD Report S8 (Deal Structure), S9 (Financials), S11 (Exit) + /decision + /memo Slide 4.</div>
     </div>
   </div>
 
@@ -926,7 +948,7 @@
     <div class="num">4</div>
     <div>
       <h2>Investment Framework — The Playbook</h2>
-      <p>Nine reference documents Claude loads when running analysis. These encode NWAi's proprietary criteria so the same standards are applied consistently, regardless of how compelling a pitch sounds.</p>
+      <p>Reference documents Claude loads when running analysis. These encode NWAi's proprietary criteria so the same standards are applied consistently, regardless of how compelling a pitch sounds.</p>
     </div>
   </div>
 
@@ -940,23 +962,28 @@
     </thead>
     <tbody>
       <tr>
-        <td>gates-and-flags-techgroup.md</td>
-        <td>TechGroup triage screener: 3 hard gates (instant Kill if failed) + Opportunity scoring /25 + Readiness scoring /20 + Replicability Speed Flag + decision thresholds</td>
-        <td>Screen</td>
+        <td>gates-and-flags.md</td>
+        <td><strong>NWAi Universal Triage Framework v2.0</strong> (all verticals): 3 hard gates + NWA Filter (Cynical Default, Goliath Test, LLM Ingestion Test, Revenue Quality Audit) + Opportunity 6×0–5 (/30) + Readiness 5×0–5 (/25) + 3-search Research Protocol + decision logic (ADVANCE ≥ 20/30, WATCH 14–19, DECLINE &lt; 14)</td>
+        <td>Screen (universal)</td>
       </tr>
       <tr>
-        <td>gates-and-flags.md</td>
-        <td>Original 6-gate AutoKill framework (retained for reference; Medical/Space verticals use separate screener docs)</td>
-        <td>Screen (legacy)</td>
+        <td>gates-and-flags-techgroup.md</td>
+        <td>TechGroup extension: Track A (Software/AI/Cloud) and Track B (Hardware/Robotics) 6-dimension Opportunity rubrics, AI Wrapper Assessment, Replicability Speed Flag, Hardware Last Mile Standard, TRL Hard Cap</td>
+        <td>Screen (TechGroup)</td>
+      </tr>
+      <tr>
+        <td>_archive/gates-and-flags-6gate-legacy.md</td>
+        <td>Pre-v2.0 legacy 6-gate pass/fail AutoKill framework — superseded by Universal Triage in April 2026; retained for reference only</td>
+        <td>Reference only</td>
       </tr>
       <tr>
         <td>scout-questions.md</td>
-        <td>Phase 1 viability (Q1 Category &amp; Market Discontinuity + Q1b Demand Signal Test + Q2 + Q3) + 3 strategic dimensions (Q4–Q6) + Phase 2 execution + Scout Conviction Score (/19)</td>
+        <td>Phase 1 viability (Big Idea / Market / Moat) + Phase 2 execution (Team with PMTF + Commitment Depth + verification sub-assessments, Technology, Traction, GTM, Exit) + Scout Conviction Score</td>
         <td>Scout</td>
       </tr>
       <tr>
         <td>diligence-scoring-rubrics.md</td>
-        <td>General Moat score (0–6), AI Moat score (0–10), Risk score (1–10, where 1=lowest), Bear/Base/Bull financial model</td>
+        <td>General Moat (0–6), AI Moat (0–10), Risk (1–10) with explicit numeric criteria for team commitment ratio + PMTF score + founder claim verification, Bear/Base/Bull model with mandatory <em>because</em> clauses + time-varying ARPU (channel pressure modeling)</td>
         <td>Diligence</td>
       </tr>
       <tr>
@@ -1137,7 +1164,7 @@
 </div><!-- /container -->
 
 <div class="footer">
-  NWAi Investment Intelligence &nbsp;·&nbsp; TechGroup &nbsp;·&nbsp; April 2026 &nbsp;·&nbsp; Jamie, Co-Chair
+  NWAi Investment Intelligence &nbsp;·&nbsp; TechGroup &nbsp;·&nbsp; v0.22.0 / Plugin v2.13.0 &nbsp;·&nbsp; May 2026 &nbsp;·&nbsp; Jamie, Co-Chair
 </div>
 
 </body>

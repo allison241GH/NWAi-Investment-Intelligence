@@ -216,7 +216,7 @@ recent comparable exits in the relevant TechGroup theme sector.
 **NWAi return target check:** Does the Base Case exit valuation support a 10x return
 on NWAi's entry valuation within 5 years? If not, document the gap explicitly for IC.
 
-**As of plugin v2.13.0:** The 10x-in-5-years test and the 35% IRR hurdle test (Sam Guren's discipline) are produced by the **venture-analyst** agent, which synthesizes the forecasting-analyst's exit projections with comp-based exit multiples and dilution modeling. The venture-analyst's recommended deal structure (priced equity / convertible with cap / participating preferred / re-priced terms / decline) is the canonical input to the /decision command.
+**As of plugin v2.13.0:** The 10x-in-5-years test and the 35% IRR hurdle test are produced by the **venture-analyst** agent, which synthesizes the forecasting-analyst's exit projections with comp-based exit multiples and dilution modeling. The venture-analyst's recommended deal structure (priced equity / convertible with cap / participating preferred / re-priced terms / decline) is the canonical input to the /decision command.
 
 ---
 
