@@ -28,10 +28,10 @@ NWA = New World Angels — an angel investment syndicate of ~200 members organiz
 
 | Document | What it tells you |
 |----------|-------------------|
-| `docs/strategy/NWAi-Grand-Unifying-Theory-v0.1.md` | The Four Tracks (Sourcing, Member Intelligence, Diligence & Memo, Syndication) and the Three Layers build/integrate posture |
-| `docs/strategy/cowork-vs-enterprise-platform.md` | Strategic comparison between the current Cowork-based system and an enterprise intelligence layer. **Note:** this doc framed the build as Dealum-additive only. The current scope (Phase A + Phase B in this brief) extends beyond that framing — see Section 2. |
-| `docs/strategy/Member_Social_Intelligence_Layer_V1_Features.md` | The Member Intelligence "moat" feature inventory |
-| `docs/strategy/NWAi-Strategic-Reframe-Reference.md` | Strategic positioning vs. solo angels, VCs, and generic AI screening platforms |
+| `docs/strategy/foundational/NWAi-Grand-Unifying-Theory-v0.1.md` | The Four Tracks (Sourcing, Member Intelligence, Diligence & Memo, Syndication) and the Three Layers build/integrate posture |
+| `docs/strategy/comparative/cowork-vs-enterprise-platform.md` | Strategic comparison between the current Cowork-based system and an enterprise intelligence layer. **Note:** this doc framed the build as Dealum-additive only. The current scope (Phase A + Phase B in this brief) extends beyond that framing — see Section 2. |
+| `docs/strategy/foundational/Member_Social_Intelligence_Layer_V1_Features.md` | The Member Intelligence "moat" feature inventory |
+| `docs/strategy/foundational/NWAi-Strategic-Reframe-Reference.md` | Strategic positioning vs. solo angels, VCs, and generic AI screening platforms |
 
 You will not need to re-justify the build. The strategic case is settled. Your job is to design and deliver the implementation.
 
@@ -305,7 +305,7 @@ A competitor can copy the rubrics, the agent prompts, even the AI orchestration.
 - The matching engine is a *first-class citizen*, not an afterthought — it touches sourcing, member intelligence, and DD team assembly
 - The graph survives the Phase A → Phase B transition unchanged; only Dealum-specific identifiers shift to native ones
 
-Read `docs/strategy/Member_Social_Intelligence_Layer_V1_Features.md` for the V1 feature inventory.
+Read `docs/strategy/foundational/Member_Social_Intelligence_Layer_V1_Features.md` for the V1 feature inventory.
 
 ---
 

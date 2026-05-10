@@ -34,7 +34,7 @@ The result today: deals enter via Dealum, are screened/scouted/diligenced/decide
 
 ## The substrate that matters most — and doesn't yet exist
 
-Per the Grand Unifying Theory (`docs/strategy/NWAi-Grand-Unifying-Theory-v0.1.md`), the **Member Expertise Graph + Decisions Ledger** is what makes NWA structurally uncopyable. A competitor can copy the rubrics, the agent prompts, even the AI orchestration. They cannot copy 200+ members' tagged expertise plus 20+ years of indexed deal decisions, DD outcomes, and IC reasoning.
+Per the Grand Unifying Theory (`docs/strategy/foundational/NWAi-Grand-Unifying-Theory-v0.1.md`), the **Member Expertise Graph + Decisions Ledger** is what makes NWA structurally uncopyable. A competitor can copy the rubrics, the agent prompts, even the AI orchestration. They cannot copy 200+ members' tagged expertise plus 20+ years of indexed deal decisions, DD outcomes, and IC reasoning.
 
 Today this substrate is implicit — it lives in members' heads, in Dealum, and in scattered post-meeting notes. **Building it as a first-class queryable graph + append-only decisions ledger is the central architectural goal of this engagement.** Everything else — the AI runtime, the web framework, the hosting — is reversible. The graph and the ledger compound; they're the moat.
 
