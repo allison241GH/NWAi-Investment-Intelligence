@@ -9,3 +9,9 @@ plugin/current/zi7wWRPB
 
 # Deal artifacts — local file organization only, not version-controlled
 deals/
+
+# Node dependencies — reproducible from package-lock.json
+node_modules/
+
+# Claude Code worktree metadata — local-only branch state
+.claude/worktrees/
