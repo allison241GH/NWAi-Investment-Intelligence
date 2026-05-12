@@ -57,6 +57,45 @@ For each file found: note version count and which date is being loaded. If none 
 
 Mark any field that cannot be confirmed from workspace files or Dealum as `[TO BE CONFIRMED]`. Never fabricate data.
 
+### Step 2c: Customer & Reference Transcripts — Tier-1 Signal Weighting
+
+**Customer transcripts and reference-call reconciliation docs are the highest-priority evidence for the memo.** When a real customer, reference, or strategic partner speaks on the record about the company, those quotes carry more weight than founder claims and more weight than third-party research. The memo must reflect this priority explicitly.
+
+**1. Load all transcript-derived files alongside the DD Report:**
+- `[Company]*Reference-Meeting-Reconciliation*.docx` / `*Reference-Call*`
+- `[Company]*Product-Demo*Reconciliation*.docx`
+- `[Company]*GTM-Status*Reconciliation*.docx`
+- `[Company]*Financials-Meeting*Reconciliation*.docx`
+- Raw transcript files in `deals/active/[Company]/Data Room/` (`Transcript*.md`, `*Transcript*.docx`, `*Transcript*.pdf`)
+
+**2. Anchor Strengths and Risks (Slide 4) in direct quotes.**
+When possible, every Strength or Risk bullet that touches a customer/partner perspective should cite a verbatim quote with attribution and date. A bullet that quotes a reference customer is higher-signal in IC than a paraphrase from analyst synthesis. Example: `++ "We have not found anybody else that does what Summit does." — Panasonic Director of New Business Development, May 1, 2026.`
+
+**3. Three-Source Corroboration = high-conviction signal.**
+When 3+ independent sources (separate calls, separate parties, separate dates) name the same risk or strength, flag explicitly in the memo as a corroborated insight. Three-source corroboration is the strongest evidence pattern in venture diligence and should be reflected in the Recommendation rationale and the "What is the Bet?" thesis.
+
+**4. Channel-vs-Acquirer discipline (Slide 2 Market & Competition + Slide 4 "What is the Bet?").**
+When a strategic partner appears in the deal narrative (resale partner, embedded licensee, OEM, co-development partner), explicitly classify the relationship and reflect it in the exit thesis:
+- **Channel / Resale partner** = revenue path, brand validation. NOT an automatic acquirer.
+- **Licensee / Embedder** = revenue path, technology adoption signal. NOT an automatic acquirer.
+- **Strategic acquirer** = only when explicit M&A signals exist (LOI, advisor-led conversation, named M&A interest, or unprompted acquisition framing in a reference call).
+
+Never assume a strategic partner is an acquirer without explicit transcript signal. When a transcript clarifies the relationship (e.g., a reference says "we want to license, not acquire"), reflect that immediately in the exit thesis and the "What is the Bet?" statement. Misclassifying a channel partner as an acquirer is a known IC error pattern that overstates exit probability.
+
+**5. Founder Profile Tags (Slide 2 — Management Team narrative).**
+Tag the founder profile explicitly using transcripts + DD content. These tags drive the de-risking strategy, the Recommendation soft conditions, and the IC framing:
+- First-time CEO  /  Seasoned CEO
+- Solo founder  /  Co-founded (+ co-founder operating roles)
+- Academic / Researcher background  /  Industry operator
+- Prior exit (yes/no, scale)
+- Full-time  /  Maintains another role (e.g., professorship, consultancy)
+- Operating depth  vs.  Technical depth
+
+A first-time CEO + solo founder + academic background is a different operating-risk profile than a serial founder with a prior exit. The memo's Strengths/Risks framing and the Recommendation's soft conditions must reflect this directly — not as a generic "founder risk" but as a profile-specific delegation/hiring/operating-cadence ask.
+
+**6. External Operating Memos ("Petro Pattern").**
+When a customer, reference, or strategic partner delivers an *unprompted* operating playbook during a call (specific advice on what the founder should do — hire X, kill Y, deprioritize Z), capture it as the closest thing to an outside-advisor's POV. Use it to anchor the Recommendation rationale's soft conditions and reference it directly in the memo. These are high-signal insights because they come from someone with no economic stake in the founder's ego.
+
 Use WebSearch and WebFetch to fill any gaps:
 - Company website and product details
 - Founder LinkedIn profiles and backgrounds

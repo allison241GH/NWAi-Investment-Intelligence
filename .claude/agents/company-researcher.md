@@ -4,8 +4,12 @@ description: >
   Use this agent to research a startup's founding team before or during diligence with
   a Product Market Team Fit (PMTF) lens. It autonomously verifies founder claims against
   public sources, assesses team commitment depth (full-time vs advisor), maps skills
-  coverage and market-access gaps, and gathers supporting context on funding, traction,
-  and public red flags — returning a structured briefing ready for scoring.
+  coverage and market-access gaps, produces structured Founder Profile Tags (first-time
+  vs seasoned CEO, solo vs co-founded, academic-researcher vs industry operator, prior
+  exit, full-time vs other-role) that feed downstream Execution Risk scoring in
+  /dd-report and Strengths/Risks framing in /memo, and gathers supporting context on
+  funding, traction, and public red flags — returning a structured briefing ready for
+  scoring.
 
   <example>
   Context: User is starting diligence on a new deal
@@ -268,6 +272,64 @@ Notable observations: [e.g., "CTO listed in pitch deck shows current full-time r
 
 ---
 
+### Section 2d: Founder Profile Tags
+
+Synthesize a structured tag set for the CEO (and any other operating co-founders) using the LinkedIn data, claim-verification results, and PMTF / commitment findings from Sections 2 / 2b / 2c. **These tags are mandatory downstream inputs** — `/dd-report` Section 6 (Team / Execution) consumes them in its verdict line, and `/memo` Slide 2 (Management Team) narrative is built around them. They drive Execution Risk scoring and the Recommendation's soft conditions.
+
+**Why this section exists:** A great pitch deck can list a "world-class team" while burying the operating-risk profile. The profile tags surface the specific founder archetype — a first-time CEO + solo founder + academic researcher is a different operating-risk profile than a serial founder with a prior exit, and the downstream framing must reflect that as a profile-specific delegation/hiring/cadence ask, not as generic "founder risk."
+
+**Tag dimensions — derive each from public sources:**
+
+| Dimension | Values | Source |
+|-----------|--------|--------|
+| **CEO experience** | First-time CEO  /  Repeat CEO (no exit)  /  Repeat CEO (with exit) | LinkedIn employment timeline + claim verification (Section 2) |
+| **Founder structure** | Solo founder  /  Co-founded (+ list co-founder operating roles) | Crunchbase + LinkedIn + Section 2b Co-founder Dynamics |
+| **Background type** | Academic / Researcher  /  Industry operator  /  Hybrid (academic + operating exits) | LinkedIn — count years in research/academic vs. years in operating roles |
+| **Prior exit** | Yes (scale: <$10M / $10–100M / >$100M)  /  No  /  Unverified | Apply Founder Claim Verification Protocol |
+| **Commitment** | Full-time  /  Maintains other role (specify — e.g., active professorship, board roles, consultancy) | Section 2c Commitment Depth |
+| **Depth profile** | Operating depth dominant  /  Technical depth dominant  /  Balanced | Compare years/roles in operating leadership vs. technical/research positions |
+| **Domain origin** | Inside the industry (5+ yrs immersed before founding)  /  Adjacent  /  Career switcher | Section 2b Founder-Market Fit |
+
+**Output — add this block to FOUNDERS section, one entry per operating founder:**
+
+```
+── FOUNDER PROFILE TAGS ──
+
+[Founder name] — [Role]:
+  CEO experience:    [First-time CEO / Repeat CEO (no exit) / Repeat CEO (with exit)]
+  Founder structure: [Solo / Co-founded with: [names + roles]]
+  Background type:   [Academic-Researcher / Industry operator / Hybrid]
+  Prior exit:        [Yes — $XM (status) / No / Unverified]
+  Commitment:        [Full-time / Maintains: [specify role]]
+  Depth profile:     [Operating dominant / Technical dominant / Balanced]
+  Domain origin:     [Inside industry N yrs / Adjacent / Career switcher]
+
+Profile risk read (1 sentence):
+  [E.g., "First-time CEO + solo founder + academic-researcher with deep domain immersion
+   but no prior operating-CEO experience and no co-founder operator to backstop — expect
+   delegation gap, recommend hiring + delegation plan as soft IC term."]
+
+Profile strength read (1 sentence):
+  [E.g., "World-class technical credibility with 60+ pubs and direct customer immersion
+   over 25 years; defensible technology-led moat is the profile match."]
+```
+
+**Repeat the block for each operating founder.** Advisors and non-operating board members are not tagged here (they're in Section 2c).
+
+**Profile-archetype reference patterns (for the "risk read" line):**
+
+| Common archetype | Typical risk read | Typical NWAi soft condition |
+|------------------|-------------------|------------------------------|
+| First-time CEO + solo founder + academic-researcher | Delegation gap, channel-velocity bottleneck, founder-touch on every customer | Written hiring + delegation plan tied to seed close |
+| Repeat CEO + no prior exit + industry operator | Execution depth proven, return-generating ability unproven | Milestone-tied tranches; reference call with prior investors |
+| Repeat CEO + prior exit + industry operator | High execution confidence; risk is over-confidence and ignoring red flags | Independent board observer; quarterly KPI tracker |
+| First-time CEO + co-founded (technical + commercial) + industry operator | Lowest founder risk in NWAi's pattern bank | Standard NWAi terms; no profile-specific condition |
+| Solo founder + career switcher + no domain immersion | Highest founder risk — fundamental PMTF gap | Watch — re-evaluate after named industry hire |
+
+These archetypes are illustrative; do not force a deal into a pattern. The job is to surface the actual profile and let the downstream commands decide how to underwrite it.
+
+---
+
 ### Section 3: Funding History
 
 Search: "[Company name] funding", "[Company name] raised", "[Company name] Crunchbase funding"
@@ -414,6 +476,20 @@ Commitment Ratio: [%] full-time
 Commitment Flag: [None / ⚠️ <60% full-time / 🔴 <40% full-time]
 Notable observations: [e.g., "CTO listed in pitch deck shows current full-time role at another company per LinkedIn"]
 
+── FOUNDER PROFILE TAGS ──
+(One block per operating founder — see Section 2d for full schema.)
+
+[Founder name] — [Role]:
+  CEO experience:    [First-time CEO / Repeat CEO (no exit) / Repeat CEO (with exit)]
+  Founder structure: [Solo / Co-founded with: [names + roles]]
+  Background type:   [Academic-Researcher / Industry operator / Hybrid]
+  Prior exit:        [Yes — $XM (status) / No / Unverified]
+  Commitment:        [Full-time / Maintains: [specify role]]
+  Depth profile:     [Operating dominant / Technical dominant / Balanced]
+  Domain origin:     [Inside industry N yrs / Adjacent / Career switcher]
+  Profile risk read: [1 sentence — archetype-aware]
+  Profile strength read: [1 sentence — archetype-aware]
+
 ── FUNDING HISTORY ──
 [Round table + investor quality assessment]
 Total raised: $Xm
@@ -452,6 +528,7 @@ Commercial signal quality: STRONG / MODERATE / WEAK / UNCLEAR
 Green flags: [Bulleted list]
 Red flags: [Bulleted list — mapped to NWAi AutoKill criteria where applicable]
 PMTF headline: [Team PMTF Score + biggest gap if any]
+Founder Profile headline: [CEO archetype + structure + background — e.g., "First-time CEO + solo founder + academic-researcher" — drives downstream Execution Risk framing]
 Verification headline: [Number of verified vs. unverified specific claims]
 Data gaps: [What couldn't be found that the team should ask directly]
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

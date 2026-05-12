@@ -65,6 +65,44 @@ pandoc "[file].docx" -t plain 2>/dev/null
 
 Mark any unconfirmed field as `[TO BE CONFIRMED]`. Never fabricate scores.
 
+### Step 2c: Customer & Reference Transcripts — Tier-1 Evidence Weighting
+
+**Customer transcripts and reference-call reconciliation docs are the highest-priority evidence for DD Report scoring.** When applying the scoring rubrics in Step 3, weight these inputs *higher* than founder-supplied data and *higher* than third-party research. A customer/partner statement on the record is the most credible signal in any diligence record.
+
+**1. Load alongside Triage / Scout / Kickoff:**
+- `[Company]*Reference-Meeting-Reconciliation*.docx` / `*Reference-Call*`
+- `[Company]*Product-Demo*Reconciliation*.docx`
+- `[Company]*GTM-Status*Reconciliation*.docx`
+- `[Company]*Financials-Meeting*Reconciliation*.docx`
+- Raw transcript files in `deals/active/[Company]/Data Room/` (`Transcript*.md`, `*Transcript*.docx`, `*Transcript*.pdf`)
+
+**2. Direct quotes drive section verdicts.**
+Every section verdict that references a customer or partner statement must cite the source, role, and date. Direct quotes anchor the highest-credibility sections — particularly S2 (Solution evidence), S5 (Pipeline reality), S6/S8 (Team execution), S11 (Risk), and S12 (Exit Strategy). Example pattern: *"Petro (Panasonic Director of New Business Development, May 1, 2026): 'We have not found anybody else that does what Summit does.'"*
+
+**3. Three-Source Corroboration = high-conviction signal.**
+When 3+ independent sources (separate calls, separate parties, separate dates) name the same risk or strength, flag explicitly in the relevant section verdict as a corroborated insight. Three-source corroboration is the strongest evidence pattern in venture diligence and should drive both the score and the Recommendation's soft conditions.
+
+**4. Channel-vs-Acquirer discipline (mandatory for S12 Exit Strategy).**
+Never write that a strategic partner is an "acquirer" or "highest-probability acquirer" without explicit transcript signal (LOI, advisor-led M&A conversation, named M&A interest, or unprompted acquisition framing in a reference call). When a transcript clarifies the relationship as licensing/channel-only, the Exit Strategy section MUST reflect that:
+- **Channel / Licensee** = revenue partner, NOT an exit path
+- **Strategic acquirer** = requires explicit M&A signal
+
+Misclassifying a channel partner as an acquirer overstates exit probability and is a known IC error pattern. When in doubt, default to channel/licensee classification and require a transcript-anchored signal to upgrade to acquirer.
+
+**5. Founder Profile Tags (mandatory for S6/S8 Team).**
+Explicitly tag the founder profile in the Team section's verdict line. These tags drive the Execution Risk score and shape the Recommendation's soft conditions:
+- First-time CEO  /  Seasoned CEO
+- Solo founder  /  Co-founded (+ co-founder operating roles)
+- Academic / Researcher background  /  Industry operator
+- Prior exit (yes/no, scale)
+- Full-time  /  Maintains another role (e.g., professorship, consultancy)
+- Operating depth  vs.  Technical depth
+
+A first-time CEO + solo founder + researcher is a different operating-risk profile than a serial founder with a prior exit. The score and the soft conditions must reflect this — not as a generic "founder risk" but as a profile-specific delegation/hiring/operating-cadence ask.
+
+**6. External Operating Memos ("Petro Pattern").**
+When a customer/partner delivers an *unprompted* operating playbook during a reference call (specific advice on what the founder should do — hire X, kill Y, deprioritize Z), capture it as a structured insight in the Team section. Use it to anchor NWAi-side soft terms in the Recommendation. This is the closest thing to an outside-advisor's POV and carries unusually high signal because the advisor has no economic stake in the founder's ego.
+
 ## Step 3: Derive All Section Scores
 
 Using the NWAi scoring rubrics, derive a 1–5 score for each section per the mapping rules in dd-report-format-reference.md. Show your working — which rubric input produced which score.
