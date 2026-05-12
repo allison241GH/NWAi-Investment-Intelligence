@@ -413,8 +413,18 @@ The plugin lives in two places. Jamie does not need to edit files directly.
 
 **When to commit:** At the end of any session where pipeline files were meaningfully changed. Tell Claude: *"commit and push"* or *"save this version."* Claude will stage the right files, write a descriptive commit message, and commit. If push fails, Claude will tell you to push from Terminal.
 
+**End-of-session sync is a 3-step flow, not 2 (worktree workflow).** Claude Code Desktop sessions typically operate inside a git worktree at `.claude/worktrees/<name>/`, on a feature branch. The worktree is its own checkout; the canonical folder at `/Users/jamie/ClaudeCodeProjects/nwa-intelligence/` is a separate checkout on the same Mac. **"Commit and push" must complete all three legs:**
+
+1. `git commit` — in the worktree
+2. `git push origin HEAD:main` — worktree → GitHub (fast-forwards main)
+3. `cd /Users/jamie/ClaudeCodeProjects/nwa-intelligence && git pull origin main` — GitHub → canonical
+
+Without step 3, the canonical folder silently drifts behind GitHub and future Cowork / Claude Code sessions in canonical will read stale `.claude/commands/` and `.claude/agents/` files. Push without canonical-pull is an incomplete sync. Claude is responsible for executing all three steps when Jamie says "commit and push."
+
+If canonical has uncommitted changes blocking the pull (e.g., transient `npm install` artifacts that duplicate what's incoming), stash → pull → drop stash; do not force-discard local changes without first verifying they're truly redundant.
+
 **What gets committed:** `.claude/` (all pipeline files), `plugin/current/` (plugin + zip), `nwai-techgroup-pipeline-architecture.md`, `CLAUDE.md`, `docs/`, `notes/`, `scripts/`, `pipeline-decisions-log.md`. **Never commit:** `deals/` (gitignored — deal data stays local), `settings.local.json`, `zi7wWRPB`, temp lock files.
 
 ---
 
-*Last updated: May 7, 2026 (v2.13.1 / architecture v0.23.0 — agent sanitization + forward-facing doc refresh; plugin v2.13.1) | NWAi Investment Intelligence & AI | Jamie, TechGroup Co-Chair*
+*Last updated: May 12, 2026 (architecture v0.25.0 — customer-transcript discipline pushed upstream + 3-step end-of-session sync rule; plugin v2.13.1 unchanged) | NWAi Investment Intelligence & AI | Jamie, TechGroup Co-Chair*
