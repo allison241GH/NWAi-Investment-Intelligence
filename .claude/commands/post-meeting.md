@@ -1,12 +1,12 @@
 ---
 description: Process a diligence meeting transcript with analyst POV — surfaces Key Insights and reconciles open tracker items
 allowed-tools: Read, Write, Bash, WebSearch
-argument-hint: [company-name] [product|gtm|financials]
+argument-hint: [company-name] [product|gtm|financials|interview]
 ---
 
 Process a completed NWAi TechGroup diligence meeting. Arguments: $ARGUMENTS
 
-Parse $ARGUMENTS as: first token = company name, last token = meeting type (product / gtm / financials).
+Parse $ARGUMENTS as: first token = company name, last token = meeting type (product / gtm / financials / interview). The `interview` type denotes a customer interview — a meeting with one of the company's customers, not with the company itself.
 
 **The role here is analyst, not librarian.** The primary output is a POV — Key Insights that surface what this meeting revealed about investability. The tracker reconciliation is secondary. Never lead with a checklist.
 
@@ -48,6 +48,13 @@ If transcripts are not found in either location, ask the user to upload or speci
 ## Step 3: Apply the Analyst Lens
 
 Before reconciling any tracker items, read the full transcript through the analyst lens. Apply the framework from `diligence-analysis-framework.md` for the specific meeting type.
+
+**For `interview` meeting type** (customer interview — meeting with one of the company's customers, not with the company itself): the playbook is the **Customer Interview — What to Look For** section of the framework doc. The four-question Behavioral-Intensity Question Bank anchors the analysis. For each of the four questions — (1) Tool replacement & adoption, (2) Unplanned use cases, (3) Organic evangelism, (4) Counterfactual loss — capture:
+- **What was asked** — verbatim or paraphrased, and whether the customer answered spontaneously or only when prompted
+- **The verbatim response** — with attribution and date
+- **Behavioral signal read** — the analyst's read of which signal (pull-driven adoption, product malleability, organic evangelism, Memory Lock-in stickiness) the response surfaces
+
+The Analyst POV box (Step 6) MUST classify the customer's Behavioral Intensity as **Strong / Some / None** based on the four-question synthesis. *None* indicates commodity status and must be flagged in the POV.
 
 **Direct Quote Capture Discipline (overarching).** Customer / reference / partner transcripts are the highest-priority evidence in any diligence record. Every Key Insight that touches a customer or partner perspective MUST carry a verbatim quote with attribution and date. Format: *"Verbatim quote." — [Name, Title, Organization, Date].* These quotes become the canonical anchor that downstream commands (`/dd-report`, `/memo`) cite by reference. Paraphrases lose evidentiary weight; verbatim quotes preserve it.
 
@@ -127,6 +134,7 @@ Before generating the document, synthesize a 2–3 sentence analyst verdict for 
 
 - **Partner / Reference classification** — if an external party was the subject or speaker (reference call, customer, OEM, strategic partner), state the classification explicitly: *"[Partner] is a [Channel / Licensee / Co-development partner / Acquirer-signal], NOT a [other category]."* Anchor in the verbatim quote that established the classification.
 - **Founder Profile observation** — if the meeting revealed or confirmed a founder profile attribute (first-time CEO, solo founder, academic-researcher, prior exit, etc.), state it in the POV box. This protects against downstream commands defaulting to generic "founder risk" framing.
+- **Behavioral Intensity classification** — *mandatory for `interview` meeting type.* Synthesize the four-question Behavioral-Intensity Question Bank into a single read: *"Customer behavioral intensity: [Strong / Some / None]. [One sentence on the dominant signal.]"* A *None* classification indicates commodity status and must be flagged explicitly.
 
 This POV carries forward into the next meeting's context. It is the thread that connects the three deep dives into a coherent, progressive investment assessment.
 

@@ -143,6 +143,55 @@ For each prior hypothesis from the Scout Assessment or DD Kickoff, note whether 
 
 ---
 
+### Customer Interview — What to Look For
+
+*At NWAi's stage, traction tells you the company exists. Behavioral intensity in the customer base tells you whether the market will.* (Derived from Bennett, a16z speedrun, May 2026 — intensity of behavior over size of user base.)
+
+> **Two surfaces, one playbook.**
+> **Pre-call use:** Deal lead conducting the interview reviews this section *before* the call and uses the four-question Behavioral-Intensity Question Bank as the live call structure. The `/diligence` command surfaces these four questions in the DD Kickoff Package's Part F (Recommended DD Actions) so they reach the deal lead before any customer interview happens.
+> **Post-call use:** `/post-meeting [Company] interview` applies the same four questions as an analytical lens against the transcript, captures verbatim responses with attribution, and classifies Behavioral Intensity (Strong / Some / None) in the Analyst POV box.
+> If the questions weren't asked in the call, the post-call analysis will return weak signals on all four probes — not because the customer is weak, but because the call was structured around satisfaction rather than behavioral intensity. The pre-call surface is what makes the post-call analysis work.
+
+Customer interviews are meetings *with the company's customers*, not with the company itself. They are the highest-credibility evidence in any diligence record because the speaker has no economic stake in the founder's narrative. The behavioral signals the customer reveals — what they replaced, how they discovered the product, what they'd do without it — are leading indicators of whether the company is riding a real market or selling into a small fixed pond.
+
+**Primary analytical questions — the Behavioral-Intensity Question Bank.** Four questions to anchor every customer interview. Each one targets a distinct behavioral signal; together they triangulate Memory Lock-in and pre-category demand. Ask all four explicitly if the customer doesn't surface the answers spontaneously.
+
+1. **Tool replacement & adoption** — *"What were you using before this product? How did you find this one and what made you switch?"*
+   Combined discovery + switching-cost probe. Tests pull-driven vs. push-driven adoption (pull = peer recommendation, behavioral search, internal champion — leading indicator; push = cold outbound, broad marketing — neutral-to-negative) AND surfaces what gap the product actually filled. A clean answer (*"we used X, this is materially better at Y, and a peer mentioned it"*) is much stronger than *"we weren't doing this before and the vendor reached out."*
+
+2. **Unplanned use cases** — *"Have you found ways to use this that the vendor didn't pitch to you? Or that surprised you?"*
+   Tests product malleability and depth of user engagement. Users who bend the product into unplanned use cases are signal of category-forming behavior. A customer who uses the product exactly as it was pitched is using it as a feature; a customer who has invented their own workflows is using it as a platform.
+
+3. **Organic evangelism** — *"Have you talked to anyone outside your company about this product? Tell me about that."*
+   Tests whether word-of-mouth is genuine, anchored in actual past behavior (not *"I'd refer it"* hypotheticals). Spontaneous external advocacy is the strongest pre-category signal — it means the customer is doing the company's marketing without being asked.
+
+4. **Counterfactual loss** — *"If this product disappeared tomorrow, what would you do?"*
+   The Sean Ellis test variant. The strongest behavioral signal of Memory Lock-in. *"I'd panic"* / *"there's no real alternative"* reveals true stickiness; *"I'd find a substitute"* reveals commodity status; *"I'd go back to what we used before"* reveals a low switching cost in both directions.
+
+**Key declaration types in customer interviews:**
+- **Adoption declarations** — how discovery and switching actually happened (pull vs. push)
+- **Stickiness declarations** — what would change if the product went away
+- **Workflow declarations** — how the product changed how the customer works (replacement vs. addition)
+- **Sourcing declarations** — whether the customer is part of a community talking about this category (Discord, Slack, peer network)
+
+**Structural contradictions to watch for:**
+- Customer says product is "transformative" but can't name what was replaced or what they'd do without it
+- Customer describes use cases identical to vendor pitch (no malleability — pure consumption of the marketed product)
+- Customer came through vendor introduction but shows no signs of organic discovery patterns
+- Customer praises the vendor effusively but reveals minimal time-in-product per week
+
+**Carry forward from Product / GTM / Financials meetings:**
+- Did the vendor's claimed use cases match what this customer actually does with the product?
+- Did the vendor's claimed ACV / margin economics match what this customer actually pays?
+- Did the vendor's claimed customer concentration / channel mix match what this customer reveals about their own buying path?
+
+**Behavioral Intensity classification (mandatory in Analyst POV box):** Synthesize the four-question read into a single classification:
+- **Strong** — Pull-driven adoption, replaced a real prior tool, unplanned use cases present, has evangelized externally, would not have a viable substitute.
+- **Some** — Mixed signal; product is valued but two or more of the four questions return weak answers.
+- **None** — Push-driven adoption, no prior tool replaced, uses exactly as pitched, no external advocacy, would find a substitute. *Indicates commodity status — flag in Analyst POV.*
+
+---
+
 ## Progressive POV — How Insights Accumulate
 
 The three diligence meetings are not independent events. Each one tests and deepens the thesis formed at Scout. By the end of the third meeting, the investment thesis should be near-complete.

@@ -410,6 +410,14 @@ Three elements only — no restatement of risks or conditions from Parts A, D, o
 
 2. **Recommended DD Actions**: A numbered list of 4–6 sequenced next steps. Execute in priority order after gate-critical conditions in Part D are cleared.
 
+   **Customer-interview prep callout (mandatory when customer reference interviews are in the action list — they typically are).** Customer interviews are conducted live by the deal lead; the questions must be surfaced *before* the call, not just analyzed after. When customer reference interviews appear as a DD action, the action item MUST embed the four-question **Behavioral-Intensity Question Bank** inline as required call structure — not just a pointer to the framework doc:
+   1. **Tool replacement & adoption** — *"What were you using before this product? How did you find this one and what made you switch?"*
+   2. **Unplanned use cases** — *"Have you found ways to use this that the vendor didn't pitch to you? Or that surprised you?"*
+   3. **Organic evangelism** — *"Have you talked to anyone outside your company about this product? Tell me about that."*
+   4. **Counterfactual loss** — *"If this product disappeared tomorrow, what would you do?"*
+
+   Full playbook + behavioral signal interpretation in `diligence-analysis-framework.md` → Customer Interview section. Post-call workflow: `/post-meeting [Company] interview` applies these same four questions as the analytical lens against the transcript and produces a Behavioral Intensity classification (Strong / Some / None) in the Analyst POV box. *None* indicates commodity status.
+
 3. **Kill Conditions table**: A 3-column table (Kill Condition | Trigger | Verdict) with one row per gate-critical risk identified in Part D. Typically 2–4 rows.
 
 ---
@@ -451,6 +459,6 @@ The document must contain all six parts in order:
 
 5. **Part E — Founder Questions (Scoring Inputs)**: Open with callout note pointing to Part D for gate-critical questions. Two numbered-list sections only: Scoring Inputs and Nice to Have.
 
-6. **Part F — Recommended Next Steps**: Three elements: (a) Verdict table — one row, verdict label + rationale; (b) Recommended DD Actions — numbered list of 4–6 sequenced actions; (c) Kill Conditions table — 3-column (Kill Condition | Trigger | Verdict), 2–4 rows.
+6. **Part F — Recommended Next Steps**: Three elements: (a) Verdict table — one row, verdict label + rationale; (b) Recommended DD Actions — numbered list of 4–6 sequenced actions, **with Customer-Interview Prep callout box embedded inline below the action item when customer reference interviews appear in the list** (callout box renders the four-question Behavioral-Intensity Question Bank as a shaded inset; questions verbatim from Phase 4 spec — Tool replacement & adoption / Unplanned use cases / Organic evangelism / Counterfactual loss); (c) Kill Conditions table — 3-column (Kill Condition | Trigger | Verdict), 2–4 rows.
 
 After generating the file, confirm the save path and provide a link to the file.
