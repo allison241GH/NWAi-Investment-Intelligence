@@ -354,15 +354,21 @@ Key files and folders in this workspace:
 
 ---
 
-## Working in Cowork — Which Folder to Select
+## Working in This Workspace — Three First-Class Surfaces
 
-**One folder, one source of truth.** All NWAi Investment Intelligence work — running deals through the pipeline AND evolving the framework, strategic positioning, and platform vision — happens in `/Users/jamie/ClaudeCodeProjects/nwa-intelligence/`. This is the canonical and only project folder for Cowork. Selecting this folder is what makes the slash commands (`/sync-pipeline`, `/screen`, `/scout`, `/diligence`, `/post-meeting`, `/dd-report`, `/decision`, `/memo`) and the Dealum MCP integration available in chat.
+**One folder, one source of truth.** All NWAi Investment Intelligence work — running deals through the pipeline AND evolving the framework, strategic positioning, and platform vision — happens in `/Users/jamie/ClaudeCodeProjects/nwa-intelligence/`. This is the canonical project root. Selecting (or `cd`-ing into) this folder is what makes the workspace's `.claude/` runtime (commands, agents, skills, CLAUDE.md context) available to whichever Claude surface you're using.
 
-**Folder consolidation — April 2026.** Prior to April 28, 2026 a separate workspace existed at `/Users/jamie/Desktop/Claude CoWork NWAi Investment Intelligence/` that served as the original studio for plugin design and strategic positioning material. On April 28, 2026 that workspace was consolidated into the canonical folder: strategic docs migrated to `docs/strategy/`, build-session briefs to `docs/build-history/`, the Captain Compliance deal and updated Synergist artifacts merged into `deals/active/`. The Desktop folder has been archived. Do not select it as a Cowork project root.
+**Folder consolidation — April 2026.** Prior to April 28, 2026 a separate workspace existed at `/Users/jamie/Desktop/Claude CoWork NWAi Investment Intelligence/` that served as the original studio for plugin design and strategic positioning material. On April 28, 2026 that workspace was consolidated into the canonical folder: strategic docs migrated to `docs/strategy/`, build-session briefs to `docs/build-history/`, the Captain Compliance deal and updated Synergist artifacts merged into `deals/active/`. The Desktop folder has been archived. Do not select it as a project root.
 
-**Cowork vs. Claude Code.** Cowork mode is the right interface for everyday deal work — applying the framework, generating Triage / Scout / DD reports, processing meeting transcripts, recording decisions, evolving strategic docs. Claude Code (Terminal) is for rare plugin maintenance — adding a command, modifying a reference doc, refactoring an agent — and is typically initiated by saying "let's update [X]" inside a Cowork session, not by switching tools. Either way, the project root is always the canonical folder above.
+**Three surfaces, all first-class.** Three Claude surfaces operate against this workspace and all read `.claude/` directly:
 
-**Slash commands vs. natural-language invocation.** The `/screen`, `/scout`, `/diligence`, `/sync-pipeline`, `/post-meeting`, `/dd-report`, `/decision`, and `/memo` slash commands are a convenience layer over the same underlying workflow files in `.claude/commands/`. CLAUDE.md is the true source of truth and loads automatically whenever the workspace folder is selected; the command files are readable as files in either Cowork or Claude Code. If slash command registration ever fails (plugin install issue, "Server disconnected" state, post-uninstall recovery, etc.), natural-language invocation works as a first-class fallback. Lead the message with the verb — "Screen Captain Compliance," "Scout [Company]," "Diligence [Company]," "Post-meeting for [Company], demo/GTM/financials," "DD report for [Company]," "Decision: [Company] invest/watch/pass," "Memo for [Company]," or "Pipeline status / sync pipeline." Claude reads the corresponding `.claude/commands/<verb>.md` file directly and executes the same workflow. Output is functionally identical to the slash-command path. If Claude ever appears to be freestyling instead of following the canonical workflow, say "follow the <verb>.md workflow exactly" to re-anchor on the file. This means Cowork remains a fully usable daily surface even when its plugin layer is in a degraded state — never a reason to risk an uninstall under pressure.
+- **Claude Desktop chat** — fast, lightweight, great for everyday deal-running, screening, scouting, and meeting-transcript processing. Open the app, attach this folder as project context, and the slash commands + agents + CLAUDE.md context are available.
+- **Claude Code CLI** — terminal-native, best for sessions involving file edits, plugin maintenance, git operations, multi-step research, and anything that benefits from durable worktree state. Native git/credential access (no Cowork sandbox limitation).
+- **Cowork** — currently a less-used surface; remains valid for collaborative or guided work. The Desktop Extension install (`nwai-tech-pipeline.plugin`) was uninstalled May 15, 2026 and is not required for any of the three surfaces above. If Cowork ever becomes daily again, reinstall v2.13.1 from `plugin/current/`.
+
+Default surface assumption: **none.** Calibrate to whichever surface the session is running in. CLI sessions can do plugin/agent/reference edits directly; Desktop chat sessions favor consultative analytical work; Cowork sessions (when used) operate identically to Desktop chat against the same workspace.
+
+**Slash commands vs. natural-language invocation.** The `/screen`, `/scout`, `/diligence`, `/sync-pipeline`, `/post-meeting`, `/dd-report`, `/decision`, and `/memo` slash commands are a convenience layer over the same underlying workflow files in `.claude/commands/`. CLAUDE.md is the true source of truth and loads automatically whenever the workspace folder is the active context, on any of the three surfaces. The slash commands behave identically across surfaces; natural-language invocation works as a first-class fallback on all three. Lead the message with the verb — "Screen Captain Compliance," "Scout [Company]," "Diligence [Company]," "Post-meeting for [Company], demo/GTM/financials," "DD report for [Company]," "Decision: [Company] invest/watch/pass," "Memo for [Company]," or "Pipeline status / sync pipeline." Claude reads the corresponding `.claude/commands/<verb>.md` file directly and executes the same workflow. Output is functionally identical to the slash-command path. If Claude ever appears to be freestyling instead of following the canonical workflow, say "follow the <verb>.md workflow exactly" to re-anchor on the file.
 
 ---
 
@@ -381,7 +387,7 @@ The plugin lives in two places. Jamie does not need to edit files directly.
 4. Commit and push to GitHub (Claude does this directly — auth is configured)
 5. Jamie reinstalls via Settings → Desktop app → Extensions: Remove current → drag in new `.plugin`
 
-**Jamie does NOT need to use Terminal for GitHub pushes.** Auth is configured via PAT stored in git credentials. Claude can commit and push directly from within any Cowork session. Just say "commit and push" when ready to save a version.
+**Jamie does NOT need to use Terminal manually for GitHub pushes.** Auth is configured via PAT stored in git credentials. From Claude Code CLI or Desktop, Claude can commit and push directly (credentials work native). From Cowork, `git commit` works but `git push` may fail in the sandboxed shell — fall back to Mac Terminal for the push leg if so. Just say "commit and push" on any surface and Claude will execute the right sequence.
 
 ---
 
@@ -427,4 +433,4 @@ If canonical has uncommitted changes blocking the pull (e.g., transient `npm ins
 
 ---
 
-*Last updated: May 12, 2026 (architecture v0.25.0 — customer-transcript discipline pushed upstream + 3-step end-of-session sync rule; plugin v2.13.1 unchanged) | NWAi Investment Intelligence & AI | Jamie, TechGroup Co-Chair*
+*Last updated: May 15, 2026 (architecture v0.27.0 — surface-model rebalance: three first-class surfaces (Claude Desktop, Claude Code CLI, Cowork); Desktop Extension install retired May 15 (Dealum integration remains deferred); plugin v2.13.1 unchanged) | NWAi Investment Intelligence & AI | Jamie, TechGroup Co-Chair*
