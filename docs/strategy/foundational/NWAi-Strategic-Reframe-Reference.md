@@ -1,12 +1,14 @@
 # NWAi Strategic Reframe — Reference Document
 
-*Status: working strategic reference, April 2026*
+*Status: strategic predecessor reference, April 2026 (vocabulary refreshed May 2026 to v1.0 conventions)*
 *Framework applied: Playing to Win (Lafley & Martin) — Where to Play / How to Win cascade*
-*Context: captures the strategic reframe that surfaced from (a) Ron's conclusion on the Dealum API terms, (b) Jamie's conversation with Jessica and Jared (MD, Miami Angels), and (c) the Coditect build direction now in question.*
+*Context: captures the strategic reframe that surfaced from (a) Ron's conclusion on the Dealum API terms, (b) Jamie's conversation with Jessica and Jared (MD, Miami Angels), and (c) the architectural direction now formalized in the Grand Unifying Theory v1.0.*
+
+> **Reader note.** This is the strategic predecessor to `NWAi-Grand-Unifying-Theory-v1.0.md`. The strategic argument here remains valid; some operational specifics (build partner identity, near-term meeting context, sequencing) have moved on. For canonical vocabulary — **Substrate / Activations**, Intelligence Tracks (Deal / Member-Social / Ecosystem Network), AI-native construction — read v1.0 first; use this doc for the underlying *strategic* reasoning behind the reframe.
 
 ## How to Use This Document
 
-This is the onboarding doc for any new session, collaborator, or downstream work (SOW drafting, Coditect re-scope, board prep). Read top to bottom once; return to the comparison matrix and three-layer architecture as needed. Update after the 4-person strategic huddle (Ron / Jessica / Jared / Jamie) and after each downstream decision.
+This is the onboarding doc for the *strategic argument* behind the reframe. Read top to bottom once; return to the comparison matrix and substrate-and-activations architecture as needed. For current scope, vocabulary, and timeline, defer to `NWAi-Grand-Unifying-Theory-v1.0.md` and the supporting architectural reference doc.
 
 ---
 
@@ -76,19 +78,21 @@ The key unlock the analogy points to: **activation becomes continuous and ambien
 
 ---
 
-## Three-Layer Architecture
+## Substrate-and-Activations Architecture
 
-**Principle: build where we differentiate, integrate where we don't.**
+**Principle: construct AI-native, in service of members — compound where we differentiate, integrate the commodity edges.**
 
-| Layer | Description | Posture | Source |
-|---|---|---|---|
-| **1. Deal Ops Infrastructure** | Deal management CRM, multi-source inbound (cross-syndicate, referral, direct), tracking / dashboard, portfolio management | **Integrate** (commodity) | Dealum for now; future vendor TBD. ~15 serious players in category (AngelList, Sydecar, Affinity, Carta for Investors, Visible, Attio, Allocations, others) with different postures (syndicate-first, ops-first, data-first, SPV-first). Needs a deliberate scan before SOW locks in. |
-| **2. Social Intelligence Layer** | Member profiles, expertise graph, personalized deal pulse, activation feed, DD team formation, cross-syndicate partner intel, decisions ledger | **Build** (proprietary) | Greenfield. No vendor does this well for a member-expertise-driven syndicate. This is where NWAi's moat lives. |
-| **3. Analytical Diligence Layer** | Scout / DD frameworks, agentic research (market, competitive, technical, financial, risk), scoring rubrics, DD Report + Memo generation, moat frameworks | **Build** (proprietary) | Lifts cleanly from the current CoWork pipeline. Almost none of it is Dealum-dependent. |
+This section is the strategic precursor to the formal architecture in `NWAi-Grand-Unifying-Theory-v1.0.md`. v1.0 names the structural pattern explicitly: **Track 2 — Member/Social Intelligence is the substrate; Track 1 — Deal Intelligence and Track 3 — Ecosystem Network Intelligence are activations that plug into it.**
 
-**The architectural insight:** Layer 2 is what binds Layers 1 and 3. Without it, NWAi has a deal pipeline plus some AI tools — which is what Coditect is building today, and what Jared's question flagged. With Layer 2 as the core, every deal in Layer 1 becomes a social event flowing through the member graph, and Layer 3 is the analytical muscle activated members reach for to build conviction.
+| Component | Description | Posture |
+|---|---|---|
+| **Deal Ops Infrastructure** *(commodity edge of Track 1)* | Deal management CRM, multi-source inbound (cross-syndicate, referral, direct), tracking / dashboard, portfolio management | **Integrate.** Dealum for now (sunset by YE); future vendor TBD after a deliberate scan across the ~15 serious players (AngelList, Sydecar, Affinity, Carta for Investors, Visible, Attio, Allocations, others) with different postures (syndicate-first, ops-first, data-first, SPV-first). |
+| **Member/Social Intelligence — Track 2 (THE SUBSTRATE)** | Member profiles, expertise graph, social deal card, member comments + SME POV across Screen/Scout/Diligence, decisions ledger, re-weighted routing | **Build (AI-native, proprietary).** Greenfield. No vendor does this well for a member-expertise-driven syndicate. This is where the moat lives — compoundable member SME judgment + relationships. |
+| **Analytical Diligence — feeds Track 1 (Activation)** | Scout / DD frameworks, agentic research (market, competitive, technical, financial, risk), scoring rubrics, DD Report + Memo generation, moat frameworks | **Build (AI-native, proprietary).** Lifts cleanly from the current TechGroup pipeline. Plugs into Track 2 — all outputs write to the member graph and decisions ledger. |
 
-**Jamie's standing position on Layer 1:** integrate, do not rebuild. A prior conversation with Jared floated the idea of a full end-to-end NWAi platform build, including deal management. Jamie's position is that Layers 2 and 3 are absolutely build; Layer 1 is integration. Stated here to remove ambiguity going into the huddle and the SOW.
+**The architectural insight:** The substrate is what binds deal ops and analytical diligence. Without it, NWAi has a deal pipeline plus some AI tools — the *AI-bolted-on* pattern the reframe rejects. With Track 2 as the substrate, every deal becomes a social event flowing through the member graph, and the analytical layer is the muscle activated members reach for to build conviction. This is the **AI-bolted-on → AI-native** shift made structural.
+
+**Standing position on deal ops infrastructure:** integrate, do not rebuild. NWAi's *build* energy goes into the Track 2 substrate and the analytical activations that compound member judgment. Commodity infrastructure (CRM, portfolio management, ledgering of allocations) is integrated from category-leading vendors.
 
 ---
 
@@ -117,42 +121,34 @@ Everything else (personalized weekly digest, expertise-seeking notifications, DD
 - **Ron** — NWA President. Already issued the key Declaration in his Dealum reply: *"ingesting pitch decks directly by email or by our website, with some sort of AI augmentation backend seems like the future."* This reframe completes his frame; it does not replace it.
 - **Jessica** — NWA Managing Director. Led the Dealum API negotiation. Sees higher value in the member network + cross-syndication model over the year.
 - **Jared** — MD, Miami Angels (recently merged with NWA, adding 80 members). Solves for **SPEED** because Miami receives pre-diligenced deals from other syndicates. Coined the **"social intelligence"** frame.
-- **Coditect** — current build partner. Scaling a deal-centric pipeline on Dealum APIs. Contract still in discussion — *no concrete poured yet*. This is the right moment to redirect scope.
-- **NWA** — 200 members across 6 verticals (Tech, Medical, Space, Consumer, Industrial, Fintech). Recently merged with Miami Angels. The strategic question is whether to keep optimizing Business #1 (deal discovery at scale) or pivot to Business #2 (domain-expertise investor network).
+- **NWA** — 200 members across 6 verticals (Tech, Medical, Space, Consumer, Industrial, Fintech). Recently merged with Miami Angels. The strategic question is whether to keep optimizing Business #1 (deal discovery at scale) or pivot to Business #2 (domain-expertise investor network) — the reframe answers Business #2, and v1.0 architecturalizes it.
+- **Build posture** — NWAi v1.0 codifies *AI-native construction by a developer-member, in service of members*. The architectural reference doc that supersedes this reframe specifies the buildable platform.
 
 ---
 
 ## What's Decided vs. What's Open
 
-**Decided (internal conviction, pre-huddle):**
+**Decided (now codified in v1.0):**
 
-- Strategic direction: deal-centric → member-centric reframe
-- Three-layer architecture with build-vs-integrate principle
-- V1 anchor: personalized deal pulse (member profile + deal card social layer)
-- Coditect scope requires refinement, not cancellation
-- Dealum exit is phased, not immediate (Phase 1 constrained co-existence → Phase 2 dual funnel → Phase 3 decision point)
+- Strategic direction: deal-centric → member-centric reframe ✅
+- Substrate-and-activations architecture with construct-AI-native / compound-on-substrate principle ✅
+- V1 anchor: TechGroup AI-powered Screen/Scout/Diligence + member profile + social deal card + SME POV capture + decisions ledger + re-weighted routing (per v1.0) ✅
+- Dealum exit: passive inflow sunset by YE; substrate is built as MVP overlay with Dealum for the deal-member DB during transition
 
-**Pending (requires the 4-person huddle + downstream work):**
+**Open (carry-forward to the architectural reference doc and rollout):**
 
-- Strategic identity confirmation with Ron, Jessica, and Jared
-- Coditect contract scope + pivot mechanics
-- Layer 1 vendor selection (deal management + portfolio management — needs a deliberate scan)
-- V1 feature scope and timeline
-- Member expertise data model / schema — what fields, how populated, how maintained
-- Feedback loop design — what pulls a member into the platform on a Wednesday night
+- Deal-ops vendor selection post-Dealum (deliberate scan of the ~15 player landscape)
+- Member expertise data model / schema — fields, population, maintenance, consent rules
+- Feedback loop design — what pulls a member into the platform on a Wednesday night (V1 anchor pattern)
 - Hit-rate data — Dealum-sourced vs. member-referred investment rate (single most persuasive data point if gatherable)
-- Dealum contract sequencing (near-term API acceptance vs. exit timing)
-- Clear message for May 8 Spring Member Meeting on AI's role in current NWA scope
 
 ---
 
 ## Captured Threads to Pick Up
 
-- **Claude Code v2 vs. Coditect build-out comparison** — Jamie asked for analysis of what it would take to build Layers 2 and 3 in Claude Code v2 as an alternative or complement to Coditect, with reference to enterprise-grade requirements. Outstanding.
-- **Layer 1 vendor landscape scan** — 15+ serious vendors across different postures. Needed before SOW commits the integrate-vs-build decisions for deal management and portfolio management.
-- **Related workspace (separate folder)** — partnership and legal documents for the NWA × Coditect alliance live in *"Claude CoWork NWAixCoditect Partnership"*. SOW work should reference that workspace, not duplicate it.
-- **Draft email to Ron** — drafted in the April 2026 exploration session. To be sent by Jamie after final edits, requesting a 4-person huddle (Ron, Jessica, Jared, Jamie) to align on strategic identity *before* Coditect scope commits or this goes to the board.
+- **Deal-ops vendor landscape scan** — 15+ serious vendors across different postures. Needed before NWAi commits to a Dealum successor.
+- **Hit-rate data** — Dealum-sourced vs. member-referred investment rate. Single most persuasive data point if gatherable.
 
 ---
 
-*This is a living document. Update after the huddle, after the Layer 1 vendor scan, after Coditect re-scoping, and as V1 takes shape.*
+*This is a strategic predecessor reference. For the canonical architecture (Substrate / Activations, Intelligence Tracks, V1 scope, rollout cadence), defer to `NWAi-Grand-Unifying-Theory-v1.0.md` and the supporting architectural reference doc.*
