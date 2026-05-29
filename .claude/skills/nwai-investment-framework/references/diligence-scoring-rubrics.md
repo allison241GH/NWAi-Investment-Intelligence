@@ -102,9 +102,19 @@ Score each category 1–10 where **10 = highest risk**. Apply at Diligence stage
 - **Team commitment depth** (from `team-analyst` Team Commitment Depth output):
   - Full-time ratio: ≥80% = +0 risk; 60-79% = +1 risk; 40-59% = +2 risk; <40% = +3 risk (typically forces score ≥ 8)
   - "Stuck" advisors (passive logos with no engagement): +1 risk per identified instance
-- **Product Market Team Fit (PMTF)** (from `team-analyst` Team-Level PMTF Synthesis):
-  - STRONG = +0 risk; MODERATE with one fillable gap = +1 risk; WEAK with multiple gaps = +3 risk
-  - Market-access gap explicitly identified (e.g., "engineer who built widget but team has no buyer relationships") = +2 risk on top
+- **Product-Team Fit** (from `team-analyst` Product-Team Fit Assessment — diligence mode):
+  - STRONG = +0 risk; MODERATE (one fillable build-side gap) = +1 risk; WEAK (technical depth mismatch with product demands or no shipping evidence) = +3 risk
+- **Market-Team Fit** (from `team-analyst` Market-Team Fit Assessment — diligence mode):
+  - STRONG = +0 risk; MODERATE = +1 risk; WEAK = +3 risk
+  - **Network Map evidence** — if zero connections surface to named target accounts AND no channel/KOL relationships, add +2 risk on top (this is the "engineer who built widget but team has no buyer relationships" pattern; weight is higher than legacy PMTF rubric because this lens is now treated as a separate risk channel)
+- **Key-Seat Completeness** (from `team-analyst` Key-Seat Completeness Checklist — stage-appropriateness baked in):
+  - All 6 seats filled or stage-appropriate (➖) = +0 risk
+  - One ⚠️ (founder doubling / fractional / disclosed hiring plan) = +0 risk if hiring plan is credible, otherwise +1 risk
+  - Any 🔴 (stage-inappropriate gap) = +2 risk per gap (cap +3)
+  - Sales / GTM gap at Seed+ with paying customers is the most common 🔴 and the highest-leverage signal; flag for soft-condition consideration
+- **Staff bench strength** (from `team-analyst` Staff Deep-Dive — diligence mode only):
+  - STRONG (VP hires with market-relevant credentials + relationships brought in) = -1 risk (offsets founder Execution Risk)
+  - WEAK or founder-only team at stage where VP hires are expected (e.g., Series A with $2M ARR and no Head of Sales) = +1 risk
 - **Founder claim verification** (from `team-analyst` People Verification Brief):
   - All specific claims VERIFIED = +0 risk
   - Any UNVERIFIED specific claims = +1 risk per claim (cap +2)
@@ -267,7 +277,7 @@ All five → inform the Financial Model exit scenarios
 The `/diligence` command and `/memo` command both reference this file. As of plugin v2.13.0, the full agent team is:
 
 **Stage 2A (parallel):**
-- `team-analyst` — team-first PMTF analysis, founder claim verification, team commitment depth
+- `team-analyst` — mode-aware (scout / diligence); bifurcated Product-Team Fit + Market-Team Fit; Staff Deep-Dive; Network Map (diligence mode); Key-Seat Completeness; Team Commitment Depth; Founder Profile Tags; founder claim verification
 - `market-analyst` — structural discontinuity, TAM/SAM/SOM, market timing
 - `competitive-positioning-analyst` — competitor mapping, comp set construction (feeds forecasting + venture analysts)
 - `technology-analyst` — thin wrapper test, TRL assessment, IP/patents

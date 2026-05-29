@@ -214,7 +214,7 @@ When mapping a deal to a theme, identify the correct theme from the table below.
 
 **Agents available (launched automatically or on request):**
 - `pipeline-monitor` — live Dealum pipeline snapshot
-- `team-analyst` — **team-first PMTF analysis** (Product Market Team Fit + skills coverage + market-access gap detection), team commitment depth (full-time vs advisor ratio, "stuck" advisor flagging), founder claim verification protocol (LinkedIn + Perplexity cross-reference for specific exit/ARR/role claims), with supporting context on funding, traction, and public red flags (Scout + Diligence)
+- `team-analyst` — **mode-aware team research** covering founders, staff, and advisors. Runs in `mode: scout` (lite, intro-call-ready) or `mode: diligence` (full underwriting depth). Bifurcates the fit assessment into **Product-Team Fit** (can this team BUILD and SHIP the product?) and **Market-Team Fit** (can this team SELL into this market — relationships, access, sales motion?). Diligence mode adds Staff Deep-Dive (VP/Head-of/C-level non-founder hires with founder-grade research), Network Map (named-customer reachability, channel/KOL/regulator access, prior-employer customer pipeline — with social-graph extensibility hook for the future NWA Member Social Intelligence Layer), and Key-Seat Completeness checklist (CEO/CTO/Sales/Product/CFO/CS with stage-appropriate verdicts). Team Commitment Depth + Founder Profile Tags + Founder Claim Verification Protocol carry forward from v2.13. Composite "Team PMTF" preserved as derived headline (lower of the two bifurcated scores) for downstream backwards compatibility. (Scout + Diligence)
 - `market-analyst` — structural discontinuity test, TAM/SAM/SOM validation, market timing (Scout + Diligence)
 - `competitive-positioning-analyst` — competitor mapping, incumbents, positioning, moat inputs (Scout + Diligence)
 - `technology-analyst` — thin wrapper test, TRL assessment, IP/patents, AI moat signals (Scout light + Diligence full)
@@ -364,7 +364,7 @@ Key files and folders in this workspace:
 
 - **Claude Desktop chat** — fast, lightweight, great for everyday deal-running, screening, scouting, and meeting-transcript processing. Open the app, attach this folder as project context, and the slash commands + agents + CLAUDE.md context are available.
 - **Claude Code CLI** — terminal-native, best for sessions involving file edits, plugin maintenance, git operations, multi-step research, and anything that benefits from durable worktree state. Native git/credential access (no Cowork sandbox limitation).
-- **Cowork** — currently a less-used surface; remains valid for collaborative or guided work. The Desktop Extension install (`nwai-tech-pipeline.plugin`) was uninstalled May 15, 2026 and is not required for any of the three surfaces above. If Cowork ever becomes daily again, reinstall v2.14.0 from `plugin/current/`.
+- **Cowork** — currently a less-used surface; remains valid for collaborative or guided work. The Desktop Extension install (`nwai-tech-pipeline.plugin`) was uninstalled May 15, 2026 and is not required for any of the three surfaces above. If Cowork ever becomes daily again, reinstall v2.15.0 from `plugin/current/`.
 
 Default surface assumption: **none.** Calibrate to whichever surface the session is running in. CLI sessions can do plugin/agent/reference edits directly; Desktop chat sessions favor consultative analytical work; Cowork sessions (when used) operate identically to Desktop chat against the same workspace.
 
@@ -378,7 +378,7 @@ The plugin lives in two places. Jamie does not need to edit files directly.
 
 **`.claude/`** — the live runtime folder (hidden, in workspace root). This is what Claude reads during every session. Contains all agents, commands, skills, and servers. Changes made here take effect immediately in the current session.
 
-**`plugin/current/nwai-tech-pipeline.plugin`** — the installable package (v2.14.0). This is the packaged version for installation and org sharing. Always matches `.claude/` — they are kept in sync.
+**`plugin/current/nwai-tech-pipeline.plugin`** — the installable package (v2.15.0). This is the packaged version for installation and org sharing. Always matches `.claude/` — they are kept in sync.
 
 **Plugin update workflow** (handled by Claude, not Jamie):
 1. Update the relevant files in `.claude/` during a session (live immediately)
@@ -433,4 +433,4 @@ If canonical has uncommitted changes blocking the pull (e.g., transient `npm ins
 
 ---
 
-*Last updated: May 29, 2026 (architecture v0.28.0 — plugin v2.14.0: agent naming standardization to `<descriptor>-analyst` convention: team-analyst, competitive-positioning-analyst, technology-analyst, risk-analyst alongside market-analyst, pricing-analyst, forecasting-analyst, venture-analyst) | NWAi Investment Intelligence & AI | Jamie, TechGroup Co-Chair*
+*Last updated: May 29, 2026 (architecture v0.29.0 — plugin v2.15.0: team-analyst expanded to mode-aware operation with bifurcated Product-Team Fit + Market-Team Fit lenses, Staff Deep-Dive, Network Map (with NWA Member Social Graph extensibility hook), and Key-Seat Completeness checklist) | NWAi Investment Intelligence & AI | Jamie, TechGroup Co-Chair*

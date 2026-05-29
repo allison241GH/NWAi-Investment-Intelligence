@@ -1,7 +1,7 @@
 {
   "name": "nwai-tech-pipeline",
-  "version": "2.14.0",
-  "description": "NWAi TechGroup deal pipeline — filesystem-driven intake to investment memo (v2.14 standardizes agent naming: team-analyst, competitive-positioning-analyst, technology-analyst, risk-analyst alongside market-analyst, pricing-analyst, forecasting-analyst, venture-analyst)",
+  "version": "2.15.0",
+  "description": "NWAi TechGroup deal pipeline — filesystem-driven intake to investment memo (v2.15 expands team-analyst into a mode-aware agent: bifurcated Product-Team Fit + Market-Team Fit, Staff Deep-Dive, Network Map with social-graph hook, Key-Seat Completeness checklist)",
   "author": {
     "name": "New World Angels",
     "url": "https://www.newworldangels.com"

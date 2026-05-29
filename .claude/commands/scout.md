@@ -49,7 +49,7 @@ Before scoring, launch research agents to build an independent evidence base. In
 Use the Task tool to launch **all agents simultaneously**:
 
 **Agent 1 — team-analyst:**
-"Research [Company Name] for NWAi Scout assessment. Website: [URL if known]. Known founders: [names if known]. Include commercial validation signals. Return the full Company Research Briefing."
+"Research [Company Name] for NWAi Scout assessment. **mode: scout** (lightweight intro-call-ready depth — skip Staff Deep-Dive and Network Map, produce one-line verdicts for Product-Team Fit and Market-Team Fit). Website: [URL if known]. Known founders: [names if known]. Include commercial validation signals. Return the full Team Analyst Briefing."
 
 **Agent 2 — market-analyst:**
 "Validate the market for [Company Name] for NWAi Scout. They operate in [sector/description]. Website: [URL if known]. Test for structural discontinuity, validate TAM/SAM independently, and score market timing. Return the full Market Analysis Briefing."

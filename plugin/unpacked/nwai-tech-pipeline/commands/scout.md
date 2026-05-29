@@ -49,7 +49,7 @@ Before scoring, launch research agents to build an independent evidence base. In
 Use the Task tool to launch **all agents simultaneously**:
 
 **Agent 1 — team-analyst:**
-"Research [Company Name] for NWAi Scout assessment. Website: [URL if known]. Known founders: [names if known]. Include commercial validation signals. Return the full Company Research Briefing."
+"Research [Company Name] for NWAi Scout assessment. **mode: scout** (lightweight intro-call-ready depth — skip Staff Deep-Dive and Network Map, produce one-line verdicts for Product-Team Fit and Market-Team Fit). Website: [URL if known]. Known founders: [names if known]. Include commercial validation signals. Return the full Team Analyst Briefing."
 
 **Agent 2 — market-analyst:**
 "Validate the market for [Company Name] for NWAi Scout. They operate in [sector/description]. Website: [URL if known]. Test for structural discontinuity, validate TAM/SAM independently, and score market timing. Return the full Market Analysis Briefing."
@@ -69,7 +69,7 @@ Use agent findings as the primary research input throughout Steps 2–4. Do not 
 ## Step 2: Run Phase 1 — Viability (Scored)
 
 Load the Scout Q framework from:
-`${CLAUDE_PLUGIN_ROOT}/skills/nwai-investment-framework/references/scout-questions.md`
+`.claude/skills/nwai-investment-framework/references/scout-questions.md`
 
 Score each Phase 1 dimension on the 0–5 scale defined in scout-questions.md. Show delta from Triage (↑ raised / → confirmed / ↓ lowered) for Q1, Q2, and Q3 which overlap with Triage Opportunity dimensions.
 
@@ -78,7 +78,7 @@ Score each Phase 1 dimension on the 0–5 scale defined in scout-questions.md. S
 - **Q3: Moat Assessment** — use the AI Moats Framework as analytical reference. Output a distilled 4-column table verdict (Primary Moat | Strength | Primary Threat | Verdict). Do NOT enumerate moat types by number or produce a checklist. The output is a judgment. Rating: STRONG / DEVELOPING / WEAK / NONE. Triage overlap: D4.
 
 Load the AI Moats Framework from:
-`${CLAUDE_PLUGIN_ROOT}/skills/nwai-investment-framework/references/ai-moats-framework.md`
+`.claude/skills/nwai-investment-framework/references/ai-moats-framework.md`
 
 ## Step 3: Run Strategic Dimensions — New at Scout
 
@@ -92,24 +92,56 @@ Score each strategic dimension on the 0–5 scale defined in scout-questions.md.
 
 Score each Phase 2 dimension on the 0–5 scale defined in scout-questions.md. Each item = one line in the output. Show delta from Triage for Team (D3) and Traction (D5).
 
-- **Team** — domain credibility + key strength + key gap. Include Product team fit (✓/Partial/Gap) and Market team fit (✓/Partial/Gap) on the same line. Score 0-5. Triage overlap: D3.
+- **Team** — Structured team quality assessment across five dimensions. Score 0-5 overall. Triage overlap: D3. Assess each sub-dimension and roll up to a single score with a one-line rationale.
+
+  **Sub-dimension 1 — Founder-Market Fit:** Why is THIS founder uniquely positioned for THIS problem? Look for: domain immersion (10+ years working the problem, not just adjacent to it), personal pain point origin, unfair access to customers or data. Flag if the founder entered the space recently or opportunistically. Rate: STRONG / MODERATE / WEAK.
+
+  **Sub-dimension 2 — Execution Evidence:** Has this team shipped before under pressure? Look for: prior product launched to market (not just built), experience managing a team through adversity, prior company scaled beyond $1M revenue or meaningful user base, evidence of pivoting successfully. Do NOT conflate credentials with execution — a PhD is not execution evidence. Rate: STRONG / MODERATE / WEAK.
+
+  **Sub-dimension 3 — Co-founder / Team Dynamics:** Any signals of alignment or misalignment? Look for: complementary skill sets (technical + commercial), co-founders who have worked together before, equity split that reflects genuine contribution parity, public or subtle signals of tension (conflicting messaging, one founder absent from materials, unequal LinkedIn presence). Flag solo founder. Flag if founding team roles overlap without clear delineation. Rate: ALIGNED / UNCLEAR / RISK SIGNAL.
+
+  **Sub-dimension 4 — Referenced Credibility:** Are there third parties who have bet on this team before? Look for: prior investors who reinvested, named advisors who are real domain KOLs (not just well-known names), accelerator acceptance (YC, Techstars, NSF SBIR), enterprise customers who chose to work with this team specifically. Rate: STRONG / MODERATE / WEAK.
+
+  **Sub-dimension 5 — Team Completeness:** Are the critical roles filled? Check: technical leadership for a tech product (CTO or equivalent with verifiable output), commercial leadership (someone who has sold before), any critical gap that would require a key hire before scaling. Include Product team fit (✓/Partial/Gap) and Market team fit (✓/Partial/Gap).
+
+  **Team Score rationale:** Lead with the most important signal — positive or negative. At pre-significant-revenue stage, team quality is the dominant variable. A score of 4–5 requires STRONG on at least Founder-Market Fit AND Execution Evidence. A score of 1–2 requires a red flag on dynamics or a critical gap in execution evidence.
 - **Technology** — TRL rating + thin wrapper or deep IP + biggest replication risk. Score 0-5.
 - **Traction** — revenue/pipeline figures + named customers + one retention signal. Score 0-5. Triage overlap: D5.
 - **GTM / Path to $10M** — GTM motion + key milestone + CAC/LTV if known. Score 0-5.
 - **Exit** — top 3 acquirers with one-line rationale each. Hold period. 10x viable: YES / STRETCH / UNLIKELY. Not scored numerically.
 
-## Step 4b: Calculate Scout Conviction Score
+## Step 4b: Calculate Scout Conviction Score and Thesis Fit Score
+
+**Score A — Intelligence Conviction Score (AI research-derived, max 17.0)**
 
 Using scores from Phase 1 (Q1, Q2, Q3), Strategic (Q4, Q5, Q6), and Phase 2 (Team, Tech, Traction, GTM):
 
 - Phase 1 weighted score = (Q1 + Q2 + Q3-mapped) / 15 × 6.0 (40% weight)
 - Strategic weighted score = (Q4 + Q5 + Q6) / 15 × 3.0 (20% weight)
 - Phase 2 weighted score = (Team + Tech + Traction + GTM) / 20 × 8.0 (40% weight)
-- **Scout Conviction Score = sum of three weighted scores (max 17.0)**
+- **Intelligence Conviction Score = sum of three weighted scores (max 17.0)**
 
 Q3 moat rating maps to numeric: STRONG=5, DEVELOPING=3, WEAK=1, NONE=0.
 
-Conviction thresholds: 14-17 = High (advance with confidence) | 10-13 = Moderate (advance with watch items) | 7-9 = Low (Watch only if catalyst imminent) | <7 = Decline.
+Conviction thresholds: 14–17 = High (advance with confidence) | 10–13 = Moderate (advance with watch items) | 7–9 = Low (Watch only if catalyst imminent) | <7 = Decline.
+
+**Score B — Thesis Fit Score (rule-based, criteria-derived)**
+
+This score reflects how well the deal fits NWAi's investment criteria — independent of what the research agents found about market quality or moat. It is calculated from the Triage carry-forward, not from agent research.
+
+- Hard gates: ALL MET = proceed | ANY FAIL = automatic 0 (stop — do not calculate further)
+- Opportunity Score carry-forward from Triage: ___ / 25
+- Readiness Score carry-forward from Triage: ___ / 20
+- **Thesis Fit = [Opportunity Score] + [Readiness Score] = ___ / 45**
+
+Thesis Fit thresholds: 38–45 = Strong fit | 28–37 = Qualified fit | 18–27 = Marginal fit | <18 = Structural mismatch.
+
+**Dual Score Interpretation:**
+Present both scores together and flag any significant divergence (>2 band gap between conviction level and fit level). Divergence is signal, not noise:
+- High Conviction + Low Thesis Fit: Exciting company that doesn't fit NWA's criteria → Pass with referral or Watch pending structure change
+- Low Conviction + High Thesis Fit: Fits criteria but research doesn't support the thesis → Conditional Watch or more diligence before advancing
+- Both High: Advance with confidence
+- Both Low: Decline cleanly
 
 ## Step 5: Assign to TechGroup Theme
 
@@ -134,7 +166,7 @@ Output the Scout Assessment Report using the 2-page format defined in scout-ques
 2. Product & Market Positioning table (Category Type | Lifecycle Horizon | Ecosystem Role Score | Adjacent Risk Score)
 3. Moat Assessment table (Primary Moat | Strength | Primary Threat | Verdict)
 4. Macro Trends table (Dimension | 10-yr Direction | Thesis Impact)
-5. Analyst Verdict Block (Recommendation | Scout Conviction Score | Verdict | What You Have to Believe | Where's the Bet | Fear | Greed)
+5. Analyst Verdict Block (Recommendation | Thesis Fit Score | Intelligence Conviction Score | Dual Score Interpretation | Verdict | What You Have to Believe | Where's the Bet | Fear | Greed)
 6. Score Summary table with delta from Triage for overlapping dimensions
 
 **Page 2 — Rationale** (bullet clusters, no paragraphs):
@@ -169,13 +201,13 @@ The Word document must contain all of the following sections in order, matching 
 3. **Product & Market Positioning table** — 4-column table: Category Type | Lifecycle Horizon | Ecosystem Role Score | Adjacent Risk Score.
 4. **Moat Assessment table** — 4-column table: Primary Moat | Strength | Primary Threat | Verdict.
 5. **Macro Trends table** — 3-column table: Dimension | 10-yr Direction | Thesis Impact (4 rows).
-6. **Analyst Verdict Block** — 2-column table with labeled rows: Recommendation, Scout Conviction Score, Verdict, What You Have to Believe, Where's the Bet, Fear, Greed. Use navy header row.
+6. **Analyst Verdict Block** — 2-column table with labeled rows: Recommendation, Thesis Fit Score (rule-based: Opportunity + Readiness / 45 + gates status), Intelligence Conviction Score (AI research: / 17 + threshold band), Dual Score Interpretation (one line — convergent or divergent, and what that means for the decision), Verdict, What You Have to Believe, Where's the Bet, Fear, Greed. Use navy header row. The two scores must always appear together — they are not interchangeable and divergence is signal.
 7. **Score Summary table** — Dimension | Triage Score | Scout Score | Delta (10 rows). Show ↑/→/↓ delta for Triage-overlapping dimensions; "NEW" for strategic dimensions.
 
 **Page 2 — Rationale:**
 8. **Adjacent & Emerging Tech** section — 3 bullet points: Core use case, Functional equivalents, Emerging displacement.
 9. **Phase 1 Viability** section — three subsections (Category & Market Discontinuity, Market Opportunity, Moat), each as a bullet cluster of 3-4 bullets.
-10. **Phase 2 Execution table** — 3-column table (Dimension | Score | Assessment) with rows for Team, Technology, Traction, GTM/Path to $10M, Exit.
+10. **Phase 2 Execution table** — 3-column table (Dimension | Score | Assessment) with rows for Team, Technology, Traction, GTM/Path to $10M, Exit. For the Team row, expand the Assessment cell to include a 5-row sub-table: Founder-Market Fit | Execution Evidence | Co-founder Dynamics | Referenced Credibility | Team Completeness — each with a STRONG/MODERATE/WEAK or ALIGNED/RISK SIGNAL rating and a one-line note.
 11. **Flags** section — ❌ Red flags and ⚠️ Yellow flags as a bullet list.
 12. **Targeted Diligence Questions** — numbered list, 3-5 items.
 13. **Footer row** — Dealum step, suggested tags, next action.

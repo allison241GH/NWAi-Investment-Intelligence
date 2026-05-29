@@ -172,33 +172,36 @@ Required: one line per dimension (Customer / Technology / Regulatory / Economic)
 
 Each item = one line in the output. No paragraph explanations.
 
-### Team — Product Market Team Fit (PMTF) (Score 0-5)
+### Team — Product-Team Fit + Market-Team Fit (Score 0-5)
 *Triage overlap: Founder Advantage (D3) — show delta*
 
 One line: domain credibility rating (STRONG / ADEQUATE / WEAK) + key strength + key gap.
 
-**Five required sub-assessments** (sourced from `team-analyst` agent output):
+**Five required sub-assessments** (sourced from `team-analyst` agent in **scout mode** — lite verdicts; Staff Deep-Dive and Network Map are skipped at Scout stage):
 
-- **Product team fit:** Does the team deeply know the product landscape? (✓ / Partial / Gap)
-- **Market team fit:** Does the team have the market relationships to execute GTM? (✓ / Partial / Gap)
-- **PMTF synthesis:** Team-level Product Market Team Fit score from team-analyst (STRONG / MODERATE / WEAK) — captures skills coverage across domain depth, engineering/build, and market access; includes any market-access gap flags.
+- **Product-Team Fit verdict:** One-line STRONG / MODERATE / WEAK from team-analyst — can this team BUILD and SHIP this product? (engineering depth, technical credibility, prior shipping evidence)
+- **Market-Team Fit verdict:** One-line STRONG / MODERATE / WEAK from team-analyst — can this team SELL into this market? (domain immersion, sales motion fit, market-specific credibility)
 - **Team commitment depth:** Full-time ratio from team-analyst (e.g., "6 of 8 listed = full-time, 75%"). Flag if <60% full-time. Flag advisors who appear "stuck" (passive logos with no engagement signals).
+- **Key-Seat Completeness verdict:** One-line from team-analyst (e.g., "5 of 6 seats filled or stage-appropriate, with gaps in: Head of Sales"). Stage-appropriateness is baked in — a Seed-stage company with no CFO is stage-appropriate, not a gap.
 - **Founder claim verification:** Status from team-analyst's People Verification Brief. Flag if any UNVERIFIED or CONTRADICTED specific claims (e.g., exit returns, ARR, prior roles).
 
 Flag immediately if:
 - Founders are part-time or IP is not cleanly assigned to the company
 - Any founder claim is **❌ CONTRADICTED** by public sources (treat as red flag for the diligence call)
 - Team commitment ratio is **<40% full-time** (red flag)
-- Market-access gap is identified (e.g., "engineer who built the widget but no team member has met a buyer")
+- Either **Product-Team Fit OR Market-Team Fit is WEAK** — surface the specific lens (it changes the diligence question: build-side WEAK → engineering hire risk; market-side WEAK → GTM/relationship risk)
+- Any **stage-inappropriate Key-Seat gap** (🔴) — e.g., Series A with paying customers and no Head of Sales
 
 | Score | Criteria |
 |-------|---------|
-| 5 | Domain expert with prior exit (verified); STRONG team-level PMTF; full-time commitment ≥80%; strong product AND market team fit; all founder claims verified |
-| 4 | Strong domain background; execution evidence verified; STRONG or MODERATE PMTF with no critical gaps; commitment ≥60% full-time |
-| 3 | Relevant background; MODERATE PMTF with one fillable gap; commitment ≥60% full-time; minor unverified claims |
-| 2 | Thin domain connection or first-time founder; WEAK PMTF (skills gap); commitment <60% full-time OR multiple unverified founder claims |
-| 1 | Background disconnected from problem; WEAK PMTF with multiple gaps; commitment <40% full-time; or any contradicted founder claim |
+| 5 | Domain expert with prior exit (verified); both Product-Team Fit AND Market-Team Fit STRONG; full-time commitment ≥80%; Key-Seat Completeness: all filled or stage-appropriate; all founder claims verified |
+| 4 | Strong domain background; execution evidence verified; both fit lenses STRONG or one STRONG + one MODERATE (no WEAK); commitment ≥60% full-time; Key-Seat: at most one ⚠️ with credible hiring plan |
+| 3 | Relevant background; one fit lens MODERATE with one fillable gap; commitment ≥60% full-time; minor unverified claims; Key-Seat: one ⚠️ |
+| 2 | Thin domain connection or first-time founder; one fit lens WEAK (specify Product-side or Market-side); commitment <60% full-time OR multiple unverified founder claims; Key-Seat: one 🔴 stage-inappropriate gap |
+| 1 | Background disconnected from problem; both fit lenses WEAK; commitment <40% full-time; or any contradicted founder claim; Key-Seat: multiple 🔴 gaps |
 | 0 | No founder information available |
+
+> **Note on Diligence-stage consumption:** at Diligence stage, the team-analyst runs in `diligence` mode which produces per-founder dimensions, team-level synthesis, Staff Deep-Dive, Network Map, and full Key-Seat Completeness table — feeding the deeper Execution Risk rubric in `diligence-scoring-rubrics.md`. Scout-stage scoring uses only the lite verdicts above.
 
 ### Technology (Score 0-5)
 
@@ -366,9 +369,9 @@ Greed:                    [one phrase — upside case if thesis holds]
 **Phase 2 Execution** (table — one line per item, score shown):
 ```
 | Dimension          | Score | Assessment                                                    |
-| Team — PMTF        | X/5   | PMTF: STRONG/MOD/WEAK | Product fit: ✓/gap | Market fit: ✓/gap |
-|                    |       | Commitment: X% full-time | Verification: [N verified / N unverified] |
-|                    |       | Strength: [phrase] | Gap: [phrase]                                     |
+| Team — PT-Fit + MT-Fit | X/5 | Product-Team Fit: STRONG/MOD/WEAK | Market-Team Fit: STRONG/MOD/WEAK |
+|                    |       | Commitment: X% full-time | Key-Seat: X of 6 filled or stage-appropriate |
+|                    |       | Verification: [N verified / N unverified] | Strength: [phrase] | Gap: [phrase] |
 | Technology         | X/5   | TRL X | [thin wrapper or deep IP] | Replication: [time]    |
 | Traction           | X/5   | [revenue/pipeline] | [named customer] | [retention signal] |
 | GTM / Path to $10M | X/5   | [motion] | [key milestone] | [CAC/LTV if known]          |

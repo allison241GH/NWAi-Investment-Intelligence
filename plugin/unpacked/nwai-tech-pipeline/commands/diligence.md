@@ -160,9 +160,9 @@ Use the Task tool to launch **all six agents simultaneously**:
 ---
 
 **Agent 1 — team-analyst:**
-"Research the founding team and company background of [Company Name] for NWAi diligence with a Product Market Team Fit (PMTF) lens. Website: [URL]. Known founders: [names]. Apply the Founder Claim Verification Protocol to every specific exit/ARR/role claim (LinkedIn + Perplexity cross-reference). Assess Team Commitment Depth (full-time vs advisor ratio, flag 'stuck' advisors). Map Team-Level PMTF (skills coverage across domain depth, engineering, market access; detect market-access gaps). Include supporting context on funding, traction, commercial validation, and public red flags. Return the full Company Research Briefing including the People Verification Brief, Team Quality + PMTF Assessment, and Team Commitment Depth sections.
+"Research the team — founders, staff, and advisors — of [Company Name] for NWAi diligence. **mode: diligence** (full underwriting depth — bifurcated Product-Team Fit and Market-Team Fit lenses with per-founder dimensions and team synthesis; Staff Deep-Dive for VP/Head-of/C-level non-founder hires; Network Map under Market-Team Fit; Key-Seat Completeness checklist with stage-appropriateness; full advisor capital-commitment classification). Website: [URL]. Known founders: [names]. Apply the Founder Claim Verification Protocol to every specific exit/ARR/role/credential claim (LinkedIn + Perplexity cross-reference). Assess Team Commitment Depth (full-time vs advisor ratio, flag 'stuck' advisors). Produce Founder Profile Tags for all operating founders. Include supporting context on funding, traction, commercial validation, and public red flags. Return the full Team Analyst Briefing including the People Verification Brief, Product-Team Fit Assessment, Market-Team Fit Assessment (with Network Map), Team Commitment Depth, Founder Profile Tags, Staff Deep-Dive, and Key-Seat Completeness sections.
 
-If a Post-Meeting Layer Manifest is provided, read the Product Demo Reconciliation and GTM Diligence reports first — these contain analyst observations on team behavior in live diligence calls (who answered authoritatively, who deferred, who revealed depth limits). Incorporate those observations into the Team Quality + PMTF Assessment. Read the latest Action Tracker for any team-related items marked ✅ RESOLVED or 🔴 OPEN. Do not regress to Scout-stage team conclusions if post-meeting evidence has updated them.
+If a Post-Meeting Layer Manifest is provided, read the Product Demo Reconciliation and GTM Diligence reports first — these contain analyst observations on team behavior in live diligence calls (who answered authoritatively, who deferred, who revealed depth limits). Incorporate those observations into both the Product-Team Fit and Market-Team Fit assessments. Read the latest Action Tracker for any team-related items marked ✅ RESOLVED or 🔴 OPEN. Do not regress to Scout-stage team conclusions if post-meeting evidence has updated them.
 
 [POST_MEETING_LAYER_MANIFEST]"
 
@@ -410,6 +410,14 @@ Three elements only — no restatement of risks or conditions from Parts A, D, o
 
 2. **Recommended DD Actions**: A numbered list of 4–6 sequenced next steps. Execute in priority order after gate-critical conditions in Part D are cleared.
 
+   **Customer-interview prep callout (mandatory when customer reference interviews are in the action list — they typically are).** Customer interviews are conducted live by the deal lead; the questions must be surfaced *before* the call, not just analyzed after. When customer reference interviews appear as a DD action, the action item MUST embed the four-question **Behavioral-Intensity Question Bank** inline as required call structure — not just a pointer to the framework doc:
+   1. **Tool replacement & adoption** — *"What were you using before this product? How did you find this one and what made you switch?"*
+   2. **Unplanned use cases** — *"Have you found ways to use this that the vendor didn't pitch to you? Or that surprised you?"*
+   3. **Organic evangelism** — *"Have you talked to anyone outside your company about this product? Tell me about that."*
+   4. **Counterfactual loss** — *"If this product disappeared tomorrow, what would you do?"*
+
+   Full playbook + behavioral signal interpretation in `diligence-analysis-framework.md` → Customer Interview section. Post-call workflow: `/post-meeting [Company] interview` applies these same four questions as the analytical lens against the transcript and produces a Behavioral Intensity classification (Strong / Some / None) in the Analyst POV box. *None* indicates commodity status.
+
 3. **Kill Conditions table**: A 3-column table (Kill Condition | Trigger | Verdict) with one row per gate-critical risk identified in Part D. Typically 2–4 rows.
 
 ---
@@ -451,6 +459,6 @@ The document must contain all six parts in order:
 
 5. **Part E — Founder Questions (Scoring Inputs)**: Open with callout note pointing to Part D for gate-critical questions. Two numbered-list sections only: Scoring Inputs and Nice to Have.
 
-6. **Part F — Recommended Next Steps**: Three elements: (a) Verdict table — one row, verdict label + rationale; (b) Recommended DD Actions — numbered list of 4–6 sequenced actions; (c) Kill Conditions table — 3-column (Kill Condition | Trigger | Verdict), 2–4 rows.
+6. **Part F — Recommended Next Steps**: Three elements: (a) Verdict table — one row, verdict label + rationale; (b) Recommended DD Actions — numbered list of 4–6 sequenced actions, **with Customer-Interview Prep callout box embedded inline below the action item when customer reference interviews appear in the list** (callout box renders the four-question Behavioral-Intensity Question Bank as a shaded inset; questions verbatim from Phase 4 spec — Tool replacement & adoption / Unplanned use cases / Organic evangelism / Counterfactual loss); (c) Kill Conditions table — 3-column (Kill Condition | Trigger | Verdict), 2–4 rows.
 
 After generating the file, confirm the save path and provide a link to the file.
