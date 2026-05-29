@@ -24,7 +24,7 @@
 ## 2. Building Blocks & Stack
 
 **NWAi Investment Intelligence Pipeline**
-- **Intelligence layer:** Claude (Sonnet) via Cowork/Claude Code — 7 AI agents (pipeline-monitor, company-researcher, market-analyst, competitive-intelligence, technical-diligence, financial-analyst, risk-assessor)
+- **Intelligence layer:** Claude (Sonnet) via Cowork/Claude Code — 7 AI agents (pipeline-monitor, team-analyst, market-analyst, competitive-positioning-analyst, technology-analyst, financial-analyst, risk-analyst)
 - **Command layer:** 8 pipeline commands (`/screen`, `/scout`, `/diligence`, `/post-meeting`, `/dd-report`, `/decision`, `/memo`, `/sync-pipeline`)
 - **Framework layer:** 9 reference documents (gates & flags, scout questions, diligence rubrics, DD checklist, AI moats framework, DD report format, memo format, diligence analysis framework, scoring methodology)
 - **CRM integration:** Dealum via bidirectional MCP — deals flow in, intelligence and stage updates write back

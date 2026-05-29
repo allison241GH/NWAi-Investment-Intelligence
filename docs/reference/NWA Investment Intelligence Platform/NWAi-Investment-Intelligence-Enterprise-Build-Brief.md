@@ -239,11 +239,11 @@ Read `docs/reference/NWAi TechGroup/Pipeline Agents/agent-team-reference.md` for
 | Agent | Role | When |
 |-------|------|------|
 | `pipeline-monitor` | Live pipeline snapshot — Dealum overlay (V1) / substrate-native (V2+) | Session startup, /sync-pipeline |
-| `company-researcher` | Team-first PMTF analysis + founder claim verification + commitment depth | Scout + Diligence |
+| `team-analyst` | Team-first PMTF analysis + founder claim verification + commitment depth | Scout + Diligence |
 | `market-analyst` | Structural Discontinuity test + TAM/SAM/SOM + market timing | Scout + Diligence |
-| `competitive-intelligence` | Competitor mapping + incumbents + moat input | Scout + Diligence |
-| `technical-diligence` | Thin wrapper detection + TRL + IP/patents + AI moat signals | Scout (light) + Diligence (full) |
-| `risk-assessor` | Regulatory + exit + execution + financial risk | Scout (light) + Diligence (full) |
+| `competitive-positioning-analyst` | Competitor mapping + incumbents + moat input | Scout + Diligence |
+| `technology-analyst` | Thin wrapper detection + TRL + IP/patents + AI moat signals | Scout (light) + Diligence (full) |
+| `risk-analyst` | Regulatory + exit + execution + financial risk | Scout (light) + Diligence (full) |
 | `pricing-analyst` | Pricing maturity + unit economics + channel pressure | Diligence Stage 2A (parallel) |
 | `forecasting-analyst` | Independent 5-yr forecast (McMurry method, "no AI slop" rule) | Diligence Stage 2B (sequential) |
 | `venture-analyst` | Valuation, IRR / hurdle test, deal structure | Diligence Stage 2B (final synthesis) |

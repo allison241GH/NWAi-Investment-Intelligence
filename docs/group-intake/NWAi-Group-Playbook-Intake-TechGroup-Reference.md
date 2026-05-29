@@ -1,6 +1,6 @@
 # NWAi Group Playbook — Intake Questionnaire (TechGroup Reference)
 
-**This is the worked example that accompanies the blank intake template.** Every answer below is sourced from existing plugin files (`gates-and-flags.md`, `gates-and-flags-techgroup.md`, `ai-moats-framework.md`, `agents/technical-diligence.md`, `CLAUDE.md`) — nothing new is invented for TechGroup. Group chairs filling out the blank template should look at the corresponding section here to see the level of detail and the format expected.
+**This is the worked example that accompanies the blank intake template.** Every answer below is sourced from existing plugin files (`gates-and-flags.md`, `gates-and-flags-techgroup.md`, `ai-moats-framework.md`, `agents/technology-analyst.md`, `CLAUDE.md`) — nothing new is invented for TechGroup. Group chairs filling out the blank template should look at the corresponding section here to see the level of detail and the format expected.
 
 ---
 
@@ -258,14 +258,14 @@ The property of a product getting smarter, stickier, or more embedded the more i
 
 | Field | Answer |
 |-------|--------|
-| Does TechGroup need a domain-specialist agent? | **Yes — `technical-diligence` is the TechGroup specialist (the only group-specialized agent in the plugin today).** |
-| Agent name | `technical-diligence` |
+| Does TechGroup need a domain-specialist agent? | **Yes — `technology-analyst` is the TechGroup specialist (the only group-specialized agent in the plugin today).** |
+| Agent name | `technology-analyst` |
 | What it researches | Thin Wrapper Detection (3 tests: API Dependency, Differentiation Source, Switching Cost); Technology Readiness Level (TRL 1–9 mapping with NWAi ≥ 5 gate); IP & Patents (USPTO, patents.google.com, founder names); Technical Architecture Signals (stack, AI/ML architecture, data infrastructure, GitHub presence, build-cost estimation); AI Moat Input Data (proprietary dataset, data flywheel, workflow integration depth, custom certifications); Technical Team Depth (CTO credibility, engineering team signals, missing-tech-co-founder flag) |
 | What input data it consumes | Company name + product description + website URL (provided by `/scout` or `/diligence`); WebSearch results across 6 research areas; WebFetch on company sites and technical blogs; USPTO/Google Patents searches; LinkedIn / Crunchbase for technical team |
 | What output briefing it produces | "TECHNICAL DILIGENCE BRIEFING" — structured fixed-format output with 7 sections (Thin Wrapper Verdict, TRL Assessment, IP & Patents, Technical Architecture, AI Moat Signals, Technical Team, Red Flags + Data Gaps). Feeds DD Report Section 4 (Technology) primarily, plus Section 7 (Moat) and Section 6 (Team). |
 | At which stage(s) does it run? | **Both** — light run at Scout (thin wrapper + TRL only — flags deal-stoppers early) and full run at Diligence (all 6 research sections). |
 
-*Source: `agents/technical-diligence.md` (full spec, 224 lines).*
+*Source: `agents/technology-analyst.md` (full spec, 224 lines).*
 
 ---
 

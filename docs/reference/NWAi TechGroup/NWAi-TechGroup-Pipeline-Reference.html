@@ -672,7 +672,7 @@
         <ul>
           <li><span class="li-dot">🔗</span> Dealum CRM integration (MCP server)</li>
           <li><span class="li-dot">🤖</span> Claude orchestration layer + session context</li>
-          <li><span class="li-dot">📊</span> 8 AI agents: pipeline-monitor, company-researcher (PMTF), market-analyst, competitive-intelligence, technical-diligence, risk-assessor, plus the 3-agent financial diligence team — pricing-analyst → forecasting-analyst → venture-analyst</li>
+          <li><span class="li-dot">📊</span> 8 AI agents: pipeline-monitor, team-analyst (PMTF), market-analyst, competitive-positioning-analyst, technology-analyst, risk-analyst, plus the 3-agent financial diligence team — pricing-analyst → forecasting-analyst → venture-analyst</li>
           <li><span class="li-dot">🔄</span> Pipeline stages: Inbox → Screen → Scout → Diligence → DD Report → Decision → Memo</li>
           <li><span class="li-dot">📄</span> Output formats: Triage Report, Scout Report, DD Kickoff Package, Post-Meeting Reconciliation, DD Investment Report, Exec Memo</li>
           <li><span class="li-dot">⚙️</span> Slash commands: /sync-pipeline /screen /scout /diligence /post-meeting /dd-report /decision /memo</li>
@@ -806,7 +806,7 @@
           <div class="card-sub">Stage: Scout → Diligence</div>
         </div>
       </div>
-      <p>Two-stage agent pipeline. <strong>Stage 2A</strong> (parallel, ~5–8 min): company-researcher (PMTF), market-analyst, competitive-intelligence, technical-diligence, risk-assessor, pricing-analyst. <strong>Stage 2B</strong> (sequential): forecasting-analyst (independent McMurry-method 5-yr forecast with mandatory <em>because</em> clauses) → venture-analyst (3-method valuation, 35% hurdle test, 10x-in-5-years criterion check, deal structure recommendation). Generates DD Kickoff Package with Layer 2 Hypothesis Confirmation Plan, scored rubrics, and 17-folder assignments.</p>
+      <p>Two-stage agent pipeline. <strong>Stage 2A</strong> (parallel, ~5–8 min): team-analyst (PMTF), market-analyst, competitive-positioning-analyst, technology-analyst, risk-analyst, pricing-analyst. <strong>Stage 2B</strong> (sequential): forecasting-analyst (independent McMurry-method 5-yr forecast with mandatory <em>because</em> clauses) → venture-analyst (3-method valuation, 35% hurdle test, 10x-in-5-years criterion check, deal structure recommendation). Generates DD Kickoff Package with Layer 2 Hypothesis Confirmation Plan, scored rubrics, and 17-folder assignments.</p>
       <div class="card-tag">Output: [Company] - DD Kickoff Package.docx</div>
     </div>
 
@@ -878,7 +878,7 @@
     </div>
 
     <div class="agent-card">
-      <h3>🕵️ company-researcher  <span style="font-size:11px;background:var(--gold);color:var(--navy);padding:2px 8px;border-radius:4px;font-weight:700;letter-spacing:0.3px;">PMTF refresh · v2.13</span></h3>
+      <h3>🕵️ team-analyst  <span style="font-size:11px;background:var(--gold);color:var(--navy);padding:2px 8px;border-radius:4px;font-weight:700;letter-spacing:0.3px;">PMTF refresh · v2.13</span></h3>
       <div class="trigger">Triggered by: /scout (full) + /diligence (Stage 2A parallel)</div>
       <p>Team-first mandate. <strong>Founder Claim Verification Protocol</strong> (LinkedIn + Perplexity cross-reference of every specific exit/ARR/role claim → ✅ VERIFIED / ⚠️ PARTIAL / 🔴 UNVERIFIED / ❌ CONTRADICTED). <strong>Team-Level PMTF</strong> (skills coverage across domain depth / engineering / market access; explicit gap detection). <strong>Team Commitment Depth</strong> (full-time vs advisor ratio, "stuck" advisor flagging). Plus supporting context: funding, traction, commercial validation, public red flags.</p>
       <div class="returns"><strong>Returns:</strong> People Verification Brief + Team Quality + PMTF Assessment + Commitment Depth + commercial briefing → feeds Team Validation + Commercial Validation (Layer 2).</div>
@@ -892,21 +892,21 @@
     </div>
 
     <div class="agent-card">
-      <h3>🗺️ competitive-intelligence</h3>
+      <h3>🗺️ competitive-positioning-analyst</h3>
       <div class="trigger">Triggered by: /scout (full) + /diligence (full)</div>
       <p>Maps direct competitors and incumbent threats, alternative solutions, strategic incumbents, positioning analysis, and moat input data.</p>
-      <div class="returns"><strong>Returns:</strong> Competitive Intelligence Briefing → feeds Competitive Validation (Layer 2).</div>
+      <div class="returns"><strong>Returns:</strong> Competitive Positioning Analyst Briefing → feeds Competitive Validation (Layer 2).</div>
     </div>
 
     <div class="agent-card">
-      <h3>🔧 technical-diligence</h3>
+      <h3>🔧 technology-analyst</h3>
       <div class="trigger">Triggered by: /scout (light — thin wrapper + TRL) + /diligence (full)</div>
       <p>Thin wrapper detection (3 tests), TRL assessment, IP/patent research, technical architecture signals, AI moat input data, technical team depth.</p>
-      <div class="returns"><strong>Returns:</strong> Technical Diligence Briefing → feeds Technical Validation (Layer 2).</div>
+      <div class="returns"><strong>Returns:</strong> Technology Analyst Briefing → feeds Technical Validation (Layer 2).</div>
     </div>
 
     <div class="agent-card">
-      <h3>⚠️ risk-assessor</h3>
+      <h3>⚠️ risk-analyst</h3>
       <div class="trigger">Triggered by: /scout (light — top kill risks) + /diligence (Stage 2A parallel)</div>
       <p>Regulatory risk research, exit landscape + acquirer dynamics, execution risk signals, market and financial risk signals from public sources.</p>
       <div class="returns"><strong>Returns:</strong> Risk Assessment Briefing → feeds cross-cutting risk overlay across all Layer 2 groups.</div>

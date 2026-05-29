@@ -89,7 +89,7 @@ The three Claude agent runtimes are not competing options — they serve differe
 **Limitations relative to NWAi's pipeline:**
 - The vertical is corporate finance / asset management / IBank — not angel-stage venture capital
 - Does not natively encode angel-investing-specific frameworks like PMTF, structural discontinuity, thin wrapper test, McMurry method, NWA's 35% IRR + 10x-in-5-years criterion
-- Roles like `company-researcher` (PMTF), `market-analyst` (structural discontinuity), `technical-diligence` (thin wrapper, TRL, AI moat) are venture-specific and outside the FS vertical's design center
+- Roles like `team-analyst` (PMTF), `market-analyst` (structural discontinuity), `technology-analyst` (thin wrapper, TRL, AI moat) are venture-specific and outside the FS vertical's design center
 
 **Where overlap exists:** General-purpose forecasting, comp / multiples research, document analysis. These could potentially be borrowed as a foundation layer that NWA's framework is then layered on top of.
 

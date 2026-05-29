@@ -66,7 +66,7 @@ Extract: domain tenure, prior companies, exits, notable advisors or investors. D
 Search: `"[company sector] market leaders"` or `"[company name] competitors"` or `"[sector] [hyperscaler] [product area]"`
 Goal: Identify dominant incumbents and assess whether any hyperscaler (NVIDIA, Microsoft, AWS, Salesforce, Google, Apple) is building in this direction. This directly enables the Goliath Test in Step 5. If a major incumbent has an announced roadmap item overlapping with this company's core function, flag it explicitly.
 
-Do not deploy company-researcher or competitive-intelligence agents at this stage.
+Do not deploy team-analyst or competitive-positioning-analyst agents at this stage.
 
 ---
 

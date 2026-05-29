@@ -187,7 +187,7 @@ Goal: Verify domain background, prior companies, exits, and any notable advisors
 Search: `"[company sector] market leaders"` or `"[company name] competitors"` or `"[company sector] [known incumbent] [product area]"`
 Goal: Identify the dominant incumbents in the space and assess whether any major incumbent (NVIDIA, Microsoft, AWS, Salesforce, Google, Apple — or domain-specific Goliaths like Pfizer, Lockheed, P&G, John Deere) is building in this direction. This search directly enables the **Goliath Test** for Defensibility scoring. If a major incumbent has an announced roadmap item that overlaps with this company's core function, flag it explicitly. Takes 2–3 minutes. Required for any score of 4–5 on Defensibility.
 
-**All other research (patent searches, regulatory landscape, customer references, technical stack depth) is Scout and Diligence-stage work.** Do not deploy company-researcher or competitive-intelligence agents at Screen stage.
+**All other research (patent searches, regulatory landscape, customer references, technical stack depth) is Scout and Diligence-stage work.** Do not deploy team-analyst or competitive-positioning-analyst agents at Screen stage.
 
 ---
 

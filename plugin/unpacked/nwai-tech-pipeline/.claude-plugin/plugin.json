@@ -1,7 +1,7 @@
 {
   "name": "nwai-tech-pipeline",
-  "version": "2.13.1",
-  "description": "NWAi TechGroup deal pipeline — filesystem-driven intake to investment memo (v2.13 adds team-first PMTF analysis + 3-agent financial diligence: pricing → forecasting → venture analyst)",
+  "version": "2.14.0",
+  "description": "NWAi TechGroup deal pipeline — filesystem-driven intake to investment memo (v2.14 standardizes agent naming: team-analyst, competitive-positioning-analyst, technology-analyst, risk-analyst alongside market-analyst, pricing-analyst, forecasting-analyst, venture-analyst)",
   "author": {
     "name": "New World Angels",
     "url": "https://www.newworldangels.com"

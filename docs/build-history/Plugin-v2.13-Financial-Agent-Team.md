@@ -173,7 +173,7 @@ The legacy `financial-analyst.md` is replaced by this three-agent team. `financi
 - `references/diligence-scoring-rubrics.md` (update Bear/Base/Bull rubric)
 
 **Phase A (Company Researcher refocus, also part of v2.13.0):**
-- `.claude/agents/company-researcher.md` (PMTF, Team Commitment Depth, Founder Claim Verification)
+- `.claude/agents/team-analyst.md` (PMTF, Team Commitment Depth, Founder Claim Verification)
 - `references/scout-questions.md` (Team scoring expanded with PMTF + commitment + verification)
 - `references/diligence-scoring-rubrics.md` (Execution Risk criteria expanded)
 
@@ -206,4 +206,4 @@ The legacy `financial-analyst.md` is replaced by this three-agent team. `financi
 
 1. **Sequencing:** Phase A ships independently first (Company Researcher refocus). Phase B (Forecasting + Pricing + Venture Analyst team + pipeline integration) ships as a unit afterward — both within v2.13.0.
 2. **Round 2 meeting:** Phase B ship is NOT gated by the Round 2 review with Sam/Ron. Ship the new agents into v2.13.0 when ready; Round 2 input gets folded in as iterative refinement post-ship.
-3. **Risk Assessor:** Stays as-is (regulatory, exit landscape, execution risk). Venture Analyst consumes risk-assessor output for the hurdle-rate test rather than duplicating its work.
+3. **Risk Assessor:** Stays as-is (regulatory, exit landscape, execution risk). Venture Analyst consumes risk-analyst output for the hurdle-rate test rather than duplicating its work.

@@ -72,9 +72,9 @@ The Desktop file is the **NWAi TechGroup Screener Framework v2.0** — a substan
    - Plus a "Dual Score Interpretation" section that handles divergence (high conviction + low fit = pass with referral; low conviction + high fit = conditional watch; etc.)
 3. **Page-1 and Page-2 layout updates** — Analyst Verdict Block now carries both scores plus the Dual Score Interpretation; Phase 2 Execution table's Team row expands to include the 5-sub-dimension breakdown.
 
-**Recommendation: PORT FORWARD.** This is a substantive analytical upgrade that aligns with the v2.0 framework rigor (Section 1.1). The Team scoring sophistication mirrors the company-researcher Team Quality Assessment edits (Section 1.3). The Dual Score system is a clean separation of "what the deal is" (Thesis Fit, criteria-derived) from "what we found" (Intelligence Conviction, agent-derived). Land alongside Section 1.1 in the same framework-upgrade commit.
+**Recommendation: PORT FORWARD.** This is a substantive analytical upgrade that aligns with the v2.0 framework rigor (Section 1.1). The Team scoring sophistication mirrors the team-analyst Team Quality Assessment edits (Section 1.3). The Dual Score system is a clean separation of "what the deal is" (Thesis Fit, criteria-derived) from "what we found" (Intelligence Conviction, agent-derived). Land alongside Section 1.1 in the same framework-upgrade commit.
 
-### 1.3 — `.claude/agents/company-researcher.md`
+### 1.3 — `.claude/agents/team-analyst.md`
 
 **Sizes:** Desktop 307 lines | Canonical 244 lines | Net +63 lines
 
@@ -88,12 +88,12 @@ The Desktop file is the **NWAi TechGroup Screener Framework v2.0** — a substan
 
 **Recommendation: PORT FORWARD.** Both edits are improvements that the v2.0 framework expects. The Data Freshness Rule is independently valuable even if the v2.0 framework as a whole isn't adopted. The Team Quality Assessment must land if scout.md (Section 1.2) lands.
 
-### 1.4 — `.claude/agents/competitive-intelligence.md`
+### 1.4 — `.claude/agents/competitive-positioning-analyst.md`
 
 **Sizes:** Desktop 260 lines | Canonical 246 lines | Net +14 lines
 
 **Summary of edits:**
-1. **Data Freshness Rule** — same pattern as company-researcher.md. Adds 18-month staleness filter, current-year search injection, market-size publication-date flagging.
+1. **Data Freshness Rule** — same pattern as team-analyst.md. Adds 18-month staleness filter, current-year search injection, market-size publication-date flagging.
 2. **Direct Competitors table** — adds a "Last Data Point" column. Flags any competitor row where the most recent data point is >18 months old.
 3. **Market Size Validation searches** — append current year to all queries; flag publication date.
 
@@ -345,8 +345,8 @@ Sequenced for execution in a follow-up session. Each row is a single discrete ac
 | 1 | **`gates-and-flags-techgroup.md`** (Sections 1.1 + 1.8 mirrored) | **PORT FORWARD** to canonical — single commit titled e.g. "framework: TechGroup screener v1.0 → v2.0 (NWA Filter, Track A/B, Venture Economics)" | Confirm with Jamie this is the live framework; this is the priority decision |
 | 2 | `screen.md` (Sections 1.6 + 1.7 mirrored) | **PORT FORWARD** in the same commit as #1 | Cannot diverge from gates-and-flags-techgroup.md |
 | 3 | `scout.md` (Section 1.2) | **PORT FORWARD** in the same commit as #1 | Five-sub-dimension Team scoring + Dual Score system |
-| 4 | `company-researcher.md` (Section 1.3) | **PORT FORWARD** in the same commit as #1 | Data Freshness Rule + Team Quality Assessment |
-| 5 | `competitive-intelligence.md` (Section 1.4) | **PORT FORWARD** in the same commit as #1 | Data Freshness Rule + Last Data Point column |
+| 4 | `team-analyst.md` (Section 1.3) | **PORT FORWARD** in the same commit as #1 | Data Freshness Rule + Team Quality Assessment |
+| 5 | `competitive-positioning-analyst.md` (Section 1.4) | **PORT FORWARD** in the same commit as #1 | Data Freshness Rule + Last Data Point column |
 | 6 | `market-analyst.md` (Section 1.5) | **PORT FORWARD** in the same commit as #1 | Data Freshness Rule + TAM freshness columns |
 | 7 | **CLAUDE.md** | UPDATE to reflect v2.0 framework after items 1–6 land | Triage section needs new dimension counts (5+4 → 6+5), thresholds (18/25 → 20/30), NWA Filter mention; AutoKill terminology stays as legacy reference |
 | 8 | **demo `triage_assessment` rendering + seed data** (canonical `demo/`) | UPDATE to v2.0 dimension counts (Track A/B awareness, 30/25 thresholds, NWA Filter rendering) — separate session | Phase 1 board demo currently shows v1.0 framework; either accept a known divergence or update before board demo. **Surface to Jamie for sequencing decision.** |

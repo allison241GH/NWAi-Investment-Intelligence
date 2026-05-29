@@ -187,7 +187,7 @@ Avg < 4 → Score 5 | Avg 4–5 → Score 4 | Avg 5–6 → Score 3 | Avg 7–8 
 
 1. **17-folder DD checklist findings** — primary source
 2. **NWAi scoring rubrics** — all scores derived from rubric outputs, not estimated
-3. **Agent research briefings** — company-researcher and competitive-intelligence outputs
+3. **Agent research briefings** — team-analyst and competitive-positioning-analyst outputs
 4. **Prior pipeline outputs** — Screening flags, Scout verdict, DD Kickoff findings
 5. **Dealum application data** — deal metadata, contact info, round details
 

@@ -180,7 +180,7 @@ From financial files (if present) or derived from stated pricing + comps:
 
 ### Section 6: Competitive Pricing Comparison
 
-For each direct competitor (3+ comps from competitive-intelligence output):
+For each direct competitor (3+ comps from competitive-positioning-analyst output):
 
 | Competitor | Stated Price | Pricing Model | Value Delivered | Price-to-Value Ratio |
 |------------|--------------|---------------|-----------------|----------------------|

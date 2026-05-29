@@ -214,11 +214,11 @@ When mapping a deal to a theme, identify the correct theme from the table below.
 
 **Agents available (launched automatically or on request):**
 - `pipeline-monitor` — live Dealum pipeline snapshot
-- `company-researcher` — **team-first PMTF analysis** (Product Market Team Fit + skills coverage + market-access gap detection), team commitment depth (full-time vs advisor ratio, "stuck" advisor flagging), founder claim verification protocol (LinkedIn + Perplexity cross-reference for specific exit/ARR/role claims), with supporting context on funding, traction, and public red flags (Scout + Diligence)
+- `team-analyst` — **team-first PMTF analysis** (Product Market Team Fit + skills coverage + market-access gap detection), team commitment depth (full-time vs advisor ratio, "stuck" advisor flagging), founder claim verification protocol (LinkedIn + Perplexity cross-reference for specific exit/ARR/role claims), with supporting context on funding, traction, and public red flags (Scout + Diligence)
 - `market-analyst` — structural discontinuity test, TAM/SAM/SOM validation, market timing (Scout + Diligence)
-- `competitive-intelligence` — competitor mapping, incumbents, positioning, moat inputs (Scout + Diligence)
-- `technical-diligence` — thin wrapper test, TRL assessment, IP/patents, AI moat signals (Scout light + Diligence full)
-- `risk-assessor` — regulatory risk, exit landscape, execution + market risk signals (Scout light + Diligence full)
+- `competitive-positioning-analyst` — competitor mapping, incumbents, positioning, moat inputs (Scout + Diligence)
+- `technology-analyst` — thin wrapper test, TRL assessment, IP/patents, AI moat signals (Scout light + Diligence full)
+- `risk-analyst` — regulatory risk, exit landscape, execution + market risk signals (Scout light + Diligence full)
 - `pricing-analyst` — pricing maturity (PROVEN/EARLY/DISCOVERY/UNKNOWN), unit economics (CAC/LTV/payback), channel pressure forecast (margin compression modeling), value proposition validation, competitive pricing comparison (Stage 2A — parallel)
 - `forecasting-analyst` — **independent 5-year financial forecast** built using the McMurry method (proprietary, NOT a render of the company's submitted spreadsheet); Bear/Base/Bull with mandatory *because* clauses (the "no AI slop" rule); P&L + cash flow + balance sheet; capital plan with round timing; founder financial literacy assessment (Stage 2B — sequential, after pricing-analyst)
 - `venture-analyst` — final synthesis layer; defensible valuation (3 methods reconciled), projected exit Y3+Y5, capital + dilution modeling, IRR/multiple, 35% IRR hurdle test, NWA 10x-in-5-years criterion check, deal structure recommendation (priced equity / convertible with cap / participating preferred / re-priced terms / decline) (Stage 2B — sequential, after forecasting-analyst)
@@ -364,7 +364,7 @@ Key files and folders in this workspace:
 
 - **Claude Desktop chat** — fast, lightweight, great for everyday deal-running, screening, scouting, and meeting-transcript processing. Open the app, attach this folder as project context, and the slash commands + agents + CLAUDE.md context are available.
 - **Claude Code CLI** — terminal-native, best for sessions involving file edits, plugin maintenance, git operations, multi-step research, and anything that benefits from durable worktree state. Native git/credential access (no Cowork sandbox limitation).
-- **Cowork** — currently a less-used surface; remains valid for collaborative or guided work. The Desktop Extension install (`nwai-tech-pipeline.plugin`) was uninstalled May 15, 2026 and is not required for any of the three surfaces above. If Cowork ever becomes daily again, reinstall v2.13.1 from `plugin/current/`.
+- **Cowork** — currently a less-used surface; remains valid for collaborative or guided work. The Desktop Extension install (`nwai-tech-pipeline.plugin`) was uninstalled May 15, 2026 and is not required for any of the three surfaces above. If Cowork ever becomes daily again, reinstall v2.14.0 from `plugin/current/`.
 
 Default surface assumption: **none.** Calibrate to whichever surface the session is running in. CLI sessions can do plugin/agent/reference edits directly; Desktop chat sessions favor consultative analytical work; Cowork sessions (when used) operate identically to Desktop chat against the same workspace.
 
@@ -378,7 +378,7 @@ The plugin lives in two places. Jamie does not need to edit files directly.
 
 **`.claude/`** — the live runtime folder (hidden, in workspace root). This is what Claude reads during every session. Contains all agents, commands, skills, and servers. Changes made here take effect immediately in the current session.
 
-**`plugin/current/nwai-tech-pipeline.plugin`** — the installable package (v2.13.1). This is the packaged version for installation and org sharing. Always matches `.claude/` — they are kept in sync.
+**`plugin/current/nwai-tech-pipeline.plugin`** — the installable package (v2.14.0). This is the packaged version for installation and org sharing. Always matches `.claude/` — they are kept in sync.
 
 **Plugin update workflow** (handled by Claude, not Jamie):
 1. Update the relevant files in `.claude/` during a session (live immediately)
@@ -433,4 +433,4 @@ If canonical has uncommitted changes blocking the pull (e.g., transient `npm ins
 
 ---
 
-*Last updated: May 15, 2026 (architecture v0.27.0 — surface-model rebalance: three first-class surfaces (Claude Desktop, Claude Code CLI, Cowork); Desktop Extension install retired May 15 (Dealum integration remains deferred); plugin v2.13.1 unchanged) | NWAi Investment Intelligence & AI | Jamie, TechGroup Co-Chair*
+*Last updated: May 29, 2026 (architecture v0.28.0 — plugin v2.14.0: agent naming standardization to `<descriptor>-analyst` convention: team-analyst, competitive-positioning-analyst, technology-analyst, risk-analyst alongside market-analyst, pricing-analyst, forecasting-analyst, venture-analyst) | NWAi Investment Intelligence & AI | Jamie, TechGroup Co-Chair*

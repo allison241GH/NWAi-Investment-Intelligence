@@ -51,7 +51,7 @@ For each file found: note version count and which date is being loaded. If none 
   - Deal structure recommendation (priced equity / convertible with cap / participating preferred) — from **Venture Analyst Briefing**
   - Capital plan with round timing (Series A trigger, Series B trigger) — from **Forecasting Analyst Briefing**
   - Founder financial literacy assessment — from **Forecasting Analyst Briefing**
-- **From company-researcher (Phase A):** PMTF score, Team Commitment Depth ratio, founder claim verification status — feeds Slide 4 Strengths/Risks
+- **From team-analyst (Phase A):** PMTF score, Team Commitment Depth ratio, founder claim verification status — feeds Slide 4 Strengths/Risks
 - Moat classification and AI wrapper assessment
 - Key risks (used verbatim in Slide 4 Risks section)
 

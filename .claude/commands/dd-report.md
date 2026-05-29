@@ -118,7 +118,7 @@ Section score mappings:
 - S8 (Deal Structure): Hard gate results + cap table cleanliness + Venture Analyst deal structure recommendation
 - S9 (Financials): Financial Risk + Forecasting Analyst Bear/Base/Bull model + Pricing Analyst unit economics + Venture Analyst capital plan (1–10 inverted)
 - S10 (Risk — inverted): Risk Score average across all 5 categories
-- S11 (Exit Strategy): Venture Analyst exit valuation + 35% hurdle test + 10x-in-5-years criterion + Risk Assessor acquirer landscape
+- S11 (Exit Strategy): Venture Analyst exit valuation + 35% hurdle test + 10x-in-5-years criterion + Risk Analyst acquirer landscape
 
 ## Step 4: Apply the Sharp & Succinct Content Rules
 

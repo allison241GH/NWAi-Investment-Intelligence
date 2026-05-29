@@ -99,13 +99,13 @@ Score each category 1–10 where **10 = highest risk**. Apply at Diligence stage
 - Team size vs. scope (understaffed for what they're trying to do?)
 - Key-person dependency (single founder / single technical expert?)
 - Operational complexity (manufacturing, regulatory, multi-sided marketplace?)
-- **Team commitment depth** (from `company-researcher` Team Commitment Depth output):
+- **Team commitment depth** (from `team-analyst` Team Commitment Depth output):
   - Full-time ratio: ≥80% = +0 risk; 60-79% = +1 risk; 40-59% = +2 risk; <40% = +3 risk (typically forces score ≥ 8)
   - "Stuck" advisors (passive logos with no engagement): +1 risk per identified instance
-- **Product Market Team Fit (PMTF)** (from `company-researcher` Team-Level PMTF Synthesis):
+- **Product Market Team Fit (PMTF)** (from `team-analyst` Team-Level PMTF Synthesis):
   - STRONG = +0 risk; MODERATE with one fillable gap = +1 risk; WEAK with multiple gaps = +3 risk
   - Market-access gap explicitly identified (e.g., "engineer who built widget but team has no buyer relationships") = +2 risk on top
-- **Founder claim verification** (from `company-researcher` People Verification Brief):
+- **Founder claim verification** (from `team-analyst` People Verification Brief):
   - All specific claims VERIFIED = +0 risk
   - Any UNVERIFIED specific claims = +1 risk per claim (cap +2)
   - Any ❌ CONTRADICTED claim = +3 risk and immediate flag for IC; treat as deal-stopper unless founder has a documented explanation
@@ -267,11 +267,11 @@ All five → inform the Financial Model exit scenarios
 The `/diligence` command and `/memo` command both reference this file. As of plugin v2.13.0, the full agent team is:
 
 **Stage 2A (parallel):**
-- `company-researcher` — team-first PMTF analysis, founder claim verification, team commitment depth
+- `team-analyst` — team-first PMTF analysis, founder claim verification, team commitment depth
 - `market-analyst` — structural discontinuity, TAM/SAM/SOM, market timing
-- `competitive-intelligence` — competitor mapping, comp set construction (feeds forecasting + venture analysts)
-- `technical-diligence` — thin wrapper test, TRL assessment, IP/patents
-- `risk-assessor` — regulatory pathways, exit landscape (feeds venture-analyst), execution risk
+- `competitive-positioning-analyst` — competitor mapping, comp set construction (feeds forecasting + venture analysts)
+- `technology-analyst` — thin wrapper test, TRL assessment, IP/patents
+- `risk-analyst` — regulatory pathways, exit landscape (feeds venture-analyst), execution risk
 - `pricing-analyst` — pricing maturity, unit economics, channel pressure, pricing pressure forecast
 
 **Stage 2B (sequential — financial diligence chain):**

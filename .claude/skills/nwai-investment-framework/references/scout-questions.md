@@ -177,13 +177,13 @@ Each item = one line in the output. No paragraph explanations.
 
 One line: domain credibility rating (STRONG / ADEQUATE / WEAK) + key strength + key gap.
 
-**Five required sub-assessments** (sourced from `company-researcher` agent output):
+**Five required sub-assessments** (sourced from `team-analyst` agent output):
 
 - **Product team fit:** Does the team deeply know the product landscape? (✓ / Partial / Gap)
 - **Market team fit:** Does the team have the market relationships to execute GTM? (✓ / Partial / Gap)
-- **PMTF synthesis:** Team-level Product Market Team Fit score from company-researcher (STRONG / MODERATE / WEAK) — captures skills coverage across domain depth, engineering/build, and market access; includes any market-access gap flags.
-- **Team commitment depth:** Full-time ratio from company-researcher (e.g., "6 of 8 listed = full-time, 75%"). Flag if <60% full-time. Flag advisors who appear "stuck" (passive logos with no engagement signals).
-- **Founder claim verification:** Status from company-researcher's People Verification Brief. Flag if any UNVERIFIED or CONTRADICTED specific claims (e.g., exit returns, ARR, prior roles).
+- **PMTF synthesis:** Team-level Product Market Team Fit score from team-analyst (STRONG / MODERATE / WEAK) — captures skills coverage across domain depth, engineering/build, and market access; includes any market-access gap flags.
+- **Team commitment depth:** Full-time ratio from team-analyst (e.g., "6 of 8 listed = full-time, 75%"). Flag if <60% full-time. Flag advisors who appear "stuck" (passive logos with no engagement signals).
+- **Founder claim verification:** Status from team-analyst's People Verification Brief. Flag if any UNVERIFIED or CONTRADICTED specific claims (e.g., exit returns, ARR, prior roles).
 
 Flag immediately if:
 - Founders are part-time or IP is not cleanly assigned to the company

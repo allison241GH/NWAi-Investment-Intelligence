@@ -109,11 +109,11 @@ Social deal card actions at every stage:
 | Agent | Trigger | What it does |
 |---|---|---|
 | 📊 **pipeline-monitor** | session start, /sync-pipeline | Live pipeline dashboard. In V1, surfaces routing matches and substrate signals alongside stage status. |
-| 🕵️ **company-researcher (PMTF)** | /scout + /diligence Stage 2A | Team-first PMTF. Founder Claim Verification. Commitment Depth. Output lands on deal card's Team section. |
+| 🕵️ **team-analyst (PMTF)** | /scout + /diligence Stage 2A | Team-first PMTF. Founder Claim Verification. Commitment Depth. Output lands on deal card's Team section. |
 | 📈 **market-analyst** | /scout + /diligence | Structural discontinuity, independent TAM/SAM/SOM, market timing. Lands on deal card Market section. |
-| 🗺️ **competitive-intelligence** | /scout + /diligence | Competitors, incumbents, positioning, moat inputs. Lands on deal card Competition section. |
-| 🔧 **technical-diligence** | /scout (light) + /diligence | Thin wrapper detection, TRL, IP/patents, architecture signals. Lands on deal card Technical section. |
-| ⚠️ **risk-assessor** | /scout (light) + /diligence Stage 2A | Regulatory, exit landscape, execution + market risk. Cross-cutting overlay. |
+| 🗺️ **competitive-positioning-analyst** | /scout + /diligence | Competitors, incumbents, positioning, moat inputs. Lands on deal card Competition section. |
+| 🔧 **technology-analyst** | /scout (light) + /diligence | Thin wrapper detection, TRL, IP/patents, architecture signals. Lands on deal card Technical section. |
+| ⚠️ **risk-analyst** | /scout (light) + /diligence Stage 2A | Regulatory, exit landscape, execution + market risk. Cross-cutting overlay. |
 | 💲 **pricing-analyst** | /diligence Stage 2A parallel | Pricing maturity, value-prop, channel margin compression, unit economics. Feeds the financial chain. |
 | 📊 **forecasting-analyst** | /diligence Stage 2B | McMurry-method 5-yr Bear/Base/Bull with mandatory *because* clauses. Founder Financial Literacy. |
 | 💼 **venture-analyst** | /diligence Stage 2B | Valuation (3 methods), exit projection, 35% IRR hurdle, 10x-5yr check, deal structure recommendation. |

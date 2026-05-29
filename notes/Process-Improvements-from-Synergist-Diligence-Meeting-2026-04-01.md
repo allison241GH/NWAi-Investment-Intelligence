@@ -158,7 +158,7 @@ This is essentially what we just did manually for Synergist — but as a repeata
 
 **What happened:** Tim flagged that the DD Report's competitive analysis used Microsoft Purview as a primary comp — which was wrong (Purview is data governance, not AI compliance). The AI-generated analysis was plausible but incorrect for this specific market framing.
 
-**Current gap:** The competitive-intelligence agent runs autonomously and its output goes directly into the DD Report. There's no checkpoint where an SME reviews and corrects the competitive landscape before it becomes part of the scored report.
+**Current gap:** The competitive-positioning-analyst agent runs autonomously and its output goes directly into the DD Report. There's no checkpoint where an SME reviews and corrects the competitive landscape before it becomes part of the scored report.
 
 **Recommendation:** Add a "Competitive Validation" checkpoint between agent research output and DD Report scoring. For the Competition section specifically, flag it as "AI-generated — requires SME validation" until a human reviewer confirms the comps are correct. This could be as simple as a status field in the DD Report: "Comp set validated by: _____ (date: _____)" or "Comp set: UNVALIDATED — AI-generated."
 

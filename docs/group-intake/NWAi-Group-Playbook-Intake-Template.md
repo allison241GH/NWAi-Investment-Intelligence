@@ -189,17 +189,17 @@ Fill in:
 ## Section 8 — Group-Specialist Agent *(Optional)*
 
 **What this is for:** The plugin has 9 research agents today. **7 are group-agnostic** and run for every deal regardless of group:
-- `company-researcher` (PMTF + founder verification)
+- `team-analyst` (PMTF + founder verification)
 - `market-analyst` (TAM/SAM, structural discontinuity, timing)
-- `competitive-intelligence` (competitors, incumbents)
-- `risk-assessor` (regulatory, exit, execution)
+- `competitive-positioning-analyst` (competitors, incumbents)
+- `risk-analyst` (regulatory, exit, execution)
 - `pricing-analyst` (pricing maturity, unit economics, channel)
 - `forecasting-analyst` (independent 5-yr forecast, McMurry method)
 - `venture-analyst` (valuation, hurdle test, deal structure)
 
-**1 is TechGroup-specialized:** `technical-diligence` (thin wrapper detection, TRL, IP/patents, AI moat signals, technical team depth).
+**1 is TechGroup-specialized:** `technology-analyst` (thin wrapper detection, TRL, IP/patents, AI moat signals, technical team depth).
 
-Your group may need its own specialist agent — or it may be fine using `technical-diligence` as-is, or it may not need a specialist agent at all. Examples that would warrant a specialist agent:
+Your group may need its own specialist agent — or it may be fine using `technology-analyst` as-is, or it may not need a specialist agent at all. Examples that would warrant a specialist agent:
 
 - **Medical:** `regulatory-diligence` — FDA pathway evaluation, clinical trial design, reimbursement landscape, IP/patent in pharma/devices
 - **Space:** `mission-fit` — ITAR/dual-use posture, government program alignment, launch-cadence assumptions, anchor-customer analysis
@@ -207,13 +207,13 @@ Your group may need its own specialist agent — or it may be fine using `techni
 - **Industrial:** `manufacturing-diligence` — supply chain, contract manufacturing fit, capital-intensity modeling, customer concentration
 - **Fintech:** `regulatory-diligence` — license posture, partner-bank dependency, KYC/AML maturity, BSA program
 
-**TechGroup reference:** Section 8 of the reference file (`technical-diligence` agent summary).
+**TechGroup reference:** Section 8 of the reference file (`technology-analyst` agent summary).
 
 Fill in:
 
 | Field | Your Answer |
 |-------|-------------|
-| Does your group need a domain-specialist agent? (Yes — new agent / Yes — `technical-diligence` is sufficient / No — no specialist needed) | |
+| Does your group need a domain-specialist agent? (Yes — new agent / Yes — `technology-analyst` is sufficient / No — no specialist needed) | |
 | If new agent: proposed agent name (lowercase-hyphen) | |
 | If new agent: 3–5 bullets on what it researches | |
 | If new agent: 3–5 bullets on what input data it consumes (deal room files, web research, founder interviews, etc.) | |

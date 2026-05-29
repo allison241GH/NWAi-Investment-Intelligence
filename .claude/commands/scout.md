@@ -48,17 +48,17 @@ Before scoring, launch research agents to build an independent evidence base. In
 
 Use the Task tool to launch **all agents simultaneously**:
 
-**Agent 1 — company-researcher:**
+**Agent 1 — team-analyst:**
 "Research [Company Name] for NWAi Scout assessment. Website: [URL if known]. Known founders: [names if known]. Include commercial validation signals. Return the full Company Research Briefing."
 
 **Agent 2 — market-analyst:**
 "Validate the market for [Company Name] for NWAi Scout. They operate in [sector/description]. Website: [URL if known]. Test for structural discontinuity, validate TAM/SAM independently, and score market timing. Return the full Market Analysis Briefing."
 
-**Agent 3 — competitive-intelligence:**
-"Research the competitive landscape for [Company Name] for NWAi Scout. They operate in [sector/description]. Website: [URL if known]. Map direct competitors, strategic incumbents, positioning, and moat inputs. Return the full Competitive Intelligence Briefing."
+**Agent 3 — competitive-positioning-analyst:**
+"Research the competitive landscape for [Company Name] for NWAi Scout. They operate in [sector/description]. Website: [URL if known]. Map direct competitors, strategic incumbents, positioning, and moat inputs. Return the full Competitive Positioning Analyst Briefing."
 
-**Agent 4 — technical-diligence:**
-"Run a light technical assessment of [Company Name] for NWAi Scout. Website: [URL if known]. Run all three thin wrapper tests, estimate TRL, and flag any IP or architecture signals. Return the full Technical Diligence Briefing — focus on thin wrapper verdict and TRL."
+**Agent 4 — technology-analyst:**
+"Run a light technical assessment of [Company Name] for NWAi Scout. Website: [URL if known]. Run all three thin wrapper tests, estimate TRL, and flag any IP or architecture signals. Return the full Technology Analyst Briefing — focus on thin wrapper verdict and TRL."
 
 Wait for all agents to complete before proceeding to Phase 1 scoring.
 

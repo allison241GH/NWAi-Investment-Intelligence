@@ -73,7 +73,7 @@
 ## Section 5 — Tool & Agent Layer (how AI shows up)
 
 - Agents are tools members invoke, or that propose to members — never autonomous deciders.
-- **5.1 The existing TechGroup pipeline agents** as feeders to the substrate (company-researcher, market-analyst, competitive-intelligence, technical-diligence, risk-assessor, pricing-analyst, forecasting-analyst, venture-analyst, pipeline-monitor) — interface contract, output destinations on the deal card. *Not re-specified.*
+- **5.1 The existing TechGroup pipeline agents** as feeders to the substrate (team-analyst, market-analyst, competitive-positioning-analyst, technology-analyst, risk-analyst, pricing-analyst, forecasting-analyst, venture-analyst, pipeline-monitor) — interface contract, output destinations on the deal card. *Not re-specified.*
 - **5.2 Net-new substrate agents** for V1:
   - Network Agent (NL directory queries)
   - Match Engine (deal → 3–5 best-fit members)

@@ -24,7 +24,7 @@ For the past several months we've been building NWAi's investment intelligence p
 
 Three layers exist:
 
-1. **The runtime — `.claude/`** — 8 slash commands (`/screen`, `/scout`, `/diligence`, `/post-meeting`, `/dd-report`, `/decision`, `/memo`, `/sync-pipeline`) orchestrating 9 research/analysis agents (`company-researcher`, `market-analyst`, `competitive-intelligence`, `technical-diligence`, `risk-assessor`, `pricing-analyst`, `forecasting-analyst`, `venture-analyst`, `pipeline-monitor`). Diligence runs 6 agents in parallel (Stage 2A) then a 2-agent sequential financial-diligence chain (Stage 2B).
+1. **The runtime — `.claude/`** — 8 slash commands (`/screen`, `/scout`, `/diligence`, `/post-meeting`, `/dd-report`, `/decision`, `/memo`, `/sync-pipeline`) orchestrating 9 research/analysis agents (`team-analyst`, `market-analyst`, `competitive-positioning-analyst`, `technology-analyst`, `risk-analyst`, `pricing-analyst`, `forecasting-analyst`, `venture-analyst`, `pipeline-monitor`). Diligence runs 6 agents in parallel (Stage 2A) then a 2-agent sequential financial-diligence chain (Stage 2B).
 
 2. **The proprietary IP — frameworks** — 10 reference documents encoding NWAi's pattern recognition: Universal Triage v2.0 (3 hard gates + NWA Filter + Opportunity 6×0–5/30 + Readiness 5×0–5/25), Scout questions, Diligence rubrics, 17-folder DD checklist, AI Moats Framework (3 archetypes + Replicability Speed Matrix), DD Report format (11 scored sections, exact STL visual standard), Memo format (4-slide PPTX), and the diligence-meeting analyst lens. Each framework is consumed by the AI agents at runtime — these are *prompts and scoring engines*, not just human-readable docs. In V1 these become the **Policy Layer** of the substrate.
 

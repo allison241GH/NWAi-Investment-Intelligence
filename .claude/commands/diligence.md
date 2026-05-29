@@ -159,7 +159,7 @@ Use the Task tool to launch **all six agents simultaneously**:
 
 ---
 
-**Agent 1 — company-researcher:**
+**Agent 1 — team-analyst:**
 "Research the founding team and company background of [Company Name] for NWAi diligence with a Product Market Team Fit (PMTF) lens. Website: [URL]. Known founders: [names]. Apply the Founder Claim Verification Protocol to every specific exit/ARR/role claim (LinkedIn + Perplexity cross-reference). Assess Team Commitment Depth (full-time vs advisor ratio, flag 'stuck' advisors). Map Team-Level PMTF (skills coverage across domain depth, engineering, market access; detect market-access gaps). Include supporting context on funding, traction, commercial validation, and public red flags. Return the full Company Research Briefing including the People Verification Brief, Team Quality + PMTF Assessment, and Team Commitment Depth sections.
 
 If a Post-Meeting Layer Manifest is provided, read the Product Demo Reconciliation and GTM Diligence reports first — these contain analyst observations on team behavior in live diligence calls (who answered authoritatively, who deferred, who revealed depth limits). Incorporate those observations into the Team Quality + PMTF Assessment. Read the latest Action Tracker for any team-related items marked ✅ RESOLVED or 🔴 OPEN. Do not regress to Scout-stage team conclusions if post-meeting evidence has updated them.
@@ -173,21 +173,21 @@ If a Post-Meeting Layer Manifest is provided, read the Market Intel Briefing fir
 
 [POST_MEETING_LAYER_MANIFEST]"
 
-**Agent 3 — competitive-intelligence:**
-"Research the competitive landscape for [Company Name] for NWAi diligence. They operate in [sector/description]. Website: [URL]. Map direct competitors, strategic incumbents, positioning, and moat inputs. Identify comp set with reported revenue/ARR and recent valuations for use by forecasting-analyst and venture-analyst. Return the full Competitive Intelligence Briefing.
+**Agent 3 — competitive-positioning-analyst:**
+"Research the competitive landscape for [Company Name] for NWAi diligence. They operate in [sector/description]. Website: [URL]. Map direct competitors, strategic incumbents, positioning, and moat inputs. Identify comp set with reported revenue/ARR and recent valuations for use by forecasting-analyst and venture-analyst. Return the full Competitive Positioning Analyst Briefing.
 
 If a Post-Meeting Layer Manifest is provided, read all post-meeting reports for competitive observations surfaced in live diligence calls (founder claims about competitors, customer references, win/loss anecdotes). Read the latest Action Tracker for competitive items.
 
 [POST_MEETING_LAYER_MANIFEST]"
 
-**Agent 4 — technical-diligence:**
-"Run technical diligence on [Company Name] for NWAi. Website: [URL]. Run all three thin wrapper tests, assess TRL, search for patents and IP, evaluate AI moat signals. Return the full Technical Diligence Briefing.
+**Agent 4 — technology-analyst:**
+"Run technical diligence on [Company Name] for NWAi. Website: [URL]. Run all three thin wrapper tests, assess TRL, search for patents and IP, evaluate AI moat signals. Return the full Technology Analyst Briefing.
 
 If a Post-Meeting Layer Manifest is provided, read the Product Demo Reconciliation first — this is the most direct analyst observation of the technology in action and supersedes inferred technical assessment from pitch materials. Read the latest Action Tracker for technical items.
 
 [POST_MEETING_LAYER_MANIFEST]"
 
-**Agent 5 — risk-assessor:**
+**Agent 5 — risk-analyst:**
 "Assess cross-domain risks for [Company Name] for NWAi diligence. They operate in [sector/description]. Website: [URL]. Research regulatory requirements, exit landscape and acquirer dynamics, execution risk signals, and market risk factors. Specifically identify the natural exit pathway (strategic / hyperscaler / IPO / mixed) and exit multiple range — this feeds the venture-analyst valuation. Return the full Risk Assessment Briefing.
 
 If a Post-Meeting Layer Manifest is provided, read the latest Action Tracker first — the resolved/partial/open status of every diligence item is the canonical source of truth for which risks have been mitigated and which remain. Read all post-meeting reports for risk-relevant observations (regulatory complications, customer concentration, key-person signals).
@@ -208,14 +208,14 @@ Wait for all six agents to complete before proceeding to Stage 2B.
 Launch only if pricing-analyst output is available (always true). Financial files are preferred but not required — the McMurry method does not depend on the company's spreadsheet.
 
 **Agent 7 — forecasting-analyst:**
-"Build an independent five-year financial forecast for [Company Name] for NWAi diligence using the McMurry method (proprietary forecast first, then comparison to company's submitted numbers). Workspace path: [WORKSPACE]. Deal room folder: [WORKSPACE]/deals/active/[Company Name]/Data Room/. Use the Pricing Analyst Briefing output as foundation for revenue assumptions (do NOT re-derive pricing). Use the Competitive Intelligence comp set as anchor for benchmarks. Apply the 'no AI slop' rule — produce specific *because* clauses for each Bear/Base/Bull scenario. Forecast P&L, cash flow, and balance sheet (where applicable). Output capital plan with round timing and sizing across 5 years. Compare to company's submitted numbers and produce the Founder Financial Literacy Assessment. Return the full Forecasting Analyst Briefing.
+"Build an independent five-year financial forecast for [Company Name] for NWAi diligence using the McMurry method (proprietary forecast first, then comparison to company's submitted numbers). Workspace path: [WORKSPACE]. Deal room folder: [WORKSPACE]/deals/active/[Company Name]/Data Room/. Use the Pricing Analyst Briefing output as foundation for revenue assumptions (do NOT re-derive pricing). Use the Competitive Positioning Analyst comp set as anchor for benchmarks. Apply the 'no AI slop' rule — produce specific *because* clauses for each Bear/Base/Bull scenario. Forecast P&L, cash flow, and balance sheet (where applicable). Output capital plan with round timing and sizing across 5 years. Compare to company's submitted numbers and produce the Founder Financial Literacy Assessment. Return the full Forecasting Analyst Briefing.
 
 If a Post-Meeting Layer Manifest is provided, read the Financials Diligence report and GTM Diligence report (if present) FIRST — these contain analyst observations from live diligence calls about the company's actual financial trajectory, capital needs, and assumptions. The latest Action Tracker shows which financial assumptions have been ✅ resolved (validated or invalidated) vs. 🔴 still open. Where post-meeting work has updated a financial assumption since Scout, your forecast must reflect the current view, not the Scout-stage view.
 
 [POST_MEETING_LAYER_MANIFEST]"
 
 **Agent 8 — venture-analyst:**
-"Synthesize the financial diligence into a valuation conclusion for [Company Name] for NWAi diligence. Inputs: Pricing Analyst Briefing, Forecasting Analyst Briefing, Competitive Intelligence Briefing, Risk Assessor Briefing, Company Researcher Briefing. Deal terms: [pre-money valuation, raise size, NWA check size]. Produce: defensible valuation today (3 methods reconciled), projected exit valuation (Y3 + Y5 across Low/Base/High), capital and dilution model, IRR / multiple / 35% IRR hurdle test, NWA 10x-in-5-years test. Recommend deal structure (priced equity / convertible with cap / participating preferred / re-priced terms / decline). Output Headline Takeaway. Return the full Venture Analyst Briefing.
+"Synthesize the financial diligence into a valuation conclusion for [Company Name] for NWAi diligence. Inputs: Pricing Analyst Briefing, Forecasting Analyst Briefing, Competitive Positioning Analyst Briefing, Risk Analyst Briefing, Team Analyst Briefing. Deal terms: [pre-money valuation, raise size, NWA check size]. Produce: defensible valuation today (3 methods reconciled), projected exit valuation (Y3 + Y5 across Low/Base/High), capital and dilution model, IRR / multiple / 35% IRR hurdle test, NWA 10x-in-5-years test. Recommend deal structure (priced equity / convertible with cap / participating preferred / re-priced terms / decline). Output Headline Takeaway. Return the full Venture Analyst Briefing.
 
 If a Post-Meeting Layer Manifest is provided, read the latest Action Tracker FIRST — every diligence item with an ✅ RESOLVED status represents a risk that has been mitigated and should weight your valuation upward; every 🔴 OPEN item is a risk that remains and should weight your valuation downward or be flagged as a condition on the deal structure recommendation. Read all post-meeting reports for any analyst observations that change the exit pathway, comp set anchoring, or hurdle rate test. Your final NWA action recommendation (ADVANCE / WATCH / DECLINE) must reflect the most current understanding of the deal, not the Scout-stage understanding.
 
@@ -237,15 +237,15 @@ Apply all four rubrics using the agent briefings plus prior Screening and Scout 
 **General applicability rule:** If any scoring sub-rubric does not apply to the company type (e.g., AI Moat for a hardware or non-AI company, LTV/CAC for a one-time-sale model), mark it N/A with a one-line reason. Do not force-apply a rubric that does not fit.
 
 - Tier 1 General Moat (0–6): Evaluate all six dimensions individually. For each, show the dimension name, ✓ or ✗, and a one-sentence rationale. Then sum to produce the total score and state the interpretation band (No Moat / Weak Moat / Moderate Moat / Strong Moat).
-- Tier 2 AI Moat (0–10): First apply the applicability gate — explicitly answer "Is this an AI-first or AI-enabled company?" If NO → mark Tier 2 as N/A with a one-line reason. If YES → run the three thin wrapper tests first (using technical-diligence briefing), then score all three categories (Cognitive/Data, Capital/Compute, Vertical/Workflow), showing each sub-element by name with points awarded and points available. State the total and interpretation band.
+- Tier 2 AI Moat (0–10): First apply the applicability gate — explicitly answer "Is this an AI-first or AI-enabled company?" If NO → mark Tier 2 as N/A with a one-line reason. If YES → run the three thin wrapper tests first (using technology-analyst briefing), then score all three categories (Cognitive/Data, Capital/Compute, Vertical/Workflow), showing each sub-element by name with points awarded and points available. State the total and interpretation band.
 - Show working for each point awarded or withheld
 
 **3B — Risk Scoring (1–10 per category, where 1 = lowest risk and 10 = highest risk)**
-- Execution Risk: team depth, key-person dependency, Team Commitment Depth ratio, PMTF score, founder claim verification status (from company-researcher + risk-assessor)
-- Market Risk: adoption barriers, incumbent response, timing (from market-analyst + competitive-intelligence)
+- Execution Risk: team depth, key-person dependency, Team Commitment Depth ratio, PMTF score, founder claim verification status (from team-analyst + risk-analyst)
+- Market Risk: adoption barriers, incumbent response, timing (from market-analyst + competitive-positioning-analyst)
 - Financial Risk: runway, burn, unit economics, capital plan adequacy (from forecasting-analyst + pricing-analyst)
-- Technical Risk: TRL rating, regulatory path (from technical-diligence + risk-assessor)
-- Competitive Risk: moat score, market crowding, Big Tech overlap, pricing pressure forecast (from competitive-intelligence + pricing-analyst + risk-assessor)
+- Technical Risk: TRL rating, regulatory path (from technology-analyst + risk-analyst)
+- Competitive Risk: moat score, market crowding, Big Tech overlap, pricing pressure forecast (from competitive-positioning-analyst + pricing-analyst + risk-analyst)
 - Flag any score ≥ 8 as critical; flag as deal-breaker if 2+ scores are 9+, or any is 10
 
 **3C — Financial Model Inputs**
@@ -291,35 +291,35 @@ This section contains six validation groups. For each group:
 
 **MARKET VALIDATION**                                                [🟢 / 🟡 / 🔴]
 Hypothesis: [1 sentence — derived from Scout Q1 (Category & Market Discontinuity) and Q2 (Market Opportunity). State what the Scout thesis claims about the market shift and opportunity size.]
-Conclusion: [2–3 sentences — synthesized from market-analyst and competitive-intelligence briefings. What does the research confirm or challenge about the market discontinuity and TAM? What does it mean for the thesis?]
+Conclusion: [2–3 sentences — synthesized from market-analyst and competitive-positioning-analyst briefings. What does the research confirm or challenge about the market discontinuity and TAM? What does it mean for the thesis?]
 Biggest uncertainty: [1 sentence — the one unresolved market question that most affects confidence.]
 
 ---
 
 **TECHNICAL VALIDATION**                                             [🟢 / 🟡 / 🔴]
 Hypothesis: [1 sentence — derived from Scout Q3 (Moat Assessment) and Technology (Phase 2). State what the Scout thesis claims about technical defensibility and architecture.]
-Conclusion: [2–3 sentences — synthesized from technical-diligence briefing. What do the thin wrapper test, TRL assessment, and IP signals confirm or challenge? Is the technical moat real?]
+Conclusion: [2–3 sentences — synthesized from technology-analyst briefing. What do the thin wrapper test, TRL assessment, and IP signals confirm or challenge? Is the technical moat real?]
 Biggest uncertainty: [1 sentence — the key technical unknown.]
 
 ---
 
 **TEAM VALIDATION**                                                  [🟢 / 🟡 / 🔴]
 Hypothesis: [1 sentence — derived from Scout Team score (Phase 2). State what the Scout thesis claims about founder/team fit for this specific opportunity.]
-Conclusion: [2–3 sentences — synthesized from company-researcher and risk-assessor briefings. What does the research confirm or challenge about the team's ability to execute this thesis?]
+Conclusion: [2–3 sentences — synthesized from team-analyst and risk-analyst briefings. What does the research confirm or challenge about the team's ability to execute this thesis?]
 Biggest uncertainty: [1 sentence — the key team gap or open question.]
 
 ---
 
 **COMMERCIAL VALIDATION**                                            [🟢 / 🟡 / 🔴]
 Hypothesis: [1 sentence — derived from Scout Traction and GTM scores (Phase 2). State what the Scout thesis claims about commercial traction and the path to $10M ARR.]
-Conclusion: [2–3 sentences — synthesized from company-researcher (commercial validation section) briefing. What does the research confirm about revenue quality, customer evidence, and GTM motion?]
+Conclusion: [2–3 sentences — synthesized from team-analyst (commercial validation section) briefing. What does the research confirm about revenue quality, customer evidence, and GTM motion?]
 Biggest uncertainty: [1 sentence — the key commercial unknown.]
 
 ---
 
 **COMPETITIVE VALIDATION**                                           [🟢 / 🟡 / 🔴]
 Hypothesis: [1 sentence — derived from Scout Q5 (Adjacent Displacement Risk) and Q4 (Ecosystem Role). State what the Scout thesis claims about competitive positioning and defensibility.]
-Conclusion: [2–3 sentences — synthesized from competitive-intelligence and risk-assessor briefings. What do the competitor moat gap analysis and hyperscaler threat level confirm or challenge?]
+Conclusion: [2–3 sentences — synthesized from competitive-positioning-analyst and risk-analyst briefings. What do the competitor moat gap analysis and hyperscaler threat level confirm or challenge?]
 Biggest uncertainty: [1 sentence — the biggest competitive unknown.]
 
 ---

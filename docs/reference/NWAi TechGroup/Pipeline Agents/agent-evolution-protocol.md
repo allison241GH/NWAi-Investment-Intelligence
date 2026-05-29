@@ -59,7 +59,7 @@ Instead, capture the observation in a lightweight log: `notes/agent-evolution-lo
 
 **Examples of well-formed observations:**
 - "forecasting-analyst — anchored on founder revenue claim despite McMurry mandate. Acme 2026-05-08."
-- "company-researcher — missed verifying CTO's prior exit claim. Synergist 2026-04-22."
+- "team-analyst — missed verifying CTO's prior exit claim. Synergist 2026-04-22."
 - "venture-analyst — gave a valuation range without picking a defended number. Captain 2026-05-04."
 - "market-analyst — applied 18-month freshness rule to TAM but blended in a 2022 analyst report. Northstar 2026-05-01."
 

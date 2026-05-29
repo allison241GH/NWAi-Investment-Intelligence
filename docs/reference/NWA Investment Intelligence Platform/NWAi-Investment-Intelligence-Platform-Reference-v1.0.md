@@ -66,7 +66,7 @@ Outputs land on the deal card (V1) instead of standalone documents.
 | Stage | Agent fires |
 |---|---|
 | Inbox | pipeline-monitor — routing in |
-| Screen | company-researcher (PMTF) — team verification |
+| Screen | team-analyst (PMTF) — team verification |
 | Scout | +5 Stage 2A agents — market · comp · tech · risk · pricing |
 | Diligence | Stage 2B financial chain — forecasting → venture |
 | DD Report | DD synthesis — 11 sections scored |
@@ -155,11 +155,11 @@ The 9 existing pipeline agents continue to do the analytical work (their outputs
 | Agent | Trigger | What it does |
 |---|---|---|
 | 📊 **pipeline-monitor** | session start, /sync-pipeline | Live pipeline dashboard. In V1, surfaces routing matches and member-substrate signals alongside deal status. |
-| 🕵️ **company-researcher (PMTF)** | /scout + /diligence Stage 2A | Team-first PMTF. Founder Claim Verification Protocol. Team Commitment Depth. Skills coverage + market-access gap detection. Output now lands on the deal card's *Team* section. |
+| 🕵️ **team-analyst (PMTF)** | /scout + /diligence Stage 2A | Team-first PMTF. Founder Claim Verification Protocol. Team Commitment Depth. Skills coverage + market-access gap detection. Output now lands on the deal card's *Team* section. |
 | 📈 **market-analyst** | /scout + /diligence | Structural discontinuity test, independent TAM/SAM/SOM, market timing scoring, industry dynamics. Lands on deal card's *Market* section. |
-| 🗺️ **competitive-intelligence** | /scout + /diligence | Direct competitors, incumbent threats, alternative solutions, positioning, moat input data. Lands on deal card's *Competition* section. |
-| 🔧 **technical-diligence** | /scout (light) + /diligence | Thin wrapper detection, TRL assessment, IP/patent research, technical architecture signals. Lands on deal card's *Technical* section. |
-| ⚠️ **risk-assessor** | /scout (light) + /diligence Stage 2A | Regulatory, exit landscape, execution + market risk signals. Cross-cutting overlay on the deal card. |
+| 🗺️ **competitive-positioning-analyst** | /scout + /diligence | Direct competitors, incumbent threats, alternative solutions, positioning, moat input data. Lands on deal card's *Competition* section. |
+| 🔧 **technology-analyst** | /scout (light) + /diligence | Thin wrapper detection, TRL assessment, IP/patent research, technical architecture signals. Lands on deal card's *Technical* section. |
+| ⚠️ **risk-analyst** | /scout (light) + /diligence Stage 2A | Regulatory, exit landscape, execution + market risk signals. Cross-cutting overlay on the deal card. |
 | 💲 **pricing-analyst** | /diligence Stage 2A parallel | Pricing maturity, value-prop validation, channel margin compression, unit economics, pricing pressure forecast. Feeds the Stage 2B forecasting chain. |
 | 📊 **forecasting-analyst** | /diligence Stage 2B (after pricing) | McMurry-method independent 5-yr Bear/Base/Bull forecast with mandatory *because* clauses. Founder Financial Literacy Assessment. |
 | 💼 **venture-analyst** | /diligence Stage 2B (after forecasting) | Defensible valuation (3 methods reconciled), exit projection, IRR/35% hurdle test, 10x-in-5-yrs check, deal structure recommendation. |
