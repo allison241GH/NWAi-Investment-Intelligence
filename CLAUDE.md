@@ -363,7 +363,7 @@ Key files and folders in this workspace:
 **Three surfaces, all first-class.** Three Claude surfaces operate against this workspace and all read `.claude/` directly:
 
 - **Claude Desktop chat** — fast, lightweight, great for everyday deal-running, screening, scouting, and meeting-transcript processing. Open the app, attach this folder as project context, and the slash commands + agents + CLAUDE.md context are available.
-- **Claude Code CLI** — terminal-native, best for sessions involving file edits, plugin maintenance, git operations, multi-step research, and anything that benefits from durable worktree state. Native git/credential access (no Cowork sandbox limitation).
+- **Claude Code CLI** — terminal-native, best for sessions involving file edits, plugin maintenance, git operations, and multi-step research. Runs in place on `main` in the canonical checkout (the CLI and the VSCode/JetBrains extensions do not create git worktrees — only the Desktop app does). Native git/credential access (no Cowork sandbox limitation).
 - **Cowork** — currently a less-used surface; remains valid for collaborative or guided work. The Desktop Extension install (`nwai-tech-pipeline.plugin`) was uninstalled May 15, 2026 and is not required for any of the three surfaces above. If Cowork ever becomes daily again, reinstall v2.15.0 from `plugin/current/`.
 
 Default surface assumption: **none.** Calibrate to whichever surface the session is running in. CLI sessions can do plugin/agent/reference edits directly; Desktop chat sessions favor consultative analytical work; Cowork sessions (when used) operate identically to Desktop chat against the same workspace.
@@ -419,13 +419,22 @@ The plugin lives in two places. Jamie does not need to edit files directly.
 
 **When to commit:** At the end of any session where pipeline files were meaningfully changed. Tell Claude: *"commit and push"* or *"save this version."* Claude will stage the right files, write a descriptive commit message, and commit. If push fails, Claude will tell you to push from Terminal.
 
-**End-of-session sync is a 3-step flow, not 2 (worktree workflow).** Claude Code Desktop sessions typically operate inside a git worktree at `.claude/worktrees/<name>/`, on a feature branch. The worktree is its own checkout; the canonical folder at `/Users/jamie/ClaudeCodeProjects/nwa-intelligence/` is a separate checkout on the same Mac. **"Commit and push" must complete all three legs:**
+**End-of-session sync is a simple 2-step flow — work directly on `main`, no worktrees.** This is the standard. Sessions run in the canonical checkout at `/Users/jamie/ClaudeCodeProjects/nwa-intelligence/` on the `main` branch (CLI and VSCode/JetBrains extensions do not spawn worktrees). When Jamie says "commit and push," Claude does exactly two legs:
+
+1. `git commit` — on `main` in canonical
+2. `git push origin main` — canonical → GitHub
+
+Because there is only one checkout, there is no canonical-pull leg and no cross-checkout drift to reconcile.
+
+**Guardrail — confirm no worktree silently exists:** run `git worktree list`. A single line (the canonical `main` checkout) means clean. If more than one line appears, a worktree was created somewhere (most likely a **Claude Code Desktop app** session, which auto-creates one worktree per session under `.claude/worktrees/`). Remove a stray one with `git worktree remove <path>`.
+
+**Legacy / fallback — 3-leg worktree sync (only if a worktree somehow exists).** Kept for the rare case a Desktop-app session or an agent with `isolation: "worktree"` produced a worktree at `.claude/worktrees/<name>/` on a feature branch. To merge its work back without drifting canonical, complete all three legs:
 
 1. `git commit` — in the worktree
 2. `git push origin HEAD:main` — worktree → GitHub (fast-forwards main)
 3. `cd /Users/jamie/ClaudeCodeProjects/nwa-intelligence && git pull origin main` — GitHub → canonical
 
-Without step 3, the canonical folder silently drifts behind GitHub and future Cowork / Claude Code sessions in canonical will read stale `.claude/commands/` and `.claude/agents/` files. Push without canonical-pull is an incomplete sync. Claude is responsible for executing all three steps when Jamie says "commit and push."
+Skipping leg 3 leaves canonical behind GitHub. This path is the exception, not the routine — the routine is the 2-step main-only flow above.
 
 If canonical has uncommitted changes blocking the pull (e.g., transient `npm install` artifacts that duplicate what's incoming), stash → pull → drop stash; do not force-discard local changes without first verifying they're truly redundant.
 
