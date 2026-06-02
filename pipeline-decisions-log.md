@@ -208,6 +208,15 @@ Individual team members' Cowork Projects are not shared and are not intended to 
 
 ---
 
+## Decision 7 — Captain Compliance: Diligence Meeting Sequence (Reference)
+
+**Date:** June 1, 2026
+**Status:** In diligence — WATCH (Conditional Advance); gated on GTM
+
+- **2026-06-01 — Product/Demo meeting processed** (`/post-meeting`). Thin-wrapper verdict (AI Moat 1/10) confirmed, not overturned: live "AI" scanner failed in-room; founder declared the moat is white-glove accountability and conceded lock-in is deliberately not engineered. Founder-Integrity gate (Folder 12) work treated as complete per deal-lead direction — conduct confirmed, minimization tone, folded into Team & Execution (§8). Deal now **gated on GTM**: is the one-to-many channel contracted or aspirational, and can anyone but Captain deliver the onboarding that *is* the moat? Output + GTM prep question set: `deals/active/Captain Compliance/Reports/Captain Compliance-Product-Meeting-Reconciliation-2026-06-01.docx`.
+
+---
+
 | Item | Owner | Status |
 |------|-------|--------|
 | Dealum API credentials — obtain token + room ID | Jamie | Pending Dealum response |
@@ -220,5 +229,5 @@ Individual team members' Cowork Projects are not shared and are not intended to 
 
 ---
 
-*Last updated: March 2026 | Maintained by Jamie, TechGroup Co-Chair*
+*Last updated: June 1, 2026 | Maintained by Jamie, TechGroup Co-Chair*
 *This log is a living document — add entries when key decisions are made in session.*
