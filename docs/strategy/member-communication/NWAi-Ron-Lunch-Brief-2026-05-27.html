@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NWAi Platform — Lunch Brief | Jamie → Ron | 2026-05-27</title>
+  <style>
+    :root {
+      --navy: #0d1f3c;
+      --navy-mid: #163360;
+      --ice: #c8dff5;
+      --ice-light: #eaf3fc;
+      --gold: #e8a020;
+      --gold-tint: #fdf6e8;
+      --green: #375623;
+      --green-light: #e8f5e9;
+      --subtle: #5a6a82;
+      --border: #d0dce8;
+      --bg: #f0f4f9;
+      --text: #1a1a2e;
+      --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    /* Header bar */
+    .header {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+      color: white;
+      padding: 22px 36px 18px;
+      border-bottom: 4px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .header h1 { font-size: 20px; font-weight: 700; letter-spacing: -0.3px; }
+    .header h1 span { color: var(--gold); }
+    .header-sub { font-size: 12px; color: var(--ice); margin-top: 4px; }
+    .header-badge {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 6px;
+      padding: 5px 12px;
+      font-size: 11px;
+      color: var(--ice);
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 24px 24px 48px;
+    }
+
+    /* Section labels */
+    .sec-label {
+      font-size: 10.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--subtle);
+      margin: 32px 0 12px;
+    }
+    .sec-label:first-child { margin-top: 0; }
+
+    /* Placemat 2x2 grid */
+    .placemat {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+    .quad {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px 18px;
+      page-break-inside: avoid;
+    }
+    .quad-num {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 1px;
+    }
+    .quad-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-top: 2px;
+    }
+    .quad-sub {
+      font-size: 11.5px;
+      color: var(--subtle);
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+    .quad ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .quad li {
+      font-size: 12.5px;
+      line-height: 1.45;
+      padding: 4px 0 4px 14px;
+      position: relative;
+      color: var(--text);
+    }
+    .quad li::before {
+      content: "•";
+      color: var(--gold);
+      position: absolute;
+      left: 2px;
+      font-weight: 700;
+    }
+    .quad li strong { color: var(--navy); font-weight: 600; }
+
+    /* Crib sheet sections */
+    .crib-section {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 18px 22px;
+      margin-bottom: 14px;
+      page-break-inside: avoid;
+    }
+    .crib-num {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 1.2px;
+    }
+    .crib-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--navy);
+      margin: 2px 0 10px;
+    }
+    .verdict {
+      background: var(--ice-light);
+      border-left: 3px solid var(--navy);
+      padding: 10px 14px;
+      font-size: 13px;
+      font-style: italic;
+      color: var(--navy);
+      margin-bottom: 12px;
+      border-radius: 0 4px 4px 0;
+    }
+    .verdict strong { font-style: normal; font-weight: 700; text-transform: uppercase; font-size: 10.5px; letter-spacing: 1px; color: var(--navy-mid); display: block; margin-bottom: 4px; }
+    .crib-section ul {
+      margin: 0 0 12px 20px;
+      padding: 0;
+    }
+    .crib-section li {
+      font-size: 13px;
+      line-height: 1.55;
+      margin-bottom: 5px;
+      color: var(--text);
+    }
+    .crib-section li strong { color: var(--navy); }
+    .say-it {
+      background: var(--gold-tint);
+      border-left: 3px solid var(--gold);
+      padding: 10px 14px;
+      font-size: 13px;
+      color: var(--text);
+      border-radius: 0 4px 4px 0;
+      margin-top: 8px;
+    }
+    .say-it strong { display: block; font-size: 10.5px; text-transform: uppercase; letter-spacing: 1px; color: var(--gold); margin-bottom: 4px; }
+    .say-it em { font-style: italic; }
+
+    /* Transition table (Section 3) */
+    .transition-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 4px 0 14px;
+      font-size: 12px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .transition-table thead th {
+      background: var(--navy);
+      color: white;
+      font-weight: 600;
+      text-align: left;
+      padding: 8px 12px;
+      font-size: 11.5px;
+      letter-spacing: 0.3px;
+    }
+    .transition-table tbody td {
+      padding: 7px 12px;
+      border-top: 1px solid var(--border);
+      vertical-align: top;
+      line-height: 1.4;
+    }
+    .transition-table tbody tr:nth-child(even) td { background: var(--ice-light); }
+    .transition-table td.from { color: var(--subtle); }
+    .transition-table td.to { color: var(--navy); font-weight: 500; }
+    .transition-table td:first-child { font-weight: 600; color: var(--navy); width: 22%; }
+
+    /* Closing block */
+    .closing {
+      background: var(--navy);
+      color: white;
+      border-radius: 8px;
+      padding: 18px 22px;
+      margin-top: 8px;
+      page-break-inside: avoid;
+    }
+    .closing h3 {
+      font-size: 14px;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      margin-bottom: 12px;
+    }
+    .closing .block { margin-bottom: 12px; font-size: 13px; line-height: 1.55; }
+    .closing .block:last-child { margin-bottom: 0; }
+    .closing .label {
+      font-size: 10.5px;
+      font-weight: 700;
+      color: var(--ice);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+    .closing em { font-style: italic; color: white; }
+
+    /* Opening line */
+    .opening {
+      background: white;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--gold);
+      border-radius: 8px;
+      padding: 14px 20px;
+      font-size: 14px;
+      font-style: italic;
+      color: var(--navy);
+      margin-bottom: 14px;
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 24px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      font-size: 11px;
+      color: var(--subtle);
+      font-style: italic;
+      line-height: 1.5;
+    }
+    .footer code {
+      background: var(--ice-light);
+      padding: 1px 5px;
+      border-radius: 3px;
+      font-size: 10.5px;
+    }
+
+    /* Print */
+    @media print {
+      body { background: white; }
+      .header { padding: 16px 24px 14px; }
+      .container { padding: 16px 12px 24px; max-width: 100%; }
+      .quad, .crib-section, .closing { box-shadow: none; }
+      .crib-section, .quad, .closing { page-break-inside: avoid; }
+      .sec-label { page-break-after: avoid; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div>
+      <h1>NWAi Platform — <span>Lunch Brief</span></h1>
+      <div class="header-sub">Platform Debrief · 2026-05-27</div>
+    </div>
+    <div class="header-badge">Talking points · NDA</div>
+  </div>
+
+  <div class="container">
+
+    <!-- ───── VIEW A — PLACEMAT ───── -->
+    <div class="sec-label">View A — The Placemat (point-and-show)</div>
+
+    <div class="placemat">
+
+      <div class="quad">
+        <div class="quad-num">01 · BUILT</div>
+        <div class="quad-title">What we've built to date</div>
+        <div class="quad-sub">The analytical layer Dealum lacks</div>
+        <ul>
+          <li>Working end-to-end deal pipeline: <strong>7 stages · 8 commands · 9 AI agents · 10 proprietary frameworks</strong></li>
+          <li>Single user. One deal at a time. Real deals through to scored DD Reports + Investment Memos.</li>
+          <li>Filesystem-first; Dealum overlay only. Three surfaces (Desktop, CLI, Cowork).</li>
+        </ul>
+      </div>
+
+      <div class="quad">
+        <div class="quad-num">02 · BUILD</div>
+        <div class="quad-title">What we need to build</div>
+        <div class="quad-sub">Deal intel + member intel · web</div>
+        <ul>
+          <li><strong>V1 (30–45 days): two tracks at once</strong> — deal intel (the 9 agents on the web) + member intel substrate (graph, ledger, Match Engine, social deal card).</li>
+          <li><strong>V2 (~3 months):</strong> onboard Medical · Space · Consumer · Industrial · Fintech. 2 weeks per group.</li>
+          <li><strong>V3+ ecosystem sourcing.</strong> Dealum stays through V2; platform subsumes Beyond V3.</li>
+        </ul>
+      </div>
+
+      <div class="quad">
+        <div class="quad-num">03 · ENTERPRISE-GRADE</div>
+        <div class="quad-title">Desktop tool → always-on platform</div>
+        <div class="quad-sub">Four dimensions: reliability · multi-user · Dealum · security</div>
+        <ul>
+          <li>From session-dependent desktop → <strong>cloud always-on</strong>. Deals processed when they enter Dealum, not when I'm at my Mac.</li>
+          <li><strong>Multi-user:</strong> right output to right member at right stage. Structured SME input replaces email + ad-hoc.</li>
+          <li><strong>Bidirectional Dealum integration.</strong> Encryption + RBAC + append-only audit. Member data rights from day one.</li>
+        </ul>
+      </div>
+
+      <div class="quad">
+        <div class="quad-num">04 · THE MOAT</div>
+        <div class="quad-title">Member intelligence platform</div>
+        <div class="quad-sub">Beyond deals — the compounding asset</div>
+        <ul>
+          <li>Deal intelligence is the wedge. <strong>Member intelligence is the asset.</strong></li>
+          <li>Substrate = Sensors + Member Graph + Decisions Ledger + Policy + Learning Loop. Append-only; compounds.</li>
+          <li>200 members · 6 groups · 20+ years of indexed IC reasoning. <strong>No vendor can sell us this. No competitor can copy it.</strong></li>
+          <li>AI is the connective tissue. The substrate is the moat.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- ───── VIEW B — CRIB SHEET ───── -->
+    <div class="sec-label">View B — Talking-Points Crib Sheet</div>
+
+    <div class="opening">
+      "What I want to walk you through over lunch is four things — what we've already built, what it takes to evolve it, how we keep it enterprise-grade as members come on, and the bigger prize underneath it all."
+    </div>
+
+    <!-- Section 1 -->
+    <div class="crib-section">
+      <div class="crib-num">01</div>
+      <div class="crib-title">What we've built — the TechGroup deal pipeline</div>
+      <div class="verdict"><strong>Verdict</strong>Built the analytical layer Dealum doesn't have. Dealum stays authoritative for intake, stage tracking, member records, and decisions logged — the pipeline I built generates the intelligence at each stage (screening verdicts, scout assessments, diligence packages, DD Reports, Memos). End-to-end, processing real deals on my desktop today.</div>
+      <ul>
+        <li>Six-layer system: filesystem deal data → 7-stage pipeline (Inbox → Memo) → 8 slash commands → 9 AI research agents → 10 proprietary framework documents → persistent session context.</li>
+        <li>Agents do real work: company research, market analysis, competitive intel, technical diligence, risk, pricing, independent 5-yr financial forecast (McMurry method), valuation with 35% IRR hurdle test.</li>
+        <li>Outputs match our visual standard — DD Reports (11 scored sections, RAG-coded) and 4-slide Memos rendered exactly to the STL/Synergist reference format.</li>
+        <li>Filesystem-first today; Dealum API integration is deferred. Runs across Claude Desktop, Claude Code CLI, and Cowork.</li>
+        <li><strong>Limits to name explicitly:</strong> Single-user (me). One deal at a time. TechGroup only. Not on the web. Not multi-tenant. Not member-accessible.</li>
+      </ul>
+      <div class="say-it"><strong>Say it this way</strong><em>"I've proven the rails work. The same pattern that screens, scouts, and runs diligence for TechGroup is what we lift onto the platform — but the platform is where it stops being a single-person tool."</em></div>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="crib-section">
+      <div class="crib-num">02</div>
+      <div class="crib-title">What we need to build — multi-user, multi-group, web</div>
+      <div class="verdict"><strong>Verdict</strong>The build is two things at once: lift the proven desktop pipeline onto a multi-tenant web platform AND build the member intelligence substrate the pipeline plugs into. V1 ships the minimum substrate in 30–45 days; full 6-group rollout in 3–4 months; substrate before activations.</div>
+
+      <table class="transition-table">
+        <colgroup>
+          <col style="width: 32%">
+          <col>
+        </colgroup>
+        <thead>
+          <tr>
+            <th>Layer</th>
+            <th>What it owns during V1–V2</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Dealum <span style="font-weight: 400; color: var(--subtle);">(stays authoritative)</span></td><td class="to">Deal intake · stage tracking · member records · decisions logged · historical archive</td></tr>
+          <tr><td>Platform — Deal Intelligence <span style="font-weight: 400; color: var(--subtle);">(V1)</span></td><td class="to">The 9-agent pipeline lifted onto the web: screening verdicts, scout assessments, diligence packages, DD Reports, Memos</td></tr>
+          <tr><td>Platform — Member Intelligence <span style="font-weight: 400; color: var(--subtle);">(V1)</span></td><td class="to">The substrate: member graph · decisions ledger · Match Engine · SME POV capture · social deal card</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size: 12px; color: var(--subtle); font-style: italic; margin: -6px 0 14px;">Beyond V3 the platform subsumes Dealum's roles too — but that's the long arc, not the V1 build.</p>
+
+      <ul>
+        <li><strong>V1 (30–45 days): TechGroup MVP substrate.</strong> Member profile + expertise graph, faceted directory, Network Agent (NL: "Who knows X?"), social deal card as the persistent surface across all 7 stages, all 9 existing agents orchestrated, 3 new substrate agents (Network Agent, Match Engine, SME POV Capture), append-only decisions ledger, re-weighted matching that improves every cycle.</li>
+        <li><strong>V2 (~3 months total): the other 5 groups.</strong> Medical → Space → Consumer → Industrial → Fintech, 2 weeks each. Each plugs its own playbook (rubrics, themes, SMEs) into universal rails. Adding a group is config, not code.</li>
+        <li><strong>V3+: ecosystem sourcing.</strong> Proactive feeds from incubators, accelerators, universities. Pattern matching upstream of Track 1.</li>
+        <li><strong>Beyond V3:</strong> native intake + founder portal + native CRM → Dealum decommissioned. Full platform parity.</li>
+        <li>Architected from V1 for 6 groups even though only TechGroup is live — the data model survives every later transition.</li>
+      </ul>
+      <div class="say-it"><strong>Say it this way</strong><em>"V1 is 30–45 days for TechGroup. All six groups within 3–4 months. The total arc to full parity — including replacing Dealum — is 12–18 months. We don't compress that; we sequence it."</em></div>
+    </div>
+
+    <!-- Section 3 -->
+    <div class="crib-section">
+      <div class="crib-num">03</div>
+      <div class="crib-title">Enterprise-grade foundation — the desktop-to-platform transition</div>
+      <div class="verdict"><strong>Verdict</strong>Enterprise-grade isn't a security checkbox — it's the transition from a session-dependent desktop tool that processes one deal at a time to an always-on platform that serves 200+ members across 6 groups. Four dimensions define it: always-on reliability, multi-user access, clean Dealum integration, and secure data handling.</div>
+
+      <table class="transition-table">
+        <thead>
+          <tr>
+            <th>Capability</th>
+            <th>Desktop today (Cowork / Claude Code)</th>
+            <th>Enterprise platform (target)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Users</td><td class="from">Me — single session</td><td class="to">200+ members with role-based access</td></tr>
+          <tr><td>Reliability</td><td class="from">Session-dependent — runs when I'm working</td><td class="to">Always-on cloud — processes deals as they enter Dealum</td></tr>
+          <tr><td>Intelligence delivery</td><td class="from">I manually share outputs</td><td class="to">Automated push: right output to right member at each stage</td></tr>
+          <tr><td>SME input</td><td class="from">Ad-hoc email + conversation</td><td class="to">Structured form integrated with the diligence pipeline</td></tr>
+          <tr><td>Dealum integration</td><td class="from">I read Dealum, update manually</td><td class="to">Bidirectional — automated ingestion + write-back</td></tr>
+          <tr><td>Security</td><td class="from">Desktop session, no formal controls</td><td class="to">Encrypted, RBAC (6 × 6), append-only audit, member data rights</td></tr>
+          <tr><td>Scale</td><td class="from">Single thread, one deal at a time</td><td class="to">Full deal flow (1,000+/year) concurrently</td></tr>
+        </tbody>
+      </table>
+
+      <ul>
+        <li><strong>Always-on reliability:</strong> Intelligence runs on a cloud server, not my Cowork or Claude Code session. A deal lands in Dealum → platform processes it automatically. Not session-dependent.</li>
+        <li><strong>Multi-user access:</strong> Reports and deal cards delivered to (or accessible by) the right members at the right stage. SMEs submit diligence input via a structured surface, not email. Role-based: 6 groups × 6 roles · per-group AND per-deal scoping · cross-group opt-in.</li>
+        <li><strong>Clean Dealum integration:</strong> Bidirectional. Dealum stays authoritative for deal tracking; the platform owns analysis. Read in, write back. (Long-term — Beyond V3 per Section 2 — the platform subsumes Dealum.)</li>
+        <li><strong>Secure data handling:</strong> Encrypted in transit + at rest. Append-only decisions ledger as the audit trail. GDPR-equivalent member data rights from day one. Vertical overlays (HIPAA-adjacent for Medical, regulatory for Fintech/Space) layer on top.</li>
+      </ul>
+      <div class="say-it"><strong>Say it this way</strong><em>"What we're building isn't a desktop AI tool that's been scaled up — it's a real platform. The shift is from me processing one deal at a time on my Mac to an always-on system delivering intelligence to the right member at the right stage. Security is the floor; reliability, multi-user access, and bidirectional Dealum integration are what actually makes it enterprise."</em></div>
+    </div>
+
+    <!-- Section 4 -->
+    <div class="crib-section">
+      <div class="crib-num">04</div>
+      <div class="crib-title">From deal intelligence → member/social intelligence platform</div>
+      <div class="verdict"><strong>Verdict</strong>The deal pipeline is the wedge. The enduring asset is the substrate — member expertise graph plus 20+ years of indexed IC reasoning. AI analytical capability is commoditizing fast; what no vendor can sell us and no competitor can copy is the network and the decision memory compounded over time.</div>
+      <ul>
+        <li><strong>The substrate has five components:</strong> Sensors (what writes), Member Graph (who knows what), Decisions Ledger (append-only IC history), Policy Layer (NWAi criteria as code), Learning Loop (every cycle re-tunes the next).</li>
+        <li><strong>The thesis (from my May 23 to you):</strong> AI compresses screening, scaffolding, DD synthesis. It doesn't reach selection under uncertainty, conviction-forming, or the relationship side of value-add. <strong>The work AI compresses isn't the work that produces returns.</strong></li>
+        <li><strong>Now / near / far:</strong>
+          <ul style="margin-top: 4px;">
+            <li><em>Now:</em> Build deal intelligence as the interim operational capability AND start the member/social layer in parallel. Two builds, integrated by design.</li>
+            <li><em>Near (12–24 mo):</em> Analytical capability commoditizes. Swap modules at market price; reinvest into substrate depth.</li>
+            <li><em>Far:</em> Substrate is the moat; AI is the connective tissue activating it. Analytical layer = commodity input. Network + institutional memory = what compounds.</li>
+          </ul>
+        </li>
+        <li><strong>What members actually want:</strong> Network, founders, energy, SME engagement. Returns matter, but they're the 4th of 5 motivators. The platform has to serve that — not just process deals faster.</li>
+      </ul>
+      <div class="say-it"><strong>Say it this way</strong><em>"The deal pipeline is real and it works. But if all we build is faster diligence, we've built a tool a vendor will replicate in 18 months. The compounding asset is the member graph and the decisions ledger. That's what we're really building."</em></div>
+    </div>
+
+    <!-- Closing -->
+    <div class="closing">
+      <h3>Closing — the Dealum framing + the ask</h3>
+
+      <div class="block">
+        <div class="label">On Dealum</div>
+        <em>"Near-term, Dealum keeps the firehose handled — which lets us focus the build on what's actually missing: deal intelligence and member intelligence. Over time, the platform encompasses everything Dealum does today — native intake, founder portal, member roster, CRM — and Dealum is decommissioned. That's a Beyond-V3 conversation, not a V1 one. But every architectural decision we make in V1 anticipates it."</em>
+      </div>
+
+      <div class="block">
+        <div class="label">The single biggest risk (name it before they do)</div>
+        <em>"AI erodes the high-ranking experiential motivators — peer networking, founder proximity, SME engagement — broadly enough that members disengage before the substrate compounds. That's why substrate ships in V1, not later."</em>
+      </div>
+
+      <div class="block">
+        <div class="label">The ask (for the incoming developer-member)</div>
+        <em>"You join NWA as an advisory member while building this. You're inside the substrate you're building. V0 is 2–4 weeks of architecture proposal; V1 SOW follows. The arc through V2 is ~4 months from kickoff; full parity is 12–18 months."</em>
+      </div>
+    </div>
+
+    <div class="footer">
+      Source docs (if anyone asks for depth): GUT v1.0 <code>docs/strategy/foundational/</code> · Enterprise Build Brief v1.1 <code>docs/reference/NWA Investment Intelligence Platform/</code> · Member Intelligence V1 Features <code>docs/strategy/foundational/</code> · Architecture v0.26.0 (workspace root) · May 23 email to Ron <code>docs/strategy/member-communication/</code>.
+    </div>
+
+  </div>
+</body>
+</html>
