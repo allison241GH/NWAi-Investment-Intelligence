@@ -1,7 +1,7 @@
 {
   "name": "nwai-tech-pipeline",
-  "version": "2.15.0",
-  "description": "NWAi TechGroup deal pipeline — filesystem-driven intake to investment memo (v2.15 expands team-analyst into a mode-aware agent: bifurcated Product-Team Fit + Market-Team Fit, Staff Deep-Dive, Network Map with social-graph hook, Key-Seat Completeness checklist)",
+  "version": "2.16.0",
+  "description": "NWAi TechGroup deal pipeline — filesystem-driven intake to investment memo (v2.16 adds a NON-LLM ALGORITHMIC ENGINE branch to technology-analyst: products whose core is proprietary math/algorithms rather than LLM API calls are categorically NOT thin wrappers)",
   "author": {
     "name": "New World Angels",
     "url": "https://www.newworldangels.com"

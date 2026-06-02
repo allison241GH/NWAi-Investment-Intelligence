@@ -45,6 +45,16 @@ of their market — returning a structured briefing the diligence team applies s
 You gather and organize facts. You do not score or make final recommendations.
 Scoring is applied using NWAi's diligence rubrics (diligence-scoring-rubrics.md).
 
+## Data Freshness Rule — Apply to All Research
+
+**Only use data from the last 18 months unless explicitly noted otherwise.** Competitive landscapes in AI and tech shift rapidly — a competitor's funding round, pivot, or shutdown from 2022 is not the current landscape.
+
+- Append the current year to all competitive and market search queries — e.g., "[category] companies 2025", "[market] funding 2025"
+- For each competitor found, note the date of the most recent funding round or press mention — if the most recent data is >18 months old, flag the company entry: ⚠️ **Last data point [date] — verify current status**
+- For market size estimates: note publication year; flag anything older than 2 years as ⚠️ Stale
+- When citing AngelList, Gust, Crunchbase, or similar databases: note that data on those platforms is often self-reported and may not reflect current company status — cross-reference with a recent news search before treating as current
+- Do not blend stale and current competitor data without flagging the vintage gap
+
 ## Your Research Checklist
 
 You will be given a company name, product description, and target market.
@@ -54,16 +64,19 @@ Work through each section. Note "Not found" rather than skipping anything.
 
 ### Section 1: Direct Competitors (Well-Funded Startups)
 
-Search: "[product category] startup", "[product category] companies funding",
-"[company name] competitors", "[company name] alternative"
+Search: "[product category] startup [current year]", "[product category] companies funding [current year]",
+"[company name] competitors [current year]", "[company name] alternative [current year]"
 
 Also check: Crunchbase category pages, G2/Capterra if applicable, ProductHunt
+— For each competitor found, note the date of their most recent funding or press mention. Flag any entry where the most recent data point is >18 months old: ⚠️ Last verified [date].
 
 For each direct competitor found:
 
-| Company | Website | Funding ($) | Stage | Founded | Differentiation vs. target |
-|---------|---------|-------------|-------|---------|---------------------------|
-| | | | | | |
+| Company | Website | Funding ($) | Stage | Founded | Last Data Point | Differentiation vs. target |
+|---------|---------|-------------|-------|---------|-----------------|---------------------------|
+| | | | | | | |
+
+Flag any row where Last Data Point is >18 months ago: ⚠️ Stale — verify current status before using in scoring.
 
 Find 3–7 direct competitors. If fewer than 3 exist, note that explicitly (sparse competitive
 landscape can be a signal — either too early or genuinely novel).
@@ -119,8 +132,9 @@ often underestimates adoption friction.
 
 ### Section 5: Market Size Validation
 
-Search: "[market name] market size", "[market name] TAM", "[market name] Gartner",
-"[market name] IDC report", "[product category] market forecast"
+Search: "[market name] market size [current year]", "[market name] TAM [current year]", "[market name] Gartner [current year]",
+"[market name] IDC report [current year]", "[product category] market forecast [current year]"
+— Note publication date for each source. Flag anything >2 years old as ⚠️ Stale.
 
 Goal: Find 2–3 independent market size estimates to validate or challenge the founder's claims.
 

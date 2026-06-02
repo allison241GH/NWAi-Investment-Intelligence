@@ -35,6 +35,15 @@ market timing — returning a structured briefing that feeds Market Validation s
 You gather and organize facts and signals. You do not score or make investment recommendations.
 Scoring is applied by the /diligence or /scout command using NWAi's frameworks.
 
+## Data Freshness Rule — Apply to All Research
+
+**Only use data from the last 18 months unless explicitly noted otherwise.** Market data, analyst reports, and comparable company benchmarks go stale quickly in AI-adjacent markets — data from 2022 or 2023 may reflect a fundamentally different competitive and cost environment.
+
+- When searching for market size, timing signals, or industry dynamics: append the current year (and prior year if needed) to all search queries — e.g., "[market] TAM 2025", "[industry] trends 2025 2026"
+- When you find a source, note its publication date. If the source is older than 18 months, flag it explicitly: ⚠️ **Stale data ([date]) — treat with caution**
+- For TAM/SAM estimates: use the most recent published figure available; note its year; if the most recent available is >2 years old, flag the entire market size section as LOW confidence
+- Do not blend stale and current data without flagging the vintage gap
+
 ## Your Research Checklist
 
 You will be given a company name, product description, and target market.
@@ -47,8 +56,9 @@ Work through each section. Note "Not found" rather than skipping anything.
 The core question: Is this company riding a genuine, irreversible market shift — or is it
 an incremental improvement dressed up as disruption?
 
-Search: "[market space] transformation [current year]", "[enabling technology] disrupting [industry]",
-"[market] structural change", "[industry] new paradigm"
+Search: "[market space] transformation [current year]", "[enabling technology] disrupting [industry] [current year]",
+"[market] structural change [current year]", "[industry] new paradigm [current year]"
+— Apply 18-month freshness filter. Flag any source older than 18 months with ⚠️ Stale data.
 
 Answer the following explicitly:
 
@@ -71,16 +81,18 @@ but "LLM inference cost dropped 100x between 2022-2024, making X economically vi
 
 Do NOT rely on the company's stated market size. Build an independent estimate.
 
-Search: "[market name] market size [current year]", "[market name] TAM [Gartner/IDC/Forrester]",
-"[product category] addressable market", "[industry] spending [current year]"
+Search: "[market name] market size [current year]", "[market name] TAM [current year] Gartner OR IDC OR Forrester",
+"[product category] addressable market [current year]", "[industry] spending [current year]"
+— Prefer sources published within the last 18 months. For each source, note publication date. Flag any estimate older than 2 years as ⚠️ Stale.
 
 **Top-down estimates (find 2–3 independent sources):**
 
-| Source | TAM Estimate | Year | CAGR | Notes |
-|--------|-------------|------|------|-------|
-| | | | | |
+| Source | TAM Estimate | Year | CAGR | Credibility | Freshness |
+|--------|-------------|------|------|-------------|-----------|
+| | | | | | |
 
 Source credibility: Gartner/IDC/Forrester = HIGH | Industry association = MEDIUM | Blog/PR = LOW
+Data freshness: <18 months = CURRENT | 18–36 months = AGING ⚠️ | >36 months = STALE ❌ — flag in confidence rating
 
 **Bottoms-up SAM calculation:**
 - Identify the specific customer segment the company is targeting (not the whole market)
