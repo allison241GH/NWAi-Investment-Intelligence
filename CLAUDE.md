@@ -433,4 +433,4 @@ If canonical has uncommitted changes blocking the pull (e.g., transient `npm ins
 
 ---
 
-*Last updated: May 29, 2026 (architecture v0.29.0 — plugin v2.15.0: team-analyst expanded to mode-aware operation with bifurcated Product-Team Fit + Market-Team Fit lenses, Staff Deep-Dive, Network Map (with NWA Member Social Graph extensibility hook), and Key-Seat Completeness checklist) | NWAi Investment Intelligence & AI | Jamie, TechGroup Co-Chair*
+*Last updated: June 2, 2026 (architecture v0.30.0 — plugin v2.16.0: technology-analyst gains a NON-LLM ALGORITHMIC ENGINE architecture branch — products whose core is proprietary math/algorithms rather than LLM API calls are categorically NOT thin wrappers, shifting the replicability burden to published-vs-novel algorithms) | NWAi Investment Intelligence & AI | Jamie, TechGroup Co-Chair*

@@ -50,6 +50,8 @@ Work through each section. Note "Not found" rather than skipping anything.
 These three tests must be answered before any other technical analysis.
 A thin wrapper product has no defensible technical moat — it is replicable via public APIs.
 
+**Non-LLM algorithmic engine — check first.** Some AI products are not LLM systems at all: they are proprietary algorithmic/statistical engines (e.g. causal-discovery engines, combinatorial optimizers, simulation/physics engines, novel ML architectures) that make no LLM API calls. The thin-wrapper test is fundamentally a test for *LLM API dependency*, so a genuine non-LLM algorithmic engine is categorically NOT a thin wrapper — but it also does not fit the standard architecture taxonomy. If the core differentiator is proprietary math/algorithms rather than a model call, label the architecture **NON-LLM ALGORITHMIC ENGINE**, return Thin Wrapper Verdict = NOT A THIN WRAPPER, and shift the analytical burden to the *replicability of the algorithm* (published vs. genuinely novel, open-source primitives vs. proprietary integration) rather than to LLM-provider dependency. Note any LLM use that exists only as a thin UI/orchestration layer on top of the algorithmic core — that does not convert an algorithmic engine into a wrapper.
+
 **Test 1 — API Dependency:**
 Search: "[company name] technology stack", "[company name] API", "[company name] OpenAI",
 "[company name] uses [LLM provider]"
@@ -121,7 +123,7 @@ Search: "[company name] architecture", "[company name] technical blog", "[compan
 
 Extract what's publicly visible:
 - Core technology stack (languages, frameworks, infrastructure)
-- AI/ML architecture: custom-trained models / fine-tuned / RAG / pure API calls
+- AI/ML architecture: non-LLM algorithmic engine / custom-trained models / fine-tuned / RAG / pure API calls
 - Data infrastructure: how is data stored, processed, and used for model improvement?
 - Any open-source components that could be replicated by competitors
 - GitHub presence (active? Stars? Contributors? Code quality signals?)
@@ -194,7 +196,8 @@ Trade secrets / proprietary algorithms: [Evidence or "Not publicly visible"]
 
 ── TECHNICAL ARCHITECTURE ──
 Core stack: [Summary]
-AI infrastructure: CUSTOM MODELS / FINE-TUNED / RAG + APIS / PURE API CALLS
+AI infrastructure: NON-LLM ALGORITHMIC ENGINE / CUSTOM MODELS / FINE-TUNED / RAG + APIS / PURE API CALLS
+[If NON-LLM ALGORITHMIC ENGINE: state replication risk in terms of published-vs-novel algorithms and open-source primitives vs. proprietary integration, not LLM-provider dependency]
 Data infrastructure: [Summary]
 Open-source replication risk: HIGH / MEDIUM / LOW
 GitHub signals: [Active/Inactive/Not found + detail]
