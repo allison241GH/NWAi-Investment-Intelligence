@@ -2,10 +2,10 @@
 
 ## Overview
 
-Scout assessment runs in two phases plus three strategic dimensions not scored at Triage.
-Phase 1 assesses deal viability. Phase 2 assesses execution and defensibility. Three strategic
-dimensions (Ecosystem Role, Adjacent Displacement Risk, Macro Tailwind) add analytical depth
-that Triage cannot evaluate from pitch materials alone.
+Scout assessment runs in two phases plus four strategic dimensions not scored at Triage.
+Phase 1 assesses deal viability. Phase 2 assesses execution and defensibility. Four strategic
+dimensions (Ecosystem Role, Adjacent Displacement Risk, Macro Tailwind, Agent-Era Readiness) add
+analytical depth that Triage cannot evaluate from pitch materials alone.
 
 Every Scout produces a **Scout Conviction Score** — a composite numeric signal that becomes
 the starting hypothesis handed to the Diligence team. Diligence either confirms it or moves it.
@@ -166,6 +166,36 @@ Required: one line per dimension (Customer / Technology / Regulatory / Economic)
 | 1 | Strong macro headwinds across multiple dimensions |
 | 0 | All four macro dimensions are headwinds or actively hostile to the thesis |
 
+### Q7: Agent-Era Readiness
+
+*Full framework: `references/agent-era-readiness-framework.md` (the third always-active lens).*
+
+Score on: Does the founder solve the problem *as AI agents will reshape it* — or as it exists
+today? Apply the **doorway question** (*"information for a human to act on, or a transaction for an
+agent to complete?"*) and the three test dimensions (Problem Reimagination · Position in the Agent
+Economy · Agent-Era Moat), then classify the **posture**. This is the agent-era durability test;
+it is broader than Q5 (which tests adjacent/competitor displacement) — Q7 tests whether the
+*problem itself* survives the substrate shift.
+
+Required outputs before scoring:
+- **Doorway read:** [one sentence — who/what consumes the value as agents proliferate?]
+- **Does the agent wave help or hurt this company?** Answer HELPS / HURTS / MIXED in plain
+  language, then — if it isn't already in its strongest position — add **"Could get stronger if:"**
+  (the one concrete thing that would make it more durable) and **"What to watch:"** (the milestone
+  to look for). Keep the internal posture label (Threatened / Riding / Enabling / Insulated) for the
+  deal-team line only; members read the plain help/hurt sentence.
+
+| Score | Criteria (internal posture in brackets) |
+|-------|---------|
+| 5 | Agents clearly **help** — the company is building for the reimagined problem; agents make it *stronger*; durable agent-era moat. [Riding or Enabling] |
+| 4 | Agents **help**, with minor exposure; the position is holding [Riding / Enabling] |
+| 3 | Mixed — aware and partly positioned; holds up near-term, the decade-out picture unproven [Adapting] |
+| 2 | Meaningful exposure — largely solving today's problem; weak or unproven agent-era moat |
+| 1 | Agents **hurt** — solving a problem they are likely to dissolve within the hold period; rebuttal is weak [Threatened] |
+| 0 | Agents **hurt** badly — no reckoning with the shift; in the path of dissolution with no credible route to a stronger position [Threatened] |
+
+Report the score with the plain help/hurt read (e.g. "2/5 — agents hurt the core product today, but it could get stronger if it opens the engine to agents; watch the roadmap").
+
 ---
 
 ## Phase 2: Execution — Scored Dimensions
@@ -257,9 +287,11 @@ Calculate after completing all Phase 1, Strategic, and Phase 2 dimensions.
 | Dimension Group | Dimensions | Max Raw | Weight | Weighted Max |
 |---|---|---|---|---|
 | Phase 1 (Q1 + Q1b + Q2 + Q3 mapped) | 4 dims | 20 pts | 40% | 8.0 |
-| Strategic (Q4 + Q5 + Q6) | 3 dims | 15 pts | 20% | 3.0 |
+| Strategic (Q4 + Q5 + Q6 + Q7) | 4 dims | 20 pts | 20% | 3.0 |
 | Phase 2 (Team + Tech + Traction + GTM) | 4 dims | 20 pts | 40% | 8.0 |
 | **Total** | | | **100%** | **19.0** |
+
+*Strategic group now carries 4 dimensions (Agent-Era Readiness added, June 2026) within the same 20% weight and 3.0 weighted-max — the composite total and the conviction bands below are unchanged.*
 
 *Moat rating maps to composite: STRONG=5, DEVELOPING=3, WEAK=1, NONE=0. Exit not included.*
 
@@ -334,6 +366,7 @@ Greed:                    [one phrase — upside case if thesis holds]
 | Ecosystem Role                  | —       | X/5     | NEW        |
 | Adjacent Displacement Risk      | —       | X/5     | NEW        |
 | Macro Tailwind                  | —       | X/5     | NEW        |
+| Agent-Era Readiness             | —       | X/5 (posture) | NEW   |
 | Team                            | D3: X/5 | X/5     |            |
 | Technology                      | —       | X/5     |            |
 | Traction                        | D5: X/5 | X/5     |            |

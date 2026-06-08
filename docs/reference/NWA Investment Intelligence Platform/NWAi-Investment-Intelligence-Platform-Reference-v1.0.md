@@ -134,7 +134,7 @@ Append-only event log. Entry types — Screen verdict, Scout assessment, Diligen
 
 ### ⚖️ Policy Layer &nbsp;·&nbsp; **[🔨 Build · V1]**
 
-NWAi investment criteria encoded as policy. Engagement modes (active / passive / opt-in). Consent rules (per-field visibility, per-deal opt-in). Two analytical lenses applied at every stage.
+NWAi investment criteria encoded as policy. Engagement modes (active / passive / opt-in). Consent rules (per-field visibility, per-deal opt-in). Three analytical lenses applied at every stage.
 
 *Codifies the non-negotiables in §10.*
 
@@ -317,15 +317,18 @@ NWAi's proprietary criteria. Already encoded in plugin reference docs. In V1, th
 | `diligence-scoring-rubrics.md` | Moat (0–6), AI Moat (0–10), Risk (1–10), Bear/Base/Bull model with mandatory *because* clauses | Diligence |
 | `dd-checklist.md` | 17-folder DD framework with team assignments and gate-critical folder designations | Diligence |
 | `ai-moats-framework.md` | Three moat types + Replicability Speed Matrix (4-row threat actor table) | Scout + DD Report + Memo |
+| `agent-era-readiness-framework.md` | Does the founder solve the problem *as AI agents will reshape it?* — doorway question + 3 scored dimensions + plain "does the agent wave help or hurt this company?" read | Screen (trip-wire) + Scout (Q7) + Diligence (Moat Tier 3) + Memo |
 | `dd-report-format-reference.md` | 11 sections, 2-column tables, RAG colors — IC-ready briefing | DD Report |
 | `memo-format-reference.md` | 4-slide PPTX structure, NWAi branding, "What is the Bet?" framing | Memo |
 | `diligence-analysis-framework.md` | Analyst-POV-first post-meeting analysis — declarations, contradictions, moat signals | Diligence (post-meeting) |
 
-### Two Analytical Lenses — Always Active, Every Stage &nbsp;·&nbsp; **[✓ Live]**
+### Three Analytical Lenses — Always Active, Every Stage &nbsp;·&nbsp; **[✓ Live]**
 
 **⚡ Structural Discontinuity** — Is this Big Idea riding a genuine, irreversible market shift — or incremental improvement dressed up as disruption? A real discontinuity changes the rules of the game.
 
 **🔒 Memory Lock-in** — Does the product get smarter, stickier, or more embedded the more it's used? Proprietary data flywheels, deep workflow integration, accumulated context — the hallmarks of a durable AI moat.
+
+**🤖 Agent-Era Readiness** — Does the founder solve the problem *as AI agents will reshape it?* As agents become the predominant actor and consumer of digital products and decisions, the plain test for every deal is: **does the agent wave help or hurt this company?**
 
 ---
 

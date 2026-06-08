@@ -87,6 +87,46 @@ Where does the value actually come from?
 Can a customer switch to a competitor in less than one week with no meaningful loss?
 → If YES: No lock-in. AI Moat score ≤ 3.
 
+### Tier 3: Agent-Era Readiness (Score 0–15) — run for every deal
+
+*Full framework: `references/agent-era-readiness-framework.md`. This is the diligence-depth scored
+application of the third always-active lens. Unlike Tier 2 (which has an AI applicability gate),
+Tier 3 runs for **every** deal — the substrate shift reshapes non-AI businesses too (a per-seat
+SaaS, an ad-funded marketplace, a human-funnel services firm are all exposed regardless of whether
+they use AI).*
+
+**Distinction from Tier 2:** Tier 2 AI Moat tests *replicability of the build* (is it a thin
+wrapper?). Tier 3 tests *whether the problem itself survives the agent shift* and where value lands
+when agents are the actor and consumer. A deal can pass Tier 2 (real AI moat) yet fail Tier 3
+(solving a problem agents dissolve), or vice versa.
+
+Score three dimensions 0–5 each (see framework for full anchors), on both horizons (durable-now /
+visionary-arc); note the gap:
+
+| Dimension | Tests |
+|-----------|-------|
+| **Problem Reimagination** (0–5) | Does the founder solve the problem as agents will reshape it, or as it exists today? |
+| **Position in the Agent Economy** (0–5) | Where does value land — human-to-act-on vs agent-to-complete; does the revenue model (seat vs outcome) and cost model survive when agents are buyer and worker? |
+| **Agent-Era Moat** (0–5) | What stays defensible when agents can scrape/replicate the surface — un-scrapable value, flywheel under agent load, transactional plumbing, accountability/trust, governance of memory? |
+
+**Then state, in plain member-readable language, whether the agent wave helps or hurts the company**
+(HELPS / HURTS / MIXED). If it isn't already in its strongest position, add **"Could get stronger
+if:"** (the one concrete thing that would make it more durable) and **"What to watch:"** (the
+milestone that confirms it — this becomes a watch condition or a deal-structure lever). Keep the
+internal posture label (Threatened / Riding / Enabling / Insulated) on the deal-team line only.
+
+| Total (0–15) | Verdict | Investment Signal |
+|---|---|---|
+| 12–15 | REIMAGINING | Building for the world arriving — visionary + durable |
+| 8–11 | ADAPTING | Aware, partially positioned; durable near-term, arc unproven |
+| 4–7 | EXPOSED | Solving today's problem; vulnerable as the shift advances |
+| 0–3 | BLIND | No reckoning; beautiful solution to a dissolving problem |
+
+**Flag triggers:** ⚠️ solving a problem agents likely dissolve within the ~5-yr hold; ⚠️ per-seat
+or ad/engagement revenue model with no outcome/usage path; ⚠️ Strong Yellow if value proposition is
+fully ingestible by an agent in <48h; ❌ Threatened posture with no credible, funded path to
+Riding/Enabling (default to pass — quality of the present-day solution is not a mitigant).
+
 ---
 
 ## 2. Risk Scoring (1–10 per category)
@@ -267,9 +307,10 @@ During diligence, apply rubrics in this sequence — each feeds the next:
 
 ```
 Market Sizing → validates TAM/SAM assumptions in Financial Model
-Competitive Intel → informs Moat Score (Tier 1 & 2)
+Competitive Intel → informs Moat Score (Tier 1, 2 & 3)
 Founder Research → feeds Execution Risk score
 Moat Score → feeds Competitive Risk score
+Agent-Era Readiness (Tier 3) → informs Competitive + Market Risk; posture feeds exit/return thesis
 All four → synthesized into Risk Score
 All five → inform the Financial Model exit scenarios
 ```
@@ -300,6 +341,7 @@ relevant rubric outputs:
 |--------|----------------------|-----------------|
 | Moat Tier 1 (General) | Technical Validation | Competitive Validation |
 | Moat Tier 2 (AI Moat) | Technical Validation | Commercial Validation |
+| Moat Tier 3 (Agent-Era Readiness) | Competitive Validation | Market Validation |
 | Risk — Execution | Team Validation | — |
 | Risk — Market | Market Validation | Competitive Validation |
 | Risk — Financial | Financial Validation | — |

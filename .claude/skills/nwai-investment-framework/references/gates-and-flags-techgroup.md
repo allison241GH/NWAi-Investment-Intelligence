@@ -229,6 +229,34 @@ These flags compound with the AI Wrapper Assessment. A deal flagged as HIGH Wrap
 
 ---
 
+## Agent-Era Exposure Signal (Lightweight Triage)
+
+A fast, qualitative read at Screen — **not a scored dimension.** It surfaces, early, whether a deal
+is solving a problem that a future of capable AI agents may reshape, dissolve, or transform. The
+full scored assessment (three dimensions + four-posture verdict) happens at Scout and Diligence via
+`references/agent-era-readiness-framework.md`; this is just the trip-wire.
+
+**The doorway question:** *"Is this information for a human to act on, or a transaction for an agent
+to complete?"* For a human, information is an asset to act on; for an agent, it is a transaction to
+complete. Ask whether most of this product's "users" may soon be machines acting for humans.
+
+**Flag triggers (qualitative):**
+- ⚠️ **Yellow Flag — Agent-Era Exposure** if the product's core value is a task agents are likely
+  to own outright within the hold period (e.g. browsing/comparing/aggregating for a human, a
+  human-attention funnel, a manual workflow agents compress), OR the revenue model is per-human-seat
+  / ad- / engagement-based (the evaporating-seat risk). Text: "Agent-era exposure: [problem/model]
+  may be reshaped by agent adoption within the hold period. Run full Agent-Era Readiness at Scout."
+- Note any **latent durable asset** that could move the deal from Threatened toward Enabling
+  (picks-and-shovels for the agent economy) or Insulated (un-scrapable / high-trust / accountability
+  value) — flagged for Scout to score, not resolved here.
+
+This signal does **not** gate or cap a score on its own. It is a routing flag: a tripped wire means
+"score Agent-Era Readiness properly at Scout," nothing more. It compounds with — but is distinct
+from — the AI Wrapper Assessment (which tests *replicability of the build*); Agent-Era Exposure
+tests *whether the problem itself survives the shift*.
+
+---
+
 ## Live Pitch Questions (TechGroup ADVANCE Deals)
 
 When a Tech-tagged deal advances, generate 3–5 questions specifically for the founder's Live Pitch
@@ -254,7 +282,7 @@ Categories to draw from:
 
 ---
 
-*NWAi TechGroup Screener Framework — TechGroup Extension | v2.0 | April 2026*
+*NWAi TechGroup Screener Framework — TechGroup Extension | v2.1 | June 2026*
 *Universal hard gates, NWA Filter, Readiness scoring, Research Protocol, Decision Logic, and Output Format are inherited from `gates-and-flags.md`.*
-*Replaces v1.0 (March 2026). Key TechGroup-specific additions: Track A/B bifurcation; AI Wrapper Assessment; Replicability Speed Flag; Hardware Last Mile Standard; TRL Hard Cap.*
+*Replaces v1.0 (March 2026). Key TechGroup-specific additions: Track A/B bifurcation; AI Wrapper Assessment; Replicability Speed Flag; Hardware Last Mile Standard; TRL Hard Cap. v2.1 (June 2026) adds the Agent-Era Exposure Signal (lightweight triage trip-wire for the Agent-Era Readiness Framework).*
 *Medical and Space verticals retain separate hard-gate screener frameworks.*

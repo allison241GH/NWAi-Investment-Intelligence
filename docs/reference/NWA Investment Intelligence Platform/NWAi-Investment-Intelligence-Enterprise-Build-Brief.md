@@ -310,7 +310,7 @@ Five components defined in v1.0:
 | 🎯 **Sensors** | Catalog of interactions that write to the substrate — interest signals, expertise tags, SME POV, comments, votes, pass-with-reason |
 | 🕸️ **Member Graph** | Entities (Member, Company, Deal, Investment, Round, Domain Tag, Connection), relationship types, derived fields (expertise centrality, co-investment density) |
 | 📜 **Decisions Ledger** | Append-only event log — Screen verdict, Scout assessment, Diligence note, IC decision, Comment, SME POV, Vote, Pass-with-reason |
-| ⚖️ **Policy Layer** | NWAi investment criteria encoded as policy. Engagement modes (active / passive / opt-in). Consent rules. Two analytical lenses applied every stage. |
+| ⚖️ **Policy Layer** | NWAi investment criteria encoded as policy. Engagement modes (active / passive / opt-in). Consent rules. Three analytical lenses applied every stage (Structural Discontinuity · Memory Lock-in · Agent-Era Readiness). |
 | 🔄 **Learning Loop** | Every cycle's writes re-tune next-cycle match scores. Routing improves with use. The compounding mechanic. |
 
 ### What the substrate contains

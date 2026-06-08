@@ -1,6 +1,6 @@
 {
   "name": "nwai-tech-pipeline",
-  "version": "2.16.0",
+  "version": "2.17.1",
   "description": "NWAi TechGroup deal pipeline — filesystem-driven intake to investment memo (v2.16 adds a NON-LLM ALGORITHMIC ENGINE branch to technology-analyst: products whose core is proprietary math/algorithms rather than LLM API calls are categorically NOT thin wrappers)",
   "author": {
     "name": "New World Angels",

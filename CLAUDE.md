@@ -32,7 +32,7 @@ clever product.
 override weak structure or thin defensibility. Look for what's structurally true, not what's
 narratively compelling.
 
-**Two lenses — always active at every stage:**
+**Three lenses — always active at every stage:**
 
 - **Structural Discontinuity**: Is this Big Idea riding a genuine, irreversible market shift —
   or is it incremental improvement dressed up as disruption? A real discontinuity changes the
@@ -41,6 +41,15 @@ narratively compelling.
 - **Memory Lock-in**: Does the product get smarter, stickier, or more embedded the more it's
   used? Proprietary data flywheels, workflow integration depth, and switching costs driven by
   accumulated context are the hallmarks of a durable AI moat.
+
+- **Agent-Era Readiness**: Does the founder solve the problem *as AI agents will reshape it* —
+  or as it exists today? Agents are becoming the predominant actor and consumer of digital
+  products, work, and transactions. The doorway question: *"Is this information for a human to
+  act on, or a transaction for an agent to complete?"* Then classify the posture — Threatened
+  (agents dissolve the problem) / Riding (the company is the reimagined solution) / Enabling
+  (picks-and-shovels for the agent economy) / Insulated (genuinely un-disruptable value). A
+  beautiful solution to a problem agents are about to dissolve is the most dangerous bet on the
+  table. Full framework: `references/agent-era-readiness-framework.md`.
 
 **Phase discipline (default behavior):** Start at Phase 1 depth (Scout & Screening) unless
 explicitly asked to go deeper. Don't self-escalate to full Diligence mode without a trigger.
@@ -240,6 +249,7 @@ always reference the relevant framework:
 - **DD Checklist**: 17-folder due diligence framework (`references/dd-checklist.md`)
 - **Diligence Meeting Analysis**: Analyst-POV-first framework for post-meeting reconciliation — Declarations, Structural Contradictions, Moat/Team signals, Thesis Stress Points (`references/diligence-analysis-framework.md`)
 - **AI Moats Framework**: Three moat types for evaluating AI company defensibility (`references/ai-moats-framework.md`)
+- **Agent-Era Readiness Framework**: The third always-active lens — does the founder solve the problem as AI agents will reshape it? Doorway question + three scored dimensions (Problem Reimagination, Position in the Agent Economy, Agent-Era Moat) + four-posture verdict (Threatened/Riding/Enabling/Insulated). Lightweight triage trip-wire at Screen, scored at Scout (Q7) and Diligence (Moat Tier 3) (`references/agent-era-readiness-framework.md`; thesis at `docs/strategy/future-of-venture-investing/NWAi-Agent-Era-Readiness-Thesis-2026-06.md`)
 - **DD Report Format**: 11-section scored report structure, 1–5 scale mapping, DD team vote table (`references/dd-report-format-reference.md`)
 - **Memo Format**: Investment Memo structure for archival/external IC presentation (`references/memo-format-reference.md`)
 
@@ -442,4 +452,4 @@ If canonical has uncommitted changes blocking the pull (e.g., transient `npm ins
 
 ---
 
-*Last updated: June 2, 2026 (architecture v0.30.0 — plugin v2.16.0: technology-analyst gains a NON-LLM ALGORITHMIC ENGINE architecture branch — products whose core is proprietary math/algorithms rather than LLM API calls are categorically NOT thin wrappers, shifting the replicability burden to published-vs-novel algorithms) | NWAi Investment Intelligence & AI | Jamie, TechGroup Co-Chair*
+*Last updated: June 8, 2026 (architecture v0.31.0 — plugin v2.17.1: Agent-Era Readiness Framework added as the third always-active investing lens — tests whether a startup solves the problem as AI agents will reshape it; doorway question + three scored dimensions; wired as a lightweight triage trip-wire at Screen, scored Q7 at Scout, and Moat Tier 3 at Diligence. Member-facing outputs lead with the plain "does the agent wave help or hurt this company?" read; the four posture labels are internal deal-team shorthand only) | NWAi Investment Intelligence & AI | Jamie, TechGroup Co-Chair*

@@ -20,7 +20,7 @@ Load **both** screener references — universal first, then TechGroup extension:
 
 2. **TechGroup extension**:
    `.claude/skills/nwai-investment-framework/references/gates-and-flags-techgroup.md`
-   Defines TechGroup-specific overrides: Track Determination (A vs B), Track A Software/AI/Cloud 6-dimension Opportunity rubric, Track B Hardware/Robotics 6-dimension Opportunity rubric, AI Wrapper Assessment, Replicability Speed Flag, Hardware Last Mile Standard, TRL Hard Cap, TechGroup Live Pitch Questions guidance.
+   Defines TechGroup-specific overrides: Track Determination (A vs B), Track A Software/AI/Cloud 6-dimension Opportunity rubric, Track B Hardware/Robotics 6-dimension Opportunity rubric, AI Wrapper Assessment, Replicability Speed Flag, Agent-Era Exposure Signal (lightweight triage trip-wire), Hardware Last Mile Standard, TRL Hard Cap, TechGroup Live Pitch Questions guidance.
 
 Read both fully before proceeding. The universal hard gates, NWA Filter, and Readiness scoring apply to every Tech-tagged deal; the TechGroup file is the source for which 6-dimension Opportunity rubric to apply once Track is determined in Step 3.
 
@@ -91,6 +91,8 @@ Gates: Foreign Entity / IP Structure | Market Size Threshold | Commercialization
 **Revenue Quality Audit:** If any traction or revenue is mentioned, classify as Sticky (automated, API-driven, self-serve) or Stagnant (high-touch, consulting-adjacent, inertia-based). Stagnant Revenue caps Traction Signal at 2/5. AI Wrapper HIGH classification also caps Traction at 2/5 ("Fragile").
 
 **Cynical Default check:** For any claim that cannot be verified via the three searches or company website, note it — maximum score for that dimension is 3/5.
+
+**Agent-Era Exposure Signal (lightweight triage — both tracks):** Apply the doorway question — *"Is this information for a human to act on, or a transaction for an agent to complete?"* — per the Agent-Era Exposure Signal in `gates-and-flags-techgroup.md`. Raise a ⚠️ Yellow Flag if the core value is a task agents are likely to own within the hold period, or the revenue model is per-human-seat / ad- / engagement-based. This does **not** cap or gate any score — it is a routing flag meaning "score Agent-Era Readiness properly at Scout." Note any latent Enabling/Insulated asset for Scout to score. (Distinct from the LLM Ingestion Test, which tests replicability of the build; this tests whether the problem itself survives the shift.)
 
 ### Track B — Hardware Assessment:
 Note the current TRL level (or estimate from pitch materials). TRL < 7 caps Technical Maturity at 3/5. Assess whether a path to 50%+ gross margins is present for Unit Economics. Run Goliath Test against hardware incumbents.
@@ -164,6 +166,7 @@ Signal:             [One sentence — the single most important signal driving t
 | LLM Ingestion Test    | YES / PARTIAL / NO | [one line — can GPT-4o replicate 80% of core function?] |
 | AI Wrapper Risk       | HIGH / MODERATE / LOW | [one line — basis for classification] |
 | Revenue Quality       | STICKY / STAGNANT / FRAGILE / UNKNOWN | [one line — classification rationale] |
+| Agent-Era Exposure    | FLAGGED / CLEAR | [one line — doorway question read; if FLAGGED, "score Agent-Era Readiness at Scout"] |
 
 [Track B only:]
 | Assessment            | Finding | Notes |

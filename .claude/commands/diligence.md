@@ -238,6 +238,7 @@ Apply all four rubrics using the agent briefings plus prior Screening and Scout 
 
 - Tier 1 General Moat (0–6): Evaluate all six dimensions individually. For each, show the dimension name, ✓ or ✗, and a one-sentence rationale. Then sum to produce the total score and state the interpretation band (No Moat / Weak Moat / Moderate Moat / Strong Moat).
 - Tier 2 AI Moat (0–10): First apply the applicability gate — explicitly answer "Is this an AI-first or AI-enabled company?" If NO → mark Tier 2 as N/A with a one-line reason. If YES → run the three thin wrapper tests first (using technology-analyst briefing), then score all three categories (Cognitive/Data, Capital/Compute, Vertical/Workflow), showing each sub-element by name with points awarded and points available. State the total and interpretation band.
+- Tier 3 Agent-Era Readiness (0–15): Run for **every** deal (no applicability gate — the substrate shift reshapes non-AI businesses too). Apply the doorway question and score the three dimensions (Problem Reimagination, Position in the Agent Economy, Agent-Era Moat) 0–5 each, looking at both today and the next decade. Lead the written output with the plain question *"does the agent wave help or hurt this company?"* (HELPS / HURTS / MIXED) in member-readable language; if it isn't already in its strongest position, add "Could get stronger if:" and "What to watch:". Keep the internal headline verdict (REIMAGINING / ADAPTING / EXPOSED / BLIND) and posture label (Threatened / Riding / Enabling / Insulated) on the deal-team line. Distinct from Tier 2: Tier 2 tests replicability of the build; Tier 3 tests whether the problem itself survives the agent shift. Use `references/agent-era-readiness-framework.md` and the market-analyst + technology-analyst briefings.
 - Show working for each point awarded or withheld
 
 **3B — Risk Scoring (1–10 per category, where 1 = lowest risk and 10 = highest risk)**
@@ -359,6 +360,14 @@ MOAT TIER 2 — AI Moat (0–10):
   Vertical / Workflow: Workflow Integration [X/2] | Regulatory Layer [X/1] | Network Effects [X/1]
   Total: [X/10] → [Thin Wrapper / Weak Moat / Moderate Moat / Strong Moat / Exceptional Moat]
 
+MOAT TIER 3 — Agent-Era Readiness (0–15, every deal):
+  Does the agent wave help or hurt this company? → [HELPS / HURTS / MIXED]
+  [plain 1–2 sentence read — what agents do to this company's problem, and why that helps or hurts]
+  Could get stronger if: [one concrete thing that would make it more durable — only if not already strongest]
+  What to watch:         [the milestone/signal that would confirm it]
+  Scores:  Problem Reimagination [X/5] · Position in the Agent Economy [X/5] · Agent-Era Moat [X/5]
+  Deal-team line (internal): [X/15] → [REIMAGINING / ADAPTING / EXPOSED / BLIND]; posture [Threatened / Riding / Enabling / Insulated]
+
 RISK (1 = lowest risk, 10 = highest risk):
   Execution:   [X/10]  | [Key concern — one sentence]
   Market:      [X/10]  | [Key concern — one sentence]
@@ -453,7 +462,7 @@ The document must contain all six parts in order:
 
 2. **Part B — Layer 2 Hypothesis Confirmation Plan**: Six validation group blocks in a clean 2-column layout. Left column: group name + signal emoji. Right column: Hypothesis / Conclusion / Biggest uncertainty. Navy section banner at top: "Layer 2 — Hypothesis Confirmation Plan (AI-Derived)". If Financial Validation is incomplete, render that block with a red background and INCOMPLETE flag.
 
-3. **Part C — Scored Assessment**: Four structured tables — Moat Tier 1 (6 dimensions, ✓/✗, one-sentence rationale per row, total score), Moat Tier 2 AI (cognitive/capital/vertical sub-elements with points, total, interpretation band — or N/A with reason), Risk (5 categories with score and key concern, average, critical flags), and Market/Financial summary (TAM, SAM, timing score, revenue, runway, unit economics).
+3. **Part C — Scored Assessment**: Five structured tables — Moat Tier 1 (6 dimensions, ✓/✗, one-sentence rationale per row, total score), Moat Tier 2 AI (cognitive/capital/vertical sub-elements with points, total, interpretation band — or N/A with reason), Moat Tier 3 Agent-Era Readiness (run for every deal — leads with the plain "does the agent wave help or hurt this company?" read + "Could get stronger if" / "What to watch", with the 3 dimension scores /15 and internal verdict/posture on a deal-team line), Risk (5 categories with score and key concern, average, critical flags), and Market/Financial summary (TAM, SAM, timing score, revenue, runway, unit economics).
 
 4. **Part D — Layer 1: 17-Folder DD Assignment Table [Hub]**: 3-column table (Folder | Pre-Populated Findings | Status / Key Question). Navy section banner: "Layer 1 — 17-Folder Data Completeness Checklist". For each ❌ gate-critical folder: red background shading. For each ⚠️ urgent folder: amber background shading. No separate assignee column.
 

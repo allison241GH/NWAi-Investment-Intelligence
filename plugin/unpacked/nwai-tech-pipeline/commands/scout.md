@@ -87,6 +87,10 @@ Score each strategic dimension on the 0–5 scale defined in scout-questions.md.
 - **Q4: Ecosystem Role** — platform creator vs. follower; flywheel potential; platform dependency risk. Score 0-5.
 - **Q5: Adjacent Displacement Risk** — define core use case; list functional equivalents; identify emerging displacement technology and timeline. Score 0-5 (inverted: 5 = lowest risk).
 - **Q6: Macro Tailwind** — assess all four dimensions (Customer / Technology / Regulatory / Economic) on a 10-year horizon. One line per dimension. Score 0-5.
+- **Q7: Agent-Era Readiness** — apply the doorway question and the three test dimensions. Lead the output with the plain question *"does the agent wave help or hurt this company?"* (HELPS / HURTS / MIXED) in member-readable language; if it isn't already in its strongest position, add "Could get stronger if:" and "What to watch:". Keep the internal posture label (Threatened / Riding / Enabling / Insulated) on the deal-team line only. Score 0-5. This is the agent-era durability test — broader than Q5; it asks whether the *problem itself* survives the substrate shift.
+
+Load the Agent-Era Readiness Framework from:
+`.claude/skills/nwai-investment-framework/references/agent-era-readiness-framework.md`
 
 ## Step 4: Run Phase 2 — Execution (Scored)
 
@@ -114,10 +118,10 @@ Score each Phase 2 dimension on the 0–5 scale defined in scout-questions.md. E
 
 **Score A — Intelligence Conviction Score (AI research-derived, max 17.0)**
 
-Using scores from Phase 1 (Q1, Q2, Q3), Strategic (Q4, Q5, Q6), and Phase 2 (Team, Tech, Traction, GTM):
+Using scores from Phase 1 (Q1, Q2, Q3), Strategic (Q4, Q5, Q6, Q7), and Phase 2 (Team, Tech, Traction, GTM):
 
 - Phase 1 weighted score = (Q1 + Q2 + Q3-mapped) / 15 × 6.0 (40% weight)
-- Strategic weighted score = (Q4 + Q5 + Q6) / 15 × 3.0 (20% weight)
+- Strategic weighted score = (Q4 + Q5 + Q6 + Q7) / 20 × 3.0 (20% weight)
 - Phase 2 weighted score = (Team + Tech + Traction + GTM) / 20 × 8.0 (40% weight)
 - **Intelligence Conviction Score = sum of three weighted scores (max 17.0)**
 
@@ -202,7 +206,7 @@ The Word document must contain all of the following sections in order, matching 
 4. **Moat Assessment table** — 4-column table: Primary Moat | Strength | Primary Threat | Verdict.
 5. **Macro Trends table** — 3-column table: Dimension | 10-yr Direction | Thesis Impact (4 rows).
 6. **Analyst Verdict Block** — 2-column table with labeled rows: Recommendation, Thesis Fit Score (rule-based: Opportunity + Readiness / 45 + gates status), Intelligence Conviction Score (AI research: / 17 + threshold band), Dual Score Interpretation (one line — convergent or divergent, and what that means for the decision), Verdict, What You Have to Believe, Where's the Bet, Fear, Greed. Use navy header row. The two scores must always appear together — they are not interchangeable and divergence is signal.
-7. **Score Summary table** — Dimension | Triage Score | Scout Score | Delta (10 rows). Show ↑/→/↓ delta for Triage-overlapping dimensions; "NEW" for strategic dimensions.
+7. **Score Summary table** — Dimension | Triage Score | Scout Score | Delta (11 rows, including Agent-Era Readiness with its posture tag). Show ↑/→/↓ delta for Triage-overlapping dimensions; "NEW" for strategic dimensions.
 
 **Page 2 — Rationale:**
 8. **Adjacent & Emerging Tech** section — 3 bullet points: Core use case, Functional equivalents, Emerging displacement.

@@ -130,7 +130,7 @@ Social deal card actions at every stage:
 
 | Skill | Type | What it does |
 |---|---|---|
-| 📐 **nwai-investment-framework** | 9 reference docs on demand | Loads NWAi proprietary frameworks. Encoded into V1 Policy Layer. |
+| 📐 **nwai-investment-framework** | 10 reference docs on demand | Loads NWAi proprietary frameworks. Encoded into V1 Policy Layer. |
 | 📄 **Document Skills** | docx · pptx · pdf · xlsx | Polished Word reports, 4-slide PPTX memos, PDFs in NWAi formatting. At V1, these become exports of deal-card state. |
 | 🔄 **github-sync** | auto-triggers after changes | Commits and pushes every generated report and config to GitHub. Version control on every output. |
 
@@ -147,6 +147,7 @@ Social deal card actions at every stage:
 | 📐 **Diligence Scoring Rubrics** | Moat 0–6 · AI Moat 0–10 · Risk 1–10 · Bear/Base/Bull with mandatory *because* clauses |
 | 📂 **17-Folder DD Checklist** | Team assignments · gate-critical folder designations |
 | 🔒 **AI Moats Framework** | 3 moat types · Replicability Speed Matrix |
+| 🤖 **Agent-Era Readiness Framework** | Does the founder solve the problem *as AI agents will reshape it?* · doorway question · 3 scored dimensions · help/hurt member read · screen trip-wire / Scout Q7 / Diligence Moat Tier 3 |
 | 📋 **DD Report Format** | 11 scored sections · 1–5 RAG scale · IC-ready table structure |
 | 🎯 **Diligence Analysis Framework** | Analyst-POV-first post-meeting reconciliation · meeting-type playbooks |
 | 📝 **Memo Format** | 4-slide PPTX · NWAi branding · "What is the Bet?" framing |
@@ -159,11 +160,13 @@ Social deal card actions at every stage:
 4. Data Sovereignty, Security, Trust
 5. FinTech (incl. Real Estate)
 
-### Two Analytical Lenses &nbsp;·&nbsp; **[✓ Live · applied at every stage]**
+### Three Analytical Lenses &nbsp;·&nbsp; **[✓ Live · applied at every stage]**
 
 **⚡ Structural Discontinuity** — Is this a genuine, irreversible market shift — or incremental improvement dressed as disruption?
 
 **🔒 Memory Lock-in** — Does the product get smarter and stickier the more it's used? Data flywheels & switching costs.
+
+**🤖 Agent-Era Readiness** — Does the founder solve the problem *as AI agents will reshape it?* As agents become the predominant actor and consumer of digital products and decisions, the plain test for every deal is: **does the agent wave help or hurt this company?**
 
 ### ⭐ V1 Activation Surfaces — Where Members Live &nbsp;·&nbsp; **[🔨 Build · V1]**
 

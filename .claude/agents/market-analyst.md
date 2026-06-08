@@ -75,6 +75,19 @@ but "LLM inference cost dropped 100x between 2022-2024, making X economically vi
 
 **Verdict:** REAL DISCONTINUITY / INCREMENTAL IMPROVEMENT / TOO EARLY TO TELL
 
+**Agent-era discontinuity check (feeds the Agent-Era Readiness lens):** Separately from whether the
+company *rides* a discontinuity, assess whether the rise of capable AI agents is a discontinuity
+that *reshapes the problem this company solves*. Apply the doorway question — *"Is this information
+for a human to act on, or a transaction for an agent to complete?"* Answer explicitly:
+- As agents become the predominant actor/consumer in this market, does the problem this company
+  solves get **dissolved, transformed, or amplified**? (e.g. a human-comparison/discovery task that
+  agents absorb; a per-human-seat workflow agents compress; a human-attention funnel agents bypass)
+- Is the company's value, revenue model, and customer still intact when the buyer is a program and
+  the worker is an agent?
+- Preliminary posture read: Threatened / Riding / Enabling / Insulated (one line + why).
+This is an input to the Scout Q7 / Diligence Tier 3 scoring, not the final score. Flag ⚠️ if the
+market's core transaction is migrating to agents in a way the company has not reckoned with.
+
 ---
 
 ### Section 2: Independent TAM / SAM / SOM Validation
@@ -178,6 +191,12 @@ What changed (last 24-36 months):
 Discontinuity verdict: REAL / INCREMENTAL / TOO EARLY
 Irreversible: YES / NO / UNCLEAR
 At critical mass: YES / NOT YET / UNCLEAR
+
+── AGENT-ERA DISCONTINUITY (feeds Agent-Era Readiness lens) ──
+Doorway read: [human-to-act-on vs agent-to-complete — one line]
+Effect of agents on this problem: DISSOLVES / TRANSFORMS / AMPLIFIES / NEUTRAL
+Preliminary posture: Threatened / Riding / Enabling / Insulated — [one line why]
+⚠️ Flag: [if the market's core transaction is migrating to agents unreckoned-with, else "none"]
 
 ── TAM / SAM / SOM ──
 Published TAM estimates:

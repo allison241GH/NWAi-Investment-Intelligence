@@ -148,6 +148,17 @@ Extract:
 - Are there custom model certifications (FedRAMP, HIPAA-compliant AI, SOC2)?
 - Any evidence of proprietary hardware or specialized compute infrastructure?
 
+**Agent-era moat signals (feeds the Agent-Era Readiness lens — for every deal, not only AI):**
+Assess what stays defensible when capable agents can scrape, ingest, and replicate the product's
+surface. Extract:
+- Is the product's core value **fully ingestible** — could an agent reproduce the surface in <48h?
+  (This is the agent-era analogue of the thin-wrapper test, applied to the *product*, not just the model.)
+- Is there a proprietary flywheel that **compounds under agent load** (gets richer as machine usage scales)?
+- Is value captured at the **transaction/outcome** or only at the human view/seat?
+- Is there an **un-scrapable** anchor — physical service, high-trust/accountability function, human verification, or user-governed memory/data sovereignty?
+- Note an **architecture flip** signal: does the product expect to be *operated by a human* or *called by an agent* (API/MCP/agent-callable surface)?
+Return these as inputs to the Agent-Era Moat dimension (Scout Q7 / Diligence Tier 3). Do not score; surface the signals.
+
 ---
 
 ### Section 6: Technical Team Depth
@@ -208,6 +219,13 @@ Proprietary dataset: YES [description] / NO / CLAIMED BUT UNVERIFIED
 Data flywheel evidence: YES / NO / PARTIAL
 Workflow integration depth: DEEP / MODERATE / SURFACE-LEVEL / UNCLEAR
 Custom certifications: [List or "None"]
+
+── AGENT-ERA MOAT SIGNALS (feeds Agent-Era Readiness lens) ──
+Surface fully ingestible by an agent (<48h to reproduce): YES / NO / PARTIAL
+Flywheel compounds under agent load: YES / NO / PARTIAL
+Value captured at: TRANSACTION-OUTCOME / HUMAN-VIEW-OR-SEAT / MIXED
+Un-scrapable anchor: [physical / accountability / human-verification / user-governed-memory / NONE]
+Architecture flip: HUMAN-OPERATED / AGENT-CALLABLE (API/MCP) / HYBRID
 
 ── TECHNICAL TEAM ──
 Technical co-founder: YES / NO ← flag if NO for deep tech

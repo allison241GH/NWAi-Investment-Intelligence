@@ -7,7 +7,7 @@ description: >
   diligence", "write the investment memo", "check red flags", "apply AutoKill criteria",
   "map to a TechGroup theme", "suggest SME leads", and any workflow involving the
   NWAi TechGroup deal pipeline from Dealum intake through investment memo.
-version: 0.1.0
+version: 0.2.0
 ---
 
 # NWAi TechGroup Investment Framework
@@ -96,6 +96,16 @@ Record one of three outcomes:
 Full memo structure: Executive Summary → Company Overview → Market Opportunity → Team Assessment → Technology & Moat Analysis (using AI Moats Framework) → Financial Analysis → Risks & Mitigants → Investment Recommendation.
 
 Apply the AI Moats framework when analyzing defensibility. See `references/ai-moats-framework.md`.
+
+## Always-Active Lens: Agent-Era Readiness
+
+Across **every** stage (Screen → Scout → Diligence → Memo), apply the third always-active investing
+lens alongside Structural Discontinuity and Memory Lock-in: **Agent-Era Readiness** — does the
+founder solve the problem *as AI agents will reshape it*, or as it exists today? The doorway
+question is *"Is this information for a human to act on, or a transaction for an agent to complete?"*
+Classify the posture (Threatened / Riding / Enabling / Insulated). Lightweight triage trip-wire at
+Screen (`references/gates-and-flags-techgroup.md`), scored at Scout (Q7) and Diligence (Moat Tier 3).
+Full framework: `references/agent-era-readiness-framework.md`.
 
 ## NWA Investment Return Target
 
