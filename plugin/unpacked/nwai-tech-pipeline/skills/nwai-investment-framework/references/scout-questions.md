@@ -76,6 +76,26 @@ with direct buyer interviews before advancing to Diligence."
 output: public CISO/CTO statements, procurement activity (SAM.gov for federal deals), analyst
 category reports, and enterprise budget allocation surveys for the relevant market.
 
+### Blue Ocean Read *(synthesis node — not separately scored; bundles Q1 market-creation + Q5 substitution)*
+
+A single explicit decision: classify the ocean, then — only if it is **not** Blue — force the
+adjacent-set and differentiation reads.
+
+- **Ocean type:** BLUE (first to *define* a market — creating a category) / CONTESTED (first to
+  *market* in an existing or forming category — a head start, not a new ocean) / RED (late entrant
+  to a crowded market)
+- **If BLUE:** name the category being created and the one piece of evidence it's real, not a
+  story. *(Cross-check Q1b — a "blue ocean" with no demand-pull is technology-push, not a new market.)*
+- **If CONTESTED or RED (required):**
+  - **Adjacent set:** the 2–4 closest companies/technologies solving this job (from Q5 functional
+    equivalents + `competitive-positioning-analyst`)
+  - **Differentiation claim:** the company's stated wedge in one line — with a blunt verdict on
+    whether it's a *moat* or merely a *feature/positioning* difference
+
+Blue Ocean is not automatically better — a *defended* position in a Red Ocean beats an
+*undefended* Blue Ocean. The point is to force the question, and when it isn't Blue, to make the
+differentiation claim explicit and testable rather than assumed.
+
 ---
 
 ### Q2: Market Opportunity
@@ -353,6 +373,7 @@ Lead and SMEs: Output as "TBD — Pending Dealum API" for both.
 ```
 Recommendation:           ADVANCE TO DILIGENCE / WATCH / DECLINE
 Scout Conviction Score:   [X / 19]
+Blue Ocean:               BLUE / CONTESTED / RED — [category created, or closest rival + wedge]
 Verdict:                  [one sentence — blunt, IC-ready]
 What You Have to Believe: [one sentence — the core thesis assumption]
 Where's the Bet:          [one sentence — the specific inflection point being backed]
@@ -383,6 +404,7 @@ Greed:                    [one phrase — upside case if thesis holds]
 - Core use case: [one sentence]
 - Functional equivalents: [list — one phrase each]
 - Emerging displacement: [threat + time horizon]
+- Ocean type & differentiation: BLUE / CONTESTED / RED — [if not BLUE: closest rival + one-line differentiation claim, moat-or-feature verdict]
 
 **Phase 1 Viability** (bullet clusters — 3-4 bullets per section; finding/fact/implication format):
 

@@ -1,7 +1,7 @@
 {
   "name": "nwai-tech-pipeline",
-  "version": "2.18.0",
-  "description": "NWAi TechGroup deal pipeline — Dealum-connected, filesystem-first. v2.18.0 adds the Two Sustainable Advantage Tests (Training edge + Inference edge, PRESENT/ABSENT) as the front-door moat lens at Screen, Scout, and the AI Moats framework.",
+  "version": "2.19.0",
+  "description": "NWAi TechGroup deal pipeline — Dealum-connected, filesystem-first. v2.19.0 adds the Blue Ocean Read (BLUE/CONTESTED/RED market-creation classification + forced differentiation claim when not Blue) as a one-line read at Screen and a synthesis node at Scout.",
   "author": {
     "name": "New World Angels",
     "url": "https://www.newworldangels.com"

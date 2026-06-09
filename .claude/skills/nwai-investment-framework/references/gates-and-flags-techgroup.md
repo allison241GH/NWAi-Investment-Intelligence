@@ -58,6 +58,8 @@ Score on: clarity of the "why now" argument; evidence of a real structural shift
 - 1: No timing argument. Could have been built any time in the past decade.
 - 0: No evidence of market shift awareness.
 
+**Blue Ocean read** (one line, not separately scored — applies to both tracks): classify the market as **BLUE** (first to *define* a category) / **CONTESTED** (first to *market* in an existing or forming category — a head start, not a new ocean) / **RED** (late entrant to a crowded field). If not BLUE, name the closest competitor and the company's one-line differentiation claim — and call it: a *moat* or merely a *feature/positioning* difference. Carries forward to Scout Q1/Q5 for the full read.
+
 → **Scout mapping:** Expands to Category & Market Discontinuity (Q1) at Scout stage.
 
 ### Dimension 2 — Market Opportunity ⚠️ SUB-FLOOR: score ≤ 2 = DECLINE regardless of total
