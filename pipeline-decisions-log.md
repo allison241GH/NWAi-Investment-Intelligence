@@ -229,5 +229,33 @@ Individual team members' Cowork Projects are not shared and are not intended to 
 
 ---
 
-*Last updated: June 1, 2026 | Maintained by Jamie, TechGroup Co-Chair*
+## Decision 8 — SAFE & Lead-Investor: From Penalized Signal to Neutral Negotiation Item
+
+**Date:** June 9, 2026
+**Status:** Implemented (plugin v2.21.0, architecture v0.35.0, `gates-and-flags.md` Readiness rubric + Downgrade Rule)
+
+### The strategic rationale
+
+Decision 1 (March 2026) moved SAFE structure and missing-lead-investor *off* the hard gates — they stopped being kills. But it only changed the timing of the conversation, not the scoring weight. In practice they remained **penalties**: in the current Readiness rubric, a SAFE scored 2/5 (Deal Structure), "no lead" scored 2/5 and "seeking NWA to lead" scored 0/5 (Syndication Readiness). With the Readiness Downgrade Rule (Opportunity ≥ 20/30 but Readiness < 15/25 → auto-downgrade ADVANCE → WATCH), a SAFE + no-lead −6 hit could single-handedly demote an otherwise strong deal to WATCH. The flag language still read "deal-breaker" and "NWAi rarely leads." Jamie experienced this as an "automatic knock-off" threading through every downstream stage — and as a contradiction with two market realities:
+
+1. **Founders increasingly start on a SAFE but are open to negotiating** structure to priced equity or convertible. Final structure is a negotiated outcome, not a screen-determinable fact.
+2. **NWA is increasingly willing to lead and cross-syndicate.** The "NWA rarely leads / seeking-NWA-to-lead = 0/5" stance was factually outdated.
+
+### The calibration
+
+SAFE structure and lead-investor status are now **neutral by default — a positive signal when present, never a penalty when absent.** Specifically:
+
+- **Deal Structure (Readiness Dim 1):** priced equity = 5 (bonus); SAFE/convertible on standard terms = **3 (neutral, the normal early-stage starting point)**; below-neutral reserved for unusual/aggressive terms (2), founder inflexibility NWA can't close (1), or genuinely incompatible structure — token/rev-share/no-equity (0). "Deal-breaker" language removed.
+- **Syndication Readiness (Readiness Dim 3):** reframed from "is there a lead?" to "is the round real and forming?" External lead/co-lead = 5 (validation bonus); **NWA leading / cross-syndicating = 3 (neutral, NWA's standard model)**; the 0/5-for-"seeking-NWA-to-lead" rule deleted; "NWA rarely leads" language removed. Stance: open to leading, external co-lead preferred for validation.
+- **Readiness Downgrade Rule carve-out (the key mechanical fix):** Deal Structure and Syndication Readiness can no longer downgrade an ADVANCE *on their own*. A downgrade now requires friction in at least one of the other three Readiness dimensions (Product Maturity, Traction Velocity, Founder Accessibility).
+- **CLAUDE.md Investment Criteria** softened: Structure and Syndication are explicitly labeled negotiated close-stage outcomes, not screen gates. NWA's preference for priced equity at close is unchanged — only the screen-stage treatment changed.
+- **Downstream thread scrubbed:** the carry-forward "deal structure concerns" framing in Scout, Diligence, and DD-Report is reframed as "negotiation items, not flags or kills"; the venture-analyst's "OPEN item weights valuation downward" clause now carves out SAFE-presence/no-lead (only founder inflexibility or a dirty cap table weighs down).
+
+**Note on point totals:** Decision 1 references the old totals (Opportunity 0–25, Readiness 0–20, ADVANCE ≥ 18/25). The current framework is Opportunity 6×0–5 = 30, Readiness 5×0–5 = 25, ADVANCE ≥ 20/30 — this entry reflects the current totals and supersedes Decision 1's figures.
+
+**What did not change:** the three real hard gates (Foreign Entity/IP, Market Size, Commercialization Path), the Opportunity rubric, the NWA Filter, and NWA's eventual close-stage preference for priced equity. This is a *when-and-how-weighed* change, not a policy reversal.
+
+---
+
+*Last updated: June 9, 2026 | Maintained by Jamie, TechGroup Co-Chair*
 *This log is a living document — add entries when key decisions are made in session.*

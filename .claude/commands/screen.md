@@ -116,7 +116,7 @@ Scoring principle for unknowns: silent decks score 2 (not 0) on Readiness dimens
 
 **Apply decision logic:**
 - ADVANCE: Opportunity ≥ 20/30, Market ≥ 3, no dimension = 0, Readiness ≥ 15/25
-- WATCH: Opportunity 14–19/30 with Market ≥ 3, OR Opportunity ≥ 20 but Readiness < 15/25 (Readiness Downgrade Rule)
+- WATCH: Opportunity 14–19/30 with Market ≥ 3, OR Opportunity ≥ 20 but Readiness < 15/25 (Readiness Downgrade Rule). **Carve-out: Deal Structure (Dim 1) and Syndication Readiness (Dim 3) do NOT downgrade an ADVANCE on their own — if they are the only dimensions pulling Readiness below 15, hold ADVANCE and list them as IntroCall negotiation items. A downgrade requires friction in Product Maturity, Traction Velocity, or Founder Accessibility.**
 - DECLINE: Any gate FAIL, Opportunity < 14/30, or Market ≤ 2, or any dimension = 0
 
 ---
@@ -192,14 +192,14 @@ Signal:             [One sentence — the single most important signal driving t
 ━━━ SECTION 4 — READINESS SCORE ━━━
 | Dimension              | Score | Signal / Friction Note |
 |------------------------|-------|------------------------|
-| Deal Structure         | [0–5] | [flag SAFE if present with IntroCall note; note if undisclosed] |
+| Deal Structure         | [0–5] | [SAFE is the normal starting point = neutral (3); note as IntroCall negotiation item, not a flag. Score below 3 only for aggressive terms/inflexibility/incompatible structure] |
 | Product Maturity       | [0–5] | [one line] |
-| Syndication Readiness  | [0–5] | [flag no-lead if present; note if undisclosed] |
+| Syndication Readiness  | [0–5] | [round-forming read; external lead = bonus, NWA-led/cross-syndicate = neutral (3). Note as IntroCall item, not a flag] |
 | Traction Velocity      | [0–5] | [growth rate signal; note Revenue Quality if Stagnant] |
 | Founder Accessibility  | [0–5] | [one line] |
 | **TOTAL**              | **[X] / 25** | [STRONG ≥18 / MODERATE 12–17 / WEAK <12] |
 
-[If Readiness < 15 on an ADVANCE deal: flag "⚠️ Readiness Downgrade Rule triggered — verdict changed to WATCH"]
+[If Readiness < 15 on an ADVANCE deal AND the shortfall is driven by a dimension other than Deal Structure/Syndication: flag "⚠️ Readiness Downgrade Rule triggered — verdict changed to WATCH". If the only sub-15 drivers are Deal Structure (Dim 1) and/or Syndication (Dim 3): hold ADVANCE and note "Structure/syndication are IntroCall negotiation items — carve-out applied, no downgrade"]
 
 ━━━ SECTION 5 — RISK FLAGS ━━━
 ❌ RED FLAGS (structural concerns):

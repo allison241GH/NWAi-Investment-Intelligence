@@ -35,7 +35,7 @@ Search for files matching: `[Company Name] - Triage Report*.docx`
 - Hard gate verdicts (MET / FAIL / UNCLEAR for each gate)
 - All red (❌) and yellow (⚠️) flags identified at screening
 - Opportunity Score and Readiness Score with per-dimension breakdown (D1–D5 individual scores)
-- Deal structure concerns (SAFE, LLC, C-Corp conversion required, no lead investor)
+- Deal structure & syndication notes — IntroCall negotiation items (SAFE/structure, lead/co-investor status, C-Corp conversion). These are negotiation items, not flags or kills; carry them forward as such, do not re-score them as penalties.
 - AI Wrapper Assessment rating and basis statement
 
 These are the baseline for Scout scoring — do not re-derive what screening already established. The per-dimension Triage scores are the starting point for delta tracking at Scout. If a flag was raised at screening, treat it as an open item unless new evidence in this session explicitly resolves it.

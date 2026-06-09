@@ -55,7 +55,7 @@ pandoc "[file].docx" -t plain 2>/dev/null
 ```
 
 **Compile from each loaded file:**
-- Triage Report: gate verdicts, red/yellow flags, deal structure concerns, opportunity and readiness scores
+- Triage Report: gate verdicts, red/yellow flags, deal structure & syndication notes (IntroCall negotiation items — not flags or kills), opportunity and readiness scores
 - Scout Assessment: theme assignment, Phase 1/2 findings, one-sentence verdict, single biggest risk
 - DD Kickoff Package: Moat Tier 1 + Tier 2 scores, Risk scores per category, market sizing + timing score, 17-folder findings, open questions and responses
 - **Financial diligence outputs (from the three-agent sequence):**
@@ -115,7 +115,7 @@ Section score mappings:
 - S5 (GTM Strategy): Market Risk + Pricing Analyst pricing-to-value ratio + channel pressure forecast (1–10 inverted)
 - S6 (Team): Execution Risk including PMTF score, Team Commitment Depth ratio, founder claim verification status (1–10 inverted)
 - S7 (Technology & IP): TRL level + IP defensibility (qualitative 1–5)
-- S8 (Deal Structure): Hard gate results + cap table cleanliness + Venture Analyst deal structure recommendation
+- S8 (Deal Structure): Hard gate results + cap table cleanliness + Venture Analyst deal structure recommendation. Note: a SAFE or the absence of an external lead does NOT, on its own, lower S8 — these are negotiated terms reflected in the structure recommendation. S8 reflects cap-table cleanliness and negotiated-structure fit, not the presence of a SAFE.
 - S9 (Financials): Financial Risk + Forecasting Analyst Bear/Base/Bull model + Pricing Analyst unit economics + Venture Analyst capital plan (1–10 inverted)
 - S10 (Risk — inverted): Risk Score average across all 5 categories
 - S11 (Exit Strategy): Venture Analyst exit valuation + 35% hurdle test + 10x-in-5-years criterion + Risk Analyst acquirer landscape

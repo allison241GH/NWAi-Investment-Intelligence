@@ -183,13 +183,13 @@ elements in addition to the standard Gates and Venture Potential sections:
 
 ## NWAi Investment Criteria (Always Apply)
 
-These are non-negotiable. Any deal that fails any of these is a pass:
+These are the standards a deal must ultimately clear. Most are non-negotiable — any deal that fails them is a pass. **Structure and Syndication are the exception: they are negotiated close-stage outcomes, not screen gates.** Do not kill or downgrade a deal at Screen on structure or syndication alone; surface them as IntroCall negotiation items.
 
-- **Structure**: Equity required. Priced round preferred (Seed–Series A). No SAFEs. Convertible debt acceptable.
+- **Structure**: Priced equity preferred (Seed–Series A). SAFE acceptable as a starting point — NWA negotiates to priced equity or convertible at close. Convertible debt acceptable. *(Negotiated close-stage outcome, not a screen gate.)*
 - **Geography**: US-based HQ and IP. Executive team must be in the US. No foreign-owned entities.
 - **Traction**: Real revenue or signed paying customers. No research projects or demo labs.
 - **Stage**: MVP with successful beta(s) completed.
-- **Syndication**: Credible lead investor. Clean cap table.
+- **Syndication**: Credible syndication path — external lead/co-lead preferred for validation, but NWA may lead or cross-syndicate. Clean cap table. *(Assessed at IntroCall/Diligence, not a screen gate.)*
 - **Return**: 10x in 5 years. TAM must support 20x–100x return. C-Corp structure only.
 
 ---
@@ -452,4 +452,4 @@ If canonical has uncommitted changes blocking the pull (e.g., transient `npm ins
 
 ---
 
-*Last updated: June 8, 2026 (architecture v0.31.0 — plugin v2.17.1: Agent-Era Readiness Framework added as the third always-active investing lens — tests whether a startup solves the problem as AI agents will reshape it; doorway question + three scored dimensions; wired as a lightweight triage trip-wire at Screen, scored Q7 at Scout, and Moat Tier 3 at Diligence. Member-facing outputs lead with the plain "does the agent wave help or hurt this company?" read; the four posture labels are internal deal-team shorthand only) | NWAi Investment Intelligence & AI | Jamie, TechGroup Co-Chair*
+*Last updated: June 9, 2026 (architecture v0.35.0 — plugin v2.21.0: SAFE & lead-investor calibration. SAFE structure and "no external lead" are now scored neutrally at Screen (the normal early-stage starting point, not a penalty), NWA may lead or cross-syndicate, and Deal Structure / Syndication Readiness can no longer downgrade an ADVANCE on their own — they are IntroCall negotiation items, not screen gates. CLAUDE.md Investment Criteria, the gates-and-flags Readiness rubric, and the downstream Scout→Diligence→DD-Report carry-forward framing were all softened to match.) | NWAi Investment Intelligence & AI | Jamie, TechGroup Co-Chair*

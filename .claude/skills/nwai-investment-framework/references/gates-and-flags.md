@@ -32,9 +32,9 @@ These are the only criteria that are:
 If pitch materials are silent on a criterion, mark MET with a note — do not fail on missing information alone.
 Missing information becomes a Yellow Flag, not a gate kill.
 
-**What is NOT a hard gate (moved to Readiness scoring):**
-- SAFE deal structure — scored in Readiness, flagged for founder conversation at IntroCall
-- No lead investor — scored in Readiness, not a kill at screen
+**What is NOT a hard gate (scored in Readiness, neutral by default):**
+- SAFE deal structure — a normal early-stage starting point. Scored neutrally in Readiness, negotiated to priced equity or convertible at IntroCall/close. Never a screen penalty.
+- No lead investor — NWA may lead or cross-syndicate. External validation is preferred but not required; scored in Readiness, not a kill at screen.
 - Product stage / MVP — scored in Readiness
 - Traction / revenue — scored in Opportunity
 
@@ -112,11 +112,13 @@ Readiness scores inform the Scout briefing and flag specific friction items for 
 ### Dimension 1 — Deal Structure
 *What is the current proposed deal structure?*
 
-- 5: Priced equity round (Seed or Series A). Clean cap table.
+Priced equity is a positive signal when present, but a SAFE is the normal early-stage starting point and is **neutral, not a penalty**. NWA negotiates structure to priced equity or convertible at IntroCall/close. Only founder inflexibility on a structure NWA cannot close, or a genuinely incompatible structure, scores below neutral.
+
+- 5: Priced equity round (Seed or Series A). Clean cap table. *(bonus — strong external structure already in place)*
 - 4: Convertible note with reasonable terms.
-- 3: Convertible note with unusual terms (high cap, aggressive discount).
-- 2: SAFE proposed. ⚠️ Flag: "Structure conversation required at IntroCall. NWAi requires equity or convertible debt. If founder insists on SAFE after discussion at IntroCall, treat as deal-breaker at that stage — not at Screen."
-- 1: SAFE with explicit indication of no flexibility.
+- 3: SAFE or convertible on standard terms — the normal early-stage starting point. NWA negotiates to priced equity or convertible at close. *(neutral)* Note: "SAFE is a normal starting point; confirm flexibility at IntroCall."
+- 2: SAFE/convertible with unusual or aggressive terms (very high cap, stacked discounts) needing cleanup.
+- 1: Founder signals no flexibility on a structure NWA cannot close (insists SAFE-only, refuses conversion).
 - 0: Explicitly incompatible structure (e.g., token-based, revenue share only, no equity component).
 
 ### Dimension 2 — Product Maturity
@@ -130,14 +132,16 @@ Readiness scores inform the Scout briefing and flag specific friction items for 
 - 0: Idea only. No product evidence.
 
 ### Dimension 3 — Syndication Readiness
-*Is there a credible lead investor or co-investor in the round?*
+*Is the round real and forming, with a credible syndication path? (External lead/co-investor preferred for validation; NWA leading or cross-syndicating is acceptable under NWA's standard model.)*
 
-- 5: Lead investor committed with term sheet or strong indication.
-- 4: Named credible lead in conversation. Round forming.
-- 3: Angel investors committed but no institutional lead identified.
-- 2: No lead identified. Round not formed. Or: no syndication information disclosed. ⚠️ Flag: "No lead identified — NWAi rarely leads. Verify at IntroCall."
-- 1: No co-investors and founder appears unaware of syndication norms.
-- 0: Explicitly seeking NWAi to lead with no other investors engaged.
+An external lead or co-investor is a positive validation signal when present. NWA leading or cross-syndicating is **acceptable and neutral** — not a flag. Only an unformed round with no plan, or a founder unaware of syndication norms, scores below neutral.
+
+- 5: Round forming with a committed external lead/co-lead (term sheet or strong indication). *(bonus — strongest external validation)*
+- 4: Named credible external co-investors in conversation; round taking shape.
+- 3: Some investor interest forming, OR NWA would lead / cross-syndicate — acceptable under NWA's standard model. *(neutral)* Note: "External lead/co-investor preferred for validation; NWA leading or cross-syndicating is acceptable. Confirm round status at IntroCall."
+- 2: No syndication information disclosed, or round not yet formed and unclear.
+- 1: No co-investors and founder appears unaware of syndication norms / no plan.
+- 0: Explicit structural absence — no round, no plan, no engagement.
 
 ### Dimension 4 — Traction Velocity
 *Is the company growing, and is growth accelerating or stagnating?*
@@ -166,6 +170,8 @@ Score on: month-over-month or quarter-over-quarter growth rate in revenue or act
 ## Readiness Downgrade Rule
 
 If Opportunity Score ≥ 20/30 (ADVANCE) but Readiness Score < 15/25, the verdict is automatically downgraded to **WATCH** with specific re-engagement milestones named for each friction dimension scoring ≤ 2.
+
+**Carve-out — Deal Structure & Syndication do not downgrade on their own:** Deal Structure (Dim 1) and Syndication Readiness (Dim 3) are negotiated post-IntroCall outcomes, not screen-stage blockers. They must not, by themselves, downgrade an ADVANCE. If the only dimensions pulling Readiness below 15 are Dim 1 and/or Dim 3, **hold ADVANCE** and list them as IntroCall negotiation items rather than downgrading to WATCH. A downgrade requires friction in at least one of the other three Readiness dimensions (Product Maturity, Traction Velocity, Founder Accessibility).
 
 **Exception — Strong Readiness on WATCH:** Readiness score ≥ 18/25 on a WATCH deal → note "Readiness is strong; prioritize re-engagement when opportunity matures."
 
@@ -208,6 +214,7 @@ Goal: Identify the dominant incumbents in the space and assess whether any major
 - Market Opportunity dimension: ≥ 3
 - Output must name specific, measurable milestone(s) for re-engagement for each dimension scoring ≤ 2
 - Examples: "Re-engage when ARR reaches $250K", "Re-engage when Series A lead commits", "Re-engage when priced equity round is structured"
+- Note: structure/syndication milestones (e.g., priced round, lead commit) are legitimate re-engagement markers but are **not, on their own, downgrade triggers** — see the Deal Structure & Syndication carve-out in the Readiness Downgrade Rule
 - WATCH is rare and intentional — not a soft decline
 
 ### DECLINE

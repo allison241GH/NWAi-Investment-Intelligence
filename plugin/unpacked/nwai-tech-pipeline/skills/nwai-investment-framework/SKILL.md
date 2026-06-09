@@ -7,7 +7,7 @@ description: >
   diligence", "write the investment memo", "check red flags", "apply AutoKill criteria",
   "map to a TechGroup theme", "suggest SME leads", and any workflow involving the
   NWAi TechGroup deal pipeline from Dealum intake through investment memo.
-version: 0.2.0
+version: 0.3.0
 ---
 
 # NWAi TechGroup Investment Framework
@@ -20,7 +20,7 @@ Tech-tagged applications are the scope of this plugin.
 
 Every deal moves through these Dealum steps in order:
 
-1. **Screening** — Apply AutoKill gates; assign to TechGroup theme
+1. **Screening** — Apply Universal Triage screener (3 hard gates + scored Opportunity/Readiness); assign to TechGroup theme
 2. **Scout/IntroCall** — Run Scout Q assessment; match to member SMEs
 3. **Diligence** — Execute 17-folder DD checklist with team assignments
 4. **DD Report** — Generate scored synthesis document (11 sections, 1–5 scale) — IC briefing after diligence completes
@@ -29,22 +29,27 @@ Every deal moves through these Dealum steps in order:
 
 ## Stage 1: Screening — TechGroup Triage Screener
 
-The TechGroup screener is a 3-layer framework (see `references/gates-and-flags-techgroup.md`):
-- **Layer 1**: 3 hard gates (Foreign Entity/IP, Market Size, Commercialization Path) — binary kill
-- **Layer 2**: Opportunity Score (5 dimensions, 0–5 each = 25 points) — ADVANCE ≥ 18/25
-- **Layer 3**: Readiness Score (4 dimensions, 0–5 each = 20 points) — informs Scout, does not gate
+The TechGroup screener applies the **NWAi Universal Triage Framework**. **`references/gates-and-flags.md` is the single source of truth** for all dimension counts, point totals, and verdict thresholds — read them there at screen time; do not restate the numbers in this overview (they drift). TechGroup Track A/B Opportunity rubrics: `references/gates-and-flags-techgroup.md`.
+- **Layer 1 — Hard Gates**: 3 binary gates (Foreign Entity/IP, Market Size, Commercialization Path) — a single FAIL = DECLINE
+- **Layer 2 — Opportunity Score**: scored across the universal opportunity dimensions → ADVANCE / WATCH / DECLINE bands (thresholds in `gates-and-flags.md`), with a Market Opportunity sub-floor
+- **Layer 3 — Readiness Score**: informs Scout; does not independently DECLINE, but a low Readiness can downgrade an ADVANCE → WATCH (Readiness Downgrade Rule — including the Deal Structure & Syndication carve-out)
+- **NWA Filter** (scoring-rigor overlay across all dimensions): Cynical Default, Goliath Test, LLM Ingestion Test, Revenue Quality Audit — these cap dimension scores
 
-SAFE structure and lead investor absence are **not** hard gates — they are Readiness signals
-flagged for the founder IntroCall conversation. NWAi policy remains no SAFE at close; the
-screen does not kill on structure because flexibility cannot be assessed from a pitch deck alone.
+SAFE structure and lead-investor absence are **not** hard gates, and they are **not penalties** —
+they are scored neutrally in Readiness and surfaced as IntroCall negotiation items. A SAFE is the
+normal early-stage starting point; NWA prefers priced equity at close but negotiates structure
+(to priced equity or convertible) rather than killing on it. On syndication, NWA may lead or
+cross-syndicate — an external lead/co-investor is preferred for validation but not required.
+Deal Structure and Syndication Readiness cannot, on their own, downgrade an ADVANCE (see the
+carve-out in the Readiness Downgrade Rule). Flexibility cannot be assessed from a pitch deck alone.
 
 Target advance rate: ~11% (screen to Scout, not screen to find the diamond).
 
 **Note:** Medical and Space verticals use separate hard-gate screener frameworks.
 
-## Stage 1 (Legacy Reference): Original 6-Gate AutoKill
+## Stage 1 (Legacy Reference — SUPERSEDED): Original 6-Gate AutoKill
 
-Apply all 6 gates. A single FAIL is an immediate pass. See `references/gates-and-flags.md` for full criteria.
+**Archived for historical context only — do not apply.** Replaced by the Universal Triage Framework above (April 2026). Full archived criteria: `references/_archive/gates-and-flags-6gate-legacy.md`. Note: Gates 1 (SAFE-only) and 5 (no lead investor) below are exactly the two that were retired into neutral Readiness scoring — see `pipeline-decisions-log.md` Decisions 1 and 8.
 
 | Gate | Requirement | Auto-Kill If |
 |------|-------------|--------------|

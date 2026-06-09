@@ -1,6 +1,6 @@
 {
   "name": "nwai-tech-pipeline",
-  "version": "2.20.0",
+  "version": "2.21.0",
   "description": "NWAi TechGroup deal pipeline — Dealum-connected, filesystem-first. v2.20.0 wires the producers of the new moat reads: technology-analyst now probes inference economics + emits Training/Inference edge verdicts; competitive-positioning-analyst emits an explicit BLUE/CONTESTED/RED ocean classification; diligence Tier 2 gains a cross-stage bridge note reconciling the Two Sustainable Advantage Tests.",
   "author": {
     "name": "New World Angels",
