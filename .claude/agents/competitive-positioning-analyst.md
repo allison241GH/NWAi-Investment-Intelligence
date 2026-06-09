@@ -128,6 +128,17 @@ Check: Do they acknowledge the alternatives from Section 2 in their positioning?
 A company that only compares itself to direct competitors (ignoring the status quo)
 often underestimates adoption friction.
 
+**Ocean classification (feeds the Scout Blue Ocean Read):** Based on Sections 1–3, classify the
+market the company is entering:
+- **BLUE** — first to *define* a category (no real incumbents or direct competitors; the company is
+  creating the market)
+- **CONTESTED** — first to *market* in an existing or forming category (a head start among early
+  movers, not a new ocean)
+- **RED** — late entrant to a crowded field with established competitors
+
+If not BLUE, name the single closest competitor and state the company's differentiation claim in one
+line — then judge it: a real *moat* or merely a *feature/positioning* difference.
+
 ---
 
 ### Section 5: Market Size Validation
@@ -217,6 +228,7 @@ Likely acquirers: [Name the top 2-3 most plausible exit buyers]
 ── POSITIONING ──
 One-sentence differentiation: [or "Weak — not clearly differentiated"]
 Positioning gap: [What the company is missing or getting wrong vs. alternatives]
+Ocean classification: BLUE / CONTESTED / RED — [if not BLUE: closest rival + differentiation claim, moat-or-feature verdict]
 
 ── MARKET SIZE ──
 Published TAM estimates:

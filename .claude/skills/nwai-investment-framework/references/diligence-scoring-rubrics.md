@@ -47,6 +47,10 @@ Award 1 point for each present:
 | 1 | **Inference Data Moat** | Product generates proprietary operational data flywheel as it's used |
 | 1 | **Memory Lock-in** | Stores customer-specific context/history that creates real switching cost |
 
+**Cross-stage bridge (Two Sustainable Advantage Tests):** These elements score, at Diligence depth, the same front-door moat lens applied at Screen (Track A D4) and Scout (Q3) — see `ai-moats-framework.md` → "The Two Sustainable Advantage Tests." Carry the Scout PRESENT/ABSENT reads forward and pressure-test them here:
+- **Sustainable Training Advantage** (data-in) → scored via *Training Data Moat* above + *Custom model training* under Capital/Compute. Note: the *Inference Data Moat* row is an operational *data flywheel* (data generated at runtime that feeds back) — it is a training-side signal, **not** inference economics.
+- **Sustainable Inference Advantage** (data-at-runtime: distillation, proprietary serving, cost-per-query/latency edge that widens with volume) → assessed under *Proprietary hardware / infrastructure* (Capital/Compute) and carried from the Scout Inference-edge read. If the Scout Inference edge was PRESENT, confirm the mechanism here; if ABSENT, treat full API pass-through as margin-compression risk in the financial model.
+
 #### Capital / Compute Moats (max 2 pts)
 
 | Points | Element | What to look for |

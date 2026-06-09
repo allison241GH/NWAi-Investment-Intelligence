@@ -148,6 +148,16 @@ Extract:
 - Are there custom model certifications (FedRAMP, HIPAA-compliant AI, SOC2)?
 - Any evidence of proprietary hardware or specialized compute infrastructure?
 
+**Inference economics (the data-at-runtime test — probe explicitly; most analyses skip this):**
+Assess whether the company has a structural edge in *running* the model in production, not just
+training it. Search: "[company name] inference cost", "[company name] latency", "[company name]
+model distillation", "[company name] on-device / edge inference", "[company name] self-hosted model".
+- Does the company run distilled / smaller proprietary models, or self-host, rather than paying
+  full per-call API rates to OpenAI/Anthropic for every query?
+- Is there evidence of a cost-per-query, latency, or quality-per-dollar advantage that *widens*
+  with volume (proprietary serving, caching, routing over proprietary context, edge/on-prem)?
+- Or is every query a full-price pass-through to a foundation-model API (margins compress as usage grows)?
+
 **Agent-era moat signals (feeds the Agent-Era Readiness lens — for every deal, not only AI):**
 Assess what stays defensible when capable agents can scrape, ingest, and replicate the product's
 surface. Extract:
@@ -219,6 +229,8 @@ Proprietary dataset: YES [description] / NO / CLAIMED BUT UNVERIFIED
 Data flywheel evidence: YES / NO / PARTIAL
 Workflow integration depth: DEEP / MODERATE / SURFACE-LEVEL / UNCLEAR
 Custom certifications: [List or "None"]
+Sustainable Training edge: PRESENT [source] / ABSENT — [proprietary data/training source, or "public data only"]
+Sustainable Inference edge: PRESENT [source] / ABSENT — [distillation/serving/cost-per-query edge, or "full API pass-through"]
 
 ── AGENT-ERA MOAT SIGNALS (feeds Agent-Era Readiness lens) ──
 Surface fully ingestible by an agent (<48h to reproduce): YES / NO / PARTIAL
