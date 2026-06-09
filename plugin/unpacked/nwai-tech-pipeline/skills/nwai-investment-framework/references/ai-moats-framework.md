@@ -16,6 +16,44 @@ The competitive landscape is bifurcated by layer:
 
 ---
 
+## The Two Sustainable Advantage Tests (Front Door)
+
+Before classifying moat *type*, every AI deal must answer two questions. These are the headline
+test — the three moats below are the *mechanisms* that produce a YES; these two are the *verdict*.
+Both are fundamentally data questions.
+
+### Test 1 — Sustainable Training Advantage *(the data-in question)*
+
+Does the company hold a durable, compounding edge in how its system gets smarter over time — one
+a competitor cannot simply buy, scrape, or replicate with a bigger model?
+
+- ✅ Proprietary data flywheel with a closed feedback loop; exclusive/contracted data access;
+  human-expert feedback captured as a by-product of usage; customer-specific fine-tuning that
+  compounds with tenure
+- ❌ Training data entirely public; "our model is better" with no proprietary source; improvement
+  depends on the *foundation* model upgrading, not the company's own loop
+- **Verdict: PRESENT / ABSENT** — name the single source of the edge
+
+### Test 2 — Sustainable Inference Advantage *(the data-at-runtime question — the one most often skipped)*
+
+Two companies can wrap the same foundation model; the one with a structurally lower
+cost-per-outcome or higher quality-per-dollar at scale survives margin compression.
+
+- ✅ Distillation / proprietary small-model serving; proprietary routing, caching, or retrieval
+  over indispensable context; edge/on-prem inference where it matters; a cost-per-query or latency
+  edge that *widens* with volume
+- ❌ Every query is a full-price pass-through to OpenAI/Anthropic; no cost or latency edge; margins
+  compress as usage grows
+- **Verdict: PRESENT / ABSENT** — name the source of the edge
+
+**How they map to the three moats:** Training Advantage is produced mainly by Moat 1
+(Cognitive/Data) and the data-pipeline portion of Moat 2. Inference Advantage is produced by the
+compute/serving portion of Moat 2 and reinforced by Moat 3 (workflow proximity that supplies
+proprietary runtime context). A deal can win on one, both, or neither — but "neither" on an
+application-layer AI deal is the thin-wrapper verdict, regardless of UX polish.
+
+---
+
 ## The Three Essential Moats
 
 ### Moat 1: The Cognitive / Data Moat (Network Effect 2.0)
@@ -119,6 +157,9 @@ When writing the Technology & Moat section of an investment memo:
      justification to advance."
 
 6. **Score**: STRONG / DEVELOPING / WEAK / NONE with 2–3 sentence rationale
+7. **Two-Test Verdict** (required, one line each): Training Advantage PRESENT / ABSENT — [source];
+   Inference Advantage PRESENT / ABSENT — [source]. A moat scored STRONG requires at least one test
+   PRESENT with a credible path to the second; ABSENT on both = WEAK or NONE regardless of narrative.
 
 ## The Resonating Takeaway (for memos)
 

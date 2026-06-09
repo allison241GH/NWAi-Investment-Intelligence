@@ -100,9 +100,13 @@ Use the AI Moats Framework as the analytical reference. Do not enumerate moat ty
 or produce a checklist of moat elements. Produce a single distilled 4-column table verdict —
 the output is a judgment, not a tour through framework categories.
 
+Required reads before the verdict (the two sustainable-advantage tests — one line each):
+- **Training edge:** PRESENT / ABSENT — [proprietary source, or "none — public data only"]
+- **Inference edge:** PRESENT / ABSENT — [cost/latency/serving source, or "none — full pass-through"]
+
 | Primary Moat | Strength | Primary Threat | Verdict |
 |---|---|---|---|
-| [Data flywheel / Workflow lock-in / Network effects / Capital-Compute / None] | [Weak / Emerging / Strong] | [one phrase] | [one sentence] |
+| [Data flywheel / Workflow lock-in / Network effects / Inference economics / Capital-Compute / None] | [Weak / Emerging / Strong] | [one phrase] | [one sentence] |
 
 Rating: STRONG / DEVELOPING / WEAK / NONE
 Moat maps to Scout Conviction composite as: STRONG=5 / DEVELOPING=3 / WEAK=1 / NONE=0

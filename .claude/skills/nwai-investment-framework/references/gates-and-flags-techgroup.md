@@ -89,6 +89,8 @@ Score on: domain expertise depth (years in industry, relevant technical credenti
 
 Score on: any evidence of proprietary data, IP, network effects, or workflow lock-in; thin wrapper risk assessment; Goliath Test result; LLM Ingestion Test result; whether the moat strengthens with usage (Memory Lock-in signal).
 
+**Two-test read** (one summary line — reuses the LLM Ingestion and Thin Wrapper results already required below; no new research): Training edge PRESENT / ABSENT and Inference edge PRESENT / ABSENT. ABSENT on both is corroborating evidence for the thin-wrapper cap. Full definitions in `ai-moats-framework.md` → "The Two Sustainable Advantage Tests."
+
 **Mandatory NWA Filter applications for this dimension** (filters defined in universal `gates-and-flags.md`):
 - **LLM Ingestion Test**: Run before scoring. If YES (80% replicable by GPT-4o/Claude), score is capped at **2/5**. Note result in rationale.
 - **Thin Wrapper Cap**: If core product is primarily API orchestration on top of OpenAI/Anthropic/etc. with no proprietary data layer, score is capped at **2/5**. Non-negotiable.

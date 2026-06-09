@@ -1,7 +1,7 @@
 {
   "name": "nwai-tech-pipeline",
-  "version": "2.17.1",
-  "description": "NWAi TechGroup deal pipeline — filesystem-driven intake to investment memo (v2.16 adds a NON-LLM ALGORITHMIC ENGINE branch to technology-analyst: products whose core is proprietary math/algorithms rather than LLM API calls are categorically NOT thin wrappers)",
+  "version": "2.18.0",
+  "description": "NWAi TechGroup deal pipeline — Dealum-connected, filesystem-first. v2.18.0 adds the Two Sustainable Advantage Tests (Training edge + Inference edge, PRESENT/ABSENT) as the front-door moat lens at Screen, Scout, and the AI Moats framework.",
   "author": {
     "name": "New World Angels",
     "url": "https://www.newworldangels.com"
