@@ -4,7 +4,7 @@
 
 *Plain-text companion to `NWAi-Investment-Intelligence-Platform-Overview-v1.0.html`. The HTML is the visual primary; this markdown mirrors the same content for version control, AI consumption, and plain-text reference.*
 
-*v1.0 · May 2026 · For team distribution*
+*v1.1 · June 2026 · For team distribution*
 
 ---
 
@@ -111,8 +111,8 @@ Social deal card actions at every stage:
 | 📊 **pipeline-monitor** | session start, /sync-pipeline | Live pipeline dashboard. In V1, surfaces routing matches and substrate signals alongside stage status. |
 | 🕵️ **team-analyst (PMTF)** | /scout + /diligence Stage 2A | Team-first PMTF. Founder Claim Verification. Commitment Depth. Output lands on deal card's Team section. |
 | 📈 **market-analyst** | /scout + /diligence | Structural discontinuity, independent TAM/SAM/SOM, market timing. Lands on deal card Market section. |
-| 🗺️ **competitive-positioning-analyst** | /scout + /diligence | Competitors, incumbents, positioning, moat inputs. Lands on deal card Competition section. |
-| 🔧 **technology-analyst** | /scout (light) + /diligence | Thin wrapper detection, TRL, IP/patents, architecture signals. Lands on deal card Technical section. |
+| 🗺️ **competitive-positioning-analyst** | /scout + /diligence | Competitors, incumbents, positioning, moat inputs. Emits the **Blue Ocean Read** (BLUE / CONTESTED / RED). Lands on deal card Competition section. |
+| 🔧 **technology-analyst** | /scout (light) + /diligence | Thin wrapper detection, TRL, IP/patents, architecture signals. Probes inference economics + emits the **Two Sustainable Advantage Tests** (Training-edge / Inference-edge). Lands on deal card Technical section. |
 | ⚠️ **risk-analyst** | /scout (light) + /diligence Stage 2A | Regulatory, exit landscape, execution + market risk. Cross-cutting overlay. |
 | 💲 **pricing-analyst** | /diligence Stage 2A parallel | Pricing maturity, value-prop, channel margin compression, unit economics. Feeds the financial chain. |
 | 📊 **forecasting-analyst** | /diligence Stage 2B | McMurry-method 5-yr Bear/Base/Bull with mandatory *because* clauses. Founder Financial Literacy. |
@@ -182,17 +182,17 @@ Social deal card actions at every stage:
 
 ## ⑤ Non-Negotiable Investing Criteria
 
-**TechGroup Hard Pass criteria. Any single failure = Kill.** &nbsp;·&nbsp; **[✓ Live · encoded in V1 Policy Layer]**
+**TechGroup criteria. Most are Hard Pass (single failure = Kill); Structure & Syndication are negotiated close-stage outcomes, not screen gates.** &nbsp;·&nbsp; **[✓ Live · encoded in V1 Policy Layer]**
 
 Each group contributes its domain-equivalent set when its playbook is built (V2 rollout).
 
 | Criterion | Standard | Scope |
 |---|---|---|
-| 📄 **Deal Structure** | Equity. Priced round (Seed–Series A). No SAFEs. Convertible debt OK. C-Corp only. | Group-specific |
+| 📄 **Deal Structure** | Priced equity preferred (Seed–Series A). SAFE acceptable as a starting point — negotiated to priced equity or convertible at close. Convertible debt OK. C-Corp only. *(Negotiated, not a screen gate.)* | Group-specific |
 | 🇺🇸 **Geography** | US-based HQ & IP. Executive team US-based. No foreign-owned entities. | Likely shared |
 | 💰 **Traction** | Real revenue or signed paying customers. No research projects or demo labs. | Group-specific |
 | 🚀 **Stage / TRL** | MVP complete. At least one successful beta. TRL 5+ (GAO scale). | Group-specific |
-| 🤝 **Syndication** | Credible lead investor. Clean cap table — no structural red flags. | Likely shared |
+| 🤝 **Syndication** | Credible syndication path — external lead/co-lead preferred for validation, but NWA may lead or cross-syndicate. Clean cap table. *(Negotiated, not a screen gate.)* | Likely shared |
 | 📈 **Return Potential** | 10× in 5 years minimum. TAM must support a 20×–100× return path. | Likely shared |
 
 ---
