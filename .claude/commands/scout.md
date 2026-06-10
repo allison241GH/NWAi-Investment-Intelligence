@@ -74,6 +74,7 @@ Load the Scout Q framework from:
 Score each Phase 1 dimension on the 0–5 scale defined in scout-questions.md. Show delta from Triage (↑ raised / → confirmed / ↓ lowered) for Q1, Q2, and Q3 which overlap with Triage Opportunity dimensions.
 
 - **Q1: Category & Market Discontinuity** — new category creator vs. optimizer; lifecycle horizon; structural shift test. Score 0-5. Triage overlap: D1.
+- **Q1b: Demand Signal Test** — demand-pull vs. technology-push. Required outputs: Demand type (DEMAND-PULL / TECHNOLOGY-PUSH / MIXED), Evidence (2–3 specific signals: regulatory mandates, buyer public statements, RFP/procurement activity, analyst category creation, budget allocation surveys), Strongest signal (one sentence). Score 0-5. ⚠️ Score ≤ 2 triggers Yellow Flag: "Demand signal weak — technology-push risk. Validate with direct buyer interviews before advancing to Diligence." No Triage equivalent — mark NEW in Score Summary.
 - **Q2: Market Opportunity** — TAM/SAM bottoms-up validated; 10x support; market growth. Score 0-5. Triage overlap: D2.
 - **Q3: Moat Assessment** — use the AI Moats Framework as analytical reference. Output a distilled 4-column table verdict (Primary Moat | Strength | Primary Threat | Verdict). Do NOT enumerate moat types by number or produce a checklist. The output is a judgment. Rating: STRONG / DEVELOPING / WEAK / NONE. Triage overlap: D4.
 
@@ -116,18 +117,18 @@ Score each Phase 2 dimension on the 0–5 scale defined in scout-questions.md. E
 
 ## Step 4b: Calculate Scout Conviction Score and Thesis Fit Score
 
-**Score A — Intelligence Conviction Score (AI research-derived, max 17.0)**
+**Score A — Scout Conviction Score (AI research-derived, max 19.0)**
 
-Using scores from Phase 1 (Q1, Q2, Q3), Strategic (Q4, Q5, Q6, Q7), and Phase 2 (Team, Tech, Traction, GTM):
+Using scores from Phase 1 (Q1, Q1b, Q2, Q3), Strategic (Q4, Q5, Q6, Q7), and Phase 2 (Team, Tech, Traction, GTM):
 
-- Phase 1 weighted score = (Q1 + Q2 + Q3-mapped) / 15 × 6.0 (40% weight)
+- Phase 1 weighted score = (Q1 + Q1b + Q2 + Q3-mapped) / 20 × 8.0 (40% weight)
 - Strategic weighted score = (Q4 + Q5 + Q6 + Q7) / 20 × 3.0 (20% weight)
 - Phase 2 weighted score = (Team + Tech + Traction + GTM) / 20 × 8.0 (40% weight)
-- **Intelligence Conviction Score = sum of three weighted scores (max 17.0)**
+- **Scout Conviction Score = sum of three weighted scores (max 19.0)**
 
 Q3 moat rating maps to numeric: STRONG=5, DEVELOPING=3, WEAK=1, NONE=0.
 
-Conviction thresholds: 14–17 = High (advance with confidence) | 10–13 = Moderate (advance with watch items) | 7–9 = Low (Watch only if catalyst imminent) | <7 = Decline.
+Conviction thresholds: 16–19 = High (advance with confidence) | 11–15 = Moderate (advance with watch items) | 7–10 = Low (Watch only if catalyst imminent) | <7 = Decline.
 
 **Score B — Thesis Fit Score (rule-based, criteria-derived)**
 
@@ -172,8 +173,8 @@ Output the Scout Assessment Report using the 2-page format defined in scout-ques
 2. Product & Market Positioning table (Category Type | Lifecycle Horizon | Ecosystem Role Score | Adjacent Risk Score)
 3. Moat Assessment table (Primary Moat | Strength | Primary Threat | Verdict)
 4. Macro Trends table (Dimension | 10-yr Direction | Thesis Impact)
-5. Analyst Verdict Block (Recommendation | Thesis Fit Score | Intelligence Conviction Score | Dual Score Interpretation | Verdict | What You Have to Believe | Where's the Bet | Fear | Greed)
-6. Score Summary table with delta from Triage for overlapping dimensions
+5. Analyst Verdict Block (Recommendation | Thesis Fit Score | Scout Conviction Score | Dual Score Interpretation | Verdict | What You Have to Believe | Where's the Bet | Fear | Greed)
+6. Score Summary table with delta from Triage for overlapping dimensions (12 rows: Q1, Q1b, Q2, Q3/Moat, Q4, Q5, Q6, Q7, Team, Technology, Traction, GTM)
 
 **Page 2 — Rationale** (bullet clusters, no paragraphs):
 1. Adjacent & Emerging Tech (Core use case / Functional equivalents / Emerging displacement)
@@ -208,12 +209,12 @@ The Word document must contain all of the following sections in order, matching 
 3. **Product & Market Positioning table** — 4-column table: Category Type | Lifecycle Horizon | Ecosystem Role Score | Adjacent Risk Score.
 4. **Moat Assessment table** — 4-column table: Primary Moat | Strength | Primary Threat | Verdict.
 5. **Macro Trends table** — 3-column table: Dimension | 10-yr Direction | Thesis Impact (4 rows).
-6. **Analyst Verdict Block** — 2-column table with labeled rows: Recommendation, Thesis Fit Score (rule-based: Opportunity + Readiness / 45 + gates status), Intelligence Conviction Score (AI research: / 17 + threshold band), Dual Score Interpretation (one line — convergent or divergent, and what that means for the decision), Verdict, What You Have to Believe, Where's the Bet, Fear, Greed. Use navy header row. The two scores must always appear together — they are not interchangeable and divergence is signal.
-7. **Score Summary table** — Dimension | Triage Score | Scout Score | Delta (11 rows, including Agent-Era Readiness with its posture tag). Show ↑/→/↓ delta for Triage-overlapping dimensions; "NEW" for strategic dimensions.
+6. **Analyst Verdict Block** — 2-column table with labeled rows: Recommendation, Thesis Fit Score (rule-based: Opportunity + Readiness / 45 + gates status), Scout Conviction Score (AI research: / 19 + threshold band), Dual Score Interpretation (one line — convergent or divergent, and what that means for the decision), Verdict, What You Have to Believe, Where's the Bet, Fear, Greed. Use navy header row. The two scores must always appear together — they are not interchangeable and divergence is signal.
+7. **Score Summary table** — Dimension | Triage Score | Scout Score | Delta (12 rows: Q1, Q1b/Demand Signal, Q2, Q3/Moat, Q4, Q5, Q6, Q7/Agent-Era Readiness with posture tag, Team, Technology, Traction, GTM). Show ↑/→/↓ delta for Triage-overlapping dimensions; "NEW" for strategic dimensions and Q1b.
 
 **Page 2 — Rationale:**
 8. **Adjacent & Emerging Tech** section — 3 bullet points: Core use case, Functional equivalents, Emerging displacement.
-9. **Phase 1 Viability** section — three subsections (Category & Market Discontinuity, Market Opportunity, Moat), each as a bullet cluster of 3-4 bullets.
+9. **Phase 1 Viability** section — four subsections (Category & Market Discontinuity, Demand Signal Test, Market Opportunity, Moat). Category/Market Opportunity/Moat: bullet cluster of 3-4 bullets each. Demand Signal Test: 3-line block — Demand type: DEMAND-PULL / TECHNOLOGY-PUSH / MIXED | Evidence: [2-3 signals] | Strongest signal: [one sentence].
 10. **Phase 2 Execution table** — 3-column table (Dimension | Score | Assessment) with rows for Team, Technology, Traction, GTM/Path to $10M, Exit. For the Team row, expand the Assessment cell to include a 5-row sub-table: Founder-Market Fit | Execution Evidence | Co-founder Dynamics | Referenced Credibility | Team Completeness — each with a STRONG/MODERATE/WEAK or ALIGNED/RISK SIGNAL rating and a one-line note.
 11. **Flags** section — ❌ Red flags and ⚠️ Yellow flags as a bullet list.
 12. **Targeted Diligence Questions** — numbered list, 3-5 items. At least one targets a claim that came back Reported/Unverified from the research agents (per the Citation Contract).
