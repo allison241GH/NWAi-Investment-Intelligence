@@ -201,6 +201,8 @@ Output path: `${WORKSPACE}/deals/active/[Company Name] - Scout Assessment Report
 
 Use US Letter page size (12240 × 15840 DXA), 1-inch margins, Arial font. Apply a consistent NWAi color scheme: dark navy header (`1F3864`) for section banners, light blue shading (`D5E8F0`) for highlight rows. Include a header on every page with "NWAi TechGroup — Scout Assessment Report" left-aligned and the scout date right-aligned using a tab stop.
 
+**⚠️ Page number API (docx v9 — do not deviate):** Use `new TextRun({ children: [PageNumber.CURRENT] })` inside the footer paragraph — this matches `scripts/dd-report-generator.js` and produces valid OOXML. Do NOT use `PageNumberElement` (produces `<w:pgNum/>` directly in `<w:p>`, which Microsoft Word rejects with a file-open error). `SimpleField('PAGE')` is an acceptable fallback if `PageNumber.CURRENT` is unavailable.
+
 The Word document must contain all of the following sections in order, matching the 2-page format from Step 6:
 
 **Page 1 — Scorecard:**
