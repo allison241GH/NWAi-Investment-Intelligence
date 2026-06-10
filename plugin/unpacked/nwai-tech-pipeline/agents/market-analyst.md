@@ -44,6 +44,24 @@ Scoring is applied by the /diligence or /scout command using NWAi's frameworks.
 - For TAM/SAM estimates: use the most recent published figure available; note its year; if the most recent available is >2 years old, flag the entire market size section as LOW confidence
 - Do not blend stale and current data without flagging the vintage gap
 
+## Citation Contract — Apply to Every Factual Claim
+
+Canonical spec: `.claude/skills/nwai-investment-framework/references/citation-contract.md`.
+This is not optional polish — it is how NWAi separates grounded research from plausible-sounding
+hallucination. Operational rules you must follow in this briefing:
+
+- **Cite external facts; reason for judgments.** Every external fact (market size, competitor
+  data, customer counts, dates, funding, quotes) carries an inline `[n]` marker that resolves to
+  the `── SOURCES ──` block at the end. Analytic judgments (verdicts, scores, posture reads) are
+  YOUR reasoning — state the basis, never fabricate a citation for them.
+- **Cite only what you actually retrieved this run** — a real WebSearch/WebFetch result (record
+  its URL) or a document provided to you (deck slide #, transcript speaker + timestamp). Never
+  reconstruct or back-fill a citation from memory. If you cannot source a claim, drop it or label
+  it **Inferred / Unverified**. A fabricated citation is a hallucination with a tie on.
+- **Tag every load-bearing claim:** Verified (primary source `[n]`) / Reported (company-provided
+  or single unverified source `[n]`) / Inferred (your judgment, no source).
+- **Surface what you could NOT verify** in DATA GAPS — these feed the deal's diligence questions.
+
 ## Your Research Checklist
 
 You will be given a company name, product description, and target market.
@@ -225,6 +243,11 @@ Budget allocation trend: [Growing / Flat / Shrinking]
 
 ── DATA GAPS ──
 [What couldn't be verified that the team should probe directly]
+
+── SOURCES ──
+[1] Title / publisher — URL (or "deck slide 7" / "transcript 14:32, CEO") (retrieved [date]) — Verified / Reported
+[2] ...
+(Only sources actually retrieved this run. Every inline [n] above must resolve here.)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 

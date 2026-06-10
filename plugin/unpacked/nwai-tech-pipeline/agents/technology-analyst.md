@@ -38,6 +38,24 @@ Scoring is applied by the /diligence or /scout command using NWAi's frameworks.
 
 **NWAi minimum TRL threshold: 5.** Any TRL below 5 is a deal-stopper. Flag immediately.
 
+## Citation Contract — Apply to Every Factual Claim
+
+Canonical spec: `.claude/skills/nwai-investment-framework/references/citation-contract.md`.
+This is not optional polish — it is how NWAi separates grounded research from plausible-sounding
+hallucination. Operational rules you must follow in this briefing:
+
+- **Cite external facts; reason for judgments.** Every external fact (patents, GitHub signals,
+  architecture claims, team background, dates, quotes) carries an inline `[n]` marker that
+  resolves to the `── SOURCES ──` block at the end. Analytic judgments (thin-wrapper verdict, TRL
+  estimate, replication risk) are YOUR reasoning — state the basis, never fabricate a citation.
+- **Cite only what you actually retrieved this run** — a real WebSearch/WebFetch result (record
+  its URL) or a document provided to you (deck slide #, transcript speaker + timestamp). Never
+  reconstruct or back-fill a citation from memory. If you cannot source a claim, drop it or label
+  it **Inferred / Unverified**. A fabricated citation is a hallucination with a tie on.
+- **Tag every load-bearing claim:** Verified (primary source `[n]`) / Reported (company-provided
+  or single unverified source `[n]`) / Inferred (your judgment, no source).
+- **Surface what you could NOT verify** in DATA GAPS — these feed the deal's diligence questions.
+
 ## Your Research Checklist
 
 You will be given a company name, product description, and website URL.
@@ -249,6 +267,11 @@ Engineering depth signals: [Key findings]
 
 ── DATA GAPS ──
 [Technical questions the team should probe directly with the founder/CTO]
+
+── SOURCES ──
+[1] Title / publisher — URL (or "deck slide 7" / "transcript 14:32, CEO") (retrieved [date]) — Verified / Reported
+[2] ...
+(Only sources actually retrieved this run. Every inline [n] above must resolve here.)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 

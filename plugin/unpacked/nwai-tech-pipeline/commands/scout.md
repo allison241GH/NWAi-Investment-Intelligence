@@ -62,7 +62,7 @@ Use the Task tool to launch **all agents simultaneously**:
 
 Wait for all agents to complete before proceeding to Phase 1 scoring.
 
-Use agent findings as the primary research input throughout Steps 2–4. Do not re-derive what agents have already established.
+Use agent findings as the primary research input throughout Steps 2–4. Do not re-derive what agents have already established. Each agent returns a `── SOURCES ──` block and inline `[n]` markers per the Citation Contract — preserve these; they are merged into the report's Sources section in Step 6.
 
 ---
 
@@ -165,6 +165,8 @@ Select the primary theme (best fit). No rationale needed — just state the them
 
 Output the Scout Assessment Report using the 2-page format defined in scout-questions.md.
 
+**Apply the Citation Contract** (`.claude/skills/nwai-investment-framework/references/citation-contract.md`) when assembling this report: every external fact carries an inline `[n]` marker; merge the four research agents' `── SOURCES ──` blocks into one enumerated Sources list (dedupe identical URLs, renumber the markers); carry confidence tags through; keep analytic judgments as judgments (no fabricated citations).
+
 **Page 1 — Scorecard** (all tables, no prose):
 1. Triage Carry-Forward block
 2. Product & Market Positioning table (Category Type | Lifecycle Horizon | Ecosystem Role Score | Adjacent Risk Score)
@@ -178,8 +180,9 @@ Output the Scout Assessment Report using the 2-page format defined in scout-ques
 2. Phase 1 Viability — bullet clusters per section (3-4 bullets each; finding/fact/implication format)
 3. Phase 2 Execution table (one scored line per dimension)
 4. Flags (❌ Red / ⚠️ Yellow — one line each)
-5. Targeted Diligence Questions (3-5 numbered bullets — specific to this deal's risks)
-6. Dealum step, tags, next action
+5. Targeted Diligence Questions (3-5 numbered bullets — specific to this deal's risks; **at least one must target a load-bearing claim that came back Reported/Unverified from the research agents** — the citation contract's unverified set feeds here)
+6. Sources (enumerated `[n]` list merged from the research-agent `── SOURCES ──` blocks; every inline `[n]` marker on Page 1/Page 2 must resolve here)
+7. Dealum step, tags, next action
 
 ## Step 6b: Generate Scout Assessment Report as Word Document
 
@@ -213,9 +216,10 @@ The Word document must contain all of the following sections in order, matching 
 9. **Phase 1 Viability** section — three subsections (Category & Market Discontinuity, Market Opportunity, Moat), each as a bullet cluster of 3-4 bullets.
 10. **Phase 2 Execution table** — 3-column table (Dimension | Score | Assessment) with rows for Team, Technology, Traction, GTM/Path to $10M, Exit. For the Team row, expand the Assessment cell to include a 5-row sub-table: Founder-Market Fit | Execution Evidence | Co-founder Dynamics | Referenced Credibility | Team Completeness — each with a STRONG/MODERATE/WEAK or ALIGNED/RISK SIGNAL rating and a one-line note.
 11. **Flags** section — ❌ Red flags and ⚠️ Yellow flags as a bullet list.
-12. **Targeted Diligence Questions** — numbered list, 3-5 items.
-13. **Footer row** — Dealum step, suggested tags, next action.
-14. **Page footer** on every page — "NWAi Investment Intelligence — Confidential" left-aligned, page number right-aligned.
+12. **Targeted Diligence Questions** — numbered list, 3-5 items. At least one targets a claim that came back Reported/Unverified from the research agents (per the Citation Contract).
+13. **Sources** — enumerated list (or compact 1-column table), one row per source: `[n] Title / publisher — URL or doc locator (retrieved YYYY-MM-DD) — Verified/Reported`. Merged and renumbered from the research-agent `── SOURCES ──` blocks; every inline `[n]` marker used in the document resolves here.
+14. **Footer row** — Dealum step, suggested tags, next action.
+15. **Page footer** on every page — "NWAi Investment Intelligence — Confidential" left-aligned, page number right-aligned.
 
 After generating the file, confirm the save path to the user and provide a link to the file.
 

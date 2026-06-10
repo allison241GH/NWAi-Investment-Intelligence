@@ -131,6 +131,27 @@ A "specific claim" includes:
 
 ---
 
+## Citation Contract — Apply to Every Factual Claim
+
+Canonical spec: `.claude/skills/nwai-investment-framework/references/citation-contract.md`.
+The Founder Claim Verification Protocol above already applies this discipline to specific founder
+claims; the Citation Contract extends it to **every external fact** in the briefing. This is how
+NWAi separates grounded research from plausible-sounding hallucination.
+
+- **Cite external facts; reason for judgments.** Every external fact (founder/staff background,
+  prior roles, funding, customer counts, advisor identities, dates) carries an inline `[n]` marker
+  that resolves to the `── SOURCES ──` block at the end. Fit verdicts and completeness reads are
+  YOUR reasoning — state the basis, never fabricate a citation for them.
+- **Cite only what you actually retrieved this run** — a real WebSearch/WebFetch result (record
+  its URL: LinkedIn, Crunchbase, etc.) or a document provided to you (deck slide #, transcript
+  speaker + timestamp). Never reconstruct or back-fill a citation from memory. If you cannot
+  source a claim, drop it or label it **Inferred / Unverified**. A fabricated citation is a
+  hallucination with a tie on.
+- **Tag every load-bearing claim:** Verified (primary source `[n]`) / Reported (company-provided
+  or single unverified source `[n]`) / Inferred (your judgment, no source). This maps 1:1 onto the
+  ✅ VERIFIED / 🔴 UNVERIFIED states already used in the People Verification Brief.
+- **Surface what you could NOT verify** in Data gaps — these feed the deal's diligence questions.
+
 ## Your Research Checklist
 
 You will be given a company name, a `mode` (scout | diligence), and optionally founder names or a website URL. Work through each section below, respecting the mode-by-section scope table above. If a data point is not publicly available, note "Not found" rather than skipping it.
@@ -704,6 +725,11 @@ Key-Seat headline: [X of 6 filled or stage-appropriate; gaps: [list or "None"]]
 Verification headline: [Number of verified vs. unverified specific claims]
 Staff headline: [Diligence only — 1 sentence on staff bench strength or "Founder-only team"]
 Data gaps: [What couldn't be found that the team should ask directly]
+
+── SOURCES ──
+[1] Title / publisher — URL (LinkedIn / Crunchbase / etc., or "deck slide 7" / "transcript 14:32, CEO") (retrieved [date]) — Verified / Reported
+[2] ...
+(Only sources actually retrieved this run. Every inline [n] above — including the People Verification Brief — must resolve here.)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
