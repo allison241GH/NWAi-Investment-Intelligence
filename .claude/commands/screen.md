@@ -125,7 +125,7 @@ Scoring principle for unknowns: silent decks score 2 (not 0) on Readiness dimens
 
 Output the full NWA Triage Report using tables throughout. Every prose field is a single continuous line. Scores and verdicts must be prominent and scannable.
 
-**Apply the Citation Contract** (`.claude/skills/nwai-investment-framework/references/citation-contract.md`): tag external facts in the Hard Gates and Opportunity Score tables — especially any Market Opportunity or Founder Advantage finding where web research confirmed or contradicted the deck — with an inline `[n]` marker, and list the sources actually retrieved (the three mandatory web searches from Step 4 plus any deck/transcript locator) in Section 7. Keep judgments as judgments — do not fabricate citations for scores or verdicts. On a hard-gate FAIL early-exit, include only the source(s) behind the failing finding.
+**Claim discipline:** Do not fabricate or assert claims you cannot support from the pitch deck or from the Step 4 web searches. Label any assertion that could not be confirmed as "Unverified." If a hard gate verdict hinges on a web-retrieved fact (e.g., foreign HQ, no real revenue), note the source parenthetically in the gate row — but no formal `[n]` citation apparatus or Sources section is required at Screen.
 
 ```
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -230,10 +230,6 @@ Current Gap:    [One sentence — what is missing that makes this not ready now]
 [IF DECLINE — include this block:]
 Kill Reason:  [Primary gate or score trigger — one sentence. No elaboration needed.]
 
-━━━ SECTION 7 — SOURCES ━━━
-[1] Title / publisher — URL (or "deck slide 7") (retrieved [date]) — Verified / Reported
-[2] ...
-(Only sources actually retrieved this run — the Step 4 web searches plus any deck/transcript locator. Every inline [n] above must resolve here. On a hard-gate FAIL, list only the source behind the failing finding.)
 ```
 
 ---
@@ -265,10 +261,7 @@ in a prominent styled callout. The NWA Filter Results section appears before the
 Score table. The Recommendation block appears with the verdict rendered as a colored
 badge (green for ADVANCE, amber for WATCH, red for DECLINE). For ADVANCE deals, the Live
 Pitch Questions appear as a numbered list in the Recommendation section with a distinct
-header "Live Pitch Questions — [Company Name]". **Section 7 — Sources** appears last as an
-enumerated list (or compact 1-column table), one row per source: `[n] Title / publisher —
-URL or doc locator (retrieved YYYY-MM-DD) — Verified/Reported`. Every inline `[n]` marker
-used in the document resolves here.
+header "Live Pitch Questions — [Company Name]".
 
 After generating the file, confirm the save path and provide a link to the file.
 

@@ -2,7 +2,11 @@
 
 **Status:** Binding for all agent-generated research and the reports assembled from it —
 the five research-agent briefings (market, team, competitive-positioning, technology, risk)
-and the Scout and Screen reports. Added plugin v2.22.0 (June 2026).
+and the Scout report and all downstream stages (Diligence, DD Report, Memo). Added plugin
+v2.22.0 (June 2026). **Scope explicitly excludes Screen:** the triage stage is a fast deck
+read with minimal web research; the citation apparatus would add overhead without proportionate
+value at that funnel width. Behavioral discipline still applies at Screen — don't fabricate
+claims, label uncertain assertions "Unverified" — but no `[n]` markers or Sources block.
 
 ## Why this exists
 
@@ -59,7 +63,7 @@ real that was retrieved in-session.
 - Only sources actually retrieved this run may appear. Every inline `[n]` must resolve to a
   listed source, and every listed source should be cited at least once.
 
-## Command assembly (Scout / Screen)
+## Command assembly (Scout and beyond)
 
 When a command assembles a report from multiple agent briefings:
 
