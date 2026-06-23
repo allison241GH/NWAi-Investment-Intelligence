@@ -200,11 +200,11 @@ When mapping a deal to a theme, identify the correct theme from the table below.
 
 | # | Theme | Lead | Supporting SMEs |
 |---|-------|------|-----------------|
-| 1 | Infrastructure & Foundational Stack | TBD — Pending Dealum API | TBD — Pending Dealum API |
+| 1 | AI Infrastructure & Agent-Era Backbone | TBD — Pending Dealum API | TBD — Pending Dealum API |
 | 2 | SW Enabled HW, Physical AI & Robotics | TBD — Pending Dealum API | TBD — Pending Dealum API |
-| 3 | WorkTech & Vertical Enterprise OS | TBD — Pending Dealum API | TBD — Pending Dealum API |
-| 4 | Data Sovereignty, Security, Trust | TBD — Pending Dealum API | TBD — Pending Dealum API |
-| 5 | FinTech (incl RE) | TBD — Pending Dealum API | TBD — Pending Dealum API |
+| 3 | WorkTech & Vertical AI OS | TBD — Pending Dealum API | TBD — Pending Dealum API |
+| 4 | Data Sovereignty, Security & AI Trust | TBD — Pending Dealum API | TBD — Pending Dealum API |
+| 5 | Agentic Systems & AI Ops | TBD — Pending Dealum API | TBD — Pending Dealum API |
 
 ---
 

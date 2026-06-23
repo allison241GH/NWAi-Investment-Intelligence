@@ -1,5 +1,5 @@
 # NWAi TechGroup Deal Pipeline — Architecture Overview
-*v0.36.0 | June 10, 2026 | New World Angels Investment Intelligence*
+*v0.37.0 | June 23, 2026 | New World Angels Investment Intelligence*
 
 ---
 

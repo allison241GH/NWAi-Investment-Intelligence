@@ -152,11 +152,11 @@ Present both scores together and flag any significant divergence (>2 band gap be
 
 Match the company to one of the 5 NWAi TechGroup investing themes from SKILL.md:
 
-1. Infrastructure & Foundational Stack
+1. AI Infrastructure & Agent-Era Backbone
 2. SW Enabled HW, Physical AI & Robotics
-3. WorkTech & Vertical Enterprise OS
-4. Data Sovereignty, Security, Trust
-5. FinTech (incl RE)
+3. WorkTech & Vertical AI OS
+4. Data Sovereignty, Security & AI Trust
+5. Agentic Systems & AI Ops
 
 Select the primary theme (best fit). No rationale needed — just state the theme assignment.
 

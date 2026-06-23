@@ -334,11 +334,11 @@ After completing all dimensions, assign to one primary TechGroup theme:
 
 | Theme | Key Signals |
 |-------|-------------|
-| 1. Infrastructure & Foundational Stack | Data centers, chips, networking, LLM infrastructure, edge compute |
-| 2. SW Enabled HW, Physical AI & Robotics | Drones, autonomous vehicles, smart manufacturing, additive mfg, AI vision |
-| 3. WorkTech & Vertical Enterprise OS | Vertical-specific AI agents, EdTech, MedTech, GovTech, LegalTech, Future of Work |
-| 4. Data Sovereignty, Security, Trust | Cybersecurity, cryptography, synthetic data, compliance, location intelligence |
-| 5. FinTech (incl RE) | Crypto/DeFi, AI financial tools, automated underwriting, real estate tech |
+| 1. AI Infrastructure & Agent-Era Backbone | Inference infrastructure, edge compute, data pipelines, location/geospatial data layers, data centers, telco/networking, agent-consumed foundational tech |
+| 2. SW Enabled HW, Physical AI & Robotics | Drones, autonomous vehicles, robotics, spatial computing, smart manufacturing, additive mfg, AI vision |
+| 3. WorkTech & Vertical AI OS | AI-native vertical workflow reimagination, EdTech, MedTech, LegalTech, GovTech, field services — agent-era unit economics required |
+| 4. Data Sovereignty, Security & AI Trust | Cybersecurity, cryptography, AI governance, model security, hallucination guardrails, provenance, compliance, agent behavior monitoring |
+| 5. Agentic Systems & AI Ops | Agent orchestration, agent-to-agent protocols, AI observability, deployment pipelines for agent fleets, manager-of-agents tooling |
 
 Lead and SMEs: Output as "TBD — Pending Dealum API" for both.
 
