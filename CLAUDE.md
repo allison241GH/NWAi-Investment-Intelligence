@@ -361,6 +361,8 @@ Key files and folders in this workspace:
 
 **Deal artifacts are local-only.** The `deals/` folder is `.gitignore`-excluded — deal data (data rooms, reports, financials, transcripts) lives only on disk and is never version-controlled or pushed to GitHub.
 
+**`docs/reference/Gemini/` is an isolated screener exploration space.** Work in this folder must never trigger CLAUDE.md updates, memory writes, architecture doc updates, or any other pipeline file changes. Changes stay strictly within that folder.
+
 **Related workspace (separate):** Partnership and legal documents for scaling the Investment Intelligence Platform live in the **"Claude CoWork NWAixCoditect Partnership"** folder on Jamie's desktop. That workspace covers the NWA × AZ1/Coditect co-development alliance — scoping briefs, SOWs, IP agreements, and build phase tracking. Do not look for or expect those files here.
 
 ---
