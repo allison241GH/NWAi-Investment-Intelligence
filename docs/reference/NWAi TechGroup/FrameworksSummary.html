@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NWAi TechGroup — Strategic Investing Frameworks · One-Page View · 2026-07</title>
+  <style>
+    :root {
+      --navy: #0d1f3c;
+      --navy-mid: #163360;
+      --ice: #c8dff5;
+      --ice-light: #eaf3fc;
+      --gold: #e8a020;
+      --gold-tint: #fdf6e8;
+      --subtle: #5a6a82;
+      --border: #d0dce8;
+      --bg: #f0f4f9;
+      --text: #1a1a2e;
+      --green: #2e6b3f;
+      --red: #a63232;
+      --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--font); background: var(--bg); color: var(--text); line-height: 1.5; }
+
+    .header {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+      color: white;
+      padding: 18px 32px 14px;
+      border-bottom: 4px solid var(--gold);
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+    }
+    .header h1 { font-size: 21px; font-weight: 700; letter-spacing: -0.3px; }
+    .header h1 span { color: var(--gold); }
+    .header-sub { font-size: 12px; color: var(--ice); margin-top: 3px; }
+    .header-badge {
+      background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 6px; padding: 5px 12px; font-size: 11px; color: var(--ice); text-align: right;
+    }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 18px 24px 24px; }
+
+    .thesis-band {
+      background: var(--gold-tint); border: 1px solid var(--gold); border-left: 5px solid var(--gold);
+      border-radius: 8px; padding: 14px 20px; font-size: 14.5px; line-height: 1.55; margin-bottom: 16px;
+    }
+    .thesis-band strong { color: var(--navy); }
+
+    .section {
+      background: white; border: 1px solid var(--border); border-radius: 8px;
+      padding: 16px 20px; margin-bottom: 14px; page-break-inside: avoid;
+    }
+    .section-num { font-size: 11px; font-weight: 700; color: var(--gold); letter-spacing: 1.2px; }
+    .section h2 { font-size: 16px; font-weight: 700; color: var(--navy); margin: 2px 0 8px; }
+    .section p { font-size: 13px; margin-top: 8px; }
+    .section p strong { color: var(--navy); }
+
+    table { width: 100%; border-collapse: collapse; font-size: 12px; margin-top: 4px; }
+    th {
+      text-align: left; padding: 6px 9px; font-size: 10.5px; text-transform: uppercase;
+      letter-spacing: 0.8px; color: var(--subtle); border-bottom: 2px solid var(--border);
+      background: var(--ice-light);
+    }
+    td { padding: 8px 9px; border-top: 1px solid var(--border); vertical-align: top; line-height: 1.45; }
+    td strong { color: var(--navy); }
+    .lens-cell { white-space: normal; min-width: 150px; }
+    .lens-tag { font-size: 10.5px; color: var(--subtle); font-style: italic; }
+    .lens-status { display: block; font-size: 10px; color: var(--subtle); margin-top: 2px; }
+    .lens-status.pending { color: #8a5b00; font-weight: 600; }
+    .good { color: var(--green); }
+    .bad { color: var(--red); }
+    .table-scroll { overflow-x: auto; }
+
+    .quote-block {
+      background: var(--ice-light); border-left: 4px solid var(--navy-mid); border-radius: 0 6px 6px 0;
+      padding: 10px 15px; font-size: 12.5px; font-style: italic; color: var(--navy); margin: 8px 0 10px; line-height: 1.55;
+    }
+    .quote-label { font-size: 10.5px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: var(--subtle); margin-bottom: 3px; font-style: normal; }
+
+    .takeaway {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+      color: var(--ice-light); border-radius: 8px; padding: 14px 22px;
+      font-size: 13.5px; font-style: italic; line-height: 1.6;
+      border-left: 5px solid var(--gold); margin-bottom: 14px;
+    }
+    .takeaway strong { color: white; }
+
+    .footer {
+      margin-top: 8px; padding-top: 10px; border-top: 1px solid var(--border);
+      font-size: 10.5px; color: var(--subtle); font-style: italic; text-align: center; line-height: 1.5;
+    }
+
+    @page { size: A4 landscape; margin: 0.7cm; }
+    @media print {
+      body { background: white; line-height: 1.38; }
+      .header { padding: 8px 18px 7px; border-bottom-width: 3px; }
+      .header h1 { font-size: 16px; }
+      .header-sub { font-size: 10px; }
+      .header-badge { font-size: 9px; padding: 3px 8px; }
+      .container { padding: 8px 6px 6px; max-width: 100%; }
+      .thesis-band { padding: 8px 14px; font-size: 11.5px; margin-bottom: 8px; border-radius: 5px; }
+      .section { padding: 9px 13px; margin-bottom: 8px; border-radius: 5px; }
+      .section h2 { font-size: 13px; }
+      .section p { font-size: 10.5px; margin-top: 5px; }
+      table { font-size: 9.5px; }
+      th { padding: 4px 7px; font-size: 8.5px; }
+      td { padding: 5px 7px; line-height: 1.35; }
+      .footer { margin-top: 5px; padding-top: 5px; font-size: 8.5px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div>
+      <h1>Strategic Investing <span>Frameworks</span></h1>
+      <div class="header-sub">NWAi TechGroup — the four investing lenses on one page</div>
+    </div>
+    <div class="header-badge">
+      New World Angels · Investment Intelligence<br />
+      Personal reference — Jamie · July 2026
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="thesis-band">
+      <strong>Four questions, one worldview: Is the shift real? Does the product compound? Will the problem still
+      exist? Who keeps the value?</strong> Market, product, demand, supply. The durable AI-era company owns what
+      cannot be scraped, rented, or watched — and rents everything else on its own terms.
+    </div>
+
+    <div class="section">
+      <div class="section-num">01</div>
+      <h2>The Four Lenses</h2>
+      <div class="table-scroll">
+      <table>
+        <tr><th>Lens</th><th>Core belief</th><th>Value migrates…</th><th>Back ✅ / Kill ❌</th></tr>
+        <tr>
+          <td class="lens-cell"><strong>1 · Structural Discontinuity</strong><br/><span class="lens-tag">the wave</span><span class="lens-status">deployed · founding</span></td>
+          <td>Venture-scale outcomes ride genuine, irreversible shifts — rule changes, not better play of the old game. A real discontinuity has a "why now" the founder didn't write: mandates, demand-pull, a platform window.</td>
+          <td>…from the incumbents' game to the new game's rule-setters</td>
+          <td><span class="good">✅</span> Category creators with a real "why now"<br/><span class="bad">❌</span> Optimizers whose timing argument was equally valid three years ago</td>
+        </tr>
+        <tr>
+          <td class="lens-cell"><strong>2 · Memory Lock-in</strong><br/><span class="lens-tag">the grip</span><span class="lens-status">deployed · founding</span></td>
+          <td>AI made it easier to build and harder to defend than ever — so the moat is the existential question, and the durable moat is cognitive: data flywheels and accumulated context that make leaving feel like amputation. Two companies can wrap the same model; only one accumulates.</td>
+          <td>…from features and code to accumulated, proprietary context</td>
+          <td><span class="good">✅</span> Products that get smarter, stickier, more embedded with every use<br/><span class="bad">❌</span> Thin wrappers — polished UX over rented intelligence, nothing compounding</td>
+        </tr>
+        <tr>
+          <td class="lens-cell"><strong>3 · Agent-Era Readiness</strong><br/><span class="lens-tag">the ground</span><span class="lens-status">deployed June 2026</span></td>
+          <td>Agents become the predominant actor <strong>and consumer</strong> — and they don't just change interfaces, they reimagine or dissolve the problems themselves. Doorway: <em>information for a human to act on, or a transaction for an agent to complete?</em></td>
+          <td>…from human attention to agent transactions; from production to trust</td>
+          <td><span class="good">✅</span> Founders building for the reimagined problem — Riding or Enabling the shift<br/><span class="bad">❌</span> Beautiful solutions to dissolving problems — the most dangerous bets on the table</td>
+        </tr>
+        <tr>
+          <td class="lens-cell"><strong>4 · Protect the Alpha</strong><br/><span class="lens-tag">the supply chain</span><span class="lens-status pending">authored July 2026 · deployment pending</span></td>
+          <td>Intelligence commoditizes ~10×/yr while the labs run tech's oldest playbook against their own customers — they don't take your bytes, they take your business. The enduring asset is owned alpha: data, workflows, trust the lab can't see. Unexamined dependence is the kill signal, not dependence.</td>
+          <td>…from rented intelligence to owned business alpha</td>
+          <td><span class="good">✅</span> Founders who know their alpha, keep it home, can change engines mid-flight — and the sovereignty enablers<br/><span class="bad">❌</span> Companies feeding their own predator: the differentiator transiting one lab's API, unexamined</td>
+        </tr>
+      </table>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-num">02</div>
+      <h2>The Build-Up — Each Lens Closes the Previous Ones' Blind Spot</h2>
+      <div class="table-scroll">
+      <table>
+        <tr><th>Altitude</th><th>Lens</th><th>The plain question</th><th>The blind spot it closes</th></tr>
+        <tr>
+          <td>Market</td>
+          <td><strong>Structural Discontinuity</strong></td>
+          <td><strong>Is the shift real?</strong></td>
+          <td>The founding question — separates rule-changers from optimizers dressed as disruptors.</td>
+        </tr>
+        <tr>
+          <td>Product</td>
+          <td><strong>Memory Lock-in</strong></td>
+          <td><strong>Does the product compound?</strong></td>
+          <td>Discontinuity alone can't tell riding a wave from being commoditized by it — a real shift lifts the copycats too.</td>
+        </tr>
+        <tr>
+          <td>Demand substrate</td>
+          <td><strong>Agent-Era Readiness</strong></td>
+          <td><strong>Will the problem still exist?</strong></td>
+          <td>A compounding product can be a well-defended position on sinking ground — lock-in on a problem agents are about to dissolve.</td>
+        </tr>
+        <tr>
+          <td>Supply substrate</td>
+          <td><strong>Protect the Alpha</strong></td>
+          <td><strong>Who keeps the value created?</strong></td>
+          <td>A deal can clear all three and still feed its own predator — Riding the wave while leaking its alpha to the lab (the Cursor scenario).</td>
+        </tr>
+      </table>
+      </div>
+      <p>The two founding lenses are the classic venture pair, sharpened for AI. The two new lenses are the demand-side and supply-side faces of a single event: <strong>the AI substrate arriving underneath every business TechGroup evaluates.</strong></p>
+    </div>
+
+    <div class="section">
+      <div class="section-num">03</div>
+      <h2>In Their Own Words — The Resonating Takeaways</h2>
+      <div class="quote-block">
+        <div class="quote-label">Memory Lock-in / AI Moats</div>
+        "In the age of AI, the new existential threat is not the competition's algorithm, but the commoditization of your own. Moats are built either by controlling the infrastructure layer or by creating an Undeniable Data Advantage tied to indispensable customer workflows and deep domain execution. Speed remains the only initial moat."
+      </div>
+      <div class="quote-block">
+        <div class="quote-label">Agent-Era Readiness</div>
+        "For a human, information is an asset to act on. For an agent, it is a transaction to complete. The internet crossed over to the machines a year ahead of schedule, and the rest of the economy is next. The question is no longer whether a startup has a good answer — it is whether the question its product answers will still be asked once the agents arrive. Back the founders building for the reimagined problem. The ones with the most beautiful solution to a dissolving problem are the most dangerous bets on the table."
+      </div>
+      <div class="quote-block">
+        <div class="quote-label">Protect the Alpha</div>
+        "In the AI era, the intelligence is rented. The alpha is what you own. Back the founders who know exactly what their alpha is, keep it where the lab can't see it, and can change engines mid-flight — and look hard at the ones selling the locks everyone is about to need."
+      </div>
+    </div>
+
+    <div class="takeaway">
+      <strong>Four questions, asked of every deal: Is the shift real? Does the product compound? Will the problem
+      still exist? Who keeps the value?</strong> Each lens exists because a company can clear the other three and
+      still die by the fourth. The composite bet: companies that ride a real discontinuity, accumulate what
+      competitors cannot, solve problems the agent era amplifies rather than dissolves, and own their alpha
+      outright — renting intelligence on their own terms while everything they've earned stays home.
+    </div>
+
+    <div class="footer">
+      Personal reference — Jamie · July 2026 · Descriptive only; the framework files and theses remain the source of truth.<br/>
+      Lenses 1–3 deployed · Lens 4 (Protect the Alpha / Alpha-AI Sovereignty) authored, deployment pending sign-off.
+    </div>
+
+  </div>
+
+</body>
+</html>

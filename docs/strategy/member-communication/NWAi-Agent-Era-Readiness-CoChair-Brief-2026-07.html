@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NWAi — Agent-Era Readiness · Co-Chair Brief · 2026-07</title>
+  <style>
+    :root {
+      --navy: #0d1f3c;
+      --navy-mid: #163360;
+      --ice: #c8dff5;
+      --ice-light: #eaf3fc;
+      --gold: #e8a020;
+      --gold-tint: #fdf6e8;
+      --subtle: #5a6a82;
+      --border: #d0dce8;
+      --bg: #f0f4f9;
+      --text: #1a1a2e;
+      --green: #2e6b3f;
+      --red: #a63232;
+      --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .header {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+      color: white;
+      padding: 18px 32px 14px;
+      border-bottom: 4px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .header h1 { font-size: 21px; font-weight: 700; letter-spacing: -0.3px; }
+    .header h1 span { color: var(--gold); }
+    .header-sub { font-size: 12px; color: var(--ice); margin-top: 3px; }
+    .header-badge {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 6px;
+      padding: 5px 12px;
+      font-size: 11px;
+      color: var(--ice);
+      text-align: right;
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 18px 24px 24px; }
+
+    .thesis-band {
+      background: var(--gold-tint);
+      border: 1px solid var(--gold);
+      border-left: 5px solid var(--gold);
+      border-radius: 8px;
+      padding: 14px 20px;
+      font-size: 14.5px;
+      line-height: 1.55;
+      margin-bottom: 16px;
+    }
+    .thesis-band .lead { font-weight: 700; color: var(--navy); }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .grid.page2 { margin-top: 14px; }
+    .panel {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px 18px;
+      page-break-inside: avoid;
+    }
+    .panel-num { font-size: 11px; font-weight: 700; color: var(--gold); letter-spacing: 1.2px; }
+    .panel-title { font-size: 16px; font-weight: 700; color: var(--navy); margin-top: 2px; }
+    .panel-sub { font-size: 12px; color: var(--subtle); font-style: italic; margin-bottom: 10px; }
+    .panel p { font-size: 13px; margin-bottom: 8px; }
+    .panel ul { list-style: none; padding: 0; margin: 0; }
+    .panel li {
+      font-size: 12.5px;
+      line-height: 1.45;
+      padding: 4px 0 4px 16px;
+      position: relative;
+    }
+    .panel li::before { content: "•"; color: var(--gold); position: absolute; left: 2px; font-weight: 700; }
+    .panel li strong { color: var(--navy); font-weight: 600; }
+    .panel li.good::before { content: "✅"; font-size: 10px; left: 0; top: 7px; }
+    .panel li.bad::before  { content: "❌"; font-size: 10px; left: 0; top: 7px; }
+    .panel li.good, .panel li.bad { padding-left: 20px; }
+
+    .doorway {
+      background: var(--ice-light);
+      border: 1px solid var(--navy-mid);
+      border-left: 4px solid var(--navy-mid);
+      border-radius: 6px;
+      padding: 9px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--navy);
+      margin: 8px 0;
+      font-style: italic;
+    }
+
+    .postures { width: 100%; border-collapse: collapse; font-size: 12px; margin-top: 4px; }
+    .postures th {
+      text-align: left; padding: 6px 8px; font-size: 11px; text-transform: uppercase;
+      letter-spacing: 0.8px; color: var(--subtle); border-bottom: 2px solid var(--border);
+    }
+    .postures td {
+      padding: 6px 8px; border-top: 1px solid var(--border); vertical-align: top; line-height: 1.4;
+    }
+    .postures td.p-name { white-space: nowrap; font-weight: 700; }
+    .p-bad  { color: var(--red); }
+    .p-good { color: var(--green); }
+
+    .signals { width: 100%; border-collapse: collapse; font-size: 12px; }
+    .signals th {
+      text-align: left; padding: 6px 8px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.8px;
+    }
+    .signals th.s-good { color: var(--green); }
+    .signals th.s-bad { color: var(--red); }
+    .signals td {
+      padding: 6px 8px; border-top: 1px solid var(--border); vertical-align: top; line-height: 1.4; width: 50%;
+    }
+
+    .wide { grid-column: 1 / -1; }
+
+    .takeaway {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+      color: var(--ice-light);
+      border-radius: 8px;
+      padding: 14px 22px;
+      font-size: 13.5px;
+      font-style: italic;
+      line-height: 1.6;
+      border-left: 5px solid var(--gold);
+    }
+
+    .footer {
+      margin-top: 14px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+      font-size: 10.5px;
+      color: var(--subtle);
+      font-style: italic;
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    @page { size: A4 landscape; margin: 0.5cm; }
+    @media print {
+      body { background: white; line-height: 1.38; }
+      .header { padding: 8px 18px 7px; border-bottom-width: 3px; }
+      .header h1 { font-size: 16px; }
+      .header-sub { font-size: 10px; margin-top: 1px; }
+      .header-badge { font-size: 9.5px; padding: 4px 9px; }
+      .container { padding: 8px 8px 6px; max-width: 100%; }
+      .thesis-band { padding: 8px 14px; font-size: 11.5px; margin-bottom: 8px; border-radius: 5px; }
+      .grid { gap: 9px; }
+      .grid.page2 { break-before: page; margin-top: 0; }
+      .panel { padding: 9px 13px; border-radius: 5px; }
+      .panel-num { font-size: 9px; }
+      .panel-title { font-size: 13px; }
+      .panel-sub { font-size: 10px; margin-bottom: 6px; }
+      .panel p { font-size: 10.5px !important; margin-bottom: 5px; }
+      .panel li { font-size: 10.5px; padding: 3px 0 3px 13px; line-height: 1.35; }
+      .panel li.good, .panel li.bad { padding-left: 17px; }
+      .panel li.good::before, .panel li.bad::before { font-size: 8.5px; top: 5px; }
+      .doorway { font-size: 11px; padding: 6px 11px; margin: 5px 0; border-radius: 4px; }
+      .postures { font-size: 10px; }
+      .postures th { padding: 4px 7px; font-size: 9px; }
+      .postures td { padding: 4px 7px; line-height: 1.35; }
+      .signals { font-size: 10px; }
+      .signals th { padding: 4px 7px; font-size: 9px; }
+      .signals td { padding: 4px 7px; line-height: 1.35; }
+      .takeaway { font-size: 11px; padding: 9px 16px; border-radius: 5px; }
+      .footer { margin-top: 6px; padding-top: 5px; font-size: 8.5px; }
+    }
+    @media (max-width: 760px) { .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div>
+      <h1>Agent-Era <span>Readiness</span></h1>
+      <div class="header-sub">Our third always-active investing lens — is the founder solving the problem as agents will reshape it?</div>
+    </div>
+    <div class="header-badge">
+      New World Angels · Investment Intelligence<br />
+      TechGroup Co-Chair Brief · July 2026
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="thesis-band">
+      <span class="lead">The Shift:</span>
+      <strong>AI agents are becoming the substrate through which problems get solved</strong> — and the durability
+      of any startup we back now depends on whether its founder is solving the problem <strong>as agents will
+      reshape it</strong>, not as it exists today. Alongside Structural Discontinuity and Memory Lock-in, every
+      TechGroup deal now answers a third question: does this company's value, model, and moat survive — or
+      strengthen — when agents become the predominant actor <em>and consumer</em> of digital products, work, and
+      transactions?
+    </div>
+
+    <div class="grid">
+
+      <div class="panel">
+        <div class="panel-num">01</div>
+        <div class="panel-title">Why now — what just happened</div>
+        <ul>
+          <li><strong>The internet crossed over to the machines — a year early.</strong> June 2026, Cloudflare: bots passed <strong>57.5% of all web traffic</strong>. Agentic traffic grew nearly <strong>8,000% in one year</strong> and runs ~<strong>1,000:1</strong> — one human intention spawns a thousand machine requests.</li>
+          <li><strong>The builders say knowledge work is next.</strong> Boris Cherny (Anthropic): coding is largely <em>solved</em> — 100% of his code agent-written, 10–30 PRs/day directing fleets; ~100× more people <em>directing</em> work than <em>doing</em> it. Karpathy: the <strong>decade of agents</strong>, autonomy advancing a notch at a time across every function.</li>
+          <li><strong>Grassroots demand is already here.</strong> OpenClaw — an autonomous agent living in your messaging apps that <em>acts</em> for you — earned <strong>100k GitHub stars in 48 hours</strong>. The interface flips: you stop operating software and start delegating.</li>
+          <li><strong>The boardroom has conceded.</strong> Bret Taylor (Chair of OpenAI): <em>"the vast majority of the digital interactions you'll have with your customers will be via your agent."</em> The Economist is building a <strong>two-track internet — one for humans, one for agents.</strong> When incumbents restructure around the question, the question is settled.</li>
+        </ul>
+      </div>
+
+      <div class="panel">
+        <div class="panel-num">02</div>
+        <div class="panel-title">The real test — agents reimagine problems, not interfaces</div>
+        <p>The shallow version asks <em>"is the product built for humans or bots?"</em> — an interface checklist. <strong>The real test runs one level deeper: does a future of capable agents <em>reimagine, dissolve, or transform the problem this startup solves</em> — and is the founder building for that world or this one?</strong> The doorway question on every deal:</p>
+        <div class="doorway">"Is this information for a human to act on, or a transaction for an agent to complete?"</div>
+        <p>A beautiful comparison-shopping site is an excellent answer to <em>"a human needs to compare and decide."</em> In the agent era the human doesn't browse — their agent queries structured offers and transacts. The problem itself <strong>dissolves</strong>: unmonetized bot traffic, collapsed affiliate funnel. The founder who <em>sees</em> this builds the offer-and-transaction layer agents call, priced per completed transaction. Same domain, <strong>reimagined problem</strong> — durable. The first one is <strong>roadkill with good design</strong>.</p>
+      </div>
+
+      <div class="panel">
+        <div class="panel-num">03</div>
+        <div class="panel-title">Where it bites first</div>
+        <ul>
+          <li><strong>Work &amp; the firm — the unit of production flips</strong> from human-hour to agent-task. A 10-person agent-native company delivers what a 1,000-person firm did. <strong>Per-seat SaaS pricing is exposed at the model level</strong> — when agents do the work, seats stop counting anything real. Live, not slideware: Bret Taylor's Sierra charges <strong>only when the agent resolves the problem</strong>. Headcount-heavy operating plans start reading as liabilities — the impressive answer to "how will you scale the team?" may be <em>"we won't."</em></li>
+          <li><strong>Commerce &amp; markets — the buyer becomes an agent.</strong> Discovery, comparison, purchase run through a program that wants structured facts and the best transaction — not ads or brand affect. Attention-middle layers get routed around; value re-concentrates at the <strong>transactional plumbing</strong> and the <strong>source of supply</strong>. And the 1,000:1 load ratio is a P&amp;L event: monetize per human view while serving per agent request and a <strong>cost-revenue scissors</strong> opens underneath you.</li>
+        </ul>
+      </div>
+
+      <div class="panel">
+        <div class="panel-num">04</div>
+        <div class="panel-title">The four postures — half the verdict is naming where a company stands</div>
+        <table class="postures">
+          <tr><th>Posture</th><th>Definition</th><th>Verdict logic</th></tr>
+          <tr>
+            <td class="p-name p-bad">❌ Threatened</td>
+            <td>Agents reimagine or dissolve the problem it solves. Excellent solution for a world that is ending.</td>
+            <td>Default toward pass. Good design makes it <em>more</em> dangerous — it hides the rot.</td>
+          </tr>
+          <tr>
+            <td class="p-name p-good">✅ Riding</td>
+            <td>The company <em>is</em> the reimagined solution.</td>
+            <td>The prize. Verify it is real, not narrated.</td>
+          </tr>
+          <tr>
+            <td class="p-name p-good">✅ Enabling</td>
+            <td>Picks-and-shovels — the rails agents run on.</td>
+            <td>Often the most underwritable bet; wins regardless of app-layer winners.</td>
+          </tr>
+          <tr>
+            <td class="p-name p-good">✅ Insulated</td>
+            <td>Genuinely un-disruptable — physical, high-trust, human-verified.</td>
+            <td>Durable, but test hard. Most "insulated" companies are Threatened and don't know it.</td>
+          </tr>
+        </table>
+        <p style="font-size:12.5px; margin-top:8px;">The most important discrimination this lens forces: <strong>a company <em>Riding</em> the shift vs. one <em>Threatened</em> by it but telling a Riding story.</strong> A polished "AI-powered" deck is frequently a Threatened company wearing Riding's clothes.</p>
+      </div>
+
+    </div>
+
+    <div class="grid page2">
+
+      <div class="panel wide">
+        <div class="panel-num">05</div>
+        <div class="panel-title">What stays durable — the affirmative side</div>
+        <p style="font-size:13px;"><strong>Un-scrapable value</strong> (physical, high-trust human relationships) · <strong>flywheels that compound under agent load</strong> (data that gets richer, not cheaper, as machine usage scales) · <strong>transactional plumbing</strong> (paid when an agent acts, not when a person looks) · <strong>intelligent / physical infrastructure</strong> (the rails, not the ride) · <strong>human-verification &amp; authenticity premiums</strong> · <strong>governance of memory</strong> (context expiration, forgetting, control over what agents retain). And Taylor's incumbent-side sharpening: when agents can generate the software, <strong>value migrates from production to trust</strong> — the customer buys the accumulated hardening and institutional trust no competitor can mint overnight.</p>
+      </div>
+
+      <div class="panel wide">
+        <div class="panel-num">06</div>
+        <div class="panel-title">Signals to look for</div>
+        <table class="signals">
+          <tr><th class="s-good">✅ Stronger</th><th class="s-bad">❌ Weaker</th></tr>
+          <tr>
+            <td>Founder describes the problem <em>as agents reshape it</em> — a reimagined problem, not a faster interface</td>
+            <td>"AI-powered" gloss on today's workflow — makes a human doer 20% faster at a task agents will own outright</td>
+          </tr>
+          <tr>
+            <td>Outcome / usage / transaction pricing — paid when the job completes</td>
+            <td>Per-seat revenue; operating plan scales headcount linearly with revenue</td>
+          </tr>
+          <tr>
+            <td>Callable by agents and monetized on the transaction; cost model survives machine-volume traffic</td>
+            <td>Ad- or engagement-funded; margin assumes human-scale traffic; bot-blocking as the entire strategy</td>
+          </tr>
+          <tr>
+            <td>Durability rests on un-scrapable ground: transactions, physical, trust, verification, compounding data</td>
+            <td>"Insulated" claim asserted, not tested — the default state of companies that haven't looked</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="panel wide">
+        <div class="panel-num">07</div>
+        <div class="panel-title">How it's wired into our pipeline — live today</div>
+        <p style="font-size:13px;">The lens is installed as the TechGroup pipeline's <strong>third always-active lens</strong>: the doorway question runs as a <strong>lightweight trip-wire at Screen</strong>; the full assessment is <strong>scored at Scout (Q7)</strong> across three dimensions — <strong>Problem Reimagination · Position in the Agent Economy · Agent-Era Moat</strong> — and feeds <strong>Diligence moat scoring (Tier 3)</strong>. Every Scout report now carries a posture verdict. <strong>No added process for deal leads</strong> — it rides inside the existing commands.</p>
+      </div>
+
+      <div class="takeaway">
+        "For a human, information is an asset to act on. For an agent, it is a transaction to complete. The internet
+        crossed over to the machines a year ahead of schedule, and the rest of the economy is next. The question is
+        no longer whether a startup has a good answer — it is whether the question its product answers will still be
+        asked once the agents arrive. Back the founders building for the reimagined problem. The ones with the most
+        beautiful solution to a dissolving problem are the most dangerous bets on the table."
+      </div>
+
+    </div>
+
+    <div class="footer">
+      Prepared by NWAi Investment Intelligence · July 2026 · Sources synthesized in
+      <em>NWAi-Agent-Era-Readiness-Thesis-2026-06</em> — Cloudflare / Matthew Prince · Boris Cherny (Anthropic) ·
+      Andrej Karpathy · OpenClaw / Peter Steinberger · The Economist, "How AI agents will reshape global business," with Bret Taylor
+    </div>
+
+  </div>
+
+</body>
+</html>

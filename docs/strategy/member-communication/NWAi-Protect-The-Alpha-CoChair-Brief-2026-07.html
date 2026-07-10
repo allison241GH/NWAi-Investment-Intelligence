@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NWAi — Protect the Alpha · Co-Chair Brief · 2026-07</title>
+  <style>
+    :root {
+      --navy: #0d1f3c;
+      --navy-mid: #163360;
+      --ice: #c8dff5;
+      --ice-light: #eaf3fc;
+      --gold: #e8a020;
+      --gold-tint: #fdf6e8;
+      --subtle: #5a6a82;
+      --border: #d0dce8;
+      --bg: #f0f4f9;
+      --text: #1a1a2e;
+      --green: #2e6b3f;
+      --red: #a63232;
+      --font: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .header {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+      color: white;
+      padding: 18px 32px 14px;
+      border-bottom: 4px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .header h1 { font-size: 21px; font-weight: 700; letter-spacing: -0.3px; }
+    .header h1 span { color: var(--gold); }
+    .header-sub { font-size: 12px; color: var(--ice); margin-top: 3px; }
+    .header-badge {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.22);
+      border-radius: 6px;
+      padding: 5px 12px;
+      font-size: 11px;
+      color: var(--ice);
+      text-align: right;
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 18px 24px 24px; }
+
+    .thesis-band {
+      background: var(--gold-tint);
+      border: 1px solid var(--gold);
+      border-left: 5px solid var(--gold);
+      border-radius: 8px;
+      padding: 14px 20px;
+      font-size: 14.5px;
+      line-height: 1.55;
+      margin-bottom: 16px;
+    }
+    .thesis-band .lead { font-weight: 700; color: var(--navy); }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .grid.page2 { margin-top: 14px; }
+    .panel {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px 18px;
+      page-break-inside: avoid;
+    }
+    .panel-num { font-size: 11px; font-weight: 700; color: var(--gold); letter-spacing: 1.2px; }
+    .panel-title { font-size: 16px; font-weight: 700; color: var(--navy); margin-top: 2px; }
+    .panel-sub { font-size: 12px; color: var(--subtle); font-style: italic; margin-bottom: 10px; }
+    .panel p { font-size: 13px; margin-bottom: 8px; }
+    .panel ul { list-style: none; padding: 0; margin: 0; }
+    .panel li {
+      font-size: 12.5px;
+      line-height: 1.45;
+      padding: 4px 0 4px 16px;
+      position: relative;
+    }
+    .panel li::before { content: "•"; color: var(--gold); position: absolute; left: 2px; font-weight: 700; }
+    .panel li strong { color: var(--navy); font-weight: 600; }
+    .panel li.good::before { content: "✅"; font-size: 10px; left: 0; top: 7px; }
+    .panel li.bad::before  { content: "❌"; font-size: 10px; left: 0; top: 7px; }
+    .panel li.good, .panel li.bad { padding-left: 20px; }
+
+    .stack { display: flex; flex-direction: column; gap: 4px; margin-top: 4px; }
+    .layer {
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      border: 1px solid var(--border); border-radius: 6px; padding: 7px 12px;
+      font-size: 12.5px; line-height: 1.4;
+    }
+    .layer.l-own { background: var(--ice-light); border-left: 4px solid var(--navy); }
+    .layer.l-rent { background: var(--gold-tint); border-left: 4px solid var(--gold); }
+    .layer.l-control { background: var(--ice-light); border-left: 4px solid var(--navy-mid); }
+    .layer-tag {
+      font-size: 10px; font-weight: 700; letter-spacing: 1px; padding: 3px 9px;
+      border-radius: 4px; white-space: nowrap;
+    }
+    .tag-own { background: var(--navy); color: white; }
+    .tag-rent { background: var(--gold); color: var(--navy); }
+    .tag-control { background: var(--navy-mid); color: white; }
+
+    .signals { width: 100%; border-collapse: collapse; font-size: 12px; }
+    .signals th {
+      text-align: left; padding: 6px 8px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.8px;
+    }
+    .signals th.s-good { color: var(--green); }
+    .signals th.s-bad { color: var(--red); }
+    .signals td {
+      padding: 6px 8px; border-top: 1px solid var(--border); vertical-align: top; line-height: 1.4; width: 50%;
+    }
+
+    .wide { grid-column: 1 / -1; }
+
+    .takeaway {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+      color: var(--ice-light);
+      border-radius: 8px;
+      padding: 14px 22px;
+      font-size: 13.5px;
+      font-style: italic;
+      line-height: 1.6;
+      border-left: 5px solid var(--gold);
+    }
+
+    .footer {
+      margin-top: 14px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+      font-size: 10.5px;
+      color: var(--subtle);
+      font-style: italic;
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    @page { size: A4 landscape; margin: 0.5cm; }
+    @media print {
+      body { background: white; line-height: 1.38; }
+      .header { padding: 8px 18px 7px; border-bottom-width: 3px; }
+      .header h1 { font-size: 16px; }
+      .header-sub { font-size: 10px; margin-top: 1px; }
+      .header-badge { font-size: 9.5px; padding: 4px 9px; }
+      .container { padding: 8px 8px 6px; max-width: 100%; }
+      .thesis-band { padding: 8px 14px; font-size: 11.5px; margin-bottom: 8px; border-radius: 5px; }
+      .grid { gap: 9px; }
+      .grid.page2 { break-before: page; margin-top: 0; }
+      .panel { padding: 9px 13px; border-radius: 5px; }
+      .panel-num { font-size: 9px; }
+      .panel-title { font-size: 13px; }
+      .panel-sub { font-size: 10px; margin-bottom: 6px; }
+      .panel p { font-size: 10.5px !important; margin-bottom: 5px; }
+      .panel li { font-size: 10.5px; padding: 3px 0 3px 13px; line-height: 1.35; }
+      .panel li.good, .panel li.bad { padding-left: 17px; }
+      .panel li.good::before, .panel li.bad::before { font-size: 8.5px; top: 5px; }
+      .signals { font-size: 10px; }
+      .signals th { padding: 4px 7px; font-size: 9px; }
+      .signals td { padding: 4px 7px; line-height: 1.35; }
+      .stack { gap: 3px; }
+      .layer { font-size: 10px; padding: 4px 10px; line-height: 1.35; border-radius: 4px; }
+      .layer-tag { font-size: 8px; padding: 2px 7px; letter-spacing: 0.7px; }
+      .takeaway { font-size: 11px; padding: 9px 16px; border-radius: 5px; }
+      .footer { margin-top: 6px; padding-top: 5px; font-size: 8.5px; }
+    }
+    @media (max-width: 760px) { .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div>
+      <h1>Protect the <span>Alpha</span></h1>
+      <div class="header-sub">A foundational shift in where AI-era business value lives — and what it changes about how we invest</div>
+    </div>
+    <div class="header-badge">
+      New World Angels · Investment Intelligence<br />
+      Advisory to all Group Co-Chairs &amp; Members · July 2026
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="thesis-band">
+      <span class="lead">The Shift:</span>
+      <strong>intelligence is commoditizing; the durable value is business alpha.</strong>
+      For two years the market assumed the AI era's value would concentrate in the intelligence layer — the
+      frontier models. The evidence — and the history of every platform wave — says the models are becoming a
+      metered commodity sold by a rich oligopoly, while the value that endures is what a company owns and the
+      model layer can't take: its proprietary data, workflows, customer trust, and know-how —
+      <strong>its business alpha.</strong>
+    </div>
+
+    <div class="grid">
+
+      <div class="panel">
+        <div class="panel-num">01</div>
+        <div class="panel-title">Why now — what just happened</div>
+        <ul>
+          <li><strong>Anthropic shipped into five of its own customers' categories</strong> since February — coding (Claude Code, overtaking Cursor, once ~40–50% of its revenue), design (launched 3 days after its product chief left Figma's board), security, legal, and science + drug discovery.</li>
+          <li><strong>Four labs stood up billion-dollar embed units in one July week</strong> — Microsoft ($2.5B, 6,000 engineers), Amazon, OpenAI, Anthropic — to wire their models into enterprise workflows.</li>
+          <li><strong>Enterprise buyers pushed back on camera</strong> — Palantir's CEO on CNBC: customers want <em>"control over their compute, their models, their data stack and their alpha."</em></li>
+          <li><strong>Intelligence keeps deflating ~10× per year</strong> at fixed capability; open-weight models hold 3–6 months behind the frontier.</li>
+        </ul>
+      </div>
+
+      <div class="panel">
+        <div class="panel-num">02</div>
+        <div class="panel-title">They don't take your bytes — they take your business</div>
+        <p>The frontier labs <strong>watch your traffic prove the category</strong>, pay <strong>wholesale</strong> for the intelligence you buy retail, and when your market is demonstrated, <strong>ship it themselves</strong> — at a price you can't match. <strong>Legal, uninsurable — and no contract can stop it.</strong></p>
+        <ul>
+          <li><strong>Consumer-tier tools DO train by default</strong> — a team pasting its codebase into consumer AI apps is leaking today, no contract violated.</li>
+          <li><strong>"No-train" ≠ "no-exposure"</strong> — retention carve-outs, gated zero-retention tiers, litigation holds.</li>
+          <li><strong>Opt-in data partnerships</strong> are the legal channel where domain alpha transfers outright.</li>
+        </ul>
+      </div>
+
+      <div class="panel">
+        <div class="panel-num">03</div>
+        <div class="panel-title">Infrastructure eating its verticals is the oldest story in tech</div>
+        <ul>
+          <li><strong>Microsoft is the defining precedent.</strong> It owned the operating system — then took the application layer built on top of it, category by category: <strong>Lotus 1-2-3 became Excel. WordPerfect became Word. Netscape became Internet Explorer.</strong> The platform didn't just host the winners; it became them. The most direct analogy for what the labs are doing to the layer built on their models today.</li>
+          <li><strong>Amazon vs. its own sellers</strong> — watched everyone's sales data, then built the winners itself (WSJ-documented; binding EU commitments followed).</li>
+          <li><strong>Google zero-click</strong> — 58% of searches ended without a click in 2024; 68% by early 2026. The platform absorbed the answer.</li>
+          <li><strong>The twist (Oracle, AWS):</strong> the engine layer never went cheap — leaders kept fat margins for decades <em>while the app layer also won big</em>. The casualties: second-tier platforms and app companies that fumbled the transition. <strong>Expect the labs to stay rich, stay dominant, and keep coming.</strong></li>
+        </ul>
+      </div>
+
+      <div class="panel">
+        <div class="panel-num">04</div>
+        <div class="panel-title">What it means for our investing</div>
+        <div class="panel-sub">One new question on every deal: when this product runs, where does the alpha flow?</div>
+        <ul>
+          <li class="bad"><strong>Leaks its own alpha</strong> — its differentiator transits one lab's API at volume daily; engineers on consumer tools; data-for-access deals; can't switch providers. It is subsidizing its future competitor's market research.</li>
+          <li class="bad"><strong>Conduit for its clients' alpha</strong> — requires its client companies to pipe proprietary/regulated data through third-party models in exactly the industries where data control is now the #1 buying obstacle — with no path to deploy inside the client's walls.</li>
+          <li class="good"><strong>The prize: real AI sovereignty</strong> — knows its alpha and keeps it home; can switch models or run open-weight; deploys in the customer's boundary; gets <em>cheaper to run every year</em>. Building on frontier models is fine — the era's two biggest app-layer winners did exactly that. <strong>Unexamined dependence is the kill signal, not dependence itself.</strong></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="grid page2">
+
+      <div class="panel wide">
+        <div class="panel-num">05</div>
+        <div class="panel-title">The desired end state for start-ups and enterprises — own the stack that matters</div>
+        <p style="font-size:13px; margin-bottom:8px;">Karp said it for the enterprise, and it applies to every startup we back: the winners have <em>"control over their compute, their models, their data stack and their alpha"</em> — they own the means of production of their own intelligence. As an architecture:</p>
+        <div class="stack">
+          <div class="layer l-own">
+            <div><strong>Alpha</strong> — proprietary data, workflows, customer relationships, domain IP — never leaves the company's (or its customer's) boundary; invisible to the model provider</div>
+            <div class="layer-tag tag-own">OWN</div>
+          </div>
+          <div class="layer l-own">
+            <div><strong>Harness</strong> — evals, orchestration, domain scaffolding, integration depth — makes any model perform like a specialist; this, not the model, is the product</div>
+            <div class="layer-tag tag-own">OWN</div>
+          </div>
+          <div class="layer l-rent">
+            <div><strong>Models</strong> — frontier APIs, open-weight alternatives — behind an abstraction layer; switch or self-host without breaking; ride the 10×/yr commoditization down</div>
+            <div class="layer-tag tag-rent">RENT · SWAPPABLE</div>
+          </div>
+          <div class="layer l-control">
+            <div><strong>Compute &amp; deployment</strong> — cloud, VPC, on-prem, edge — deployed where the data demands it; inside the customer's walls when the vertical requires it</div>
+            <div class="layer-tag tag-control">CONTROL</div>
+          </div>
+        </div>
+        <p style="font-size:12.5px; margin-top:8px;"><strong>Own the top of the stack, control the bottom, rent the middle on your own terms.</strong> A company shaped like this gets cheaper to run every year, cannot be held up by its supplier, and sells <em>into</em> the sovereignty wave instead of against it.</p>
+      </div>
+
+      <div class="panel wide">
+        <div class="panel-num">06</div>
+        <div class="panel-title">Signals to look for — all NWA groups</div>
+        <table class="signals">
+          <tr><th class="s-good">✅ Stronger</th><th class="s-bad">❌ Weaker</th></tr>
+          <tr>
+            <td>Sensitive data processed inside the company's or customer's boundary; only commodity context reaches the model</td>
+            <td>The core differentiator transits one lab's API, verbatim, at volume, daily</td>
+          </tr>
+          <tr>
+            <td>Founder can say exactly what the model provider sees — and what the data clause in the provider agreement says</td>
+            <td>"They say they don't train on our data" is the founder's entire answer</td>
+          </tr>
+          <tr>
+            <td>Can switch models — or run open-weight — and has actually tested it</td>
+            <td>Product breaks without one specific provider; no second integration, no benchmarks</td>
+          </tr>
+          <tr>
+            <td>Sovereignty demand is a tailwind: deploys on-prem/VPC, or strengthens the customer's control of its own data</td>
+            <td>The data-flywheel pitch depends on aggregating customer data that customers are about to stop sharing</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="panel wide">
+        <div class="panel-num">07</div>
+        <div class="panel-title">The upside category — sovereignty enablers</div>
+        <p style="font-size:13px;">The counter-movement is itself an investable theme: <strong>open-weight harnesses and control planes · on-prem / private-cloud / edge inference · secure in-boundary data pipelines · agent governance and audit</strong>. Palantir–NVIDIA just validated the category at nation-state scale; the same demand is cascading to enterprises and the mid-market. These are the picks-and-shovels of the shift — <strong>they win no matter which lab wins.</strong></p>
+      </div>
+
+      <div class="takeaway">
+        "In the AI era, the intelligence is rented. The alpha is what you own. Back the founders who know exactly
+        what their alpha is, keep it where the lab can't see it, and can change engines mid-flight — and look hard
+        at the ones selling the locks everyone is about to need."
+      </div>
+
+    </div>
+
+    <div class="footer">
+      Prepared by NWAi Investment Intelligence · July 2026 · Facts verified against primary sources — evidence base
+      and confidence tags in <em>NWAi-Alpha-AI-Sovereignty-Research-Base-2026-07</em>
+    </div>
+
+  </div>
+
+</body>
+</html>
