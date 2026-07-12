@@ -37,9 +37,11 @@
      `.claude/skills/nwai-investment-framework/references/alpha-ai-sovereignty-framework.md`
      still carries its DRAFT / NOT INSTALLED banner. The sandbox trip-wire (V11 Section 2)
      is a pilot of the Screen-level hook.
-   - **Craft Investing design thesis** (`NWAi-Craft-Investing-Thesis-2026-06.md`, Gemini
-     folder only) — the "surface signals for the craftsman; do not replace judgment with
-     a number" stance that motivated dropping numeric scoring from the sandbox screener.
+   - **Craft Investing design thesis** (`NWAi-Craft-Investing-Thesis-2026-06.md` —
+     promoted out of this sandbox to `docs/strategy/future-of-venture-investing/` on
+     July 11, 2026, at the start of the pipeline framework-adoption decision process) —
+     the "surface signals for the craftsman; do not replace judgment with a number"
+     stance that motivated dropping numeric scoring from the sandbox screener.
      The canonical `/screen` scores numerically (Opportunity 0–30, Readiness 0–25, with
      ADVANCE/WATCH/DECLINE bands).
    A pipeline rollout of V12 therefore carries **framework install decisions, not just a
