@@ -108,6 +108,8 @@ Below header block: structural notes (⚠ non-standard terms, gate issues) + "Sc
 > **Business Model content:** Folded into FINANCIALS (pricing, unit economics) and THE SOLUTION / PRODUCT. Not a standalone section.
 > **Customer Pipeline content:** Folded into THE SOLUTION / PRODUCT and COMPETITION & MOAT. Not a standalone section.
 > **Omit Section 3 (AI Moat)** if the company is not AI-enabled.
+> **Section 3 — Tier 4 companion line (July 2026):** when Moat Tier 4 (Alpha-AI Sovereignty) was scored, Section 3 carries one companion line under the Tier 2 result: `Alpha-AI Sovereignty (Tier 4): [X/15 — FORTIFIED/HEDGED/LEAKY/CAPTURED] — [one-line basis]` (both are model-supply-chain reads; Section 3's AI-only gate matches Tier 4's). Record "Tier 4: N/A — no model supply chain" when gated off.
+> **Tier 4 feeds:** lab vertical-integration threat → Section 4 (COMPETITION & MOAT); conduit/regulatory sovereignty items → Section 10 (RISK).
 
 ### 4 — Closing Sections (no score, full-width tables)
 
@@ -121,6 +123,8 @@ Below header block: structural notes (⚠ non-standard terms, gate issues) + "Sc
 
 **APPENDIX A — OUTSTANDING DILIGENCE ITEMS table** — 4 columns: DD Folder / Item | Action Required | Owner | Priority
 Row background: RED (`FFD7D7`) for GATE ❌ items, AMBER (`FFF3CD`) for HIGH ⚠, gray for MEDIUM/LOW.
+
+> **Standing item — ALL AI deals (July 2026):** unless already verified at Tier 4, Appendix A always carries: `Model-provider terms | Obtain model-provider agreement; confirm no-train/ZDR terms, tier, and exclusions | [Owner] | HIGH ⚠`. This converts an invisible structural risk into a named diligence item; no scoring impact.
 
 ---
 

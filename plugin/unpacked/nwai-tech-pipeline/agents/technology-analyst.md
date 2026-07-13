@@ -203,7 +203,18 @@ Extract:
 
 ---
 
-## Output Format
+### Section 7: Alpha-AI Sovereignty Evidence (Tier 4 — D1 Alpha Containment + D2 Model-Layer Independence)
+
+*Run only for deals with a model supply chain (any product calling third-party models); otherwise report "N/A — no model supply chain." Framework: `references/alpha-ai-sovereignty-framework.md`. Natural extension of the thin-wrapper/TRL scope: the wrapper tests ask whether outsiders can rebuild the product; this asks what the model provider learns from the product's own traffic and whether the company can move house.*
+
+Search: "[company name] on-prem", "[company name] VPC deployment", "[company name] open source model", "[company name] fine-tuned model", "[company name] model provider", engineering blog / docs / job postings for model-stack signals
+
+Extract:
+- **What actually transits the API** (architecture read): does the differentiating layer (proprietary data, evals, harness logic) process locally/pre-API, or does the core edge transit a frontier provider verbatim at volume?
+- **Abstraction-layer reality**: maintained evals? benchmarked across ≥2 frontier + ≥1 open-weight model? a second integration demonstrated, or "we'll switch if we need to" with nothing tested?
+- **Open-weight / sovereign deployment feasibility**: does an on-prem/VPC/edge path exist, is it credibly costed on the roadmap, or is it absent?
+- **Sovereign deployment maturity**: shipping / costed roadmap / slideware
+- Provider dependency shape: single provider hard-coupled vs. model-agnostic harness; margin structure tied to one provider's current pricing?
 
 Return findings in this exact structure:
 
@@ -239,6 +250,14 @@ AI infrastructure: NON-LLM ALGORITHMIC ENGINE / CUSTOM MODELS / FINE-TUNED / RAG
 [If NON-LLM ALGORITHMIC ENGINE: state replication risk in terms of published-vs-novel algorithms and open-source primitives vs. proprietary integration, not LLM-provider dependency]
 Data infrastructure: [Summary]
 Open-source replication risk: HIGH / MEDIUM / LOW
+
+── ALPHA-AI SOVEREIGNTY EVIDENCE (Tier 4 D1+D2) ──
+[Or: "N/A — no model supply chain"]
+Alpha transit read: [what transits the provider API vs. what stays local — one or two lines]
+Abstraction layer: PROVEN (evals + demonstrated switch) / CLAIMED / ABSENT
+Open-weight/sovereign path: SHIPPING / COSTED ROADMAP / SLIDEWARE / ABSENT
+Provider coupling: MODEL-AGNOSTIC / SOFT-COUPLED / HARD SINGLE-PROVIDER
+Direction of travel: [strengthens / erodes over the hold period — one line]
 GitHub signals: [Active/Inactive/Not found + detail]
 Competitor replication estimate: LIKELY / POSSIBLE / UNLIKELY (12-month, $5M budget)
 

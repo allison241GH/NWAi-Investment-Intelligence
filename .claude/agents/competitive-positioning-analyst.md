@@ -222,7 +222,16 @@ For **AI Moat** (if AI-enabled company):
 
 ---
 
-## Output Format
+### Section 8: Alpha-AI Sovereignty Inputs (Tier 4 — lab threat + sovereignty demand)
+
+*Run only for deals with a model supply chain; otherwise report "N/A — no model supply chain." Framework: `references/alpha-ai-sovereignty-framework.md`.*
+
+Search: "[model provider] [company vertical] product launch", "[provider] vertical integration [category]", "[company vertical] RFP on-prem requirement", "[company vertical] VPC deployment demand", "sovereign AI [category]"
+
+Extract:
+- **Lab vertical-integration signals into this category**: has the company's model provider (or another frontier lab) shipped or announced a native product in this category? What is the shipping cadence into adjacent verticals? *(Feeds the Replicability Speed Matrix LLM-provider-row annotation in `ai-moats-framework.md` — annotate that row, never add a fifth row.)*
+- **Sovereignty-demand evidence in the buyer market**: RFP language requiring on-prem/VPC/in-boundary deployment, data-residency procurement clauses, public buyer statements — pairs with the Q1b demand-signal method
+- **Enabler-category competitive mapping** (if the company sells sovereignty itself): who else occupies the open-weight-harness / control-plane / in-boundary-inference / agent-governance space, and how is this company positioned in it?
 
 Return your findings in this exact structure:
 
@@ -267,6 +276,12 @@ Proprietary data claims: [What they say + any verification]
 Patents: [Filed/Granted/None found]
 Regulatory certifications: [List or "None"]
 AI architecture (if applicable): [Custom models / API-dependent / Hybrid]
+
+── ALPHA-AI SOVEREIGNTY INPUTS (Tier 4) ──
+[Or: "N/A — no model supply chain"]
+Lab vertical-integration signal: [provider shipped/announced into this category? cadence — one or two lines; feeds the LLM-provider-row annotation]
+Sovereignty demand in buyer market: [RFP/on-prem/VPC evidence or "Not identified"]
+Enabler-category mapping (if applicable): [competitors + positioning, or "N/A — not an Enabler play"]
 Data flywheel evidence: [Yes/No/Partial]
 
 ── RED FLAGS ──

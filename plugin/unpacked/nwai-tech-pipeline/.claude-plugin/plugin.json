@@ -1,7 +1,7 @@
 {
   "name": "nwai-tech-pipeline",
-  "version": "2.23.0",
-  "description": "feat(thesis): evolve TechGroup themes — remove FinTech, add Agentic Systems "description": "feat(thesis): evolve TechGroup themes — remove FinTech, add Agentic Systems " AI Ops, reframe Infrastructure and WorkTech with AI-age lens, add AI Trust to Data Sovereignty"description": "citation-contract: exclude Screen stage from formal citation apparatus" AI Ops, reframe Infrastructure and WorkTech with AI-age lens, add AI Trust to Data Sovereignty",
+  "version": "3.0.0",
+  "description": "NWAi TechGroup AI deal pipeline — Six-Signal triage screener (Craft-at-Screen, no numeric scores), Screen-to-Scout conversion rubric, four always-active lenses incl. Agent-Era Readiness and Alpha-AI Sovereignty, research agent team, and Screen-to-Memo workflows",
   "author": {
     "name": "New World Angels",
     "url": "https://www.newworldangels.com"

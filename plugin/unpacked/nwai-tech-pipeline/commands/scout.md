@@ -6,7 +6,7 @@ argument-hint: [company-name | application-id]
 
 Run the full NWA Scout Q assessment on a Tech deal and map it to a TechGroup investing theme with recommended member SMEs. Arguments: $ARGUMENTS
 
-**Global formatting rule — apply to all output in this command:** Write every prose field, assessment answer, finding, and recommendation as single continuous lines. Do not insert manual line breaks within any sentence or paragraph. The Cowork UI handles word wrap — hard line breaks inside prose render as broken, choppy text. This applies to all Scout Q answers, theme rationale, flag text, and next-step notes.
+**Global formatting rule — apply to all output in this command:** Write every prose field, assessment answer, finding, and recommendation as single continuous lines. Do not insert manual line breaks within any sentence or paragraph — hard line breaks inside prose render as broken, choppy text. This applies to all Scout Q answers, theme rationale, flag text, and next-step notes.
 
 ## Step 1: Gather Deal Information
 
@@ -16,29 +16,30 @@ If additional context is needed (website, LinkedIn, recent news):
 - Use WebSearch to find: company website, founder LinkedIn profiles, Crunchbase profile, recent press
 - Synthesize findings into a company brief before proceeding
 
-## Step 1b: Load Prior Stage Outputs from Workspace
+## Step 1b: Load Prior Stage Outputs and Apply the Conversion Rubric
 
-Before beginning the Scout assessment, check the workspace deals folder for a prior Screening output for this company.
+Before beginning the Scout assessment, check the deal folder for a prior Screening output: look in `deals/active/[Company Name]/Reports/` (and `deals/archive/[Company Name]/Reports/` for reopened deals) for files matching `[Company Name] - Triage Report*.docx`.
 
-```bash
-WORKSPACE=$(dirname "$(find /sessions -name "CLAUDE.md" -path "*/Claude CoWork*" 2>/dev/null | head -1)")
-ls "${WORKSPACE}/deals/" 2>/dev/null
-```
-
-Search for files matching: `[Company Name] - Triage Report*.docx`
-
-- Use the Read tool to load the most recent matching file (sort by YYYY-MM-DD date in filename; take the highest)
+- Use the Read tool (or `textutil -convert txt -stdout` via Bash for .docx) to load the most recent matching file (sort by YYYY-MM-DD date in filename; take the highest)
 - If multiple versions exist, surface a note: "Found [N] Triage Report version(s) — loading most recent ([date])"
-- If no file is found, note "No Triage Report found in workspace — proceeding without prior screen context" and continue without blocking
+- If no file is found, note "No Triage Report found — proceeding without prior screen context" and continue without blocking
 
-**From the Triage Report, extract and carry forward into Scout scoring:**
-- Hard gate verdicts (MET / FAIL / UNCLEAR for each gate)
-- All red (❌) and yellow (⚠️) flags identified at screening
-- Opportunity Score and Readiness Score with per-dimension breakdown (D1–D5 individual scores)
-- Deal structure & syndication notes — IntroCall negotiation items (SAFE/structure, lead/co-investor status, C-Corp conversion). These are negotiation items, not flags or kills; carry them forward as such, do not re-score them as penalties.
-- AI Wrapper Assessment rating and basis statement
+**Then load the Screen→Scout conversion rubric:**
+`.claude/skills/nwai-investment-framework/references/screen-scout-conversion-rubric.md`
 
-These are the baseline for Scout scoring — do not re-derive what screening already established. The per-dimension Triage scores are the starting point for delta tracking at Scout. If a flag was raised at screening, treat it as an open item unless new evidence in this session explicitly resolves it.
+**From a Six-Signal Triage Report (July 2026 onward), extract and carry forward:**
+- The Verdict Block: PRELIMINARY CALL, TRIAGE CONVICTION, signal roll-up, Live Pitch Questions
+- Hard gate verdicts (✅ / ❌ / ⚠️ for each gate) — gates carry as gates; any FAIL → Thesis Fit = 0
+- All six signal verdicts + confidence tags, the Commercial Proof line, and the Signal 4 evidence tags (Goliath / LLM Ingestion / Wrapper / Memory Lock-in / Stack; Track B: TRL / IP / unit economics) — the tags carry into Q3 as evidence
+- All red (❌) and yellow (⚠️) flags, coherence findings, and any Pattern note
+- Deal Facts — structure & syndication are IntroCall negotiation items, not flags or kills; carry them forward as such, do not re-score them as penalties
+- Signal 5 (Agent-Era Posture) and Signal 6 (Protect Alpha) reads — these are priors for Q7 and Q8, which Scout scores fresh; they do NOT map to baseline numbers
+
+**Apply the conversion rubric mechanically** — translate the signal verdicts into the per-dimension numeric baseline (Opportunity D1–D5 /25 + Readiness R1–R4 /20) exactly per the rubric table. This is mechanical translation of judgments already made — no re-judging, no fresh derivation. The mapped values are the baseline for delta tracking (↑ / → / ↓) and the Thesis Fit input.
+
+*(Legacy numeric Triage Reports — pre-July 2026, found on archived deals — already carry per-dimension D1–D5 and Readiness scores; use those directly as the baseline, skipping the rubric.)*
+
+Do not re-derive what screening already established. If a flag was raised at screening, treat it as an open item unless new evidence in this session explicitly resolves it. A commitment UNCONFIRMED ⚠️ finding carries as an open item with no baseline cap.
 
 ---
 
@@ -71,7 +72,7 @@ Use agent findings as the primary research input throughout Steps 2–4. Do not 
 Load the Scout Q framework from:
 `.claude/skills/nwai-investment-framework/references/scout-questions.md`
 
-Score each Phase 1 dimension on the 0–5 scale defined in scout-questions.md. Show delta from Triage (↑ raised / → confirmed / ↓ lowered) for Q1, Q2, and Q3 which overlap with Triage Opportunity dimensions.
+Score each Phase 1 dimension on the 0–5 scale defined in scout-questions.md. Show delta from the mapped Triage baseline (↑ raised / → confirmed / ↓ lowered) for Q1, Q2, and Q3 which overlap with the carried-forward Opportunity dimensions. **Explained-divergence rule:** when your Scout score departs from the mapped baseline by ≥2 on any dimension, the Score Summary must carry a one-line explanation of why — divergence is fine, silence about it is not.
 
 - **Q1: Category & Market Discontinuity** — new category creator vs. optimizer; lifecycle horizon; structural shift test. Score 0-5. Triage overlap: D1.
 - **Q1b: Demand Signal Test** — demand-pull vs. technology-push. Required outputs: Demand type (DEMAND-PULL / TECHNOLOGY-PUSH / MIXED), Evidence (2–3 specific signals: regulatory mandates, buyer public statements, RFP/procurement activity, analyst category creation, budget allocation surveys), Strongest signal (one sentence). Score 0-5. ⚠️ Score ≤ 2 triggers Yellow Flag: "Demand signal weak — technology-push risk. Validate with direct buyer interviews before advancing to Diligence." No Triage equivalent — mark NEW in Score Summary.
@@ -88,10 +89,12 @@ Score each strategic dimension on the 0–5 scale defined in scout-questions.md.
 - **Q4: Ecosystem Role** — platform creator vs. follower; flywheel potential; platform dependency risk. Score 0-5.
 - **Q5: Adjacent Displacement Risk** — define core use case; list functional equivalents; identify emerging displacement technology and timeline. Score 0-5 (inverted: 5 = lowest risk).
 - **Q6: Macro Tailwind** — assess all four dimensions (Customer / Technology / Regulatory / Economic) on a 10-year horizon. One line per dimension. Score 0-5.
-- **Q7: Agent-Era Readiness** — apply the doorway question and the three test dimensions. Lead the output with the plain question *"does the agent wave help or hurt this company?"* (HELPS / HURTS / MIXED) in member-readable language; if it isn't already in its strongest position, add "Could get stronger if:" and "What to watch:". Keep the internal posture label (Threatened / Riding / Enabling / Insulated) on the deal-team line only. Score 0-5. This is the agent-era durability test — broader than Q5; it asks whether the *problem itself* survives the substrate shift.
+- **Q7: Agent-Era Readiness** — apply the doorway question and the three test dimensions. Lead the output with the plain question *"does the agent wave help or hurt this company?"* (HELPS / HURTS / MIXED) in member-readable language; if it isn't already in its strongest position, add "Could get stronger if:" and "What to watch:". Keep the internal posture label (Threatened / Riding / Enabling / Insulated) on the deal-team line only. Score 0-5. This is the agent-era durability test — broader than Q5; it asks whether the *problem itself* survives the substrate shift. Screen's Signal 5 posture is the prior — score fresh, note agreement or departure.
+- **Q8: Alpha-AI Sovereignty** — apply the alpha-flow doorway question (*"where does the alpha flow — does it stay home, or drain up to the lab?"*) and the three reads per scout-questions.md: Alpha Map, Dependency Read (provider-terms status VERIFIED / CLAIMED / ABSENT), Customer Sovereignty Read. Lead the output with the plain member-facing read (KEEPS / MIXED / LEAKS) plus "Could get stronger if:" and "What to watch:"; keep the internal posture (Leaking / Hedged / Sovereign / Enabler) on the deal-team line only. Apply the conduit cap (3/5 roadmapped / 2/5 unaware — verified containment clears only at Diligence Tier 4). Score 0-5; N/A if no model supply chain (excluded from the Strategic raw total, noted in the report). Screen's Signal 6 read is the prior — score fresh.
 
-Load the Agent-Era Readiness Framework from:
+Load the lens frameworks from:
 `.claude/skills/nwai-investment-framework/references/agent-era-readiness-framework.md`
+`.claude/skills/nwai-investment-framework/references/alpha-ai-sovereignty-framework.md`
 
 ## Step 4: Run Phase 2 — Execution (Scored)
 
@@ -119,12 +122,12 @@ Score each Phase 2 dimension on the 0–5 scale defined in scout-questions.md. E
 
 **Score A — Scout Conviction Score (AI research-derived, max 19.0)**
 
-Using scores from Phase 1 (Q1, Q1b, Q2, Q3), Strategic (Q4, Q5, Q6, Q7), and Phase 2 (Team, Tech, Traction, GTM):
+Using scores from Phase 1 (Q1, Q1b, Q2, Q3), Strategic (Q4, Q5, Q6, Q7, Q8), and Phase 2 (Team, Tech, Traction, GTM):
 
 - Phase 1 weighted score = (Q1 + Q1b + Q2 + Q3-mapped) / 20 × 8.0 (40% weight)
-- Strategic weighted score = (Q4 + Q5 + Q6 + Q7) / 20 × 3.0 (20% weight)
+- Strategic weighted score = (Q4 + Q5 + Q6 + Q7 + Q8) / 25 × 3.0 (20% weight) — if Q8 is N/A (no model supply chain), use (Q4 + Q5 + Q6 + Q7) / 20 × 3.0
 - Phase 2 weighted score = (Team + Tech + Traction + GTM) / 20 × 8.0 (40% weight)
-- **Scout Conviction Score = sum of three weighted scores (max 19.0)**
+- **Scout Conviction Score = sum of three weighted scores (max 19.0 — unchanged)**
 
 Q3 moat rating maps to numeric: STRONG=5, DEVELOPING=3, WEAK=1, NONE=0.
 
@@ -132,12 +135,12 @@ Conviction thresholds: 16–19 = High (advance with confidence) | 11–15 = Mode
 
 **Score B — Thesis Fit Score (rule-based, criteria-derived)**
 
-This score reflects how well the deal fits NWAi's investment criteria — independent of what the research agents found about market quality or moat. It is calculated from the Triage carry-forward, not from agent research.
+This score reflects how well the deal fits NWAi's investment criteria — independent of what the research agents found about market quality or moat. It is calculated from the **mapped Triage carry-forward** (the signal verdicts translated via `screen-scout-conversion-rubric.md` in Step 1b), not from agent research. On legacy numeric Triage Reports, use the archived per-dimension scores directly.
 
 - Hard gates: ALL MET = proceed | ANY FAIL = automatic 0 (stop — do not calculate further)
-- Opportunity Score carry-forward from Triage: ___ / 25
-- Readiness Score carry-forward from Triage: ___ / 20
-- **Thesis Fit = [Opportunity Score] + [Readiness Score] = ___ / 45**
+- Mapped Opportunity baseline (D1–D5 via conversion rubric): ___ / 25
+- Mapped Readiness baseline (R1–R4 via conversion rubric): ___ / 20
+- **Thesis Fit = [Opportunity baseline] + [Readiness baseline] = ___ / 45**
 
 Thesis Fit thresholds: 38–45 = Strong fit | 28–37 = Qualified fit | 18–27 = Marginal fit | <18 = Structural mismatch.
 
@@ -169,12 +172,12 @@ Output the Scout Assessment Report using the 2-page format defined in scout-ques
 **Apply the Citation Contract** (`.claude/skills/nwai-investment-framework/references/citation-contract.md`) when assembling this report: every external fact carries an inline `[n]` marker; merge the four research agents' `── SOURCES ──` blocks into one enumerated Sources list (dedupe identical URLs, renumber the markers); carry confidence tags through; keep analytic judgments as judgments (no fabricated citations).
 
 **Page 1 — Scorecard** (all tables, no prose):
-1. Triage Carry-Forward block
+1. Triage Carry-Forward block (Six-Signal verdicts + Triage Conviction + mapped baseline via the conversion rubric; gates; flags)
 2. Product & Market Positioning table (Category Type | Lifecycle Horizon | Ecosystem Role Score | Adjacent Risk Score)
 3. Moat Assessment table (Primary Moat | Strength | Primary Threat | Verdict)
 4. Macro Trends table (Dimension | 10-yr Direction | Thesis Impact)
 5. Analyst Verdict Block (Recommendation | Thesis Fit Score | Scout Conviction Score | Dual Score Interpretation | Verdict | What You Have to Believe | Where's the Bet | Fear | Greed)
-6. Score Summary table with delta from Triage for overlapping dimensions (12 rows: Q1, Q1b, Q2, Q3/Moat, Q4, Q5, Q6, Q7, Team, Technology, Traction, GTM)
+6. Score Summary table with delta from the mapped Triage baseline for overlapping dimensions (13 rows: Q1, Q1b, Q2, Q3/Moat, Q4, Q5, Q6, Q7, Q8, Team, Technology, Traction, GTM) — one-line explanation required on any dimension where Scout departs from the baseline by ≥2
 
 **Page 2 — Rationale** (bullet clusters, no paragraphs):
 1. Adjacent & Emerging Tech (Core use case / Functional equivalents / Emerging displacement)
@@ -187,15 +190,10 @@ Output the Scout Assessment Report using the 2-page format defined in scout-ques
 
 ## Step 6b: Generate Scout Assessment Report as Word Document
 
-Read the docx skill instructions from:
-`$(find /sessions -name "SKILL.md" -path "*/.skills/skills/docx/*" 2>/dev/null | head -1)`
+Generate a professional .docx file of the Scout Assessment Report using Node.js and the `docx` npm package (installed under `scripts/` — run with `node`, requiring `docx` from `scripts/node_modules`).
 
-Then generate a professional .docx file of the Scout Assessment Report using Node.js and the `docx` npm package. Locate the workspace dynamically and save to the deals subfolder:
-```bash
-WORKSPACE=$(dirname "$(find /sessions -name "CLAUDE.md" -path "*/Claude CoWork*" 2>/dev/null | head -1)")
-mkdir -p "${WORKSPACE}/deals/active"
-```
-Output path: `${WORKSPACE}/deals/active/[Company Name] - Scout Assessment Report [YYYY-MM-DD].docx`
+Output path (create the folder if needed):
+`deals/active/[Company Name]/Reports/[Company Name] - Scout Assessment Report [YYYY-MM-DD].docx`
 
 **Document structure and formatting:**
 
@@ -207,12 +205,12 @@ The Word document must contain all of the following sections in order, matching 
 
 **Page 1 — Scorecard:**
 1. **Title block** — Company name (large, bold), "NWAi TechGroup Scout Assessment" subtitle, scout date, and Recommendation badge (ADVANCE TO DILIGENCE / WATCH / DECLINE) rendered as a colored inline text block.
-2. **Triage Carry-Forward table** — 2-column table: Opportunity Score, Readiness Score, Hard Gates, AI Wrapper Rating, Prior Red Flags, Prior Yellow Flags.
+2. **Triage Carry-Forward table** — 2-column table: Preliminary Call + Triage Conviction, Six-Signal verdict line (compact: S1–S6 verdicts), Mapped Opportunity Baseline (/25), Mapped Readiness Baseline (/20), Hard Gates, Wrapper Rating (Signal 4 tag), Prior Red Flags, Prior Yellow Flags. (Legacy numeric reports: Opportunity Score, Readiness Score in place of the verdict/mapped rows.)
 3. **Product & Market Positioning table** — 4-column table: Category Type | Lifecycle Horizon | Ecosystem Role Score | Adjacent Risk Score.
 4. **Moat Assessment table** — 4-column table: Primary Moat | Strength | Primary Threat | Verdict.
 5. **Macro Trends table** — 3-column table: Dimension | 10-yr Direction | Thesis Impact (4 rows).
-6. **Analyst Verdict Block** — 2-column table with labeled rows: Recommendation, Thesis Fit Score (rule-based: Opportunity + Readiness / 45 + gates status), Scout Conviction Score (AI research: / 19 + threshold band), Dual Score Interpretation (one line — convergent or divergent, and what that means for the decision), Verdict, What You Have to Believe, Where's the Bet, Fear, Greed. Use navy header row. The two scores must always appear together — they are not interchangeable and divergence is signal.
-7. **Score Summary table** — Dimension | Triage Score | Scout Score | Delta (12 rows: Q1, Q1b/Demand Signal, Q2, Q3/Moat, Q4, Q5, Q6, Q7/Agent-Era Readiness with posture tag, Team, Technology, Traction, GTM). Show ↑/→/↓ delta for Triage-overlapping dimensions; "NEW" for strategic dimensions and Q1b.
+6. **Analyst Verdict Block** — 2-column table with labeled rows: Recommendation, Thesis Fit Score (rule-based: mapped Opportunity + Readiness baseline / 45 + gates status), Scout Conviction Score (AI research: / 19 + threshold band), Dual Score Interpretation (one line — convergent or divergent, and what that means for the decision), Verdict, What You Have to Believe, Where's the Bet, Fear, Greed. Use navy header row. The two scores must always appear together — they are not interchangeable and divergence is signal.
+7. **Score Summary table** — Dimension | Triage (mapped) | Scout Score | Delta (13 rows: Q1, Q1b/Demand Signal, Q2, Q3/Moat, Q4, Q5, Q6, Q7/Agent-Era Readiness with posture tag, Q8/Alpha-AI Sovereignty with posture tag, Team, Technology, Traction, GTM). Show ↑/→/↓ delta for baseline-overlapping dimensions; "NEW" for strategic dimensions and Q1b; append the one-line explanation on any ≥2 divergence from the mapped baseline.
 
 **Page 2 — Rationale:**
 8. **Adjacent & Emerging Tech** section — 3 bullet points: Core use case, Functional equivalents, Emerging displacement.

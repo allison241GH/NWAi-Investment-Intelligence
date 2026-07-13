@@ -6,7 +6,7 @@ argument-hint: [company-name | application-id]
 
 Initiate full diligence on a NWAi TechGroup deal. Arguments: $ARGUMENTS
 
-**Global formatting rule — apply to all output in this command:** Write every prose field, finding, assessment narrative, open question, and recommendation as single continuous lines. Do not insert manual line breaks within any sentence or paragraph. The Cowork UI handles word wrap — hard line breaks inside prose render as broken, choppy text. This applies to the deal brief, scored assessment notes, DD folder summaries, open questions, and next-step recommendations.
+**Global formatting rule — apply to all output in this command:** Write every prose field, finding, assessment narrative, open question, and recommendation as single continuous lines. Do not insert manual line breaks within any sentence or paragraph — hard line breaks inside prose render as broken, choppy text. This applies to the deal brief, scored assessment notes, DD folder summaries, open questions, and next-step recommendations.
 
 ---
 
@@ -17,8 +17,7 @@ Before any other action, verify two prerequisites.
 **Check 1 — Scout Report (Hard Gate):**
 
 ```bash
-WORKSPACE=$(dirname "$(find /sessions -name "CLAUDE.md" -path "*/Claude CoWork*" 2>/dev/null | head -1)")
-ls "${WORKSPACE}/deals/active/"*Scout* 2>/dev/null | grep -i "$ARGUMENTS"
+ls "deals/active/"*/Reports/*Scout* 2>/dev/null | grep -i "$ARGUMENTS"
 ```
 
 Search for a file matching: `[Company Name] - Scout Assessment Report*.docx`
@@ -65,19 +64,12 @@ for the research agents.
 
 ## Phase 1b: Load Prior Stage Outputs from Workspace
 
-After fetching from Dealum, load the Scout Assessment Report confirmed in Pre-Flight.
-
-```bash
-WORKSPACE=$(dirname "$(find /sessions -name "CLAUDE.md" -path "*/Claude CoWork*" 2>/dev/null | head -1)")
-ls "${WORKSPACE}/deals/active/" 2>/dev/null
-```
-
-Load (most recent version of each, sorted by YYYY-MM-DD in filename):
+After fetching from Dealum, load the Scout Assessment Report confirmed in Pre-Flight. Look in `deals/active/[Company Name]/Reports/` for the most recent version of each (sorted by YYYY-MM-DD in filename):
 
 1. `[Company Name] - Triage Report*.docx` — Screen output (if present)
 2. `[Company Name] - Scout Assessment Report*.docx` — **Required** (confirmed at Pre-Flight)
 
-**From the Triage Report carry forward:** gate verdicts, all red/yellow flags, deal structure & syndication notes (IntroCall negotiation items — SAFE/structure, lead/co-investor status — not flags or kills), AI wrapper rating, opportunity and readiness scores with dimension breakdown.
+**From the Triage Report carry forward:** gate verdicts, all red/yellow flags, deal structure & syndication notes (IntroCall negotiation items — SAFE/structure, lead/co-investor status — not flags or kills), the Six-Signal verdicts + Triage Conviction, the Signal 4 evidence tags (incl. Wrapper rating), the Signal 5 Agent-Era posture and Signal 6 Protect Alpha reads, and any coherence findings or Pattern note. *(Legacy numeric Triage Reports carry opportunity and readiness scores with dimension breakdown instead of signal verdicts.)*
 
 **From the Scout Assessment Report carry forward (REQUIRED):** theme assignment, Phase 1 ratings (Big Idea / Market / Moat with rationale and scores), Phase 2 findings (Team, Technology, Traction, GTM, Exit with scores), Scout Conviction Score, one-sentence verdict, single biggest risk, targeted diligence questions, and all flag items.
 
@@ -90,8 +82,7 @@ Load (most recent version of each, sorted by YYYY-MM-DD in filename):
 This phase is **conditional**. New deals (just out of Scout, no diligence meetings yet) will have no post-meeting reports — that's the standard case and the agents proceed normally. For deals where post-meeting work has already happened (a re-run, a deal coming off Watch, a framework upgrade tested against a historical deal), the post-meeting analyst layer represents the most current NWAi POV on the deal and **must be incorporated** by the agents. The agents should not regress to the Scout-stage view if more current analyst conclusions exist.
 
 ```bash
-WORKSPACE=$(dirname "$(find /sessions -name "CLAUDE.md" -path "*/Claude CoWork*" 2>/dev/null | head -1)")
-REPORTS_DIR="${WORKSPACE}/deals/active/[Company Name]/Reports/"
+REPORTS_DIR="deals/active/[Company Name]/Reports/"
 ls "${REPORTS_DIR}" 2>/dev/null
 ```
 
@@ -230,7 +221,7 @@ Wait for all agents to complete before proceeding.
 Load the scoring rubrics from:
 `.claude/skills/nwai-investment-framework/references/diligence-scoring-rubrics.md`
 
-Apply all four rubrics using the agent briefings plus prior Screening and Scout findings:
+Apply all four rubric groups using the agent briefings plus prior Screening and Scout findings:
 
 **3A — Moat Scoring**
 
@@ -239,6 +230,7 @@ Apply all four rubrics using the agent briefings plus prior Screening and Scout 
 - Tier 1 General Moat (0–6): Evaluate all six dimensions individually. For each, show the dimension name, ✓ or ✗, and a one-sentence rationale. Then sum to produce the total score and state the interpretation band (No Moat / Weak Moat / Moderate Moat / Strong Moat).
 - Tier 2 AI Moat (0–10): First apply the applicability gate — explicitly answer "Is this an AI-first or AI-enabled company?" If NO → mark Tier 2 as N/A with a one-line reason. If YES → run the three thin wrapper tests first (using technology-analyst briefing), then score all three categories (Cognitive/Data, Capital/Compute, Vertical/Workflow), showing each sub-element by name with points awarded and points available. State the total and interpretation band.
 - Tier 3 Agent-Era Readiness (0–15): Run for **every** deal (no applicability gate — the substrate shift reshapes non-AI businesses too). Apply the doorway question and score the three dimensions (Problem Reimagination, Position in the Agent Economy, Agent-Era Moat) 0–5 each, looking at both today and the next decade. Lead the written output with the plain question *"does the agent wave help or hurt this company?"* (HELPS / HURTS / MIXED) in member-readable language; if it isn't already in its strongest position, add "Could get stronger if:" and "What to watch:". Keep the internal headline verdict (REIMAGINING / ADAPTING / EXPOSED / BLIND) and posture label (Threatened / Riding / Enabling / Insulated) on the deal-team line. Distinct from Tier 2: Tier 2 tests replicability of the build; Tier 3 tests whether the problem itself survives the agent shift. Use `references/agent-era-readiness-framework.md` and the market-analyst + technology-analyst briefings.
+- Tier 4 Alpha-AI Sovereignty (0–15): **Gated to deals with a model supply chain** (any product calling third-party models) — non-AI deals record "Tier 4: N/A — no model supply chain" and skip. Apply the alpha-flow doorway question and score the three dimensions (Alpha Containment, Model-Layer Independence, Customer Sovereignty Alignment) 0–5 each per `references/diligence-scoring-rubrics.md` and `references/alpha-ai-sovereignty-framework.md`, on today's posture plus a direction-of-travel line. Lead the written output with the plain member-facing read (KEEPS / MIXED / LEAKS) plus "Could get stronger if:" and "What to watch:"; keep the headline verdict (FORTIFIED / HEDGED / LEAKY / CAPTURED) and posture (Leaking / Hedged / Sovereign / Enabler) on the deal-team line. Evidence sources: technology-analyst (D1+D2 — what transits the API, abstraction-layer reality, sovereign deployment feasibility), risk-analyst (provider no-train/ZDR terms verification, regulatory sovereignty exposure), competitive-positioning-analyst (lab vertical-integration signals, sovereignty-demand evidence). Verified containment here clears the Scout-stage conduit cap. Distinct from Tiers 2/3: Tier 2 tests replicability of the build; Tier 3 tests whether the problem survives agents; Tier 4 tests who captures the alpha along the model supply chain.
 - Show working for each point awarded or withheld
 
 **3B — Risk Scoring (1–10 per category, where 1 = lowest risk and 10 = highest risk)**
@@ -440,15 +432,10 @@ Confirm update to user.
 
 ## Phase 6: Save DD Kickoff Package as Word Document
 
-Read the docx skill instructions from:
-`$(find /sessions -name "SKILL.md" -path "*/.skills/skills/docx/SKILL.md" 2>/dev/null | head -1)`
+Generate a professional .docx file of the DD Kickoff Package using Node.js and the `docx` npm package (installed under `scripts/` — run with `node`, requiring `docx` from `scripts/node_modules`).
 
-Generate a professional .docx file of the DD Kickoff Package using Node.js and the `docx` npm package. Locate the workspace dynamically and save to the deals subfolder:
-```bash
-WORKSPACE=$(dirname "$(find /sessions -name "CLAUDE.md" -path "*/Claude CoWork*" 2>/dev/null | head -1)")
-mkdir -p "${WORKSPACE}/deals/active"
-```
-Output path: `${WORKSPACE}/deals/active/[Company Name] - DD Kickoff Package [YYYY-MM-DD].docx`
+Output path (create the folder if needed):
+`deals/active/[Company Name]/Reports/[Company Name] - DD Kickoff Package [YYYY-MM-DD].docx`
 
 **Document structure and formatting:**
 
@@ -462,7 +449,7 @@ The document must contain all six parts in order:
 
 2. **Part B — Layer 2 Hypothesis Confirmation Plan**: Six validation group blocks in a clean 2-column layout. Left column: group name + signal emoji. Right column: Hypothesis / Conclusion / Biggest uncertainty. Navy section banner at top: "Layer 2 — Hypothesis Confirmation Plan (AI-Derived)". If Financial Validation is incomplete, render that block with a red background and INCOMPLETE flag.
 
-3. **Part C — Scored Assessment**: Five structured tables — Moat Tier 1 (6 dimensions, ✓/✗, one-sentence rationale per row, total score), Moat Tier 2 AI (cognitive/capital/vertical sub-elements with points, total, interpretation band — or N/A with reason), Moat Tier 3 Agent-Era Readiness (run for every deal — leads with the plain "does the agent wave help or hurt this company?" read + "Could get stronger if" / "What to watch", with the 3 dimension scores /15 and internal verdict/posture on a deal-team line), Risk (5 categories with score and key concern, average, critical flags), and Market/Financial summary (TAM, SAM, timing score, revenue, runway, unit economics).
+3. **Part C — Scored Assessment**: Six structured tables — Moat Tier 1 (6 dimensions, ✓/✗, one-sentence rationale per row, total score), Moat Tier 2 AI (cognitive/capital/vertical sub-elements with points, total, interpretation band — or N/A with reason), Moat Tier 3 Agent-Era Readiness (run for every deal — leads with the plain "does the agent wave help or hurt this company?" read + "Could get stronger if" / "What to watch", with the 3 dimension scores /15 and internal verdict/posture on a deal-team line), Moat Tier 4 Alpha-AI Sovereignty (gated to model-supply-chain deals, else "N/A — no model supply chain" — leads with the plain KEEPS/MIXED/LEAKS read + "Could get stronger if" / "What to watch", with the 3 dimension scores /15 and internal FORTIFIED/HEDGED/LEAKY/CAPTURED verdict + posture on a deal-team line), Risk (5 categories with score and key concern, average, critical flags), and Market/Financial summary (TAM, SAM, timing score, revenue, runway, unit economics).
 
 4. **Part D — Layer 1: 17-Folder DD Assignment Table [Hub]**: 3-column table (Folder | Pre-Populated Findings | Status / Key Question). Navy section banner: "Layer 1 — 17-Folder Data Completeness Checklist". For each ❌ gate-critical folder: red background shading. For each ⚠️ urgent folder: amber background shading. No separate assignee column.
 

@@ -116,7 +116,7 @@ If an agent does something unexpected and the prompt is faithfully implementing 
 
 **Examples that belong in the framework, not the prompt:**
 - A new scoring sub-floor (update the rubric in `references/`)
-- A new hard gate (update `references/gates-and-flags.md`)
+- A new hard gate (update `references/gates-and-flags-techgroup.md`)
 - A new diligence question class (update `references/scout-questions.md` or `references/diligence-scoring-rubrics.md`)
 
 The decision log (`pipeline-decisions-log.md`) is the right home for capturing why a framework changed. The agent prompts then update to reflect the new framework — not to invent it.

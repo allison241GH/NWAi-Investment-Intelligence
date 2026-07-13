@@ -141,7 +141,17 @@ Extract (from public sources only — do not speculate):
 
 ---
 
-## Output Format
+### Section 6: Model-Provider & Sovereignty Risk (Tier 4)
+
+*Run only for deals with a model supply chain; otherwise report "N/A — no model supply chain." Framework: `references/alpha-ai-sovereignty-framework.md`.*
+
+Search: "[model provider] API terms no-train", "[model provider] zero data retention enterprise tier", "[company name] partnership [provider]", "[company vertical] data residency requirements", "[company vertical] EU AI Act / HIPAA / ITAR obligations"
+
+Extract:
+- **Provider ToS / no-train / ZDR verification** — a named diligence item: which tier is the company on (commercial vs consumer), what do the terms actually say about training, retention windows, and exclusions? Mark VERIFIED (agreement examined) / CLAIMED (founder statement only) / ABSENT. "They say they don't train on API data" is not verification.
+- **Partnership concentration**: any lab partnership involving data contribution, co-development, or preferred access — and whether its limits are articulable
+- **Regulatory sovereignty exposure**: does HIPAA / ITAR / GDPR / EU-AI-Act pressure in the target vertical bear on the conduit question (customer data through third-party frontier APIs)?
+- **Customer-side sovereignty demand as market risk**: are target buyers (regulated/IP-dense) beginning to require in-boundary deployment this product cannot offer?
 
 Return findings in this exact structure:
 
@@ -186,6 +196,14 @@ Macro sensitivity: HIGH / MODERATE / LOW
 Fundraising signals: [Any concerns or "None found"]
 Customer concentration: [Signals or "Not identified"]
 Bridge/down round signals: [Any or "None"]
+
+── MODEL-PROVIDER & SOVEREIGNTY RISK (Tier 4) ──
+[Or: "N/A — no model supply chain"]
+Provider terms (no-train/ZDR): VERIFIED / CLAIMED / ABSENT — [tier, exclusions, retention if known]
+Partnership concentration: [Finding or "None identified"]
+Regulatory sovereignty exposure: LOW / MEDIUM / HIGH — [which regime bears on the conduit question]
+Sovereignty demand risk: [buyer-side in-boundary requirements emerging? one line]
+→ If terms not VERIFIED: flag for Appendix A standing item ("Obtain model-provider agreement; confirm no-train/ZDR terms, tier, and exclusions")
 
 ── TOP KILL RISKS ──
 [Ranked list of the 2-3 most significant risks found — one sentence each]

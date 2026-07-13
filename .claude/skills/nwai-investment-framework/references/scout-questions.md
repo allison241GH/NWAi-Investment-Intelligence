@@ -220,6 +220,51 @@ Required outputs before scoring:
 
 Report the score with the plain help/hurt read (e.g. "2/5 — agents hurt the core product today, but it could get stronger if it opens the engine to agents; watch the roadmap").
 
+### Q8: Alpha-AI Sovereignty
+
+*Full framework: `references/alpha-ai-sovereignty-framework.md` (the fourth always-active lens).
+Added July 2026 following the June 2026 Q7 precedent. Screen's Protect Alpha read (Signal 6:
+KEEPS / MIXED / LEAKS / N/A) is the prior — Scout scores the lens properly here.*
+
+Score on: Does the company keep its alpha — and its customers' — out of the frontier labs' hands?
+Apply the **doorway question** (*"When this product runs, where does the alpha flow — does it stay
+home, or drain up to the lab?"*), then work the three reads. This is distinct from Q7 (does the
+problem survive agents?) and from the moat replicability tests (could outsiders rebuild it?) —
+Q8 tests *direction of alpha flow and dependency posture*. Score N/A (excluded from the Strategic
+raw total, noted in the report) only if the product has no model supply chain.
+
+Required outputs before scoring:
+- **Alpha Map:** [one sentence — what the company's alpha actually is (data, workflow, harness,
+  customer trust) and what transits the model provider when the product runs]
+- **Dependency Read:** provider(s) + abstraction-layer reality, with provider-terms status
+  stated as **VERIFIED / CLAIMED / ABSENT** (no-train / zero-data-retention, tier, exclusions)
+- **Customer Sovereignty Read:** does the go-to-market survive buyers demanding their data,
+  weights, and inference stay inside their boundary — or is the product a conduit for customer
+  alpha?
+- **Member-facing block:** the plain read — **KEEPS / MIXED / LEAKS** — plus, when not already
+  in the strongest position, **"Could get stronger if:"** (the one concrete containment move) and
+  **"What to watch:"** (the confirming milestone). Keep the internal posture label
+  (Leaking / Hedged / Sovereign / Enabler) for the deal-team line only.
+
+| Score | Criteria (internal posture in brackets) |
+|-------|---------|
+| 5 | Alpha stays home — architecturally contained, model-portable, sovereignty-aligned; or the company sells sovereignty itself [Sovereign or proven Enabler] |
+| 4 | Strong hedge — containment **verified** (terms confirmed, abstraction demonstrated), sovereign path costed [strong Hedged] |
+| 3 | The normal early posture — builds on frontier APIs with credible containment direction; terms claimed, path roadmapped [Hedged] |
+| 2 | Meaningful uncontained leakage, or conduit-for-customer-alpha with awareness but no costed path |
+| 1 | Leaking with a weak rebuttal — differentiator transits a single provider unprotected, no containment plan [Leaking] |
+| 0 | Structurally feeding its own predator — data-sharing with a lab shipping into the category, or a business model sovereignty demand forbids [Captured] |
+
+**Conduit cap (calibrated July 2026):** a Customer-Alpha Conduit finding (customers' regulated/
+proprietary data piped through frontier APIs via the product) caps Q8 at **3/5 when a sovereign
+path is roadmapped** and **2/5 when the founder is unaware of the exposure**. A roadmap is a deck
+claim — Cynical Default applies; only *verified* containment clears the cap, and verification
+happens at Diligence Tier 4, not at Scout.
+
+Report the score with the plain read (e.g. "3/5 — MIXED: the harness logic stays local but customer
+call data transits OpenAI; could get stronger if the roadmapped VPC deployment ships; watch for the
+first regulated-industry logo on it").
+
 ---
 
 ## Phase 2: Execution — Scored Dimensions
@@ -311,11 +356,11 @@ Calculate after completing all Phase 1, Strategic, and Phase 2 dimensions.
 | Dimension Group | Dimensions | Max Raw | Weight | Weighted Max |
 |---|---|---|---|---|
 | Phase 1 (Q1 + Q1b + Q2 + Q3 mapped) | 4 dims | 20 pts | 40% | 8.0 |
-| Strategic (Q4 + Q5 + Q6 + Q7) | 4 dims | 20 pts | 20% | 3.0 |
+| Strategic (Q4 + Q5 + Q6 + Q7 + Q8) | 5 dims | 25 pts | 20% | 3.0 |
 | Phase 2 (Team + Tech + Traction + GTM) | 4 dims | 20 pts | 40% | 8.0 |
 | **Total** | | | **100%** | **19.0** |
 
-*Strategic group now carries 4 dimensions (Agent-Era Readiness added, June 2026) within the same 20% weight and 3.0 weighted-max — the composite total and the conviction bands below are unchanged.*
+*Strategic group now carries 5 dimensions (Agent-Era Readiness added June 2026; Alpha-AI Sovereignty added July 2026) within the same 20% weight and 3.0 weighted-max — the composite total and the conviction bands below are unchanged. If Q8 is N/A (no model supply chain), the Strategic raw total is /20 for that deal; the weighted-max stays 3.0.*
 
 *Moat rating maps to composite: STRONG=5, DEVELOPING=3, WEAK=1, NONE=0. Exit not included.*
 
@@ -348,7 +393,7 @@ Lead and SMEs: Output as "TBD — Pending Dealum API" for both.
 
 ### Page 1 — Scorecard (deal lead and TechGroup group read)
 
-**Triage Carry-Forward block** — Opportunity Score, Readiness Score, Hard Gates, all flags.
+**Triage Carry-Forward block** — Six-Signal verdicts + Triage Conviction from the Screen report, the mapped per-dimension baseline (translated via `references/screen-scout-conversion-rubric.md`), Hard Gates, all flags. *(Legacy numeric Triage Reports carry their Opportunity/Readiness dimension scores directly.)*
 
 **Product & Market Positioning table** (4 cols):
 ```
@@ -392,6 +437,7 @@ Greed:                    [one phrase — upside case if thesis holds]
 | Adjacent Displacement Risk      | —       | X/5     | NEW        |
 | Macro Tailwind                  | —       | X/5     | NEW        |
 | Agent-Era Readiness             | —       | X/5 (posture) | NEW   |
+| Alpha-AI Sovereignty            | —       | X/5 (posture) | NEW   |
 | Team                            | D3: X/5 | X/5     |            |
 | Technology                      | —       | X/5     |            |
 | Traction                        | D5: X/5 | X/5     |            |

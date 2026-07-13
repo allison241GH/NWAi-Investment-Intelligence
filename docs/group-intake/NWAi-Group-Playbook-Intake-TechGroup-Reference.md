@@ -1,6 +1,6 @@
 # NWAi Group Playbook — Intake Questionnaire (TechGroup Reference)
 
-**This is the worked example that accompanies the blank intake template.** Every answer below is sourced from existing plugin files (`gates-and-flags.md`, `gates-and-flags-techgroup.md`, `ai-moats-framework.md`, `agents/technology-analyst.md`, `CLAUDE.md`) — nothing new is invented for TechGroup. Group chairs filling out the blank template should look at the corresponding section here to see the level of detail and the format expected.
+**This is the worked example that accompanies the blank intake template.** Every answer below is sourced from existing plugin files (`gates-and-flags-techgroup.md`, `ai-moats-framework.md`, `agents/technology-analyst.md`, `CLAUDE.md`; some answers cite the pre-July-2026 `gates-and-flags.md`, archived at `references/_archive/gates-and-flags-universal-v2.0-legacy.md`) — nothing new is invented for TechGroup. Group chairs filling out the blank template should look at the corresponding section here to see the level of detail and the format expected.
 
 ---
 
@@ -188,7 +188,7 @@ Sub-floor / hard cap: Goliath Test result determines max score.
 | 8 | **Cynical Default** (universal) | Is the claim verifiable via web research or product evidence? | Unverified claims capped at 3/5 on the affected dimension | Universal — applies in every group |
 | 9 | **Revenue Quality Audit** (universal) | Classify revenue as Sticky / Stagnant / Fragile / Unknown | Stagnant or Fragile → Traction capped at 2/5 | Universal — applies in every group |
 
-*Source: `gates-and-flags-techgroup.md` (filters 1, 3, 4, 5) + `gates-and-flags.md` NWA Filter (filters 2, 6, 7, 8, 9). Filters 8–9 are universal; the rest are TechGroup-specific.*
+*Source: `gates-and-flags-techgroup.md` (as of July 2026 the self-contained TechGroup screener reference — all nine filters now live there). Filters 8–9 originated as universal principles; the rest are TechGroup-specific.*
 
 ---
 

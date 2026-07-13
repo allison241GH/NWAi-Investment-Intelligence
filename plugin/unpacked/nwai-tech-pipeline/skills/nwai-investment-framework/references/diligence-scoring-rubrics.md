@@ -7,9 +7,10 @@ All scores feed into the final Investment Memo and IC presentation.
 
 ---
 
-## 1. Moat Scoring (Two-Tier)
+## 1. Moat Scoring (Four-Tier)
 
-Run Tier 1 for every deal. Run Tier 2 only for AI-first or AI-enabled companies.
+Run Tier 1 and Tier 3 for every deal. Run Tier 2 only for AI-first or AI-enabled companies.
+Run Tier 4 only for deals with a model supply chain (any product calling third-party models).
 
 ### Tier 1: General Business Moat (Score 0–6)
 
@@ -130,6 +131,57 @@ internal posture label (Threatened / Riding / Enabling / Insulated) on the deal-
 or ad/engagement revenue model with no outcome/usage path; ⚠️ Strong Yellow if value proposition is
 fully ingestible by an agent in <48h; ❌ Threatened posture with no credible, funded path to
 Riding/Enabling (default to pass — quality of the present-day solution is not a mitigant).
+
+### Tier 4: Alpha-AI Sovereignty (Score 0–15) — gated to deals with a model supply chain
+
+*Full framework: `references/alpha-ai-sovereignty-framework.md`. This is the diligence-depth scored
+application of the fourth always-active lens. Installed July 2026 (Phase 2). Unlike Tier 3, which
+runs for every deal because agents reshape demand for every product, Tier 4's mechanism requires a
+model supply chain: it applies to any product calling third-party models. Non-AI deals record
+**"Tier 4: N/A — no model supply chain"** and skip the tier.*
+
+**Distinction from Tiers 2 and 3:** Tier 2 tests *replicability of the build* (is it a thin
+wrapper?); Tier 3 tests *whether the problem survives agents*; Tier 4 tests *who captures the alpha
+along the model supply chain* — does the company's edge (and its customers') stay home, or drain up
+to the lab it builds on? A deal can hold a real AI moat (Tier 2), survive the agent shift (Tier 3),
+and still be feeding its differentiator to its likeliest future competitor.
+
+Score three dimensions 0–5 each (full anchors and investor signals in the framework), on today's
+posture plus one direction-of-travel line (strengthens or erodes over the hold period):
+
+| Dimension | Tests | Primary evidence source |
+|-----------|-------|------------------------|
+| **Alpha Containment** (0–5) | Does the company's own alpha leak to the labs it builds on — what actually transits the API, and are no-train/ZDR terms verified in the agreement? | `technology-analyst` (architecture read) + `risk-analyst` (terms verification) |
+| **Model-Layer Independence** (0–5) | Can it move house — maintained evals, demonstrated switching, open-weight/sovereign deployment feasibility? | `technology-analyst` |
+| **Customer Sovereignty Alignment** (0–5) | Does the go-to-market survive buyers demanding sovereignty — or is the product a conduit for customer alpha? | `risk-analyst` (regulatory exposure) + `competitive-positioning-analyst` (sovereignty demand evidence) |
+
+**Then state the member-facing read** (KEEPS / MIXED / LEAKS) with **"Could get stronger if:"** and
+**"What to watch:"** lines; keep the internal posture (Leaking / Hedged / Sovereign / Enabler) on
+the deal-team line only. Verified containment established here — terms confirmed in the actual
+agreement, switching demonstrated — is what clears the Scout-stage conduit cap.
+
+| Total (0–15) | Verdict | Investment Signal |
+|---|---|---|
+| 12–15 | FORTIFIED | Alpha contained, portable, sovereignty-aligned |
+| 8–11 | HEDGED | Dependent but contained; the negotiable norm — write containment milestones into watch items or terms |
+| 4–7 | LEAKY | Meaningful uncontained flow; containment path required to advance |
+| 0–3 | CAPTURED | Structurally feeding its own predator; no credible exit |
+
+**Agent assignments (Diligence launch):** `technology-analyst` → D1 + D2 evidence (what actually
+transits the API, abstraction-layer reality — evals? second integration? — open-weight feasibility,
+sovereign deployment maturity); `risk-analyst` → contract/dependency risk (provider ToS and
+no-train/ZDR verification as a named diligence item — tier, exclusions, retention windows;
+partnership concentration; HIPAA/ITAR/GDPR/EU-AI-Act pressure on the conduit question;
+customer-side sovereignty demand as market risk); `competitive-positioning-analyst` → lab
+vertical-integration signals into the category (feeds the Replicability Matrix LLM-provider-row
+annotation), sovereignty-demand evidence in the buyer market (RFP language, on-prem/VPC
+requirements), Enabler-category competitive mapping.
+
+**Flag triggers:** ⚠️ Customer-Alpha Conduit (regulated/proprietary customer data through frontier
+APIs, no sovereign path); ⚠️ Own-Alpha Exposure (differentiator transits a single provider, no
+verified containment); ❌ Captured pattern (single-provider dependency + that lab shipping into the
+category + alpha transits that provider — default to pass); standing Appendix A item for all AI
+deals: *"Obtain model-provider agreement; confirm no-train/ZDR terms, tier, and exclusions."*
 
 ---
 
@@ -311,12 +363,13 @@ During diligence, apply rubrics in this sequence — each feeds the next:
 
 ```
 Market Sizing → validates TAM/SAM assumptions in Financial Model
-Competitive Intel → informs Moat Score (Tier 1, 2 & 3)
+Competitive Intel → informs Moat Score (Tier 1, 2, 3 & 4)
 Founder Research → feeds Execution Risk score
 Moat Score → feeds Competitive Risk score
 Agent-Era Readiness (Tier 3) → informs Competitive + Market Risk; posture feeds exit/return thesis
-All four → synthesized into Risk Score
-All five → inform the Financial Model exit scenarios
+Alpha-AI Sovereignty (Tier 4) → informs Competitive + Financial Risk; provider-terms item → Appendix A
+All five → synthesized into Risk Score
+All six → inform the Financial Model exit scenarios
 ```
 
 The `/diligence` command and `/memo` command both reference this file. As of plugin v2.13.0, the full agent team is:
@@ -346,6 +399,7 @@ relevant rubric outputs:
 | Moat Tier 1 (General) | Technical Validation | Competitive Validation |
 | Moat Tier 2 (AI Moat) | Technical Validation | Commercial Validation |
 | Moat Tier 3 (Agent-Era Readiness) | Competitive Validation | Market Validation |
+| Moat Tier 4 (Alpha-AI Sovereignty) | Technical Validation | Competitive Validation |
 | Risk — Execution | Team Validation | — |
 | Risk — Market | Market Validation | Competitive Validation |
 | Risk — Financial | Financial Validation | — |

@@ -24,13 +24,7 @@ If the company is AI-enabled, also read:
 .claude/skills/nwai-investment-framework/references/ai-moats-framework.md
 ```
 
-**Also read the Synergist canonical reference if available in the workspace:**
-```bash
-WORKSPACE=$(dirname "$(find /sessions -name "CLAUDE.md" -path "*/Claude CoWork*" 2>/dev/null | head -1)")
-find "${WORKSPACE}" -name "Synergist-DD-Investment-Report*.docx" 2>/dev/null | head -1
-```
-If found, extract its text with `mammoth` and study the visual layout before writing the script.
-The `dd-report-format-reference.md` captures the key specs — use it as the primary reference.
+**Format master:** `STL-NWAi-DD-Report-2026-03-19.docx` (under `deals/archive/Summit Technology Laboratory/Reports/`) is the reference master per CLAUDE.md; the canonical generator is `scripts/dd-report-generator.js`. The `dd-report-format-reference.md` captures the key specs — use it as the primary reference.
 
 ## Step 2: Gather All Deal Data
 
@@ -38,12 +32,7 @@ Fetch the application from Dealum using `get_application` or `list_applications`
 
 ### Step 2b: Load Prior Stage Outputs from Workspace
 
-```bash
-WORKSPACE=$(dirname "$(find /sessions -name "CLAUDE.md" -path "*/Claude CoWork*" 2>/dev/null | head -1)")
-ls "${WORKSPACE}/deals/" 2>/dev/null
-```
-
-Load the most recent version of each file (highest YYYY-MM-DD in filename):
+Look in `deals/active/[Company Name]/Reports/` and load the most recent version of each file (highest YYYY-MM-DD in filename):
 
 1. `[Company Name] - Triage Report*.docx` — Screen output
 2. `[Company Name] - Scout Assessment Report*.docx` — Scout output
@@ -55,9 +44,9 @@ pandoc "[file].docx" -t plain 2>/dev/null
 ```
 
 **Compile from each loaded file:**
-- Triage Report: gate verdicts, red/yellow flags, deal structure & syndication notes (IntroCall negotiation items — not flags or kills), opportunity and readiness scores
-- Scout Assessment: theme assignment, Phase 1/2 findings, one-sentence verdict, single biggest risk
-- DD Kickoff Package: Moat Tier 1 + Tier 2 scores, Risk scores per category, market sizing + timing score, 17-folder findings, open questions and responses
+- Triage Report: gate verdicts, red/yellow flags, deal structure & syndication notes (IntroCall negotiation items — not flags or kills), Six-Signal verdicts + Triage Conviction *(legacy numeric reports: opportunity and readiness scores)*
+- Scout Assessment: theme assignment, Phase 1/2 findings, Q7 + Q8 posture reads, one-sentence verdict, single biggest risk
+- DD Kickoff Package: Moat Tier 1 + Tier 2 scores, Tier 4 Alpha-AI Sovereignty verdict (/15 + FORTIFIED/HEDGED/LEAKY/CAPTURED, or "N/A — no model supply chain"), Risk scores per category, market sizing + timing score, 17-folder findings, open questions and responses
 - **Financial diligence outputs (from the three-agent sequence):**
   - **Pricing Analyst Briefing** — pricing maturity, unit economics, channel pressure forecast, pricing-to-value ratio
   - **Forecasting Analyst Briefing** — proprietary 5-year forecast (Bear/Base/Bull with *because* clauses), capital plan with round timing, founder financial literacy assessment
@@ -110,7 +99,7 @@ Using the NWAi scoring rubrics, derive a 1–5 score for each section per the ma
 Section score mappings:
 - S1 (Problem/Market): Market Sizing + Timing Score (0–5)
 - S2 (Solution/Product): Moat Tier 1 (0–6 → 1–5)
-- S3 (AI/Software Moat): Moat Tier 2 (0–10 → 1–5) — AI companies only; omit otherwise
+- S3 (AI/Software Moat): Moat Tier 2 (0–10 → 1–5) — AI companies only; omit otherwise. When Tier 4 was scored, S3 carries the Alpha-AI Sovereignty companion line (`Tier 4: X/15 — FORTIFIED/HEDGED/LEAKY/CAPTURED — [one-line basis]`); Tier 4's lab vertical-integration threat feeds S4, conduit/regulatory items feed S10, and unverified provider terms produce the standing Appendix A item ("Obtain model-provider agreement; confirm no-train/ZDR terms, tier, and exclusions") — mandatory for ALL AI deals unless verified at Tier 4
 - S4 (Competition & Moat): Competitive Risk (1–10 inverted)
 - S5 (GTM Strategy): Market Risk + Pricing Analyst pricing-to-value ratio + channel pressure forecast (1–10 inverted)
 - S6 (Team): Execution Risk including PMTF score, Team Commitment Depth ratio, founder claim verification status (1–10 inverted)
@@ -201,19 +190,14 @@ node generate-dd-report.js
 
 ## Step 6: Validate the Document
 
-```bash
-DOCX_SCRIPTS=$(dirname "$(find /sessions -name "validate.py" -path "*/docx/scripts/office/validate.py" 2>/dev/null | head -1)")
-python3 ${DOCX_SCRIPTS}/validate.py [Company-Name]-NWAi-DD-Report-[YYYY-MM-DD].docx
-```
-
-Fix any issues before saving.
+Verify the generated file opens cleanly: confirm it is a valid zip (`unzip -t` on the .docx) and re-extract its text (`textutil -convert txt -stdout`) to spot-check the section order and score cells. Fix any issues before saving.
 
 ## Step 7: Save to Workspace and Update Dealum
 
+Save to the deal's Reports folder (create if needed):
 ```bash
-WORKSPACE=$(dirname "$(find /sessions -name "CLAUDE.md" -path "*/Claude CoWork*" 2>/dev/null | head -1)")
-mkdir -p "${WORKSPACE}/deals/active"
-cp [Company-Name]-NWAi-DD-Report-[YYYY-MM-DD].docx "${WORKSPACE}/deals/active/[Company-Name]-NWAi-DD-Report-[YYYY-MM-DD].docx"
+mkdir -p "deals/active/[Company Name]/Reports"
+cp [Company-Name]-NWAi-DD-Report-[YYYY-MM-DD].docx "deals/active/[Company Name]/Reports/"
 ```
 
 Update Dealum: `step` → "Decision", `tags_add` → ["DD-Report-Complete"]

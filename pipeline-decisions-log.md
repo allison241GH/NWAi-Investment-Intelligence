@@ -257,5 +257,42 @@ SAFE structure and lead-investor status are now **neutral by default — a posit
 
 ---
 
-*Last updated: June 9, 2026 | Maintained by Jamie, TechGroup Co-Chair*
+## Decision 9 — Framework Adoption: The Six-Signal Screen (Craft-at-Screen), Agent-Era Upgrade, and Alpha-AI Sovereignty Phase 2
+
+**Date:** Ratified July 11, 2026 (spec) + July 12, 2026 (session rulings); implemented July 13, 2026
+**Status:** Implemented (plugin v3.0.0 — major, stage-architecture change; architecture v0.38.0; spec: `notes/NWAi-Pipeline-Framework-Adoption-Spec-2026-07.md`)
+
+### The strategic rationale
+
+The Claude V13 sandbox program (`docs/reference/Gemini/`, V10→V13 lineage) proved a different Screen-stage judgment model: qualitative signal verdicts with weighted conviction mechanics instead of numeric 30/25 scoring. The 4-deal regression back-test was ratified (verdict invariance against the pipeline's historical calls), two live pitches (Ivee, AgTechLogic) ran on it, and the Craft Investing thesis — *surface the key signals that let a craftsman form conviction; don't replace judgment with a number* — was promoted to canonical (`docs/strategy/future-of-venture-investing/NWAi-Craft-Investing-Thesis-2026-06.md`). This decision installs that model into the pipeline.
+
+### The five ratified decisions (July 11, 2026)
+
+1. **Craft at Screen only.** Screen becomes qualitative signal-surfacing (Six-Signal verdict model, no numeric scores). Numeric scoring begins at Scout, unchanged from Scout onward. Craft-at-Scout is parked, not rejected (re-evaluate after ~1 quarter of live screening, or if the seam rubric proves theater).
+2. **Alpha-AI Sovereignty Phase 2: GO.** Installed per the framework's own 12-item install spec — Screen Signal 6 → Scout Q8 → Diligence Tier 4 → DD Report mappings + agent sections. All 5 open calibration questions ratified as recommended: LEAKS label stays member-facing; Conduit Strong Yellow keeps the 3/5 cap (roadmapped) / 2/5 (unaware) — verified containment clears only at Diligence Tier 4; Tier 4 gated to model-supply-chain deals; Replicability Matrix gets an annotation on the LLM-provider row, never a fifth row (no-double-count); standing Appendix-A provider-terms item for ALL AI deals, effective at install.
+3. **Agent-Era at Screen upgraded** from Exposure trip-wire (FLAGGED/CLEAR, routing) to weighted posture verdict — Signal 5, SIGNIFICANT weight, THREATENED = adverse. Scout Q7 and Diligence Moat Tier 3 unchanged; Screen's posture is the prior.
+4. **Screen→Scout contract:** fixed conversion rubric at Scout intake — mechanical verdict→points translation, no re-judging. Delta tracking and Thesis Fit preserved with the same architecture, new input. Frozen in the dedicated seam reference `references/screen-scout-conversion-rubric.md` (v1.0), loaded by `/scout` only — the number never appears at Screen.
+5. **Scope: TechGroup only.** Nothing operational changes for the other five groups.
+
+### Session rulings (July 12, 2026 — recorded amendments and calibrations)
+
+- **`gates-and-flags.md` → Universal Guide (amends spec Decision 5).** On review, the "Universal Triage Framework" file's entire content (gates thresholds, filter tests, 30/25 scoring, research protocol) was authored for and used only by TechGroup. Its operative content moved into `gates-and-flags-techgroup.md` (now the self-contained TechGroup Six-Signal Screener Reference v3.0), and the file was rewritten **and renamed** `gates-and-flags-universal-guide.md` — a 1–2 page architecture guide (gates / rigor filters / judgment model / verdict vocabulary / research discipline / output contract) for future group playbooks, with TechGroup as the reference implementation. Both prior versions archived in `references/_archive/`.
+- **Thesis Fit /45 subset (spec Open Item 1):** the conversion rubric maps Opportunity **D1–D5** (/25, dropping D6 Venture Economics — the spec's own weakest mapping; V13 folds venture economics into Market) + Readiness **R1–R4** (/20, dropping R5 Founder Accessibility). Thesis Fit keeps its established /45 denominators and bands.
+- **Captain Compliance dropped from rubric calibration:** its archived Triage Report is on the older /30 + /25 scale (20/30 + 19/25, conviction LOW — correcting the spec §5.3 citation of "22/30 + 23/25"). Calibration anchored on STL + Synergist (both /25 + /20). CC retained for the verdict regression and confirmed as the out-of-sample seam-test deal.
+- **Krew waived** from the regression set (consistent with its sandbox waiver).
+
+### The proof plan (ran before commit — all passed)
+
+1. **Rule traceability:** all 18 calibrated ledger rules located verbatim-in-substance in `gates-and-flags-techgroup.md` (rules ledger + operative sections) and `screen.md` (Steps 5–7 + self-check); V13's 28 self-check items carried or deliberately merged.
+2. **Screen regression:** the back-test three re-screened blind (deal folders only, prior reports excluded) through the new `/screen`: **Captain Compliance ADVANCE/MEDIUM ✅ · STL ADVANCE/MEDIUM ✅ · Synergist ADVANCE/MEDIUM ✅ — zero verdict flips.** Calibrated rules fired as adjudicated: CC coherence cap (cap-table contradiction) + commitment UNCONFIRMED as LPQ #1; STL academic-founder rule (MIXED + UNCONFIRMED, never SPLIT); Synergist coherence cap + services-in-SaaS pattern note. One explained non-verdict divergence recorded: Synergist Protect Alpha read KEEPS where V13 recorded MIXED — the regression verified the CDW no-train clauses in the data room, evidence V13's 3-search sandbox never saw (Protect Alpha carries no weight; verdict invariance unaffected).
+3. **Rubric calibration:** regression per-signal verdicts mapped through the proposed table vs. archived per-dimension scores — every comparable dimension within ±2; Synergist's mapped Opportunity sum matched exactly (19/25). Two opposite-direction Δ2s (STL D3, Synergist D2) are screening-judgment shifts already blessed by verdict invariance, not rubric bias. Frozen as v1.0.
+4. **End-to-end seam test (CC):** new Screen output → `/scout` intake — rubric applied mechanically (17/25 + 13/20 → Thesis Fit 30/45, Qualified fit), deltas rendered, the Q2 ≥2-divergence carried its explanation, result consistent with the historical ADVANCE TO DILIGENCE call. Surfaced and fixed one rubric gap: Unverified claimed revenue now caps D5 at 3 (Cynical Default carries through the seam).
+
+### What did NOT change
+
+Scout-onward numeric scoring (Conviction /19, bands, Phase 1/2 rubrics); the DD Report canonical format (11 × 1–5, STL master, generator script); Decision and Memo formats (beyond the Alpha mappings); the other five groups (playbooks not yet operational; the Universal Guide is their authoring reference); Dealum-deferred status (Step 10 tag vocabulary remains aspirational; deal-folder state canonical). No MCP changes — no plugin reinstall required.
+
+---
+
+*Last updated: July 13, 2026 | Maintained by Jamie, TechGroup Co-Chair*
 *This log is a living document — add entries when key decisions are made in session.*

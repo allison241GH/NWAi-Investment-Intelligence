@@ -149,6 +149,13 @@ When writing the Technology & Moat section of an investment memo:
    | Big Tech platform (MSFT, Google, AWS) | ___ months | ___ |
    | LLM provider (OpenAI, Anthropic) as native feature | ___ months | ___ |
 
+   *LLM-provider row — alpha-leakage annotation (July 2026):* when the company's own traffic
+   transits that provider (Alpha-AI Sovereignty Tier 4 D1 finding), note it in this row's Barrier
+   cell and shorten the timeframe estimate accordingly — the lab's view of the traffic is demand
+   signal and product spec. Same threat actor, new information channel: annotate here, **never add
+   a fifth row** (it would double-count the actor and could fire a second flag, violating the
+   framework's no-double-count rule).
+
    **Flag triggers:**
    - ⚠️ **Yellow Flag** if any row < 6 months — "Replicability risk: [threat actor] could replicate
      core functionality within [timeframe]. Validate moat depth before advancing."

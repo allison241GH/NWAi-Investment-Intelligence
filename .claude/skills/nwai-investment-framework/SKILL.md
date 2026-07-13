@@ -20,7 +20,7 @@ Tech-tagged applications are the scope of this plugin.
 
 Every deal moves through these Dealum steps in order:
 
-1. **Screening** — Apply Universal Triage screener (3 hard gates + scored Opportunity/Readiness); assign to TechGroup theme
+1. **Screening** — Apply the TechGroup Six-Signal screener (3 hard gates + six qualitative signal verdicts + Triage Conviction — no numeric scores); assign to TechGroup theme
 2. **Scout/IntroCall** — Run Scout Q assessment; match to member SMEs
 3. **Diligence** — Execute 17-folder DD checklist with team assignments
 4. **DD Report** — Generate scored synthesis document (11 sections, 1–5 scale) — IC briefing after diligence completes
@@ -29,19 +29,19 @@ Every deal moves through these Dealum steps in order:
 
 ## Stage 1: Screening — TechGroup Triage Screener
 
-The TechGroup screener applies the **NWAi Universal Triage Framework**. **`references/gates-and-flags.md` is the single source of truth** for all dimension counts, point totals, and verdict thresholds — read them there at screen time; do not restate the numbers in this overview (they drift). TechGroup Track A/B Opportunity rubrics: `references/gates-and-flags-techgroup.md`.
-- **Layer 1 — Hard Gates**: 3 binary gates (Foreign Entity/IP, Market Size, Commercialization Path) — a single FAIL = DECLINE
-- **Layer 2 — Opportunity Score**: scored across the universal opportunity dimensions → ADVANCE / WATCH / DECLINE bands (thresholds in `gates-and-flags.md`), with a Market Opportunity sub-floor
-- **Layer 3 — Readiness Score**: informs Scout; does not independently DECLINE, but a low Readiness can downgrade an ADVANCE → WATCH (Readiness Downgrade Rule — including the Deal Structure & Syndication carve-out)
-- **NWA Filter** (scoring-rigor overlay across all dimensions): Cynical Default, Goliath Test, LLM Ingestion Test, Revenue Quality Audit — these cap dimension scores
+The TechGroup screener applies the **Six-Signal verdict model** (v3.0, July 2026 — design basis: the Craft Investing thesis, `docs/strategy/future-of-venture-investing/NWAi-Craft-Investing-Thesis-2026-06.md`). **`references/gates-and-flags-techgroup.md` is the single source of truth** for the verdict scales, weights, adverse definitions, compound rule, conviction mechanics, and calibrated rules ledger — read them there at screen time; do not restate the mechanics in this overview (they drift).
+- **Hard Gates**: 3 binary gates (Entity/IP, Market Scale, Commercial Intent) — a single FAIL = DECLINE; FAIL only on clear evidence, silence = PASS + Yellow Flag
+- **Six Signals** (qualitative verdicts + confidence tags, no numeric scores): Discontinuity · Market + Commercial Proof · Team · Moat + evidence tags · Agent-Era Posture · Protect Alpha (routing-only)
+- **Conviction mechanics**: weighted judgment with an auditable roll-up → PRELIMINARY CALL (ADVANCE / WATCH / DECLINE) + TRIAGE CONVICTION (HIGH / MEDIUM / LOW)
+- **NWA Filter** (evidence-rigor tests feeding the signals): Cynical Default → confidence tags; Goliath Test + LLM Ingestion Test → Moat evidence tags; Revenue Quality Audit → Commercial Proof quality
+- **Screen→Scout seam**: numeric scoring begins at Scout — `/scout` translates the signal verdicts through the frozen conversion rubric (`references/screen-scout-conversion-rubric.md`); the number never appears at Screen
 
 SAFE structure and lead-investor absence are **not** hard gates, and they are **not penalties** —
-they are scored neutrally in Readiness and surfaced as IntroCall negotiation items. A SAFE is the
-normal early-stage starting point; NWA prefers priced equity at close but negotiates structure
-(to priced equity or convertible) rather than killing on it. On syndication, NWA may lead or
-cross-syndicate — an external lead/co-investor is preferred for validation but not required.
-Deal Structure and Syndication Readiness cannot, on their own, downgrade an ADVANCE (see the
-carve-out in the Readiness Downgrade Rule). Flexibility cannot be assessed from a pitch deck alone.
+they are ungraded Deal Facts and IntroCall negotiation items that never pull down conviction. A
+SAFE is the normal early-stage starting point; NWA prefers priced equity at close but negotiates
+structure (to priced equity or convertible) rather than killing on it. On syndication, NWA may
+lead or cross-syndicate — an external lead/co-investor is preferred for validation but not
+required. Flexibility cannot be assessed from a pitch deck alone.
 
 Target advance rate: ~11% (screen to Scout, not screen to find the diamond).
 
@@ -49,7 +49,7 @@ Target advance rate: ~11% (screen to Scout, not screen to find the diamond).
 
 ## Stage 1 (Legacy Reference — SUPERSEDED): Original 6-Gate AutoKill
 
-**Archived for historical context only — do not apply.** Replaced by the Universal Triage Framework above (April 2026). Full archived criteria: `references/_archive/gates-and-flags-6gate-legacy.md`. Note: Gates 1 (SAFE-only) and 5 (no lead investor) below are exactly the two that were retired into neutral Readiness scoring — see `pipeline-decisions-log.md` Decisions 1 and 8.
+**Archived for historical context only — do not apply.** Replaced by the numeric Universal Triage Framework (April 2026), itself superseded by the Six-Signal verdict model above (July 2026; numeric screeners archived in `references/_archive/`). Full archived criteria: `references/_archive/gates-and-flags-6gate-legacy.md`. Note: Gates 1 (SAFE-only) and 5 (no lead investor) below are exactly the two that were retired into neutral Readiness scoring — see `pipeline-decisions-log.md` Decisions 1 and 8.
 
 | Gate | Requirement | Auto-Kill If |
 |------|-------------|--------------|
@@ -102,15 +102,25 @@ Full memo structure: Executive Summary → Company Overview → Market Opportuni
 
 Apply the AI Moats framework when analyzing defensibility. See `references/ai-moats-framework.md`.
 
-## Always-Active Lens: Agent-Era Readiness
+## Always-Active Lenses: Agent-Era Readiness + Alpha-AI Sovereignty
 
-Across **every** stage (Screen → Scout → Diligence → Memo), apply the third always-active investing
-lens alongside Structural Discontinuity and Memory Lock-in: **Agent-Era Readiness** — does the
-founder solve the problem *as AI agents will reshape it*, or as it exists today? The doorway
-question is *"Is this information for a human to act on, or a transaction for an agent to complete?"*
-Classify the posture (Threatened / Riding / Enabling / Insulated). Lightweight triage trip-wire at
-Screen (`references/gates-and-flags-techgroup.md`), scored at Scout (Q7) and Diligence (Moat Tier 3).
-Full framework: `references/agent-era-readiness-framework.md`.
+Across **every** stage (Screen → Scout → Diligence → Memo), apply the third and fourth
+always-active investing lenses alongside Structural Discontinuity and Memory Lock-in:
+
+**Agent-Era Readiness** (third lens) — does the founder solve the problem *as AI agents will
+reshape it*, or as it exists today? The doorway question is *"Is this information for a human to
+act on, or a transaction for an agent to complete?"* Classify the posture (Threatened / Riding /
+Enabling / Insulated). Weighted posture verdict at Screen (Signal 5 — upgraded July 2026 from the
+trip-wire; `references/gates-and-flags-techgroup.md`), scored at Scout (Q7) and Diligence (Moat
+Tier 3). Full framework: `references/agent-era-readiness-framework.md`.
+
+**Alpha-AI Sovereignty** (fourth lens, installed July 2026) — does the company keep its alpha,
+and its customers', out of the frontier labs' hands? The doorway question is *"When this product
+runs, where does the alpha flow — does it stay home, or drain up to the lab?"* Classify the
+posture (Leaking / Hedged / Sovereign / Enabler). Routing-only Protect Alpha read at Screen
+(Signal 6), scored at Scout (Q8) and Diligence (Moat Tier 4, gated to model-supply-chain deals);
+DD Report Section 3 companion line + standing Appendix A provider-terms item. Full framework:
+`references/alpha-ai-sovereignty-framework.md`.
 
 ## NWA Investment Return Target
 
