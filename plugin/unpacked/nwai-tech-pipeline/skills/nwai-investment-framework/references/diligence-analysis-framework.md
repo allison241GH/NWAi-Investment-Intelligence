@@ -50,6 +50,8 @@ Examples:
 - CEO says "unique technology" / CTO explains it's all Azure SDK + open source → moat tension
 - CEO says "PE rollup in 3 years" / COO talks about long-term category dominance → strategic alignment tension
 
+**Claim walk-backs & the credibility pattern.** A special class of contradiction: the meeting walks back a *load-bearing claim* from prior founder materials (deck, DD response, data room, earlier meeting) — core technology architecture, quantified customer ROI, traction figures, team credentials. Classify each affected prior claim CONFIRMED / QUALIFIED / WALKED BACK; every walk-back is a Key Insight, never just a tracker note. The count is **cumulative across the diligence record** (including any Scout Step 4c reconciliation table): 1 = ⚠️ stated in the Analyst POV box; **≥2 = ❌ founder-credibility discrepancy pattern** — it leads the POV box and the running thesis update, with a recommendation to pause diligence (or pass) until the walked-back claims are independently re-verified. Symmetry rule: favorable self-reported statements in the same meeting are Reported-tier — they may resolve tracker items but cannot flip a 🔴 thesis stress point to 🟢 without independent verification. Calibration case: RootCause.ai, July 2026 (Decision 10 — the deck-vs-DD-Response discrepancy pattern a TechGroup member caught that the scoring machinery initially did not).
+
 ### 3. Moat Signals
 
 Apply the two NWAi lenses explicitly:

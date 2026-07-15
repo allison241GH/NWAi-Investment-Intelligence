@@ -153,6 +153,12 @@ any tracker items. Look for:
 - **Structural contradictions** — Where stated vision conflicts with product reality, or where
   team members give contradictory answers. A CEO who says "pure subscription" while demoing a
   product that requires weeks of manual setup per customer is revealing a financial model tension.
+- **Claim walk-backs** — Where the meeting walks back a load-bearing claim from prior founder
+  materials (deck, DD response, earlier meeting). Classify CONFIRMED / QUALIFIED / WALKED BACK;
+  the count is cumulative across the diligence record. One = ⚠️ in the Analyst POV; two or more =
+  ❌ founder-credibility pattern that leads the POV and triggers a pause-or-pass recommendation
+  until independently re-verified. Self-reported favorable claims are Reported-tier and cannot
+  flip a 🔴 stress point to 🟢 on their own. (Decision 10; mirrors Scout Step 4c.)
 - **Moat signals** — Evidence for or against Memory Lock-in and Structural Discontinuity.
   When asked "what makes you unique?", what did they lead with — technology, data, or
   distribution? Distribution-as-differentiation is a channel play, not a moat.
@@ -471,4 +477,4 @@ If canonical has uncommitted changes blocking the pull (e.g., transient `npm ins
 
 ---
 
-*Last updated: July 13, 2026 (architecture v0.38.0 — plugin v3.0.0: Framework Adoption install. Screen rebuilt on the Six-Signal verdict model (Craft-at-Screen — no numeric scores; scoring begins at Scout via the frozen Screen→Scout conversion rubric); Agent-Era upgraded at Screen from trip-wire to weighted posture verdict (Signal 5); Alpha-AI Sovereignty Phase 2 installed as the fourth always-active lens (Signal 6 → Scout Q8 → Diligence Tier 4 → DD Report mappings); gates-and-flags.md rewritten and renamed to the Universal Guide with the TechGroup screener now self-contained in gates-and-flags-techgroup.md. Regression: back-test three ADVANCE/MEDIUM, no flips. See pipeline-decisions-log.md Decision 9.) | NWAi Investment Intelligence & AI | Jamie, TechGroup Co-Chair*
+*Last updated: July 15, 2026 (architecture v0.40.0 — plugin v3.2.0: Founder Claims Reconciliation & Credibility Cap — the RootCause.ai lesson — installed at Scout Step 4c (v3.1.0) and extended to /post-meeting as the claim walk-back / credibility-pattern lens with a cumulative credibility ledger (v3.2.0); see pipeline-decisions-log.md Decision 10. Prior: v0.38.0 — plugin v3.0.0: Framework Adoption install. Screen rebuilt on the Six-Signal verdict model (Craft-at-Screen — no numeric scores; scoring begins at Scout via the frozen Screen→Scout conversion rubric); Agent-Era upgraded at Screen from trip-wire to weighted posture verdict (Signal 5); Alpha-AI Sovereignty Phase 2 installed as the fourth always-active lens (Signal 6 → Scout Q8 → Diligence Tier 4 → DD Report mappings); gates-and-flags.md rewritten and renamed to the Universal Guide with the TechGroup screener now self-contained in gates-and-flags-techgroup.md. Regression: back-test three ADVANCE/MEDIUM, no flips. See pipeline-decisions-log.md Decision 9.) | NWAi Investment Intelligence & AI | Jamie, TechGroup Co-Chair*

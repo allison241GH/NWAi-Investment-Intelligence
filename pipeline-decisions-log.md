@@ -294,5 +294,47 @@ Scout-onward numeric scoring (Conviction /19, bands, Phase 1/2 rubrics); the DD 
 
 ---
 
-*Last updated: July 13, 2026 | Maintained by Jamie, TechGroup Co-Chair*
+## Decision 10 — Founder Claims Reconciliation & Credibility Cap at Scout (RootCause.ai lesson)
+
+**Date:** July 15, 2026 (Scout install: plugin v3.1.0) + July 15, 2026 (`/post-meeting` extension: plugin v3.2.0 — ratified by Jamie same day)
+**Status:** Implemented (plugin v3.2.0; architecture v0.40.0; `scout.md` Step 4c + `post-meeting.md` analyst lens/POV box + `diligence-analysis-framework.md` §2)
+**Trigger deal:** RootCause.ai — PASS recorded July 15, 2026 (`deals/archive/RootCause.ai/Reports/RootCause.ai - Decision Record 2026-07-15.docx`)
+
+### What happened
+
+RootCause.ai's June 2026 Investor Diligence Response walked back three load-bearing deck claims in one document: (1) the production engine is pivoted Cholesky factorization — a well-known technique — while the deck's breakthrough framing (tensor-train / cross-interpolation, "876,000x / O(n log n)") is research-roadmap, not built; (2) the DHL "$20M savings" headline is an unbooked estimate from an assumed intervention; (3) the quantified-ROI narrative generally reduces to guesstimates the company explicitly says it doesn't own ("we don't hold the lever that books the savings").
+
+The June 16 Scout update **caught every one of these individually** — flagged them, wrote diligence questions against them — and still net-upgraded conviction 11.8 → 12.9 (Q1b 2→3, Q4 3→4, GTM 3→4) on the strength of *self-reported* logos, metrics, and channel-partner names in the same letter. A TechGroup member (SME) read the same document and called it correctly: a gross deck-vs-reality discrepancy pattern that warrants a pass on founder-credibility grounds. Jamie ratified the pass.
+
+### The diagnosis
+
+Two mechanical failures, not a research failure:
+
+1. **Items vs. pattern.** Each walk-back was treated as an itemized open diligence question; nothing in the Scout machinery forced the *pattern* (multiple load-bearing claims walked back at once) up into the verdict. Screen has this concept (the coherence cap on Triage Conviction); Scout had no equivalent.
+2. **Asymmetric evidence treatment.** The founder's favorable self-reported claims raised scores immediately, while the founder's unfavorable admissions were deferred to future diligence. The Citation Contract already classified such claims as Reported-tier ("a private written claim is not independent verification" — the June 16 report's own words) but nothing prevented Reported-tier evidence from driving score upgrades.
+
+### The rule installed (scout.md Step 4c)
+
+Applies to any Scout scoring pass whose inputs include founder-provided follow-up material superseding earlier founder materials:
+
+1. **Reconcile before re-scoring** — classify every load-bearing prior claim as CONFIRMED / QUALIFIED / WALKED BACK, rendered as a table in the report.
+2. **Pattern rule** — 1 walked-back load-bearing claim = ⚠️ in the Analyst Verdict Block; ≥2 = ❌ founder-credibility red flag, ADVANCE off the table until independently re-verified (default DECLINE, or WATCH with a named re-verification trigger).
+3. **Credibility Cap** — a document that walks back a load-bearing claim cannot produce a net conviction increase.
+4. **Reported-tier evidence cannot raise scores** — self-reported confirmations may resolve open questions but only independently verified evidence raises a dimension score; apply symmetrically.
+
+### Extension — `/post-meeting` claim walk-back lens (July 15, 2026, plugin v3.2.0)
+
+Jamie ratified extending the same logic to the Diligence-stage meeting analysis, where transcripts can contain walk-backs just as DD responses can. The post-meeting framework already watched for "structural contradictions" but had no classification, no pattern escalation, and no cap. Installed in `post-meeting.md` (analyst lens, POV-box mandatory classifications, running thesis update) and `diligence-analysis-framework.md` §2:
+
+1. **Walk-back classification** — a transcript that walks back a load-bearing claim from prior founder materials (deck, DD response, data room, earlier meeting) classifies the affected claims CONFIRMED / QUALIFIED / WALKED BACK; every walk-back is a Key Insight, never just a tracker note.
+2. **Cumulative credibility ledger** — the count accumulates across the whole diligence record (Scout Step 4c table + all post-meeting docs), not per-meeting. 1 = ⚠️ in the Analyst POV box; ≥2 = ❌ founder-credibility pattern that *leads* the POV box and the running thesis update, with a recommendation to pause diligence or move to `/decision pass` until independently re-verified. The running thesis update carries the ledger line whenever the count is ≥1.
+3. **Symmetry rule at Diligence** — favorable self-reported statements in a meeting are Reported-tier: they may resolve tracker items but cannot flip a 🔴 thesis stress point to 🟢 without independent verification.
+
+### What did NOT change
+
+Scout scoring rubrics, weights, and the Conviction /19 architecture; the Screen-stage coherence cap (already existed); the Citation Contract itself (this decision enforces its tiers in the scoring mechanics rather than only in the prose); the post-meeting dual-output document structure (POV box / Key Insights / tracker — the ledger lives inside the existing POV box, no new section). No MCP changes — no plugin reinstall required.
+
+---
+
+*Last updated: July 15, 2026 | Maintained by Jamie, TechGroup Co-Chair*
 *This log is a living document — add entries when key decisions are made in session.*

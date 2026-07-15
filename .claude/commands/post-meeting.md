@@ -64,6 +64,8 @@ The Analyst POV box (Step 6) MUST classify the customer's Behavioral Intensity a
 
 **Structural contradictions** — Cases where what was said conflicts with what was demonstrated, or where the stated vision conflicts with the product reality. A CEO who says "pure SaaS subscription" but demos a product requiring weeks of manual setup per customer is telling you something important — about the unit economics, the scaling model, and self-awareness.
 
+**Claim walk-backs & the credibility pattern (Decision 10 extension)** — A special class of structural contradiction: the transcript walks back a **load-bearing claim** made in prior founder materials (pitch deck, DD response, data room, or an earlier meeting) — core technology architecture, quantified customer ROI/value delivered, traction figures, team credentials. Classify each affected prior claim **CONFIRMED / QUALIFIED / WALKED BACK** and record any walk-back as a Key Insight. The count is **cumulative across the whole diligence record**, not per-meeting: carry forward walk-backs already recorded at Scout (Step 4c reconciliation table) and in prior post-meeting docs. One cumulative walk-back = ⚠️ stated in the Analyst POV box. **Two or more = ❌ founder-credibility discrepancy pattern** — it must lead the Analyst POV box and the running thesis update, and the document must recommend pausing diligence (or moving to `/decision [company] pass`) until the walked-back claims are independently re-verified. **Symmetry rule:** the founder's favorable self-reported statements in the same meeting are Reported-tier evidence — they may resolve tracker items, but they cannot flip a 🔴 thesis stress point to 🟢 on their own; that requires independent verification (reference call, signed contract, public record). Calibration case: RootCause.ai, July 2026 (`pipeline-decisions-log.md` Decision 10).
+
 **Moat signals** — Evidence for or against Memory Lock-in and proprietary defensibility. Does the product get stickier through use? Is the differentiation technology, data, or distribution? When asked "what makes you unique?", what did they lead with?
 
 **Team signals + Founder Profile Tags** — Who spoke authoritatively vs. who deferred, admitted gaps, or revealed depth limits. A technical delivery lead who can't answer basic architecture questions about their own platform is a signal. Note the gap between the CEO's narrative and the team's demonstrated knowledge. **Additionally, surface or update the Founder Profile Tag set** when the transcript reveals or confirms any of these attributes:
@@ -135,6 +137,7 @@ Before generating the document, synthesize a 2–3 sentence analyst verdict for 
 - **Partner / Reference classification** — if an external party was the subject or speaker (reference call, customer, OEM, strategic partner), state the classification explicitly: *"[Partner] is a [Channel / Licensee / Co-development partner / Acquirer-signal], NOT a [other category]."* Anchor in the verbatim quote that established the classification.
 - **Founder Profile observation** — if the meeting revealed or confirmed a founder profile attribute (first-time CEO, solo founder, academic-researcher, prior exit, etc.), state it in the POV box. This protects against downstream commands defaulting to generic "founder risk" framing.
 - **Behavioral Intensity classification** — *mandatory for `interview` meeting type.* Synthesize the four-question Behavioral-Intensity Question Bank into a single read: *"Customer behavioral intensity: [Strong / Some / None]. [One sentence on the dominant signal.]"* A *None* classification indicates commodity status and must be flagged explicitly.
+- **Claims Reconciliation read** — if this meeting walked back any load-bearing prior claim, state it: *"Cumulative walk-backs across the diligence record: [N] — [claim list]. [⚠️ credibility watch / ❌ credibility pattern]."* At ≥2 cumulative, this line LEADS the POV box and the verdict must address whether diligence should continue at all.
 
 This POV carries forward into the next meeting's context. It is the thread that connects the three deep dives into a coherent, progressive investment assessment.
 
@@ -170,5 +173,7 @@ After generating the document, state in chat (not in the document):
 
 > **Running thesis update after [Meeting Type] meeting:**
 > [2 sentences: what changed, what was confirmed, what the next meeting must resolve]
+
+When the cumulative walk-back count is ≥1, the running thesis update must carry it: *"Credibility ledger: [N] load-bearing claim(s) walked back to date ([⚠️ / ❌])."*
 
 This keeps the progressive POV visible and prevents each meeting from being processed in isolation.

@@ -151,6 +151,20 @@ Present both scores together and flag any significant divergence (>2 band gap be
 - Both High: Advance with confidence
 - Both Low: Decline cleanly
 
+## Step 4c: Founder Claims Reconciliation & Credibility Cap
+
+**Applies to any Scout scoring pass — initial or update — whose inputs include founder-provided follow-up material** (a written DD response, email answers to diligence questions, an updated deck, or post-call materials) that supersedes earlier founder materials.
+
+**Calibration case: RootCause.ai, July 2026 (pipeline-decisions-log.md Decision 10).** The June 16 Scout update flagged every individual discrepancy in the company's DD Response (production tech ≠ deck framing, headline ROI unbooked) yet net-*upgraded* conviction 11.8→12.9 from self-reported logos and channel names in the same document. A TechGroup member read the same document as a disqualifying deck-vs-reality discrepancy pattern, and the deal was passed. The member was right; the scoring machinery was wrong. This step encodes the correction.
+
+1. **Reconcile before re-scoring.** List every load-bearing claim from the earlier materials — core technology architecture, quantified customer ROI/value delivered, traction figures, team credentials — and classify each against the new material: **CONFIRMED / QUALIFIED / WALKED BACK**. Render the reconciliation as a table in the report (Claim | New-Material Reality | Classification). Only after this table is complete may any dimension be re-scored.
+
+2. **Walked-back claims are a credibility signal, not a diligence item.** One WALKED BACK classification on a load-bearing claim = ⚠️ Yellow Flag stated in the Analyst Verdict Block (not only in the Flags list). **Two or more = ❌ Red Flag: founder-credibility discrepancy pattern** — the recommendation may not be ADVANCE until the walked-back claims are independently re-verified; default to DECLINE, or WATCH with a named re-verification trigger.
+
+3. **Credibility Cap on conviction.** A document that walks back a load-bearing claim cannot produce a net increase in Scout Conviction Score, regardless of what favorable new information it also contains. Score decreases it justifies still apply.
+
+4. **Reported-tier evidence cannot raise scores.** Self-reported confirmations in founder-provided material (named customers, named channel partners, self-measured metrics) are Reported-tier under the Citation Contract. They may resolve open questions and inform diligence questions, but a dimension score may only be *raised* on independently verified evidence (reference call, signed contract, public record, third-party source). Apply symmetrically: do not defer the founder's unfavorable admissions to "future diligence" while crediting their favorable claims immediately.
+
 ## Step 5: Assign to TechGroup Theme
 
 Match the company to one of the 5 NWAi TechGroup investing themes from SKILL.md:
