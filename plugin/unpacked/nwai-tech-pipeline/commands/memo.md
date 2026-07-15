@@ -20,12 +20,7 @@ Fetch the application from Dealum using `get_application` or `list_applications`
 
 ### Step 2b: Load Prior Stage Outputs from Workspace
 
-Check the workspace deals folder and load prior stage outputs using the Read tool. Locate the workspace and list the deals folder:
-
-```bash
-WORKSPACE=$(dirname "$(find /sessions -name "CLAUDE.md" -path "*/Claude CoWork*" 2>/dev/null | head -1)")
-ls "${WORKSPACE}/deals/" 2>/dev/null
-```
+Load the deal's prior outputs from `deals/active/[Company Name]/Reports/` (check `deals/archive/[Company Name]/Reports/` for closed or reopened deals). Use the Read tool (or `textutil -convert txt -stdout` via Bash for .docx).
 
 Load files in this priority order (most recent version of each, sorted by YYYY-MM-DD in filename):
 
@@ -137,13 +132,7 @@ Risks using --/- notation (3–5 bullets), Recommendation verdict with dollar am
 
 ## Step 4: Generate the PPTX Using pptxgenjs
 
-Install pptxgenjs if needed:
-```bash
-npm install pptxgenjs 2>/dev/null || true
-```
-
-Write a self-contained Node.js script (`generate-memo.js`) using pptxgenjs that produces
-the 4-slide deck with actual deal content (not placeholders). Apply NWAi branding:
+Write a self-contained Node.js script (`scripts/[company]-memo-[YYYY-MM-DD].js`) using the `pptxgenjs` npm package (already installed under `scripts/` — run with `node` from the `scripts/` directory so `require("pptxgenjs")` resolves from `scripts/node_modules`; if missing, `cd scripts && npm install pptxgenjs`). The script produces the 4-slide deck with actual deal content (not placeholders). Apply NWAi branding:
 - Primary color: `1E2761` (navy)
 - Accent: `CADCFC` (ice blue)
 - Slide 1: Dark navy background, white text — title/cover
@@ -152,35 +141,29 @@ the 4-slide deck with actual deal content (not placeholders). Apply NWAi brandin
 - Font: Calibri. Headers 24–32pt bold. Body 11–13pt. Captions 9–10pt.
 - Left/right two-column layout on Slide 2. Single column with sections on Slides 3–4.
 
-Run the script and save output as:
-`[Company-Name]-NWAi-Exec-Summary-[YYYY-MM-DD].pptx`
+Run the script and have it write the output directly to (create the folder if needed):
+`deals/active/[Company Name]/Reports/[Company-Name]-NWAi-Exec-Summary-[YYYY-MM-DD].pptx`
 
 ## Step 5: Visual QA
 
-Convert to images and inspect each slide for layout issues:
+If LibreOffice is available, convert the deck to PDF and inspect it visually:
 ```bash
-PPTX_SCRIPTS=$(find /sessions -name "soffice.py" -path "*/pptx/scripts/office/soffice.py" 2>/dev/null | head -1)
-if [ -n "${PPTX_SCRIPTS}" ]; then
-  python "${PPTX_SCRIPTS}" --headless --convert-to pdf [output].pptx
-  pdftoppm -jpeg -r 150 [output].pdf slide
+SOFFICE=$(command -v soffice || true)
+[ -z "$SOFFICE" ] && [ -x "/Applications/LibreOffice.app/Contents/MacOS/soffice" ] && SOFFICE="/Applications/LibreOffice.app/Contents/MacOS/soffice"
+if [ -n "$SOFFICE" ]; then
+  "$SOFFICE" --headless --convert-to pdf --outdir "deals/active/[Company Name]/Reports/" "deals/active/[Company Name]/Reports/[output].pptx"
 else
-  echo "soffice.py not found — skipping PDF QA. Verify slides manually."
+  echo "LibreOffice not installed — skipping automated visual QA."
 fi
 ```
 
-Check all four slides for: text overflow, overlapping elements, missing content,
-low contrast, uneven spacing. Fix issues and re-verify before proceeding.
+If the PDF was produced, Read it with the Read tool and check all four slides for: text overflow, overlapping elements, missing content, low contrast, uneven spacing. Fix issues in the generator script, regenerate, and re-verify. If LibreOffice is not installed (the current default on this Mac), skip automated QA, say so explicitly in the Step 7 confirmation, and ask Jamie to eyeball the deck in PowerPoint/Keynote before it goes to members.
 
-## Step 6: Save to Workspace and Update Dealum
+## Step 6: Update Dealum
 
-Locate the workspace dynamically and copy the final PPTX to the deals subfolder:
-```bash
-WORKSPACE=$(dirname "$(find /sessions -name "CLAUDE.md" -path "*/Claude CoWork*" 2>/dev/null | head -1)")
-mkdir -p "${WORKSPACE}/deals"
-cp [Company-Name]-NWAi-Exec-Summary-[YYYY-MM-DD].pptx "${WORKSPACE}/deals/[Company-Name]-NWAi-Exec-Summary-[YYYY-MM-DD].pptx"
-```
+The PPTX is already in the deal's Reports folder (written there in Step 4 — no copy step needed).
 
-Update Dealum: call `update_application` with `step="Memo"` and `tags_add=["Memo-Complete"]`.
+Update Dealum: call `update_application` with `step="Memo"` and `tags_add=["Memo-Complete"]`. (Dealum API deferred — the deal folder is the record until integration is restored.)
 
 ## Step 7: Confirm with User
 
