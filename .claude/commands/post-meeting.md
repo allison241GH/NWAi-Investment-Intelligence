@@ -14,18 +14,12 @@ Parse $ARGUMENTS as: first token = company name, last token = meeting type (prod
 
 ## Step 1: Load All Context
 
-Load the following from the workspace deals folder:
+Load the deal's prior outputs from `deals/active/[Company Name]/Reports/` (check `deals/archive/[Company Name]/Reports/` for reopened deals). Use the Read tool (or `textutil -convert txt -stdout` via Bash for .docx). Load the most recent of each:
 
-```bash
-WORKSPACE=$(dirname "$(find /sessions -name "CLAUDE.md" -path "*/Claude CoWork*" 2>/dev/null | head -1)")
-ls "${WORKSPACE}/deals/active/" 2>/dev/null
-```
-
-Load (most recent of each):
 - **Diligence Action Tracker** — `[Company]-Diligence-Action-Tracker-*.docx` — the open items for this company
 - **DD Kickoff Package** — `[Company] - DD Kickoff Package*.docx` — prior scored assessment and hypotheses
 - **Scout Assessment Report** — `[Company] - Scout Assessment Report*.docx` — original thesis baseline
-- **Prior post-meeting reconciliation docs** (if any) — carry forward prior Key Insights to build progressive POV
+- **Prior post-meeting reconciliation docs** (if any) — `[Company]-*-Meeting-Reconciliation-*.docx` — carry forward prior Key Insights (and the cumulative walk-back count) to build progressive POV
 
 Also load the diligence analysis framework:
 `.claude/skills/nwai-investment-framework/references/diligence-analysis-framework.md`
@@ -34,14 +28,13 @@ Also load the diligence analysis framework:
 
 ## Step 2: Load the Transcript(s)
 
-Check the workspace uploads and data room for meeting transcripts:
+Check the deal's data room for meeting transcripts:
 
 ```bash
-ls "${WORKSPACE}/deals/active/$(echo $ARGUMENTS | awk '{print $1}') Data Room/" 2>/dev/null
-ls /sessions/*/mnt/uploads/*.txt 2>/dev/null
+ls "deals/active/[Company Name]/Data Room/" 2>/dev/null
 ```
 
-If transcripts are not found in either location, ask the user to upload or specify the path. Do not proceed without transcript content.
+Match by meeting type and date (`*Transcript*.md`, `*Transcript*.docx`, `*Transcript*.pdf`, meeting-notes exports). If the user attached or pasted a transcript in this session, use that. If no transcript is found in either place, ask the user to provide one or specify the path. Do not proceed without transcript content.
 
 ---
 
@@ -145,12 +138,7 @@ This POV carries forward into the next meeting's context. It is the thread that 
 
 ## Step 7: Generate the Post-Meeting Document
 
-Read the docx skill:
-```bash
-find /sessions -name "SKILL.md" -path "*/skills/docx/SKILL.md" 2>/dev/null | head -1
-```
-
-Generate a `.docx` file using the standard dual-output structure (see `diligence-analysis-framework.md` for exact layout):
+Generate a professional `.docx` file using Node.js and the `docx` npm package (installed under `scripts/` — run with `node`, requiring `docx` from `scripts/node_modules`), following the standard dual-output structure (see `diligence-analysis-framework.md` for exact layout):
 
 **Section 1 — Analyst POV** (dark navy box): Meeting type + date + 2–3 sentence verdict.
 
@@ -158,9 +146,9 @@ Generate a `.docx` file using the standard dual-output structure (see `diligence
 
 **Section 3 — Resolved/Open Tracker** (table, 4 columns): # | Question | Finding | Status. Condensed — one paragraph per item maximum.
 
-Save to:
+Save to (create the folder if needed):
 ```
-${WORKSPACE}/deals/active/[Company]-[MeetingType]-Meeting-Reconciliation-[YYYY-MM-DD].docx
+deals/active/[Company Name]/Reports/[Company]-[MeetingType]-Meeting-Reconciliation-[YYYY-MM-DD].docx
 ```
 
 Provide a link to the file and a 3-sentence verbal summary of the top insight and what it means for the next meeting.
