@@ -179,28 +179,26 @@ Select the primary theme (best fit). No rationale needed — just state the them
 
 **Lead and SME assignment:** Output as "TBD — Pending Dealum API" for both Lead and SMEs. Do not populate named individuals.
 
-## Step 6: Produce Scout Assessment Report (2-Page Format)
+## Step 6: Produce Scout Assessment Report (Signal-First Member Format v2.1)
 
-Output the Scout Assessment Report using the 2-page format defined in scout-questions.md.
+Output the Scout Assessment Report using the **Signal-First Member Format (v2.1)** defined in scout-questions.md. Two binding rules: **(1) member-first structure** — the report is built around signals, insights, and actions, with all machinery in the deal-team appendix; **(2) the analyst-voice rule** — every sentence in a synthesis cell must make a judgment, state the single fact the judgment stands on, or name what it means for the deal; synthesis cells lead with the insight and stay ≤ 60 words. Findings belong to the agent briefings and appendix — write the "so what," not the findings recap.
 
-**Apply the Citation Contract** (`.claude/skills/nwai-investment-framework/references/citation-contract.md`) when assembling this report: every external fact carries an inline `[n]` marker; merge the four research agents' `── SOURCES ──` blocks into one enumerated Sources list (dedupe identical URLs, renumber the markers); carry confidence tags through; keep analytic judgments as judgments (no fabricated citations).
+**Apply the Citation Contract** (`.claude/skills/nwai-investment-framework/references/citation-contract.md`): every external fact carries an inline `[n]` marker (attached to anchor facts in synthesis cells); merge the four research agents' `── SOURCES ──` blocks into one enumerated list in Appendix D (dedupe, renumber); carry confidence tags through; keep analytic judgments as judgments.
 
-**Page 1 — Scorecard** (all tables, no prose):
-1. Triage Carry-Forward block (Six-Signal verdicts + Triage Conviction + mapped baseline via the conversion rubric; gates; flags)
-2. Product & Market Positioning table (Category Type | Lifecycle Horizon | Ecosystem Role Score | Adjacent Risk Score)
-3. Moat Assessment table (Primary Moat | Strength | Primary Threat | Verdict)
-4. Macro Trends table (Dimension | 10-yr Direction | Thesis Impact)
-5. Analyst Verdict Block (Recommendation | Thesis Fit Score | Scout Conviction Score | Dual Score Interpretation | Verdict | What You Have to Believe | Where's the Bet | Fear | Greed)
-6. Score Summary table with delta from the mapped Triage baseline for overlapping dimensions (13 rows: Q1, Q1b, Q2, Q3/Moat, Q4, Q5, Q6, Q7, Q8, Team, Technology, Traction, GTM) — one-line explanation required on any dimension where Scout departs from the baseline by ≥2
+**Member surface (~2 pages) — in this order:**
+1. **Analyst Verdict** (first block): Recommendation | One-Sentence Verdict | Single Biggest Risk | Conviction (what the research supports): X/19 + band + one plain line | Criteria Fit (does it fit what NWA funds): X/45 + band + one plain line | Divergence note ONLY when the two scores disagree by more than one band (omit when convergent) | What You Have to Believe | Where's the Bet | Fear | Greed. If the Step 4c credibility cap fired, the ⚠️/❌ founder-credibility line appears here.
+2. **The Six Signals — Scout depth**: a **3-column table** (`# · Signal | Verdict · Score | Synthesis — the "so what"`), one row per signal. Signal 1 ← Q1 + Q1b + Blue Ocean. Signal 2 ← Q2 + Q6 + TAM/SAM/SOM (conclusion only — numbers to Appendix B2). Signal 3 ← Phase 2 Team, **leading with the highest structural signal** (founder-born vs institution-conceived/hired, solo, split commitment) before fit and gaps. Signal 4 ← Q3 + Q4 + Q5 + adjacent/emerging tech + moat-side technology. Signal 5 ← Q7 (lead with plain helps/hurts). Signal 6 ← Q8 (lead with plain keeps/leaks). **No per-signal "Probe next" lines** — probes route to section 6. Supporting detail (TAM/SAM/SOM numbers, macro one-liners, moat two-tests, replicability timings, posture labels) → Appendix B2.
+3. **Execution & Path**: opens with the mandatory **GTM Model line** (`Model: [motion]. Consequence: [what that model means for speed, scalability, and risk given this deal's other facts].`), then the table (Dimension | Score | Assessment — analyst voice): Traction, GTM/Path to $10M, Technology (delivery), Exit (unscored, incl. the consequence of missing the window).
+4. **Founder Claims Reconciliation** (only when Step 4c ran): result line + Claim | New-Material Reality | Classification table.
+5. **Flags** (❌ / ⚠️ — one line each).
+6. **Diligence Questions & Next Actions**: 3–5 numbered questions (≥1 targets a load-bearing Reported/Unverified claim; absorbs every probe raised by the signals), then who to engage / what to request, and the Dealum step / tags / next action line.
 
-**Page 2 — Rationale** (bullet clusters, no paragraphs):
-1. Adjacent & Emerging Tech (Core use case / Functional equivalents / Emerging displacement)
-2. Phase 1 Viability — bullet clusters per section (3-4 bullets each; finding/fact/implication format)
-3. Phase 2 Execution table (one scored line per dimension)
-4. Flags (❌ Red / ⚠️ Yellow — one line each)
-5. Targeted Diligence Questions (3-5 numbered bullets — specific to this deal's risks; **at least one must target a load-bearing claim that came back Reported/Unverified from the research agents** — the citation contract's unverified set feeds here)
-6. Sources (enumerated `[n]` list merged from the research-agent `── SOURCES ──` blocks; every inline `[n]` marker on Page 1/Page 2 must resolve here)
-7. Dealum step, tags, next action
+**Deal-team appendix:**
+- A · Triage Carry-Forward (Screen verdicts + conviction, gates, prior flags, mapped baseline via the conversion rubric)
+- B · Score Summary (13-row delta table — unchanged mechanics; one-line explanation on any ≥2 divergence)
+- B2 · Supporting reads (TAM|SAM|SOM line · four macro one-liners · moat two-test results · replicability timings · Q7/Q8 posture deal-team lines)
+- C · Scoring arithmetic (both scores' weighted math)
+- D · Sources (merged `[n]` list; every inline marker resolves here)
 
 ## Step 6b: Generate Scout Assessment Report as Word Document
 
@@ -215,26 +213,24 @@ Use US Letter page size (12240 × 15840 DXA), 1-inch margins, Arial font. Apply 
 
 **⚠️ Page number API (docx v9 — do not deviate):** Use `new TextRun({ children: [PageNumber.CURRENT] })` inside the footer paragraph — this matches `scripts/dd-report-generator.js` and produces valid OOXML. Do NOT use `PageNumberElement` (produces `<w:pgNum/>` directly in `<w:p>`, which Microsoft Word rejects with a file-open error). `SimpleField('PAGE')` is an acceptable fallback if `PageNumber.CURRENT` is unavailable.
 
-The Word document must contain all of the following sections in order, matching the 2-page format from Step 6:
+The Word document mirrors the Step 6 structure exactly:
 
-**Page 1 — Scorecard:**
-1. **Title block** — Company name (large, bold), "NWAi TechGroup Scout Assessment" subtitle, scout date, and Recommendation badge (ADVANCE TO DILIGENCE / WATCH / DECLINE) rendered as a colored inline text block.
-2. **Triage Carry-Forward table** — 2-column table: Preliminary Call + Triage Conviction, Six-Signal verdict line (compact: S1–S6 verdicts), Mapped Opportunity Baseline (/25), Mapped Readiness Baseline (/20), Hard Gates, Wrapper Rating (Signal 4 tag), Prior Red Flags, Prior Yellow Flags. (Legacy numeric reports: Opportunity Score, Readiness Score in place of the verdict/mapped rows.)
-3. **Product & Market Positioning table** — 4-column table: Category Type | Lifecycle Horizon | Ecosystem Role Score | Adjacent Risk Score.
-4. **Moat Assessment table** — 4-column table: Primary Moat | Strength | Primary Threat | Verdict.
-5. **Macro Trends table** — 3-column table: Dimension | 10-yr Direction | Thesis Impact (4 rows).
-6. **Analyst Verdict Block** — 2-column table with labeled rows: Recommendation, Thesis Fit Score (rule-based: mapped Opportunity + Readiness baseline / 45 + gates status), Scout Conviction Score (AI research: / 19 + threshold band), Dual Score Interpretation (one line — convergent or divergent, and what that means for the decision), Verdict, What You Have to Believe, Where's the Bet, Fear, Greed. Use navy header row. The two scores must always appear together — they are not interchangeable and divergence is signal.
-7. **Score Summary table** — Dimension | Triage (mapped) | Scout Score | Delta (13 rows: Q1, Q1b/Demand Signal, Q2, Q3/Moat, Q4, Q5, Q6, Q7/Agent-Era Readiness with posture tag, Q8/Alpha-AI Sovereignty with posture tag, Team, Technology, Traction, GTM). Show ↑/→/↓ delta for baseline-overlapping dimensions; "NEW" for strategic dimensions and Q1b; append the one-line explanation on any ≥2 divergence from the mapped baseline.
+**Member surface:**
+1. **Title block** — Company name (large, bold), "NWAi TechGroup Scout Assessment" subtitle, scout date, Recommendation badge (colored inline text block).
+2. **Analyst Verdict table** — 2-column labeled rows per Step 6 item 1 (navy header); divergence-note row rendered only when divergent.
+3. **Six Signals table** — 3 columns (# · Signal | Verdict · Score | Synthesis), navy header row, alternating row shading; synthesis cells ≤ 60 words, analyst voice.
+4. **Execution & Path** — GTM Model line (bold "Model:" / "Consequence:") above a 3-column table (Dimension | Score | Assessment): Traction, GTM/Path to $10M, Technology (delivery), Exit.
+5. **Founder Claims Reconciliation** (when Step 4c ran) — result line + 3-column table.
+6. **Flags** — bullet list.
+7. **Diligence Questions & Next Actions** — numbered list + engagement/request lines + pipeline line.
 
-**Page 2 — Rationale:**
-8. **Adjacent & Emerging Tech** section — 3 bullet points: Core use case, Functional equivalents, Emerging displacement.
-9. **Phase 1 Viability** section — four subsections (Category & Market Discontinuity, Demand Signal Test, Market Opportunity, Moat). Category/Market Opportunity/Moat: bullet cluster of 3-4 bullets each. Demand Signal Test: 3-line block — Demand type: DEMAND-PULL / TECHNOLOGY-PUSH / MIXED | Evidence: [2-3 signals] | Strongest signal: [one sentence].
-10. **Phase 2 Execution table** — 3-column table (Dimension | Score | Assessment) with rows for Team, Technology, Traction, GTM/Path to $10M, Exit. For the Team row, expand the Assessment cell to include a 5-row sub-table: Founder-Market Fit | Execution Evidence | Co-founder Dynamics | Referenced Credibility | Team Completeness — each with a STRONG/MODERATE/WEAK or ALIGNED/RISK SIGNAL rating and a one-line note.
-11. **Flags** section — ❌ Red flags and ⚠️ Yellow flags as a bullet list.
-12. **Targeted Diligence Questions** — numbered list, 3-5 items. At least one targets a claim that came back Reported/Unverified from the research agents (per the Citation Contract).
-13. **Sources** — enumerated list (or compact 1-column table), one row per source: `[n] Title / publisher — URL or doc locator (retrieved YYYY-MM-DD) — Verified/Reported`. Merged and renumbered from the research-agent `── SOURCES ──` blocks; every inline `[n]` marker used in the document resolves here.
-14. **Footer row** — Dealum step, suggested tags, next action.
-15. **Page footer** on every page — "NWAi Investment Intelligence — Confidential" left-aligned, page number right-aligned.
+**Deal-team appendix (new page, clearly labeled "Deal-Team Appendix"):**
+8. **A · Triage Carry-Forward table** — Preliminary Call + Triage Conviction, compact S1–S6 verdict line, Mapped Opportunity Baseline (/25), Mapped Readiness Baseline (/20), Hard Gates, prior flags. (Legacy numeric reports: historical scores in place of the mapped rows.)
+9. **B · Score Summary table** — Dimension | Triage (mapped) | Scout | Delta (13 rows; ↑/→/↓, NEW, divergence explanations).
+10. **B2 · Supporting reads** — TAM|SAM|SOM line, macro one-liners, moat two-tests, replicability timings, Q7/Q8 posture lines.
+11. **C · Scoring arithmetic** — short block showing both scores' group math.
+12. **D · Sources** — enumerated list, one row per source: `[n] Title / publisher — URL or doc locator (retrieved YYYY-MM-DD) — Verified/Reported`.
+13. **Page footer** on every page — "NWAi Investment Intelligence — Confidential" left-aligned, page number right-aligned.
 
 After generating the file, confirm the save path to the user and provide a link to the file.
 

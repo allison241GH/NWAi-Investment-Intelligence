@@ -1,7 +1,7 @@
 {
   "name": "nwai-tech-pipeline",
-  "version": "3.2.2",
-  "description": "NWAi TechGroup AI deal pipeline — Six-Signal triage screener (Craft-at-Screen, no numeric scores), Screen-to-Scout conversion rubric, four always-active lenses incl. Agent-Era Readiness and Alpha-AI Sovereignty, research agent team, and Screen-to-Memo workflows",
+  "version": "3.4.0",
+  "description": "NWAi TechGroup deal pipeline — Signal-First Scout Report v2.1: analyst-voice synthesis, Six-Signal table, GTM Model "description": "NWAi TechGroup deal pipeline — Signal-First Scout Report (v2): member-first Scout Assessment structure carrying the Six-Signal vocabulary from Screen" Consequences line",
   "author": {
     "name": "New World Angels",
     "url": "https://www.newworldangels.com"

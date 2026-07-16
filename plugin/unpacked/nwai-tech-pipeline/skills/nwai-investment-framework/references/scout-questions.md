@@ -389,105 +389,70 @@ Lead and SMEs: Output as "TBD — Pending Dealum API" for both.
 
 ---
 
-## Scout Assessment Report Format — 2-Page Design
+## Scout Assessment Report Format — Signal-First Member Format (v2.1, July 2026)
 
-### Page 1 — Scorecard (deal lead and TechGroup group read)
+**Design rule: the report is organized around what a member reviews — key signals, insights, actions — not around the scoring machinery.** The Six-Signal vocabulary carries forward from Screen: Scout deepens the *same six signals* with scores and independent research evidence, so members read one signal language across the funnel. Each decision question renders exactly once; scoring machinery (mapped baselines, deltas, arithmetic, supporting reads, sources) lives in the deal-team appendix. *(v2 ratified July 16, 2026 — pipeline-decisions-log.md Decision 11; v2.1 same day added the analyst-voice rendering rules below. Replaces the v1 "2-Page Scorecard/Rationale" design.)*
 
-**Triage Carry-Forward block** — Six-Signal verdicts + Triage Conviction from the Screen report, the mapped per-dimension baseline (translated via `references/screen-scout-conversion-rubric.md`), Hard Gates, all flags. *(Legacy numeric Triage Reports carry their Opportunity/Readiness dimension scores directly.)*
+**The analyst-voice rule (binding for every synthesis cell in this report):** Scout is a 30-minute decision brief answering *advance to diligence or not*. Findings live in the agent briefings and the appendix; the member surface carries **judgments**. Every sentence in a synthesis cell must do one of three jobs — (a) make a judgment, (b) state the single fact the judgment stands on, or (c) name what it means for the deal. A sentence that merely reports findings is cut or demoted to the appendix. Synthesis cells: **insight sentence first, ≤ 60 words**, citation markers attached to anchor facts only. Write the "so what," not the dissertation.
 
-**Product & Market Positioning table** (4 cols):
-```
-| Category Type | Lifecycle Horizon | Ecosystem Role Score | Adjacent Risk Score |
-```
+**Dimension → home map (each scored dimension renders exactly once):**
 
-**Moat Assessment table** (4 cols — distilled verdict, not moat-type enumeration):
-```
-| Primary Moat | Strength | Primary Threat | Verdict |
-```
+| Scored dimension | Renders in |
+|---|---|
+| Q1 Category & Market Discontinuity + Q1b Demand Signal + Blue Ocean read | Signal 1 · Discontinuity |
+| Q2 Market Opportunity + Q6 Macro Tailwind + TAM/SAM/SOM | Signal 2 · Market (conclusion only — numbers and macro one-liners in Appendix B2) |
+| Phase 2 Team (PT-fit, MT-fit, commitment, key seats, claim verification) | Signal 3 · Team |
+| Q3 Moat + Q4 Ecosystem Role + Q5 Adjacent Displacement + Adjacent & Emerging Tech + moat-side Technology (TRL, wrapper, replicability) | Signal 4 · Moat |
+| Q7 Agent-Era Readiness | Signal 5 · Agent-Era |
+| Q8 Alpha-AI Sovereignty | Signal 6 · Protect Alpha |
+| Traction · GTM/Path to $10M · Technology delivery (shipping risk) · Exit | Execution & Path table |
 
-**Macro Trends table** (3 cols):
-```
-| Dimension  | 10-yr Direction | Thesis Impact                                 |
-| Customer   |                 | Tailwind / Neutral / Headwind                 |
-| Technology |                 |                                               |
-| Regulatory |                 |                                               |
-| Economic   |                 |                                               |
-```
+*Technology splits deliberately: "can they defend it" (TRL/wrapper/replicability → Signal 4) and "can they ship it" (delivery risk → Execution & Path) are different member questions. The Technology 0–5 score prints once, in Execution & Path.*
 
-**Analyst Verdict Block** (structured fields — no paragraphs):
-```
-Recommendation:           ADVANCE TO DILIGENCE / WATCH / DECLINE
-Scout Conviction Score:   [X / 19]
-Blue Ocean:               BLUE / CONTESTED / RED — [category created, or closest rival + wedge]
-Verdict:                  [one sentence — blunt, IC-ready]
-What You Have to Believe: [one sentence — the core thesis assumption]
-Where's the Bet:          [one sentence — the specific inflection point being backed]
-Fear:                     [one phrase — biggest risk]
-Greed:                    [one phrase — upside case if thesis holds]
-```
+### Member surface (~2 pages)
 
-**Score Summary table** (delta from Triage where applicable):
+**1 · Analyst Verdict** (first block — structured fields, no paragraphs):
 ```
-| Dimension                       | Triage  | Scout   | Delta      |
-| Category & Market Discontinuity | D1: X/5 | X/5     | ↑ / → / ↓ |
-| Demand Signal Test              | —       | X/5     | NEW        |
-| Market Opportunity              | D2: X/5 | X/5     |            |
-| Moat                            | D4: X/5 | S/D/W/N |            |
-| Ecosystem Role                  | —       | X/5     | NEW        |
-| Adjacent Displacement Risk      | —       | X/5     | NEW        |
-| Macro Tailwind                  | —       | X/5     | NEW        |
-| Agent-Era Readiness             | —       | X/5 (posture) | NEW   |
-| Alpha-AI Sovereignty            | —       | X/5 (posture) | NEW   |
-| Team                            | D3: X/5 | X/5     |            |
-| Technology                      | —       | X/5     |            |
-| Traction                        | D5: X/5 | X/5     |            |
-| GTM / Path to $10M              | —       | X/5     |            |
+Recommendation:            ADVANCE TO DILIGENCE / WATCH / DECLINE
+One-Sentence Verdict:      [blunt, IC-ready — required Scout element]
+Single Biggest Risk:       [what kills this company — required Scout element]
+Conviction (what the research supports):  [X/19 — band] + one plain line
+Criteria Fit (does it fit what NWA funds): [X/45 — band] + one plain line
+[Divergence note — ONLY when the two scores disagree by more than one band:
+ one line on what the divergence means for the decision. Omit when convergent.]
+What You Have to Believe:  [one sentence]
+Where's the Bet:           [one sentence]
+Fear:                      [one phrase]   Greed: [one phrase]
+```
+*If the Step 4c credibility cap fired (any WALKED BACK claim), the ⚠️/❌ founder-credibility line appears here — not only in Flags.*
+
+**2 · The Six Signals — Scout depth.** Rendered as a **3-column table** for scanning:
+
+```
+| # · Signal | Verdict · Score | Synthesis — the "so what" |
 ```
 
-### Page 2 — Rationale (deal lead depth; group skims if needed)
+One row per signal. Verdict cell carries the verdict word + score chip(s) (e.g., `DIFFERENTIATED · Q1 4/5 · Demand 4/5`; Team adds the structural read, e.g., `hired, not founder-born`). Synthesis cell follows the analyst-voice rule (≤ 60 words, insight first). Signal-specific requirements:
+- **Signal 3 Team leads with the highest structural signal** (e.g., founder-born vs. institution-conceived/hired leadership; solo founder; split commitment) before fit and gaps — the "so what" of who is running this company.
+- **Signals 5 and 6** lead with the plain member answer (*helps/hurts* · *keeps/leaks*); posture labels stay on the deal-team line in the appendix.
+- **No per-signal "Probe next" lines** — every probe routes to Diligence Questions & Next Actions (one home for questions).
+- Supporting detail — TAM|SAM|SOM numbers, the four macro one-liners, the moat two-test results, replicability timings — lives in **Appendix B2 · Supporting reads**, not in the synthesis cells.
 
-**Adjacent & Emerging Tech** (bullet cluster):
-- Core use case: [one sentence]
-- Functional equivalents: [list — one phrase each]
-- Emerging displacement: [threat + time horizon]
-- Ocean type & differentiation: BLUE / CONTESTED / RED — [if not BLUE: closest rival + one-line differentiation claim, moat-or-feature verdict]
+**3 · Execution & Path.** Opens with a mandatory **GTM Model line**: name the go-to-market model in plain words, then its consequences given the other facts of this deal (`Model: [motion]. Consequence: [what that model means for speed, scalability, and risk here].`). Then the table (Dimension | Score | Assessment — analyst voice, same three-jobs rule): Traction, GTM/Path to $10M, Technology (delivery), Exit (unscored: top 3 acquirers, hold period, 10x YES/STRETCH/UNLIKELY — with the consequence of missing the window).
 
-**Phase 1 Viability** (bullet clusters — 3-4 bullets per section; finding/fact/implication format):
+**4 · Founder Claims Reconciliation** *(only when Step 4c ran)*: result line (N confirmed / N qualified / N walked back → cap fired or not) + the Claim | New-Material Reality | Classification table. Promotes into block 1 when the cap fires.
 
-*Category & Market Discontinuity*
-- [bullet]
-- [bullet]
-- [bullet]
+**5 · Flags** — ❌ Red / ⚠️ Yellow, one line each.
 
-*Demand Signal Test*
-- Demand type: DEMAND-PULL / TECHNOLOGY-PUSH / MIXED
-- Evidence: [2-3 signals]
-- Strongest signal: [one sentence]
+**6 · Diligence Questions & Next Actions** — 3–5 numbered questions (≥1 targets a load-bearing Reported/Unverified claim per the Citation Contract; absorbs every probe raised by the signals), then: who to engage, what to request, and the pipeline line (Dealum step / tags / next action).
 
-*Market Opportunity*
-- TAM | SAM | 5yr capture: [numbers]
-- [2-3 bullets: market trajectory, growth driver, 10x viability]
+### Deal-team appendix (not member surface)
 
-*Moat*
-- [3-4 bullets: what the moat is, what it isn't, primary evidence, key weakness]
-
-**Phase 2 Execution** (table — one line per item, score shown):
-```
-| Dimension          | Score | Assessment                                                    |
-| Team — PT-Fit + MT-Fit | X/5 | Product-Team Fit: STRONG/MOD/WEAK | Market-Team Fit: STRONG/MOD/WEAK |
-|                    |       | Commitment: X% full-time | Key-Seat: X of 6 filled or stage-appropriate |
-|                    |       | Verification: [N verified / N unverified] | Strength: [phrase] | Gap: [phrase] |
-| Technology         | X/5   | TRL X | [thin wrapper or deep IP] | Replication: [time]    |
-| Traction           | X/5   | [revenue/pipeline] | [named customer] | [retention signal] |
-| GTM / Path to $10M | X/5   | [motion] | [key milestone] | [CAC/LTV if known]          |
-| Exit               | —     | [Acquirer 1], [2], [3] | Hold: Xyr | 10x: YES/STRETCH/UNLIKELY |
-```
-
-**Flags** (bullet list — one line each):
-- ❌ [Red flags]
-- ⚠️ [Yellow flags]
-
-**Targeted Diligence Questions** (3-5 numbered bullets — specific and deal-derived, not generic):
+- **A · Triage Carry-Forward** — Screen verdicts + Triage Conviction, gates, prior flags, and the mapped per-dimension baseline via `references/screen-scout-conversion-rubric.md`. *(Legacy numeric Triage Reports carry their historical dimension scores directly.)*
+- **B · Score Summary** — the 13-row Dimension | Triage (mapped) | Scout | Delta table, unchanged mechanics: ↑/→/↓ for baseline-overlapping dimensions, NEW for the rest, one-line explanation required on any ≥2 divergence.
+- **B2 · Supporting reads** — TAM | SAM | SOM numbers line; the four macro one-liners (Customer / Technology / Regulatory / Economic → Tailwind / Neutral / Headwind); moat two-test results (Training / Inference edge); replicability timings; posture deal-team lines for Q7/Q8.
+- **C · Scoring arithmetic** — the weighted group math for Scout Conviction and Criteria Fit (Thesis Fit).
+- **D · Sources** — the merged, renumbered Citation Contract list; every inline `[n]` in the report resolves here.
 
 ```
 DEALUM STEP TO UPDATE: Scout/IntroCall

@@ -336,5 +336,40 @@ Scout scoring rubrics, weights, and the Conviction /19 architecture; the Screen-
 
 ---
 
-*Last updated: July 15, 2026 | Maintained by Jamie, TechGroup Co-Chair*
+## Decision 11 — Signal-First Scout Report (v2): Member-First Restructure of the Scout Assessment
+
+**Date:** July 16, 2026 (ratified in session on the SecureG Scout report — first Scout produced after the v3.0.0 Framework Adoption)
+**Trigger:** Jamie's review of the SecureG Scout Assessment Report (July 15, 2026). Verbatim thrust: the report "just renders sections that are not salient for members," reads like an attempt to "decode the signal output screener into a scored scout report," and repeats the same dimensions across orphaned sections (Moat appeared in three places; positioning/macro/adjacent-tech stood alone as worksheet dumps).
+
+**Root cause (agreed):** the v1 Scout format was organized around the scoring machinery — Page 1 mirrored the internal Phase 1 / Strategic / Phase 2 dimension groups of `scout-questions.md` plus the Screen→Scout carry-forward mechanics. It predated the Framework Adoption redesign: Screen got the member-first signal-block architecture in v3.0.0; Scout was still rendering its worksheet.
+
+**Decision:** rebuild the Scout report around what a member reviews, carrying the Six-Signal vocabulary forward from Screen so members read one signal language across the funnel. Each scored dimension renders exactly once via a fixed dimension→home map:
+
+1. **Analyst Verdict leads** — now explicitly carrying the two required Scout elements (One-Sentence Verdict, Single Biggest Risk) plus both scores as one plain line each and the dual-score read. A fired Step 4c credibility cap promotes into this block.
+2. **The Six Signals — Scout depth** — one block per Screen signal with score chips: Discontinuity (Q1+Q1b+Blue Ocean), Market (Q2+Q6 macro one-liners+TAM/SAM/SOM), Team (Phase 2 sub-reads), Moat (Q3+Q4+Q5+adjacent/emerging tech+moat-side technology), Agent-Era (Q7 plain helps/hurts), Protect Alpha (Q8 plain KEEPS/LEAKS). Each block ends with a one-line "Probe next:".
+3. **Execution & Path table** (Dimension | Score | Assessment — the format Jamie endorsed): Traction, GTM, Technology (delivery), Exit. **Technology splits deliberately**: defend-it evidence (TRL/wrapper/replicability) renders in Signal 4; ship-it risk renders here; the 0–5 score prints once, here.
+4. **Founder Claims Reconciliation** stays (Decision 10), positioned after the signals as evidence — conditional promotion to the verdict block when the cap fires.
+5. **Flags** and **Diligence Questions & Next Actions** unchanged in substance; next-actions line now includes who to engage / what to request.
+6. **Deal-team appendix** absorbs the machinery: Triage Carry-Forward + mapped baseline, the 13-row Score Summary with deltas (kept — it enforces the explained-divergence rule and the conversion-rubric audit trail; not deleted, just de-membered), scoring arithmetic, and Sources.
+
+**What did NOT change:** all scoring mechanics — Q1–Q8 rubrics, weights, Scout Conviction /19, Thesis Fit /45, the conversion rubric, Step 4c, the Citation Contract. This is a rendering-layer decision only. Files: `scout-questions.md` (report-format section → Signal-First v2 + dimension→home map), `scout.md` (Steps 6/6b), CLAUDE.md Output Depth row. Validation case: SecureG report regenerated in v2 format (July 16, 2026), v1 file marked superseded. Plugin v3.3.0 (arch v0.43.0). No MCP changes — no reinstall required.
+
+---
+
+### Addendum — v2.1 analyst-voice rendering rules (July 16, 2026, plugin v3.4.0)
+
+Jamie's second-pass review of the v2 SecureG report ratified the voice layer ("think like a seasoned analyst — synthesis, not a dissertation"):
+
+1. **Analyst-voice rule (binding):** every sentence in a synthesis cell must (a) make a judgment, (b) state the single fact it stands on, or (c) name what it means for the deal; insight sentence first, ≤ 60 words; findings demote to agent briefings/appendix.
+2. **Six Signals render as a 3-column table** (# · Signal | Verdict · Score | Synthesis) for scanning; per-signal "Probe next" lines removed — all probes route to Diligence Questions (one home).
+3. **Signal 3 Team leads with the highest structural signal** (e.g., institution-conceived/hired leadership vs founder-born) before fit and gaps.
+4. **Execution & Path opens with a mandatory GTM Model line** — name the model, then its consequences given the deal's other facts.
+5. **Verdict-block relabel:** "Conviction (what the research supports)" and "Criteria Fit (does it fit what NWA funds)"; the standing Dual-Score-Read row replaced by a divergence note printed only when the scores disagree by more than one band.
+6. **Appendix B2 · Supporting reads** absorbs TAM/SAM/SOM numbers, macro one-liners, moat two-tests, replicability timings, and Q7/Q8 posture lines.
+
+Validation: SecureG report regenerated in v2.1 (July 16). Files: scout-questions.md, scout.md. Plugin v3.4.0 (arch v0.44.0). No MCP changes.
+
+---
+
+*Last updated: July 16, 2026 | Maintained by Jamie, TechGroup Co-Chair*
 *This log is a living document — add entries when key decisions are made in session.*
