@@ -421,6 +421,8 @@ Files: `gates-and-flags-techgroup.md` (v3.0 → v3.1), `screen.md`, `scripts/rep
 
 Files: `gates-and-flags-techgroup.md` (v3.1 → v3.2), `screen.md`. Plugin v3.4.3 (arch v0.47.0). No MCP changes — no reinstall required.
 
+**Validated (2026-08-26).** A fifth screen (Verdict 5), run in the same Claude Desktop chat thread as Verdict 4, reproduced ADVANCE despite an adverse-Moat roll-up — initially read as the fix not holding. A sixth screen, run with identical instructions in a **fresh claude.ai chat**, correctly produced WATCH/MEDIUM. Root cause of the Verdict 5 false alarm: continuing in the same chat thread let the model anchor to its own prior "ADVANCE" conclusion from Verdict 4 rather than genuinely re-deriving the call from the updated rule — not a failure of the Ask-at-Scout Precedence Check itself. **Standing testing practice going forward: validate a rubric/instruction change in a fresh chat thread, never a continued one** — a continued thread cannot distinguish "the fix didn't work" from "the model is anchoring to its own prior answer." Confirmed closed.
+
 ---
 
 *Last updated: August 26, 2026 | Maintained by Jamie, TechGroup Co-Chair*
