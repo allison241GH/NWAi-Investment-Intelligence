@@ -1,7 +1,7 @@
 {
   "name": "nwai-tech-pipeline",
-  "version": "3.4.2",
-  "description": "NWAi TechGroup deal pipeline — Six-Signal Screen v3.1 (Rubric Fidelity Amendment) + Signal-First Scout Report v2.1; docs/reference/Gemini renamed to docs/reference/ClaudeProjects",
+  "version": "3.4.3",
+  "description": "NWAi TechGroup deal pipeline — Six-Signal Screen v3.2 (Ask-at-Scout Precedence Check) + Signal-First Scout Report v2.1",
   "author": {
     "name": "New World Angels",
     "url": "https://www.newworldangels.com"

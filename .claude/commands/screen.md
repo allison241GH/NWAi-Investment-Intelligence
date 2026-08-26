@@ -116,7 +116,7 @@ Render each signal's verdict + confidence tag, then apply the conviction mechani
 
 **Fix-Forward Test (silent, before issuing WATCH):** "If the primary WATCH condition were resolved, would this thesis then clear the Scout bar?" If NO — because weighted signals remain adverse independently — issue DECLINE instead. Never print the test.
 
-**Ask-at-Scout rule:** if the only gap blocking ADVANCE is a question the 30-minute Scout call can answer directly (commitment status, role clarity, a terms discrepancy) and no other weighted signal is adverse → ADVANCE with it as Live Pitch Question #1, not WATCH. WATCH is for milestone-gated gaps.
+**Ask-at-Scout rule:** if the only gap blocking ADVANCE is a question the 30-minute Scout call can answer directly (commitment status, role clarity, a terms discrepancy) and no other weighted signal is adverse → ADVANCE with it as Live Pitch Question #1, not WATCH. WATCH is for milestone-gated gaps. **Precedence check (compute this before applying the rule at all):** check the full signal roll-up first — Ask-at-Scout applies ONLY when it shows zero adverse signals. A Scout-answerable gap on one signal never overrides an independent adverse finding on another (e.g., an adverse Moat still means WATCH even if Team's gap is call-answerable) — a Moat/Market/Agent-Era adverse finding is a structural verdict, not something a phone call fixes, so it is never Ask-at-Scout-eligible.
 
 **Traction lift:** exceptional VERIFIED Commercial Proof lifts Triage Conviction one band and may offset one adverse signal other than Team; state the lift in the roll-up line when applied.
 
@@ -319,6 +319,7 @@ Follow-up behavior (all surfaces): after the report, answer conversationally —
 - [ ] Narrative vs. substance — sharp story/substance divergence (either direction) noted in the Why; substance graded, not storytelling
 - [ ] Pattern note discipline — printed ONLY if a resemblance genuinely fired; one line with a disconfirming probe; hypothesis only — never evidence, never a vote, never padded into existence
 - [ ] Ask-at-Scout rule applied — a call-answerable sole gap with no other adverse signal → ADVANCE with it as Live Pitch Question #1, not WATCH
+- [ ] **Ask-at-Scout Precedence Check applied** — the roll-up was checked for ZERO adverse signals BEFORE Ask-at-Scout was considered at all; if the roll-up names any signal adverse (even one unrelated to the call-answerable gap), Ask-at-Scout does not apply and WATCH/DECLINE governs instead
 - [ ] Every signal carries a confidence tag; UNVERIFIED caps at the middle verdict; unverified claims labeled inline
 - [ ] Each signal appears exactly once — no restating a finding in a second block; cross-references point, never repeat
 - [ ] Six Signals rendered as blocks, NOT a table — bold header line + full-width basis prose; Moat tags on their own line; Gates and Deal Facts remain tables

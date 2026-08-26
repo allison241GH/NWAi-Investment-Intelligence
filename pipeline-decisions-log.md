@@ -400,5 +400,28 @@ Files: `gates-and-flags-techgroup.md` (v3.0 → v3.1), `screen.md`, `scripts/rep
 
 ---
 
+## Decision 13 — Ask-at-Scout Precedence Check
+
+**Date:** August 26, 2026
+**Trigger:** A fourth live screen of Constellation X — run in a live Claude Project on the Decision 12 fixes (Source-Tier Rule, Identity-Match Standard, Moat Sufficiency Test) — printed **PRELIMINARY CALL: ADVANCE TO SCOUT**, despite its own signal roll-up line stating "1 of 5 weighted signals adverse — Moat." Jamie flagged this for reconciliation immediately after Decision 12 shipped, as a further test of whether the fix was complete.
+
+**What worked (validation of Decision 12):** the two signal-level fixes performed exactly as designed. Team correctly read MIXED/non-adverse — the CTIO having *zero* discoverable public footprint was correctly treated as a live, Scout-answerable question rather than SPLIT. Moat correctly read WEAK, with the basis built explicitly on the Moat Sufficiency Test: no affirmative asset (no IP, Bedrock orchestration not proprietary, thesis-only network effect with two customers) survives contact with the flagged Goliath (Peregrine). Both matched the pipeline comparison run from Decision 12 almost exactly.
+
+**Root cause of the new failure:** the Ask-at-Scout rule's precondition — "no other weighted signal is adverse" — existed in prose but nothing forced it to be checked before the rule's ADVANCE shortcut fired. The report's own roll-up already named Moat adverse, and neither Traction Lift (the Commercial Proof line was explicitly Unverified/stalled, not exceptional-verified) nor Ask-at-Scout (Moat's WEAK read is a structural finding, not a commitment/role-clarity/terms-discrepancy question a phone call can resolve) actually qualified as an exception to the compound rule's default WATCH. The model appears to have treated the Team gap's call-answerability as sufficient on its own, without cross-checking that a second, independently adverse signal was already on the board. This is a distinct fragility class from Decision 12: not a bad *signal read*, but a *verdict-assembly order-of-operations* error — one level downstream of where the prior two guardrails operate.
+
+**Decision:** designed and validated in the Claude V13 sandbox first (`Claude-V13-Investor-Nuance-NWA-TechGroup-AI-Screener.md`, Amendment 3), then ported into the canonical pipeline (`gates-and-flags-techgroup.md` v3.1 → v3.2, `screen.md`):
+
+1. **Ask-at-Scout Precedence Check (Calibrated Rule 8a)** — compute the full signal roll-up FIRST, before considering Ask-at-Scout at all. Ask-at-Scout is a narrowing of the zero-adverse-signals case, never an independent path that can override an adverse finding on a different signal. Self-check: "Does the printed roll-up line say zero adverse signals?" If it names any signal as adverse — even one, even if a different signal's gap feels like "the" open question — Ask-at-Scout does not apply, and WATCH (or DECLINE, per the compound rule) governs; the Scout-answerable gap becomes part of the re-engage condition instead of a reason to skip WATCH.
+
+**Validation:** re-applying the check to the triggering case — Moat adverse, Team non-adverse, no earned traction lift — correctly forces WATCH, matching the Decision 12 pipeline comparison run.
+
+**What did NOT change:** no signal weight, no verdict-tier definition, no gate, and not the compound rule itself — this fix governs the gate that decides whether Ask-at-Scout is even allowed to run.
+
+**Open risk, still not addressed:** Decision 12's flagged gap (Market and Agent-Era bottom-tier boundaries) remains open. This decision adds a further standing question: are there other order-of-operations shortcuts in the Verdict Block assembly (Traction Lift, Fix-Forward Test) that carry a similar unchecked precondition? Not yet audited.
+
+Files: `gates-and-flags-techgroup.md` (v3.1 → v3.2), `screen.md`. Plugin v3.4.3 (arch v0.47.0). No MCP changes — no reinstall required.
+
+---
+
 *Last updated: August 26, 2026 | Maintained by Jamie, TechGroup Co-Chair*
 *This log is a living document — add entries when key decisions are made in session.*

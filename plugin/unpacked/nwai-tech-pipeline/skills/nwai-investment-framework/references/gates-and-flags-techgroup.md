@@ -1,4 +1,4 @@
-# NWAi TechGroup — Six-Signal Screener Reference v3.0
+# NWAi TechGroup — Six-Signal Screener Reference v3.2
 
 > **This is the self-contained screening reference for NWAi TechGroup.** It defines the
 > complete Screen-stage judgment model: hard gates, the NWA Filter evidence-rigor tests,
@@ -27,6 +27,19 @@
 > (Amendments 1 and 2) and `docs/reference/ClaudeProjects/Rubric_Fidelity_Addendum_v1.md` for the
 > incidents this responds to. Market's and Agent-Era's bottom-tier boundaries remain
 > unexamined open risk — no live divergence observed there yet.
+>
+> **v3.2 (August 2026) — Ask-at-Scout Precedence Check:** a fourth live screen of the
+> same company — run on the v3.1 fixes, in a live Claude Project, after both prior
+> guardrails had visibly worked (Team correctly read non-adverse, Moat correctly
+> read WEAK via the Sufficiency Test) — still printed ADVANCE despite its own roll-up
+> line naming Moat adverse. The Ask-at-Scout rule's precondition ("no other weighted
+> signal is adverse") existed in prose but nothing forced it to be checked before the
+> rule's shortcut fired on the Team gap — a verdict-assembly order-of-operations
+> error, distinct from the v3.1 evidentiary-rigor fixes. Adds a binding Precedence
+> Check (Calibrated Rule 8a): compute the full roll-up first; Ask-at-Scout applies
+> only when it shows zero adverse signals. Correct verdict for the triggering case:
+> WATCH. See `docs/reference/ClaudeProjects/Claude-V13-Investor-Nuance-NWA-TechGroup-AI-Screener.md`
+> (Amendment 3).
 >
 > **Scope:** TechGroup only. Other NWAi groups author their own frameworks — see
 > `gates-and-flags-universal-guide.md` for the architecture every group playbook
@@ -456,6 +469,22 @@ terms discrepancy — and no other weighted signal is adverse, issue **ADVANCE T
 SCOUT with that question as Live Pitch Question #1**. Do not park a deal on WATCH
 for information the Scout conversation exists to obtain.
 
+**Precedence check (binding order of operations).** Compute the full signal
+roll-up FIRST — every weighted signal's adverse/non-adverse status — before
+considering Ask-at-Scout at all. Ask-at-Scout is a **narrowing of the
+zero-adverse-signals case**, never an independent path that can override an
+adverse finding on a different signal. A Scout-answerable gap on Team (or any one
+signal) does NOT unlock ADVANCE if ANY OTHER weighted signal is independently
+adverse for a reason a phone call cannot fix — a Moat, Market, or Agent-Era
+finding is a structural verdict, not an informational gap; only commitment
+status, role clarity, and terms discrepancies are Ask-at-Scout-eligible.
+**Self-check before printing ADVANCE via Ask-at-Scout:** "Does the printed
+roll-up line say zero adverse signals?" If it names ANY signal as adverse — even
+one, even if a different signal's gap feels like "the" open question — Ask-at-
+Scout does not apply. WATCH governs (or DECLINE, per the compound rule); the
+Scout-answerable gap becomes part of the re-engage condition, not a reason to
+skip WATCH.
+
 **Traction lift:** exceptional Commercial Proof that is **VERIFIED** (real revenue,
 real growth, real retention — not deck-claimed) is an explicit conviction lifter: it
 can raise Triage Conviction one band and offset **one** adverse signal other than
@@ -587,6 +616,11 @@ paraphrase them loose.** They are stated operationally throughout this file and 
 8. Ask-at-Scout rule: a call-answerable gap (commitment, role clarity, terms) with no
    other adverse signal → ADVANCE with it as Live Pitch Question #1, not WATCH; WATCH
    is for milestone-gated gaps.
+8a. Ask-at-Scout Precedence Check: compute the full roll-up FIRST — Ask-at-Scout
+    applies only when it shows ZERO adverse signals; a Scout-answerable gap on one
+    signal never overrides an independent adverse finding on another (Constellation
+    X 4th-run adjudication — printed ADVANCE despite its own roll-up naming Moat
+    adverse; correct call was WATCH).
 9. Coherence conviction cap: material contradiction on a load-bearing number caps
    conviction at MEDIUM — cap only, never a verdict vote (Synergist adjudication).
 10. Academic-founder rules, both configurations: professor + operating CEO = standard
@@ -706,7 +740,8 @@ B Moat evidence tag at Screen; detailed TRL application happens at Scout and Dil
 
 ---
 
-*NWAi TechGroup Six-Signal Screener Reference | v3.1 | August 2026*
+*NWAi TechGroup Six-Signal Screener Reference | v3.2 | August 2026*
+*v3.2 (August 2026): Ask-at-Scout Precedence Check — a fourth live Constellation X screen on the v3.1 fixes printed ADVANCE despite its own roll-up naming Moat adverse, because Ask-at-Scout's "no other signal adverse" precondition was never mechanically checked before its shortcut fired on the Team gap. Adds Calibrated Rule 8a: compute the full roll-up first; Ask-at-Scout applies only when it shows zero adverse signals. Correct verdict for the triggering case: WATCH. See `docs/reference/ClaudeProjects/Claude-V13-Investor-Nuance-NWA-TechGroup-AI-Screener.md` (Amendment 3).*
 *v3.1 (August 2026): Rubric Fidelity Amendment — ported from the Claude V13 sandbox after a cross-session Constellation X screen produced a DECLINE/ADVANCE divergence and a follow-up pipeline comparison surfaced a second divergence on Moat. Adds calibrated rules 19–22: Source-Tier Rule + Identity-Match Standard (Signal 3), Confidence-Gated Compound Rule, Moat Sufficiency Test (Signal 4); plus the fixed coherence diff-list and fixed founder-identity query set. No weight or verdict-tier definition changed. See `docs/reference/ClaudeProjects/Claude-V13-Investor-Nuance-NWA-TechGroup-AI-Screener.md` and `Rubric_Fidelity_Addendum_v1.md`.*
 *v3.0 (July 2026): Six-Signal verdict model installed per the Pipeline Framework Adoption Spec (notes/NWAi-Pipeline-Framework-Adoption-Spec-2026-07.md) — Craft-at-Screen boundary, Agent-Era posture verdict (upgraded from the v2.1 Exposure trip-wire), Protect Alpha Signal 6 (Alpha-AI Sovereignty Phase 2, as evolved by the Claude V13 back-test), calibrated rules ledger. Absorbs the hard gates, NWA Filter, research protocol, and TRL reference formerly in gates-and-flags.md (rewritten and renamed to `gates-and-flags-universal-guide.md`). Numeric v2.1 archived at `_archive/gates-and-flags-techgroup-numeric-v2.1-legacy.md`.*
 *Replaces v2.1 (June 2026) and v1.0 (March 2026). Judgment model provenance: Claude V13 sandbox (docs/reference/ClaudeProjects/), 4-deal regression back-test ratified July 2026.*
