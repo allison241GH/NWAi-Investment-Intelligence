@@ -75,7 +75,7 @@ Lineage, briefly: a numeric screener (6-dimension Opportunity + 5-dimension Read
 scoring, v1.0 March 2026 → v2.1 June 2026) served the TechGroup funnel through mid-2026;
 it was superseded in July 2026 by the Six-Signal verdict model, developed and
 back-tested against four historical deals in the Claude V13 sandbox program
-(`docs/reference/Gemini/`) and installed per
+(`docs/reference/ClaudeProjects/`) and installed per
 `notes/NWAi-Pipeline-Framework-Adoption-Spec-2026-07.md`. The lesson for future groups:
 **calibrate against your own decided deals before installing** — the back-test, not the
 design document, is what makes a judgment model trustworthy.

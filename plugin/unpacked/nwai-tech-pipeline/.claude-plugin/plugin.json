@@ -1,7 +1,7 @@
 {
   "name": "nwai-tech-pipeline",
-  "version": "3.4.1",
-  "description": "NWAi TechGroup deal pipeline — Six-Signal Screen v3.1 (Rubric Fidelity Amendment: Source-Tier Rule, Identity-Match Standard, Confidence-Gated Compound Rule, Moat Sufficiency Test) + Signal-First Scout Report v2.1",
+  "version": "3.4.2",
+  "description": "NWAi TechGroup deal pipeline — Six-Signal Screen v3.1 (Rubric Fidelity Amendment) + Signal-First Scout Report v2.1; docs/reference/Gemini renamed to docs/reference/ClaudeProjects",
   "author": {
     "name": "New World Angels",
     "url": "https://www.newworldangels.com"

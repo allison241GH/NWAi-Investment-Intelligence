@@ -9,7 +9,7 @@
 > Opportunity rubrics + Readiness scoring, archived at
 > `_archive/gates-and-flags-techgroup-numeric-v2.1-legacy.md`). The Six-Signal judgment
 > model was proven in the Claude V13 sandbox program (V10→V13 lineage, 4-deal regression
-> back-test ratified; see `docs/reference/Gemini/V12-Signal-Architecture-Workbench.md`)
+> back-test ratified; see `docs/reference/ClaudeProjects/V12-Signal-Architecture-Workbench.md`)
 > and installed per `notes/NWAi-Pipeline-Framework-Adoption-Spec-2026-07.md`. Its design
 > stance — qualitative signal verdicts that let a craftsman form conviction, no numeric
 > scores at Screen — implements the Craft Investing thesis
@@ -23,8 +23,8 @@
 > both fixes: a Source-Tier Rule and Identity-Match Standard (Signal 3), a Confidence-Gated
 > Compound Rule, a Moat Sufficiency Test (Signal 4), a fixed coherence diff-list, and a
 > fixed founder-identity query set — no other weight or verdict mechanic changed. See
-> `docs/reference/Gemini/Claude-V13-Investor-Nuance-NWA-TechGroup-AI-Screener.md`
-> (Amendments 1 and 2) and `docs/reference/Gemini/Rubric_Fidelity_Addendum_v1.md` for the
+> `docs/reference/ClaudeProjects/Claude-V13-Investor-Nuance-NWA-TechGroup-AI-Screener.md`
+> (Amendments 1 and 2) and `docs/reference/ClaudeProjects/Rubric_Fidelity_Addendum_v1.md` for the
 > incidents this responds to. Market's and Agent-Era's bottom-tier boundaries remain
 > unexamined open risk — no live divergence observed there yet.
 >
@@ -707,7 +707,7 @@ B Moat evidence tag at Screen; detailed TRL application happens at Scout and Dil
 ---
 
 *NWAi TechGroup Six-Signal Screener Reference | v3.1 | August 2026*
-*v3.1 (August 2026): Rubric Fidelity Amendment — ported from the Claude V13 sandbox after a cross-session Constellation X screen produced a DECLINE/ADVANCE divergence and a follow-up pipeline comparison surfaced a second divergence on Moat. Adds calibrated rules 19–22: Source-Tier Rule + Identity-Match Standard (Signal 3), Confidence-Gated Compound Rule, Moat Sufficiency Test (Signal 4); plus the fixed coherence diff-list and fixed founder-identity query set. No weight or verdict-tier definition changed. See `docs/reference/Gemini/Claude-V13-Investor-Nuance-NWA-TechGroup-AI-Screener.md` and `Rubric_Fidelity_Addendum_v1.md`.*
+*v3.1 (August 2026): Rubric Fidelity Amendment — ported from the Claude V13 sandbox after a cross-session Constellation X screen produced a DECLINE/ADVANCE divergence and a follow-up pipeline comparison surfaced a second divergence on Moat. Adds calibrated rules 19–22: Source-Tier Rule + Identity-Match Standard (Signal 3), Confidence-Gated Compound Rule, Moat Sufficiency Test (Signal 4); plus the fixed coherence diff-list and fixed founder-identity query set. No weight or verdict-tier definition changed. See `docs/reference/ClaudeProjects/Claude-V13-Investor-Nuance-NWA-TechGroup-AI-Screener.md` and `Rubric_Fidelity_Addendum_v1.md`.*
 *v3.0 (July 2026): Six-Signal verdict model installed per the Pipeline Framework Adoption Spec (notes/NWAi-Pipeline-Framework-Adoption-Spec-2026-07.md) — Craft-at-Screen boundary, Agent-Era posture verdict (upgraded from the v2.1 Exposure trip-wire), Protect Alpha Signal 6 (Alpha-AI Sovereignty Phase 2, as evolved by the Claude V13 back-test), calibrated rules ledger. Absorbs the hard gates, NWA Filter, research protocol, and TRL reference formerly in gates-and-flags.md (rewritten and renamed to `gates-and-flags-universal-guide.md`). Numeric v2.1 archived at `_archive/gates-and-flags-techgroup-numeric-v2.1-legacy.md`.*
-*Replaces v2.1 (June 2026) and v1.0 (March 2026). Judgment model provenance: Claude V13 sandbox (docs/reference/Gemini/), 4-deal regression back-test ratified July 2026.*
+*Replaces v2.1 (June 2026) and v1.0 (March 2026). Judgment model provenance: Claude V13 sandbox (docs/reference/ClaudeProjects/), 4-deal regression back-test ratified July 2026.*
 *Medical and Space verticals retain separate hard-gate screener frameworks; see `gates-and-flags-universal-guide.md` for the universal playbook guide.*

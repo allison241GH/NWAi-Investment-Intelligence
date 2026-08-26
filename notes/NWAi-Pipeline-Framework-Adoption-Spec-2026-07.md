@@ -1,7 +1,7 @@
 # NWAi Pipeline Framework Adoption Spec — July 2026
 
 > **Artifact type:** install specification — the Phase 5 document anticipated by
-> `docs/reference/Gemini/V12-Signal-Architecture-Workbench.md`.
+> `docs/reference/ClaudeProjects/V12-Signal-Architecture-Workbench.md`.
 > **Status:** RATIFIED — all decisions and open calibration items resolved by Jamie,
 > July 11, 2026 (see §1 and §11). Nothing operational changes until the plan-mode
 > implementation session executes this spec.
@@ -26,8 +26,8 @@
 | 4 | **Screen→Scout contract** | **Fixed conversion rubric at Scout intake** — verdict-to-points translation, not fresh derivation. Delta tracking and Thesis Fit preserved with same architecture, new input implementation (§5). |
 | 5 | **Scope** | **TechGroup only.** TechGroup retains the universal gates and NWA Filter tests; it swaps the universal scoring-and-bands layer for the Six-Signal verdict model. All other groups: Universal Triage Framework unchanged and in full. |
 
-**Also completed July 11, 2026:** Craft Investing thesis promoted from the Gemini
-sandbox to `docs/strategy/future-of-venture-investing/NWAi-Craft-Investing-Thesis-2026-06.md`
+**Also completed July 11, 2026:** Craft Investing thesis promoted from the Claude
+Projects sandbox to `docs/strategy/future-of-venture-investing/NWAi-Craft-Investing-Thesis-2026-06.md`
 (canonical home, sibling to the Agent-Era and Alpha theses). Its operative encoding
 enters the pipeline via the new `screen.md` at implementation (§4), with a Key
 Frameworks entry in CLAUDE.md.
@@ -144,7 +144,7 @@ traceability check: every rule → its exact location in the new screen.md.
 
 - The paste-into-Project-instructions header and setup notes.
 - References to `knowledge-*.md` files (retarget to canonical `references/` paths;
-  the Gemini condensations remain sandbox test artifacts).
+  the sandbox condensations remain test artifacts).
 - Post-report conversation mode as written for chat (replace with the pipeline
   next-action step; "ask to expand any signal / run the full report" behavior may be
   kept as a slim follow-up note since it works on all surfaces).
@@ -307,7 +307,7 @@ additions install exactly as specced.
 | `nwai-techgroup-pipeline-architecture.md` | Version bump v0.37.0 → **v0.38.0**; stage diagram, commands table, reference-docs table, flow example |
 | `pipeline-decisions-log.md` | One consolidated entry: the five decisions, rationale, what did NOT change (Scout-onward scoring, DD Report format, other groups, Dealum-deferred status) |
 | Plugin | Repackage via `repackage-plugin.sh`; version v2.23.0 → **v3.0.0** (major: stage-architecture change). No MCP changes → **no reinstall instruction** |
-| Workbench (Gemini) | Closing decision-log row: Phase 5 executed, spec location, sandbox program complete |
+| Workbench (ClaudeProjects) | Closing decision-log row: Phase 5 executed, spec location, sandbox program complete |
 
 ---
 
