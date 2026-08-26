@@ -25,7 +25,7 @@
    instructions in place).
 2. Open Project Settings → Custom Instructions and paste **everything below the
    "SYSTEM INSTRUCTION BEGINS HERE" line** into the instructions field.
-3. Upload these three files as Project knowledge (grab from `docs/reference/Gemini/`):
+3. Upload these three files as Project knowledge (grab from `docs/reference/ClaudeProjects/`):
    - `knowledge-gates-and-flags.md`
    - `knowledge-agent-era-readiness.md`
    - `knowledge-alpha-ai-sovereignty.md`

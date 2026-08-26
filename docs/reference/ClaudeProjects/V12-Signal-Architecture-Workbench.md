@@ -1,7 +1,7 @@
 # V12 Signal Architecture Workbench
 
 > **Artifact type:** working document — consolidation analysis for the next screener generation
-> **Scope:** strictly `docs/reference/Gemini/` sandbox. Nothing here touches the canonical
+> **Scope:** strictly `docs/reference/ClaudeProjects/` sandbox. Nothing here touches the canonical
 >   pipeline — `/screen` is authoritative and unchanged. **Deployment state (reconciled
 >   July 2026):** the claude.ai member Project runs **V10** instructions; V11, V12, and
 >   V13 are sandbox prototypes that have never been deployed.

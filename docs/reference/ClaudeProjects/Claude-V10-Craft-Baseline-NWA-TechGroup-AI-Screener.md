@@ -18,7 +18,7 @@
 1. Create a new Claude Project at claude.ai.
 2. Open Project Settings → Custom Instructions and paste **everything below the
    "SYSTEM INSTRUCTION BEGINS HERE" line** into the instructions field.
-3. Upload these two files as Project knowledge (grab from `docs/reference/Gemini/`):
+3. Upload these two files as Project knowledge (grab from `docs/reference/ClaudeProjects/`):
    - `knowledge-gates-and-flags.md`
    - `knowledge-agent-era-readiness.md`
 4. Save. Share the Project link with TechGroup members (requires Claude Team plan).
