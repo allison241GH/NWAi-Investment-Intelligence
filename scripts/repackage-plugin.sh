@@ -85,12 +85,25 @@ fi
 echo "  ✔ Diff-guard passed: packaging tree == .claude/ runtime"
 
 # --- 4. Bump version (and optional description) in plugin.json ----------------
-TMP="$(mktemp)"
-sed -E "s/(\"version\"[[:space:]]*:[[:space:]]*\")[^\"]*(\")/\1${NEW_VERSION}\2/" "$PLUGIN_JSON" > "$TMP" && mv "$TMP" "$PLUGIN_JSON"
+# JSON-aware update (not sed) — a sed char-class substitution silently produces
+# invalid JSON the moment the existing description contains an embedded quote,
+# and each subsequent run compounds the corruption. python3's json module is
+# immune to that regardless of what characters NEW_DESC or the prior value contain.
+NWAI_PLUGIN_JSON_PATH="$PLUGIN_JSON" NWAI_NEW_VERSION="$NEW_VERSION" NWAI_NEW_DESC="$NEW_DESC" python3 <<'PYEOF'
+import json, os
+path = os.environ["NWAI_PLUGIN_JSON_PATH"]
+with open(path, encoding="utf-8") as f:
+    data = json.load(f)
+data["version"] = os.environ["NWAI_NEW_VERSION"]
+new_desc = os.environ.get("NWAI_NEW_DESC", "")
+if new_desc:
+    data["description"] = new_desc
+with open(path, "w", encoding="utf-8") as f:
+    json.dump(data, f, indent=2, ensure_ascii=False)
+    f.write("\n")
+PYEOF
 echo "  ✔ plugin.json version → ${NEW_VERSION}"
 if [ -n "$NEW_DESC" ]; then
-  TMP="$(mktemp)"
-  sed -E "s/(\"description\"[[:space:]]*:[[:space:]]*\")[^\"]*(\")/\1${NEW_DESC//\//\\/}\2/" "$PLUGIN_JSON" > "$TMP" && mv "$TMP" "$PLUGIN_JSON"
   echo "  ✔ plugin.json description updated"
 fi
 

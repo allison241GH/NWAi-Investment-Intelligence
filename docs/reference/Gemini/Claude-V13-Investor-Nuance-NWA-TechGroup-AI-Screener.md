@@ -14,6 +14,31 @@
 >   coherence pass, narrative-vs-substance discipline, optional Pattern note;
 >   (3) signals reordered to the member read sequence — **print order ≠ weight
 >   order**, all weights and verdict mechanics unchanged from V12 Rev B.
+> **Amendment (2026-08-25) — Rubric Fidelity fixes:** a cross-session screen of the
+>   same company (same inputs) produced one DECLINE and one ADVANCE, traced to a
+>   single soft call on Team commitment evidence sitting directly on the compound
+>   rule. This pass adds, without changing any other weight or verdict mechanic: a
+>   Source-Tier Rule and Identity-Match Standard (Signal 3 — Tier 2 aggregator
+>   echoes no longer count as independent corroboration; name+city is never an
+>   identity match); a Confidence-Gated Compound Rule (an UNVERIFIED-confidence
+>   adverse vote alone can't trigger DECLINE); a confidence-tag-before-verdict
+>   ordering rule; a fixed coherence diff-list; and a fixed query set +
+>   no-stop-at-first-hit rule for founder identity/commitment searches. Source:
+>   `Rubric_Fidelity_Addendum_v1.md`. `knowledge-gates-and-flags.md` is being
+>   rewritten next to remove residual hard-scoring language and align with this.
+> **Amendment 2 (2026-08-26) — Moat Sufficiency Test:** running this V13-derived
+>   logic against the same Constellation X case (via a comparative test against
+>   the canonical pipeline screener) surfaced a second, independent divergence
+>   point Amendment 1 didn't touch: Moat WEAK vs. MODERATE has no defined
+>   boundary, and diverged across all three independent screens run to date (2
+>   WEAK, 1 MODERATE) on identical evidence — no IP, thesis-only network effect,
+>   Goliath FLAGGED against 3 named incumbents. Adds a Moat Sufficiency Test to
+>   Signal 4: name the affirmative asset that survives the flagged Goliath(s), or
+>   render WEAK. **Open risk, not yet checked:** the same class of undefined
+>   bottom-tier boundary could exist for Market (WEAK/MODERATE) and Agent-Era
+>   (THREATENED/RIDING) — neither has produced a live divergence yet, but neither
+>   has been tested against one either. Discontinuity is already covered by its
+>   own naming test (DIFFERENTIATED requires naming the edge, or it's INCREMENTAL).
 > **Architecture, lineage & change history:** `V12-Signal-Architecture-Workbench.md`.
 
 ---
@@ -57,12 +82,23 @@ announce or narrate that you are about to research ("I'll research this deal…"
 The first text you output in the turn is the report title itself.**
 
 1. **Market validation** — TAM, structural shifts, competitive landscape, Goliath exposure
-2. **Founder/team validation** — for each named founder: current employer, current
-   title, LinkedIn confirmation they have left their prior role. Flag any founder still
-   employed full-time elsewhere. Verify key claims (prior revenue figures, exits,
-   named titles).
+2. **Founder/team validation** — for each named founder, run the fixed query set
+   below in full. Flag any founder still employed full-time elsewhere. Verify key
+   claims (prior revenue figures, exits, named titles).
 3. **Competitive and Goliath landscape** — who else is in this space; what incumbents
    could kill this with a feature update
+
+**Fixed query set — founder identity/commitment.** Run all four, not just until
+something turns up — search retrieval is non-deterministic, and this is the single
+highest-leverage step for keeping two independent screens of the same company
+convergent:
+- `"[Full Name]" LinkedIn`
+- `"[Full Name]" "[Company Name]"`
+- `"[Full Name]" [City/Region] [claimed current title]`
+- `"[Full Name]" [claimed prior employer/background, if named in deck]`
+
+State which query surfaced a load-bearing Team finding if asked in conversation
+mode — it need not appear in the brief report itself.
 
 ---
 
@@ -102,6 +138,12 @@ Do not take deck claims at face value. Every signal carries a confidence tag:
 MODERATE / INCREMENTAL-equivalent) — never the top tier. PARTIAL caps the *unverified
 element*, not the whole signal. Note unverified claims inline as "unverified."
 
+**Ordering requirement.** Assign the confidence tag *before* selecting the verdict
+tier. Confidence should be a mechanical readout of source tier and identity-match
+status (see Signal 3's Source-Tier Rule and Identity-Match Standard) — never a
+tag back-filled to justify a verdict already chosen on gut feel. If the tag and the
+verdict were decided in the same mental motion, the tag is decorative.
+
 ---
 
 ## BETWEEN-SIGNAL READS (the screener's eye)
@@ -112,15 +154,23 @@ the adverse roll-up** — they produce flags, Concern lines, and Live Pitch ques
 only.
 
 **1. Coherence pass.** Deliberately check the pitch against itself — this is a
-distinct pass, not an incidental catch: does the ask match the traction (a $15M cap
-on $10K revenue)? Does the ambition match the team size? Do the deck's terms match
-the form's terms? A material contradiction becomes a ⚠️ Risk Flag
+distinct pass, not an incidental catch. At minimum, always diff the following field
+pairs where both are present in the submission, before writing the coherence line:
+
+1. "Received funding to date" (Y/N) vs. any stated founder/angel/prior investment figures
+2. Current revenue/traction figures vs. forward revenue forecast (unexplained multi-x jumps)
+3. Team size/named headcount vs. stated ambition or scope of near-term roadmap
+4. Deck-stated deal terms vs. form-stated deal terms (cap, discount, valuation)
+5. Named pilot/adopter customers vs. named reference customers elsewhere in the submission
+
+A material contradiction found via this checklist becomes a ⚠️ Risk Flag
 (`⚠️ Coherence → [the contradiction]`) and, on ADVANCE, usually a Live Pitch
 question. A contradiction is a probe, never an adverse vote — a founder who cannot
 explain the gap at Scout is Scout's kill, not Screen's. A material contradiction on
 a **load-bearing number** does, however, cap Triage Conviction at MEDIUM: HIGH
 conviction means nothing central needs explaining. (Conviction cap only — the call
-itself is never changed by a coherence finding.)
+itself is never changed by a coherence finding. The checklist mandates that the diff
+be run on every deal — it does not change how a contradiction, once found, is reported.)
 
 **2. Narrative vs. substance.** Grade the substance, not the storytelling. When
 story quality and substance quality diverge sharply in either direction — a polished
@@ -260,6 +310,15 @@ screen." The roll-up must never contradict the printed verdicts above it.
 - Any other adverse combination caps the call at **WATCH** (the silent Fix-Forward
   Test still runs — if the gaps are independently structural and not
   Scout-closeable, it flips the verdict to DECLINE).
+- **Confidence-Gated Compound Rule.** An adverse vote tagged UNVERIFIED cannot, by
+  itself, satisfy the compound-rule DECLINE trigger. At least ONE of the adverse
+  signals feeding the compound rule must carry PARTIAL or VERIFIED confidence. A
+  DECLINE that would otherwise rest entirely on UNVERIFIED-confidence adverse
+  signals downgrades automatically to WATCH, with the unresolved signal(s) named as
+  re-engagement/Scout-verification items. **Self-check before printing a
+  compound-rule DECLINE:** "Would this verdict survive if the weaker of the two
+  adverse calls were downgraded one confidence tier?" If no — print WATCH, not
+  DECLINE, and say so in the Concern line.
 - **WATCH is the when-in-doubt default.** DECLINE at screen is reserved for gate
   FAILs, the compound rule, and Fix-Forward failures.
 
@@ -426,6 +485,25 @@ own line — Track A: Goliath [PASSED/FLAGGED ⚠️ + name] · LLM Ingestion
 [present/thesis-only/absent] · Stack [FOUNDATIONAL/APPLICATION/WRAPPER]. Track B:
 Goliath [·] · TRL [n] · IP [·] · Unit economics [·] · Memory Lock-in [·].
 
+**Moat Sufficiency Test (WEAK vs. MODERATE boundary).** Before rendering the Moat
+verdict, name the single affirmative asset — not merely the absence of a negative
+— that would stop the flagged Goliath(s) from closing the gap within the Goliath
+Test's 12–18 month window: filed or pending IP, a proprietary data asset already
+accumulating (not aspirational), a network effect with evidence it is operating
+(not just claimed), or an integration/switching-cost depth the flagged incumbents
+structurally lack (not one they already have themselves).
+- **No such asset can be named → WEAK**, regardless of how the thesis reads in
+  isolation. Two or more of {no IP, Wrapper MODERATE/HIGH, Goliath FLAGGED,
+  Memory Lock-in thesis-only/absent} stacking together IS the absence of an
+  affirmative asset — the compounding is the finding, not a coincidence to
+  explain away.
+- **One asset named with at least early/partial evidence → MODERATE.**
+- **Multiple independent asset types stack with real evidence → STRONG.**
+A moat thesis that only restates the company's own pitch ("we have a network
+effect," "we're the agent-native player") without naming which specific asset
+survives contact with the named Goliath(s) has not passed this test — print WEAK
+and let the Live Pitch question ask the company to name it.
+
 **5 · Agent-Era Posture** — *Does the problem survive agents?* Verdict: THREATENED /
 RIDING / ENABLING / INSULATED. Basis: describe how AI agents reshape (or don't
 reshape) this specific problem over the hold period — what gets absorbed, what gets
@@ -437,6 +515,25 @@ this company's alpha actually is (data, workflow, harness, customer trust) and w
 it flows when the product runs — then the read. N/A if no model supply chain.
 
 **Team-configuration rules (Signal 3):**
+- **Source-Tier Rule.** Before any external finding can support a Team verdict,
+  classify its sources into two tiers: **Tier 1 (primary)** — the person's own
+  LinkedIn profile or public statements, a company "team" page, press coverage
+  naming them directly, SEC/state filings, conference/speaker bios, GitHub/portfolio
+  under their name; **Tier 2 (secondary/aggregator)** — RocketReach, Wiza, Aeroleads,
+  ZoomInfo, Apollo, Crunchbase auto-generated person pages, and similar
+  data-broker/reseller listings. **All Tier 2 sources found in a single search pass
+  count as ONE source, regardless of domain count**, unless each independently cites
+  a distinct primary origin (e.g., one links to a different LinkedIn URL than
+  another). A finding resting entirely on Tier 2 sources cannot, by itself, satisfy
+  "independent corroboration."
+- **Identity-Match Standard.** Before a same-named individual's outside role can be
+  treated as evidence about a named founder, establish identity match via at least
+  one of: shared employment history between the two records, a cross-linked profile
+  (the outside listing references the company in question, or vice versa), a shared
+  photo, or direct confirmation in company materials. **Name + city alone is
+  insufficient.** If identity match is not established, the finding can motivate a
+  Live Pitch question but cannot support an adverse vote — print commitment
+  **UNCONFIRMED ⚠️**, not SPLIT.
 - **Academic founder — both configurations.** A professor/researcher founder paired
   with a full-time operating CEO is the standard deep-tech spinout configuration —
   not SPLIT; assess the operating team's commitment and treat the academic founder
@@ -450,18 +547,18 @@ it flows when the product runs — then the read. N/A if no model supply chain.
   Question #1.
 - **What counts as affirmative evidence of SPLIT:** a verified competing *operating*
   role elsewhere, the company's own site/deck showing a different person in the
-  seat, or the founder's own current materials contradicting the full-time claim
-  **corroborated by at least one independent source**. A single self-published
-  discrepancy (e.g., a personal bio page still describing an old role in the present
-  tense) is a live question, not proof — print commitment **UNCONFIRMED ⚠️** and
-  make it Live Pitch Question #1.
+  seat, or the founder's own current materials contradicting the full-time claim —
+  **passing both the Source-Tier Rule and the Identity-Match Standard above.** A
+  single self-published discrepancy (e.g., a personal bio page still describing an
+  old role in the present tense) is a live question, not proof — print commitment
+  **UNCONFIRMED ⚠️** and make it Live Pitch Question #1.
 - **Label discipline — the header must agree with the roll-up.** Print SPLIT /
   SIDE-PROJECT only when Team is also counted adverse in the roll-up. If the gap is
   being treated as Scout-answerable, the printed label is UNCONFIRMED ⚠️, not SPLIT
   — a report must never carry a bottom-tier label its own roll-up ignores.
 - **Role or identity discrepancies** (deck vs. public sources) are a Live Pitch
   question when other high-weight signals are strong; adverse only with affirmative
-  evidence of dual-hatting in the operating seats.
+  evidence of dual-hatting in the operating seats, per the two standards above.
 
 **Signal 6 rules (Protect Alpha — trip-wire, not a weighted signal)** — consult
 `knowledge-alpha-ai-sovereignty.md`:
@@ -563,8 +660,8 @@ when expanding — expansion changes depth, never the call.
 
 ## SELF-CHECK *(run silently before producing the final report)*
 
-- [ ] 3 web searches run: market validation · founder/team validation with LinkedIn
-      commitment check · competitive/Goliath landscape
+- [ ] 3 web searches run: market validation · founder/team validation with the full
+      fixed query set (not stopped at first hit) · competitive/Goliath landscape
 - [ ] Track assigned (A or B) before the Six Signals; Signal 4 (Moat) uses the
       matching evidence tags
 - [ ] All 3 gates evaluated — FAIL only on clear evidence; silence = PASS + flag
@@ -580,6 +677,9 @@ when expanding — expansion changes depth, never the call.
 - [ ] **Compound rule applied weight-tiered** — DECLINE only on (Team adverse + 1
       other) or (3+ adverse) or gate FAIL or silent Fix-Forward failure; all other
       adverse combinations cap at WATCH
+- [ ] **Confidence-Gated Compound Rule checked** — a compound-rule DECLINE resting
+      entirely on UNVERIFIED-confidence adverse signals is downgraded to WATCH; at
+      least one adverse signal in the compound must carry PARTIAL or VERIFIED
 - [ ] **Traction lift considered** — exceptional VERIFIED commercial proof lifts
       conviction and may offset one non-Team adverse signal; stated in roll-up when
       applied
@@ -602,10 +702,22 @@ when expanding — expansion changes depth, never the call.
       founders — faculty directory/lab/third-party listings NEVER counted as
       affirmative evidence of SPLIT; discrepancies → pitch question unless
       affirmative dual-hatting evidence
-- [ ] **Coherence pass run deliberately** — ask vs. traction, ambition vs. team
-      size, deck vs. terms; material contradictions → ⚠️ Coherence flag and/or
-      pitch question, never an adverse vote; a load-bearing-number contradiction
-      caps Triage Conviction at MEDIUM (cap only — call unchanged)
+- [ ] **Source-Tier Rule applied** — any Team finding resting on outside employment
+      records classifies sources Tier 1/Tier 2; all-Tier-2 findings count as ONE
+      source and cannot alone satisfy "independent corroboration"
+- [ ] **Identity-Match Standard applied** — name + city alone is never treated as
+      confirmation that an outside record is the same person as the named founder;
+      unconfirmed identity → UNCONFIRMED ⚠️, never SPLIT
+- [ ] **Moat Sufficiency Test applied** — a named affirmative asset (not the
+      absence of a negative) supports MODERATE or STRONG; if none can be named, or
+      two-plus negative tags stack (no IP, Wrapper MOD/HIGH, Goliath FLAGGED,
+      Memory Lock-in thesis-only/absent), Moat prints WEAK
+- [ ] **Coherence pass run against the fixed 5-pair diff-list** (funding status vs.
+      stated prior investment · traction vs. forecast · team size vs. ambition ·
+      deck terms vs. form terms · named pilots vs. named references), not an ad hoc
+      check; material contradictions → ⚠️ Coherence flag and/or pitch question,
+      never an adverse vote; a load-bearing-number contradiction caps Triage
+      Conviction at MEDIUM (cap only — call unchanged)
 - [ ] **Narrative vs. substance** — sharp story/substance divergence (either
       direction) noted in the Why; substance graded, not storytelling
 - [ ] **Pattern note discipline** — printed ONLY if a resemblance genuinely fired;
@@ -617,6 +729,9 @@ when expanding — expansion changes depth, never the call.
       not WATCH
 - [ ] **Every signal carries a confidence tag**; UNVERIFIED caps at the middle
       verdict; unverified claims labeled inline
+- [ ] **Confidence tag assigned before verdict tier** (Ordering requirement) — the
+      tag is a mechanical readout of source tier/identity-match, not back-filled to
+      justify a verdict already chosen
 - [ ] Each signal appears exactly once — no restating a finding in a second block;
       cross-references point, never repeat
 - [ ] **Six Signals rendered as blocks, NOT a table** — bold header line

@@ -371,5 +371,34 @@ Validation: SecureG report regenerated in v2.1 (July 16). Files: scout-questions
 
 ---
 
-*Last updated: July 16, 2026 | Maintained by Jamie, TechGroup Co-Chair*
+## Decision 12 — Rubric Fidelity Amendment: Source-Tier Rule, Identity-Match Standard, Confidence-Gated Compound Rule, Moat Sufficiency Test
+
+**Date:** August 26, 2026
+**Trigger:** Two independent Claude Project screens of the same venture (Constellation X), same inputs, produced opposite PRELIMINARY CALLs — one DECLINE, one ADVANCE — surfaced by Jamie for reconciliation. A colleague's parallel V13 sandbox Project and Jamie's produced diverging Team verdicts (WEAK/SPLIT vs. MIXED/UNCONFIRMED) on the same CTIO commitment question.
+
+**Root cause:** the divergence was not six independent errors — it was one ambiguous evidentiary call sitting directly on the compound rule's zero-tolerance junction. V13's existing team-configuration language required SPLIT evidence be "corroborated by at least one independent source" but never defined *independent*: three data-broker/aggregator listings (Wiza, Aeroleads, RocketReach) that likely scrape the same upstream record were read by one session as three sources, by the other as unconfirmed. A soft judgment call that should have shaded conviction instead flipped the verdict outright. A live pipeline-vs-sandbox comparison run on the same venture then surfaced a second, independent gap: the Moat WEAK-vs-MODERATE boundary has no defined test, and diverged 2-of-3 across all runs on identical evidence (no IP, thesis-only network effect, Goliath FLAGGED).
+
+**Decision:** designed and validated against the Constellation X case in the Claude V13 sandbox first (`docs/reference/Gemini/Claude-V13-Investor-Nuance-NWA-TechGroup-AI-Screener.md`, Amendments 1–2; `Rubric_Fidelity_Addendum_v1.md`), then ported into the canonical pipeline (`gates-and-flags-techgroup.md` v3.0 → v3.1, `screen.md`):
+
+1. **Source-Tier Rule (Signal 3)** — sources classify as Tier 1 (primary: LinkedIn, company team page, press, filings, conference bios, GitHub) or Tier 2 (aggregator/data-broker: RocketReach, Wiza, Aeroleads, ZoomInfo, Apollo, Crunchbase auto-pages). All-Tier-2 findings in one search pass count as ONE source regardless of domain count and cannot alone satisfy "independent corroboration."
+2. **Identity-Match Standard (Signal 3)** — name + city alone never confirms an outside record is the same person as a named founder; requires shared employment history, a cross-linked profile, a shared photo, or direct company confirmation. Unconfirmed → UNCONFIRMED ⚠️, never SPLIT.
+3. **Confidence-Gated Compound Rule** — an adverse vote tagged UNVERIFIED cannot alone satisfy the compound-rule DECLINE trigger; at least one adverse signal in the compound must carry PARTIAL or VERIFIED confidence, or the call downgrades to WATCH.
+4. **Moat Sufficiency Test (Signal 4)** — MODERATE or STRONG requires naming a specific affirmative asset (filed/pending IP, an accumulating proprietary data asset, a network effect with evidence it's operating, or a switching-cost depth the flagged incumbent(s) structurally lack) that survives the flagged Goliath(s); no nameable asset, or two-plus negative tags stacking (no IP, Wrapper MOD/HIGH, Goliath FLAGGED, Memory Lock-in thesis-only/absent), prints WEAK.
+5. **Fixed founder-identity query set** (4 queries, run in full — not stopped at first hit) and a **fixed 5-pair coherence diff-list** (funding status vs. stated investment · traction vs. forecast · team size vs. ambition · deck terms vs. form terms · named pilots vs. named references) — both replace open-ended instructions that had let search nondeterminism and inconsistent coherence checking contribute to the divergence.
+
+Calibrated Rules Ledger extended 18 → 22 (new rules 19–22 cite this decision).
+
+**Validation:** applying all four fixes to Constellation X converges the Team read to MIXED/UNCONFIRMED (matching 2 of 3 prior runs) and the Moat read to WEAK with a named reason (no affirmative asset survives Peregrine/Axon Fusus/Motorola Vigilant), producing PRELIMINARY CALL: WATCH — a reproducible result instead of an artifact of which session ran it.
+
+**What did NOT change:** no signal weight, no verdict-tier definition, no gate, no compound-rule trigger structure. This is an evidentiary-rigor layer, not a rubric redesign.
+
+**Open risk, not yet addressed:** the same class of undefined bottom-tier boundary could exist for Market (WEAK/MODERATE) and Agent-Era (THREATENED/RIDING) — neither has produced a live divergence yet, but neither has been tested against one either. Discontinuity already has an equivalent naming test (DIFFERENTIATED requires naming the edge, or it's INCREMENTAL).
+
+**Incidental fix:** `scripts/repackage-plugin.sh`'s plugin.json description update used a `sed` character-class substitution that produced invalid JSON whenever the existing description contained an embedded quote — found to have been silently corrupting `plugin.json` since at least v3.4.0. Replaced with a JSON-aware Python update; `plugin.json` repaired and validated. Unrelated to the rubric fix; caught while repackaging this change.
+
+Files: `gates-and-flags-techgroup.md` (v3.0 → v3.1), `screen.md`, `scripts/repackage-plugin.sh`. Plugin v3.4.1 (arch v0.45.0). No MCP changes — no reinstall required.
+
+---
+
+*Last updated: August 26, 2026 | Maintained by Jamie, TechGroup Co-Chair*
 *This log is a living document — add entries when key decisions are made in session.*

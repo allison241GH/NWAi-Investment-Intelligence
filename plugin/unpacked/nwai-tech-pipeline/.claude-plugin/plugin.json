@@ -1,10 +1,15 @@
 {
   "name": "nwai-tech-pipeline",
-  "version": "3.4.0",
-  "description": "NWAi TechGroup deal pipeline — Signal-First Scout Report v2.1: analyst-voice synthesis, Six-Signal table, GTM Model "description": "NWAi TechGroup deal pipeline — Signal-First Scout Report (v2): member-first Scout Assessment structure carrying the Six-Signal vocabulary from Screen" Consequences line",
+  "version": "3.4.1",
+  "description": "NWAi TechGroup deal pipeline — Six-Signal Screen v3.1 (Rubric Fidelity Amendment: Source-Tier Rule, Identity-Match Standard, Confidence-Gated Compound Rule, Moat Sufficiency Test) + Signal-First Scout Report v2.1",
   "author": {
     "name": "New World Angels",
     "url": "https://www.newworldangels.com"
   },
-  "keywords": ["angel-investing", "deal-flow", "nwa", "techgroup"]
+  "keywords": [
+    "angel-investing",
+    "deal-flow",
+    "nwa",
+    "techgroup"
+  ]
 }
