@@ -3,14 +3,15 @@
 > **What this is:** the domain-reference knowledge file for the V13 Claude Project
 >   screener. Upload alongside `knowledge-agent-era-readiness.md` and
 >   `knowledge-alpha-ai-sovereignty.md`.
-> **Role — read this first:** V13's system instructions own every verdict
+> **Role — read this first:** the loaded screener project's system instructions
+>   (V14 current; V13 preserved as the regression comparator) own every verdict
 >   mechanic (verdict tiers, adverse definitions, the compound rule, conviction
 >   bands, confidence-tag logic). This file supplies domain facts and evidence-test
 >   definitions only — gate criteria, the Goliath / LLM-Ingestion / Wrapper /
 >   Revenue-Quality tests that feed the Moat and Commercial Proof tags, TRL and
 >   hardware reference data, and search-query templates. **Nothing in this file
 >   caps, scores, or gates a verdict on its own. If anything here reads as
->   conflicting with a V13 mechanic, V13 governs.**
+>   conflicting with the loaded screener's mechanic, the screener file governs.**
 > **Amendment (2026-08-25):** rewritten to remove the legacy numeric Opportunity
 >   (0–30) / Readiness (0–25) scoring engine, the numeric Decision Logic table, and
 >   all "capped at N/5" language — residue from the pre-V12 Universal Triage
@@ -28,6 +29,15 @@
 >   Advantage rubric (Team mechanics now live entirely in V13 Signal 3), and the
 >   stale "Agent-Era... not a scored dimension" claim — Agent-Era is Signal 5,
 >   fully weighted, at Screen in V13.
+> **Amendment 2 (2026-09-14):** Revenue Quality Audit's **Fragile** tier split into
+>   two distinct states — **Fragile** (some revenue, precarious) and **Pre-Revenue**
+>   (none yet) — to match V14's Thin Commercial Proof cap, which caps Triage
+>   Conviction at MEDIUM for either state, unconditionally. The cap mechanic itself
+>   lives in `Claude-V14-Traction-Discipline-NWA-TechGroup-AI-Screener.md`, not here
+>   — this file only supplies the classification test. Source: a member
+>   pressure-test of a live screen (Complete Contract Cycle) that surfaced Commercial
+>   Proof could only ever help Triage Conviction (via Traction lift) and never hurt
+>   it.
 
 ---
 
@@ -123,12 +133,18 @@ Classify any revenue or traction as:
 - **Sticky** — automated, API-driven, self-serve SaaS with low-touch retention
 - **Stagnant** — high-touch, consulting-adjacent, services-embedded, or
   inertia-based
-- **Fragile** — thin/early, easily lost, or dependent on a HIGH Wrapper read
-  holding up
+- **Fragile** — thin/early revenue that exists but is easily lost, or dependent on
+  a HIGH Wrapper read holding up
+- **Pre-Revenue** — no revenue yet. Distinct from Fragile, which has *some* revenue
+  — just precarious revenue. The two are different findings and should not be
+  conflated under one tag.
 
 Feeds the Commercial Proof quality tag under Signal 2: `quality [STICKY /
-STAGNANT / PRE-REVENUE]`. State the classification explicitly — it's descriptive,
-not a score cap.
+STAGNANT / FRAGILE / PRE-REVENUE]`. State the classification explicitly — it's
+descriptive, not a score cap on its own here. **V14** adds a Triage Conviction cap
+keyed to this tag (FRAGILE or PRE-REVENUE → MEDIUM cap, unconditional) — that
+mechanic lives entirely in the V14 screener file, not here; this file only
+supplies the classification.
 
 ---
 
