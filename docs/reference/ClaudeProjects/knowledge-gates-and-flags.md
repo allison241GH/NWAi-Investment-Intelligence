@@ -1,10 +1,10 @@
 # NWAi TechGroup Triage Framework — Gates & Flags (Domain Reference)
 
-> **What this is:** the domain-reference knowledge file for the V13 Claude Project
->   screener. Upload alongside `knowledge-agent-era-readiness.md` and
+> **What this is:** the domain-reference knowledge file for the Claude Project
+>   screener (V13 onward). Upload alongside `knowledge-agent-era-readiness.md` and
 >   `knowledge-alpha-ai-sovereignty.md`.
 > **Role — read this first:** the loaded screener project's system instructions
->   (V14 current; V13 preserved as the regression comparator) own every verdict
+>   (V15 current; V14 preserved as the regression comparator) own every verdict
 >   mechanic (verdict tiers, adverse definitions, the compound rule, conviction
 >   bands, confidence-tag logic). This file supplies domain facts and evidence-test
 >   definitions only — gate criteria, the Goliath / LLM-Ingestion / Wrapper /
@@ -38,6 +38,14 @@
 >   pressure-test of a live screen (Complete Contract Cycle) that surfaced Commercial
 >   Proof could only ever help Triage Conviction (via Traction lift) and never hurt
 >   it.
+> **Amendment 3 (2026-09-30):** V15 (Plain-Language Member Read) stops **printing**
+>   the Moat evidence-tag line and renders the Commercial Proof quality tag in plain
+>   words. The tests in this file are unchanged and still run on every screen: they
+>   feed the Moat verdict, the Moat Sufficiency Test, and the Commercial Proof
+>   quality exactly as before — their findings now surface in plain language in the
+>   signal explanation, Risk Flags, and Live Pitch questions rather than as a tag
+>   string. Where this file says "tag," read "internal evidence finding." Source:
+>   9/28/26 Tech Screening review of the V14 Reverent Networks screen.
 
 ---
 
