@@ -26,7 +26,8 @@
 >    across deals). 1 star always and only means "counts against the deal." Plain
 >    signal names, plain questions, plain verdict words. Blocks remain below the
 >    table for the explanations.
-> 4. **Confidence prints as two labels** — Verified / Unverified (company claim).
+> 4. **Confidence prints as a "Source" column** — Outside check / Company claim /
+>    Analyst read (Rev A; originally Verified / Unverified).
 >    The three internal levels (VERIFIED / PARTIAL / UNVERIFIED) are unchanged.
 > 5. **Team split into three rated lines** — Committed · Product Fit · Market Fit —
 >    Team rating = lowest of the three. **Track Record** shown unrated (never
@@ -36,13 +37,43 @@
 > **The only rule changes (all Team):** (a) Team rating = lowest of Committed /
 > Product Fit / Market Fit; (b) confirmed "no path to the buyers" (Market Fit 1★)
 > now counts against the deal — the "bagel bakery → rocket fuel" case; (c) a
-> concerning track record can no longer lower the Team rating — it becomes a ⚠️
+> concerning track record can no longer lower the Team rating — it becomes a (!)
 > flag and a Scout probe. Everything else — verdict tiers, adverse definitions,
 > compound rule, conviction caps, Traction lift, Ask-at-Scout precedence,
 > Source-Tier Rule, Identity-Match Standard, Moat Sufficiency Test — is V14 verbatim.
 > **Validation plan:** re-screen Reverent Networks and Complete Contract Cycle in a
 > **fresh** V15 Project chat; calls should match V14 (Reverent: WATCH / MEDIUM);
 > page must stay under 2 pages.
+> **Rev A (2026-09-30), from the first V15 Reverent run** (call held: WATCH /
+> MEDIUM, 1 of 5 against — Defensibility): Gates moved after the Six Signals so the
+> summary table lands on page 1; legend line under the Six Signals heading dropped;
+> multiple conviction caps stated in one sentence; Stage label on its own line;
+> emoji replaced by (!) / (X) text markers (they printed as "[!]" / "[PAUSE]" in PDF
+> export); AI-Agent Future posture tie-breaker added (the run drifted ENABLING →
+> INSULATED while its own basis said machine traffic raises demand).
+> Also Rev A: the "Verified?" column became **Source** (Outside check / Company claim
+> / Analyst read) — "Verified" read as "confirmed good" and printed on judgment-only
+> signals (AI-Agent Future, Protects Its Edge) that no search can check.
+> Rev A polish (from the second Reverent run — call held again, all layout fixes
+> landed): fixed report title; 1★ verdicts must use the fixed words exactly (the
+> run printed "Protection not yet owned" for "Easy to copy"); every single-source /
+> aggregator claim marked (unconfirmed) everywhere on the page, including Risk
+> Flags, and conflicting aggregator figures stated as a conflict.
+> Rev A regression fix (from the Complete Contract Cycle V14-vs-V15 comparison —
+> call FLIPPED DECLINE/LOW → WATCH/MEDIUM, entirely on AI-Agent Future): the run
+> treated the 3★ slot as a neutral middle and invented a hedged caption ("Survives
+> agents, form at risk") while its own basis described THREATENED. Fixes: AI-Agent
+> Future is four fixed categories, not a scale — one of four fixed captions, word
+> for word; posture judged on the product as built today (the knowledge file's
+> "weaker, product-level reality" rule), so a surviving need with an
+> agent-absorbable product form is THREATENED. Re-run confirmed CCC DECLINE / LOW.
+> Rev A final (from the Reverent re-run — call held, but AI-Agent Future slipped
+> ENABLING → INSULATED because an earlier narrowing asked whether demand lands on
+> "this product specifically," which double-counts Defensibility): ENABLING now
+> tests the product's *form* as built, and the posture never asks whether this
+> company or a competitor captures the demand. Also: Stage "(verified)" reserved
+> for confirmation outside the company's own materials. Expected on re-run:
+> Reverent ENABLING, WATCH / MEDIUM; CCC unchanged (THREATENED, DECLINE / LOW).
 
 ---
 
@@ -131,6 +162,10 @@ shorthand. They are intelligent and busy; they are not specialists.
    plus the section labels LIVE PITCH QUESTIONS, RE-ENGAGE WHEN, KILL REASON.
 5. **Conversation mode is exempt.** When a member asks to expand a signal or asks how
    the screener works, framework terms may appear — each with a brief explanation.
+6. **No emoji on the page** — they break in PDF export. The only symbols allowed are
+   the star glyphs ★ ☆ and two text markers: **(!)** for a caution / yellow flag and
+   **(X)** for a red flag. The call line prints the word only (ADVANCE TO SCOUT /
+   WATCH / DECLINE) — no icon.
 
 ---
 
@@ -175,15 +210,33 @@ tag:
 MODERATE / INCREMENTAL-equivalent) — never the top tier. PARTIAL caps the *unverified
 element*, not the whole signal.
 
-**Printed confidence — two labels only:**
+**Printed confidence — the "Source" column, three values only.** It tells the
+reader *where the evidence for the rating came from*:
 
-- **Verified** — prints for internal VERIFIED **and** PARTIAL. (Under the rule
-  above, a PARTIAL rating already rests only on the checked elements — so the
-  rating itself is verified.) Mark every unchecked detail inline in the basis with
-  **(company claim)**.
-- **Unverified (company claim)** — prints for internal UNVERIFIED.
+- **Outside check** — the rating rests on facts found in outside sources (the web
+  searches, LinkedIn, press, filings, competitor sites). Prints for internal
+  VERIFIED **and** PARTIAL: under the rule above, a PARTIAL rating already rests only
+  on the checked elements. Mark every unchecked detail inline in the basis with
+  **(company claim)**, or **(unconfirmed)** when it came from a third party that
+  could not be corroborated (e.g., a single aggregator site).
+- **Company claim** — the rating rests only on the company's own materials; the
+  searches found nothing either way. Prints for internal UNVERIFIED.
+- **Analyst read** — the rating is the screener's reasoned judgment, not a fact
+  that can be looked up. **Always** used for Signal 5 (AI-Agent Future) and Signal 6
+  (Protects Its Edge). If that judgment leans on something the company claims
+  (e.g., "the AI runs locally"), mark that detail (company claim) inline in the
+  basis. The internal confidence tag still exists for these signals and still
+  governs the mechanics (e.g., a judgment resting on an UNVERIFIED product claim
+  caps at the middle verdict) — only the printed word changes.
 
-Never print "Partial" or "Partly checked."
+**Outside check does not mean "confirmed good."** It means the search ran and found
+evidence. A finding that conflicts with the company's claim prints with the verdict
+that finding supports and Outside check — e.g., "Not yet confirmed (!) · Outside
+check" when public records still show a founder at another company. If the search
+found nothing and only the company says it, the same verdict prints with
+Company claim.
+
+Never print "Verified," "Unverified," "Partial," or "Partly checked."
 
 **Ordering requirement.** Assign the confidence tag *before* selecting the verdict
 tier. Confidence should be a mechanical readout of source tier and identity-match
@@ -210,8 +263,8 @@ pairs where both are present in the submission, before writing the coherence lin
 4. Deck-stated deal terms vs. form-stated deal terms (cap, discount, valuation)
 5. Named pilot/adopter customers vs. named reference customers elsewhere in the submission
 
-A material contradiction found via this checklist becomes a ⚠️ Risk Flag
-(`⚠️ Numbers don't line up → [the contradiction, plain words]`) and, on ADVANCE,
+A material contradiction found via this checklist becomes a (!) Risk Flag
+(`(!) Numbers don't line up → [the contradiction, plain words]`) and, on ADVANCE,
 usually a Live Pitch question. A contradiction is a probe, never an adverse vote — a
 founder who cannot explain the gap at Scout is Scout's kill, not Screen's. A
 material contradiction on a **load-bearing number** does, however, cap Triage
@@ -254,11 +307,22 @@ Produce all sections in this order. Do not reorder. **No preamble:** the report
 starts at the title/Verdict Block — never narrate what you are about to do
 ("I'll run the searches…") before or inside the report.
 
+**Fixed title — identical on every report:**
+
 ```
+# [Company Name] — NWA TechGroup AI Screen
+Screened [Month D, YYYY]
+```
+
+Never retitle it ("Screening Brief," "AI Screen," etc.) — the same title on every
+deal lets members recognize and file the reports.
+
+```
+Title                     ← fixed format, above
 Verdict Block             ← leads the report
 What They Do              ← what it is · who gets the value · who pays · Stage · The Ask · why now
-Gates (3 lines)
 The Six Signals           ← summary table, then one block per signal
+Gates (3 lines)           ← after the signals, so the summary table lands on page 1
 Deal Facts                ← ungraded records
 Risk Flags                ← pointers
 Pattern Note              ← optional single line — only when a resemblance fires
@@ -277,17 +341,21 @@ A member should read this block and know the call, the reason, the signal math, 
 the next action — without reading anything else.
 
 ```
-PRELIMINARY CALL: ADVANCE TO SCOUT ✅ / WATCH ⏸ / DECLINE ❌
+PRELIMINARY CALL: ADVANCE TO SCOUT / WATCH / DECLINE
 TRIAGE CONVICTION: HIGH / MEDIUM / LOW
 
 Signals against the deal: [N] of 5 ([plain signal names], or "none").
-                [If applied, one plain sentence each:
+                [If applied — ONE sentence total:
                  Traction lift → "Conviction raised: verified paying customers
                  offset [plain signal name]."
-                 Thin Commercial Proof cap → "Conviction held at Medium: no paying
-                 customers yet." / "…: revenue so far is fragile."
-                 Coherence cap → "Conviction held at Medium: some numbers in the
-                 pitch don't line up."]
+                 Conviction cap(s) → "Conviction held at Medium: [reason]." When
+                 more than one cap applies, join the reasons in that single
+                 sentence — never repeat "Conviction held at Medium." E.g.,
+                 "Conviction held at Medium: no paying customers yet, and some
+                 numbers in the pitch don't line up."
+                 Reasons: Thin Commercial Proof cap → "no paying customers yet" /
+                 "revenue so far is fragile"; Coherence cap → "some numbers in
+                 the pitch don't line up."]
 
 Why:      [1–2 sentences. Lead with the single strongest signal or decisive
           reason. Name the signal driving the call, by its plain name. Note a
@@ -464,13 +532,16 @@ Context only — no signal analysis, no verdict repetition. Section heading prin
   hardware sale). ≤ 25 words. When the payer differs from the beneficiary (e.g.,
   equipment makers pay; remote sites benefit), keep both lines distinct — the gap
   is the channel risk.
-- **Stage** — two lines, each with one fixed label from the scales below, marked
-  **(claimed)** or **(verified)**, then a brief supporting clause:
+- **Stage** — a bold **Stage** label on its own line, then two lines at the same
+  indent, each with one fixed label from the scales below, marked **(claimed)** or
+  **(verified)**, then a brief supporting clause. Never run "Product:" inline after
+  the Stage label:
 
   ```
-  Product: [label] ([claimed/verified]). [What exists; any dated claim.]
-  Business: [label] ([claimed/verified]). [Revenue to date, recurring revenue,
-            named paying customers; next claimed milestone with its date.]
+  **Stage**
+  - **Product:** [label] ([claimed/verified]). [What exists; any dated claim.]
+  - **Business:** [label] ([claimed/verified]). [Revenue to date, recurring revenue,
+    named paying customers; next claimed milestone with its date.]
   ```
 
   - **Product scale:** Idea · In development · Prototype · Beta · Market-ready
@@ -479,6 +550,12 @@ Context only — no signal analysis, no verdict repetition. Section heading prin
   - **Dates:** print any date the company attaches to a claim next to that claim
     (e.g., "2 paid pilots by Q4 2026"). If a stated milestone carries no date, print
     "no date given."
+  - **(verified) means confirmed outside the company's own materials** — press, a
+    named customer's announcement, public filings, a product listing by a partner.
+    Anything sourced only from the application, form, deck, or company website is
+    **(claimed)**, even when it is a figure the company states plainly (e.g., "$0
+    revenue" from the form is "Pre-revenue (claimed)," never "verified from the
+    application").
   - Stage states **facts and claims** only. The judgment on revenue quality lives in
     the Market block (see Revenue so far).
 
@@ -506,9 +583,9 @@ Output — one line per gate, printed names only:
 
 | Gate                         | Status                      | Finding (one line) |
 | ---------------------------- | --------------------------- | ------------------- |
-| US company that owns its IP  | PASS ✅ / FAIL ❌           | [one line]         |
-| Big enough market            | PASS ✅ / PASS ⚠️ / FAIL ❌ | [one line]         |
-| Building a real product      | PASS ✅ / PASS ⚠️ / FAIL ❌ | [one line]         |
+| US company that owns its IP  | PASS / FAIL                 | [one line]         |
+| Big enough market            | PASS / PASS (!) / FAIL      | [one line]         |
+| Building a real product      | PASS / PASS (!) / FAIL      | [one line]         |
 
 ---
 
@@ -524,50 +601,49 @@ Each decision question appears exactly once. The section prints in two parts:
 column and breaks on PDF export; the table carries only short cells (question ≤ 6
 words, verdict ≤ 5 words) and the blocks carry the reasoning.
 
-**Heading and legend.** The heading names the track in plain words — "rated as a
-software company" (Track A) or "rated as a hardware company" (Track B). A one-line
-italic legend sits directly under it.
+**Heading.** The heading names the track in plain words — "rated as a software
+company" (Track A) or "rated as a hardware company" (Track B). **No legend line
+under the heading** — the table's plain questions and verdict words carry the
+meaning on their own.
 
 **Format** (verdicts shown are placeholders only):
 
 ```
 ## The Six Signals — rated as a software company
-*★ = rating; 1 star means it counts against the deal. Verified = the rating rests on
-independently checked facts; unchecked details are marked (company claim).*
 
-| # | Signal            | The question                    | Rating | Verdict                      | Verified?                  |
-|---|-------------------|---------------------------------|--------|------------------------------|----------------------------|
-| 1 | Disruption        | Disruptive, or a better version? | ★★☆☆☆ | Better version of what exists | Verified                   |
-| 2 | Market            | Big and growing?                | ★★★☆☆ | Real but contested           | Verified                   |
-| 3 | **Team**          | All in? Build it? Sell it?      | ★★★☆☆ | Gaps to probe                | Unverified (company claim) |
-|   | ↳ Committed       | Are they all in?                | ★★★☆☆ | Not yet confirmed ⚠️         | Unverified (company claim) |
-|   | ↳ Product Fit     | Can they build it?              | ★★★★★ | Has built this before        | Verified                   |
-|   | ↳ Market Fit      | Can they sell it?               | ★★★★★ | Knows the buyers             | Verified                   |
-|   | ↳ Track Record    | Proven? Past exits?             | —      | First-time founders          | Verified                   |
-| 4 | Defensibility     | Can they stop copycats?         | ★☆☆☆☆ | Easy to copy                 | Verified                   |
-| 5 | AI-Agent Future   | Still matters with AI agents?   | ★★★★☆ | Sells what agents need       | Verified                   |
-| 6 | Protects Its Edge | Secret sauce stays in-house?    | —      | Doesn't use outside AI       | —                          |
+| # | Signal            | The question                     | Rating | Verdict                       | Source        |
+|---|-------------------|----------------------------------|--------|-------------------------------|---------------|
+| 1 | Disruption        | Disruptive, or a better version? | ★★☆☆☆ | Better version of what exists | Outside check |
+| 2 | Market            | Big and growing?                 | ★★★☆☆ | Real but contested            | Outside check |
+| 3 | **Team**          | All in? Build it? Sell it?       | ★★★☆☆ | Gaps to probe                 | Company claim |
+|   | ↳ Committed       | Are they all in?                 | ★★★☆☆ | Not yet confirmed (!)         | Company claim |
+|   | ↳ Product Fit     | Can they build it?               | ★★★★★ | Has built this before         | Outside check |
+|   | ↳ Market Fit      | Can they sell it?                | ★★★★★ | Knows the buyers              | Outside check |
+|   | ↳ Track Record    | Proven? Past exits?              | —      | First-time founders           | Outside check |
+| 4 | Defensibility     | Can they stop copycats?          | ★☆☆☆☆ | Easy to copy                  | Outside check |
+| 5 | AI-Agent Future   | Still matters with AI agents?    | ★★★★☆ | Sells what agents need        | Analyst read  |
+| 6 | Protects Its Edge | Secret sauce stays in-house?     | —      | Doesn't use outside AI        | Analyst read  |
 
-**1 · Disruption — Better version of what exists · ★★☆☆☆ · Verified**
+**1 · Disruption — Better version of what exists · ★★☆☆☆ · Outside check**
 [Basis — 1–2 plain sentences.]
 
-**2 · Market — Real but contested · ★★★☆☆ · Verified**
+**2 · Market — Real but contested · ★★★☆☆ · Outside check**
 [Basis.]
 ↳ Revenue so far: [plain quality words] — [one clause: why, and whether it is growing].
 
-**3 · Team — Gaps to probe · ★★★☆☆ · Unverified (company claim)**
-**Committed ★★★☆☆ Not yet confirmed ⚠️:** [≤ 20 words — per-founder finding.]
+**3 · Team — Gaps to probe · ★★★☆☆ · Company claim**
+**Committed ★★★☆☆ Not yet confirmed (!):** [≤ 20 words — per-founder finding.]
 **Product Fit ★★★★★ Has built this before:** [≤ 20 words — who, and what proves it.]
 **Market Fit ★★★★★ Knows the buyers:** [≤ 20 words — who, and which relationships.]
 **Track Record — First-time founders:** [≤ 20 words.]
 
-**4 · Defensibility — Easy to copy · ★☆☆☆☆ · Verified**
+**4 · Defensibility — Easy to copy · ★☆☆☆☆ · Outside check**
 [Defense-thesis sentence — what concretely stops the most obvious copier, or why nothing does.]
 
-**5 · AI-Agent Future — Sells what agents need · ★★★★☆ · Verified**
+**5 · AI-Agent Future — Sells what agents need · ★★★★☆ · Analyst read**
 [Basis.]
 
-**6 · Protects Its Edge — Doesn't use outside AI**
+**6 · Protects Its Edge — Doesn't use outside AI · Analyst read**
 [Basis.]
 ```
 
@@ -605,18 +681,26 @@ non-adverse verdict ever prints 1 star.
 | **5 · Agent-Era Posture → AI-Agent Future** | Still matters with AI agents? | Agents make it more valuable *(RIDING)* | Sells what agents need *(ENABLING)* | Agents don't change it *(INSULATED)* | — | Agents could replace it *(THREATENED)* |
 | **6 · Protect Alpha → Protects Its Edge** | Secret sauce stays in-house? | *No stars (no weight).* Plain verdict only: Stays in-house *(KEEPS)* · Partly exposed *(MIXED)* · Leaks to AI provider *(LEAKS)* · Doesn't use outside AI *(N/A)* | | | | |
 
-Plain verdict words may be lightly adapted to fit the deal (e.g., "Real but
-contested" vs. "Real but modest") but must stay ≤ 5 words and must not change the
-tier. Where a verdict needs a caption beyond one word, use 3–5 words.
+**1★ verdicts use the fixed words exactly** — "Late to a crowded field," "Small or
+capped," "Wrong team or not all-in," "Easy to copy," "Agents could replace it," and
+the Team-line words "Not full-time," "No one who can build it," "No path to the
+buyers." A rating that counts against the deal must read identically on every deal;
+the explanation carries the deal-specific reason (e.g., "the patents belong to a
+separate LLC"). Never rephrase a 1★ verdict ("Protection not yet owned" → print
+"Easy to copy").
+
+For 2★–5★ verdicts, the plain words may be lightly adapted to fit the deal (e.g.,
+"Real but contested" vs. "Real but modest") but must stay ≤ 5 words and must not
+change the tier.
 
 **Team lines (Signal 3):**
 
 | Line | The question | ★★★★★ | ★★★ | ★ (counts against) |
 |---|---|---|---|---|
-| **Committed** | Are they all in? | All in *(FULL-TIME confirmed)* | Not yet confirmed ⚠️ *(UNCONFIRMED)*, or a non-CEO/CTO co-founder is part-time | Not full-time *(CEO or CTO — SPLIT / SIDE-PROJECT, affirmative evidence)* |
+| **Committed** | Are they all in? | All in *(FULL-TIME confirmed)* | Not yet confirmed (!) *(UNCONFIRMED)*, or a non-CEO/CTO co-founder is part-time | Not full-time *(CEO or CTO — SPLIT / SIDE-PROJECT, affirmative evidence)* |
 | **Product Fit** | Can they build it? | Has built this before | Related experience only | No one who can build it |
 | **Market Fit** | Can they sell it? | Knows the buyers | Some market access | No path to the buyers |
-| **Track Record** | Proven? Past exits? | *No stars.* Plain verdict only: Prior exit · Has scaled a company · First-time founders · Past venture raises questions ⚠️ | | |
+| **Track Record** | Proven? Past exits? | *No stars.* Plain verdict only: Prior exit · Has scaled a company · First-time founders · Past venture raises questions (!) | | |
 
 - **Team rating = the lowest of Committed, Product Fit, and Market Fit.** A team is
   only as strong as its weakest rated line. Printed Team verdict: 5★ **Strong team** ·
@@ -624,7 +708,8 @@ tier. Where a verdict needs a caption beyond one word, use 3–5 words.
   STRONG, 3★ = MIXED, 1★ = WEAK/adverse.)
 - **Team confidence = the confidence of the line that sets the rating** (if lines
   tie, VERIFIED/PARTIAL wins over UNVERIFIED). This is the tag the
-  Confidence-Gated Compound Rule reads when Team is adverse.
+  Confidence-Gated Compound Rule reads when Team is adverse, and it sets the Team
+  row's printed Source.
 - The UNVERIFIED cap applies line by line: a line resting only on company claims
   cannot print 5★. "The company says the CEO is full-time" alone is **Committed 3★
   Not yet confirmed**, not 5★.
@@ -632,7 +717,7 @@ tier. Where a verdict needs a caption beyond one word, use 3–5 words.
   never disadvantaged; a prior exit never covers for a weak team today. A concerning
   track record (e.g., the same team relaunching after a well-funded prior company
   that didn't scale, or an undisclosed predecessor company) prints **Past venture
-  raises questions ⚠️** and becomes a ⚠️ Risk Flag plus a Live Pitch question or
+  raises questions (!)** and becomes a (!) Risk Flag plus a Live Pitch question or
   re-engage item — and often fires the Pattern note.
 
 ### What each signal describes
@@ -721,6 +806,50 @@ Internal verdict: THREATENED / RIDING / ENABLING / INSULATED. Basis: describe ho
 agents reshape (or don't reshape) this specific problem over the hold period — what
 gets absorbed, what gets more valuable — then the posture follows.
 
+**The posture is four categories, not a scale.** The stars on this signal map to
+four fixed postures — they are **not** a 1–5 spectrum with a neutral middle. Print
+exactly one of the four fixed captions, word for word, and nothing else:
+**Agents make it more valuable** (RIDING, 5★) · **Sells what agents need**
+(ENABLING, 4★) · **Agents don't change it** (INSULATED, 3★) · **Agents could replace
+it** (THREATENED, 1★). Never invent a hybrid or hedged caption ("Survives agents,
+form at risk," "Partly threatened"). 3★ means INSULATED and only INSULATED — never
+"somewhere in between."
+
+**Judge the product as built today, not the underlying need** (per
+`knowledge-agent-era-readiness.md`: read the posture by "where it honestly stands
+today — usually the weaker, product-level reality"). The question is whether agents
+absorb *how this company delivers value* — its product, workflow, and pricing model —
+during the hold period, not whether the customer's underlying need survives. Almost
+every need survives agents; that alone never earns INSULATED or ENABLING.
+
+- **THREATENED** — agents absorb the core value **as this company delivers it**
+  during the hold period, even if the underlying need lives on (e.g., the need to
+  control who edits which clause survives, but a human-facing routing tool priced per
+  seat is what agents replace). "An excellent solution for a world that is ending."
+  When the need survives but the product form does not, the posture is THREATENED —
+  put the escape route in the basis as "Could get stronger if: [the one concrete
+  move]."
+- **ENABLING** — agent or machine activity raises demand for **the product's form
+  as built**: it is infrastructure, plumbing, or verification the agent economy
+  runs on (e.g., resilient link-bonding software inside network equipment — more
+  machine traffic means more need for exactly that kind of product). The test is
+  the product's *form*, not the bare underlying need: a per-seat tool for human
+  reviewers does not become ENABLING just because contracts still need governing.
+- **Posture never asks whether this company wins the demand.** Whether Reverent
+  or Peplink captures rising demand for link-bonding is a competition question —
+  Defensibility (Signal 4) already reads it. Never downgrade ENABLING to INSULATED
+  because incumbents may capture the demand ("raises demand for connectivity
+  generally, not for this product specifically") — that double-counts Defensibility.
+- **INSULATED** — agents neither raise nor reduce demand for the product as built:
+  the value is physical, high-trust, human-verified, or locally embedded in a way
+  agents can't touch. Stress-test this claim hard; most "Insulated" companies are
+  actually Threatened.
+- **RIDING** — the company *is* the agent-era version of the solution, today.
+
+Mixed reads are normal — resolve them to the weaker, product-level posture, and let
+the basis carry the nuance ("Could get stronger if…" / "What to watch…"), never the
+caption.
+
 **6 · Protects Its Edge (Protect Alpha)** — *Does it keep its secret sauce — and its
 customers' — out of the AI labs' hands?* Internal verdict: KEEPS / MIXED / LEAKS /
 N/A. Basis: describe what this company's edge actually is (data, workflow, know-how,
@@ -747,7 +876,7 @@ the product does not rely on outside AI models (OpenAI, Anthropic, Google, etc.)
   photo, or direct confirmation in company materials. **Name + city alone is
   insufficient.** If identity match is not established, the finding can motivate a
   Live Pitch question but cannot support an adverse vote — print **Committed ★★★☆☆
-  Not yet confirmed ⚠️**, never 1★.
+  Not yet confirmed (!)**, never 1★.
 - **Academic founder — both configurations.** A professor/researcher founder paired
   with a full-time operating CEO is the standard deep-tech spinout configuration —
   not SPLIT; assess the operating team's commitment and treat the academic founder
@@ -757,7 +886,7 @@ the product does not rely on outside AI models (OpenAI, Anthropic, Google, etc.)
   and entrepreneurial-leave policies mean they cannot distinguish "full-time
   professor" from "on leave, full-time CEO." Such listings are **never affirmative
   evidence of split commitment** and never justify an adverse vote on their own:
-  print Committed 3★ at most, flag ⚠️, and make commitment status Live Pitch
+  print Committed 3★ at most, flag (!), and make commitment status Live Pitch
   Question #1.
 - **What counts as affirmative evidence of SPLIT (Committed 1★):** a verified
   competing *operating* role elsewhere held by the CEO or CTO, the company's own
@@ -765,9 +894,9 @@ the product does not rely on outside AI models (OpenAI, Anthropic, Google, etc.)
   materials contradicting the full-time claim — **passing both the Source-Tier Rule
   and the Identity-Match Standard above.** A single self-published discrepancy
   (e.g., a personal bio page still describing an old role in the present tense) is a
-  live question, not proof — print Committed 3★ **Not yet confirmed ⚠️** and make it
+  live question, not proof — print Committed 3★ **Not yet confirmed (!)** and make it
   Live Pitch Question #1. A non-CEO/CTO co-founder with a verified outside role is
-  Committed 3★ plus a ⚠️ Yellow Flag — not 1★.
+  Committed 3★ plus a (!) Yellow Flag — not 1★.
 - **Market Fit 1★ requires the same standard.** "No path to the buyers" needs
   affirmative evidence — every named founder's background checked and none shows
   domain years, buyer relationships, or channel access in this market. Thin or
@@ -775,7 +904,7 @@ the product does not rely on outside AI models (OpenAI, Anthropic, Google, etc.)
   never 1★.
 - **Label discipline — the header must agree with the roll-up.** Print any Team line
   at 1★ only when Team is also counted against the deal in the roll-up. If the gap
-  is being treated as Scout-answerable, the line prints 3★ Not yet confirmed ⚠️ — a
+  is being treated as Scout-answerable, the line prints 3★ Not yet confirmed (!) — a
   report must never carry a 1-star line its own roll-up ignores.
 - **Role or identity discrepancies** (deck vs. public sources) are a Live Pitch
   question when other high-weight signals are strong; adverse only with affirmative
@@ -786,9 +915,9 @@ the product does not rely on outside AI models (OpenAI, Anthropic, Google, etc.)
 
 - **Customer-Alpha Conduit** (customers' regulated/proprietary data piped through
   frontier APIs, no sovereign path) or **Own-Alpha Exposure** (differentiator
-  transits a single provider, no stated containment) → ⚠️ Yellow Flag.
+  transits a single provider, no stated containment) → (!) Yellow Flag.
 - **Captured pattern** (single-provider dependency + that lab has shipped/announced a
-  competing product + the company's alpha transits that provider) → ❌ Red Flag.
+  competing product + the company's alpha transits that provider) → (X) Red Flag.
 - **Latent Enabler** (sovereignty-enabling positioning) → note "Helps customers keep
   their data out of AI labs — route to Scout"; maps to Theme 4, sometimes Theme 1;
   no conviction bonus.
@@ -828,18 +957,18 @@ and prior funding print in **The Ask** (What They Do) — not here.
 re-explain findings here.** Surface the 3–4 most material flags, prioritized by
 impact on the investment thesis.
 
-Format: `❌/⚠️ [Flag label, plain words] → [printed gate or signal name]: [finding, plain words]`
+Format: `(X) or (!) [Flag label, plain words] → [printed gate or signal name]: [finding, plain words]`
 
-E.g., `⚠️ IP held outside the company → US company that owns its IP / Defensibility:
+E.g., `(!) IP held outside the company → US company that owns its IP / Defensibility:
 the patents belong to a separate holding LLC.`
 
-❌ **RED FLAGS:** CEO or CTO not full-time (Team) · Captured pattern (Protects Its
+(X) **RED FLAGS:** CEO or CTO not full-time (Team) · Captured pattern (Protects Its
 Edge) · any gate FAIL context.
 
-⚠️ **YELLOW FLAGS:** other co-founders not full-time (Team) · past venture raises
+(!) **YELLOW FLAGS:** other co-founders not full-time (Team) · past venture raises
 questions (Team — Track Record) · gate YELLOW PASS · Protects Its Edge trip-wires ·
 big competitor already does this (Defensibility) · unverified load-bearing claims ·
-numbers that don't line up (`⚠️ Numbers don't line up → [the contradiction]`).
+numbers that don't line up (`(!) Numbers don't line up → [the contradiction]`).
 
 **Pattern note (when fired):** one optional line directly under the flags — see
 Between-Signal Reads. Absent by default.
@@ -859,7 +988,17 @@ End every report with exactly this line:
 
 Do not fabricate or assert claims you cannot support from the deck or from the 3 web
 searches. Mark any unconfirmed assertion inline as **(company claim)** — or
-"(unconfirmed)" when the source is a third party rather than the company. If a gate
+**(unconfirmed)** when the source is a third party rather than the company.
+
+**Single-source and aggregator claims are always marked (unconfirmed), everywhere on
+the page** — signal blocks, Team lines, Risk Flags, Pattern note, and the Verdict
+Block alike. This covers any fact resting on one Tier 2 source (data-broker and
+funding-tracker sites: RocketReach, ZoomInfo, Apollo, Crunchbase auto-pages, CB
+Insights, Tracxn, PitchBook previews, market-research aggregators) or on a single
+uncorroborated source of any kind. E.g., "one tracker lists it inactive after ~$500K
+raised (unconfirmed)"; "a data-broker site lists the CTO as CEO of Revision Works
+(unconfirmed)." When two such sources conflict (e.g., different funding totals),
+say so plainly rather than picking one. If a gate
 or signal verdict hinges on a web-retrieved fact, note the source parenthetically. No
 formal citation markers required.
 
@@ -939,21 +1078,25 @@ call.
   first use; ADVANCE/WATCH/DECLINE and HIGH/MEDIUM/LOW kept
 - [ ] **What They Do complete** — 2–3 sentence what-it-is · Who gets the value ·
   Who pays (distinct lines) · Stage (Product + Business, fixed-scale labels,
-  claimed/verified, dates or "no date given") · The Ask (amount, instrument, terms,
+  claimed/verified — verified ONLY on confirmation outside the company's own
+  materials; form/deck/website figures are always claimed — dates or "no date
+  given") · The Ask (amount, instrument, terms,
   lead status, prior funding) · Why now; NO signal analysis, NO Why NWA section
 - [ ] **Summary table present** — one row per signal, Team with Committed / Product
   Fit / Market Fit / Track Record sub-rows; question ≤ 6 words, verdict ≤ 5 words;
   no explanations in cells
 - [ ] **Blocks below the table** — bold header line (# · plain name — plain verdict
-  · stars · Verified/Unverified) + full-width basis prose; no Moat evidence-tag line
-- [ ] **Confidence printed as two labels** — PARTIAL prints as Verified with
-  unchecked details marked (company claim) inline; UNVERIFIED prints as Unverified
-  (company claim); "Partial" never printed
+  · stars · Source) + full-width basis prose; no Moat evidence-tag line
+- [ ] **Source column uses three values only** — Outside check (internal VERIFIED
+  or PARTIAL; unchecked details marked (company claim) / (unconfirmed) inline) ·
+  Company claim (internal UNVERIFIED) · Analyst read (always for AI-Agent Future
+  and Protects Its Edge); "Verified," "Unverified," and "Partial" never printed; a
+  conflicting outside finding prints Outside check, not Company claim
 - [ ] **Team rating = lowest of Committed / Product Fit / Market Fit**; Track Record
   unrated and has not moved the rating; each rated line capped at 3★ if resting only
   on company claims; any 1★ line rests on affirmative evidence and agrees with the
   roll-up
-- [ ] **Concerning track record handled as a flag** — ⚠️ Risk Flag + Live Pitch
+- [ ] **Concerning track record handled as a flag** — (!) Risk Flag + Live Pitch
   question / re-engage item (and Pattern note if it fires), never a rating change
 - [ ] **Basis style check** — every basis is 1–2 plain sentences a framework-naive
   member can follow; Disruption describes the actual edge (or its absence);
@@ -968,7 +1111,7 @@ call.
   source and cannot alone satisfy "independent corroboration"
 - [ ] **Identity-Match Standard applied** — name + city alone is never treated as
   confirmation that an outside record is the same person as the named founder;
-  unconfirmed identity → Committed 3★ Not yet confirmed ⚠️, never 1★
+  unconfirmed identity → Committed 3★ Not yet confirmed (!), never 1★
 - [ ] **Moat Sufficiency Test applied** — a named affirmative asset (not the
   absence of a negative) supports MODERATE or STRONG; if none can be named, or
   two-plus negative evidence tests stack (no IP, Wrapper MOD/HIGH, Goliath FLAGGED,
@@ -976,7 +1119,7 @@ call.
 - [ ] **Coherence pass run against the fixed 5-pair diff-list** (funding status vs.
   stated prior investment · traction vs. forecast · team size vs. ambition ·
   deck terms vs. form terms · named pilots vs. named references), not an ad hoc
-  check; material contradictions → ⚠️ Numbers-don't-line-up flag and/or pitch
+  check; material contradictions → (!) Numbers-don't-line-up flag and/or pitch
   question, never an adverse vote; a load-bearing-number contradiction caps Triage
   Conviction at MEDIUM (cap only — call unchanged)
 - [ ] **Narrative vs. substance** — sharp story/substance divergence (either
@@ -1002,6 +1145,26 @@ call.
 - [ ] Deal Facts ungraded (Syndication · Theme · HQ · Referral); SAFE and
   syndication-status neutral — never pull conviction
 - [ ] Risk Flags are one-line pointers (3–4 max) to a printed gate or signal name
+- [ ] **Fixed title** — "[Company] — NWA TechGroup AI Screen" + "Screened [date]",
+  never retitled
+- [ ] **1★ verdicts use the fixed words exactly** — no rephrasing of a verdict that
+  counts against the deal
+- [ ] **Every single-source / aggregator claim marked (unconfirmed)** — including in
+  Risk Flags, Team lines, and the Pattern note; conflicting aggregator figures
+  stated as a conflict
 - [ ] **Brevity caps respected** — report is under 2 pages
+- [ ] **Rev A layout** — section order Verdict Block → What They Do → Six Signals →
+  Gates → Deal Facts → Risk Flags; no legend line under the Six Signals heading;
+  Stage label on its own line with Product and Business beneath it at the same
+  indent; conviction caps stated in ONE sentence; no emoji anywhere — only ★ ☆,
+  (!) and (X)
+- [ ] **AI-Agent Future is one of four fixed captions, word for word** — no hybrid
+  or hedged caption; 3★ = INSULATED only
+- [ ] **AI-Agent Future judged on the product as built today** — if agents absorb how
+  this company delivers value (product, workflow, pricing) during the hold period,
+  it is THREATENED even when the underlying need survives; ENABLING when agent or
+  machine activity raises demand for the product's form as built; posture NEVER
+  downgraded because a competitor may capture the demand (that is Defensibility's
+  read); posture agrees with its own basis
 - [ ] Report footer present
 - [ ] No fabricated claims
