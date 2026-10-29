@@ -8,8 +8,9 @@
 > `knowledge-alpha-ai-sovereignty.md`. Run as a parallel Project while testing.
 > **Status:** SANDBOX PROTOTYPE — built on the **V13 baseline** (V13 file preserved
 > unchanged as the regression comparator, itself carrying the full V12 Rev B lineage
-> and Amendments 1–3). Never deployed; V10 remains the version in the claude.ai
-> member Project; the pipeline `/screen` is canonical and unchanged.
+> and Amendments 1–3). Status at authoring: not deployed, V10 then the version in the claude.ai
+> member Project (since superseded — V15 is now distributed to members); the pipeline
+> `/screen` is canonical.
 > **New in V14 — the Thin Commercial Proof cap:** a member pressure-test of a live
 > screen (Complete Contract Cycle) surfaced a real asymmetry: Commercial Proof could
 > only ever help Triage Conviction (via Traction lift) and never hurt it — a

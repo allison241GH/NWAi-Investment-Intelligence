@@ -385,6 +385,13 @@ Key files and folders in this workspace:
 
 **`docs/reference/ClaudeProjects/` is an isolated screener exploration space.** (Renamed from `Gemini/` August 26, 2026 — the folder also retains two lineage-only Google Gemini Gem artifacts, `GEM-v9`/`GEM-v10`, abandoned per Jamie July 2026; the name reflects current use, not exclusive origin.) Work in this folder must never trigger CLAUDE.md updates, memory writes, architecture doc updates, or any other pipeline file changes. Changes stay strictly within that folder.
 
+**The pipeline is the source of truth for the Screen stage (Decision 14, October 2026).** The ClaudeProjects screeners are a sandbox: ideas are trialed there freely, but a change only becomes real once it is **adopted into the pipeline** (decision-log entry + regression against the back-test set). The coordinator screener files Jamie emails to members (for their own Claude Projects) are then **rebuilt from the pipeline**, never the other way round. Sandbox work never edits pipeline files directly; adoption is a separate, deliberate step Jamie triggers ("adopt this into the pipeline").
+
+**Starting or editing the next sandbox screener version (V16 and beyond) — flag before building.** When a session is asked to create or evolve a ClaudeProjects screener (instructions or knowledge files), before writing anything:
+1. **Remind Jamie that the work lives in `docs/reference/ClaudeProjects/`**, in this canonical folder, on whatever surface the session is running.
+2. **Check that the starting point is pulled from the pipeline.** Compare the latest coordinator screener (currently V15 + its `knowledge-*.md` files) against the pipeline Screen: the version of `gates-and-flags-techgroup.md`, `screen.md`, and any decision-log entries after the coordinator screener's last rebuild. If the pipeline has adopted rules the coordinator files lack, **flag it and offer to rebuild the base from the pipeline first** — never fork a new version from a stale coordinator screener, which is how V15 drifted.
+3. Only then build the new version on that synced base, and keep the work inside the folder.
+
 **Related workspace (separate):** Partnership and legal documents for scaling the Investment Intelligence Platform live in the **"Claude CoWork NWAixCoditect Partnership"** folder on Jamie's desktop. That workspace covers the NWA × AZ1/Coditect co-development alliance — scoping briefs, SOWs, IP agreements, and build phase tracking. Do not look for or expect those files here.
 
 ---

@@ -7,8 +7,9 @@
 > `knowledge-gates-and-flags.md` · `knowledge-agent-era-readiness.md` ·
 > `knowledge-alpha-ai-sovereignty.md`. Run as a parallel Project while testing.
 > **Status:** SANDBOX PROTOTYPE — built on the **V12 Rev B baseline** (V12 file preserved
-> unchanged as the regression comparator). Never deployed; V10 remains the version in
-> the claude.ai member Project; the pipeline `/screen` is canonical and unchanged.
+> unchanged as the regression comparator). Status at authoring: not deployed, V10 then the version in
+> the claude.ai member Project (since superseded — V15 is now distributed to members);
+> the pipeline `/screen` is canonical.
 > **New in V13 (vs. V12 Rev B) — the human-nuance layer:** (1) Team basis adds the
 > origin & track-record read (cap 60 words); (2) new Between-Signal Reads section —
 > coherence pass, narrative-vs-substance discipline, optional Pattern note;

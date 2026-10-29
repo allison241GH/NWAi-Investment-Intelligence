@@ -5,9 +5,9 @@
 >   Surface key signals for members to form conviction. Do not replace judgment with a number.
 > **Supersedes:** GEM v10 (Gemini)
 > **Created:** June 2026
-> **Status:** DEPLOYED — the version currently pasted into the claude.ai member Project
->   (interim — superseded when Dealum API integration goes live). All later versions
->   (V11–V13) are sandbox prototypes only; none has been deployed.
+> **Status:** SUPERSEDED — an earlier member version. V15 is the version Jamie currently
+>   distributes to members by email (status corrected October 29, 2026; the prior
+>   "DEPLOYED … all later versions undeployed" wording was stale).
 > **The pipeline is canonical.** If a verdict is contested, `/screen` in the NWAi
 >   Claude Code pipeline is authoritative.
 

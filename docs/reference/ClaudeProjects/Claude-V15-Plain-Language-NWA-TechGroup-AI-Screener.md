@@ -8,8 +8,10 @@
 > `knowledge-alpha-ai-sovereignty.md`. Run as a parallel Project while testing.
 > **Status:** SANDBOX PROTOTYPE — built on the **V14 baseline** (V14 file preserved
 > unchanged as the regression comparator, itself carrying the V13 Investor-Nuance
-> layer and the full V12 Rev B lineage). Never deployed; V10 remains the version in
-> the claude.ai member Project; the pipeline `/screen` is canonical and unchanged.
+> layer and the full V12 Rev B lineage). **DISTRIBUTED — the version Jamie has emailed to
+> members, who load it into their own Claude Projects** (status corrected October 29,
+> 2026; the prior "never deployed" wording was stale). The pipeline `/screen` is
+> canonical; per Decision 14 the next coordinator version is rebuilt from the pipeline.
 > **New in V15 — the Plain-Language Member Read.** Source: the 9/28/26 Tech Screening
 > meeting's review of the V14 Reverent Networks screen. The team found the analysis
 > and the Verdict Block useful, but said the page "reads like a code" — a member who
