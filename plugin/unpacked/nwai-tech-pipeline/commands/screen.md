@@ -89,9 +89,9 @@ Work the evidence for each signal using the pitch materials and the three search
 
 - **Goliath Test** → Signal 4 tag `Goliath [PASSED/FLAGGED ⚠️ + name]`. FLAGGED = Risk Flag + Live Pitch question, **never an adverse vote**.
 - **LLM Ingestion Test** → Signal 4 tag `LLM Ingestion [YES/PARTIAL/NO]`; drives the **AI Wrapper Assessment** → tag `Wrapper [HIGH/MOD/LOW]` (Track A only).
-- **Revenue Quality Audit** → Commercial Proof quality `[STICKY / STAGNANT / PRE-REVENUE]` on the line under Signal 2.
+- **Revenue Quality Audit** → Commercial Proof quality `[STICKY / STAGNANT / FRAGILE / PRE-REVENUE]` on the line under Signal 2. FRAGILE = thin/early revenue that exists but is easily lost (or dependent on a HIGH Wrapper read holding up); PRE-REVENUE = none yet — never conflate the two. FRAGILE requires revenue from the product itself; grants, incidental services, or signed-but-unbilled agreements alone are PRE-REVENUE.
 - **Cynical Default** → the confidence tag on every signal: VERIFIED / PARTIAL / UNVERIFIED. **An UNVERIFIED signal caps at its middle verdict; PARTIAL caps the unverified element, not the whole signal.**
-- **Signal 5 evidence** — apply the doorway question (*"information for a human to act on, or a transaction for an agent to complete?"*), then describe how agents reshape this specific problem over the hold period.
+- **Signal 5 evidence** — apply the doorway question (*"information for a human to act on, or a transaction for an agent to complete?"*), then describe how agents reshape this specific problem over the hold period. **Judge the product as built today, not the underlying need** — "product form" = how value is delivered and charged, not the UI surface; the four postures are categories, not a scale; a need that survives in a product form agents absorb is THREATENED; ENABLING tests the product's form; posture never asks whether this company wins the demand (Moat reads that); mixed reads resolve to the weaker, product-level posture.
 - **Signal 6 evidence** — apply the alpha-flow doorway question (*"where does the alpha flow — does it stay home, or drain up to the lab?"*); describe what the alpha is and where it goes when the product runs; check the flag conditions (Customer-Alpha Conduit ⚠️, Own-Alpha Exposure ⚠️, Captured pattern ❌, Latent Enabler note). Building on frontier APIs is the normal early posture — flags fire on structural conduit design or founder unawareness, never on API usage per se.
 - **Track B**: note TRL (tag in Signal 4), IP status, unit-economics evidence, Hardware Last Mile signals.
 
@@ -108,7 +108,7 @@ Render each signal's verdict + confidence tag, then apply the conviction mechani
 
 **Weights (print order ≠ weight order):** Team HIGHEST · Discontinuity HIGH · Market SIGNIFICANT · Agent-Era Posture SIGNIFICANT · Moat MEANINGFUL · Protect Alpha NO WEIGHT (routing flag only — never gates, caps, or enters the roll-up).
 
-**Adverse only at the bottom verdict tier, only on affirmative evidence:** Team = WEAK or corroborated SPLIT/SIDE-PROJECT (SPLIT requires passing both the Source-Tier Rule and the Identity-Match Standard — see the screener reference) · Discontinuity = LATE only (INCREMENTAL alone never adverse; INCREMENTAL + Moat WEAK = one adverse finding, counted once under Moat) · Moat = WEAK only, decided via the Moat Sufficiency Test — name the affirmative asset that survives the flagged Goliath(s), or it's WEAK (MODERATE never adverse, whatever its flags) · Market = WEAK or structurally capped · Agent-Era = THREATENED. Between-signal reads are never adverse votes.
+**Adverse only at the bottom verdict tier, only on affirmative evidence:** Team = rated WEAK, which happens only when one of its three rated lines is at the bottom tier on affirmative evidence — Committed SPLIT/SIDE-PROJECT (CEO or CTO; requires passing both the Source-Tier Rule and the Identity-Match Standard), Product Fit WEAK, or Market Fit WEAK ("no path to the buyers" — every founder checked, none shows domain years, buyer relationships, or channel access; thin backgrounds are MIXED). Team rating = the lowest of the three lines; Track Record is never adverse · Discontinuity = LATE only (INCREMENTAL alone never adverse; INCREMENTAL + Moat WEAK = one adverse finding, counted once under Moat) · Moat = WEAK only, decided via the Moat Sufficiency Test — name the affirmative asset that survives the flagged Goliath(s), or it's WEAK (MODERATE never adverse, whatever its flags) · Market = WEAK or structurally capped · Agent-Era = THREATENED. Between-signal reads are never adverse votes.
 
 **Screen-stage humility:** a doubt three searches cannot resolve becomes a Live Pitch question or re-engage condition — never an adverse vote. The roll-up must never contradict the printed verdicts.
 
@@ -120,7 +120,9 @@ Render each signal's verdict + confidence tag, then apply the conviction mechani
 
 **Traction lift:** exceptional VERIFIED Commercial Proof lifts Triage Conviction one band and may offset one adverse signal other than Team; state the lift in the roll-up line when applied.
 
-**Triage Conviction (HIGH / MEDIUM / LOW)** per the pattern guide in the reference — HIGH requires Team STRONG + FULL-TIME, no adverse signals, and no unresolved load-bearing coherence contradiction (a gap worth a Live Pitch question caps conviction at MEDIUM).
+**Thin Commercial Proof cap:** Commercial Proof quality PRE-REVENUE or FRAGILE caps Triage Conviction at MEDIUM — unconditional; conviction cap only, never an adverse vote, never blocks ADVANCE. State the cap in the roll-up line when applied, and name the stage explicitly in the Concern line.
+
+**Triage Conviction (HIGH / MEDIUM / LOW)** per the pattern guide in the reference — HIGH requires all three Team lines at the top tier (Committed FULL-TIME, Product Fit STRONG, Market Fit STRONG), no adverse signals, no unresolved load-bearing coherence contradiction, and Commercial Proof not PRE-REVENUE/FRAGILE (a gap worth a Live Pitch question caps conviction at MEDIUM).
 
 ---
 
@@ -188,8 +190,11 @@ Unverified) = how much survived independent checking at screen depth.*
 [Basis.]
 ↳ Commercial Proof: [stage · revenue state · quality · velocity] — [Conf]
 
-**3 · Team — STRONG fit · FULL-TIME · Partial**
-[Basis — the three named reads: Product-team fit, Market-team fit, Origin & track record; then the commitment finding per named founder.]
+**3 · Team — MIXED · Partial** *(rating = lowest rated line)*
+Committed: FULL-TIME — [commitment finding per named founder]
+Product Fit: STRONG — [who can build it, and what proves it]
+Market Fit: MIXED — [who can sell it: domain years, relationships, channel access]
+Track Record (unrated): [prior exit / has scaled a company / first-time founders / past venture raises questions ⚠️]
 
 **4 · Moat — MODERATE · Unverified**
 [Defense-thesis sentence.]
@@ -234,7 +239,7 @@ End every report with exactly this line:
 
 > *Brief format. Ask to expand any signal, drill into any flag, or say "run the full report" for the complete unpacked analysis.*
 
-**Claim discipline:** Do not fabricate or assert claims you cannot support from the deck or the 3 searches. Label unconfirmed assertions "unverified" inline. If a gate or signal verdict hinges on a web-retrieved fact, note the source parenthetically. No formal `[n]` citation apparatus at Screen.
+**Claim discipline:** Do not fabricate or assert claims you cannot support from the deck or the 3 searches. Mark unconfirmed assertions inline as **(company claim)** when they come from the company, or **(unverified)** when the source is an uncorroborated third party. **Single-source and aggregator claims (Crunchbase auto-pages, PitchBook previews, RocketReach, ZoomInfo, Tracxn, CB Insights, market-research aggregators, or any single uncorroborated source) are marked (unverified) everywhere they appear** — signal blocks, Team lines, Risk Flags, Pattern note, and the Verdict Block alike. When two such sources conflict (e.g., different funding totals), say so plainly rather than picking one. If a gate or signal verdict hinges on a web-retrieved fact, note the source parenthetically. No formal `[n]` citation apparatus at Screen.
 
 ---
 
@@ -255,7 +260,7 @@ In order:
 1. **Verdict callout** — prominent styled box at top: PRELIMINARY CALL as a colored badge (green ADVANCE / amber WATCH / red DECLINE), TRIAGE CONVICTION, the signal roll-up lines, Why, Concern, and the one conditional element (Live Pitch Questions as a numbered list / Re-engage-when / Kill reason)
 2. **Company Context** — prose block
 3. **Gates table** — 3 rows, status badges
-4. **Six Signal blocks** — one full-width shaded section per signal (not a table): section header bar carries `# · Signal — Verdict · Confidence` (navy bar, white text); basis prose full width beneath; Signal 4 carries its Tags line; Signal 2 carries the Commercial Proof line. Track named in the section heading with the one-line legend.
+4. **Six Signal blocks** — one full-width shaded section per signal (not a table): section header bar carries `# · Signal — Verdict · Confidence` (navy bar, white text); basis prose full width beneath; Signal 3 carries its four lines (Committed / Product Fit / Market Fit / Track Record); Signal 4 carries its Tags line; Signal 2 carries the Commercial Proof line. Track named in the section heading with the one-line legend.
 5. **Deal Facts table**
 6. **Risk Flags** — flag lines (+ Pattern note if fired)
 
@@ -306,12 +311,15 @@ Follow-up behavior (all surfaces): after the report, answer conversationally —
 - [ ] Compound rule applied weight-tiered — DECLINE only on (Team adverse + 1 other) or (3+ adverse) or gate FAIL or silent Fix-Forward failure; all other adverse combinations cap at WATCH
 - [ ] **Confidence-Gated Compound Rule checked** — a compound-rule DECLINE resting entirely on UNVERIFIED-confidence adverse signals is downgraded to WATCH; at least one adverse signal in the compound carries PARTIAL or VERIFIED
 - [ ] Traction lift considered — exceptional VERIFIED commercial proof lifts conviction and may offset one non-Team adverse signal; stated in roll-up when applied
+- [ ] **Thin Commercial Proof cap applied** — PRE-REVENUE or FRAGILE caps conviction at MEDIUM (unconditional); cap stated in the roll-up line; the Concern line names the stage; FRAGILE and PRE-REVENUE not conflated
 - [ ] Screen-stage humility — every unresolved doubt became a Live Pitch question or re-engage condition, not an adverse vote; adverse votes rest on affirmative evidence
 - [ ] WATCH treated as the when-in-doubt default
 - [ ] If WATCH: Fix-Forward Test run SILENTLY — verdict flipped to DECLINE if fixing the primary condition does not make the deal Scout-ready; only re-engage milestones and the gap sentence printed
 - [ ] Live Pitch Questions capped at 3 on ADVANCE — specific to this deal; Protect Alpha question included if Signal 6 = LEAKS or MIXED
-- [ ] Basis style check — every basis followable by a framework-naive member: Signal 3 names the Product-team fit, Market-team fit, and origin/track-record reads; Signal 1 describes the actual edge (or its absence), not just the tier; Signal 6 says what the alpha is and where it flows; no decoder-style label strings as explanation
-- [ ] Signal 3: each named founder's employer/title checked via the full fixed query set (not stopped at first hit); credibility and commitment assessed separately; team-configuration rules applied — faculty directory/lab/third-party listings NEVER counted as affirmative SPLIT evidence; discrepancies → pitch question unless affirmative dual-hatting evidence; header label agrees with the roll-up (SPLIT/SIDE-PROJECT only when Team counted adverse; otherwise UNCONFIRMED ⚠️)
+- [ ] Basis style check — every basis followable by a framework-naive member: Signal 3 prints its Committed, Product Fit, Market Fit, and Track Record lines; Signal 1 describes the actual edge (or its absence), not just the tier; Signal 6 says what the alpha is and where it flows; no decoder-style label strings as explanation
+- [ ] Signal 3: each named founder's employer/title checked via the full fixed query set (not stopped at first hit); credibility and commitment assessed separately; team-configuration rules applied — faculty directory/lab/third-party listings NEVER counted as affirmative SPLIT evidence; discrepancies → pitch question unless affirmative dual-hatting evidence; header label agrees with the roll-up (any Team line at its bottom tier only when Team counted adverse; otherwise its middle tier — UNCONFIRMED ⚠️ / MIXED)
+- [ ] **Team = lowest rated line** — Team rating equals the lowest of Committed / Product Fit / Market Fit; Team confidence = the confidence of the line that sets it; a line resting only on company claims never prints its top tier; Track Record never moved the rating; Market Fit WEAK only on affirmative evidence (every founder checked); a non-CEO/CTO co-founder's outside role is UNCONFIRMED + ⚠️, never SPLIT
+- [ ] **Agent-Era judged on the product as built** — one of the four postures, no hedged hybrid; a surviving need in an absorbable product form = THREATENED with a "Could get stronger if…" line; ENABLING tests the product's form; not downgraded because incumbents might win the demand
 - [ ] **Source-Tier Rule applied** — Tier 2 aggregator findings (RocketReach, Wiza, Aeroleads, Crunchbase person pages, etc.) count as ONE source regardless of domain count; cannot alone satisfy "independent corroboration"
 - [ ] **Identity-Match Standard applied** — name + city alone never confirms an outside record is the same person as the named founder; unconfirmed identity → UNCONFIRMED ⚠️, never SPLIT
 - [ ] **Moat Sufficiency Test applied** — a named affirmative asset (not the absence of a negative) supports MODERATE or STRONG; if none can be named, or two-plus negative tags stack (no IP, Wrapper MOD/HIGH, Goliath FLAGGED, Memory Lock-in thesis-only/absent), Moat prints WEAK
@@ -321,10 +329,11 @@ Follow-up behavior (all surfaces): after the report, answer conversationally —
 - [ ] Ask-at-Scout rule applied — a call-answerable sole gap with no other adverse signal → ADVANCE with it as Live Pitch Question #1, not WATCH
 - [ ] **Ask-at-Scout Precedence Check applied** — the roll-up was checked for ZERO adverse signals BEFORE Ask-at-Scout was considered at all; if the roll-up names any signal adverse (even one unrelated to the call-answerable gap), Ask-at-Scout does not apply and WATCH/DECLINE governs instead
 - [ ] Every signal carries a confidence tag; UNVERIFIED caps at the middle verdict; unverified claims labeled inline
+- [ ] **Claim discipline** — every single-source or aggregator fact marked (unverified) everywhere it appears (including Risk Flags and the Verdict Block); company assertions marked (company claim); conflicting sources stated as a conflict
 - [ ] Each signal appears exactly once — no restating a finding in a second block; cross-references point, never repeat
 - [ ] Six Signals rendered as blocks, NOT a table — bold header line + full-width basis prose; Moat tags on their own line; Gates and Deal Facts remain tables
 - [ ] Six Signals heading names the Track and the one-line italic legend sits directly under it
-- [ ] Commercial Proof line present under Market — stage · revenue · quality · velocity
+- [ ] Commercial Proof line present under Market — stage · revenue · quality [STICKY / STAGNANT / FRAGILE / PRE-REVENUE] · velocity
 - [ ] Deal Facts ungraded; SAFE and syndication-status neutral — never pull conviction
 - [ ] Company Context is context only — what it is + customer + why now
 - [ ] Risk Flags are one-line pointers (3–4 max) to a gate or signal

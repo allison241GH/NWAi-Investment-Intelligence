@@ -425,5 +425,84 @@ Files: `gates-and-flags-techgroup.md` (v3.1 → v3.2), `screen.md`. Plugin v3.4.
 
 ---
 
-*Last updated: August 26, 2026 | Maintained by Jamie, TechGroup Co-Chair*
+## Decision 14 — V15 Judgment Re-Sync (Phase 1a): Pipeline Becomes the Single Source of Truth
+
+**Date:** October 29, 2026
+**Trigger:** The coordinator screener in `docs/reference/ClaudeProjects/` is a lightweight Claude Project copy of the Screen stage for NWA coordinators. Through sandbox testing (V14 Traction Discipline → V15 Plain-Language Rev A) it evolved judgment rules this pipeline never received, so the two had forked. Jamie directed a surgical re-sync from the coordinator screener into the pipeline Screen — **not** an adoption of the coordinator screener's architecture — and set the governing direction for the future.
+
+**Governing rule (Path B):** the **pipeline is the source of truth.** This decision catches the pipeline up from the coordinator screener once. From now on the coordinator screener is rebuilt *from* the pipeline, never the reverse. The ClaudeProjects folder remains a testing sandbox: ideas are trialed there, adopted into the pipeline, then flowed back to the coordinator screener.
+
+**Sequence this decision opens** (one change set per regression, so any verdict movement is attributable):
+- **1a** — judgment rules (this decision)
+- **1b** — coordinator presentation and content into the pipeline Screen as a two-layer report: a plain-language member read plus a deal-team appendix that preserves the machine-readable fields Scout and the conversion rubric consume
+- **2** — integrated AI thesis (Option 5) Screen changes
+- **3** — Option 5 Scout and Diligence additions
+- **4** — Option 5 return model, after the IC decides
+- **5** — rebuild the coordinator screener from the pipeline
+
+**What changed** (`gates-and-flags-techgroup.md` v3.2 → v3.3; `screen.md`). Rules only; no presentation change:
+1. **FRAGILE revenue tier** (V14). Revenue quality is now STICKY / STAGNANT / FRAGILE / PRE-REVENUE. FRAGILE requires revenue from the product itself; grants, incidental services, or signed-but-unbilled agreements alone are PRE-REVENUE.
+2. **Thin Commercial Proof cap** (V14). PRE-REVENUE or FRAGILE caps Triage Conviction at MEDIUM, unconditionally. It is a cap only, never an adverse vote, and never blocks ADVANCE. The Concern line names the stage.
+3. **HIGH conviction bar.** All three Team lines must be at the top tier, and the company must not be PRE-REVENUE or FRAGILE.
+4. **Team rated on three lines** (V15): Committed / Product Fit / Market Fit.
+   - The lowest line sets the rating, and Team confidence comes from that line.
+   - The UNVERIFIED cap applies per line.
+   - Pipeline labels are kept (STRONG / MIXED / WEAK; FULL-TIME / UNCONFIRMED / SPLIT).
+5. **Market Fit WEAK ("no path to the buyers")** is a new adverse path for Team. It requires affirmative evidence; thin backgrounds are MIXED.
+6. **Track Record is unrated** and never moves the Team rating. A concerning record becomes a ⚠️ flag and a Live Pitch question.
+7. **Non-CEO/CTO co-founder carve-out:** a verified outside role means UNCONFIRMED + ⚠️, never SPLIT.
+8. **Academic founder** counts as Product Fit evidence; a professor-CEO is Committed UNCONFIRMED at most.
+9. **Agent-Era posture judged on the product as built** (V15 Rev A, from the Complete Contract Cycle regression).
+   - The four postures are categories, not a scale.
+   - "Product form" means how value is delivered and charged, not the UI surface.
+   - A surviving need in an absorbable product form reads THREATENED.
+   - ENABLING tests the product's form.
+   - Posture never asks who wins the demand (that is Moat's job).
+   - Screen only; see follow-ups.
+10. **Claim discipline extended to every fact** (V15 Rev A, from Reverent run 2).
+    - Single-source and aggregator claims are marked (unverified) everywhere they appear.
+    - Company assertions are marked (company claim).
+    - Conflicting sources are stated as a conflict.
+
+**Ledger:** Calibrated Rules 23–28 added; rules 10, 11, 12 and 21 amended.
+
+**Conversion rubric:** v1.0 → v1.0.1. D5 maps FRAGILE like STAGNANT (cap 2); no other value changed.
+
+**What did NOT change:** weights, gates, the compound rule, the Confidence-Gated Compound Rule mechanism, Moat Sufficiency, Protect Alpha, Ask-at-Scout and its Precedence Check, research steps, the report structure, and the workflow (.docx, Dealum, hand-off to Scout). The coordinator screener was not edited.
+
+**Regression.** Method:
+- Blind re-screens in fresh, independent sessions.
+- Inputs limited to pitch-stage materials in the archived data rooms (post-screen transcripts and prior reports excluded).
+- A matched control on the committed v3.2 screener with identical inputs.
+
+| Deal | Decision 9 baseline (July) | v3.2 control | v3.3 (this decision) |
+|---|---|---|---|
+| Captain Compliance | ADVANCE / MEDIUM | WATCH / MEDIUM | WATCH / MEDIUM |
+| Summit Technology Laboratory | ADVANCE / MEDIUM | WATCH / MEDIUM | WATCH / MEDIUM |
+| Synergist Technology | ADVANCE / MEDIUM | WATCH / MEDIUM | WATCH / MEDIUM |
+
+- **Phase 1a caused zero verdict changes** (v3.2 = v3.3 on identical inputs).
+- The new rules fired as designed: FRAGILE recognized (STL, Synergist), the Thin Commercial Proof cap, Team = lowest line, Agent-Era with no hedged hybrids, and consistent claim marking.
+
+**Baseline update (accepted by Jamie):** the July ADVANCE baseline no longer holds under the August screener. In all three deals, Moat reads WEAK under the v3.1 Moat Sufficiency Test (Decision 12), and the v3.2 Precedence Check (Decision 13) then blocks Ask-at-Scout. **Jamie accepts the stricter moat test as correct** (cookie consent, projector calibration, and AI monitoring against Microsoft are genuinely thin moats), and notes that the integrated AI thesis makes the moat test stricter still. **WATCH / MEDIUM ×3 is the new back-test baseline**, not an open issue.
+
+**Clarifications added after the regression** (both closed boundary ambiguities the runs exposed; neither affected any call):
+- FRAGILE requires product revenue.
+- Agent-Era "product form" means the value-delivery mechanism, not the UI.
+
+**Follow-ups logged (not done here):**
+- Apply the product-as-built rule to `agent-era-readiness-framework.md` so Scout (Q7) and Diligence (Tier 3) read posture the same way.
+- Minor screener ambiguities surfaced by the runs, for a later tidy-up:
+  - the "three searches" wording vs. the per-founder fixed query set;
+  - which data-room files count as screen-stage inputs;
+  - who counts as a "named founder" when roles are unclear;
+  - the Wrapper tag for non-AI software;
+  - whether a contracted distribution channel can qualify under Moat Sufficiency (current reading: no — distribution is a channel play).
+- Reverent and Complete Contract Cycle fidelity runs skipped: their pitch materials are not in the repo.
+
+Files: `gates-and-flags-techgroup.md` (v3.3), `screen.md`, `screen-scout-conversion-rubric.md` (v1.0.1), `CLAUDE.md`, `nwai-techgroup-pipeline-architecture.md` (v0.48.0). Plugin v3.5.0. No MCP changes — no reinstall required.
+
+---
+
+*Last updated: October 29, 2026 | Maintained by Jamie, TechGroup Co-Chair*
 *This log is a living document — add entries when key decisions are made in session.*

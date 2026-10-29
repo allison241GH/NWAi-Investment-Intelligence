@@ -1,7 +1,13 @@
 # Screen→Scout Conversion Rubric
 
-**Version 1.0 — frozen July 12, 2026** (calibrated per the Pipeline Framework Adoption
-Spec §5.3; calibration record below).
+**Version 1.0.1 — frozen July 12, 2026; amended October 2026** (calibrated per the
+Pipeline Framework Adoption Spec §5.3; calibration record below).
+
+> **v1.0.1 amendment (October 2026, Decision 14):** Screen v3.3 added a fourth revenue
+> quality tier, FRAGILE (thin/early revenue that exists but is easily lost). D5 maps it
+> exactly like STAGNANT — cap 2 — so no existing mapping value changed. Team (D3) mapping
+> is unchanged: Screen still prints STRONG / MIXED / WEAK plus commitment; v3.3 only
+> changes how that rating is reached (lowest of three rated lines).
 
 ## Purpose and rules of use
 
@@ -38,7 +44,7 @@ Track A shown; **Track B** swaps the D4/D5 evidence sources to the Track B Moat 
 | **D2 Market Opportunity** | Signal 2 verdict + confidence | STRONG·Verified→5 · STRONG·Partial→4 · MODERATE→3 · WEAK→2 (→1 if Market gate ⚠️ YELLOW PASS) |
 | **D3 Founder Advantage** | Signal 3 verdict + commitment | STRONG·Verified→5 · STRONG·Partial→4 · MIXED→3 · WEAK→2 · commitment SPLIT/SIDE-PROJECT (Team counted adverse)→cap 2 · UNCONFIRMED ⚠️→no cap, carries as an open item |
 | **D4 Defensibility** | Signal 4 verdict + tags | STRONG→4 (→5 only if Verified AND Memory Lock-in [present]) · MODERATE→3 · WEAK→1 (→2 if a named nascent moat element exists in the basis). Evidence tags (Goliath / LLM Ingestion / Wrapper / Memory Lock-in / Stack; Track B: TRL / IP / unit economics) carry to Scout Q3 as evidence, not numbers |
-| **D5 Traction** | Commercial Proof line | Verified STICKY revenue + strong velocity→5 · verified growing revenue→4 · early revenue booked or pilot revenue (incl. first revenue + signed contracted channel)→3 · **claimed revenue, confidence Unverified→cap 3** (Cynical Default carries through the seam, whatever the claimed magnitude) · LOI/beta, no revenue→2 · pre-revenue→1 (→2 with strong verified non-revenue proof) · quality STAGNANT→cap 2 |
+| **D5 Traction** | Commercial Proof line | Verified STICKY revenue + strong velocity→5 · verified growing revenue→4 · early revenue booked or pilot revenue (incl. first revenue + signed contracted channel)→3 · **claimed revenue, confidence Unverified→cap 3** (Cynical Default carries through the seam, whatever the claimed magnitude) · LOI/beta, no revenue→2 · pre-revenue→1 (→2 with strong verified non-revenue proof) · quality STAGNANT→cap 2 · quality FRAGILE→cap 2 (v1.0.1) |
 
 ## Readiness-side mapping (R1–R4, /20)
 
@@ -95,6 +101,6 @@ Scout call (historical Thesis Fit 39/55 = 71%, also Qualified-band).
 
 ---
 
-*Screen→Scout Conversion Rubric | v1.0 | July 12, 2026 | Single source of truth for the
+*Screen→Scout Conversion Rubric | v1.0.1 | October 2026 (frozen v1.0 July 12, 2026; FRAGILE amendment) | Single source of truth for the
 Screen→Scout translation (spec §5, Option B). Installed with plugin v3.0.0 /
 architecture v0.38.0. Loaded by `scout.md` at intake alongside `scout-questions.md`.*

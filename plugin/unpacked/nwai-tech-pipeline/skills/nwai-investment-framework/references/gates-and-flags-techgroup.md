@@ -1,4 +1,4 @@
-# NWAi TechGroup — Six-Signal Screener Reference v3.2
+# NWAi TechGroup — Six-Signal Screener Reference v3.3
 
 > **This is the self-contained screening reference for NWAi TechGroup.** It defines the
 > complete Screen-stage judgment model: hard gates, the NWA Filter evidence-rigor tests,
@@ -40,6 +40,21 @@
 > only when it shows zero adverse signals. Correct verdict for the triggering case:
 > WATCH. See `docs/reference/ClaudeProjects/Claude-V13-Investor-Nuance-NWA-TechGroup-AI-Screener.md`
 > (Amendment 3).
+>
+> **v3.3 (October 2026) — V15 judgment re-sync (Phase 1a):** the coordinator screener
+> (Claude V14 → V15 Rev A, `docs/reference/ClaudeProjects/`) evolved judgment rules this
+> pipeline never received. This version ports them — rules only, no presentation
+> change: a FRAGILE revenue tier and the Thin Commercial Proof cap (V14); Team rated on
+> three lines (Committed / Product Fit / Market Fit), lowest line sets the rating, with
+> Market Fit WEAK ("no path to the buyers") as an adverse path and track record unrated
+> (V15); the Agent-Era posture judged on the product as built (V15 Rev A — the Complete
+> Contract Cycle run, which flipped DECLINE→WATCH until fixed); and single-source claim
+> marking extended to every fact (V15 Rev A — Reverent run 2). Calibrated Rules 23–28
+> added; 10, 11, 12, 21 amended. Weights, gates, the compound rule, Moat Sufficiency,
+> Protect Alpha and Ask-at-Scout are unchanged. From this version on the **pipeline is
+> the source of truth** and the coordinator screener is rebuilt from it, never the
+> reverse. The Agent-Era bottom-tier boundary is now addressed at Screen; Market's
+> remains open. See `pipeline-decisions-log.md` Decision 14.
 >
 > **Scope:** TechGroup only. Other NWAi groups author their own frameworks — see
 > `gates-and-flags-universal-guide.md` for the architecture every group playbook
@@ -145,9 +160,15 @@ row.*
 Do not treat ARR as a neutral signal. Classify revenue on the Commercial Proof line as
 **STICKY** (automated, API-driven, self-serve, low-touch retention) / **STAGNANT**
 (high-touch, consulting-adjacent, services-embedded, or inertia-based — customers stay
-because switching is painful, not because the product is essential) / **PRE-REVENUE**
-(stated honestly). Only exceptional **VERIFIED** commercial proof powers the traction
-lift; STAGNANT revenue never does.
+because switching is painful, not because the product is essential) / **FRAGILE**
+(thin/early revenue that exists but is easily lost, or dependent on a HIGH Wrapper read
+holding up) / **PRE-REVENUE** (no revenue yet, stated honestly — distinct from FRAGILE,
+which has *some* revenue, just precarious; never conflate the two under one tag).
+**FRAGILE requires revenue from the product itself** — grants (e.g., SBIR), incidental
+consulting or services, and signed-but-unbilled agreements alone are PRE-REVENUE.
+Only exceptional **VERIFIED** commercial proof powers the traction lift; STAGNANT and
+FRAGILE revenue never do. PRE-REVENUE and FRAGILE trigger the Thin Commercial Proof cap
+(Conviction Mechanics).
 
 ---
 
@@ -198,8 +219,9 @@ is growing, why, and who is being pulled into buying. Floor cleared at the gate;
 this scores the upside and the return path.
 
 **↳ Commercial Proof** — *evidence within Market: not separately weighted, but see
-Traction lift.* One indented line under Signal 2, with its own confidence tag:
-stage · revenue state · quality [STICKY / STAGNANT / PRE-REVENUE] · velocity.
+Traction lift and the Thin Commercial Proof cap.* One indented line under Signal 2, with
+its own confidence tag: stage · revenue state · quality [STICKY / STAGNANT / FRAGILE /
+PRE-REVENUE] · velocity.
 Pre-revenue stated honestly — a signal, never a kill on its own. Track B emphasis:
 stage against TRL, unit-economics evidence, production reliability signals.
 
@@ -207,13 +229,40 @@ stage against TRL, unit-economics evidence, production reliability signals.
 MIXED / WEAK plus commitment: FULL-TIME / UNCONFIRMED ⚠️ / SPLIT / SIDE-PROJECT**
 — both in the header line. (UNCONFIRMED = a live, Scout-answerable question — never
 adverse; SPLIT only on corroborated evidence, and only when Team is counted adverse
-in the roll-up.) Basis — three named reads, in sentences: **Product-team fit** — who on
-this team can build this product, and what proves it. **Market-team fit** — who can
-sell into this market: domain years, relationships, channel access. **Origin &
-track record** — why *this* founder, *this* problem: lived pain or found it in a
-market map; prior exits or venture-scale operating history named, or "first-time
-founders" stated plainly. Then the commitment finding per named founder
-(employer/title checked; departures confirmed; discrepancies named).
+in the roll-up.)
+
+**Three rated lines + one unrated line:**
+
+| Line | The question | Top | Middle | Bottom (adverse) |
+|---|---|---|---|---|
+| **Committed** | Are they all in? | FULL-TIME (confirmed) | UNCONFIRMED ⚠️, or a non-CEO/CTO co-founder is part-time | SPLIT / SIDE-PROJECT (CEO or CTO, affirmative evidence) |
+| **Product Fit** | Can they build it? | STRONG — has built this before | MIXED — related experience only | WEAK — no one who can build it |
+| **Market Fit** | Can they sell it? | STRONG — knows the buyers | MIXED — some market access | WEAK — no path to the buyers |
+| **Track Record** | Proven? | *Unrated.* Plain read only: prior exit · has scaled a company · first-time founders · past venture raises questions ⚠️ | | |
+
+- **Team rating = the lowest of Committed, Product Fit, and Market Fit** (FULL-TIME ≈
+  STRONG, UNCONFIRMED ≈ MIXED, SPLIT/SIDE-PROJECT ≈ WEAK). A team is only as strong as
+  its weakest rated line.
+- **Team confidence = the confidence of the line that sets the rating** (on a tie,
+  VERIFIED/PARTIAL wins over UNVERIFIED). This is the tag the Confidence-Gated
+  Compound Rule reads when Team is adverse.
+- **The UNVERIFIED cap applies line by line:** a line resting only on company claims
+  cannot print its top tier. "The company says the CEO is full-time" alone is
+  Committed UNCONFIRMED, not FULL-TIME.
+- **Track Record never moves the Team rating — down or up.** First-time founders are
+  never disadvantaged; a prior exit never covers for a weak team today. A concerning
+  track record (e.g., the same team relaunching after a well-funded prior company that
+  didn't scale, or an undisclosed predecessor company) prints **past venture raises
+  questions ⚠️** and becomes a ⚠️ Risk Flag plus a Live Pitch question or re-engage
+  item — and often fires the Pattern note.
+
+Basis — one sentence per line: **Committed** — the commitment finding per named founder
+(employer/title checked; departures confirmed; discrepancies named). **Product Fit** —
+who on this team can build this product, and what proves it. **Market Fit** — who can
+sell into this market: domain years, relationships, channel access, named buyer
+reachability. **Track Record** — why *this* founder, *this* problem (lived pain, or
+found it in a market map); prior exits or venture-scale operating history named, or
+"first-time founders" stated plainly.
 
 **4 · Moat** — *Credible defense against the obvious killers?* Verdict: **STRONG /
 MODERATE / WEAK**. Basis: one plain sentence on the defense thesis — what concretely
@@ -276,21 +325,51 @@ on; for an agent, it is a transaction to complete. Ask whether most of this prod
 don't reshape) this specific problem over the hold period — what gets absorbed, what gets
 more valuable — and let the posture follow:
 
-- **THREATENED** — agents dissolve the core value proposition during the hold period
-  (e.g., the product is a human-attention funnel, a browse/compare/aggregate layer, or a
-  manual workflow agents compress; per-human-seat or engagement revenue facing the
-  evaporating-seat risk)
-- **RIDING** — the company *is* the reimagined solution to the agent-era version of the
-  problem
-- **ENABLING** — picks-and-shovels for the agent economy
-- **INSULATED** — genuinely un-disruptable value (un-scrapable, high-trust,
-  accountability-bearing)
+**The posture is four categories, not a scale** — there is no neutral middle. Never
+invent a hybrid or hedged posture ("survives agents, form at risk," "partly
+threatened"); INSULATED means INSULATED, never "somewhere in between."
+
+**Judge the product as built today, not the underlying need.** The question is
+whether agents absorb *how this company delivers value* — its product, workflow, and
+pricing model — during the hold period, not whether the customer's underlying need
+survives. Almost every need survives agents; that alone never earns INSULATED or
+ENABLING. **"Product form" means how the company delivers and charges for value — its
+value-delivery mechanism and pricing model — not its user-interface surface.** A
+human-facing UI over a value layer agents can't absorb (e.g., liability-bearing
+enforcement) is read on the value layer.
+
+- **THREATENED** — agents absorb the core value **as this company delivers it** during
+  the hold period, even if the underlying need lives on (e.g., the product is a
+  human-attention funnel, a browse/compare/aggregate layer, or a manual workflow agents
+  compress; per-human-seat or engagement revenue facing the evaporating-seat risk; or
+  the need to control who edits which clause survives, but a human-facing routing tool
+  priced per seat is what agents replace). When the need survives but the product form
+  does not, the posture is THREATENED — put the escape route in the basis as "Could get
+  stronger if: [the one concrete move]."
+- **RIDING** — the company *is* the agent-era version of the solution, today.
+- **ENABLING** — agent or machine activity raises demand for **the product's form as
+  built**: infrastructure, plumbing, or verification the agent economy runs on. The
+  test is the product's *form*, not the bare underlying need — a per-seat tool for
+  human reviewers does not become ENABLING just because contracts still need governing.
+- **INSULATED** — agents neither raise nor reduce demand for the product as built: the
+  value is physical, high-trust, human-verified, accountability-bearing, or locally
+  embedded in a way agents can't touch. Stress-test this claim hard; most "Insulated"
+  companies are actually Threatened.
+
+**Posture never asks whether this company wins the demand.** Whether this company or
+an incumbent captures rising agent-driven demand is a competition question — Moat
+(Signal 4) already reads it. Never downgrade ENABLING to INSULATED because incumbents
+may capture the demand; that double-counts Moat. **Mixed reads resolve to the weaker,
+product-level posture**, with the nuance carried in the basis ("Could get stronger
+if…" / "What to watch…"), never in a hedged label.
 
 **Weight: SIGNIFICANT. Adverse: THREATENED only.** A beautiful solution to a problem
 agents are about to dissolve is the most dangerous bet on the table. Guardrails against
 wrong kills at 3-search depth: adverse requires affirmative evidence (calibrated rules 1
-and 7) and an UNVERIFIED read caps at the middle of the scale — when in doubt, the
-posture doubt becomes a Live Pitch question, not an adverse vote. Note any **latent
+and 7) and an UNVERIFIED read never earns the top posture (RIDING) — the four postures
+are categories, not a scale, so there is no "middle" to cap at. When the doubt is about
+the evidence rather than the product form, it becomes a Live Pitch question, not an
+adverse vote. Note any **latent
 durable asset** that could move a THREATENED read toward ENABLING or INSULATED — flagged
 for Scout to score, not resolved here. Scout scores Agent-Era Readiness fresh and fully
 at Q7; Screen's posture is the prior, not the final word.
@@ -353,7 +432,8 @@ captures the alpha. Read each once, in its own row.
   count as ONE source, regardless of domain count**, unless each independently cites
   a distinct primary origin (e.g., one links to a different LinkedIn URL than
   another). A finding resting entirely on Tier 2 sources cannot, by itself, satisfy
-  "independent corroboration."
+  "independent corroboration." *The same tiering governs every fact on the page, not
+  only founder findings — see Claim Discipline (Research Protocol).*
 - **Identity-Match Standard.** Before a same-named individual's outside role can be
   treated as evidence about a named founder, establish identity match via at least
   one of: shared employment history between the two records, a cross-linked profile
@@ -365,25 +445,33 @@ captures the alpha. Read each once, in its own row.
 - **Academic founder — both configurations.** A professor/researcher founder paired
   with a full-time operating CEO is the standard deep-tech spinout configuration —
   not SPLIT; assess the operating team's commitment and treat the academic founder
-  as domain-advantage evidence. **When the academic founder IS the CEO:** university
+  as Product Fit evidence. **When the academic founder IS the CEO:** university
   directories, lab pages, and third-party profiles listing them as active faculty
   are the *expected public footprint* of every professor-founder — stale listings
   and entrepreneurial-leave policies mean they cannot distinguish "full-time
   professor" from "on leave, full-time CEO." Such listings are **never affirmative
   evidence of split commitment** and never justify an adverse vote on their own:
-  render Team MIXED at most, flag ⚠️, and make commitment status Live Pitch
+  print Committed UNCONFIRMED at most, flag ⚠️, and make commitment status Live Pitch
   Question #1.
-- **What counts as affirmative evidence of SPLIT:** a verified competing *operating*
-  role elsewhere, the company's own site/deck showing a different person in the
-  seat, or the founder's own current materials contradicting the full-time claim —
-  **passing both the Source-Tier Rule and the Identity-Match Standard above.** A
-  single self-published discrepancy (e.g., a personal bio page still describing an
-  old role in the present tense) is a live question, not proof — print commitment
-  **UNCONFIRMED ⚠️** and make it Live Pitch Question #1.
-- **Label discipline — the header must agree with the roll-up.** Print SPLIT /
-  SIDE-PROJECT only when Team is also counted adverse in the roll-up. If the gap is
-  being treated as Scout-answerable, the printed label is UNCONFIRMED ⚠️, not SPLIT
-  — a report must never carry a bottom-tier label its own roll-up ignores.
+- **What counts as affirmative evidence of SPLIT (Committed bottom tier):** a
+  verified competing *operating* role elsewhere held by the **CEO or CTO**, the
+  company's own site/deck showing a different person in the seat, or the founder's
+  own current materials contradicting the full-time claim — **passing both the
+  Source-Tier Rule and the Identity-Match Standard above.** A single self-published
+  discrepancy (e.g., a personal bio page still describing an old role in the present
+  tense) is a live question, not proof — print commitment **UNCONFIRMED ⚠️** and make
+  it Live Pitch Question #1. **A non-CEO/CTO co-founder with a verified outside role is
+  Committed UNCONFIRMED plus a ⚠️ Yellow Flag — never SPLIT.**
+- **Market Fit WEAK requires the same standard.** "No path to the buyers" needs
+  affirmative evidence — every named founder's background checked and none shows
+  domain years, buyer relationships, or channel access in this market. Thin or
+  unsearchable backgrounds are Market Fit **MIXED** plus a Live Pitch question, never
+  WEAK.
+- **Label discipline — the header must agree with the roll-up.** Print any Team line
+  at its bottom tier (SPLIT / SIDE-PROJECT, Product Fit WEAK, Market Fit WEAK) only
+  when Team is also counted adverse in the roll-up. If the gap is being treated as
+  Scout-answerable, the line prints its middle tier (UNCONFIRMED ⚠️ / MIXED) — a
+  report must never carry a bottom-tier label its own roll-up ignores.
 - **Role or identity discrepancies** (deck vs. public sources) are a Live Pitch
   question when other high-weight signals are strong; adverse only with affirmative
   evidence of dual-hatting in the operating seats.
@@ -419,9 +507,13 @@ Apply judgment — no formula. **Print order is not weight order.** The weights:
 **A signal is ADVERSE only at its bottom verdict tier — and only on affirmative
 evidence, never on screen-depth uncertainty:**
 
-- **Team** — WEAK, or commitment SPLIT / SIDE-PROJECT with affirmative evidence
-  (see the team-configuration rules — a standard academic-founder structure is not
-  SPLIT).
+- **Team** — Team rating WEAK, which happens only when one of the three rated lines is
+  at its bottom tier on affirmative evidence: **Committed SPLIT / SIDE-PROJECT** (CEO
+  or CTO confirmed not full-time — see the team-configuration rules; a standard
+  academic-founder structure is not SPLIT), **Product Fit WEAK** (no one on the team
+  can build this product), or **Market Fit WEAK** (affirmative evidence that no one on
+  the team has a path to the buyers). Unknown or unconfirmed is the middle tier, never
+  the bottom. Track Record is never adverse.
 - **Discontinuity** — LATE only. INCREMENTAL alone is **never** adverse.
   INCREMENTAL combined with Moat WEAK is one adverse finding, counted **once**
   (under Moat) — a crowded category with no named edge is a single weakness, not two.
@@ -492,17 +584,30 @@ Team. Verified customer pull is among the strongest surface-to-Scout signals —
 red-ocean read with exceptional verified traction is a Scout conversation, not a
 screen kill. State the lift in the roll-up line when applied.
 
+**Thin Commercial Proof cap:** Commercial Proof quality PRE-REVENUE or FRAGILE caps
+Triage Conviction at MEDIUM — unconditional, no exception, regardless of how strong
+any other signal reads. This mirrors the Coherence cap's shape rather than inventing a
+new mechanic: HIGH conviction means nothing central needs explaining, and whether
+anyone will actually pay is as central as it gets. Conviction cap only — never an
+adverse vote, never enters the roll-up, never blocks ADVANCE. State the cap in the
+roll-up line when applied. The Verdict Block Concern line must name the stage
+explicitly (e.g., "no revenue yet, informal validation only") — never left implicit in
+the Market block alone.
+
 **Triage Conviction pattern guide:**
-- **HIGH** — Team STRONG with FULL-TIME commitment + at least one of
+- **HIGH** — Team STRONG (all three rated lines at the top tier: Committed FULL-TIME,
+  Product Fit STRONG, Market Fit STRONG) + at least one of
   {PIONEER/DIFFERENTIATED discontinuity, RIDING/ENABLING agent-era posture, STRONG
   market tailwind, Moat STRONG, exceptional verified traction}; no adverse signals;
   **and no unresolved material coherence contradiction on a load-bearing number**
-  (ask vs. traction, forecast vs. actuals, terms vs. terms). HIGH means nothing
-  central needs explaining — a gap worth a Live Pitch question caps conviction at
-  MEDIUM. *Conviction cap only: it never changes the call and never enters the
+  (ask vs. traction, forecast vs. actuals, terms vs. terms); **and Commercial Proof is
+  not PRE-REVENUE/FRAGILE** (Thin Commercial Proof cap — unconditional). HIGH means
+  nothing central needs explaining — a gap worth a Live Pitch question caps conviction
+  at MEDIUM. *Conviction cap only: it never changes the call and never enters the
   roll-up.*
 - **MEDIUM** — Mixed signals; at most one adverse signal (or two with traction lift
-  applied); one gap Scout can close
+  applied); one gap Scout can close. Also the ceiling whenever the Thin Commercial
+  Proof cap applies, regardless of how the rest of the signals read.
 - **LOW** — Compound-rule territory, or one adverse HIGHEST/HIGH signal with weak
   compensation elsewhere
 
@@ -624,12 +729,16 @@ paraphrase them loose.** They are stated operationally throughout this file and 
 9. Coherence conviction cap: material contradiction on a load-bearing number caps
    conviction at MEDIUM — cap only, never a verdict vote (Synergist adjudication).
 10. Academic-founder rules, both configurations: professor + operating CEO = standard
-    spinout, not SPLIT; professor-as-CEO — faculty/lab/directory listings are the
-    expected footprint, never affirmative SPLIT evidence (STL adjudication).
-11. SPLIT requires corroborated evidence; a single self-published discrepancy →
-    commitment UNCONFIRMED ⚠️ + Live Pitch Question #1 (Captain Compliance adjudication).
-12. Label discipline: header prints SPLIT/SIDE-PROJECT only when Team is counted
-    adverse in the roll-up; otherwise UNCONFIRMED ⚠️.
+    spinout, not SPLIT — the academic founder is Product Fit evidence; professor-as-CEO
+    — faculty/lab/directory listings are the expected footprint, never affirmative
+    SPLIT evidence; Committed UNCONFIRMED at most (STL adjudication; v3.3 relabel).
+11. SPLIT requires corroborated evidence about the CEO or CTO; a single self-published
+    discrepancy → commitment UNCONFIRMED ⚠️ + Live Pitch Question #1 (Captain Compliance
+    adjudication). A non-CEO/CTO co-founder with a verified outside role → Committed
+    UNCONFIRMED + ⚠️ Yellow Flag, never SPLIT (v3.3, from V15).
+12. Label discipline: any Team line prints its bottom tier (SPLIT/SIDE-PROJECT, Product
+    Fit WEAK, Market Fit WEAK) only when Team is counted adverse in the roll-up;
+    otherwise its middle tier (UNCONFIRMED ⚠️ / MIXED).
 13. Credibility ≠ Commitment: strong credentials never offset a commitment red flag;
     assess separately.
 14. Between-signal reads never enter the roll-up under any circumstances.
@@ -652,12 +761,39 @@ paraphrase them loose.** They are stated operationally throughout this file and 
 21. Confidence-Gated Compound Rule: a compound-rule DECLINE resting entirely on
     UNVERIFIED-confidence adverse signals downgrades to WATCH; at least one adverse
     signal in the compound must carry PARTIAL or VERIFIED confidence (Constellation X
-    cross-session adjudication).
+    cross-session adjudication). When Team is adverse, its confidence is the confidence
+    of the line that sets the Team rating (rule 24).
 22. Moat Sufficiency Test: MODERATE or STRONG requires naming an affirmative asset (not
     the absence of a negative) that survives the flagged Goliath(s); if none can be
     named, or two-plus negative tags stack (no IP, Wrapper MOD/HIGH, Goliath FLAGGED,
     Memory Lock-in thesis-only/absent), Moat prints WEAK (Constellation X pipeline
     comparison test).
+
+*Rules 23–28 were ported in v3.3 from the coordinator screener (Claude V14 → V15 Rev A),
+where each was found and validated in sandbox test runs. See Decision 14.*
+
+23. Thin Commercial Proof cap: Commercial Proof quality PRE-REVENUE or FRAGILE caps
+    Triage Conviction at MEDIUM — unconditional; conviction cap only, never an adverse
+    vote, never enters the roll-up count, never blocks ADVANCE; the Concern line names
+    the stage (V14).
+24. Team = the lowest of three rated lines (Committed / Product Fit / Market Fit); Team
+    confidence = the confidence of the line that sets the rating; the UNVERIFIED cap
+    applies per line (V15).
+25. Market Fit WEAK ("no path to the buyers") is adverse only on affirmative evidence —
+    every named founder checked, none shows domain years, buyer relationships, or
+    channel access; thin or unsearchable backgrounds = MIXED + Live Pitch question (V15).
+26. Track Record is unrated and never moves the Team rating, down or up; a concerning
+    record = ⚠️ Risk Flag + Live Pitch question (V15).
+27. Agent-Era posture is four categories, not a scale, judged on the product as built:
+    a surviving need in a product form agents absorb = THREATENED; ENABLING tests the
+    product's form (how value is delivered and charged, not the UI surface); posture
+    never asks who wins the demand (that is Moat); mixed reads resolve to the weaker,
+    product-level posture (V15 Rev A — Complete Contract Cycle
+    regression, where a hedged middle read flipped DECLINE→WATCH).
+28. Claim discipline: single-source and aggregator claims are marked (unverified)
+    everywhere they appear on the page; company assertions are marked (company claim);
+    conflicting sources are stated as a conflict, never resolved by picking one (V15
+    Rev A — Reverent run 2).
 
 ---
 
@@ -692,6 +828,23 @@ search directly enables the Goliath Test tag.
 
 All other research (patent searches, regulatory landscape, customer references, technical
 stack depth) is Scout- and Diligence-stage work. Do not deploy research agents at Screen.
+
+### Claim Discipline
+
+Do not fabricate or assert claims you cannot support from the deck or the three
+searches. Mark any unconfirmed assertion inline as **(company claim)** when it comes
+from the company, or **(unverified)** when the source is a third party that could not
+be corroborated.
+
+**Single-source and aggregator claims are always marked (unverified), everywhere on the
+page** — signal blocks, Team lines, Risk Flags, Pattern note, and the Verdict Block
+alike. This covers any fact resting on one Tier 2 source (data-broker and
+funding-tracker sites: RocketReach, ZoomInfo, Apollo, Crunchbase auto-pages, CB
+Insights, Tracxn, PitchBook previews, market-research aggregators) or on a single
+uncorroborated source of any kind. When two such sources conflict (e.g., different
+funding totals), say so plainly rather than picking one. If a gate or signal verdict
+hinges on a web-retrieved fact, note the source parenthetically. No formal `[n]`
+citation apparatus at Screen.
 
 ---
 
@@ -740,7 +893,8 @@ B Moat evidence tag at Screen; detailed TRL application happens at Scout and Dil
 
 ---
 
-*NWAi TechGroup Six-Signal Screener Reference | v3.2 | August 2026*
+*NWAi TechGroup Six-Signal Screener Reference | v3.3 | October 2026*
+*v3.3 (October 2026): V15 judgment re-sync (Phase 1a) — ports the coordinator screener's tested rule evolutions: FRAGILE revenue tier + Thin Commercial Proof cap (V14); Team rated on three lines, lowest sets the rating, Market Fit WEAK as an adverse path, track record unrated (V15); Agent-Era judged on the product as built (V15 Rev A, Complete Contract Cycle); claim discipline extended to every fact (V15 Rev A, Reverent). Calibrated Rules 23–28 added; 10, 11, 12, 21 amended. No weight, gate, compound rule, Moat Sufficiency, Protect Alpha, or Ask-at-Scout change. Pipeline is now the source of truth; the coordinator screener is rebuilt from it. See `pipeline-decisions-log.md` Decision 14.*
 *v3.2 (August 2026): Ask-at-Scout Precedence Check — a fourth live Constellation X screen on the v3.1 fixes printed ADVANCE despite its own roll-up naming Moat adverse, because Ask-at-Scout's "no other signal adverse" precondition was never mechanically checked before its shortcut fired on the Team gap. Adds Calibrated Rule 8a: compute the full roll-up first; Ask-at-Scout applies only when it shows zero adverse signals. Correct verdict for the triggering case: WATCH. See `docs/reference/ClaudeProjects/Claude-V13-Investor-Nuance-NWA-TechGroup-AI-Screener.md` (Amendment 3).*
 *v3.1 (August 2026): Rubric Fidelity Amendment — ported from the Claude V13 sandbox after a cross-session Constellation X screen produced a DECLINE/ADVANCE divergence and a follow-up pipeline comparison surfaced a second divergence on Moat. Adds calibrated rules 19–22: Source-Tier Rule + Identity-Match Standard (Signal 3), Confidence-Gated Compound Rule, Moat Sufficiency Test (Signal 4); plus the fixed coherence diff-list and fixed founder-identity query set. No weight or verdict-tier definition changed. See `docs/reference/ClaudeProjects/Claude-V13-Investor-Nuance-NWA-TechGroup-AI-Screener.md` and `Rubric_Fidelity_Addendum_v1.md`.*
 *v3.0 (July 2026): Six-Signal verdict model installed per the Pipeline Framework Adoption Spec (notes/NWAi-Pipeline-Framework-Adoption-Spec-2026-07.md) — Craft-at-Screen boundary, Agent-Era posture verdict (upgraded from the v2.1 Exposure trip-wire), Protect Alpha Signal 6 (Alpha-AI Sovereignty Phase 2, as evolved by the Claude V13 back-test), calibrated rules ledger. Absorbs the hard gates, NWA Filter, research protocol, and TRL reference formerly in gates-and-flags.md (rewritten and renamed to `gates-and-flags-universal-guide.md`). Numeric v2.1 archived at `_archive/gates-and-flags-techgroup-numeric-v2.1-legacy.md`.*
