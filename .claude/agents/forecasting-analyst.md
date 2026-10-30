@@ -170,6 +170,13 @@ Build a five-year P&L for each scenario (Low / Medium / High).
 
 **Critical assumption: Gross margin trajectory.** If the company depends on a single channel partner with margin pressure, model gross margin compression explicitly. Do not assume gross margin holds at Y1 levels through Y5.
 
+**Model-cost split *(only when the pricing analyst's Model-Cost Economics ran)*.** Split COGS into **model / inference**, **hosting**, and **human / services**, using the pricing analyst's share (m). Tie the gross-margin path to the scenarios, each with its *because*:
+- **Low:** apply the provider-price ×2 stress, or the usage stress if pricing doesn't scale with usage, whichever bites harder. Phase it in over the period the company's own plan implies (e.g., as a usage-raising feature ramps) and state the phasing in the *because*.
+- **Medium:** hold m at the pricing analyst's base. If holding it depends on something the company hasn't committed to (e.g., charging for a usage-raising feature), name that assumption in the *because* and add it to Data Gaps.
+- **High:** apply cost deflation only if the pricing analyst found a credible model switch.
+
+Never let gross margin rise with scale on an AI-native forecast unless a *because* names the mechanism. (Decision 20.)
+
 ---
 
 ### Section 4: Cash Flow & Capital Requirements
@@ -286,6 +293,7 @@ Channel pressure: [strong / moderate / minimal]
 
 ── P&L FORECAST (Medium scenario shown; Low and High in appendix) ──
 [Five-year P&L table]
+Model-cost split: model [%] · hosting [%] · human/services [%] of revenue — Low-case stress applied: [which] (or "N/A — no model supply chain")
 
 ── CAPITAL REQUIREMENTS ──
 | Year | Net Burn | Cumulative Capital | Round | Size | End Cash |

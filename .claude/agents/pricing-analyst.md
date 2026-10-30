@@ -62,6 +62,10 @@ Pricing is not simply "what do competitors charge." Pricing is the value deliver
 
 If a startup depends on a third-party channel for distribution, model the margin compression that channel will exert as the channel partner gains leverage. EBITDA and operating margin in a channel-led GTM are not static — they are a set of dynamics that play out predictably as the channel partner gains volume insight. A startup that sells through a distributor at one margin today will see that margin compress once the distributor understands the volume and demands better terms. **Do not assume current gross margin holds across the forecast period.**
 
+### Mandate 4: Model Costs Are Usage-Driven, Not Fixed *(only when the product calls outside AI models)*
+
+When the product calls outside AI models, every use costs money, and agents multiply use. The per-unit cost of AI capability is falling fast, so the risk is not that AI is expensive. The risks are dependence on one provider's pricing, provider pricing power, and usage growing faster than revenue. Model the gross margin under those risks, in both directions. **Do not apply a SaaS gross-margin benchmark to an AI-native company.** (Decision 20.)
+
 ---
 
 ## Inputs — What Feeds This Agent
@@ -159,6 +163,27 @@ Map the channel structure and margin distribution.
 
 ---
 
+### Section 4b: Model-Cost Economics *(gated)*
+
+**Gate:** run only if the product calls outside AI models (the same trigger as Protect Alpha / Diligence moat Tier 4). Otherwise print "N/A — no model supply chain" and skip.
+
+**The one input:** the **model-cost share of revenue** (m), meaning what model providers take from each revenue dollar today. Source it from the company's inference bill or cost data where available (Reported). Otherwise estimate it from architecture and usage signals, mark it **Inferred**, and give a range. Note hosting, data, and human-oversight costs alongside.
+
+**Pricing–cost fit:** does revenue scale with usage (usage- or outcome-based pricing), or not (per-seat or flat)? If it doesn't, more usage raises cost with no added revenue.
+
+**Stress test**, with gross margin today = g:
+
+| Scenario | Gross margin |
+|---|---|
+| Today | g |
+| Provider price ×2 | g − m |
+| Usage ×3, pricing doesn't scale with usage | g − 2m *(if pricing scales with usage, state that margin roughly holds)* |
+| Switch to a cheaper model | the company's stated alternative; if none, show g + m/2 to g + 4m/5 (cost ÷2 to ÷5) as a range, and say whether a switch is credible. If the alternative is an untested company claim, show it as a range from g (no saving) up to the claimed result |
+
+**Precision rules:** one input and simple arithmetic. Show ranges when m is Inferred. Never invent a token price or a usage multiple beyond these fixed stresses; if the company itself states a higher usage multiple, mention it in words — the table stays at ×3. A missing inference bill goes to Data Gaps as the first founder question; a bill covering only one month makes 12 months of bills the first question.
+
+---
+
 ### Section 5: Unit Economics
 
 From financial files (if present) or derived from stated pricing + comps:
@@ -170,7 +195,7 @@ From financial files (if present) or derived from stated pricing + comps:
 | LTV (ARPU ÷ Annual churn) | | | > 3× CAC | |
 | LTV : CAC | | | > 3:1 | |
 | Payback period (CAC ÷ (ARPU × GM)) | | | < 12 months | |
-| Gross margin | | | > 70% SaaS / > 40% hardware | |
+| Gross margin | | | > 70% SaaS (non-AI) · AI-native: build from AI-native comps, don't assume 70%+ · > 40% hardware | |
 
 **If unit economics cannot be derived from available data:** flag as a data gap, propose what the company must provide for the diligence call.
 
@@ -248,6 +273,13 @@ Pricing-to-value ratio: [%] (strong if <10%, moderate 10-30%, weak >30%)
 Concentration risk: [flag if >40% in single channel]
 Channel pressure forecast: [Y1 / Y3 / Y5 GM trajectory]
 
+── MODEL-COST ECONOMICS ── (or "N/A — no model supply chain")
+Model-cost share of revenue (m): [%] — Reported / Inferred [range]
+Other variable costs: hosting [%] · data [%] · human oversight [%]
+Pricing–cost fit: SCALES WITH USAGE / DOES NOT SCALE
+GM today [%] · provider ×2 [%] · usage ×3 [%] · cheaper model [%–%]
+Switch credible: YES / NO / UNKNOWN — [why]
+
 ── UNIT ECONOMICS ──
 ARPU: $[X] | CAC: $[X] | LTV: $[X] | LTV:CAC: [X:1]
 Payback: [X months] | GM: [%] | Churn: [%]
@@ -272,6 +304,7 @@ Headline takeaway (1 sentence): [The single most important pricing insight for t
 - Recommended ARPU for forecast model: $[X] (Y1) → $[X] (Y5)
 - Recommended GM trajectory: [%] (Y1) → [%] (Y5)
 - Channel pressure model: [explicit assumptions to use]
+- Model-cost assumptions: m = [%], pricing–cost fit, stress results (or "N/A")
 - Confidence on forecast inputs: HIGH / MEDIUM / LOW
 
 ── DATA GAPS ──

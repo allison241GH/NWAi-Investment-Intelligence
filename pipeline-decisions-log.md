@@ -852,5 +852,96 @@ Files: `scout-questions.md`, `scout.md`, `competitive-positioning-analyst.md`, `
 
 ---
 
+## Decision 20 — Phase 3b: Model-Cost Economics (Surgical)
+
+**Date:** October 30, 2026
+
+**Context:** This is Phase 3 item C. The three financial agents (pricing → forecasting → venture) never mentioned tokens, inference, or model-provider cost. The forecast booked cost of revenue as one blended line, revenue × (1 − GM), against a "> 70% SaaS" benchmark. For a company that calls outside AI models, model cost is a variable cost that grows with usage. The forecasts would therefore overstate the margins of AI-native companies, and so would the valuation built on them.
+
+The lenses already knew this:
+- the Sovereignty ❌ "margin only works at one provider's current pricing";
+- the Tier 2 inference advantage;
+- the Financials-meeting token-cost question.
+
+The numbers never did.
+
+**Scope (Jamie: surgical, only what is necessary).** Two files, two rulings, one validation run. The following were dropped as non-essential:
+- a sixth pricing-pressure factor (it duplicated the new section);
+- a separate model-mix item (covered by the cheaper-model stress);
+- a DD checklist data request (the pricing-analyst already flags data gaps);
+- a Financials-meeting pointer (that guide already asks the question).
+
+**Jamie's rulings:**
+1. **Gated** to deals with a model supply chain, the same trigger as Protect Alpha / Tier 4. Other deals print "N/A — no model supply chain".
+2. **No fixed AI-native gross-margin benchmark.** The benchmark is built from AI-native comps instead; the agents don't assume 70%+.
+3. **The venture-analyst is unchanged.** It consumes the stressed forecast. Valuing low-margin AI companies on gross profit is deferred to Phase 4.
+4. **Validation on one synthetic case.**
+
+**What changed:**
+- **`pricing-analyst.md`:**
+  - **Mandate 4:** model costs are usage-driven. The risk is dependence, provider pricing power, and usage outrunning revenue — not expense, since unit cost is falling. Model both directions.
+  - **Section 4b Model-Cost Economics (gated):**
+    - **One input:** the model-cost share of revenue (m). It is Reported from the inference bill, or Inferred with a range.
+    - **Pricing–cost fit:** does revenue scale with usage?
+    - **A fixed stress test** on gross margin g:
+
+      | Stress | Gross margin |
+      |---|---|
+      | Provider price ×2 | g − m |
+      | Usage ×3 without usage pricing | g − 2m |
+      | Cheaper model | The company's stated alternative, or g + m/2 to g + 4m/5; an untested claim is shown as a range from g |
+
+    - **Precision rules:** no invented token prices or usage multiples, and missing or one-month bills become the first founder question.
+  - **Gross-margin benchmark cell:** split into non-AI SaaS, AI-native (built from comps), and hardware.
+  - **Output:** a MODEL-COST ECONOMICS block and a feed-forward line.
+- **`forecasting-analyst.md`:**
+  - When 4b ran, COGS is split into model / hosting / human-services, tied to the scenarios:
+    - **Low:** the harsher stress, phased in per the company's plan.
+    - **Medium:** the base m, with any uncommitted assumption it depends on named.
+    - **High:** deflation only with a credible model switch.
+  - Gross margin never rises with scale unless a *because* names the mechanism.
+  - Output: a "Model-cost split" line.
+
+**Validation.** "Quillmark AI" is a fictional AI-native contract-review company built for this test:
+- per-seat pricing with unlimited use;
+- one frontier provider;
+- a third-party provider invoice in the data room;
+- an "Agent Mode" launch the company expects to raise usage 3–5×;
+- a claimed 80% gross margin.
+
+Both agents ran in sequence in a fresh session. Every figure matched the pre-computed answer:
+
+| Item | Result |
+|---|---|
+| Model-cost share (m) | 23%, Reported (invoice ÷ revenue) |
+| Gross margin today | 66% |
+| Provider price ×2 | 43% |
+| Usage ×3 | 20% |
+| Cheaper model (company's alternative) | 66–74% |
+
+- **The 80% claim:** flagged ❌ as not reconciling with the company's own P&L.
+- **Forecast:**
+  - Low case: GM 43% → 20% as Agent Mode ramps.
+  - Medium case: held at 66%, with its dependence on metering Agent Mode named.
+  - High case: no margin upside, because switch credibility was UNKNOWN.
+
+**Fixed in this batch** (gaps the run surfaced):
+- an untested cheaper-model claim is shown as a range from g;
+- a company-stated higher usage multiple is mentioned in words, while the table stays at ×3;
+- a one-month bill makes 12 months of bills the first founder question;
+- the Low-case stress is phased in per the company's plan;
+- the Medium case names any uncommitted assumption it depends on.
+
+**Logged, not changed** (pre-existing, outside this scope):
+- The channel-economics template assumes a sell-side distributor, so a supplier-side squeeze (the AI provider) has no field of its own.
+- The forecasting-analyst's revenue formula doesn't say whether it yields year-end ARR or in-year revenue.
+- The ≥3-comps requirement often can't be met at angel stage.
+
+**Phase 3 is complete:** A + D (Decision 18), B (Decision 19), C (this decision). Next: Phase 4, the return model, after the IC decides. Then Phase 5, rebuilding the coordinator screener from the pipeline.
+
+Files: `pricing-analyst.md`, `forecasting-analyst.md`, `CLAUDE.md`, `nwai-techgroup-pipeline-architecture.md` (v0.54.0). Plugin v3.11.0. No MCP changes — no reinstall required.
+
+---
+
 *Last updated: October 29, 2026 | Maintained by Jamie, TechGroup Co-Chair*
 *This log is a living document — add entries when key decisions are made in session.*
