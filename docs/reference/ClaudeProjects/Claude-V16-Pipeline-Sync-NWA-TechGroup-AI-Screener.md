@@ -8,7 +8,7 @@
 > `knowledge-alpha-ai-sovereignty.md` (all three refreshed for V16).
 > **Status:** COORDINATOR SCREENER — **rebuilt from the pipeline Screen** (Phase 5 of the
 > October 2026 re-sync program, Path B). Source of truth: pipeline
-> `gates-and-flags-techgroup.md` v3.7 (Decisions 14–17, 22) and `/screen`. V15 is preserved
+> `gates-and-flags-techgroup.md` v3.8 (Decisions 14–17, 22, 23) and `/screen`. V15 is preserved
 > unchanged as the regression comparator. Screen stage only — no .docx, no Dealum, no
 > Scout hand-off machinery; the Deal-Team Appendix prints on request only.
 > **Change record:** the rule-by-rule list of what V16 changed from V15 lives in the
@@ -341,9 +341,11 @@ Signals against the deal: [N] of 5 ([plain signal names], or "none").
                  "revenue so far is fragile"; Coherence cap → "some numbers in
                  the pitch don't line up."]
 
-Why:      [1–2 sentences. Lead with the single strongest signal or decisive
-          reason. Name the signal driving the call, by its plain name. Note a
-          sharp narrative-vs-substance divergence here when one exists.]
+Why:      [1–2 sentences. On WATCH or DECLINE, lead with the decisive
+          reason: the signal that decides the call, by its printed name (or the
+          failed gate). On ADVANCE, lead with the strongest signal. Name the
+          signal driving the call, by its plain name. Note a sharp
+          narrative-vs-substance divergence here when one exists.]
 Concern:  [1 sentence — primary risk or friction even on an ADVANCE. When
           Commercial Proof is PRE-REVENUE or FRAGILE, name that stage explicitly
           here — never leave it implicit in the Market block alone.]
@@ -1268,6 +1270,9 @@ The appendix is never printed by default and never counts toward the 2-page cap.
   Conviction at MEDIUM (cap only — call unchanged)
 - [ ] **Narrative vs. substance** — sharp story/substance divergence (either
   direction) noted in the Why; substance graded, not storytelling
+- [ ] **Why leads right** — on WATCH/DECLINE the Why leads with the signal that
+  decides the call, by its printed name (or the failed gate); on ADVANCE, with the
+  strongest signal
 - [ ] **Pattern note discipline** — printed ONLY if a resemblance genuinely fired;
   one plain-words line with a disconfirming probe; hypothesis only — never
   evidence, never a vote, never padded into existence

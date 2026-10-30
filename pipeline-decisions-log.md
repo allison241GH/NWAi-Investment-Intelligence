@@ -1024,5 +1024,36 @@ Files: `gates-and-flags-techgroup.md` (v3.7), `screen.md`, `CLAUDE.md`, `nwai-te
 
 ---
 
+## Decision 23 — Verdict Block "Why" Lead (Screen v3.8)
+
+**Date:** October 30, 2026
+**Context:** Comparing the three Dark Watch screens (V15, pipeline v3.6, V16), Jamie found the pipeline's Why the most compelling. It opened "Defensibility decides this," credited the real strengths, then named exactly what the deciding test lacked. V16's Why opened "Distribution is the strongest signal": a positive on a WATCH, and not one of the six signal names. Cause: the instruction read "Lead with the single strongest signal **or** decisive reason," which lets a WATCH or DECLINE open with a positive.
+
+**Jamie's decision:** fix only the ambiguity. A fuller rewrite (crediting strengths, no repetition of the Concern or re-engage gap) was drafted and tested first. It over-applied: it stripped the strengths from the pipeline's own Why, and on a WATCH the Why and the re-engage gap are both about the deciding signal, so "never restate the gap" can't be met. It was dropped in favour of the one-sentence fix.
+
+**What changed** (`screen.md` Step 8 + self-check; `gates-and-flags-techgroup.md` v3.7 → v3.8, version note only):
+- **Old:** "Lead with the single strongest signal or decisive reason."
+- **New:** "On WATCH or DECLINE, lead with the decisive reason: the signal that decides the call, by its printed name (or the failed gate). On ADVANCE, lead with the strongest signal."
+- Everything else in the Why instruction is unchanged. This is a presentation rule only: no judgment rule, weight, or verdict changed, and nothing downstream reads the Why (`/scout` reads the appendix).
+
+**Regression (Verdict Block check, fresh agent, existing reports and verdicts, no searches):**
+
+| Report | Result |
+|---|---|
+| Dark Watch — pipeline (WATCH) | Content kept; already led with Defensibility; merged to the 2-sentence cap |
+| Dark Watch — V16 (WATCH) | Rewritten to lead "Defensibility decides this"; V16's own content kept |
+| Kestrel strong — v3.7 (ADVANCE) | Complies, unchanged |
+| Kestrel weak — v3.7 (ADVANCE) | Complies, unchanged |
+
+No call, conviction or "signals against" line changed. The archived back-test reports predate the v3.4 format, so the four current-format reports from this week were used.
+
+**Coordinator rebuild:** the same wording and self-check line were applied to V16 (re-paste the instruction into the Project; the knowledge files are unchanged).
+
+**Logged, not changed:** the Captain Compliance V16 control run is on hold (Jamie).
+
+Files: `screen.md`, `gates-and-flags-techgroup.md` (v3.8), V16 instruction, `CLAUDE.md`, `nwai-techgroup-pipeline-architecture.md` (v0.58.0). Plugin v3.13.0. No MCP changes — no reinstall required.
+
+---
+
 *Last updated: October 30, 2026 | Maintained by Jamie, TechGroup Co-Chair*
 *This log is a living document — add entries when key decisions are made in session.*

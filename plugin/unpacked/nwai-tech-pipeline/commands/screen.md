@@ -210,9 +210,11 @@ Signals against the deal: [N] of 5 ([plain signal names], or "none").
                  customers yet" / "revenue so far is fragile"; Coherence cap →
                  "some numbers in the pitch don't line up."]
 
-Why:      [1–2 sentences. Lead with the single strongest signal or decisive reason.
-          Name the signal driving the call, by its plain name. Note a sharp
-          narrative-vs-substance divergence here when one exists.]
+Why:      [1–2 sentences. On WATCH or DECLINE, lead with the decisive reason:
+          the signal that decides the call, by its printed name (or the failed
+          gate). On ADVANCE, lead with the strongest signal. Name the signal
+          driving the call, by its plain name. Note a sharp narrative-vs-substance
+          divergence here when one exists.]
 Concern:  [1 sentence — primary risk or friction even on an ADVANCE. When Commercial
           Proof is PRE-REVENUE or FRAGILE, name that stage explicitly here.]
 ```
@@ -519,6 +521,7 @@ Follow-up behavior (all surfaces): after the report, answer conversationally —
 - [ ] **Head starts (v3.6)** — on Track A, software patents, domain knowledge, and code/features were recorded on the appendix "Head starts" line, never as the named moat asset, toward STRONG, or as the nascent element; "no IP" was not counted as a Track A negative
 - [ ] Coherence pass run against the fixed 5-pair diff-list (funding status vs. stated prior investment · traction vs. forecast · team size vs. ambition · deck terms vs. form terms · named pilots vs. named references), not an ad hoc check; material contradictions → (!) Coherence flag and/or pitch question, never an adverse vote; a load-bearing-number contradiction caps Triage Conviction at MEDIUM (cap only — call unchanged)
 - [ ] Narrative vs. substance — sharp story/substance divergence (either direction) noted in the Why; substance graded, not storytelling
+- [ ] **Why leads right (v3.8)** — on WATCH/DECLINE the Why leads with the signal that decides the call, by its printed name (or the failed gate); on ADVANCE, with the strongest signal
 - [ ] Pattern note discipline — printed ONLY if a resemblance genuinely fired; one line with a disconfirming probe; hypothesis only — never evidence, never a vote, never padded into existence
 - [ ] Ask-at-Scout rule applied — a call-answerable sole gap with no other adverse signal → ADVANCE with it as Live Pitch Question #1, not WATCH
 - [ ] **Ask-at-Scout Precedence Check applied** — the roll-up was checked for ZERO adverse signals BEFORE Ask-at-Scout was considered at all; if the roll-up names any signal adverse (even one unrelated to the call-answerable gap), Ask-at-Scout does not apply and WATCH/DECLINE governs instead

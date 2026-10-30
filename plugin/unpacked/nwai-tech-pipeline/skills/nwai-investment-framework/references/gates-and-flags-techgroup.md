@@ -1,4 +1,4 @@
-# NWAi TechGroup — Six-Signal Screener Reference v3.7
+# NWAi TechGroup — Six-Signal Screener Reference v3.8
 
 > **This is the self-contained screening reference for NWAi TechGroup.** It defines the
 > complete Screen-stage judgment model: hard gates, the NWA Filter evidence-rigor tests,
@@ -88,6 +88,12 @@
 > themselves, an adverse vote. The uncorroborated-claim marker prints "(unconfirmed)"
 > (was "(unverified)"), so the member read no longer prints a word it forbids. The
 > coordinator screener V16 is rebuilt from this version (Phase 5).
+>
+> **v3.8 (October 2026) — Verdict Block "Why" wording (Decision 23):** presentation only.
+> The Why's lead was "the strongest signal or decisive reason," which let a WATCH open with
+> a positive. Now: on WATCH or DECLINE it leads with the decisive reason (the signal that
+> decides the call, by its printed name, or the failed gate); on ADVANCE, with the strongest
+> signal. Defined in `/screen` Step 8. No judgment rule, weight, or verdict changed.
 >
 > **Scope:** TechGroup only. Other NWAi groups author their own frameworks — see
 > `gates-and-flags-universal-guide.md` for the architecture every group playbook
@@ -1082,7 +1088,8 @@ B Moat evidence tag at Screen; detailed TRL application happens at Scout and Dil
 
 ---
 
-*NWAi TechGroup Six-Signal Screener Reference | v3.7 | October 2026*
+*NWAi TechGroup Six-Signal Screener Reference | v3.8 | October 2026*
+*v3.8 (October 2026): Verdict Block "Why" lead — on WATCH/DECLINE lead with the decisive reason (deciding signal by its printed name, or the failed gate); on ADVANCE, the strongest signal. Presentation only. See `pipeline-decisions-log.md` Decision 23.*
 *v3.7 (October 2026): Track B evidence standards adopted from the coordinator screener knowledge file (Hardware Last Mile 95%+, 50%+ gross-margin path, TRL 7 Moat reference point) — evidence only, never adverse by themselves; Calibrated Rule 35. Claim marker "(unverified)" → "(unconfirmed)". Coordinator screener V16 rebuilt from this version (Phase 5). See `pipeline-decisions-log.md` Decision 22.*
 *v3.6 (October 2026): Patent fix (Option 5 integrated AI thesis, Phase 2 narrowed) — on Track A, software patents, domain knowledge, and code are head starts, not moat assets; "no IP" removed from the Track A Moat Sufficiency negative stack; Track B unchanged. Calibrated Rule 34 added, rule 22 amended. 90-day copy and headless-incumbent probes added as optional Live Pitch questions only. HIGH conviction cap clarified (narrow reading: only a gap in a HIGH condition caps at MEDIUM). See `pipeline-decisions-log.md` Decision 17.*
 *v3.5 (October 2026): Evidence and wording clarifications from the Decision 14–15 regression runs — third-party documents as outside evidence, 90-day stale-materials check, non-C-corp yellow flag, Protect Alpha N/A confirmed vs. not stated, Wrapper N/A, search-topic count, named-founder definition, Track B hardware rule. See `pipeline-decisions-log.md` Decision 16.*
