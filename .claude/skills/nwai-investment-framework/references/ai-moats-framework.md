@@ -32,6 +32,9 @@ a competitor cannot simply buy, scrape, or replicate with a bigger model?
   compounds with tenure
 - ❌ Training data entirely public; "our model is better" with no proprietary source; improvement
   depends on the *foundation* model upgrading, not the company's own loop
+- ❌ Fragile data: a single supplier or platform could switch it off, or the rights are not
+  contracted. A durable data edge rests on lawful control of multiple, current, contracted
+  sources (Decision 18)
 - **Verdict: PRESENT / ABSENT** — name the single source of the edge
 
 ### Test 2 — Sustainable Inference Advantage *(the data-at-runtime question — the one most often skipped)*
@@ -77,7 +80,8 @@ The strongest and most durable moat for application-layer AI companies.
 - ✅ Customer-specific model fine-tuning or personalization
 - ✅ Proprietary training data not available to competitors
 - ✅ High switching cost due to accumulated institutional knowledge
-- ❌ Data sourced entirely from public datasets (easily replicated)
+- ❌ Data sourced entirely from public or open-source datasets (easily replicated)
+- ❌ Data a single supplier or platform can switch off, or held without contracted rights
 - ❌ No differentiation in model quality vs. general-purpose foundation models
 
 ### Moat 2: The Capital & Compute Moat
@@ -115,7 +119,10 @@ Most relevant for application-layer NWAi investments (Themes 2–5).
 **Domain Specificity and Process Power:**
 - AI solutions built for highly defined use cases often outperform general-purpose tools
 - The "Last Mile Challenge": getting from the easy 80% demo to the 95% production-ready system
-- This gap requires painful domain expertise — and is exactly what creates the moat
+- Closing this gap takes painful domain execution. The moat is that execution once it is
+  built into the product and its data — the niche-specific production system. The
+  founders' domain expertise that got them there is a head start (months of lead), not
+  the moat; it is Team evidence (Decision 18)
 
 **Workflow Embedding and Switching Costs:**
 - Embedding the product directly into existing enterprise workflows creates high switching costs
@@ -136,7 +143,9 @@ Most relevant for application-layer NWAi investments (Themes 2–5).
 
 When writing the Technology & Moat section of an investment memo:
 
-1. **Classify** which moat type(s) apply
+1. **Classify** which moat type(s) apply. On software (Track A) deals, patents, founders'
+   domain knowledge, and code are head starts — name them as such and price them as
+   months of lead, never as the moat type (Decision 18; mirrors Screen Calibrated Rule 34)
 2. **Assess** maturity: Is the moat already built, or in development?
 3. **Project** how the moat strengthens over time (flywheel dynamics)
 4. **Stress test**: What would it take for a well-funded competitor to replicate this in 12 months?

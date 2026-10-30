@@ -77,7 +77,7 @@ Score each Phase 1 dimension on the 0–5 scale defined in scout-questions.md. S
 - **Q1: Category & Market Discontinuity** — new category creator vs. optimizer; lifecycle horizon; structural shift test. Score 0-5. Triage overlap: D1.
 - **Q1b: Demand Signal Test** — demand-pull vs. technology-push. Required outputs: Demand type (DEMAND-PULL / TECHNOLOGY-PUSH / MIXED), Evidence (2–3 specific signals: regulatory mandates, buyer public statements, RFP/procurement activity, analyst category creation, budget allocation surveys), Strongest signal (one sentence). Score 0-5. ⚠️ Score ≤ 2 triggers Yellow Flag: "Demand signal weak — technology-push risk. Validate with direct buyer interviews before advancing to Diligence." No Triage equivalent — mark NEW in Score Summary.
 - **Q2: Market Opportunity** — TAM/SAM bottoms-up validated; 10x support; market growth. Score 0-5. Triage overlap: D2.
-- **Q3: Moat Assessment** — use the AI Moats Framework as analytical reference. Output a distilled 4-column table verdict (Primary Moat | Strength | Primary Threat | Verdict). Do NOT enumerate moat types by number or produce a checklist. The output is a judgment. Rating: STRONG / DEVELOPING / WEAK / NONE. Triage overlap: D4.
+- **Q3: Moat Assessment** — use the AI Moats Framework as analytical reference. Output a distilled 4-column table verdict (Primary Moat | Strength | Primary Threat | Verdict). Do NOT enumerate moat types by number or produce a checklist. The output is a judgment. Rating: STRONG / DEVELOPING / WEAK / NONE. Triage overlap: D4. Before the verdict, record the required reads in scout-questions.md Q3 — training edge, inference edge, and data durability (DURABLE / FRAGILE / N/A; unscored). On Track A, software patents and founders' domain knowledge are head starts, never the Primary Moat.
 
 Load the AI Moats Framework from:
 `.claude/skills/nwai-investment-framework/references/ai-moats-framework.md`
@@ -113,7 +113,7 @@ Score each Phase 2 dimension on the 0–5 scale defined in scout-questions.md. E
   **Sub-dimension 5 — Team Completeness:** Are the critical roles filled? Check: technical leadership for a tech product (CTO or equivalent with verifiable output), commercial leadership (someone who has sold before), any critical gap that would require a key hire before scaling. Include Product team fit (✓/Partial/Gap) and Market team fit (✓/Partial/Gap).
 
   **Team Score rationale:** Lead with the most important signal — positive or negative. At pre-significant-revenue stage, team quality is the dominant variable. A score of 4–5 requires STRONG on at least Founder-Market Fit AND Execution Evidence. A score of 1–2 requires a red flag on dynamics or a critical gap in execution evidence.
-- **Technology** — TRL rating + thin wrapper or deep IP + biggest replication risk. Score 0-5.
+- **Technology** — TRL rating + thin wrapper or deep proprietary layer + biggest replication risk. Score 0-5.
 - **Traction** — revenue/pipeline figures + named customers + one retention signal. Score 0-5. Triage overlap: D5.
 - **GTM / Path to $10M** — GTM motion + key milestone + CAC/LTV if known. Score 0-5.
 - **Exit** — top 3 acquirers with one-line rationale each. Hold period. 10x viable: YES / STRETCH / UNLIKELY. Not scored numerically.
@@ -196,7 +196,7 @@ Output the Scout Assessment Report using the **Signal-First Member Format (v2.1)
 **Deal-team appendix:**
 - A · Triage Carry-Forward (Screen verdicts + conviction, gates, prior flags, mapped baseline via the conversion rubric)
 - B · Score Summary (13-row delta table — unchanged mechanics; one-line explanation on any ≥2 divergence)
-- B2 · Supporting reads (TAM|SAM|SOM line · four macro one-liners · moat two-test results · replicability timings · Q7/Q8 posture deal-team lines)
+- B2 · Supporting reads (TAM|SAM|SOM line · four macro one-liners · moat two-test results + data durability · replicability timings · Q7/Q8 posture deal-team lines)
 - C · Scoring arithmetic (both scores' weighted math)
 - D · Sources (merged `[n]` list; every inline marker resolves here)
 
@@ -227,7 +227,7 @@ The Word document mirrors the Step 6 structure exactly:
 **Deal-team appendix (new page, clearly labeled "Deal-Team Appendix"):**
 8. **A · Triage Carry-Forward table** — Preliminary Call + Triage Conviction, compact S1–S6 verdict line, Mapped Opportunity Baseline (/25), Mapped Readiness Baseline (/20), Hard Gates, prior flags. (Legacy numeric reports: historical scores in place of the mapped rows.)
 9. **B · Score Summary table** — Dimension | Triage (mapped) | Scout | Delta (13 rows; ↑/→/↓, NEW, divergence explanations).
-10. **B2 · Supporting reads** — TAM|SAM|SOM line, macro one-liners, moat two-tests, replicability timings, Q7/Q8 posture lines.
+10. **B2 · Supporting reads** — TAM|SAM|SOM line, macro one-liners, moat two-tests + data durability, replicability timings, Q7/Q8 posture lines.
 11. **C · Scoring arithmetic** — short block showing both scores' group math.
 12. **D · Sources** — enumerated list, one row per source: `[n] Title / publisher — URL or doc locator (retrieved YYYY-MM-DD) — Verified/Reported`.
 13. **Page footer** on every page — "NWAi Investment Intelligence — Confidential" left-aligned, page number right-aligned.

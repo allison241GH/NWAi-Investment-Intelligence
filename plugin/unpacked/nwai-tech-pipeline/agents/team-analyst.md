@@ -199,7 +199,7 @@ Also search: "[Founder name] lawsuit", "[Founder name] controversy", "[Founder n
 Flag any legal issues, controversies, or negative press. Note source URLs.
 
 **NWAi Green Flags to note explicitly:**
-- Domain expertise (10+ years in the specific industry)
+- Domain years (10+ in the specific industry), read as evidence of buyer access. A Team accelerant that belongs to the founder, not a company moat (Decision 18)
 - Prior startup exit or scaled to $10M+
 - Technical credibility (patents, publications, recognized expertise)
 - Complementary co-founder skill sets

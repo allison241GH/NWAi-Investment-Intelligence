@@ -147,7 +147,14 @@ Questions to answer:
 - If patents are infringed, can the company adequately defend them financially?
 - If not patented: what other IP exists (trade secrets, proprietary data, algorithms)?
 - Is the IP assigned to the company, or is any core technology held personally or by a prior employer?
-- Does the IP provide a strong competitive moat?
+- Does the IP provide a strong competitive moat? *For software (Track A) deals, patents are a head start, not a moat: how many months of lead do they buy against a well-resourced, motivated team using current AI tools? Do any load-bearing patents expire within the hold? For hardware (Track B) deals, patents can be a moat.*
+
+**Data rights (Decision 18)** — for any deal whose moat rests on data:
+- What are the company's data sources — customer, partner, licensed, scraped, public, or open-source? Public and open-source data are not a moat.
+- Are the rights contracted? Obtain the agreements: term, exclusivity, renewal, and whether the company may train models across customers.
+- How concentrated is supply? What share of the data comes from the largest single supplier or platform?
+- What happens if that supplier cuts the company off, changes terms, or becomes a competitor?
+- Are data licences and their restrictions (use, retention, transfer on acquisition) consistent with the business model and an exit?
 
 ---
 

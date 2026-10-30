@@ -227,7 +227,7 @@ Apply all four rubric groups using the agent briefings plus prior Screening and 
 
 **General applicability rule:** If any scoring sub-rubric does not apply to the company type (e.g., AI Moat for a hardware or non-AI company, LTV/CAC for a one-time-sale model), mark it N/A with a one-line reason. Do not force-apply a rubric that does not fit.
 
-- Tier 1 General Moat (0–6): Evaluate all six dimensions individually. For each, show the dimension name, ✓ or ✗, and a one-sentence rationale. Then sum to produce the total score and state the interpretation band (No Moat / Weak Moat / Moderate Moat / Strong Moat).
+- Tier 1 General Moat (0–6): First state the deal's **Track** (A software / B hardware), read from the Screen Deal-Team Appendix, or assigned here by the Screen's Track Determination rule if the deal was screened before Track existed. Element 4 is **Durable Data Rights** on Track A (requires element 3) and **IP / Patents** on Track B. On Track A, software patents, founders' domain knowledge, and code are head starts and earn no point; founders' domain knowledge earns no point on either track (it is Team evidence). Evaluate all six dimensions individually. For each, show the dimension name, ✓ or ✗, and a one-sentence rationale. Then sum to produce the total score and state the interpretation band (No Moat / Weak Moat / Moderate Moat / Strong Moat).
 - Tier 2 AI Moat (0–10): First apply the applicability gate — explicitly answer "Is this an AI-first or AI-enabled company?" If NO → mark Tier 2 as N/A with a one-line reason. If YES → run the three thin wrapper tests first (using technology-analyst briefing), then score all three categories (Cognitive/Data, Capital/Compute, Vertical/Workflow), showing each sub-element by name with points awarded and points available. State the total and interpretation band.
 - Tier 3 Agent-Era Readiness (0–15): Run for **every** deal (no applicability gate — the substrate shift reshapes non-AI businesses too). Apply the doorway question and score the three dimensions (Problem Reimagination, Position in the Agent Economy, Agent-Era Moat) 0–5 each, looking at both today and the next decade. Lead the written output with the plain question *"does the agent wave help or hurt this company?"* (HELPS / HURTS / MIXED) in member-readable language; if it isn't already in its strongest position, add "Could get stronger if:" and "What to watch:". Keep the internal headline verdict (REIMAGINING / ADAPTING / EXPOSED / BLIND) and posture label (Threatened / Riding / Enabling / Insulated) on the deal-team line. Distinct from Tier 2: Tier 2 tests replicability of the build; Tier 3 tests whether the problem itself survives the agent shift. Use `references/agent-era-readiness-framework.md` and the market-analyst + technology-analyst briefings.
 - Tier 4 Alpha-AI Sovereignty (0–15): **Gated to deals with a model supply chain** (any product calling third-party models) — non-AI deals record "Tier 4: N/A — no model supply chain" and skip. Apply the alpha-flow doorway question and score the three dimensions (Alpha Containment, Model-Layer Independence, Customer Sovereignty Alignment) 0–5 each per `references/diligence-scoring-rubrics.md` and `references/alpha-ai-sovereignty-framework.md`, on today's posture plus a direction-of-travel line. Lead the written output with the plain member-facing read (KEEPS / MIXED / LEAKS) plus "Could get stronger if:" and "What to watch:"; keep the headline verdict (FORTIFIED / HEDGED / LEAKY / CAPTURED) and posture (Leaking / Hedged / Sovereign / Enabler) on the deal-team line. Evidence sources: technology-analyst (D1+D2 — what transits the API, abstraction-layer reality, sovereign deployment feasibility), risk-analyst (provider no-train/ZDR terms verification, regulatory sovereignty exposure), competitive-positioning-analyst (lab vertical-integration signals, sovereignty-demand evidence). Verified containment here clears the Scout-stage conduit cap. Distinct from Tiers 2/3: Tier 2 tests replicability of the build; Tier 3 tests whether the problem survives agents; Tier 4 tests who captures the alpha along the model supply chain.
@@ -335,13 +335,14 @@ Recommended action: Request financial files (model/projections, historical P&L, 
 
 **Part C — Scored Assessment**
 ```
-MOAT TIER 1 — General (0–6):
+MOAT TIER 1 — General (0–6) · Track [A/B]:
   Network Effects:          [✓/✗] — [one-sentence rationale]
   Switching Costs:          [✓/✗] — [one-sentence rationale]
   Proprietary Data:         [✓/✗] — [one-sentence rationale]
-  IP / Patents:             [✓/✗] — [one-sentence rationale]
+  [Track A: Durable Data Rights / Track B: IP / Patents]: [✓/✗] — [one-sentence rationale]
   Regulatory Barriers:      [✓/✗] — [one-sentence rationale]
   Vertical Specialization:  [✓/✗] — [one-sentence rationale]
+  Head starts (no points):  [Track A software patents, founders' domain knowledge, code — or "none"]
   Total: [X/6] → [No Moat / Weak Moat / Moderate Moat / Strong Moat]
 
 MOAT TIER 2 — AI Moat (0–10):

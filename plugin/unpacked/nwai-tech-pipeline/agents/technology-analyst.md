@@ -132,6 +132,33 @@ Extract:
 - IP assignment: is IP owned by the company or held personally / by a prior employer?
 - University or research institution involvement (IP licensing risk)
 
+**Patent classification (Decision 18).** Report the facts for every deal — ownership still
+matters for the IP gate. Then classify: on a **software (Track A)** deal, patents are a
+**head start**. Estimate the months of lead they buy against a well-resourced, motivated
+team using current AI tools (for a non-LLM engine the tools speed the build rather than
+replace it — say so), and never present them as the moat. On a **hardware (Track B)**
+deal, patents protecting the physical build can be moat evidence. Either track: flag any
+load-bearing patent that expires or has lapsed within a 5-year hold.
+
+---
+
+### Section 3b: Data Rights (any deal whose moat rests on data)
+
+Search: "[company name] data partnership", "[company name] data licensing", "[company name]
+data provider", "[company name] [named customer or partner] agreement", and the company's
+own terms of service / privacy policy for its data-use rights.
+
+Extract:
+- Data sources: customer-generated, partner, licensed, scraped, public, or open-source. Public
+  and open-source data are not a moat.
+- Rights: contracted? exclusive? may the company train across customers? Cite any visible
+  agreement, partner announcement, or terms-of-service clause.
+- Concentration: is one supplier, customer, or platform the main source?
+- Cut-off exposure: what happens if that source restricts access, changes terms, or competes?
+- Durability read: **DURABLE** (contracted, more than one source, survives a single cut-off) /
+  **FRAGILE** (single source, uncontracted, or platform-dependent) / **UNKNOWN** (not visible
+  publicly — route to the DD checklist Folder 10 data-rights questions).
+
 ---
 
 ### Section 4: Technical Architecture Signals
@@ -240,9 +267,17 @@ NWAi gate (≥5): PASS / ❌ FAIL
 ── IP & PATENTS ──
 Patents filed: [List or "None found"]
 Patents granted: [List or "None found"]
-IP ownership: COMPANY / PERSONAL / LICENSED / UNCLEAR
+IP ownership: COMPANY / PERSONAL / LICENSED / MIXED [state which is core and which peripheral] / UNCLEAR
 University involvement: YES [risk note] / NO
 Trade secrets / proprietary algorithms: [Evidence or "Not publicly visible"]
+Classification: [Track A: HEAD START — ~[N] months of lead / Track B: MOAT EVIDENCE / NONE] · Expiring or lapsed within a 5-year hold: [list or "none"]
+
+── DATA RIGHTS ──
+Sources: [customer / partner / licensed / scraped / public / open-source — with evidence]
+Rights: [contracted, exclusive, cross-customer training — or "not visible"]
+Largest single source: [name and approximate share, or "not visible"]
+Cut-off exposure: [what happens if that source is lost]
+Durability: DURABLE / FRAGILE / UNKNOWN / N/A — no data moat claimed [note if contracts leave the data with customers and grant no pooling or training right — a cross-customer data moat would then need new contract terms]
 
 ── TECHNICAL ARCHITECTURE ──
 Core stack: [Summary]

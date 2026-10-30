@@ -123,6 +123,7 @@ the output is a judgment, not a tour through framework categories.
 Required reads before the verdict (the two sustainable-advantage tests — one line each):
 - **Training edge:** PRESENT / ABSENT — [proprietary source, or "none — public data only"]
 - **Inference edge:** PRESENT / ABSENT — [cost/latency/serving source, or "none — full pass-through"]
+- **Data durability:** DURABLE / FRAGILE / N/A — [are the data sources contracted, more than one, and not public; what happens if the largest supplier cuts the company off? N/A when the moat is not data]. Unscored — evidence for the Primary Moat strength and a Diligence question when FRAGILE.
 
 | Primary Moat | Strength | Primary Threat | Verdict |
 |---|---|---|---|
@@ -293,8 +294,8 @@ Flag immediately if:
 
 | Score | Criteria |
 |-------|---------|
-| 5 | Domain expert with prior exit (verified); both Product-Team Fit AND Market-Team Fit STRONG; full-time commitment ≥80%; Key-Seat Completeness: all filled or stage-appropriate; all founder claims verified |
-| 4 | Strong domain background; execution evidence verified; both fit lenses STRONG or one STRONG + one MODERATE (no WEAK); commitment ≥60% full-time; Key-Seat: at most one ⚠️ with credible hiring plan |
+| 5 | Verified buyer access with prior exit (domain years read as evidence of access, not as an asset in themselves); both Product-Team Fit AND Market-Team Fit STRONG; full-time commitment ≥80%; Key-Seat Completeness: all filled or stage-appropriate; all founder claims verified |
+| 4 | Strong verified market access; execution evidence verified; both fit lenses STRONG or one STRONG + one MODERATE (no WEAK); commitment ≥60% full-time; Key-Seat: at most one ⚠️ with credible hiring plan |
 | 3 | Relevant background; one fit lens MODERATE with one fillable gap; commitment ≥60% full-time; minor unverified claims; Key-Seat: one ⚠️ |
 | 2 | Thin domain connection or first-time founder; one fit lens WEAK (specify Product-side or Market-side); commitment <60% full-time OR multiple unverified founder claims; Key-Seat: one 🔴 stage-inappropriate gap |
 | 1 | Background disconnected from problem; both fit lenses WEAK; commitment <40% full-time; or any contradicted founder claim; Key-Seat: multiple 🔴 gaps |
@@ -304,11 +305,11 @@ Flag immediately if:
 
 ### Technology (Score 0-5)
 
-One line: TRL rating (must be ≥ 5) + whether thin wrapper or deep IP + biggest replication risk.
+One line: TRL rating (must be ≥ 5) + whether thin wrapper or deep proprietary layer + biggest replication risk.
 
 | Score | Criteria |
 |-------|---------|
-| 5 | TRL 7-9; deep proprietary IP; replication requires 2+ years and substantial capital |
+| 5 | TRL 7-9; deep proprietary layer (data and the models trained on it; patents count as the layer on Track B only — on Track A they are a head start); replication requires 2+ years and substantial capital |
 | 4 | TRL 6-7; meaningful proprietary layer; 12-18 month replication window |
 | 3 | TRL 5-6; some proprietary elements; replication possible within 12 months |
 | 2 | TRL 4-5; thin wrapper risk present; replication possible within 6 months |

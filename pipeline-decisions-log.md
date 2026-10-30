@@ -723,5 +723,86 @@ Files: `gates-and-flags-techgroup.md` (v3.6), `screen.md`, `CLAUDE.md`, `nwai-te
 
 ---
 
+## Decision 18 — Phase 3a Part 1: Patent Fix Carried Downstream + Data Durability
+
+**Date:** October 30, 2026
+**Context:** Decision 17 changed the Screen so that, on Track A, software patents and domain knowledge are head starts rather than moat assets. Scout and Diligence still credited both. Diligence Moat Tier 1 gave a point each for "IP / Patents" and "Vertical specialization — deep domain expertise". A deal could therefore advance at Screen on a data asset and then earn Diligence moat points for exactly what the Screen had rejected.
+
+This decision closes that gap (Phase 3 item A). It also adds the data-durability tests the Screen change made more important (item D): the Screen now credits data over patents, so Diligence has to verify the data rights.
+
+**Thesis status (Jamie):** Option 5 is internally aligned and used as a reference. The pipeline adopts selected applicable criteria from it. These changes are not contingent on any further approval.
+
+**Scoring principle (Jamie):**
+- Scales, weights, bands, thresholds and the conversion rubric stay fixed.
+- What earns the points is swapped like for like.
+- Everything else enters as unscored evidence.
+
+**Jamie's rulings:**
+1. **Data earns two Tier 1 points when it is real and durable.** Element 3 (the data exists and is growing) plus element 4 (Track A: the rights are durable). Element 4 requires element 3, so it is a depth point, not a duplicate.
+2. **The element 6 rewrite applies to both tracks.** Founders' knowledge is never a company moat. Track B keeps IP / Patents as element 4.
+3. **Diligence reads the Track** from the Screen Deal-Team Appendix. A deal screened before Track existed has its Track assigned at Diligence by the Screen's rule.
+4. **No retroactive rescoring** of archived deals. The paper rescores below are recorded for calibration only.
+
+**What changed:**
+- **`diligence-scoring-rubrics.md`, Tier 1 (still 0–6, same bands, same ≥ 4/6 Advance threshold):**
+  - **Element 3, Proprietary data:** the data must be already held and still growing; public or open-source data doesn't count.
+  - **Element 4:** Track A → *Durable Data Rights*: contracted, more than one source, survives a single supplier's cut-off, and requires element 3. Track B → *IP / Patents*, unchanged.
+  - **Element 6, Vertical specialization:** now a niche-specific production system built into the product and its data, not the founders' domain expertise.
+  - **New head-starts note:** head starts earn no point.
+  - **Tier 2, Training Data Moat:** gains durability wording. No point change.
+- **`diligence.md`:** the Tier 1 instruction states the Track first. The Part C template relabels element 4 by Track and adds a "Head starts (no points)" line.
+- **`scout-questions.md`:**
+  - Team 5 "domain expert with prior exit" → "verified buyer access with prior exit"; Team 4 "strong domain background" → "strong verified market access".
+  - Technology 5 "deep proprietary IP" → "deep proprietary layer" (patents count as the layer on Track B only).
+  - Q3 gains an unscored **Data durability** read (DURABLE / FRAGILE / N/A).
+- **`scout.md`:** Q3 instruction (the three required reads; head starts never the Primary Moat), B2 supporting reads, and the Technology line.
+- **`ai-moats-framework.md`:**
+  - Moat 3 l.118 now says the domain execution *built into the product* is the moat; founders' expertise is a head start.
+  - Test 1 and Moat 1 add ❌ markers for fragile data (single-supplier, uncontracted, public or open-source).
+  - "Classify" step: on Track A, patents, domain knowledge and code are head starts.
+- **`dd-checklist.md` Folder 10:**
+  - A software-patent head-start question: months of lead, and expiry within the hold.
+  - A new **Data rights** block: sources, contracted rights, concentration, cut-off exposure, and licence terms against the exit.
+- **`technology-analyst.md`:**
+  - Patent classification (Track A head start with an estimate of months of lead; Track B moat evidence; flag patents expiring or lapsed within a 5-year hold). IP ownership gains a MIXED option.
+  - New **Section 3b Data Rights** and a DATA RIGHTS output block (DURABLE / FRAGILE / UNKNOWN / N/A).
+- **`team-analyst.md`:** the domain-years green flag is read as evidence of buyer access, a Team accelerant and not a company moat.
+
+**Validation:**
+
+*Paper rescore of Tier 1, calibration only (Track A for both):*
+
+| Deal | Recorded | New criteria | DD Report Section 2 |
+|---|---|---|---|
+| STL | 3/6 — switching costs ✓, IP/patents ✓, vertical specialization ✓ (Weak) | 2/6 — switching costs ✓, vertical specialization ✓ (production calibration system built into the product); patents now a head start; no data asset, so element 4 ✗ (Weak) | 3 → 2 |
+| Captain Compliance | 2/6 — switching costs (partial), vertical specialization (partial: insurance-channel positioning) (Weak) | 1/6 — switching costs only; channel positioning is distribution, not a production system (No Moat) | 2 → 1 |
+
+Neither deal reached the ≥ 4/6 Advance threshold under either version.
+
+*Live run on STL:* the revised technology-analyst (fresh session, web research plus three archived data-room files):
+- **Patent classification:** read as a Track A head start of about 12 months (9–18). The reasons given:
+  - competitors already claim patented auto-calibration on arbitrary surfaces, so the claims can be designed around;
+  - the core methods are published;
+  - the licensed UCI patents expire 2029–2034, and one appears lapsed.
+- **Data rights:** N/A, grounded in the executed Panasonic contract's end-user licence, which leaves customer data with the customer.
+
+Four wording gaps it surfaced were fixed in this batch:
+- the months-of-lead wording for non-LLM engines;
+- a flag for patents expiring within the hold;
+- a MIXED IP ownership option;
+- an N/A note for when contracts leave data with customers.
+
+**Logged, not changed:**
+- The technology-analyst return template carries "GitHub signals" and "Competitor replication estimate" inside the Alpha-AI Sovereignty block. This is pre-existing and looks misplaced; tidy up later.
+- The Citation Contract has no clean tag for a search snippet whose page will not load (tagged Reported, single source).
+- **Phase 3a part 2 (next):**
+  - the headless-incumbent test in Scout Q5 and the technology-analyst;
+  - the 90-day copy test as a sharpened replicability-matrix row. The matrix forbids a fifth row, so it replaces or sharpens an existing one.
+- **Phase 3b:** model-cost economics in the pricing, forecasting and venture analysts.
+
+Files: `diligence-scoring-rubrics.md`, `diligence.md`, `scout-questions.md`, `scout.md`, `ai-moats-framework.md`, `dd-checklist.md`, `technology-analyst.md`, `team-analyst.md`, `CLAUDE.md`, `nwai-techgroup-pipeline-architecture.md` (v0.52.0). Plugin v3.9.0. No MCP changes — no reinstall required.
+
+---
+
 *Last updated: October 29, 2026 | Maintained by Jamie, TechGroup Co-Chair*
 *This log is a living document — add entries when key decisions are made in session.*

@@ -14,16 +14,25 @@ Run Tier 4 only for deals with a model supply chain (any product calling third-p
 
 ### Tier 1: General Business Moat (Score 0–6)
 
-Award 1 point for each present:
+Award 1 point for each present. **Element 4 depends on the deal's Track** — read it from
+the Screen Deal-Team Appendix; for a deal screened before Track existed, assign it here
+using the Screen's Track Determination rule (Track B only when the company itself sells,
+ships, or manufactures the hardware its product needs).
 
 | # | Moat Element | Present? |
 |---|-------------|---------|
 | 1 | **Network effects** — value increases as more users join | ✓ / ✗ |
 | 2 | **Switching costs** — painful or expensive for customers to leave | ✓ / ✗ |
-| 3 | **Proprietary data** — unique datasets competitors cannot access or replicate | ✓ / ✗ |
-| 4 | **IP / Patents** — filed, granted, or defensible trade secrets | ✓ / ✗ |
+| 3 | **Proprietary data** — a unique dataset the company already holds and that is still growing, which competitors cannot access or replicate. Public or open-source data does not count | ✓ / ✗ |
+| 4 | **Track A — Durable data rights:** the element 3 data rests on contracted rights, comes from more than one source, and would survive any single supplier cutting the company off. **Requires element 3** (no ✓ on 4 without ✓ on 3). **Track B — IP / Patents:** filed, granted, or defensible trade secrets | ✓ / ✗ |
 | 5 | **Regulatory barriers** — licenses, certifications, compliance layers others must clear | ✓ / ✗ |
-| 6 | **Vertical specialization** — deep domain expertise in a defensible niche | ✓ / ✗ |
+| 6 | **Vertical specialization** — a niche-specific production system (the last-mile work that takes a general tool from an 80% demo to a 95% production system) built into the company's product and data — not the founders' domain expertise | ✓ / ✗ |
+
+**Head starts (Decision 18).** On Track A, software patents, founders' domain knowledge,
+and the code itself are head starts — months of lead, not a moat — and earn no Tier 1
+point (mirrors Screen Calibrated Rule 34). Founders' domain knowledge earns no point on
+either track; it is Team evidence. Note head starts in the rationale lines; they inform
+the Replicability Speed Matrix, not the score.
 
 **General Moat Score = sum of checkmarks**
 
@@ -44,7 +53,7 @@ Award 1 point for each present:
 
 | Points | Element | What to look for |
 |--------|---------|-----------------|
-| 2 | **Training Data Moat** | Unique dataset for model training that competitors cannot access |
+| 2 | **Training Data Moat** | Unique dataset for model training that competitors cannot access — and durable: contracted rights, more than one source, survives a single supplier's cut-off. Public or open-source data does not count |
 | 1 | **Inference Data Moat** | Product generates proprietary operational data flywheel as it's used |
 | 1 | **Memory Lock-in** | Stores customer-specific context/history that creates real switching cost |
 
