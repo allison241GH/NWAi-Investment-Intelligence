@@ -1,7 +1,19 @@
 # Screen→Scout Conversion Rubric
 
-**Version 1.0.1 — frozen July 12, 2026; amended October 2026** (calibrated per the
+**Version 1.0.3 — frozen July 12, 2026; amended October 2026** (calibrated per the
 Pipeline Framework Adoption Spec §5.3; calibration record below).
+
+> **v1.0.3 amendment (October 2026, Decision 16):** D5 gains a handler for PARTIAL-confidence
+> traction — **cap 4** (Jamie's ruling). Previously only Verified and Unverified were
+> handled, so PARTIAL traction could not resolve. No other value changed.
+>
+> **v1.0.2 amendment (October 2026, Decision 15):** source pointers only — no mapping value
+> changed. From Screen v3.4 the Triage Report prints a plain-language member read plus a
+> **Deal-Team Appendix**. Every "Screen source" below is read from the appendix (internal
+> verdicts, confidence tags, Commercial Proof line, gate statuses, evidence tags), except
+> R1 and R2, which read **The Ask** and **Stage** from the member read's What They Do
+> section. The member read's stars are a visual only and are **never** used as mapped
+> values. Reports before v3.4 print the same fields inline.
 
 > **v1.0.1 amendment (October 2026, Decision 14):** Screen v3.3 added a fourth revenue
 > quality tier, FRAGILE (thin/early revenue that exists but is easily lost). D5 maps it
@@ -41,19 +53,19 @@ Track A shown; **Track B** swaps the D4/D5 evidence sources to the Track B Moat 
 | Scout baseline dim | Screen source | Mapping |
 |---|---|---|
 | **D1 Structural Discontinuity** | Signal 1 verdict | PIONEER→5 · DIFFERENTIATED→4 · INCREMENTAL→2 · LATE→1 |
-| **D2 Market Opportunity** | Signal 2 verdict + confidence | STRONG·Verified→5 · STRONG·Partial→4 · MODERATE→3 · WEAK→2 (→1 if Market gate ⚠️ YELLOW PASS) |
+| **D2 Market Opportunity** | Signal 2 verdict + confidence (appendix) | STRONG·Verified→5 · STRONG·Partial→4 · MODERATE→3 · WEAK→2 (→1 if Market gate YELLOW PASS — printed "PASS (!)" in the member read) |
 | **D3 Founder Advantage** | Signal 3 verdict + commitment | STRONG·Verified→5 · STRONG·Partial→4 · MIXED→3 · WEAK→2 · commitment SPLIT/SIDE-PROJECT (Team counted adverse)→cap 2 · UNCONFIRMED ⚠️→no cap, carries as an open item |
-| **D4 Defensibility** | Signal 4 verdict + tags | STRONG→4 (→5 only if Verified AND Memory Lock-in [present]) · MODERATE→3 · WEAK→1 (→2 if a named nascent moat element exists in the basis). Evidence tags (Goliath / LLM Ingestion / Wrapper / Memory Lock-in / Stack; Track B: TRL / IP / unit economics) carry to Scout Q3 as evidence, not numbers |
-| **D5 Traction** | Commercial Proof line | Verified STICKY revenue + strong velocity→5 · verified growing revenue→4 · early revenue booked or pilot revenue (incl. first revenue + signed contracted channel)→3 · **claimed revenue, confidence Unverified→cap 3** (Cynical Default carries through the seam, whatever the claimed magnitude) · LOI/beta, no revenue→2 · pre-revenue→1 (→2 with strong verified non-revenue proof) · quality STAGNANT→cap 2 · quality FRAGILE→cap 2 (v1.0.1) |
+| **D4 Defensibility** | Signal 4 verdict + tags | STRONG→4 (→5 only if Verified AND Memory Lock-in [present]) · MODERATE→3 · WEAK→1 (→2 if a named nascent moat element exists — appendix "Moat asset named / nascent element" line; the basis on pre-v3.4 reports). Evidence tags (Goliath / LLM Ingestion / Wrapper / Memory Lock-in / Stack; Track B: TRL / IP / unit economics) carry to Scout Q3 as evidence, not numbers |
+| **D5 Traction** | Commercial Proof line | Verified STICKY revenue + strong velocity→5 · verified growing revenue→4 · early revenue booked or pilot revenue (incl. first revenue + signed contracted channel)→3 · **claimed revenue, confidence Unverified→cap 3** (Cynical Default carries through the seam, whatever the claimed magnitude) · **revenue confidence Partial→cap 4** (v1.0.3 — partly confirmed real revenue can reach "verified growing" but never 5) · LOI/beta, no revenue→2 · pre-revenue→1 (→2 with strong verified non-revenue proof) · quality STAGNANT→cap 2 · quality FRAGILE→cap 2 (v1.0.1) |
 
 ## Readiness-side mapping (R1–R4, /20)
 
 | Scout baseline dim | Screen source | Mapping |
 |---|---|---|
-| **R1 Deal Structure** | Deal Facts (structure & terms) | Clean priced equity→4–5 · standard SAFE or convertible→3 (neutral, per v2.21 — an IntroCall negotiation item, incl. LLC-conversion cases) · aggressive/incompatible terms flagged in the coherence pass or Risk Flags (e.g., non-standard liquidation preference, stacked discounts, founder inflexibility)→2 |
-| **R2 Product Maturity** | Commercial Proof stage | Operating business with revenue retention→5 · commercial product, early revenue→4 · product/beta live, pre- or first revenue→3 · research/concept→1–2 |
+| **R1 Deal Structure** | The Ask (What They Do); Deal Facts on pre-v3.4 reports | Clean priced equity→4–5 · standard SAFE or convertible→3 (neutral, per v2.21 — an IntroCall negotiation item, incl. LLC-conversion cases) · aggressive/incompatible terms flagged in the coherence pass or Risk Flags (e.g., non-standard liquidation preference, stacked discounts, founder inflexibility)→2 |
+| **R2 Product Maturity** | Stage (What They Do) + appendix Commercial Proof stage | Operating business with revenue retention→5 · commercial product, early revenue→4 · product/beta live, pre- or first revenue→3 · research/concept→1–2 |
 | **R3 Syndication** | Deal Facts (syndication) | External lead committed (term sheet/memo)→4–5 · credible co-investors in conversation→4 · forming/seeking/NWA-led→3 (neutral) · no round, no plan→2 |
-| **R4 Traction Velocity** | Commercial Proof velocity | Exceptional verified velocity→5 · growing→4 · steady/inflecting→3 · flat or unknown→2 |
+| **R4 Traction Velocity** | Appendix Commercial Proof velocity | Exceptional verified velocity→5 · growing→4 · steady/inflecting→3 · flat or unknown→2 |
 
 ## Calibration record (July 12, 2026)
 
@@ -101,6 +113,6 @@ Scout call (historical Thesis Fit 39/55 = 71%, also Qualified-band).
 
 ---
 
-*Screen→Scout Conversion Rubric | v1.0.1 | October 2026 (frozen v1.0 July 12, 2026; FRAGILE amendment) | Single source of truth for the
+*Screen→Scout Conversion Rubric | v1.0.3 | October 2026 (frozen v1.0 July 12, 2026; v1.0.1 FRAGILE amendment; v1.0.2 appendix source pointers; v1.0.3 D5 PARTIAL cap) | Single source of truth for the
 Screen→Scout translation (spec §5, Option B). Installed with plugin v3.0.0 /
 architecture v0.38.0. Loaded by `scout.md` at intake alongside `scout-questions.md`.*

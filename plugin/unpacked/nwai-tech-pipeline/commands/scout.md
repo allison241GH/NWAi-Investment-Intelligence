@@ -27,19 +27,19 @@ Before beginning the Scout assessment, check the deal folder for a prior Screeni
 **Then load the Screen→Scout conversion rubric:**
 `.claude/skills/nwai-investment-framework/references/screen-scout-conversion-rubric.md`
 
-**From a Six-Signal Triage Report (July 2026 onward), extract and carry forward:**
-- The Verdict Block: PRELIMINARY CALL, TRIAGE CONVICTION, signal roll-up, Live Pitch Questions
-- Hard gate verdicts (✅ / ❌ / ⚠️ for each gate) — gates carry as gates; any FAIL → Thesis Fit = 0
-- All six signal verdicts + confidence tags, the Commercial Proof line, and the Signal 4 evidence tags (Goliath / LLM Ingestion / Wrapper / Memory Lock-in / Stack; Track B: TRL / IP / unit economics) — the tags carry into Q3 as evidence
-- All red (❌) and yellow (⚠️) flags, coherence findings, and any Pattern note
-- Deal Facts — structure & syndication are IntroCall negotiation items, not flags or kills; carry them forward as such, do not re-score them as penalties
+**From a Six-Signal Triage Report (July 2026 onward), extract and carry forward.** Reports from October 2026 (Screen v3.4, Decision 15) have two layers: a plain-language **member read** and a closing **Deal-Team Appendix** in internal vocabulary. Read the machine fields from the appendix; the member read uses plain signal names (Disruption = Discontinuity · Defensibility = Moat · AI-Agent Future = Agent-Era Posture · Protects Its Edge = Protect Alpha), stars, and a Source column, which are never mapped as numbers. Earlier reports print the internal labels inline — read them where they appear.
+- **From the member read:** the Verdict Block (PRELIMINARY CALL, TRIAGE CONVICTION, "Signals against the deal" line, cap/lift sentence, Live Pitch Questions); What They Do — **Stage** (Product + Business, claimed/verified) and **The Ask** (raise, instrument, terms, lead status, prior funding); Risk Flags and any Pattern note
+- **From the Deal-Team Appendix:** hard gate statuses (PASS / YELLOW PASS / FAIL) — gates carry as gates; any FAIL → Thesis Fit = 0
+- **From the Deal-Team Appendix:** all six internal signal verdicts + confidence tags (VERIFIED / PARTIAL / UNVERIFIED), the Team lines and the line that set the Team rating, the full Commercial Proof line, the Blue Ocean read, and the Signal 4 evidence tags (Goliath / LLM Ingestion / Wrapper / Memory Lock-in / Stack; Track B: TRL / IP / unit economics) — the tags carry into Q3 as evidence
+- All red and yellow flags — printed (X) / (!) from October 2026, ❌ / ⚠️ on earlier reports — coherence findings ("Numbers don't line up" or "Coherence"), and any Pattern note
+- Deal structure and syndication (The Ask + Deal Facts; Deal Facts alone on earlier reports) — IntroCall negotiation items, not flags or kills; carry them forward as such, do not re-score them as penalties
 - Signal 5 (Agent-Era Posture) and Signal 6 (Protect Alpha) reads — these are priors for Q7 and Q8, which Scout scores fresh; they do NOT map to baseline numbers
 
 **Apply the conversion rubric mechanically** — translate the signal verdicts into the per-dimension numeric baseline (Opportunity D1–D5 /25 + Readiness R1–R4 /20) exactly per the rubric table. This is mechanical translation of judgments already made — no re-judging, no fresh derivation. The mapped values are the baseline for delta tracking (↑ / → / ↓) and the Thesis Fit input.
 
 *(Legacy numeric Triage Reports — pre-July 2026, found on archived deals — already carry per-dimension D1–D5 and Readiness scores; use those directly as the baseline, skipping the rubric.)*
 
-Do not re-derive what screening already established. If a flag was raised at screening, treat it as an open item unless new evidence in this session explicitly resolves it. A commitment UNCONFIRMED ⚠️ finding carries as an open item with no baseline cap.
+Do not re-derive what screening already established. If a flag was raised at screening, treat it as an open item unless new evidence in this session explicitly resolves it. A commitment UNCONFIRMED (!) / UNCONFIRMED ⚠️ finding carries as an open item with no baseline cap.
 
 ---
 

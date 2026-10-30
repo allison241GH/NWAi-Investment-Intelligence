@@ -504,5 +504,139 @@ Files: `gates-and-flags-techgroup.md` (v3.3), `screen.md`, `screen-scout-convers
 
 ---
 
+## Decision 15 — Two-Layer Screen Report (Phase 1b): Plain-Language Member Read + Deal-Team Appendix
+
+**Date:** October 29, 2026
+**Context:** Second step of the Path B re-sync (Decision 14). Members prefer the printed format of the coordinator screener V15: plain language, stars, a summary table, and the What They Do block. Phase 1b ports that format and content (drift types 2a and 3) into the pipeline Screen. V15's tool form (a single paste-in prompt with no .docx or Dealum) is not ported.
+
+**Jamie's decisions:**
+1. Plain signal names appear in the member read; framework names stay in the appendix; Scout and Diligence are unchanged.
+2. The appendix comes at the end of both the chat report and the .docx, outside the 2-page cap.
+3. (X) / (!) markers are used everywhere; no emoji, since emoji break in PDF.
+4. The Stage "(verified)" standard applies: verified means confirmed outside the company's own materials.
+5. The Track heading is printed in plain words; Track A/B is kept in the appendix.
+
+**What changed:**
+- **`screen.md` Step 8 (rewritten)**, ported from V15's Reader Standard, Brevity Contract, Output Structure, Verdict Block, What They Do, Gates, Six Signals and Printed Rendering, Deal Facts and Risk Flags:
+  - **Report order:** fixed title → Verdict Block ("Signals against the deal: N of 5", plus one plain cap/lift sentence) → What They Do (who gets the value, who pays, Stage, The Ask) → Six Signals (summary table with stars and a Source column, then short blocks) → Gates (plain names, PASS / PASS (!) / FAIL) → Deal Facts → Risk Flags → footer → **Deal-Team Appendix**.
+  - **Printed vocabulary:** stars render the verdict tier only. One star always and only means the signal counts against the deal, and one-star verdicts use fixed wording. AI-Agent Future uses four fixed captions.
+  - **Appendix contents:**
+    - Track
+    - all six internal verdicts with confidence
+    - Team lines and the line that set the rating
+    - the full Commercial Proof line
+    - Moat evidence tags, plus the named moat asset or nascent element
+    - Blue Ocean read
+    - gate statuses
+    - Protect Alpha read and flags
+    - roll-up, caps and lifts
+    - coherence findings
+    - a name key
+- **`screen.md` Step 9 (.docx):** mirrors the new layout. Stars use a symbol font; the appendix starts on a new page.
+- **Self-check:** rebuilt for the new format.
+- **`gates-and-flags-techgroup.md` v3.3 → v3.4:**
+  - A "Printed vocabulary" note: internal labels govern judgment and print in the appendix.
+  - Brevity caps updated: Moat ≤ 40 words; Team in four lines of ≤ 20 words.
+  - Protect Alpha prints in the appendix, not the member roll-up.
+  - The Gate-FAIL short form now matches `screen.md`.
+- **`scout.md` Step 1b:** reads the machine fields from the appendix, and The Ask and Stage from the member read. It still accepts pre-v3.4 reports, including both emoji and (!) / (X) markers.
+- **`screen-scout-conversion-rubric.md` v1.0.1 → v1.0.2:** source pointers only — the appendix, The Ask (R1), Stage (R2), and the appendix moat-asset line (D4). **No mapping value changed.**
+
+**What did NOT change:** any judgment rule, weight, gate, verdict definition or conviction mechanic; the research steps; the workflow (.docx filename, Dealum, hand-off to Scout); and the Scout report format.
+
+**Regression:** blind, fresh-session re-screens with the same inputs as Decision 14.
+
+| Deal | Result |
+|---|---|
+| Captain Compliance | WATCH / MEDIUM |
+| Summit Technology Laboratory | WATCH / MEDIUM |
+| Synergist Technology | WATCH / MEDIUM |
+
+- **No verdict moved.** Every internal signal tier matched the 1a runs.
+- **Rubric resolution:** D1–D5 and R1–R4 resolved from the appendix and What They Do alone.
+- **D4:** the regression showed it needed a named-asset field. The "Moat asset named / nascent element" line was added and the rubric pointed at it.
+- **V15 side-by-side (Captain Compliance):** V15 itself gave the same call and the same signal verdicts and stars, with matching structure and wording conventions.
+- **.docx render check:** the layout and the Verdict callout render correctly, and the stars display as glyphs.
+
+**Small fixes added from the regression:**
+- the moat-asset and coherence-findings lines in the appendix;
+- the protect-the-edge question becomes a re-engage item on WATCH;
+- the Revenue-so-far punctuation;
+- the Source rule for the unrated Track Record row.
+
+**Logged, not changed** (mostly pre-existing, surfaced by the runs):
+- The rubric's D5 has no handler for PARTIAL-confidence traction (only Verified / Unverified).
+- Whether a document signed by a third party but found only in the data room (e.g., a countersigned contract) counts as "(verified)".
+- No guidance for stale data rooms (screen date months after the documents).
+- How to flag an LLC entity (not a gate).
+- Protect Alpha N/A prints "Doesn't use outside AI" even when the model supply chain is merely unstated.
+- Carried from Decision 14: search count vs. founder query set, "named founder" definition, Wrapper tag for non-AI products, and the Track rule when the customer supplies the hardware.
+
+Files: `screen.md`, `gates-and-flags-techgroup.md` (v3.4), `scout.md`, `screen-scout-conversion-rubric.md` (v1.0.2), `CLAUDE.md`, `nwai-techgroup-pipeline-architecture.md` (v0.49.0). Plugin v3.6.0. No MCP changes — no reinstall required.
+
+---
+
+## Decision 16 — Evidence and Wording Clarifications (pre-Phase 2 tidy-up)
+
+**Date:** October 29, 2026
+**Context:** The Decision 14 and 15 regression runs surfaced ambiguities in how the Screen reads evidence. Jamie directed that they be fixed before Phase 2.
+
+**Jamie's rulings:**
+
+| # | Question | Ruling |
+|---|---|---|
+| 1 | D5 traction at PARTIAL confidence | Cap at 4 |
+| 2 | Documents executed by a third party | Count as outside evidence, for the fact they prove |
+| 3 | Stale-materials threshold | 90 days |
+| 4 | Decision 14 wording carry-overs | Fix in this batch |
+
+**What changed** (`gates-and-flags-techgroup.md` v3.4 → v3.5, Calibrated Rules 29–33; `screen.md`; `screen-scout-conversion-rubric.md` v1.0.2 → v1.0.3):
+1. **Third-party documents (rule 29).**
+   - A countersigned contract, attestation letter, or signed lead term sheet is outside evidence of what it proves, even when supplied in the data room.
+   - A countersigned reseller contract verifies the contract; it does not verify revenue from it.
+   - Company-authored material stays a claim.
+2. **Stale-materials check (rule 30).**
+   - Applies when the newest pitch material is more than 90 days older than the screen.
+   - The report prints "(!) Materials dated [month]" and records the date in the appendix.
+   - Dated milestones that have already passed become questions, never evidence.
+   - The check never changes a tier by itself.
+3. **Not yet a C-corp (rule 31).** The Entity gate passes. The report prints a (!) "Not yet a C-corp — conversion needed before NWA invests" flag and adds a question or re-engage item.
+4. **Definitions (rule 32).**
+   - "Three searches" means three search topics.
+   - "Named founder" means anyone called a founder or co-founder, plus the CEO and CTO, plus any 10%+ holder with a current or past operating role.
+   - Wrapper reads N/A only when the product is confirmed not to use an LLM, and "not stated" when that is unknown. Neither counts as a negative.
+   - Track B applies only when the company itself ships the hardware.
+   - Protect Alpha N/A splits into "confirmed" ("Doesn't use outside AI") and "not stated" ("AI use not stated", which also raises a question).
+5. **Rubric D5.** Revenue at PARTIAL confidence caps at 4.
+6. **Moat Sufficiency wording.** The text now states that both prongs apply independently: naming an asset type is necessary for MODERATE but not sufficient when two or more negatives stack. This records the Decision 14 acceptance; it does not change behaviour.
+
+**Regression (v3.5, fresh blind sessions, same inputs):**
+
+| Deal | Result |
+|---|---|
+| Captain Compliance | WATCH / MEDIUM |
+| Summit Technology Laboratory | WATCH / MEDIUM |
+| Synergist Technology | WATCH / MEDIUM |
+
+- **All calls held.**
+- **The new rules fired as designed:**
+  - Rule 29 verified the CDW and Panasonic contracts and the hosting attestation as documents, not as revenue or authorization.
+  - Rule 30 fired on all three deals (6–8 months stale), and expired milestones became questions.
+  - Rule 31 flagged the Synergist LLC.
+  - Rule 32 applied the definitions.
+- **Run-to-run variation on non-adverse tiers** (STL Disruption INCREMENTAL↔DIFFERENTIATED; Synergist Market STRONG↔MODERATE) moved no call. It is consistent with the still-open Market boundary noted in Decision 12.
+- **Rubric v1.0.3:** every dimension resolved.
+- **No re-run for the two final fixes** (Wrapper "not stated", 10%-holder founder rule). Both were added after the regression from its findings. Neither can create an adverse vote: they only remove a negative tag or widen the search.
+
+**Ruling added October 30, 2026 (Calibrated Rule 33):** press or interviews repeating founder-reported figures count as **PARTIAL** (the claim is on the record) and never as VERIFIED. They never qualify traction for the lift on their own; VERIFIED requires a source with an independent basis. Jamie agreed with the analyst recommendation: the figure's origin is still the founder, the traction lift is the one mechanism that can offset an adverse signal, and Decision 10 (RootCause.ai) is the precedent. No regression impact — all three v3.5 runs already applied this reading (Captain Compliance stays WATCH/MEDIUM).
+
+**Logged, not changed:**
+- How to date "newest material" when no deck is present.
+- Whether the gate's TAM test reads the category or the company's slice of it.
+
+Files: `gates-and-flags-techgroup.md` (v3.5), `screen.md`, `screen-scout-conversion-rubric.md` (v1.0.3), `CLAUDE.md`, `nwai-techgroup-pipeline-architecture.md` (v0.50.0). Plugin v3.7.0. No MCP changes — no reinstall required.
+
+---
+
 *Last updated: October 29, 2026 | Maintained by Jamie, TechGroup Co-Chair*
 *This log is a living document — add entries when key decisions are made in session.*

@@ -1,4 +1,4 @@
-# NWAi TechGroup — Six-Signal Screener Reference v3.3
+# NWAi TechGroup — Six-Signal Screener Reference v3.5
 
 > **This is the self-contained screening reference for NWAi TechGroup.** It defines the
 > complete Screen-stage judgment model: hard gates, the NWA Filter evidence-rigor tests,
@@ -56,6 +56,21 @@
 > reverse. The Agent-Era bottom-tier boundary is now addressed at Screen; Market's
 > remains open. See `pipeline-decisions-log.md` Decision 14.
 >
+> **v3.4 (October 2026) — Two-layer report (Phase 1b):** presentation only. The Triage
+> Report now prints a plain-language member read (ported from the coordinator screener
+> V15) plus a Deal-Team Appendix carrying the internal labels, confidence tags, and
+> evidence tags for Scout intake. No judgment rule, weight, or verdict definition
+> changed. See the Printed vocabulary note under The Six Signals and
+> `pipeline-decisions-log.md` Decision 15.
+>
+> **v3.5 (October 2026) — Evidence and wording clarifications (Decision 16):** third-party
+> documents count as outside evidence for the fact they prove; stale-materials check
+> (90 days); a US entity that is not yet a C-corp is a yellow flag, never a gate fail;
+> Protect Alpha N/A split into confirmed vs. not stated; Wrapper N/A for products that
+> call no LLM; "three searches" means three search topics; "named founder" defined; Track
+> B only when the company itself ships the hardware. Found in the Decision 14–15
+> regression runs.
+>
 > **Scope:** TechGroup only. Other NWAi groups author their own frameworks — see
 > `gates-and-flags-universal-guide.md` for the architecture every group playbook
 > follows. Numeric scoring in the TechGroup pipeline begins at Scout
@@ -88,8 +103,9 @@ at screen depth.
 ## Layer 1 — Hard Gates (Binary, Immediate Kill)
 
 Apply all three gates first. A single FAIL = DECLINE — produce the Verdict Block (with
-kill reason), Company Context (1–2 sentences), the Gates table, and the report footer,
-then stop.
+kill reason), a cut-down What They Do (1–2 sentences + the two Stage lines), the Gates
+table, the report footer, and the Deal-Team Appendix (gates and Track) — then stop (see
+`/screen` Step 8).
 
 **Gating rule: mark FAIL only on clear evidence. Silence = PASS with a Yellow Flag.
 Do not fail a deal on missing information alone.** Missing information becomes a Yellow
@@ -109,6 +125,11 @@ Flag, never a gate kill. A YELLOW PASS flows through with a flag in Risk Flags.
 - Product stage / MVP — read in Commercial Proof
 - Traction / revenue — read in Commercial Proof (pre-revenue stated honestly is a signal,
   never a kill on its own)
+- **US entity that is not yet a C-corp** (an LLC, S-corp, or similar) — the Entity gate
+  still PASSES (the entity is US-investable). NWA invests in C-corps only, so print a
+  **(!) "Not yet a C-corp — conversion needed before NWA invests"** Risk Flag, record it
+  in the Deal-Team Appendix, and carry it as a Live Pitch question / re-engage item.
+  Conversion is routine; never a gate fail, never a conviction pull.
 
 ---
 
@@ -119,7 +140,7 @@ Assign every Tech-tagged deal to one track before producing the Six Signals. Use
 - **Track A — Software / AI / Cloud**: Primary value delivery is software, data, algorithms, or AI inference. Revenue model is SaaS, API, licensing, or marketplace. Examples: enterprise SaaS, AI workflow tools, data platforms, fintech software, vertical AI.
 - **Track B — Hardware / Robotics / Physical Tech**: Physical product is a primary deliverable. Revenue includes hardware unit sales, manufacturing, or embedded systems. Examples: robotics, semiconductors/chips, physical AI devices, industrial automation, defense hardware.
 
-Mixed plays (e.g., software-enabled hardware) should default to Track B if a physical product is necessary for the product to function.
+Mixed plays (e.g., software-enabled hardware) default to Track B when **the company itself sells, ships, or manufactures** a physical product that is necessary for its product to function. When the company sells only software and the customer supplies the hardware it runs on (e.g., calibration software for the customer's own projectors and cameras), assign **Track A**.
 
 **The track swaps the evidence tags in Signal 4 (Moat) and the Commercial Proof emphasis
 — not the report structure.** The Six Signals heading names the assigned track.
@@ -152,7 +173,8 @@ with access to relevant public data replicate 80% of this product's core functio
 result prints as the Moat tag `LLM Ingestion [YES / PARTIAL / NO]` and drives the AI
 Wrapper Assessment classification (below). YES is strong evidence for a WEAK Moat verdict
 absent an explicit moat justification. For non-software deals: `LLM Ingestion: N/A —
-non-software`. *This test reads outside-in replicability from public data; Protect Alpha
+non-software`. For software that does not call a large language model, the Wrapper tag
+is `Wrapper N/A — no LLM` (see AI Wrapper Assessment). *This test reads outside-in replicability from public data; Protect Alpha
 (Signal 6) reads inside-out leakage of the non-public edge — read each once, in its own
 row.*
 
@@ -178,6 +200,24 @@ Every signal carries a confidence tag:
 
 - **VERIFIED** — load-bearing elements confirmed via the 3 web searches or an
   authoritative source (note the source parenthetically where a verdict hinges on it)
+
+**Third-party documents count as outside evidence — for the fact they prove.** A document
+executed or issued by a named third party (a contract countersigned by the counterparty,
+an auditor's or hosting provider's attestation letter, a signed term sheet from a named
+lead) counts as outside confirmation **of what that document itself establishes**, even
+when the company supplied it in the data room: a countersigned reseller contract confirms
+the contract exists and its terms — not that revenue flows from it. Company-authored
+material (decks, forms, summaries, forecasts, scans of the company's own records)
+remains a company claim.
+
+**Press repeating founder figures is PARTIAL, never VERIFIED.** An article or interview
+that reports figures the founder supplied (ARR, growth, customer counts, retention) puts
+the claim on the record, so it lifts the element above a bare deck claim to PARTIAL. But
+its origin is still the founder, so it never makes the element VERIFIED — and never
+qualifies traction for the traction lift on its own. VERIFIED requires a source with an
+independent basis: a customer or partner announcement, a filing, a priced round whose
+investor did diligence, reporting where the journalist cites their own data, or records
+seen in diligence (Jamie's ruling, Decision 16).
 - **PARTIAL** — some elements verified; at least one load-bearing element is not
 - **UNVERIFIED** — deck-claim only
 
@@ -194,6 +234,15 @@ the same mental motion, the tag is decorative.
 ---
 
 ## The Six Signals
+
+> **Printed vocabulary (v3.4, Decision 15).** The labels, tiers, and tags in this file are
+> the screener's **internal vocabulary** — they govern judgment exactly as written. The
+> Triage Report prints them in two layers (`/screen` Step 8): the **member read** prints
+> plain-language renderings (plain signal names, stars, fixed verdict words, a Source
+> column), and the **Deal-Team Appendix** prints the internal labels, confidence tags, and
+> evidence tags that `/scout` and the conversion rubric read. Wherever this file says a
+> label or tag "prints," it prints in the appendix; the member read carries its plain
+> rendering. Emoji markers in this file (⚠️ / ❌) print as (!) / (X).
 
 Each decision question appears exactly once. Signals print in the member read sequence —
 what is it, is it big, who's doing it, can they defend it, then the AI-era tests.
@@ -281,6 +330,10 @@ aspirational), a network effect with evidence it is operating (not just claimed)
 integration/switching-cost depth the flagged incumbents structurally lack (not one they
 already have themselves).
 - **No such asset can be named → WEAK**, regardless of how the thesis reads in isolation.
+- **Both prongs apply independently.** Even when an asset *type* on the list can be named
+  (e.g., filed or pending IP), two or more stacked negative tags mean that asset has not
+  been shown to survive the flagged Goliath(s) → WEAK. Naming an asset type is necessary
+  for MODERATE, not sufficient (accepted by Jamie, Decision 14).
   Two or more of {no IP, Wrapper MODERATE/HIGH, Goliath FLAGGED, Memory Lock-in
   thesis-only/absent} stacking together IS the absence of an affirmative asset — the
   compounding is the finding, not a coincidence to explain away.
@@ -305,10 +358,12 @@ read as the conclusion that follows from it. Never output bare rubric labels, ti
 names, or framework shorthand as the explanation. Labels are verdicts; the basis is
 evidence.
 
-**Brevity caps (binding):** signal basis 1–2 plain sentences, ≤ 40 words (Signal 3 Team:
-≤ 60 words — it carries the fit, commitment, and origin/track-record reads; Signal 4
-Moat: ≤ 50 words — it carries its evidence tags); Commercial Proof: one line; gate
-findings: one line each.
+**Brevity caps (binding, member read):** signal basis 1–2 plain sentences, ≤ 40 words
+(Signal 4 Moat included — its evidence tags print in the Deal-Team Appendix, and the
+basis names any big competitor that already does this); Signal 3 Team: four lines, ≤ 20
+words each (Committed · Product Fit · Market Fit · Track Record); Commercial Proof: one
+plain "Revenue so far" line (the full line prints in the appendix); gate findings: one
+line each.
 
 ---
 
@@ -385,7 +440,12 @@ Posture tests *whether the problem itself survives the shift*.
 (`references/alpha-ai-sovereignty-framework.md`), as evolved by the Claude V13 back-test
 from a bare trip-wire into a read with a printed verdict. Still routing-only.*
 
-**Verdict: KEEPS / MIXED / LEAKS / N/A** (N/A if no model supply chain). Basis: describe
+**Verdict: KEEPS / MIXED / LEAKS / N/A** (N/A if no model supply chain). Distinguish
+two N/A cases: **N/A — confirmed** (the materials or searches show the product does not
+use an outside AI model) and **N/A — not stated** (AI use is plausible but the materials
+don't say). N/A — not stated prints as "AI use not stated" in the member read and
+generates a Live Pitch question ("Does any part of the product call an outside AI model,
+and with what data?") or re-engage item. Neither case carries weight. Basis: describe
 what this company's alpha actually is (data, workflow, harness, customer trust) and where
 it flows when the product runs — then the read. Applies to Track A, and Track B where the
 product has a model supply chain.
@@ -408,7 +468,8 @@ product has a model supply chain.
 flags fire on structural conduit design or founder unawareness, never on API usage per se.
 
 **Routing only:** this read does not gate, cap, or enter the roll-up count (calibrated
-rule 16). It prints on its own line in the Verdict Block roll-up, surfaces in Risk Flags,
+rule 16). Its read prints in the Deal-Team Appendix (never in the member-read "Signals
+against the deal" line); the member read shows it in the summary table and its block, it surfaces in Risk Flags,
 and (when LEAKS or MIXED) generates a Live Pitch question on ADVANCE. Scout scores
 Alpha-AI Sovereignty fresh and fully at Q8.
 
@@ -667,7 +728,17 @@ Rules:
 ## AI Wrapper Assessment (Track A Deals Only)
 
 For all Track A deals, run this assessment before rendering the Moat verdict. The result
-prints as the `Wrapper [HIGH/MOD/LOW]` evidence tag in Signal 4.
+prints as the `Wrapper [HIGH/MOD/LOW/N/A]` evidence tag in Signal 4.
+
+**N/A — no LLM:** the product does not call a large language model or other foundation
+model at all (conventional software), confirmed by the materials or searches. Print
+`Wrapper N/A — no LLM`; replicability is then read from LLM Ingestion and the Goliath
+Test alone.
+
+**Not stated:** whether the product calls an LLM is unknown. Print `Wrapper not stated`
+and make it a Live Pitch question or re-engage item (pairs with Protect Alpha "N/A — not
+stated"). Neither N/A nor "not stated" counts as a negative tag in the Moat Sufficiency
+stack — only MODERATE or HIGH on affirmative evidence do.
 
 **HIGH Wrapper Risk:** Core product is primarily prompt engineering or API orchestration
 on top of OpenAI/Anthropic/etc. LLM Ingestion Test = YES (a customized frontier-model
@@ -795,12 +866,37 @@ where each was found and validated in sandbox test runs. See Decision 14.*
     conflicting sources are stated as a conflict, never resolved by picking one (V15
     Rev A — Reverent run 2).
 
+*Rules 29–32 were added in v3.5 from the Decision 14–15 regression runs. See Decision 16.*
+
+29. Third-party documents: a document executed or issued by a named third party
+    (countersigned contract, attestation letter, signed lead term sheet) is outside
+    evidence for the fact it proves, even when supplied in the data room; company-authored
+    material stays a company claim (Synergist CDW contract).
+30. Stale materials: newest pitch material more than 90 days before the screen date →
+    print the materials date; dated milestones already past are open questions, never
+    evidence (STL Panasonic trial / NPI-AV LOI).
+31. A US entity that is not yet a C-corp passes the Entity gate and prints a (!) "Not yet a
+    C-corp" flag + Live Pitch / re-engage item — never a gate fail or conviction pull
+    (Synergist LLC).
+32. Definitions: "three searches" = three search topics (founder query set runs inside
+    Search 2); "named founder" = anyone called founder/co-founder in the materials or cap
+    table, plus the CEO and CTO; Wrapper N/A for software confirmed to call no LLM and "not stated" when
+    unknown (neither is a negative tag); named founders include 10%+ holders with an
+    operating role; Track B only when the company itself ships the hardware; Protect Alpha
+    N/A is either "confirmed" or "not stated" (the latter prints "AI use not stated" and
+    generates a question) (Captain Compliance, STL, Synergist runs).
+33. Press or interviews repeating founder-reported figures = PARTIAL (on the record), never
+    VERIFIED, and never alone qualifies traction for the lift; VERIFIED requires a source
+    with an independent basis (Captain Compliance, Refresh Miami ARR — Jamie's ruling).
+
 ---
 
 ## Research Protocol
 
-Deploy WebSearch on exactly **three searches** before producing any report. Do not exceed
-this at Screen stage — save full research for Scout and Diligence agents. **Run them
+Run exactly **three searches** — three search *topics* — before producing any report:
+market, founders/team, and competitors. Each topic may take several queries (Search 2
+runs the fixed founder query set below for every named founder); do not add topics
+beyond these three at Screen stage — save full research for Scout and Diligence agents. **Run them
 silently — never announce or narrate the research; the first output of the run is the
 report title itself.**
 
@@ -810,7 +906,13 @@ market sizing references and compare against the founder TAM claim; a large unex
 gap is a coherence/confidence finding.
 
 **Search 2 — Founder/team validation (with LinkedIn commitment check)**
-For each named founder, run the fixed query set below in full — not just until something
+**Named founders** = everyone the pitch materials, Dealum form, or cap table call a founder
+or co-founder, **plus the CEO and CTO** whatever their title history, **plus any individual
+holding 10% or more of the company who holds or held an operating role** there (e.g., a
+former CTO or a "special projects" executive who is a major holder). Passive holders and
+advisors are not included. Other executives
+(CRO, COO, VP Sales) are not run through the full query set unless they are also named
+founders. For each named founder, run the fixed query set below in full — not just until something
 turns up. Search retrieval is non-deterministic; running the full set (not stopping at
 the first hit) is what keeps independent screens of the same company convergent:
 - `"[Full Name]" LinkedIn`
@@ -828,6 +930,17 @@ search directly enables the Goliath Test tag.
 
 All other research (patent searches, regulatory landscape, customer references, technical
 stack depth) is Scout- and Diligence-stage work. Do not deploy research agents at Screen.
+
+**Stale materials check.** Note the date of the newest pitch material (deck, form, data
+room document). When it is **more than 90 days** before the screen date:
+- print one line under Stage in the member read: **(!) Materials dated [Month YYYY] —
+  [N] months before this screen**, and record the date in the Deal-Team Appendix;
+- treat any dated milestone whose date has already passed (a trial end date, an LOI
+  expiry, a forecast quarter) as an **open question, not a fact** — it becomes a Live
+  Pitch question or re-engage item ("Did the Panasonic trial convert?"), never evidence
+  for or against a signal;
+- current web-search findings still count normally.
+The stale check never changes a verdict tier by itself.
 
 ### Claim Discipline
 
@@ -893,7 +1006,9 @@ B Moat evidence tag at Screen; detailed TRL application happens at Scout and Dil
 
 ---
 
-*NWAi TechGroup Six-Signal Screener Reference | v3.3 | October 2026*
+*NWAi TechGroup Six-Signal Screener Reference | v3.5 | October 2026*
+*v3.5 (October 2026): Evidence and wording clarifications from the Decision 14–15 regression runs — third-party documents as outside evidence, 90-day stale-materials check, non-C-corp yellow flag, Protect Alpha N/A confirmed vs. not stated, Wrapper N/A, search-topic count, named-founder definition, Track B hardware rule. See `pipeline-decisions-log.md` Decision 16.*
+*v3.4 (October 2026): Two-layer report (Phase 1b) — plain-language member read ported from the coordinator screener V15 + Deal-Team Appendix for Scout intake. Presentation only; no judgment change. See `pipeline-decisions-log.md` Decision 15.*
 *v3.3 (October 2026): V15 judgment re-sync (Phase 1a) — ports the coordinator screener's tested rule evolutions: FRAGILE revenue tier + Thin Commercial Proof cap (V14); Team rated on three lines, lowest sets the rating, Market Fit WEAK as an adverse path, track record unrated (V15); Agent-Era judged on the product as built (V15 Rev A, Complete Contract Cycle); claim discipline extended to every fact (V15 Rev A, Reverent). Calibrated Rules 23–28 added; 10, 11, 12, 21 amended. No weight, gate, compound rule, Moat Sufficiency, Protect Alpha, or Ask-at-Scout change. Pipeline is now the source of truth; the coordinator screener is rebuilt from it. See `pipeline-decisions-log.md` Decision 14.*
 *v3.2 (August 2026): Ask-at-Scout Precedence Check — a fourth live Constellation X screen on the v3.1 fixes printed ADVANCE despite its own roll-up naming Moat adverse, because Ask-at-Scout's "no other signal adverse" precondition was never mechanically checked before its shortcut fired on the Team gap. Adds Calibrated Rule 8a: compute the full roll-up first; Ask-at-Scout applies only when it shows zero adverse signals. Correct verdict for the triggering case: WATCH. See `docs/reference/ClaudeProjects/Claude-V13-Investor-Nuance-NWA-TechGroup-AI-Screener.md` (Amendment 3).*
 *v3.1 (August 2026): Rubric Fidelity Amendment — ported from the Claude V13 sandbox after a cross-session Constellation X screen produced a DECLINE/ADVANCE divergence and a follow-up pipeline comparison surfaced a second divergence on Moat. Adds calibrated rules 19–22: Source-Tier Rule + Identity-Match Standard (Signal 3), Confidence-Gated Compound Rule, Moat Sufficiency Test (Signal 4); plus the fixed coherence diff-list and fixed founder-identity query set. No weight or verdict-tier definition changed. See `docs/reference/ClaudeProjects/Claude-V13-Investor-Nuance-NWA-TechGroup-AI-Screener.md` and `Rubric_Fidelity_Addendum_v1.md`.*
