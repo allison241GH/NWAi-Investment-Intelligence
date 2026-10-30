@@ -126,6 +126,23 @@ For each relevant incumbent:
 - Their current position in this space (building / watching / acquired a player)
 - Threat level: LOW (will acquire) / MEDIUM (may build) / HIGH (actively competing)
 - Signal: Any CEO statements, conference talks, earnings call mentions, R&D disclosures?
+- **Data-owner exposure (headless incumbent):** does this incumbent own data the company's
+  product depends on (its system of record)? If so, does it expose that data to agents — public
+  APIs, MCP servers, an agent platform or marketplace? Could a general-purpose agent working on
+  that data do the company's core job without the company's product? Search: "[incumbent] MCP
+  server", "[incumbent] agent platform", "[incumbent] API [data type]", "[incumbent] headless".
+
+Headless-incumbent read across all incumbents: **EXPOSED** (data exposed and the job is
+agent-completable now) / **PARTIAL** (data exposed but the job still needs the company's layer,
+or exposure is announced, not shipped) / **CLEAR** (the data owner does not expose it, or the
+company owns its own data) / **N/A** (the product runs on no one else's data). This feeds Scout
+Q5 only — not the Agent-Era read (Decision 19). Rules for the read:
+- **Data owner** = the firm whose system holds the data the job runs on (e.g., the cloud
+  platform that stores the traces), not the customer who pushes data to the company.
+- **Shipped counts, including public preview** a buyer can use today — note the preview status.
+  Announced-only is PARTIAL.
+- **Read the company's core segment** (e.g., federal vs. commercial cloud). Note other segments
+  in the explanation; never average across them.
 
 This section also feeds the exit assessment — incumbents who are watching / likely to acquire
 are the most valuable exit pathway names.
@@ -250,6 +267,7 @@ Key insight: [Is the status quo "good enough" for most customers, or is there cl
 
 ── STRATEGIC INCUMBENTS ──
 [Incumbent table with threat level]
+Headless incumbent: EXPOSED / PARTIAL / CLEAR / N/A — [which data owner, what it exposes, and whether a general agent on it does the core job]
 Likely acquirers: [Name the top 2-3 most plausible exit buyers]
 
 ── POSITIONING ──

@@ -76,6 +76,8 @@ Questions to answer:
 - How does the company respond when presented with competitors they haven't mentioned?
 - What risks exist that competitors are working on a similar solution and will get there first?
 - What is the competitive moat? (Reference AI Moats Framework)
+- Headless incumbent (Decision 19): does the product depend on data held in another firm's system of record? Ask the founder: *"Are you building agents your data source will, or should, build itself?"* If that firm opened its data to a general-purpose agent, what could the agent still not do?
+- 90-day check: could a motivated team with frontier AI tools rebuild most of the core in 90 days — and what would it still lack?
 
 ---
 

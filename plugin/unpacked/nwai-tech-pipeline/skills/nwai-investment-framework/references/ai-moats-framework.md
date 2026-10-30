@@ -154,9 +154,15 @@ When writing the Technology & Moat section of an investment memo:
    | Threat Actor | Could Replicate In | Barrier |
    |---|---|---|
    | Open-source community (e.g., PyRIT fork) | ___ days/months | ___ |
-   | Funded startup competitor | ___ months | ___ |
+   | Motivated team using frontier AI tools (funded startup) | ___ months | ___ |
    | Big Tech platform (MSFT, Google, AWS) | ___ months | ___ |
    | LLM provider (OpenAI, Anthropic) as native feature | ___ months | ___ |
+
+   *Motivated-team row — the 90-day check (Decision 19):* ask *"Could this team rebuild most of
+   the core in 90 days with frontier AI tools — and what would it still lack?"* Fill the
+   timeframe from the first half; put the second half — what they would still lack — in the
+   Barrier cell. That answer is the moat statement. No new flag: a result under 6 months
+   already fires the Yellow Flag below.
 
    *LLM-provider row — alpha-leakage annotation (July 2026):* when the company's own traffic
    transits that provider (Alpha-AI Sovereignty Tier 4 D1 finding), note it in this row's Barrier

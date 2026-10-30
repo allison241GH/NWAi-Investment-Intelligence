@@ -160,14 +160,22 @@ Three required outputs before scoring:
 - **Core use case:** [one sentence — what job is this product hired to do?]
 - **Functional equivalents:** [list of alternatives that solve the same job differently]
 - **Emerging displacement:** [what technology or player could make this obsolete, and when?]
+- **Headless incumbent:** EXPOSED / PARTIAL / CLEAR / N/A — [does the company depend on data
+  held in another firm's system of record; does that firm expose it to agents (API, MCP, an
+  agent platform); could a general-purpose agent working on that data do the core job? Read
+  the company's core segment; N/A when the product runs on no one else's data]. *Ron's question: "Are you building agents
+  your data source will, or should, build itself?"*
+
+*No double count:* Q7 (Agent-Era) asks whether agents absorb how this product delivers value;
+the headless read asks who owns the data the job runs on. Read it here only (Decision 19).
 
 | Score | Criteria |
 |-------|---------|
 | 5 | No credible adjacent or emerging threat within 5 years; moat is durable against substitution |
 | 4 | Adjacent threats exist but require substantial capital or time to enter |
 | 3 | Adjacent threat possible within 3 years; moat needs active development to hold |
-| 2 | Well-resourced adjacent player (Big Tech) could ship a comparable within 18 months |
-| 1 | Displacement risk imminent; hyperscaler or incumbent already shipping a functional equivalent |
+| 2 | Well-resourced adjacent player (Big Tech) could ship a comparable within 18 months — or a data owner already exposes its data to agents and the core job is plausibly agent-completable within 18 months |
+| 1 | Displacement risk imminent; hyperscaler or incumbent already shipping a functional equivalent — or a general-purpose agent working on the incumbent's exposed data already does the core job |
 | 0 | Direct Big Tech competition already in market with superior resources and distribution |
 
 ### Q6: Macro Tailwind

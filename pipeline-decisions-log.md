@@ -804,5 +804,53 @@ Files: `diligence-scoring-rubrics.md`, `diligence.md`, `scout-questions.md`, `sc
 
 ---
 
+## Decision 19 — Phase 3a Part 2: Headless-Incumbent Test + 90-Day Copy Check
+
+**Date:** October 30, 2026
+**Context:** Phase 3 item B. Decision 17 kept both tests out of the Screen, because three searches can't answer them. Scout and Diligence can, because they have research agents. Under the Decision 18 principle, both attach to existing slots: no new points, rows, or flags.
+
+**Jamie's rulings:**
+1. **Anchor clauses added at Scout Q5 scores 2 and 1.** This is a change to what earns the points; the scale is unchanged.
+2. **Research home is the competitive-positioning-analyst**, which already researches incumbents. The technology-analyst proposed in the reconciliation note is not used.
+3. **The 90-day test sharpens an existing Replicability Matrix row.** The framework forbids a fifth row, and the existing under-6-month Yellow Flag already covers a 90-day result.
+
+**The gap:** every incumbent test asked whether a big player could *build* a competing product. None asked Ron's question. Does an incumbent own the *data* the product runs on? If it exposes that data to agents (API, MCP, an agent platform), a general-purpose agent can do the job with no product built.
+
+**What changed:**
+- **`scout-questions.md` Q5:**
+  - A fourth required read: **Headless incumbent: EXPOSED / PARTIAL / CLEAR / N/A**, for the company's core segment, with Ron's question verbatim.
+  - Score 2 adds "or a data owner already exposes its data to agents and the core job is plausibly agent-completable within 18 months".
+  - Score 1 adds "or a general-purpose agent working on the incumbent's exposed data already does the core job".
+  - A no-double-count line: Q7 Agent-Era asks whether agents absorb how the product delivers value; the headless read asks who owns the data. It is read in Q5 only.
+- **`scout.md`:** the Q5 instruction includes the headless read.
+- **`competitive-positioning-analyst.md` Section 3:**
+  - Data-owner exposure is assessed for each incumbent.
+  - A cross-incumbent headless read (EXPOSED / PARTIAL / CLEAR / N/A), with three read rules:
+    - the data owner is the firm whose system holds the data, not the customer who pushes it;
+    - a shipped public preview counts, and announced-only is PARTIAL;
+    - read the company's core segment and never average across segments.
+  - A Headless incumbent output line.
+- **`ai-moats-framework.md` Replicability Matrix:**
+  - "Funded startup competitor" becomes "Motivated team using frontier AI tools (funded startup)".
+  - The row carries the 90-day check: *"Could this team rebuild most of the core in 90 days with frontier AI tools — and what would it still lack?"* What they would still lack goes in the Barrier cell; it is the moat statement.
+- **`dd-checklist.md` Folder 4:** Ron's question and the 90-day check.
+
+**Validation.** A live run of the revised competitive-positioning-analyst on Synergist (fresh session, web research plus three archived data-room files). The headless read came out **PARTIAL**:
+- **The data owner is Microsoft.** Foundry holds the model traces; AFFIRM receives them only by customer push.
+- **Commercial Azure:** Microsoft exposes the data through the Foundry MCP Server (public preview; continuous and trace evaluation tools), so a general agent can already do the monitoring job there.
+- **Synergist's core federal segment:** Azure Government lists Foundry Evaluations as unavailable, and the federal compliance half of the job (OMB inventory, audit evidence, independent separation of duties) isn't produced by a general agent.
+
+The run separated the headless threat (a customer's or CDW's own agent calls Microsoft's tools and bypasses AFFIRM, with no Microsoft product needed) from the build threat (Microsoft or ServiceNow shipping a competing product). It found that Synergist's federal edge is a timer set by Microsoft's Azure Government roadmap, not a moat. That is consistent with the back-test's Moat WEAK read. Three wording gaps the run surfaced (data-owner definition, preview status, segment split) were fixed in this batch.
+
+**Logged, not changed** (pre-existing in the competitive-positioning-analyst):
+- The incumbent threat scale mixes likelihood of acquisition with threat level ("LOW (will acquire)"), so channel partners and investors in rivals don't fit cleanly.
+- The Section 8 "model supply chain" trigger is unclear for governance vendors.
+
+**Next:** Phase 3b, model-cost economics in the pricing, forecasting, and venture analysts.
+
+Files: `scout-questions.md`, `scout.md`, `competitive-positioning-analyst.md`, `ai-moats-framework.md`, `dd-checklist.md`, `CLAUDE.md`, `nwai-techgroup-pipeline-architecture.md` (v0.53.0). Plugin v3.10.0. No MCP changes — no reinstall required.
+
+---
+
 *Last updated: October 29, 2026 | Maintained by Jamie, TechGroup Co-Chair*
 *This log is a living document — add entries when key decisions are made in session.*
