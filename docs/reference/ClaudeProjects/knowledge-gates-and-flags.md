@@ -21,7 +21,7 @@
 >   Team source-tier/identity-match gap fixed directly in V13) to a cross-session
 >   verdict divergence on a real screen. See the matching amendment note in
 >   `Claude-V13-Investor-Nuance-NWA-TechGroup-AI-Screener.md` and
->   `Rubric_Fidelity_Addendum_v1.md` for the incident this responds to.
+>   Decision 12 in the pipeline decisions log (the original addendum was not retained) for the incident this responds to.
 >   **Preserved:** gate criteria, Track A/B determination, the three evidence
 >   tests (Goliath / LLM Ingestion / Revenue Quality) as tag-feeding definitions,
 >   TRL scale, hardware domain facts, research query templates.
