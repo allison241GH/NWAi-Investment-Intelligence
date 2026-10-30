@@ -1,4 +1,4 @@
-# NWAi TechGroup — Six-Signal Screener Reference v3.6
+# NWAi TechGroup — Six-Signal Screener Reference v3.7
 
 > **This is the self-contained screening reference for NWAi TechGroup.** It defines the
 > complete Screen-stage judgment model: hard gates, the NWA Filter evidence-rigor tests,
@@ -79,6 +79,15 @@
 > deferred to Scout and Diligence (Phase 3). Also clarifies the HIGH conviction cap: only
 > a gap in one of the HIGH conditions caps at MEDIUM; a flagged big competitor or a
 > routine Live Pitch question does not by itself block HIGH.
+>
+> **v3.7 (October 2026) — Hardware evidence standards + marker (Decision 22):** three
+> Track B evidence standards that had lived only in the coordinator screener's knowledge
+> file are adopted here — the Hardware Last Mile standard (95%+ production reliability),
+> the 50%+ gross-margin path, and TRL 7 as the reference point for a Track B Moat read.
+> All three are evidence for the Track B Moat tags and Live Pitch questions — never, by
+> themselves, an adverse vote. The uncorroborated-claim marker prints "(unconfirmed)"
+> (was "(unverified)"), so the member read no longer prints a word it forbids. The
+> coordinator screener V16 is rebuilt from this version (Phase 5).
 >
 > **Scope:** TechGroup only. Other NWAi groups author their own frameworks — see
 > `gates-and-flags-universal-guide.md` for the architecture every group playbook
@@ -232,7 +241,8 @@ seen in diligence (Jamie's ruling, Decision 16).
 
 **Mechanical rule:** an UNVERIFIED signal caps at its middle verdict (MIXED / MODERATE /
 INCREMENTAL-equivalent) — never the top tier. PARTIAL caps the *unverified element*, not
-the whole signal. Note unverified claims inline as "unverified."
+the whole signal. Note uncorroborated third-party claims inline as "(unconfirmed)" and
+company assertions as "(company claim)" (see Claim Discipline).
 
 **Ordering requirement.** Assign the confidence tag *before* selecting the verdict tier.
 Confidence should be a mechanical readout of source tier and identity-match status (see
@@ -331,6 +341,21 @@ own line:
   Wrapper [HIGH/MOD/LOW] · Memory Lock-in [present/thesis-only/absent] ·
   Stack [FOUNDATIONAL/APPLICATION/WRAPPER]
 - **Track B:** Goliath [·] · TRL [n] · IP [·] · Unit economics [·] · Memory Lock-in [·]
+
+**Track B evidence standards (Decision 22).** Three reference standards for reading the
+Track B tags — evidence, not caps:
+- **Hardware Last Mile.** A working prototype or demo is not evidence of production
+  readiness. Look for 95%+ production reliability reached through non-obvious
+  engineering before treating a hardware claim as strong. A prototype-only claim reads
+  as a head start in time, not a moat asset, and becomes a Live Pitch question.
+- **Margin path (Unit economics tag).** The bar is a credible path to 50%+ gross margin at
+  scale. No visible path is evidence against a STRONG Moat read and a Live Pitch question
+  (BOM / margin path). At Screen it never, by itself, makes Moat WEAK or counts as an
+  adverse vote; Scout and Diligence test it properly.
+- **TRL 7 reference.** TRL 5 remains NWAi's minimum. TRL 7 (system prototype in an
+  operational environment) is the level a Track B Moat read is measured against: below
+  TRL 7, the physical build has not yet been shown to survive contact with real
+  conditions, so it supports at most a nascent element, not STRONG.
 
 **Moat Sufficiency Test (WEAK vs. MODERATE boundary).** Before rendering the Moat
 verdict, name the single affirmative asset — not merely the absence of a negative — that
@@ -887,7 +912,7 @@ where each was found and validated in sandbox test runs. See Decision 14.*
     never asks who wins the demand (that is Moat); mixed reads resolve to the weaker,
     product-level posture (V15 Rev A — Complete Contract Cycle
     regression, where a hedged middle read flipped DECLINE→WATCH).
-28. Claim discipline: single-source and aggregator claims are marked (unverified)
+28. Claim discipline: single-source and aggregator claims are marked (unconfirmed)
     everywhere they appear on the page; company assertions are marked (company claim);
     conflicting sources are stated as a conflict, never resolved by picking one (V15
     Rev A — Reverent run 2).
@@ -924,6 +949,16 @@ patent fix). See Decision 17.*
     element; "no IP" is not a Track A negative tag. Domain knowledge is Team evidence.
     Track B unchanged: filed or pending IP qualifies and "no IP" is a negative tag
     (Option 5 thesis; STL UCI patent licence, BleedIO pending patents).
+
+*Rule 35 was added in v3.7 (Decision 22), adopting hardware evidence standards from the
+coordinator screener's knowledge file.*
+
+35. Track B evidence standards: Hardware Last Mile (95%+ production reliability; a
+    prototype is not production readiness), a credible 50%+ gross-margin path (Unit
+    economics), and TRL 7 as the Moat reference point (TRL 5 stays the minimum). Evidence
+    for the Track B tags and Live Pitch questions only — never, by themselves, an adverse
+    vote; below TRL 7 the build supports at most a nascent element, not STRONG
+    (synthetic matched pair — Decision 22).
 
 ---
 
@@ -982,10 +1017,10 @@ The stale check never changes a verdict tier by itself.
 
 Do not fabricate or assert claims you cannot support from the deck or the three
 searches. Mark any unconfirmed assertion inline as **(company claim)** when it comes
-from the company, or **(unverified)** when the source is a third party that could not
+from the company, or **(unconfirmed)** when the source is a third party that could not
 be corroborated.
 
-**Single-source and aggregator claims are always marked (unverified), everywhere on the
+**Single-source and aggregator claims are always marked (unconfirmed), everywhere on the
 page** — signal blocks, Team lines, Risk Flags, Pattern note, and the Verdict Block
 alike. This covers any fact resting on one Tier 2 source (data-broker and
 funding-tracker sites: RocketReach, ZoomInfo, Apollo, Crunchbase auto-pages, CB
@@ -1041,13 +1076,14 @@ B Moat evidence tag at Screen; detailed TRL application happens at Scout and Dil
 | 4 | Component validation in lab environment |
 | **5** | **Component validation in relevant environment ← NWAi minimum** |
 | 6 | Prototype demonstration in relevant environment |
-| 7 | System prototype in operational environment |
+| **7** | **System prototype in operational environment ← Track B Moat reference point (v3.7)** |
 | 8 | Actual system completed and qualified |
 | 9 | Actual system proven through mission operations |
 
 ---
 
-*NWAi TechGroup Six-Signal Screener Reference | v3.6 | October 2026*
+*NWAi TechGroup Six-Signal Screener Reference | v3.7 | October 2026*
+*v3.7 (October 2026): Track B evidence standards adopted from the coordinator screener knowledge file (Hardware Last Mile 95%+, 50%+ gross-margin path, TRL 7 Moat reference point) — evidence only, never adverse by themselves; Calibrated Rule 35. Claim marker "(unverified)" → "(unconfirmed)". Coordinator screener V16 rebuilt from this version (Phase 5). See `pipeline-decisions-log.md` Decision 22.*
 *v3.6 (October 2026): Patent fix (Option 5 integrated AI thesis, Phase 2 narrowed) — on Track A, software patents, domain knowledge, and code are head starts, not moat assets; "no IP" removed from the Track A Moat Sufficiency negative stack; Track B unchanged. Calibrated Rule 34 added, rule 22 amended. 90-day copy and headless-incumbent probes added as optional Live Pitch questions only. HIGH conviction cap clarified (narrow reading: only a gap in a HIGH condition caps at MEDIUM). See `pipeline-decisions-log.md` Decision 17.*
 *v3.5 (October 2026): Evidence and wording clarifications from the Decision 14–15 regression runs — third-party documents as outside evidence, 90-day stale-materials check, non-C-corp yellow flag, Protect Alpha N/A confirmed vs. not stated, Wrapper N/A, search-topic count, named-founder definition, Track B hardware rule. See `pipeline-decisions-log.md` Decision 16.*
 *v3.4 (October 2026): Two-layer report (Phase 1b) — plain-language member read ported from the coordinator screener V15 + Deal-Team Appendix for Scout intake. Presentation only; no judgment change. See `pipeline-decisions-log.md` Decision 15.*

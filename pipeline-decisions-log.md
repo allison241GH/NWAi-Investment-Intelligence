@@ -974,5 +974,55 @@ When either fires, flag Phase 4 to Jamie before the DD Report is finalised.
 
 ---
 
-*Last updated: October 29, 2026 | Maintained by Jamie, TechGroup Co-Chair*
+## Decision 22 — Hardware Evidence Standards + Claim Marker (Screen v3.7); Phase 5: Coordinator Screener V16 Rebuilt from the Pipeline
+
+**Date:** October 30, 2026
+**Context:** Phase 5 of the Path B re-sync (Decision 14) rebuilds the coordinator screener from the pipeline. The pre-build diff of V15 + its three knowledge files against Screen v3.6 surfaced two things the pipeline itself lacked. Jamie directed that both be adopted into the pipeline first, so V16 is built from the pipeline rather than ahead of it.
+
+**What changed in the pipeline** (`gates-and-flags-techgroup.md` v3.6 → v3.7, Calibrated Rule 35; `screen.md`):
+1. **Track B evidence standards** — adopted from the coordinator screener's `knowledge-gates-and-flags.md`, where they had lived since the V13 era but never reached the pipeline:
+   - **Hardware Last Mile:** a prototype is not production readiness; look for 95%+ production reliability reached through non-obvious engineering.
+   - **Margin path (Unit economics tag):** a credible path to 50%+ gross margin at scale. No visible path is evidence against STRONG and a Live Pitch question.
+   - **TRL 7 reference point:** TRL 5 stays the minimum; below TRL 7 the physical build supports at most a nascent moat element.
+   - **All three are evidence only — never, by themselves, an adverse vote.** The knowledge file's original margin wording ("don't meet NWAi return requirements regardless of other strengths") would have read as a Screen kill rule; it was reworded on adoption.
+2. **Claim marker "(unverified)" → "(unconfirmed)".** The pipeline printed "(unverified)" inline while the Reader Standard forbids printing "Unverified" in the member read. The coordinator screener's word is adopted. Screen only — Scout and Diligence use "unverified" descriptively and are unchanged; `/scout` does not parse the marker.
+
+**Regression — synthetic matched pair (Kestrel Line Sensing, fictional Track B company).** No real Track B deal exists on disk (STL is Track A under rule 32; BleedIO read Track A in Decision 17), so the Decision 17 method was used: two packets identical except for the hardware facts, fixed search findings, four fresh blind runs (v3.6 vs v3.7 × strong vs weak). Packet: session scratchpad (not committed).
+- **Strong:** 1,240 units in operational service; 96.4% field reliability in a countersigned utility letter; countersigned CM quote → 56% GM at volume.
+- **Weak:** 60-unit field demo (TRL 6); no reliability data; 28% GM, no margin path.
+
+| Case | v3.6 | v3.7 |
+|---|---|---|
+| Strong | ADVANCE / MEDIUM · Moat MODERATE | ADVANCE / MEDIUM · Moat MODERATE |
+| Weak | ADVANCE / MEDIUM · Moat MODERATE | ADVANCE / MEDIUM · Moat MODERATE |
+
+- **No verdict moved; no false adverse vote** — the test's main purpose. The weak company's 28% margin became a Live Pitch question and a (!) flag, not a WEAK Moat.
+- **The rule fired as designed:** v3.7 Strong checked each standard explicitly (96.4% meets 95%; credible 50%+ path; TRL 7+). v3.7 Weak named the sub-TRL-7 physical build as the nascent element only and added a "not yet proven at production scale" flag. v3.6 Weak had already flagged the margin from the Live Pitch categories, so the margin standard mostly codifies existing behaviour; the TRL 7 and Last Mile standards are the visible additions.
+- **Not exercised:** the "below TRL 7 → not STRONG" boundary — no run reached STRONG on either version. Check it on the first real Track B deal.
+- **Run-to-run variation, unrelated to the change:** the forecast-vs-actuals coherence cap fired in two of four runs; conviction was MEDIUM on all four regardless (Thin Commercial Proof cap).
+- **Back-test baseline:** CC / STL / Synergist are Track A, so v3.7 cannot touch them — WATCH/MEDIUM ×3 holds by construction (paper check).
+
+**Phase 5 — coordinator screener V16** (`docs/reference/ClaudeProjects/Claude-V16-Pipeline-Sync-NWA-TechGroup-AI-Screener.md` + the three `knowledge-*.md` files, refreshed in place; V15 kept unchanged as comparator). Rebuilt from V15's text with every pipeline rule V15 lacked:
+1. Track A head starts — software patents, domain knowledge, code are not moat assets; "no IP" off the Track A stack (rule 34). *V15 conflicted outright here.*
+2. HIGH conviction narrow reading.
+3. Press repeating founder figures = PARTIAL (rule 33).
+4. Third-party documents as outside evidence (rule 29).
+5. Wrapper N/A / not stated, neither a negative (rule 32).
+6. Track B only when the company ships the hardware (rule 32).
+7. Agent-Era clarifications: product form = value delivery and pricing, not UI; UNVERIFIED never earns RIDING; latent durable asset.
+8. FRAGILE requires product revenue.
+9. Stale materials (rule 30); not-yet-a-C-corp flag (rule 31); three search topics and the named-founder definition (rule 32); Protect Alpha N/A confirmed vs. not stated; Blue Ocean read in the Disruption basis; Moat Sufficiency two-prong wording; the two optional Live Pitch probes (90-day copy, headless incumbent); Track Record Source rule; edge-question as a re-engage item on WATCH.
+10. The v3.7 hardware standards and the "(unconfirmed)" marker.
+
+**Coordinator-only choices (Jamie):** the Deal-Team Appendix prints **on request only**; V16 is Screen-only (no .docx, Dealum, or Scout hand-off). Knowledge files: `knowledge-agent-era-readiness.md` drops the 0–15 scoring and the HELPS/HURTS/MIXED output (Scout material that contradicted the four-fixed-captions rule) and states the product-as-built rule; `knowledge-alpha-ai-sovereignty.md` gains the N/A split; `knowledge-gates-and-flags.md` matches v3.7.
+
+**V16 validation (next):** Dark Watch in a fresh V16 Project chat, compared with the pipeline Triage Report and Jamie's V15 report (both in the deal's Reports folder); any V15 difference should trace to an item above. Captain Compliance as control (baseline WATCH/MEDIUM).
+
+**Logged, not changed:** V16's pasted instruction is ~82 KB (V15 ~68 KB); if the Project rejects it, trim the self-check first.
+
+Files: `gates-and-flags-techgroup.md` (v3.7), `screen.md`, `CLAUDE.md`, `nwai-techgroup-pipeline-architecture.md` (v0.55.0), coordinator screener V16 + three knowledge files. Plugin v3.12.0. No MCP changes — no reinstall required.
+
+---
+
+*Last updated: October 30, 2026 | Maintained by Jamie, TechGroup Co-Chair*
 *This log is a living document — add entries when key decisions are made in session.*

@@ -2,6 +2,14 @@
 
 *The third always-active investing lens, alongside Structural Discontinuity and Memory Lock-in.*
 
+> **Screener knowledge file (V16, October 30 2026).** Domain context for the screener's
+> Signal 5 (AI-Agent Future). The screener instructions own every verdict mechanic — the
+> four fixed captions, the adverse definition, the compound rule. This file supplies the
+> lens's concepts only. **V16 change:** the 0–15 scoring anchors, the headline verdict
+> bands, and the HELPS / HURTS / MIXED output block were removed — they are Scout-stage
+> material and conflicted with the screener's rule that the posture is one of four fixed
+> categories with no hedged middle. The product-as-built rule is stated below.
+
 ## The Core Challenge: The Dissolving-Problem Paradox
 
 AI agents are becoming the new substrate through which problems get solved — across work, the firm, commerce, and ultimately every domain of economic and social life. The agent-first internet (bots crossed 57.5% of web traffic in mid-2026, ~1,000:1 bot:human page-loads) is only the first-visible edge of a far larger shift: the agent is becoming the predominant **actor** and predominant **consumer** of digital products, information, and transactions.
@@ -21,7 +29,7 @@ For a human, information is an *asset to act on*. For an agent, it is a *transac
 
 ## The Three Test Dimensions
 
-Each dimension is scored **0–5**. Apply both horizons: score **durable-now** (2–3 yr) *and* **visionary-for-what's-coming** (decade-out arc). Note the gap — a company that scores well now but poorly on the arc is renting its durability.
+These three dimensions are the lens's thinking tools. At Screen they are **not scored** — they inform the single posture read. (Scout scores them 0–5 each.) Consider both horizons: **durable-now** (2–3 yr) *and* **visionary-for-what's-coming** (decade-out arc) — a company that reads well now but poorly on the arc is renting its durability.
 
 ### Dimension 1: Problem Reimagination
 
@@ -90,7 +98,9 @@ Internal analytic shorthand for placing where a company stands relative to the s
 | **Enabling** | **Helps** — it sells the picks and shovels of the agent economy | Infrastructure, plumbing, verification — the rails agents run on | ✅ Often the most underwritable bet — wins no matter which application-layer companies win |
 | **Insulated** | **Neither** — agents can't touch what it does | Genuinely un-disruptable value — physical, high-trust, human-verified, locally embedded | ✅ Durable, but **stress-test the claim hard.** Most "Insulated" companies are actually Threatened. |
 
-**Most companies aren't purely one posture.** Real deals are usually mixed. Read it by where it honestly stands **today** — usually the weaker, product-level reality. Then capture in plain language: **"Could get stronger if:"** (the one concrete thing that would move it to a more durable position) and **"What to watch:"** (the milestone or signal that would confirm the move).
+**Most companies aren't purely one posture.** Real deals are usually mixed. Read it by where it honestly stands **today** — usually the weaker, product-level reality (don't let a promising-but-unbuilt strength dress a Threatened deal up as a Riding one). Then capture in plain language: **"Could get stronger if:"** (the one concrete thing that would move it to a more durable position) and **"What to watch:"** (the milestone or signal that would confirm the move).
+
+**Judge the product as built, not the underlying need.** Almost every need survives agents. The question is whether agents absorb *how this company delivers and charges for value* — its value-delivery mechanism and pricing model, not its user-interface surface. A surviving need in a product form agents absorb reads **Threatened**. **Enabling** tests the product's form: agent or machine activity must raise demand for exactly this kind of product. The posture never asks whether this company or a competitor wins the demand — that is the Defensibility read.
 
 ---
 
@@ -109,25 +119,6 @@ Reference context for how agents reshape the domain a deal operates in. Use to l
 
 ---
 
-## Scoring Anchors (0–5 per dimension)
-
-| Score | Meaning |
-|-------|---------|
-| 5 | Actively building for the reimagined problem; agents make the company *stronger*; clear durable moat |
-| 4 | Well-positioned and aware; minor exposure |
-| 3 | Partially positioned; aware of the shift but solution not yet reshaped for it |
-| 2 | Largely solving today's problem; meaningful exposure; weak or no agent-era moat |
-| 1 | Solving a problem agents are actively dissolving; no reckoning |
-| 0 | Directly in the path of dissolution with a model that cannot survive it |
-
-**Headline verdict (sum of three dimensions, 0–15):**
-- **REIMAGINING (12–15)** — building for the world that is arriving; visionary + durable
-- **ADAPTING (8–11)** — aware and partially positioned; durable near-term, arc unproven
-- **EXPOSED (4–7)** — solving today's problem; vulnerable as the shift advances
-- **BLIND (0–3)** — no reckoning with the substrate shift; beautiful solution to a dissolving problem
-
----
-
 ## Flag Triggers
 
 Apply these when completing the Agent-Era read (at any depth):
@@ -139,14 +130,6 @@ Apply these when completing the Agent-Era read (at any depth):
 
 ---
 
-## Output Format
+## At Screen
 
-Write so a colleague who has never seen this framework can follow it. Lead with the plain question, not the jargon:
-
-> **Does the agent wave help or hurt this company? → [HELPS / HURTS / MIXED]**
-> [2–3 plain sentences: what AI agents do to this company's problem, and why that helps it or hurts it. No framework labels in this part.]
-> **Could get stronger if:** [the one concrete thing that would make it more durable — include only if it isn't already in its strongest position]
-> **What to watch:** [the milestone or signal that would confirm the move above]
-> *Deal-team line (internal): [X]/15 — [REIMAGINING / ADAPTING / EXPOSED / BLIND]; posture [Threatened / Riding / Enabling / Insulated]; holds up today [n]/5, over the next decade [n]/5.*
-
-**At Screen stage:** Apply the doorway question + lightweight posture read (one of the four postures + one sentence of rationale) + flag triggers only. Do not score 0–15 at Screen — that is a Scout/deeper exercise.
+Apply the doorway question, then the posture read on the product as built — one of the four postures, with the basis in plain words and, when it isn't already in its strongest position, a "Could get stronger if" line. The flag triggers above surface as Risk Flags and Live Pitch questions; the screener's instructions decide how a Threatened posture enters the verdict. Do not score 0–15 at Screen — that is Scout work.

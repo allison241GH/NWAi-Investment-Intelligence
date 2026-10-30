@@ -5,7 +5,8 @@
 (July 2026). This is domain context for the screener's **Protect Alpha** signal
 (named "Alpha Sovereignty" in V11) — a qualitative routing read at Screen. The full
 scored rubric (three 0–5 dimensions) applies at Scout and Diligence in the canonical
-pipeline, not here.*
+pipeline, not here.* *(V16 update, October 30 2026: N/A split into "confirmed" and
+"not stated", matching the pipeline Screen v3.6.)*
 
 ---
 
@@ -99,7 +100,8 @@ gate, cap, or enter the Triage Conviction weights.
 | **KEEPS** | The differentiating layer stays home — processed locally or pre-API, containment terms stated, portability credible — or the company sells sovereignty itself (Enabler). |
 | **MIXED** | Alpha transits a frontier provider but with stated awareness: no-train terms claimed, an abstraction layer or containment roadmap described. The honest early-stage norm. |
 | **LEAKS** | The differentiator or the customers' proprietary data transits a frontier provider verbatim, at volume, with no stated containment or sovereign path — or the founder's entire answer is "they don't train on our data." |
-| **N/A** | No model supply chain (product calls no third-party models). Most pure Track B hardware. |
+| **N/A — confirmed** | The materials or searches show no model supply chain (the product calls no third-party models). Most pure Track B hardware. Prints "Doesn't use outside AI." |
+| **N/A — not stated** | AI use is plausible but the materials don't say. Prints "AI use not stated" and generates a Live Pitch question ("Does any part of the product call an outside AI model, and with what data?") or a re-engage item. Carries no weight. |
 
 ### Trip-Wire Triggers (either fires a Yellow Flag ⚠️)
 
