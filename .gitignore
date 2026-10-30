@@ -16,5 +16,5 @@ node_modules/
 # Claude Code worktree metadata — local-only branch state
 .claude/worktrees/
 
-# AI thesis source docs (member emails, third-party essay) — local only
-docs/strategy/ai-investment-thesis-2026-10/sources/
+# AI thesis working folder (drafts, Ron/Dom correspondence, source docs) — local only
+docs/strategy/ai-investment-thesis-2026-10/

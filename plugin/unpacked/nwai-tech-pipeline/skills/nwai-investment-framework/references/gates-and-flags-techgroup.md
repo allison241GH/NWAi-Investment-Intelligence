@@ -1,4 +1,4 @@
-# NWAi TechGroup — Six-Signal Screener Reference v3.5
+# NWAi TechGroup — Six-Signal Screener Reference v3.6
 
 > **This is the self-contained screening reference for NWAi TechGroup.** It defines the
 > complete Screen-stage judgment model: hard gates, the NWA Filter evidence-rigor tests,
@@ -70,6 +70,15 @@
 > call no LLM; "three searches" means three search topics; "named founder" defined; Track
 > B only when the company itself ships the hardware. Found in the Decision 14–15
 > regression runs.
+>
+> **v3.6 (October 2026) — Patent fix (Option 5 Phase 2, Decision 17):** on Track A,
+> software patents, domain knowledge, and code are head starts, not moat assets, and "no
+> IP" is no longer a Track A negative tag in the Moat Sufficiency stack. Track B is
+> unchanged. The 90-day copy test and the headless-incumbent test were considered and
+> kept out of the Screen; they are available as Live Pitch questions only and are
+> deferred to Scout and Diligence (Phase 3). Also clarifies the HIGH conviction cap: only
+> a gap in one of the HIGH conditions caps at MEDIUM; a flagged big competitor or a
+> routine Live Pitch question does not by itself block HIGH.
 >
 > **Scope:** TechGroup only. Other NWAi groups author their own frameworks — see
 > `gates-and-flags-universal-guide.md` for the architecture every group playbook
@@ -260,7 +269,8 @@ edge; if you cannot name one, it is INCREMENTAL.
 or forming category — a head start, not a new ocean) / **RED** (late entrant to a crowded
 field). If not BLUE, name the closest competitor and the company's one-line
 differentiation claim — and call it: a *moat* or merely a *feature/positioning*
-difference. Carries forward to Scout Q1/Q5 for the full read.
+difference (on Track A, a software patent or domain knowledge alone is a head start, not
+a moat). Carries forward to Scout Q1/Q5 for the full read.
 
 **2 · Market** — *Room and tailwind for a venture return?* Verdict: **STRONG /
 MODERATE / WEAK**. Basis: describe the market and its tailwind in plain terms — what
@@ -325,18 +335,31 @@ own line:
 **Moat Sufficiency Test (WEAK vs. MODERATE boundary).** Before rendering the Moat
 verdict, name the single affirmative asset — not merely the absence of a negative — that
 would stop the flagged Goliath(s) from closing the gap within the Goliath Test's 12–18
-month window: filed or pending IP, a proprietary data asset already accumulating (not
-aspirational), a network effect with evidence it is operating (not just claimed), or an
-integration/switching-cost depth the flagged incumbents structurally lack (not one they
-already have themselves).
+month window: filed or pending IP (**Track B only** — see Head starts below), a
+proprietary data asset already accumulating (not aspirational), a network effect with
+evidence it is operating (not just claimed), or an integration/switching-cost depth the
+flagged incumbents structurally lack (not one they already have themselves).
 - **No such asset can be named → WEAK**, regardless of how the thesis reads in isolation.
 - **Both prongs apply independently.** Even when an asset *type* on the list can be named
-  (e.g., filed or pending IP), two or more stacked negative tags mean that asset has not
-  been shown to survive the flagged Goliath(s) → WEAK. Naming an asset type is necessary
-  for MODERATE, not sufficient (accepted by Jamie, Decision 14).
-  Two or more of {no IP, Wrapper MODERATE/HIGH, Goliath FLAGGED, Memory Lock-in
-  thesis-only/absent} stacking together IS the absence of an affirmative asset — the
-  compounding is the finding, not a coincidence to explain away.
+  (e.g., a proprietary data asset), two or more stacked negative tags mean that asset has
+  not been shown to survive the flagged Goliath(s) → WEAK. Naming an asset type is
+  necessary for MODERATE, not sufficient (accepted by Jamie, Decision 14).
+  Two or more of the negative tags below stacking together IS the absence of an
+  affirmative asset — the compounding is the finding, not a coincidence to explain away:
+  - **Track A:** {Wrapper MODERATE/HIGH, Goliath FLAGGED, Memory Lock-in
+    thesis-only/absent}
+  - **Track B:** {no IP, Goliath FLAGGED, Memory Lock-in thesis-only/absent}
+
+**Head starts, not moat assets (Track A — Decision 17).** On a Track A deal, a software
+patent (filed, pending, granted, or licensed in), the founders' domain knowledge, and the
+code or feature set itself are **head starts** — worth months of lead against a frontier
+model and a motivated team, not years. None of them is the affirmative asset this test
+asks for, none counts toward STRONG, and none fills the "nascent element" field. Because
+holding a patent no longer helps a Track A moat, lacking one no longer hurts it: "no IP"
+is not a negative tag on Track A. Record head starts on the appendix "Head starts" line;
+domain knowledge stays Team evidence (Market Fit / Product Fit). On **Track B**, where
+patents protect a physical build, filed or pending IP remains a qualifying asset and "no
+IP" remains a negative tag.
 - **One asset named with at least early/partial evidence → MODERATE.**
 - **Multiple independent asset types stack with real evidence → STRONG.**
 A moat thesis that only restates the company's own pitch ("we have a network effect,"
@@ -664,7 +687,9 @@ the Market block alone.
   (ask vs. traction, forecast vs. actuals, terms vs. terms); **and Commercial Proof is
   not PRE-REVENUE/FRAGILE** (Thin Commercial Proof cap — unconditional). HIGH means
   nothing central needs explaining — a gap worth a Live Pitch question caps conviction
-  at MEDIUM. *Conviction cap only: it never changes the call and never enters the
+  at MEDIUM. **The gap that caps at MEDIUM is a gap in one of the HIGH conditions
+  above. A flagged big competitor, or another routine Live Pitch question, does not by
+  itself block HIGH** (narrow reading — Jamie's ruling, Decision 17). *Conviction cap only: it never changes the call and never enters the
   roll-up.*
 - **MEDIUM** — Mixed signals; at most one adverse signal (or two with traction lift
   applied); one gap Scout can close. Also the ceiling whenever the Thin Commercial
@@ -836,9 +861,10 @@ paraphrase them loose.** They are stated operationally throughout this file and 
     of the line that sets the Team rating (rule 24).
 22. Moat Sufficiency Test: MODERATE or STRONG requires naming an affirmative asset (not
     the absence of a negative) that survives the flagged Goliath(s); if none can be
-    named, or two-plus negative tags stack (no IP, Wrapper MOD/HIGH, Goliath FLAGGED,
-    Memory Lock-in thesis-only/absent), Moat prints WEAK (Constellation X pipeline
-    comparison test).
+    named, or two-plus negative tags stack (Track A: Wrapper MOD/HIGH, Goliath FLAGGED,
+    Memory Lock-in thesis-only/absent; Track B: no IP, Goliath FLAGGED, Memory Lock-in
+    thesis-only/absent), Moat prints WEAK (Constellation X pipeline comparison test;
+    track split v3.6, rule 34).
 
 *Rules 23–28 were ported in v3.3 from the coordinator screener (Claude V14 → V15 Rev A),
 where each was found and validated in sandbox test runs. See Decision 14.*
@@ -888,6 +914,16 @@ where each was found and validated in sandbox test runs. See Decision 14.*
 33. Press or interviews repeating founder-reported figures = PARTIAL (on the record), never
     VERIFIED, and never alone qualifies traction for the lift; VERIFIED requires a source
     with an independent basis (Captain Compliance, Refresh Miami ARR — Jamie's ruling).
+
+*Rule 34 was added in v3.6 (Option 5 integrated AI thesis, Phase 2 — narrowed to the
+patent fix). See Decision 17.*
+
+34. Head starts (Track A): software patents (filed, pending, granted, or licensed in),
+    founders' domain knowledge, and code or features are head starts, not moat assets —
+    never the named Moat Sufficiency asset, never toward STRONG, never the nascent
+    element; "no IP" is not a Track A negative tag. Domain knowledge is Team evidence.
+    Track B unchanged: filed or pending IP qualifies and "no IP" is a negative tag
+    (Option 5 thesis; STL UCI patent licence, BleedIO pending patents).
 
 ---
 
@@ -977,7 +1013,12 @@ Question design rules:
 
 Categories to draw from:
 - Founder commitment / role clarity (Signal 3 UNCONFIRMED ⚠️)
-- Moat/defensibility gaps (Signal 4 WEAK-adjacent, Wrapper HIGH, Goliath FLAGGED)
+- Moat/defensibility gaps (Signal 4 WEAK-adjacent, Wrapper HIGH, Goliath FLAGGED). Where
+  the moat case leans on software, two Option 5 probes are available as questions only
+  (no tag, no effect on any verdict): *"Could a frontier model and a motivated team
+  rebuild most of this in 90 days — and what would they still lack?"* and *"If
+  [incumbent] opened its own data to a general-purpose agent, what could that agent still
+  not do that you can?"*
 - Protect Alpha containment (Signal 6 LEAKS or MIXED — mandatory question on ADVANCE)
 - Unvalidated market or TAM claims (Signal 2 confidence gaps)
 - Coherence contradictions (ask vs. traction, deck vs. terms)
@@ -1006,7 +1047,8 @@ B Moat evidence tag at Screen; detailed TRL application happens at Scout and Dil
 
 ---
 
-*NWAi TechGroup Six-Signal Screener Reference | v3.5 | October 2026*
+*NWAi TechGroup Six-Signal Screener Reference | v3.6 | October 2026*
+*v3.6 (October 2026): Patent fix (Option 5 integrated AI thesis, Phase 2 narrowed) — on Track A, software patents, domain knowledge, and code are head starts, not moat assets; "no IP" removed from the Track A Moat Sufficiency negative stack; Track B unchanged. Calibrated Rule 34 added, rule 22 amended. 90-day copy and headless-incumbent probes added as optional Live Pitch questions only. HIGH conviction cap clarified (narrow reading: only a gap in a HIGH condition caps at MEDIUM). See `pipeline-decisions-log.md` Decision 17.*
 *v3.5 (October 2026): Evidence and wording clarifications from the Decision 14–15 regression runs — third-party documents as outside evidence, 90-day stale-materials check, non-C-corp yellow flag, Protect Alpha N/A confirmed vs. not stated, Wrapper N/A, search-topic count, named-founder definition, Track B hardware rule. See `pipeline-decisions-log.md` Decision 16.*
 *v3.4 (October 2026): Two-layer report (Phase 1b) — plain-language member read ported from the coordinator screener V15 + Deal-Team Appendix for Scout intake. Presentation only; no judgment change. See `pipeline-decisions-log.md` Decision 15.*
 *v3.3 (October 2026): V15 judgment re-sync (Phase 1a) — ports the coordinator screener's tested rule evolutions: FRAGILE revenue tier + Thin Commercial Proof cap (V14); Team rated on three lines, lowest sets the rating, Market Fit WEAK as an adverse path, track record unrated (V15); Agent-Era judged on the product as built (V15 Rev A, Complete Contract Cycle); claim discipline extended to every fact (V15 Rev A, Reverent). Calibrated Rules 23–28 added; 10, 11, 12, 21 amended. No weight, gate, compound rule, Moat Sufficiency, Protect Alpha, or Ask-at-Scout change. Pipeline is now the source of truth; the coordinator screener is rebuilt from it. See `pipeline-decisions-log.md` Decision 14.*

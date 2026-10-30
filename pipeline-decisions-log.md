@@ -638,5 +638,90 @@ Files: `gates-and-flags-techgroup.md` (v3.5), `screen.md`, `screen-scout-convers
 
 ---
 
+## Decision 17 — Option 5 Phase 2, Narrowed to the Patent Fix
+
+**Date:** October 30, 2026
+**Context:** Phase 2 of the Path B re-sync (Decision 14) was scoped as three Option 5 Screen changes, taken from §5 items 3–5 of the thesis reconciliation note:
+1. software patents and domain knowledge are head starts, not moat assets;
+2. a 90-day "frontier model plus motivated team" copy test;
+3. a headless-incumbent test (the incumbent's private data plus a general agent).
+
+**Jamie's ruling: narrow Phase 2 to change 1.** The higher-altitude review found three things:
+- All three changes land in Signal 4 (Moat), the fourth-weighted signal. The v3.1 Moat Sufficiency Test already catches most of what they target.
+- Changes 2 and 3 can't be answered from three searches. Under screen-stage humility they would mostly print as Live Pitch questions anyway.
+- Option 5's weight sits downstream, in Scout, Diligence and the return model.
+
+Change 1 is different. It is a **conflict, not a gap**: the Screen credited filed or pending software IP as a moat asset and counted "no IP" as a negative tag, which is the opposite of the thesis.
+
+**What changed** (`gates-and-flags-techgroup.md` v3.5 → v3.6; `screen.md`):
+1. **Head starts (Track A, Calibrated Rule 34).**
+   - Software patents (filed, pending, granted, or licensed in), founders' domain knowledge, and code or features are head starts, not moat assets.
+   - They are never the named Moat Sufficiency asset, never count toward STRONG, and never fill the nascent element.
+   - They print on a new appendix line, "Head starts". Domain knowledge stays Team evidence.
+2. **Track-split negative stack (rule 22 amended).**
+   - Track A: {Wrapper MOD/HIGH, Goliath FLAGGED, Memory Lock-in thesis-only/absent}.
+   - Track B is unchanged: {no IP, Goliath FLAGGED, Memory Lock-in thesis-only/absent}. Filed or pending IP still qualifies on Track B.
+   - Rationale: if holding a patent no longer helps a Track A moat, lacking one can't hurt it.
+3. **The Blue Ocean read** notes that a software patent or domain knowledge alone is a head start.
+4. **Live Pitch question categories** add the 90-day and headless-incumbent probes as **optional questions only**: no tag, no effect on any verdict.
+5. **`screen.md`:** the adverse summary, the appendix "Head starts" line, the self-check amended (Moat Sufficiency), and a new self-check (Head starts).
+
+**Why it matters for future pitches.** The change has two halves:
+- **Strict half (patents stop counting as an asset):** this rarely changes an outcome.
+- **Lenient half (removing "no IP" from Track A):** this is the one that matters. Under v3.5, a software startup with no patents and a flagged incumbent (the common case) read Moat WEAK automatically, even with a verified, accumulating data asset. That penalized exactly the companies Option 5 favors.
+
+**Regression:**
+
+| Case | Method | v3.5 | v3.6 |
+|---|---|---|---|
+| Captain Compliance | Paper check on the recorded v3.5 tags | WATCH / MEDIUM (Moat WEAK: no IP + Goliath + Memory absent) | WATCH / MEDIUM (Goliath + Memory absent = 2) |
+| Summit Technology Laboratory | Paper check | WATCH / MEDIUM (patents named; Goliath + Memory absent) | WATCH / MEDIUM (patents move to head starts; same 2 negatives) |
+| Synergist Technology | Paper check | WATCH / MEDIUM | WATCH / MEDIUM (Goliath + Wrapper MOD + Memory thesis-only = 3) |
+| BleedIO Tech | Fresh blind v3.5 run + paper check | WATCH / MEDIUM (Moat WEAK: Goliath + Memory thesis-only; pending patent unverified) | WATCH / MEDIUM (pending patent moves to head starts; same 2 negatives) |
+| Fernhollow Analytics (synthetic) | Fresh blind matched pair | **WATCH / MEDIUM**: Moat WEAK on no IP + Goliath, despite a named, contract-verified data asset | **ADVANCE / HIGH**: Moat MODERATE (one negative; data asset named), 0 adverse |
+
+**How the runs were done:**
+- **Paper check:** a full re-run was unnecessary. The change acts only on the recorded Moat tags, so the arithmetic is deterministic. Unlike Decision 16's skipped re-runs, this change can create an adverse vote, so the BleedIO run and the Fernhollow pair were run live.
+- **The synthetic case:** Fernhollow is a fictional Track A company built to exercise the lenient half. It has:
+  - a verified, contracted, accumulating fault-label dataset;
+  - no patents;
+  - founders who name their domain experience as the moat;
+  - a flagged Goliath.
+
+  Search findings were supplied as a stub, so both runs saw identical evidence. Packet: session scratchpad (not committed).
+
+**Results:**
+- **The baseline holds:** WATCH/MEDIUM ×3. BleedIO, a live patent-led case, also holds.
+- **The rule fired as designed on Fernhollow:**
+  - v3.5 named the data asset and still read WEAK, on "no IP".
+  - v3.6 removed "no IP" from the stack, read MODERATE, and put the founders' "45 years" on the Head starts line and into Team evidence.
+
+**HIGH-conviction clarification (Jamie's ruling, added in v3.6).** The Fernhollow run exposed a pre-existing ambiguity. "A gap worth a Live Pitch question caps conviction at MEDIUM" could be read two ways:
+- **Narrowly:** only a gap in one of the HIGH conditions caps.
+- **Broadly:** any Live Pitch question caps, including a flagged Goliath.
+
+The v3.6 run read it narrowly and printed HIGH. A fresh run could have read it broadly and printed MEDIUM. **Ruling: the narrow reading.** The gap that caps at MEDIUM is a gap in one of the HIGH conditions. A flagged big competitor, or another routine Live Pitch question, does not by itself block HIGH. The reasons:
+- Under the broad reading HIGH is nearly unreachable, since Goliath is FLAGGED on most deals and every ADVANCE carries Live Pitch questions.
+- It would also re-penalize a FLAGGED Goliath, which rule 3 says is never an adverse vote.
+
+The sentence is added to the HIGH pattern guide and to `screen.md`. There is no back-test impact: all three baseline deals are MEDIUM for other reasons. The Fernhollow v3.6 run already applied this reading.
+
+**Logged, not changed:**
+- **Phase 3 follow-ups** (Scout and Diligence still credit patents and domain knowledge until then):
+  - `diligence-scoring-rubrics.md` Tier 1 elements 4 (IP/patents) and 6 (vertical specialization);
+  - `ai-moats-framework.md` l.118 (domain expertise "creates the moat");
+  - `scout-questions.md` Team 5 anchor ("domain expert with prior exit") and the l.312 12–18-month window;
+  - the `team-analyst.md` domain-expertise flag (l.202);
+  - `technology-analyst.md` §3 IP and patents.
+- **Deferred to Phase 3:**
+  - the 90-day copy test (a "frontier model + motivated team" row in the Replicability Speed Matrix);
+  - the headless-incumbent test (Scout Q5 and technology-analyst).
+- **Rubric:** the conversion rubric is unchanged. D4 already reads the "nascent element" field, and head starts never fill it.
+- **V15:** the coordinator screener was not edited. It is rebuilt from the pipeline in Phase 5.
+
+Files: `gates-and-flags-techgroup.md` (v3.6), `screen.md`, `CLAUDE.md`, `nwai-techgroup-pipeline-architecture.md` (v0.51.0). Plugin v3.8.0. No MCP changes — no reinstall required.
+
+---
+
 *Last updated: October 29, 2026 | Maintained by Jamie, TechGroup Co-Chair*
 *This log is a living document — add entries when key decisions are made in session.*
