@@ -1,7 +1,7 @@
 {
   "name": "nwai-tech-pipeline",
-  "version": "3.12.0",
-  "description": "Screen v3.7 hardware evidence standards + claim marker; coordinator screener V16 (Decision 22)",
+  "version": "3.12.1",
+  "description": "ClaudeProjects sandbox cleanup (path-only)",
   "author": {
     "name": "New World Angels",
     "url": "https://www.newworldangels.com"

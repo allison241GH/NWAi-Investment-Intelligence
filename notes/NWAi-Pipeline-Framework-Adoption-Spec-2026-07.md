@@ -1,7 +1,7 @@
 # NWAi Pipeline Framework Adoption Spec — July 2026
 
 > **Artifact type:** install specification — the Phase 5 document anticipated by
-> `docs/reference/ClaudeProjects/V12-Signal-Architecture-Workbench.md`.
+> `docs/reference/ClaudeProjects/_archive/V12-Signal-Architecture-Workbench.md`.
 > **Status:** RATIFIED — all decisions and open calibration items resolved by Jamie,
 > July 11, 2026 (see §1 and §11). Nothing operational changes until the plan-mode
 > implementation session executes this spec.

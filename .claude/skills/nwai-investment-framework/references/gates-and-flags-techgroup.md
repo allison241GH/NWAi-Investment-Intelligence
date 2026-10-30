@@ -9,7 +9,7 @@
 > Opportunity rubrics + Readiness scoring, archived at
 > `_archive/gates-and-flags-techgroup-numeric-v2.1-legacy.md`). The Six-Signal judgment
 > model was proven in the Claude V13 sandbox program (V10→V13 lineage, 4-deal regression
-> back-test ratified; see `docs/reference/ClaudeProjects/V12-Signal-Architecture-Workbench.md`)
+> back-test ratified; see `docs/reference/ClaudeProjects/_archive/V12-Signal-Architecture-Workbench.md`)
 > and installed per `notes/NWAi-Pipeline-Framework-Adoption-Spec-2026-07.md`. Its design
 > stance — qualitative signal verdicts that let a craftsman form conviction, no numeric
 > scores at Screen — implements the Craft Investing thesis
@@ -23,7 +23,7 @@
 > both fixes: a Source-Tier Rule and Identity-Match Standard (Signal 3), a Confidence-Gated
 > Compound Rule, a Moat Sufficiency Test (Signal 4), a fixed coherence diff-list, and a
 > fixed founder-identity query set — no other weight or verdict mechanic changed. See
-> `docs/reference/ClaudeProjects/Claude-V13-Investor-Nuance-NWA-TechGroup-AI-Screener.md`
+> `docs/reference/ClaudeProjects/_archive/Claude-V13-Investor-Nuance-NWA-TechGroup-AI-Screener.md`
 > (Amendments 1 and 2) and `docs/reference/ClaudeProjects/Rubric_Fidelity_Addendum_v1.md` for the
 > incidents this responds to. Market's and Agent-Era's bottom-tier boundaries remain
 > unexamined open risk — no live divergence observed there yet.
@@ -38,7 +38,7 @@
 > error, distinct from the v3.1 evidentiary-rigor fixes. Adds a binding Precedence
 > Check (Calibrated Rule 8a): compute the full roll-up first; Ask-at-Scout applies
 > only when it shows zero adverse signals. Correct verdict for the triggering case:
-> WATCH. See `docs/reference/ClaudeProjects/Claude-V13-Investor-Nuance-NWA-TechGroup-AI-Screener.md`
+> WATCH. See `docs/reference/ClaudeProjects/_archive/Claude-V13-Investor-Nuance-NWA-TechGroup-AI-Screener.md`
 > (Amendment 3).
 >
 > **v3.3 (October 2026) — V15 judgment re-sync (Phase 1a):** the coordinator screener
@@ -770,7 +770,7 @@ Rules:
   the resemblance in your own plain words. Two examples of the right *altitude*
   only (a structural business shape, never a sector): *services-in-SaaS-clothing*,
   *feature-not-company*. These are format examples, not a match list. The empirical
-  pattern-shape intake log accretes in the V12 workbench.
+  pattern-shape intake log accretes in the V12 workbench (archived: `docs/reference/ClaudeProjects/_archive/`).
 - Silence is the default. Most reports will not have one; never pad to produce one.
 
 ---
@@ -1088,8 +1088,8 @@ B Moat evidence tag at Screen; detailed TRL application happens at Scout and Dil
 *v3.5 (October 2026): Evidence and wording clarifications from the Decision 14–15 regression runs — third-party documents as outside evidence, 90-day stale-materials check, non-C-corp yellow flag, Protect Alpha N/A confirmed vs. not stated, Wrapper N/A, search-topic count, named-founder definition, Track B hardware rule. See `pipeline-decisions-log.md` Decision 16.*
 *v3.4 (October 2026): Two-layer report (Phase 1b) — plain-language member read ported from the coordinator screener V15 + Deal-Team Appendix for Scout intake. Presentation only; no judgment change. See `pipeline-decisions-log.md` Decision 15.*
 *v3.3 (October 2026): V15 judgment re-sync (Phase 1a) — ports the coordinator screener's tested rule evolutions: FRAGILE revenue tier + Thin Commercial Proof cap (V14); Team rated on three lines, lowest sets the rating, Market Fit WEAK as an adverse path, track record unrated (V15); Agent-Era judged on the product as built (V15 Rev A, Complete Contract Cycle); claim discipline extended to every fact (V15 Rev A, Reverent). Calibrated Rules 23–28 added; 10, 11, 12, 21 amended. No weight, gate, compound rule, Moat Sufficiency, Protect Alpha, or Ask-at-Scout change. Pipeline is now the source of truth; the coordinator screener is rebuilt from it. See `pipeline-decisions-log.md` Decision 14.*
-*v3.2 (August 2026): Ask-at-Scout Precedence Check — a fourth live Constellation X screen on the v3.1 fixes printed ADVANCE despite its own roll-up naming Moat adverse, because Ask-at-Scout's "no other signal adverse" precondition was never mechanically checked before its shortcut fired on the Team gap. Adds Calibrated Rule 8a: compute the full roll-up first; Ask-at-Scout applies only when it shows zero adverse signals. Correct verdict for the triggering case: WATCH. See `docs/reference/ClaudeProjects/Claude-V13-Investor-Nuance-NWA-TechGroup-AI-Screener.md` (Amendment 3).*
-*v3.1 (August 2026): Rubric Fidelity Amendment — ported from the Claude V13 sandbox after a cross-session Constellation X screen produced a DECLINE/ADVANCE divergence and a follow-up pipeline comparison surfaced a second divergence on Moat. Adds calibrated rules 19–22: Source-Tier Rule + Identity-Match Standard (Signal 3), Confidence-Gated Compound Rule, Moat Sufficiency Test (Signal 4); plus the fixed coherence diff-list and fixed founder-identity query set. No weight or verdict-tier definition changed. See `docs/reference/ClaudeProjects/Claude-V13-Investor-Nuance-NWA-TechGroup-AI-Screener.md` and `Rubric_Fidelity_Addendum_v1.md`.*
+*v3.2 (August 2026): Ask-at-Scout Precedence Check — a fourth live Constellation X screen on the v3.1 fixes printed ADVANCE despite its own roll-up naming Moat adverse, because Ask-at-Scout's "no other signal adverse" precondition was never mechanically checked before its shortcut fired on the Team gap. Adds Calibrated Rule 8a: compute the full roll-up first; Ask-at-Scout applies only when it shows zero adverse signals. Correct verdict for the triggering case: WATCH. See `docs/reference/ClaudeProjects/_archive/Claude-V13-Investor-Nuance-NWA-TechGroup-AI-Screener.md` (Amendment 3).*
+*v3.1 (August 2026): Rubric Fidelity Amendment — ported from the Claude V13 sandbox after a cross-session Constellation X screen produced a DECLINE/ADVANCE divergence and a follow-up pipeline comparison surfaced a second divergence on Moat. Adds calibrated rules 19–22: Source-Tier Rule + Identity-Match Standard (Signal 3), Confidence-Gated Compound Rule, Moat Sufficiency Test (Signal 4); plus the fixed coherence diff-list and fixed founder-identity query set. No weight or verdict-tier definition changed. See `docs/reference/ClaudeProjects/_archive/Claude-V13-Investor-Nuance-NWA-TechGroup-AI-Screener.md` and `Rubric_Fidelity_Addendum_v1.md`.*
 *v3.0 (July 2026): Six-Signal verdict model installed per the Pipeline Framework Adoption Spec (notes/NWAi-Pipeline-Framework-Adoption-Spec-2026-07.md) — Craft-at-Screen boundary, Agent-Era posture verdict (upgraded from the v2.1 Exposure trip-wire), Protect Alpha Signal 6 (Alpha-AI Sovereignty Phase 2, as evolved by the Claude V13 back-test), calibrated rules ledger. Absorbs the hard gates, NWA Filter, research protocol, and TRL reference formerly in gates-and-flags.md (rewritten and renamed to `gates-and-flags-universal-guide.md`). Numeric v2.1 archived at `_archive/gates-and-flags-techgroup-numeric-v2.1-legacy.md`.*
 *Replaces v2.1 (June 2026) and v1.0 (March 2026). Judgment model provenance: Claude V13 sandbox (docs/reference/ClaudeProjects/), 4-deal regression back-test ratified July 2026.*
 *Medical and Space verticals retain separate hard-gate screener frameworks; see `gates-and-flags-universal-guide.md` for the universal playbook guide.*
