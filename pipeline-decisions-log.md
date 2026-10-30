@@ -943,5 +943,36 @@ Files: `pricing-analyst.md`, `forecasting-analyst.md`, `CLAUDE.md`, `nwai-techgr
 
 ---
 
+## Decision 21 — Phase 4 (Return Model) Deferred
+
+**Date:** October 30, 2026
+**Ruling (Jamie):** Phase 4 is skipped for now. It is deferred with a trigger, not cancelled.
+
+**What Phase 4 would change:**
+- the venture-analyst's fixed Series A/B/C dilution ladder;
+- a cash-flow-positive / no-Series-B scenario;
+- how 10x-in-5, the 20–100× TAM expectation, and the $500M gate apply to capital-efficient companies;
+- valuing low-gross-margin AI companies on gross profit rather than on revenue multiples.
+
+**Known biases accepted while deferred:**
+1. **Capital-efficient AI companies are understated.** The fixed dilution ladder charges them dilution they may never incur. They can fail the 10x test even when a modest exit at a sensible entry price would clear it.
+2. **Low-margin AI companies are overstated.** Since Decision 20, the forecast carries the true gross margin. The venture-analyst still applies software revenue multiples, so a 20–40% gross-margin business can be priced like a 75% one.
+
+**Why this is tolerable now:**
+- few deals reach valuation (about three in 2026);
+- the IC sees the stressed forecast and can adjust by judgment;
+- Phases 2–3 and Phase 5 do not depend on Phase 4;
+- the return-model question was already pending an IC decision (reconciliation note §6 Decision 1).
+
+**Re-evaluation trigger:** the first deal that reaches the venture-analyst and is either:
+- **capital-efficient** — a credible path to cash-flow positive without a Series B; or
+- **a low-margin AI company** — the pricing-analyst's Model-Cost Economics shows today's gross margin, or the Medium-case margin, materially below SaaS norms.
+
+When either fires, flag Phase 4 to Jamie before the DD Report is finalised.
+
+**Next:** Phase 5 — rebuild the coordinator screener (V15) from the pipeline.
+
+---
+
 *Last updated: October 29, 2026 | Maintained by Jamie, TechGroup Co-Chair*
 *This log is a living document — add entries when key decisions are made in session.*
